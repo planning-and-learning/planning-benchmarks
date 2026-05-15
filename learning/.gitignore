@@ -1,0 +1,3 @@
+train-*.pddl
+valid-*.pddl
+test-*.pddl
