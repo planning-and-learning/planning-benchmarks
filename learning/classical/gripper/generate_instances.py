@@ -13,10 +13,12 @@ sys.path.insert(0, str(ROOT_DIR))
 from generators.classical.gripper import make_problem  # noqa: E402
 
 
+NUM_INSTANCES_PER_SPLIT = 30
+
 CONFIGS = {
-    "train": [1, 2, 3, 4, 5],
-    "valid": [6, 7, 8, 9, 10],
-    "test": [11, 12, 13, 14, 15],
+    "train": list(range(1, NUM_INSTANCES_PER_SPLIT + 1)),
+    "valid": list(range(31, 31 + NUM_INSTANCES_PER_SPLIT)),
+    "test": list(range(61, 61 + NUM_INSTANCES_PER_SPLIT)),
 }
 
 
@@ -27,6 +29,8 @@ def main() -> int:
     for split, num_balls_values in CONFIGS.items():
         split_dir = output_dir / split
         split_dir.mkdir(parents=True, exist_ok=True)
+        for old_problem_path in split_dir.glob(f"{split}-*.pddl"):
+            old_problem_path.unlink()
 
         for index, num_balls in enumerate(num_balls_values, start=1):
             problem_path = split_dir / f"{split}-{index}.pddl"
