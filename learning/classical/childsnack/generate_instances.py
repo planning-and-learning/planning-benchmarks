@@ -47,7 +47,7 @@ def assert_pairwise_disjoint(configs_by_split):
 
 
 STRUCTURAL_SPACES = {
-    "train": cartesian(range(2, 7), range(1, 3), [0.25, 0.5, 0.75], [1.2, 1.5]),
+    "train": cartesian(range(2, 5), range(1, 3), [0.25, 0.5, 0.75], [1.2, 1.5]),
     "valid": cartesian(range(7, 11), range(1, 4), [0.25, 0.5, 0.75], [1.2, 1.5]),
     "test": cartesian(range(11, 17), range(2, 5), [0.25, 0.5, 0.75], [1.2, 1.5]),
 }
