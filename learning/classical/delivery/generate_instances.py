@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from itertools import product
 import shutil
 import sys
 from pathlib import Path
@@ -13,22 +14,53 @@ sys.path.insert(0, str(ROOT_DIR))
 from generators.classical.delivery import make_problem  # noqa: E402
 
 
-NUM_INSTANCES_PER_SPLIT = 30
+NUM_INSTANCES_PER_SPLIT = 100
+
+
+def cartesian(*dimensions, predicate=None):
+    configs = []
+    for values in product(*dimensions):
+        if predicate is None or predicate(*values):
+            configs.append(values)
+    return configs
+
+
+def first_n(configs, count: int = NUM_INSTANCES_PER_SPLIT):
+    if len(configs) < count:
+        raise ValueError(f"Need {count} configs, got {len(configs)}")
+    return configs[:count]
+
+
+def with_instance_seeds(configs, seed_start: int, count: int = NUM_INSTANCES_PER_SPLIT):
+    if not configs:
+        raise ValueError("Need at least one structural config")
+    return [(*configs[index % len(configs)], seed_start + index) for index in range(count)]
+
+
+def assert_pairwise_disjoint(configs_by_split):
+    seen = {}
+    for split, configs in configs_by_split.items():
+        for config in configs:
+            previous = seen.setdefault(config, split)
+            if previous != split:
+                raise ValueError(f"Config {config} occurs in both {previous} and {split}")
+
+
+STRUCTURAL_SPACES = {
+    "train": cartesian(range(2, 6), range(1, 5)),
+    "valid": cartesian(range(6, 9), range(5, 8)),
+    "test": cartesian(range(9, 14), range(8, 13)),
+}
+
+assert_pairwise_disjoint(STRUCTURAL_SPACES)
 
 CONFIGS = {
-    "train": [
-        (2 + index % 3, 1 + index % 3, 101 + index)
-        for index in range(NUM_INSTANCES_PER_SPLIT)
-    ],
-    "valid": [
-        (5 + index % 3, 2 + index % 3, 201 + index)
-        for index in range(NUM_INSTANCES_PER_SPLIT)
-    ],
-    "test": [
-        (8 + index % 3, 4 + index % 3, 301 + index)
-        for index in range(NUM_INSTANCES_PER_SPLIT)
-    ],
+    "train": with_instance_seeds(STRUCTURAL_SPACES["train"], 101),
+    "valid": with_instance_seeds(STRUCTURAL_SPACES["valid"], 201),
+    "test": with_instance_seeds(STRUCTURAL_SPACES["test"], 301),
 }
+
+assert_pairwise_disjoint(CONFIGS)
 
 
 def main() -> int:
