@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from itertools import product
 import shutil
 import sys
+from itertools import cycle, product
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
@@ -17,24 +17,8 @@ from generators.classical.hiking_binary import make_problem  # noqa: E402
 NUM_INSTANCES_PER_SPLIT = 100
 
 
-def cartesian(*dimensions, predicate=None):
-    configs = []
-    for values in product(*dimensions):
-        if predicate is None or predicate(*values):
-            configs.append(values)
-    return configs
-
-
-def first_n(configs, count: int = NUM_INSTANCES_PER_SPLIT):
-    if len(configs) < count:
-        raise ValueError(f"Need {count} configs, got {len(configs)}")
-    return configs[:count]
-
-
-def with_instance_seeds(configs, seed_start: int, count: int = NUM_INSTANCES_PER_SPLIT):
-    if not configs:
-        raise ValueError("Need at least one structural config")
-    return [(*configs[index % len(configs)], seed_start + index) for index in range(count)]
+def cartesian(*dimensions):
+    return list(product(*dimensions))
 
 
 def assert_pairwise_disjoint(configs_by_split):
@@ -47,38 +31,49 @@ def assert_pairwise_disjoint(configs_by_split):
 
 
 STRUCTURAL_SPACES = {
-    "train": cartesian(range(1, 4), range(2, 5), range(2, 5)),
-    "valid": cartesian(range(4, 7), range(5, 8), range(5, 7)),
-    "test": cartesian(range(7, 11), range(8, 12), range(7, 10)),
+    "train": cartesian(range(1, 4), range(2, 5), range(2, 4)),
+    "valid": cartesian(range(4, 5), range(5, 6), range(4, 6)),
+    "test": cartesian(range(5, 6), range(6, 8), range(5, 7)),
 }
 
 assert_pairwise_disjoint(STRUCTURAL_SPACES)
 
-CONFIGS = {
-    "train": with_instance_seeds(STRUCTURAL_SPACES["train"], 101),
-    "valid": with_instance_seeds(STRUCTURAL_SPACES["valid"], 201),
-    "test": with_instance_seeds(STRUCTURAL_SPACES["test"], 301),
+SEED_STARTS = {
+    "train": 101,
+    "valid": 201,
+    "test": 301,
 }
-
-assert_pairwise_disjoint(CONFIGS)
 
 
 def main() -> int:
     output_dir = Path(__file__).resolve().parent
     shutil.copyfile(GENERATOR_DIR / "domain.pddl", output_dir / "domain.pddl")
 
-    for split, configs in CONFIGS.items():
+    for split, shapes in STRUCTURAL_SPACES.items():
         split_dir = output_dir / split
         split_dir.mkdir(parents=True, exist_ok=True)
         for old_problem_path in split_dir.glob(f"{split}-*.pddl"):
             old_problem_path.unlink()
 
-        for index, (num_couples, num_cars, num_places, seed) in enumerate(configs, start=1):
+        index = 1
+        seed = SEED_STARTS[split]
+        attempts = 0
+        max_attempts = NUM_INSTANCES_PER_SPLIT * len(shapes)
+        for num_couples, num_cars, num_places in cycle(shapes):
+            attempts += 1
+            if attempts > max_attempts:
+                raise ValueError(f"Could not generate {NUM_INSTANCES_PER_SPLIT} {split} instances")
+
+            problem = make_problem(num_couples, num_cars, num_places, seed)
+            seed += 1
+            if problem is None:
+                continue
+
             problem_path = split_dir / f"{split}-{index}.pddl"
-            problem_path.write_text(
-                make_problem(num_couples, num_cars, num_places, seed),
-                encoding="utf-8",
-            )
+            problem_path.write_text(problem, encoding="utf-8")
+            index += 1
+            if index > NUM_INSTANCES_PER_SPLIT:
+                break
 
     return 0
 

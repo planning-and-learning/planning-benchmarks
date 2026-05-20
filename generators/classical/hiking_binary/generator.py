@@ -13,7 +13,10 @@ def make_problem(
     num_cars: int,
     num_places: int,
     seed: int | None = None,
-) -> str:
+) -> str | None:
+    if num_couples < 1 or num_cars < num_couples + 1 or num_places < 2:
+        return None
+
     rng = random.Random(seed if seed is not None else int(time.time()))
 
     cars = [f"car{i}" for i in range(num_cars)]
@@ -75,17 +78,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("-s", "--seed", type=int, help="random seed")
     args = parser.parse_args(argv)
 
-    if args.num_couples < 1:
-        parser.error("num_couples must be at least 1")
-    if args.num_cars < args.num_couples + 1:
-        parser.error("num_cars must be at least num_couples + 1")
-    if args.num_places < 2:
-        parser.error("num_places must be at least 2")
+    problem = make_problem(args.num_couples, args.num_cars, args.num_places, args.seed)
+    if problem is None:
+        parser.error(
+            "problem is unsolvable: expected num_couples >= 1, "
+            "num_cars >= num_couples + 1, and num_places >= 2"
+        )
 
-    print(
-        make_problem(args.num_couples, args.num_cars, args.num_places, args.seed),
-        end="",
-    )
+    print(problem, end="")
     return 0
 
 
