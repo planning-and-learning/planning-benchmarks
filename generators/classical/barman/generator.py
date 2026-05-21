@@ -14,7 +14,23 @@ def _typed_objects(names: list[str], type_name: str) -> str:
     return f"      {' '.join(names)} - {type_name}" if names else ""
 
 
-def make_problem(num_cocktails: int, num_ingredients: int, num_shots: int, seed: int | None = None) -> str:
+def make_problem(
+    num_cocktails: int,
+    num_ingredients: int,
+    num_shots: int,
+    seed: int | None = None,
+    ingredient_goal_probability: float = 0.0,
+    num_goals: int | None = None,
+) -> str:
+    if not 0.0 <= ingredient_goal_probability <= 1.0:
+        raise ValueError("ingredient_goal_probability must be in [0, 1]")
+    if num_goals is None:
+        num_goals = num_shots - 1
+    if num_goals < 1:
+        raise ValueError("num_goals must be at least 1")
+    if num_goals > num_shots:
+        raise ValueError("num_goals must not exceed num_shots")
+
     rng = random.Random(seed if seed is not None else int(time.time()))
 
     cocktails = [f"cocktail{i}" for i in range(1, num_cocktails + 1)]
@@ -58,9 +74,16 @@ def make_problem(num_cocktails: int, num_ingredients: int, num_shots: int, seed:
 
     objects = "\n".join(line for line in object_lines if line)
     init = "\n".join(init_facts)
-    goal_facts = "\n".join(f"      (contains {shot} {cocktail})" for shot, (cocktail, _, _) in zip(shots, cocktail_parts))
+    goal_beverages = []
+    for _ in range(num_goals):
+        if rng.random() < ingredient_goal_probability:
+            goal_beverages.append(rng.choice(ingredients))
+        else:
+            goal_beverages.append(rng.choice(cocktails))
+    goal_facts = "\n".join(f"      (contains {shot} {beverage})" for shot, beverage in zip(shots, goal_beverages))
 
-    return f"""(define (problem barman-c{num_cocktails}-i{num_ingredients}-s{num_shots})
+    ingredient_goal_percent = round(ingredient_goal_probability * 100)
+    return f"""(define (problem barman-c{num_cocktails}-i{num_ingredients}-s{num_shots}-g{num_goals}-ig{ingredient_goal_percent})
   (:domain barman)
   (:objects
 {objects}
@@ -84,16 +107,37 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("-i", "--num-ingredients", type=int, required=True)
     parser.add_argument("-s", "--num-shots", type=int, required=True)
     parser.add_argument("--seed", type=int)
+    parser.add_argument(
+        "--ingredient-goal-probability",
+        type=float,
+        default=0.0,
+        help="probability that a goal beverage is a raw ingredient",
+    )
+    parser.add_argument("--num-goals", type=int, help="number of goal shots; defaults to num_shots - 1")
     args = parser.parse_args(argv)
 
     if args.num_cocktails < 1:
         parser.error("num_cocktails must be at least 1")
     if args.num_ingredients < 2:
         parser.error("num_ingredients must be at least 2")
-    if args.num_shots < args.num_cocktails:
-        parser.error("num_shots must be at least num_cocktails")
+    if args.num_shots < 2:
+        parser.error("num_shots must be at least 2")
+    if not 0.0 <= args.ingredient_goal_probability <= 1.0:
+        parser.error("--ingredient-goal-probability must be in [0, 1]")
+    if args.num_goals is not None and args.num_goals > args.num_shots:
+        parser.error("--num-goals must not exceed num_shots")
 
-    print(make_problem(args.num_cocktails, args.num_ingredients, args.num_shots, args.seed), end="")
+    print(
+        make_problem(
+            args.num_cocktails,
+            args.num_ingredients,
+            args.num_shots,
+            seed=args.seed,
+            ingredient_goal_probability=args.ingredient_goal_probability,
+            num_goals=args.num_goals,
+        ),
+        end="",
+    )
     return 0
 
 
