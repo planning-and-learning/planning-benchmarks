@@ -10,3 +10,7 @@ while IFS= read -r generator; do
     echo "Generating ${relative_path}"
     python3 "${generator}"
 done < <(find "${SCRIPT_DIR}" -name generate_instances.py -type f | sort)
+
+python3 "${SCRIPT_DIR}/obfuscate_pddl.py" \
+    --source "${SCRIPT_DIR}" \
+    --target "${REPO_ROOT}/obfuscated_data"
