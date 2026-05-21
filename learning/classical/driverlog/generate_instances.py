@@ -37,6 +37,12 @@ def with_instance_seeds(configs, seed_start: int, count: int = NUM_INSTANCES_PER
     return [(*configs[index % len(configs)], seed_start + index) for index in range(count)]
 
 
+def with_goal_probabilities(configs, probabilities):
+    if not probabilities:
+        raise ValueError("Need at least one goal probability triple")
+    return [(*config[:-1], *probabilities[index % len(probabilities)], config[-1]) for index, config in enumerate(configs)]
+
+
 def assert_pairwise_disjoint(configs_by_split):
     seen = {}
     for split, configs in configs_by_split.items():
@@ -45,6 +51,9 @@ def assert_pairwise_disjoint(configs_by_split):
             if previous != split:
                 raise ValueError(f"Config {config} occurs in both {previous} and {split}")
 
+
+GOAL_PROBABILITY_VALUES = (0.5, 0.75, 1.0)
+GOAL_PROBABILITIES = tuple(product(GOAL_PROBABILITY_VALUES, repeat=3))
 
 STRUCTURAL_SPACES = {
     "train": cartesian(range(4, 9), range(1, 3), range(1, 3), range(1, 5)),
@@ -55,9 +64,9 @@ STRUCTURAL_SPACES = {
 assert_pairwise_disjoint(STRUCTURAL_SPACES)
 
 CONFIGS = {
-    "train": with_instance_seeds(STRUCTURAL_SPACES["train"], 101),
-    "valid": with_instance_seeds(STRUCTURAL_SPACES["valid"], 201),
-    "test": with_instance_seeds(STRUCTURAL_SPACES["test"], 301),
+    "train": with_goal_probabilities(with_instance_seeds(STRUCTURAL_SPACES["train"], 101), GOAL_PROBABILITIES),
+    "valid": with_goal_probabilities(with_instance_seeds(STRUCTURAL_SPACES["valid"], 201), GOAL_PROBABILITIES),
+    "test": with_goal_probabilities(with_instance_seeds(STRUCTURAL_SPACES["test"], 301), GOAL_PROBABILITIES),
 }
 
 assert_pairwise_disjoint(CONFIGS)
@@ -73,10 +82,19 @@ def main() -> int:
         for old_problem_path in split_dir.glob(f"{split}-*.pddl"):
             old_problem_path.unlink()
 
-        for index, (num_locations, num_drivers, num_trucks, num_packages, seed) in enumerate(configs, start=1):
+        for index, (num_locations, num_drivers, num_trucks, num_packages, package_goal_probability, driver_goal_probability, truck_goal_probability, seed) in enumerate(configs, start=1):
             problem_path = split_dir / f"{split}-{index}.pddl"
             problem_path.write_text(
-                make_problem(num_locations, num_drivers, num_trucks, num_packages, seed),
+                make_problem(
+                    num_locations,
+                    num_drivers,
+                    num_trucks,
+                    num_packages,
+                    seed=seed,
+                    package_goal_probability=package_goal_probability,
+                    driver_goal_probability=driver_goal_probability,
+                    truck_goal_probability=truck_goal_probability,
+                ),
                 encoding="utf-8",
             )
 
