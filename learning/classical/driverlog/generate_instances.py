@@ -56,7 +56,7 @@ GOAL_PROBABILITY_VALUES = (0.5, 0.75, 1.0)
 GOAL_PROBABILITIES = tuple(product(GOAL_PROBABILITY_VALUES, repeat=3))
 
 STRUCTURAL_SPACES = {
-    "train": cartesian(range(4, 9), range(1, 3), range(1, 3), range(1, 5)),
+    "train": cartesian(range(4, 8), range(2, 5), range(2, 5), range(2, 5)),
     "valid": cartesian(range(9, 13), range(1, 3), range(1, 3), range(5, 8)),
     "test": cartesian(range(13, 19), range(2, 5), range(2, 5), range(8, 12)),
 }
