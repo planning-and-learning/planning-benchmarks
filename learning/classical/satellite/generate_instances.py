@@ -30,10 +30,12 @@ def assert_pairwise_disjoint(configs_by_split):
                 raise ValueError(f"Config {config} occurs in both {previous} and {split}")
 
 
+POINTING_GOAL_PROBABILITIES = [0.25, 0.5, 0.75]
+
 STRUCTURAL_SPACES = {
-    "train": cartesian(range(1, 3), range(1, 4), range(2, 4), range(1, 3), range(1, 4)),
-    "valid": cartesian(range(3, 5), range(4, 6), range(3, 5), range(3, 5), range(4, 6)),
-    "test": cartesian(range(5, 7), range(6, 9), range(4, 6), range(5, 7), range(6, 9)),
+    "train": cartesian(range(1, 3), range(1, 4), range(2, 4), range(1, 3), range(1, 4), POINTING_GOAL_PROBABILITIES),
+    "valid": cartesian(range(3, 5), range(4, 6), range(3, 5), range(3, 5), range(4, 6), POINTING_GOAL_PROBABILITIES),
+    "test": cartesian(range(5, 7), range(6, 9), range(4, 6), range(5, 7), range(6, 9), POINTING_GOAL_PROBABILITIES),
 }
 
 assert_pairwise_disjoint(STRUCTURAL_SPACES)

@@ -16,9 +16,12 @@ def make_problem(
     num_modes: int,
     num_targets: int,
     num_observations: int,
+    pointing_goal_probability: float = 0.0,
     seed: int | None = None,
 ) -> str | None:
     if min(num_satellites, num_instruments, num_modes, num_targets, num_observations) < 1:
+        return None
+    if not 0.0 <= pointing_goal_probability <= 1.0:
         return None
 
     rng = random.Random(seed if seed is not None else int(time.time()))
@@ -30,9 +33,12 @@ def make_problem(
     directions = targets + observations
 
     init_facts = []
+    initial_pointings = {}
     for satellite in satellites:
+        initial_pointing = rng.choice(directions)
+        initial_pointings[satellite] = initial_pointing
         init_facts.append(f"    (power_avail {satellite})")
-        init_facts.append(f"    (pointing {satellite} {rng.choice(directions)})")
+        init_facts.append(f"    (pointing {satellite} {initial_pointing})")
 
     instrument_modes: dict[str, list[str]] = {}
     for index, instrument in enumerate(instruments):
@@ -49,8 +55,13 @@ def make_problem(
         instrument = instruments[index % len(instruments)]
         mode = rng.choice(instrument_modes[instrument])
         goals.append(f"      (have_image {observation} {mode})")
+    for satellite in satellites:
+        if rng.random() < pointing_goal_probability:
+            goal_directions = [direction for direction in directions if direction != initial_pointings[satellite]]
+            goals.append(f"      (pointing {satellite} {rng.choice(goal_directions)})")
 
-    return f'''(define (problem satellite-s{num_satellites}-i{num_instruments}-m{num_modes}-t{num_targets}-o{num_observations})
+    probability_name = f"p{int(pointing_goal_probability * 100):02d}"
+    return f'''(define (problem satellite-s{num_satellites}-i{num_instruments}-m{num_modes}-t{num_targets}-o{num_observations}-{probability_name})
   (:domain satellite)
   (:objects
     {' '.join(satellites)} - satellite
@@ -77,10 +88,19 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("num_modes", type=int)
     parser.add_argument("num_targets", type=int)
     parser.add_argument("num_observations", type=int)
+    parser.add_argument("pointing_goal_probability", type=float, nargs="?", default=0.0)
     parser.add_argument("-s", "--seed", type=int)
     args = parser.parse_args(argv)
 
-    problem = make_problem(args.num_satellites, args.num_instruments, args.num_modes, args.num_targets, args.num_observations, args.seed)
+    problem = make_problem(
+        args.num_satellites,
+        args.num_instruments,
+        args.num_modes,
+        args.num_targets,
+        args.num_observations,
+        args.pointing_goal_probability,
+        args.seed,
+    )
     if problem is None:
         parser.error("all dimensions must be at least 1")
     print(problem, end="")
