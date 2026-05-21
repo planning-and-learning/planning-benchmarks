@@ -46,10 +46,12 @@ def assert_pairwise_disjoint(configs_by_split):
                 raise ValueError(f"Config {config} occurs in both {previous} and {split}")
 
 
+GOAL_PACKAGE_PROBABILITIES = (0.5, 1.0)
+
 STRUCTURAL_SPACES = {
-    "train": cartesian(range(1, 3), range(2, 5), range(1, 4), range(1, 3)),
-    "valid": cartesian(range(3, 5), range(5, 7), range(4, 7), range(1, 3)),
-    "test": cartesian(range(5, 8), range(7, 10), range(7, 11), range(2, 4)),
+    "train": cartesian(range(1, 3), range(2, 5), range(1, 4), range(1, 3), GOAL_PACKAGE_PROBABILITIES),
+    "valid": cartesian(range(3, 5), range(5, 7), range(4, 7), range(1, 3), GOAL_PACKAGE_PROBABILITIES),
+    "test": cartesian(range(5, 8), range(7, 10), range(7, 11), range(2, 4), GOAL_PACKAGE_PROBABILITIES),
 }
 
 assert_pairwise_disjoint(STRUCTURAL_SPACES)
@@ -73,10 +75,17 @@ def main() -> int:
         for old_problem_path in split_dir.glob(f"{split}-*.pddl"):
             old_problem_path.unlink()
 
-        for index, (num_cities, city_size, num_packages, num_airplanes, seed) in enumerate(configs, start=1):
+        for index, (num_cities, city_size, num_packages, num_airplanes, goal_package_probability, seed) in enumerate(configs, start=1):
             problem_path = split_dir / f"{split}-{index}.pddl"
             problem_path.write_text(
-                make_problem(num_cities, city_size, num_packages, num_airplanes, seed),
+                make_problem(
+                    num_cities,
+                    city_size,
+                    num_packages,
+                    num_airplanes,
+                    seed=seed,
+                    goal_package_probability=goal_package_probability,
+                ),
                 encoding="utf-8",
             )
 
