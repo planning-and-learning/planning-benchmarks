@@ -9,6 +9,7 @@ A fully Python variant of [AI-planning/pddl-generators](https://github.com/AI-Pl
 - childsnack
 - hiking
 - hiking_binary
+- nomystery
 - parcprinter
 - rovers
 - schedule
