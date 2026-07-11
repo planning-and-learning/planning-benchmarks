@@ -1,0 +1,16 @@
+{
+  "root": "/home/dominik/projects/code/planning-and-learning/planning-benchmarks",
+  "error_limit": null,
+  "terminated_early": false,
+  "summary": {
+    "files": 18427,
+    "domains": 1925,
+    "problems": 16502,
+    "unclassified": 0,
+    "checked_domains": 1925,
+    "checked_problems": 16502,
+    "errors": 0
+  },
+  "files": [],
+  "unprocessed": []
+}

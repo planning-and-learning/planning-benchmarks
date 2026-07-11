@@ -1,0 +1,11 @@
+[project]
+name = "planning-benchmarks"
+version = "0.1.0"
+description = "Planning benchmark suites and validation tools."
+requires-python = ">=3.10"
+dependencies = [
+    "pypddl>=1.0.19",
+]
+
+[tool.uv]
+package = false
