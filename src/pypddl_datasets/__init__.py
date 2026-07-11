@@ -9,6 +9,7 @@ a local checkout's data/ directory to use it directly (no download).
 
 from __future__ import annotations
 
+import functools
 import os
 import re
 import shutil
@@ -197,6 +198,13 @@ def _data_root() -> Path:
     local_root = os.environ.get("PYPDDL_DATASETS_DATA")
     if local_root:
         return Path(local_root)
+    return _fetched_data_root()
+
+
+@functools.cache
+def _fetched_data_root() -> Path:
+    """Download and unpack the pinned data release; once per machine on disk,
+    and the (re-)verification of the cached archive once per process."""
     if not DATA_SHA256:
         raise KeyError(
             "this pypddl-datasets build has no pinned data release (development "
