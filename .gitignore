@@ -3,3 +3,5 @@ __pycache__/
 train/
 test/
 valid/
+validate.error.json
+validate.sucess.json
