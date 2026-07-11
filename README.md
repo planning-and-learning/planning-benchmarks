@@ -20,6 +20,9 @@ gripper = pb.fetch_domain("classical/downward-benchmarks/gripper")
 sorted(gripper.iterdir())             # domain.pddl, prob01.pddl, ...
 ```
 
+`pb.fetch_test_suite("ipc-optimal-strips")` returns one representative problem
+file per domain — a cheap smoke run before committing to a full suite.
+
 `pb.list_domains()` lists every individually fetchable domain. The cache
 location defaults to the platform cache dir and can be overridden with the
 `PYPDDL_DATASETS_CACHE` environment variable.
