@@ -94,8 +94,59 @@ def test_fetch_domain_rejects_unknown_name():
         pypddl_datasets.fetch_suite("no-such-suite")
 
 
-def test_fetch_domain_local_data_override(monkeypatch):
+@pytest.fixture
+def local_data(monkeypatch):
     monkeypatch.setenv("PYPDDL_DATASETS_DATA", str(DATA_ROOT))
-    assert pypddl_datasets.fetch_domain("classical/tests/gripper") == DATA_ROOT / "classical/tests/gripper"
+
+
+def test_fetch_domain_local_data_override(local_data):
+    domain = pypddl_datasets.fetch_domain("classical/tests/gripper")
+    assert domain.path == DATA_ROOT / "classical/tests/gripper"
+    assert [t.task_path.name for t in domain.tasks] == ["test-1.pddl"]
+    assert domain.tasks[0].domain_path == domain.path / "domain.pddl"
+    assert domain.tasks[0].path == domain.path
     with pytest.raises(KeyError):
         pypddl_datasets.fetch_domain("classical/tests/no-such-domain")
+
+
+@pytest.mark.parametrize(
+    ("domain", "task", "expected_domain_file"),
+    [
+        # shared domain.pddl
+        ("classical/tests/gripper", "test-1.pddl", "domain.pddl"),
+        # per-instance domain files, three naming conventions
+        ("classical/downward-benchmarks/airport", "p01-airport1-p1.pddl", "p01-domain.pddl"),
+        ("classical/downward-benchmarks/openstacks-strips", "p01.pddl", "domain_p01.pddl"),
+        ("classical/htg-domains/genome-edit-distance", "d-1-2-original.pddl", "d-1-2-original-domain.pddl"),
+        # tasks in an instances/ subdir, domain file at the domain root
+        ("numeric/ipc2026/2048", "instances/pfile10.pddl", "domain.pddl"),
+    ],
+)
+def test_task_pairing(local_data, domain, task, expected_domain_file):
+    fetched = pypddl_datasets.fetch_task(domain, task)
+    assert fetched.path == DATA_ROOT / domain
+    assert fetched.task_path == DATA_ROOT / domain / task
+    assert fetched.domain_path.name == expected_domain_file
+    assert fetched.domain_path.is_file()
+
+
+def test_fetch_task_accepts_bare_name_and_rejects_unknown(local_data):
+    by_bare_name = pypddl_datasets.fetch_task("numeric/ipc2026/2048", "pfile10.pddl")
+    assert by_bare_name.task_path.name == "pfile10.pddl"
+    with pytest.raises(KeyError):
+        pypddl_datasets.fetch_task("classical/tests/gripper", "no-such-task.pddl")
+
+
+def test_fetch_suite_test_entries_are_single_task_domains(local_data):
+    domains = pypddl_datasets.fetch_suite("pushworld-test")
+    assert len(domains) == len(SUITES["pushworld-test"])
+    for fetched in domains:
+        assert len(fetched.tasks) == 1
+        assert fetched.tasks[0].domain_path.is_file()
+        assert fetched.tasks[0].task_path.is_file()
+
+
+def test_export_suite_materializes_tree(local_data, tmp_path):
+    exported = pypddl_datasets.export_suite("tests-classical", tmp_path)
+    assert (tmp_path / "classical/tests/gripper/domain.pddl").is_file()
+    assert len(exported) == len(SUITES["tests-classical"])

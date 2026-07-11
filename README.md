@@ -14,15 +14,25 @@ pip install pypddl-datasets
 ```python
 import pypddl_datasets as pb
 
-pb.list_suites()                      # ['autoscale-agile-strips', ..., 'ipc-optimal-strips', ...]
-paths = pb.fetch_suite("ipc-optimal-strips")   # list[Path], downloaded once and cached
-gripper = pb.fetch_domain("classical/downward-benchmarks/gripper")
-sorted(gripper.iterdir())             # domain.pddl, prob01.pddl, ...
+pb.list_suites()          # ['autoscale-agile-strips', ..., 'ipc-optimal-strips', ...]
+
+task = pb.fetch_task("classical/tests/gripper", "test-1.pddl")
+task.domain_path          # .../gripper/domain.pddl   (correct also where instances
+task.task_path            # .../gripper/test-1.pddl    carry their own domain files)
+
+domain = pb.fetch_domain("classical/downward-benchmarks/gripper")
+domain.path               # the domain directory
+domain.tasks              # list[Task], downloaded once and cached
+
+for domain in pb.fetch_suite("ipc-optimal-strips"):
+    for task in domain.tasks:
+        run_planner(task.domain_path, task.task_path)
 ```
 
 Most suites have a `-test` companion (e.g. `"ipc-optimal-strips-test"`) whose
-entries are one representative problem file per domain — a cheap smoke run
-before committing to a full suite.
+entries are one representative task per domain — a cheap smoke run before
+committing to a full suite. `pb.export_suite(suite, dest)` materializes a
+suite as a plain directory tree for non-Python tools.
 
 `pb.list_domains()` lists every individually fetchable domain. The cache
 location defaults to the platform cache dir and can be overridden with the
