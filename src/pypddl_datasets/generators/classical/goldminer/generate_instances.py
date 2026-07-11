@@ -3,15 +3,10 @@
 from __future__ import annotations
 
 import shutil
-import sys
 from itertools import cycle, product
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).resolve().parents[3]
-GENERATOR_DIR = ROOT_DIR / "generators" / "classical" / "goldminer"
-sys.path.insert(0, str(ROOT_DIR))
-
-from generators.classical.goldminer import make_problem  # noqa: E402
+from .generator import make_problem
 
 
 NUM_INSTANCES_PER_SPLIT = 100
@@ -46,12 +41,13 @@ SEED_STARTS = {
 
 
 def main() -> int:
-    output_dir = Path(__file__).resolve().parent
-    shutil.copyfile(GENERATOR_DIR / "domain.pddl", output_dir / "domain.pddl")
+    here = Path(__file__).resolve()
+    output_root = here.parents[5] / "data" / "classical" / "generated"
 
     for split, configs in STRUCTURAL_SPACES.items():
-        split_dir = output_dir / split
+        split_dir = output_root / f"{here.parent.name}-{split}"
         split_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(here.parent / "domain.pddl", split_dir / "domain.pddl")
         for old_problem_path in split_dir.glob(f"{split}-*.pddl"):
             old_problem_path.unlink()
 
@@ -76,7 +72,6 @@ def main() -> int:
                 break
 
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
