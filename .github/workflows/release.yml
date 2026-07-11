@@ -6,9 +6,13 @@ on:
       - "v*"
 
 jobs:
-  validate:
+  # validate and package share one job: a failed validation aborts before any
+  # upload, and the 1.4 GB LFS checkout happens only once per release.
+  release-data:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'planning-and-learning'
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v6
         with:
@@ -28,19 +32,6 @@ jobs:
         run: pip install pypddl
       - name: Validate all PDDL
         run: python validate.py --root data
-
-  release-data:
-    needs: validate
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          lfs: true
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.13"
       - name: Package data into per-domain tarballs
         run: python scripts/package_data.py --output dist-data
       - name: Create draft release and upload data

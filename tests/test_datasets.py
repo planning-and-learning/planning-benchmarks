@@ -163,3 +163,19 @@ def test_export_suite_materializes_tree(local_data, tmp_path):
     exported = pypddl_datasets.export_suite("tests-classical", tmp_path)
     assert (tmp_path / "classical/tests/gripper/domain.pddl").is_file()
     assert len(exported) == len(SUITES["tests-classical"])
+
+
+def test_pairing_tolerates_lfs_pointer_stubs(monkeypatch, tmp_path):
+    # A checkout without `git lfs pull` has pointer stubs instead of PDDL;
+    # pairing must classify them by file name (as CI runners do).
+    domain_dir = tmp_path / "classical" / "stub-domain"
+    domain_dir.mkdir(parents=True)
+    pointer = "version https://git-lfs.github.com/spec/v1\noid sha256:abc\nsize 1\n"
+    (domain_dir / "domain_p28.pddl").write_text(pointer)
+    (domain_dir / "p28.pddl").write_text("(define (problem p28) (:domain openstacks))")
+    (domain_dir / "p29.pddl").write_text(pointer)
+    monkeypatch.setenv("PYPDDL_DATASETS_DATA", str(tmp_path))
+    domain = pypddl_datasets.fetch_domain("classical/stub-domain")
+    by_problem = {t.problem: t for t in domain.tasks}
+    assert by_problem["p28.pddl"].domain_path.name == "domain_p28.pddl"
+    assert "p29.pddl" in by_problem

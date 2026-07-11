@@ -228,12 +228,18 @@ def _fetch_directory(name: str) -> Path:
 _DECLARATION = re.compile(r"\(\s*define\s*\(\s*(domain|problem)\s+([^\s()]+)", re.IGNORECASE)
 _DOMAIN_REFERENCE = re.compile(r"\(\s*:domain\s+([^\s()]+)", re.IGNORECASE)
 _HEAD_BYTES = 65536
+_LFS_POINTER_PREFIX = "version https://git-lfs.github.com/spec/v1"
 
 
-def _declaration(path: Path) -> tuple[str, str] | None:
+def _declaration(path: Path) -> tuple[str, str | None] | None:
     """("domain"|"problem", declared name), classified by file content."""
     with path.open("r", encoding="utf-8", errors="replace") as stream:
-        text = re.sub(r";[^\n]*", "", stream.read(_HEAD_BYTES))
+        head = stream.read(_HEAD_BYTES)
+        if head.startswith(_LFS_POINTER_PREFIX):
+            # LFS pointer stub (checkout without `git lfs pull`): classify by
+            # file name so pairing matches a full checkout.
+            return ("domain" if "domain" in path.name else "problem", None)
+        text = re.sub(r";[^\n]*", "", head)
         match = _DECLARATION.search(text)
         if match is None and stream.read(1):
             text = re.sub(r";[^\n]*", "", text + stream.read())
@@ -250,7 +256,7 @@ def _pair_tasks(domain: str, directory: Path) -> list[Task]:
             continue
         kind, name = declared
         if kind == "domain":
-            domain_files[path] = name.lower()
+            domain_files[path] = name.lower() if name else ""
         else:
             problem_files.append(path)
     return [
