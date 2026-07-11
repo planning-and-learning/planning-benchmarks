@@ -25,7 +25,7 @@ __version__ = "0.0.1"
 # (its workflow prints the archive's sha256). Empty sha256 = development
 # build without a pinned release; only PYPDDL_DATASETS_DATA works then.
 DATA_VERSION = "data-v1"
-DATA_SHA256 = ""
+DATA_SHA256 = "6e65e10c92bede60ab35def3329abb932f89ce6be9c28b19bdef6cd6186e401a"
 
 _ARCHIVE = "data.tar.gz"  # single asset on the data release
 
