@@ -8,7 +8,7 @@ import pooch
 import pytest
 
 import pypddl_datasets
-from pypddl_datasets.suites import SUITES, TEST_INSTANCES
+from pypddl_datasets.suites import SUITES
 
 from conftest import REPO_ROOT
 from package_data import archive_name, discover_domains
@@ -16,12 +16,24 @@ from package_data import archive_name, discover_domains
 DATA_ROOT = REPO_ROOT / "data"
 
 
-def test_suite_entries_are_domain_dirs():
+def test_suite_entries_resolve():
     domains = {d.relative_to(DATA_ROOT).as_posix() for d in discover_domains(DATA_ROOT)}
     for suite, entries in SUITES.items():
         assert entries, suite
         for entry in entries:
-            assert entry in domains, f"{suite}: {entry} is not a packagable domain dir"
+            domain, _, instance = entry.partition(":")
+            assert domain in domains, f"{suite}: {domain} is not a packagable domain dir"
+            if instance:
+                assert (DATA_ROOT / domain / instance).is_file(), f"{suite}: {entry}"
+
+
+def test_test_suites_select_from_their_base_suite():
+    # "generated-test" is the held-out split suite, not a fragment suite; it has no base.
+    for suite in SUITES:
+        base = SUITES.get(suite.removesuffix("-test"))
+        if suite.endswith("-test") and base is not None:
+            for entry in SUITES[suite]:
+                assert entry.partition(":")[0] in set(base), f"{suite}: {entry}"
 
 
 def test_archive_names_round_trip():
@@ -30,17 +42,6 @@ def test_archive_names_round_trip():
         relative = domain.relative_to(DATA_ROOT).as_posix()
         assert name[: -len(".tar.gz")].replace("--", "/") == relative
         assert "--" not in relative, f"'--' in {relative} breaks the / <-> -- mapping"
-
-
-@pytest.mark.parametrize("suite", sorted(TEST_INSTANCES))
-def test_test_instances_exist(suite):
-    assert suite in SUITES
-    entries = TEST_INSTANCES[suite]
-    assert entries, suite
-    for item in entries:
-        domain, instance = item.split(":", 1)
-        assert domain in SUITES[suite], f"{suite}: {domain} not in suite"
-        assert (DATA_ROOT / domain / instance).is_file(), f"{domain}/{instance}"
 
 
 GENERATOR_DOMAINS = sorted(
