@@ -169,6 +169,15 @@ def export_suite(suite: str, dest: str | Path) -> list[Path]:
     return paths
 
 
+def _require_registry() -> None:
+    if not _POOCH.registry:
+        raise KeyError(
+            "this pypddl-datasets build has an empty registry (it is only filled at "
+            "release time); set PYPDDL_DATASETS_DATA to a local checkout's data/ "
+            "directory or install a released version"
+        )
+
+
 def _data_root() -> Path:
     """The root directory fetched domains live under."""
     local_root = os.environ.get("PYPDDL_DATASETS_DATA")
@@ -180,6 +189,8 @@ def _split_task_name(name: str) -> tuple[str, str]:
     Unique because domain directories are maximal (never nested)."""
     parts = name.split("/")
     local_root = os.environ.get("PYPDDL_DATASETS_DATA")
+    if not local_root:
+        _require_registry()
     for index in range(1, len(parts)):
         domain = "/".join(parts[:index])
         if local_root:
@@ -203,6 +214,7 @@ def _fetch_directory(name: str) -> Path:
         if not path.is_dir():
             raise KeyError(f"domain {name!r} not found under PYPDDL_DATASETS_DATA={local_root}")
         return path
+    _require_registry()
     stem = name.replace("/", "--")
     archive = stem + _ARCHIVE_SUFFIX
     if archive not in _POOCH.registry:
