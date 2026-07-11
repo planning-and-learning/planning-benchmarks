@@ -29,7 +29,7 @@ location defaults to the platform cache dir and can be overridden with the
 - `src/pypddl_datasets/` — the package: fetch API, suite definitions, and the
   instance generators (including the train/valid/test split configurations).
 - `data/` — all benchmark data, organized as `<formalism>/<collection>/<domain>`
-  (`classical/`, `numeric/`, `profiling/`). Not shipped in the package;
+  (`classical/`, `numeric/`). Not shipped in the package;
   released as per-domain tarballs.
 - `data/classical/generated/<domain>-{train,valid,test}/` — fixed learning
   splits produced by the generators. These committed instances are the
