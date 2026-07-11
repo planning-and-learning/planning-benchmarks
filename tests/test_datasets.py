@@ -123,7 +123,7 @@ def test_fetch_domain_local_data_override(local_data):
     ],
 )
 def test_task_pairing(local_data, domain, task, expected_domain_file):
-    fetched = pypddl_datasets.fetch_task(domain, task)
+    fetched = pypddl_datasets.fetch_task(f"{domain}/{task}")
     assert fetched.path == DATA_ROOT / domain
     assert fetched.task_path == DATA_ROOT / domain / task
     assert fetched.domain_path.name == expected_domain_file
@@ -131,10 +131,12 @@ def test_task_pairing(local_data, domain, task, expected_domain_file):
 
 
 def test_fetch_task_accepts_bare_name_and_rejects_unknown(local_data):
-    by_bare_name = pypddl_datasets.fetch_task("numeric/ipc2026/2048", "pfile10.pddl")
+    by_bare_name = pypddl_datasets.fetch_task("numeric/ipc2026/2048/pfile10.pddl")
     assert by_bare_name.task_path.name == "pfile10.pddl"
     with pytest.raises(KeyError):
-        pypddl_datasets.fetch_task("classical/tests/gripper", "no-such-task.pddl")
+        pypddl_datasets.fetch_task("classical/tests/gripper/no-such-task.pddl")
+    with pytest.raises(KeyError):
+        pypddl_datasets.fetch_task("classical/no-such-domain/task.pddl")
 
 
 def test_fetch_suite_test_entries_are_single_task_domains(local_data):

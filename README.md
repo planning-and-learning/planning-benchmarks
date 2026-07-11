@@ -16,7 +16,7 @@ import pypddl_datasets as pb
 
 pb.list_suites()          # ['autoscale-agile-strips', ..., 'ipc-optimal-strips', ...]
 
-task = pb.fetch_task("classical/tests/gripper", "test-1.pddl")
+task = pb.fetch_task("classical/tests/gripper/test-1.pddl")
 task.domain_path          # .../gripper/domain.pddl   (correct also where instances
 task.task_path            # .../gripper/test-1.pddl    carry their own domain files)
 

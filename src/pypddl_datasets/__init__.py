@@ -95,15 +95,17 @@ def fetch_domain(name: str) -> Domain:
     return Domain(directory, _pair_tasks(directory))
 
 
-def fetch_task(name: str, task: str) -> Task:
-    """Fetch one task of a domain, e.g.
-    fetch_task("classical/tests/gripper", "test-1.pddl")."""
-    directory = _fetch_directory(name)
+def fetch_task(name: str) -> Task:
+    """Fetch one task by its full name, e.g.
+    fetch_task("classical/tests/gripper/test-1.pddl"). The split between
+    domain and task file is unambiguous because domains are never nested."""
+    domain, task = _split_task_name(name)
+    directory = _fetch_directory(domain)
     for candidate in _pair_tasks(directory):
         relative = candidate.task_path.relative_to(directory).as_posix()
         if task in (relative, candidate.task_path.name):
             return candidate
-    raise KeyError(f"no task {task!r} in domain {name!r}")
+    raise KeyError(f"no task {task!r} in domain {domain!r}")
 
 
 def fetch_suite(suite: str) -> list[Domain]:
@@ -116,7 +118,7 @@ def fetch_suite(suite: str) -> list[Domain]:
     for entry in SUITES[suite]:
         name, _, instance = entry.partition(":")
         if instance:
-            task = fetch_task(name, instance)
+            task = fetch_task(f"{name}/{instance}")
             domains.append(Domain(task.path, [task]))
         else:
             domains.append(fetch_domain(name))
@@ -135,6 +137,22 @@ def export_suite(suite: str, dest: str | Path) -> list[Path]:
         shutil.copytree(_fetch_directory(name), target, dirs_exist_ok=True)
         paths.append(target)
     return paths
+
+
+def _split_task_name(name: str) -> tuple[str, str]:
+    """Split "classical/tests/gripper/test-1.pddl" into domain and task part.
+    Unique because domain directories are maximal (never nested)."""
+    parts = name.split("/")
+    local_root = os.environ.get("PYPDDL_DATASETS_DATA")
+    for index in range(1, len(parts)):
+        domain = "/".join(parts[:index])
+        if local_root:
+            directory = Path(local_root) / domain
+            if directory.is_dir() and any(directory.glob("*.pddl")):
+                return domain, "/".join(parts[index:])
+        elif domain.replace("/", "--") + _ARCHIVE_SUFFIX in _POOCH.registry:
+            return domain, "/".join(parts[index:])
+    raise KeyError(f"no domain found in task name {name!r}; see list_domains()")
 
 
 def _fetch_directory(name: str) -> Path:
