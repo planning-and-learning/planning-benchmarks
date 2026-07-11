@@ -1,0 +1,45 @@
+(define (problem hiking-binary-3-4-2)
+  (:domain hiking-binary)
+  (:objects
+    car0 car1 car2 car3 - car
+    tent0 tent1 tent2 - tent
+    couple0 couple1 couple2 - couple
+    place0 place1 - place
+    guy0 girl0 guy1 girl1 guy2 girl2 - person
+  )
+  (:init
+    (partner_of couple0 guy0)
+    (partner_of couple0 girl0)
+    (at_person guy0 place0)
+    (at_person girl0 place0)
+    (walked couple0 place0)
+    (at_tent tent0 place0)
+    (down tent0)
+    (partner_of couple1 guy1)
+    (partner_of couple1 girl1)
+    (at_person guy1 place0)
+    (at_person girl1 place0)
+    (walked couple1 place0)
+    (at_tent tent1 place0)
+    (down tent1)
+    (partner_of couple2 guy2)
+    (partner_of couple2 girl2)
+    (at_person guy2 place0)
+    (at_person girl2 place0)
+    (walked couple2 place0)
+    (at_tent tent2 place0)
+    (down tent2)
+    (at_car car0 place0)
+    (at_car car1 place0)
+    (at_car car2 place0)
+    (at_car car3 place0)
+    (next place0 place1)
+  )
+  (:goal
+    (and
+      (walked couple0 place1)
+      (walked couple1 place1)
+      (walked couple2 place1)
+    )
+  )
+)

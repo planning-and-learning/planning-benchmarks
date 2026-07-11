@@ -1,0 +1,46 @@
+(define (problem driverlog-l4-d1-t1-p3-pg50-dg50-tg100)
+  (:domain driverlog)
+  (:objects
+      s0 s1 s2 s3 - location
+      driver1 - driver
+      truck1 - truck
+      package1 package2 package3 - obj
+  )
+  (:init
+    (link s0 s1)
+    (link s1 s0)
+    (link s0 s2)
+    (link s2 s0)
+    (link s0 s3)
+    (link s3 s0)
+    (link s1 s2)
+    (link s2 s1)
+    (link s1 s3)
+    (link s3 s1)
+    (link s2 s3)
+    (link s3 s2)
+    (path s0 s1)
+    (path s1 s0)
+    (path s0 s2)
+    (path s2 s0)
+    (path s0 s3)
+    (path s3 s0)
+    (path s1 s2)
+    (path s2 s1)
+    (path s2 s3)
+    (path s3 s2)
+    (at driver1 s3)
+    (at truck1 s3)
+    (empty truck1)
+    (at package1 s1)
+    (at package2 s1)
+    (at package3 s1)
+  )
+  (:goal
+    (and
+      (at package2 s0)
+      (at driver1 s1)
+      (at truck1 s0)
+    )
+  )
+)

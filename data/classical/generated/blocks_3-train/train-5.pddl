@@ -1,0 +1,23 @@
+(define (problem blocks-3-8)
+  (:domain blocksworld-3ops)
+  (:objects b1 b2 b3 b4 b5 b6 b7 b8)
+  (:init
+    (on-table b7)
+    (on b2 b7)
+    (on b4 b2)
+    (on b3 b4)
+    (on b8 b3)
+    (on b6 b8)
+    (on-table b1)
+    (on b5 b1)
+    (clear b5)
+    (clear b6)
+  )
+  (:goal
+    (and
+      (on b1 b4)
+      (on b6 b1)
+      (on b3 b5)
+    )
+  )
+)
