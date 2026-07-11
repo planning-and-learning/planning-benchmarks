@@ -8,11 +8,8 @@ import pooch
 import pytest
 
 import pypddl_datasets
-from pypddl_datasets import suites
-from pypddl_datasets.suites import SUITES
+from pypddl_datasets.suites import SUITES, TEST_INSTANCES
 
-import _smoke_instances_classical
-import _smoke_instances_numeric
 from conftest import REPO_ROOT
 from package_data import archive_name, discover_domains
 
@@ -35,34 +32,15 @@ def test_archive_names_round_trip():
         assert "--" not in relative, f"'--' in {relative} breaks the / <-> -- mapping"
 
 
-# Old suite_test.py smoke lists: one representative instance per domain,
-# resolved by directory basename within the matching suite.
-SMOKE_LISTS = {
-    "SUITE_CNOT_SYNTHESIS": _smoke_instances_classical.SUITE_CNOT_SYNTHESIS_TEST,
-    "SUITE_IPC_OPTIMAL_STRIPS": _smoke_instances_classical.SUITE_IPC_OPTIMAL_STRIPS_TEST,
-    "SUITE_IPC_OPTIMAL_ADL": _smoke_instances_classical.SUITE_IPC_OPTIMAL_ADL_TEST,
-    "SUITE_IPC_SATISFICING_STRIPS": _smoke_instances_classical.SUITE_IPC_SATISFICING_STRIPS_TEST,
-    "SUITE_IPC_SATISFICING_ADL": _smoke_instances_classical.SUITE_IPC_SATISFICING_ADL_TEST,
-    "SUITE_IPC2023_LEARNING": _smoke_instances_classical.SUITE_IPC_LEARNING_TEST,
-    "SUITE_AUTOSCALE_OPTIMAL_STRIPS": _smoke_instances_classical.SUITE_AUTOSCALE_OPTIMAL_STRIPS_TEST,
-    "SUITE_AUTOSCALE_AGILE_STRIPS": _smoke_instances_classical.SUITE_AUTOSCALE_AGILE_STRIPS_TEST,
-    "SUITE_HTG": _smoke_instances_classical.SUITE_HTG_TEST,
-    "SUITE_PUSHWORLD": _smoke_instances_classical.SUITE_PUSHWORLD_TEST,
-    "SUITE_BELUGA2025_SCALABILITY_DETERMINISTIC": _smoke_instances_classical.SUITE_BELUGA2025_SCALABILITY_DETERMINISTIC_TEST,
-    "SUITE_MINEPDDL_CLASSICAL": _smoke_instances_classical.SUITE_MINEPDDL_TEST,
-    "SUITE_IPC2023_NUMERIC": _smoke_instances_numeric.SUITE_IPC2023_NUMERIC_TEST,
-    "SUITE_MINEPDDL_NUMERIC": _smoke_instances_numeric.SUITE_MINEPDDL_TEST,
-}
-
-
-@pytest.mark.parametrize("suite_const", sorted(SMOKE_LISTS))
-def test_smoke_instances_exist(suite_const):
-    entries = getattr(suites, suite_const)
-    by_basename = {entry.rsplit("/", 1)[-1]: entry for entry in entries}
-    for item in SMOKE_LISTS[suite_const]:
+@pytest.mark.parametrize("suite", sorted(TEST_INSTANCES))
+def test_test_instances_exist(suite):
+    assert suite in SUITES
+    entries = TEST_INSTANCES[suite]
+    assert entries, suite
+    for item in entries:
         domain, instance = item.split(":", 1)
-        assert domain in by_basename, f"{suite_const}: no suite entry named {domain}"
-        assert (DATA_ROOT / by_basename[domain] / instance).is_file(), f"{by_basename[domain]}/{instance}"
+        assert domain in SUITES[suite], f"{suite}: {domain} not in suite"
+        assert (DATA_ROOT / domain / instance).is_file(), f"{domain}/{instance}"
 
 
 GENERATOR_DOMAINS = sorted(

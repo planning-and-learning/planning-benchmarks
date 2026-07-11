@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pooch
 
-from .suites import SUITES
+from .suites import SUITES, TEST_INSTANCES
 
 __version__ = "0.1.0"
 
@@ -56,3 +56,16 @@ def fetch_suite(suite: str) -> list[Path]:
     if suite not in SUITES:
         raise KeyError(f"unknown suite {suite!r}; see list_suites()")
     return [fetch_domain(name) for name in SUITES[suite]]
+
+
+def fetch_test_suite(suite: str) -> list[Path]:
+    """Return one representative problem file per domain of a named suite,
+    for quick planner smoke runs. The domain files sit in the returned
+    paths' parent directories."""
+    if suite not in TEST_INSTANCES:
+        raise KeyError(f"no test instances for suite {suite!r}; available: {sorted(TEST_INSTANCES)}")
+    paths = []
+    for entry in TEST_INSTANCES[suite]:
+        domain, instance = entry.split(":", 1)
+        paths.append(fetch_domain(domain) / instance)
+    return paths
