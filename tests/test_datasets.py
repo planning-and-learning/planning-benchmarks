@@ -92,3 +92,10 @@ def test_fetch_domain_rejects_unknown_name():
         pypddl_datasets.fetch_domain("classical/no-such-collection/no-such-domain")
     with pytest.raises(KeyError):
         pypddl_datasets.fetch_suite("no-such-suite")
+
+
+def test_fetch_domain_local_data_override(monkeypatch):
+    monkeypatch.setenv("PYPDDL_DATASETS_DATA", str(DATA_ROOT))
+    assert pypddl_datasets.fetch_domain("classical/tests/gripper") == DATA_ROOT / "classical/tests/gripper"
+    with pytest.raises(KeyError):
+        pypddl_datasets.fetch_domain("classical/tests/no-such-domain")

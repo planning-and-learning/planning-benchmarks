@@ -26,7 +26,9 @@ before committing to a full suite.
 
 `pb.list_domains()` lists every individually fetchable domain. The cache
 location defaults to the platform cache dir and can be overridden with the
-`PYPDDL_DATASETS_CACHE` environment variable.
+`PYPDDL_DATASETS_CACHE` environment variable. On machines without internet
+access, set `PYPDDL_DATASETS_DATA` to a local checkout's `data/` directory
+and domains resolve there without downloading.
 
 ## Repository layout
 

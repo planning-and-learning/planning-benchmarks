@@ -7,6 +7,7 @@ location with the PYPDDL_DATASETS_CACHE environment variable).
 
 from __future__ import annotations
 
+import os
 from importlib import resources
 from pathlib import Path
 
@@ -41,7 +42,17 @@ def list_domains() -> list[str]:
 
 def fetch_domain(name: str) -> Path:
     """Return the local directory of a domain such as
-    "classical/downward-benchmarks/gripper", downloading it if necessary."""
+    "classical/downward-benchmarks/gripper", downloading it if necessary.
+
+    If PYPDDL_DATASETS_DATA is set (e.g. to a local checkout's data/ dir on
+    machines without internet access), domains are resolved there instead
+    and nothing is downloaded."""
+    local_root = os.environ.get("PYPDDL_DATASETS_DATA")
+    if local_root:
+        path = Path(local_root) / name
+        if not path.is_dir():
+            raise KeyError(f"domain {name!r} not found under PYPDDL_DATASETS_DATA={local_root}")
+        return path
     stem = name.replace("/", "--")
     archive = stem + _ARCHIVE_SUFFIX
     if archive not in _POOCH.registry:
