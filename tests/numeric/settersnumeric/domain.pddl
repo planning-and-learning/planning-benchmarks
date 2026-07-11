@@ -5,9 +5,9 @@
 ;; effects). 
 
 (define (domain civ) 
-  (:requirements :fluents :typing :conditional-effects) 
-  (:types place vehicle - store 
-	  resource) 
+  (:requirements :fluents :typing)
+  (:types place vehicle - store
+	  store resource)
   (:constants timber wood coal stone iron ore - resource)
   (:predicates 
    (connected-by-land ?p1 - place ?p2 - place) 

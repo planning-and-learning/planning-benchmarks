@@ -1,6 +1,7 @@
 ;; Enrico Scala (enricos83@gmail.com) and Miquel Ramirez (miquel.ramirez@gmail.com)
 (define (problem instance_20_5_2_2)
   (:domain mt-block-grouping)
+(:requirements :disjunctive-preconditions :negative-preconditions)
   (:objects
     b1 b2 b3 b4 b5 - block
   )

@@ -1,5 +1,5 @@
 (define (domain Collect_Build_Shape_Medium)
-(:requirements :typing :fluents :negative-preconditions :universal-preconditions :existential-preconditions :disjunctive-preconditions)
+(:requirements :typing :fluents :negative-preconditions :existential-preconditions :disjunctive-preconditions)
 (:types
 	locatable - object
 	agent block item - locatable
@@ -1715,13 +1715,13 @@
 (block-present ?b) (= (x ?b) -5) (= (y ?b) 7) (= (z ?b) -4)))
 	(exists (?b - planks-block) (and 
 (block-present ?b) (= (x ?b) -5) (= (y ?b) 7) (= (z ?b) -3)))
-	(exists (?b - stonebrick-block) (and 
+	(exists (?b - stone_bricks-block) (and 
 (block-present ?b) (= (x ?b) -5) (= (y ?b) 6) (= (z ?b) -5)))
-	(exists (?b - stonebrick-block) (and 
+	(exists (?b - stone_bricks-block) (and 
 (block-present ?b) (= (x ?b) -5) (= (y ?b) 5) (= (z ?b) -5)))
-	(exists (?b - stonebrick-block) (and 
+	(exists (?b - stone_bricks-block) (and 
 (block-present ?b) (= (x ?b) -5) (= (y ?b) 6) (= (z ?b) -3)))
-	(exists (?b - stonebrick-block) (and 
+	(exists (?b - stone_bricks-block) (and 
 (block-present ?b) (= (x ?b) -5) (= (y ?b) 5) (= (z ?b) -3)))
 	(exists (?b - cobblestone-block) (and 
 (block-present ?b) (= (x ?b) -5) (= (y ?b) 4) (= (z ?b) -5)))

@@ -15,7 +15,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (define (domain mt-block-grouping)
-    (:requirements :typing :numeric-fluents :disjunctive-preconditions :negative-preconditions)
+    (:requirements :typing :numeric-fluents  )
     (:types block - object )
     (:functions
         (x ?b - block)  ;; The position of a block

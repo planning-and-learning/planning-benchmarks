@@ -5,7 +5,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (define (domain delivery)
-    (:requirements :typing :equality)
+    (:requirements :typing )
     (:types
         cell - object
         locatable - object

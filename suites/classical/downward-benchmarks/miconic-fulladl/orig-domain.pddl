@@ -47,55 +47,57 @@
  :parameters (?f - floor)
  :precondition (and (lift-at ?f)
 		    (imply
-		     (exists
-		      (?p - conflict_A)
-		      (or (and (not (served ?p))
-			       (origin ?p ?f))
-			  (and (boarded ?p)
-			       (not (destin ?p ?f)))))
-		     (forall 
-		      (?q - conflict_B)
-		      (and (or (destin ?q ?f)
-			       (not (boarded ?q)))
-			   (or (served ?q)
-			       (not (origin ?q ?f))))))
-		    (imply (exists 
-			    (?p - conflict_B)
-			    (or (and (not (served ?p))
-				     (origin ?p ?f))
-				(and (boarded ?p)
-				     (not (destin ?p ?f)))))
-			   (forall 
-			    (?q - conflict_A)
-			    (and (or (destin ?q ?f)
-				     (not (boarded ?q)))
-				 (or (served ?q)
-				     (not (origin ?q ?f))))))
+		     (exists (?p - passenger)
+			     (and (conflict_A ?p)
+				  (or (and (not (served ?p))
+					   (origin ?p ?f))
+				      (and (boarded ?p)
+					   (not (destin ?p ?f))))))
+		     (forall (?q - passenger)
+			     (imply (conflict_B ?q)
+				      (and (or (destin ?q ?f)
+					       (not (boarded ?q)))
+					   (or (served ?q)
+					       (not (origin ?q ?f)))))))
+		    (imply (exists (?p - passenger)
+				   (and (conflict_B ?p)
+					(or (and (not (served ?p))
+						 (origin ?p ?f))
+					    (and (boarded ?p)
+						 (not (destin ?p ?f))))))
+			   (forall (?q - passenger)
+				   (imply (conflict_A ?q)
+					    (and (or (destin ?q ?f)
+						     (not (boarded ?q)))
+						 (or (served ?q)
+						     (not (origin ?q ?f)))))))
 		    (imply 
-                    (exists 
-		     (?p - never_alone)
-		     (or (and (origin ?p ?f)
-			      (not (served ?p)))
-			 (and (boarded ?p)
-			      (not (destin ?p ?f)))))
-		    (exists 
-		     (?q - attendant)
-		     (or (and (boarded ?q) 
-			      (not (destin ?q ?f)))
-			 (and (not (served ?q))
-			      (origin ?q ?f))))) 
-		    (forall 
-		     (?p - going_nonstop) 
-		     (imply (boarded ?p) (destin ?p ?f))) 
-		    (or (forall 
-			 (?p - vip) (served ?p))
+		     (exists (?p - passenger)
+			     (and (never_alone ?p)
+				  (or (and (origin ?p ?f)
+					   (not (served ?p)))
+				      (and (boarded ?p)
+					   (not (destin ?p ?f))))))
+		     (exists (?q - passenger)
+			     (and (attendant ?q)
+				  (or (and (boarded ?q) 
+					   (not (destin ?q ?f)))
+				      (and (not (served ?q))
+					   (origin ?q ?f))))))
+		    (forall (?p - passenger)
+			    (imply (going_nonstop ?p)
+				   (imply (boarded ?p) (destin ?p ?f))))
+
+		    (or (forall (?p - passenger)
+				(imply (vip ?p) (served ?p)))
 			(exists 
-			 (?p - vip)   
-			 (or (origin ?p ?f) (destin ?p ?f))))
-                  (forall 
-		   (?p - passenger) 
-		   (imply 
-		    (no-access ?p ?f) (not (boarded ?p))))) 
+			 (?p - passenger)
+			 (and (vip ?p)
+			      (or (origin ?p ?f) (destin ?p ?f)))))
+		    (forall 
+		     (?p - passenger) 
+		     (imply 
+		      (no-access ?p ?f) (not (boarded ?p))))) 
  :effect (and 
 	  (forall (?p - passenger) 
                   (when (and (boarded ?p) 
@@ -112,8 +114,9 @@
 (:action up
   :parameters (?f1 - floor ?f2 - floor)
   :precondition (and (lift-at ?f1) (above ?f1 ?f2)  
-                     (forall
-		      (?p - going_down) (not (boarded ?p))))
+                     (forall (?p - passenger)
+			     (imply (going_down ?p)
+				      (not (boarded ?p)))))
   :effect (and (lift-at ?f2) (not (lift-at ?f1))))
 
 
@@ -122,10 +125,8 @@
 (:action down
   :parameters (?f1 - floor ?f2 - floor)
   :precondition (and (lift-at ?f1) (above ?f2 ?f1)
-                     (forall
-		      (?p - going_up) (not (boarded ?p))))
+                     (forall (?p - passenger)
+			     (imply (going_up ?p)
+				      (not (boarded ?p)))))
   :effect (and (lift-at ?f2) (not (lift-at ?f1))))
 )
-
-
-

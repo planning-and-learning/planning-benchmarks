@@ -1,5 +1,5 @@
 (define (domain fuel-adl)
-    (:requirements :numeric-fluents :typing :universal-preconditions)
+    (:requirements :numeric-fluents :typing )
 
     (:types
         vehicle location - object

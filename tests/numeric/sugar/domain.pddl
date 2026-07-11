@@ -6,7 +6,7 @@
 ;; "A hybrid LP-RPG heuristic for modelling numeric resource flows in planning."
 ;; Journal of Artificial Intelligence Research 46 (2013): 343-412.
 (define (domain supply-chain)
-	(:requirements :typing :numeric-fluents :equality)
+	(:requirements :typing :numeric-fluents )
 	(:types
 		 sugar location loader - object
 		 brand raw-cane        - sugar

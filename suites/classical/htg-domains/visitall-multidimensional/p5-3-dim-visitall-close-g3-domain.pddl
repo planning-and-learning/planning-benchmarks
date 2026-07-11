@@ -1,6 +1,6 @@
 
 (define (domain visitall-3-dim)
-(:requirements :strips :equality :typing)
+(:requirements :strips  :typing)
 (:types        pos - object)
 (:predicates 
 	     (at-robot ?x0 ?x1 ?x2 - pos)

@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from pypddl.formalism import Parser
+from pypddl.formalism import Parser, ParserOptions
 
 
 DECLARATION = re.compile(r"\(\s*define\s*\(\s*(domain|problem)\s+([^\s()]+)", re.IGNORECASE)
@@ -91,7 +91,7 @@ def log_progress(kind: str, checked: int, total: int, errors: int, force: bool =
         print(f"[validate] {kind}: {checked}/{total} checked ({errors} errors)", flush=True)
 
 
-def validate(root: Path, error_limit: int | None) -> Record:
+def validate(root: Path, error_limit: int | None, strict: bool = False) -> Record:
     paths = sorted(path for path in root.rglob("*") if path.is_file() and path.suffix.lower() == ".pddl")
     records = [classify(path, root) for path in paths]
     path_by_name = {record["path"]: root / record["path"] for record in records}
@@ -110,6 +110,8 @@ def validate(root: Path, error_limit: int | None) -> Record:
     terminated_early = False
     valid_domains = set()
     domains_by_directory = {}
+    parser_options = ParserOptions()
+    parser_options.strict = strict
 
     for record in unknown:
         set_error(record, "ClassificationError", "missing '(define (domain ...)' or '(define (problem ...)' declaration")
@@ -124,7 +126,7 @@ def validate(root: Path, error_limit: int | None) -> Record:
             domains_by_directory.setdefault(path.parent, []).append((path, record["name"]))
             checked_domains += 1
             try:
-                Parser(path)
+                Parser(path, parser_options)
                 record["status"] = "ok"
                 valid_domains.add(path)
             except Exception as error:
@@ -157,7 +159,7 @@ def validate(root: Path, error_limit: int | None) -> Record:
                 else:
                     record["domain_file"] = domain_path.relative_to(root).as_posix()
                     try:
-                        Parser(domain_path).parse_task(problem_path)
+                        Parser(domain_path, parser_options).parse_task(problem_path)
                         record["status"] = "ok"
                     except Exception as error:
                         set_error(record, type(error).__name__, str(error))
@@ -176,6 +178,7 @@ def validate(root: Path, error_limit: int | None) -> Record:
     return {
         "root": str(root),
         "error_limit": error_limit,
+        "strict": strict,
         "terminated_early": terminated_early,
         "summary": {
             "files": len(records),
@@ -199,6 +202,7 @@ def split_report(report: Record) -> tuple[Record, Record]:
     metadata: Record = {
         "root": report["root"],
         "error_limit": report["error_limit"],
+        "strict": report["strict"],
         "terminated_early": report["terminated_early"],
         "summary": report["summary"],
     }
@@ -219,6 +223,7 @@ def main() -> int:
     parser.add_argument("--success-output", type=Path, help="Success report path (default: <root>/validate.sucess.json).")
     parser.add_argument("--error-output", type=Path, help="Error report path (default: <root>/validate.error.json).")
     parser.add_argument("--limit", type=positive_int, help="Stop after this many errors.")
+    parser.add_argument("--strict", action="store_true", help="Enable strict semantic PDDL validation.")
     args = parser.parse_args()
 
     root: Path = args.root.resolve()
@@ -226,7 +231,7 @@ def main() -> int:
         parser.error(f"root is not a directory: {root}")
     success_output: Path = args.success_output.resolve() if args.success_output else root / "validate.sucess.json"
     error_output: Path = args.error_output.resolve() if args.error_output else root / "validate.error.json"
-    report = validate(root, args.limit)
+    report = validate(root, args.limit, args.strict)
     success_report, error_report = split_report(report)
     for output, contents in [(success_output, success_report), (error_output, error_report)]:
         output.parent.mkdir(parents=True, exist_ok=True)

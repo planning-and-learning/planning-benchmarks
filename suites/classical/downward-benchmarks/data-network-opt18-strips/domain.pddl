@@ -17,7 +17,7 @@
 ;;         - sending data, which depends on the data size and (bandwidth of a) connection, and
 ;;         - processing data, which depends on the script and (clock rate and numbers of processors of a) server.
 (define (domain data-network)
-(:requirements :adl :typing :negative-preconditions :equality :action-costs)
+(:requirements :adl :typing :negative-preconditions  :action-costs)
 (:types
     data script server numbers
 )

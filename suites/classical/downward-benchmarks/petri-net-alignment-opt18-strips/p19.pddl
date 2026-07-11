@@ -1,5 +1,6 @@
 (define (problem align)
 (:domain petri-net-alignment)
+(:requirements :negative-preconditions)
 (:init
     (tracepointer ev1)
     (allowed)

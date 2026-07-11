@@ -1,9 +1,9 @@
 (define (domain Cut_Tree_Hard)
-(:requirements :typing :fluents :negative-preconditions :universal-preconditions :existential-preconditions :disjunctive-preconditions)
+(:requirements :typing :fluents :negative-preconditions :existential-preconditions :disjunctive-preconditions)
 (:types
 	locatable - object
 	agent block item - locatable
-	bedrock destructible-block - block
+	bedrock destructible-block air-block - block
 	planks grass cobblestone_stairs wheat_seeds gravel fence oak_door grass_block ladder water dirt log flower chest cobblestone leaves grass_path glass torch farmland - item
 	planks-block grass-block cobblestone_stairs-block wheat_seeds-block gravel-block fence-block oak_door-block grass_block-block ladder-block water-block dirt-block log-block flower-block chest-block cobblestone-block leaves-block grass_path-block glass-block torch-block farmland-block - destructible-block
 )

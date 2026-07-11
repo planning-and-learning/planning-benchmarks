@@ -4,7 +4,7 @@
 		beluga - location
 		hangar - location
 		jig - location
-		;location -         object
+		location -         object
 		num - object
 		production-line - object
 		rack - location

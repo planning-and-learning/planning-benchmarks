@@ -1,5 +1,6 @@
 (define (problem fuel-all)
     (:domain fuel-adl)
+(:requirements :universal-preconditions)
 
     (:objects
         v1 v2 v3 - vehicle

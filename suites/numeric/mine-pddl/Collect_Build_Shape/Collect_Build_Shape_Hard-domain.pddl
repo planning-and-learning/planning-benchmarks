@@ -1,5 +1,5 @@
 (define (domain Collect_Build_Shape_Hard)
-(:requirements :typing :fluents :negative-preconditions :universal-preconditions :existential-preconditions :disjunctive-preconditions)
+(:requirements :typing :fluents :negative-preconditions  :existential-preconditions :disjunctive-preconditions)
 (:types
 	locatable - object
 	agent block item - locatable

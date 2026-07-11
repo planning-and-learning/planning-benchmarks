@@ -1,5 +1,5 @@
 (define (domain Place_Wood_Medium)
-(:requirements :typing :fluents :negative-preconditions :universal-preconditions :existential-preconditions :disjunctive-preconditions)
+(:requirements :typing :fluents :negative-preconditions  :existential-preconditions :disjunctive-preconditions)
 (:types
 	locatable - object
 	agent block item - locatable

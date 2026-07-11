@@ -1,5 +1,5 @@
 (define (domain Collect_Build_Shape_Medium)
-(:requirements :typing :negative-preconditions :universal-preconditions :existential-preconditions :disjunctive-preconditions)
+(:requirements :typing :negative-preconditions  :existential-preconditions :disjunctive-preconditions)
 (:types
 	locatable int - object
 	agent block item - locatable

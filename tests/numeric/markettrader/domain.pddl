@@ -9,7 +9,8 @@
 (define (domain Trader)
 (:requirements :typing :numeric-fluents)
 (:types market - place
-	camel goods - locatable)
+	camel goods - locatable
+	place locatable)
 
 (:predicates (at ?t - camel ?p - place) (can-drive ?from - place ?to - place))
 

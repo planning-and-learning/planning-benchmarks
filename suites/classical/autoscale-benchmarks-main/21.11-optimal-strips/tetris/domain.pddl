@@ -5,7 +5,7 @@
 (:requirements :typing :equality :negative-preconditions :action-costs)
   (:types  
 	one_square two_straight right_l - pieces
-	position 	
+	position pieces
 	)
 
   (:predicates

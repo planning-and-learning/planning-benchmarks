@@ -2,7 +2,7 @@
 
 (define (problem ferry-100)
  (:domain ferry)
- (:requirements :typing :strips :negative-preconditions)
+ (:requirements :typing :strips )
  (:objects
     car1 car2 - car
     loc1 loc3 - location
