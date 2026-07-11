@@ -1,0 +1,34 @@
+name: release build
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install build tool
+        run: pip install build
+      - name: Dry-run data packaging
+        run: python scripts/package_data.py --dry-run
+      - name: Package one collection (no LFS content needed)
+        run: python scripts/package_data.py --only classical/tests --output dist-data
+      - name: Build distributions
+        run: python -m build
+      - name: Check wheel contains no benchmark data
+        run: |
+          python - <<'EOF'
+          import glob, zipfile
+          wheel = glob.glob("dist/*.whl")[0]
+          names = zipfile.ZipFile(wheel).namelist()
+          bad = [n for n in names if n.endswith(".pddl") and "/generators/" not in n]
+          assert not bad, bad
+          print(f"{wheel}: {len(names)} files, no benchmark data")
+          EOF
