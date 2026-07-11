@@ -149,15 +149,14 @@ def test_fetch_suite_test_entries_are_single_task_domains(local_data):
         assert fetched.tasks[0].task_path.is_file()
 
 
-def test_suite_lab_export(local_data):
-    lab_tasks = pypddl_datasets.fetch_suite("htg-test").lab()
-    assert len(lab_tasks) == len(SUITES["htg-test"])
-    labyrinth = next(t for t in lab_tasks if t.domain == "classical/htg-domains/labyrinth")
-    assert Path(labyrinth.problem_file).is_file()
-    assert Path(labyrinth.domain_file).is_file()
-    # per-instance domain files survive the export
-    ged = next(t for t in lab_tasks if t.domain == "classical/htg-domains/genome-edit-distance")
-    assert Path(ged.domain_file).name.endswith("-domain.pddl")
+def test_task_display_names(local_data):
+    tasks = [t for d in pypddl_datasets.fetch_suite("htg-test").domains for t in d.tasks]
+    assert len(tasks) == len(SUITES["htg-test"])
+    labyrinth = next(t for t in tasks if t.domain == "classical/htg-domains/labyrinth")
+    assert labyrinth.problem == labyrinth.task_path.name
+    nested = pypddl_datasets.fetch_task("numeric/ipc2026/2048/pfile10.pddl")
+    assert nested.domain == "numeric/ipc2026/2048"
+    assert nested.problem == "instances/pfile10.pddl"
 
 
 def test_export_suite_materializes_tree(local_data, tmp_path):

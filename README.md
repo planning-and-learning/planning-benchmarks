@@ -19,6 +19,7 @@ pb.list_suites()          # ['autoscale-agile-strips', ..., 'ipc-optimal-strips'
 task = pb.fetch_task("classical/tests/gripper/test-1.pddl")
 task.domain_path          # .../gripper/domain.pddl   (correct also where instances
 task.task_path            # .../gripper/test-1.pddl    carry their own domain files)
+task.domain, task.problem # "classical/tests/gripper", "test-1.pddl" — display names
 
 domain = pb.fetch_domain("classical/downward-benchmarks/gripper")
 domain.path               # the domain directory

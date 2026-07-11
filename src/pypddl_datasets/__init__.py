@@ -12,7 +12,6 @@ import re
 import shutil
 from importlib import resources
 from pathlib import Path
-from typing import NamedTuple
 
 import pooch
 
@@ -34,13 +33,24 @@ with resources.as_file(resources.files(__package__) / "registry.txt") as _regist
 
 
 class Task:
-    """A single planning task of a domain: the domain directory it belongs
-    to, its domain file, and its problem file."""
+    """A single planning task of a domain: display names (domain, problem),
+    the domain directory it belongs to, its domain file, and its problem
+    file."""
 
-    def __init__(self, path: Path, domain_path: Path, task_path: Path) -> None:
+    def __init__(self, domain: str, problem: str, path: Path, domain_path: Path, task_path: Path) -> None:
+        self._domain = domain
+        self._problem = problem
         self._path = path
         self._domain_path = domain_path
         self._task_path = task_path
+
+    @property
+    def domain(self) -> str:
+        return self._domain
+
+    @property
+    def problem(self) -> str:
+        return self._problem
 
     @property
     def path(self) -> Path:
@@ -55,7 +65,7 @@ class Task:
         return self._task_path
 
     def __repr__(self) -> str:
-        return f"Task(path={self._path!r}, domain_path={self._domain_path!r}, task_path={self._task_path!r})"
+        return f"Task(domain={self._domain!r}, problem={self._problem!r})"
 
 
 class Domain:
@@ -79,16 +89,6 @@ class Domain:
         return f"Domain(path={self._path!r}, tasks={self._tasks!r})"
 
 
-class LabTask(NamedTuple):
-    """The attributes a downward-lab experiment reads off a task
-    (lab itself is not a dependency)."""
-
-    domain: str
-    problem: str
-    domain_file: Path
-    problem_file: Path
-
-
 class Suite:
     """A named benchmark suite: the root directory its domains live under
     and the fetched domains themselves."""
@@ -104,21 +104,6 @@ class Suite:
     @property
     def domains(self) -> list[Domain]:
         return self._domains
-
-    def lab(self) -> list[LabTask]:
-        """This suite as a flat list of tasks the way a downward-lab
-        experiment consumes them. Domain display names follow the suite
-        entry layout, e.g. "classical/htg-domains/labyrinth"."""
-        return [
-            LabTask(
-                domain=domain.path.relative_to(self._path).as_posix().replace("--", "/"),
-                problem=task.task_path.relative_to(domain.path).as_posix(),
-                domain_file=task.domain_path,
-                problem_file=task.task_path,
-            )
-            for domain in self._domains
-            for task in domain.tasks
-        ]
 
     def __repr__(self) -> str:
         return f"Suite(path={self._path!r}, domains={self._domains!r})"
@@ -138,7 +123,7 @@ def fetch_domain(name: str) -> Domain:
     """Fetch a domain such as "classical/downward-benchmarks/gripper",
     downloading it if necessary."""
     directory = _fetch_directory(name)
-    return Domain(directory, _pair_tasks(directory))
+    return Domain(directory, _pair_tasks(name, directory))
 
 
 def fetch_task(name: str) -> Task:
@@ -147,9 +132,8 @@ def fetch_task(name: str) -> Task:
     domain and task file is unambiguous because domains are never nested."""
     domain, task = _split_task_name(name)
     directory = _fetch_directory(domain)
-    for candidate in _pair_tasks(directory):
-        relative = candidate.task_path.relative_to(directory).as_posix()
-        if task in (relative, candidate.task_path.name):
+    for candidate in _pair_tasks(domain, directory):
+        if task in (candidate.problem, candidate.task_path.name):
             return candidate
     raise KeyError(f"no task {task!r} in domain {domain!r}")
 
@@ -245,7 +229,7 @@ def _declaration(path: Path) -> tuple[str, str] | None:
     return (match.group(1).lower(), match.group(2)) if match else None
 
 
-def _pair_tasks(directory: Path) -> list[Task]:
+def _pair_tasks(domain: str, directory: Path) -> list[Task]:
     domain_files: dict[Path, str] = {}
     problem_files: list[Path] = []
     for path in sorted(directory.rglob("*.pddl")):
@@ -258,7 +242,13 @@ def _pair_tasks(directory: Path) -> list[Task]:
         else:
             problem_files.append(path)
     return [
-        Task(directory, _resolve_domain(problem, domain_files, directory), problem)
+        Task(
+            domain,
+            problem.relative_to(directory).as_posix(),
+            directory,
+            _resolve_domain(problem, domain_files, directory),
+            problem,
+        )
         for problem in problem_files
     ]
 
