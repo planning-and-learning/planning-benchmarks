@@ -140,9 +140,10 @@ def test_fetch_task_accepts_bare_name_and_rejects_unknown(local_data):
 
 
 def test_fetch_suite_test_entries_are_single_task_domains(local_data):
-    domains = pypddl_datasets.fetch_suite("pushworld-test")
-    assert len(domains) == len(SUITES["pushworld-test"])
-    for fetched in domains:
+    suite = pypddl_datasets.fetch_suite("pushworld-test")
+    assert suite.path == DATA_ROOT
+    assert len(suite.domains) == len(SUITES["pushworld-test"])
+    for fetched in suite.domains:
         assert len(fetched.tasks) == 1
         assert fetched.tasks[0].domain_path.is_file()
         assert fetched.tasks[0].task_path.is_file()

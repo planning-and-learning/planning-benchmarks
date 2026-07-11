@@ -78,6 +78,26 @@ class Domain:
         return f"Domain(path={self._path!r}, tasks={self._tasks!r})"
 
 
+class Suite:
+    """A named benchmark suite: the root directory its domains live under
+    and the fetched domains themselves."""
+
+    def __init__(self, path: Path, domains: list[Domain]) -> None:
+        self._path = path
+        self._domains = domains
+
+    @property
+    def path(self) -> Path:
+        return self._path
+
+    @property
+    def domains(self) -> list[Domain]:
+        return self._domains
+
+    def __repr__(self) -> str:
+        return f"Suite(path={self._path!r}, domains={self._domains!r})"
+
+
 def list_suites() -> list[str]:
     """Names accepted by fetch_suite()."""
     return sorted(SUITES)
@@ -108,7 +128,7 @@ def fetch_task(name: str) -> Task:
     raise KeyError(f"no task {task!r} in domain {domain!r}")
 
 
-def fetch_suite(suite: str) -> list[Domain]:
+def fetch_suite(suite: str) -> Suite:
     """Fetch all entries of a named suite; see list_suites(). A plain domain
     entry yields the whole domain; a "<domain>:<instance>" entry (as used by
     the "-test" suites) yields a Domain restricted to that single task."""
@@ -122,7 +142,7 @@ def fetch_suite(suite: str) -> list[Domain]:
             domains.append(Domain(task.path, [task]))
         else:
             domains.append(fetch_domain(name))
-    return domains
+    return Suite(_data_root(), domains)
 
 
 def export_suite(suite: str, dest: str | Path) -> list[Path]:
@@ -137,6 +157,12 @@ def export_suite(suite: str, dest: str | Path) -> list[Path]:
         shutil.copytree(_fetch_directory(name), target, dirs_exist_ok=True)
         paths.append(target)
     return paths
+
+
+def _data_root() -> Path:
+    """The root directory fetched domains live under."""
+    local_root = os.environ.get("PYPDDL_DATASETS_DATA")
+    return Path(local_root) if local_root else Path(_POOCH.abspath)
 
 
 def _split_task_name(name: str) -> tuple[str, str]:

@@ -24,7 +24,8 @@ domain = pb.fetch_domain("classical/downward-benchmarks/gripper")
 domain.path               # the domain directory
 domain.tasks              # list[Task], downloaded once and cached
 
-for domain in pb.fetch_suite("ipc-optimal-strips"):
+suite = pb.fetch_suite("ipc-optimal-strips")   # Suite(path, domains)
+for domain in suite.domains:
     for task in domain.tasks:
         run_planner(task.domain_path, task.task_path)
 ```
