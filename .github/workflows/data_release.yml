@@ -21,7 +21,8 @@ jobs:
       - name: Install pypddl
         run: pip install pypddl
       - name: Validate all PDDL
-        run: python validate.py --root data
+        # reports must not land inside data/ (they would end up in the archive)
+        run: python validate.py --root data --success-output /tmp/validate.success.json --error-output /tmp/validate.error.json
       - name: Package data
         # prints the archive sha256 -> pin it as DATA_SHA256 in the package
         run: python scripts/package_data.py --output dist-data/data.tar.gz

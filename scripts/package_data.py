@@ -37,21 +37,23 @@ def assert_no_lfs_pointers(data_root: Path) -> None:
                     raise SystemExit(f"LFS pointer file at {path}; run 'git lfs pull' first")
 
 
-def write_archive(data_root: Path, tar_path: Path) -> None:
+def write_archive(data_root: Path, domains: list[Path], tar_path: Path) -> None:
     """Byte-reproducible tar.gz (fixed metadata, no gzip timestamp): re-running
-    produces identical bytes, so the pinned sha256 stays valid."""
+    produces identical bytes, so the pinned sha256 stays valid. Only files
+    inside domain directories are included, so stray files under the data
+    root (e.g. tool outputs) can never leak into the archive."""
+    files = sorted(path for domain in domains for path in domain.rglob("*") if path.is_file())
     with open(tar_path, "wb") as out:
         with gzip.GzipFile(filename="", fileobj=out, mode="wb", mtime=0) as stream:
             with tarfile.open(fileobj=stream, mode="w") as tar:
-                for path in sorted(data_root.rglob("*")):
-                    if path.is_file():
-                        info = tar.gettarinfo(path, arcname=path.relative_to(data_root).as_posix())
-                        info.uid = info.gid = 0
-                        info.uname = info.gname = ""
-                        info.mtime = 0
-                        info.mode = 0o644
-                        with path.open("rb") as source:
-                            tar.addfile(info, source)
+                for path in files:
+                    info = tar.gettarinfo(path, arcname=path.relative_to(data_root).as_posix())
+                    info.uid = info.gid = 0
+                    info.uname = info.gname = ""
+                    info.mtime = 0
+                    info.mode = 0o644
+                    with path.open("rb") as source:
+                        tar.addfile(info, source)
 
 
 def main() -> int:
@@ -72,7 +74,7 @@ def main() -> int:
 
     assert_no_lfs_pointers(args.data_root)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    write_archive(args.data_root, args.output)
+    write_archive(args.data_root, domains, args.output)
     digest = hashlib.sha256(args.output.read_bytes()).hexdigest()
     print(f"[package-data] {args.output} ({args.output.stat().st_size} bytes, {len(domains)} domains)")
     print(f"[package-data] sha256: {digest}")

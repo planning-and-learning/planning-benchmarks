@@ -24,8 +24,8 @@ __version__ = "0.0.1"
 # The pinned data release: updated when a new data-v* release is cut
 # (its workflow prints the archive's sha256). Empty sha256 = development
 # build without a pinned release; only PYPDDL_DATASETS_DATA works then.
-DATA_VERSION = "data-v1"
-DATA_SHA256 = "6e65e10c92bede60ab35def3329abb932f89ce6be9c28b19bdef6cd6186e401a"
+DATA_VERSION = "data-v0.0.1"
+DATA_SHA256 = "0df3275480778699e8f8d9dcedc9e0384b0cc1e9a235c87fa3794c2376fd9f16"
 
 _ARCHIVE = "data.tar.gz"  # single asset on the data release
 
