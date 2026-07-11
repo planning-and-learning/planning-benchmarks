@@ -89,16 +89,16 @@ def test_package_and_fetch_round_trip(tmp_path):
         assert (fetched / f.name).read_bytes() == f.read_bytes()
 
 
-def test_fetch_domain_rejects_unknown_name():
+@pytest.fixture
+def local_data(monkeypatch):
+    monkeypatch.setenv("PYPDDL_DATASETS_DATA", str(DATA_ROOT))
+
+
+def test_fetch_domain_rejects_unknown_name(local_data):
     with pytest.raises(KeyError):
         pypddl_datasets.fetch_domain("classical/no-such-collection/no-such-domain")
     with pytest.raises(KeyError):
         pypddl_datasets.fetch_suite("no-such-suite")
-
-
-@pytest.fixture
-def local_data(monkeypatch):
-    monkeypatch.setenv("PYPDDL_DATASETS_DATA", str(DATA_ROOT))
 
 
 def test_fetch_domain_local_data_override(local_data):
