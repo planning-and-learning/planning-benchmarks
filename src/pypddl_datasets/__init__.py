@@ -12,6 +12,7 @@ import re
 import shutil
 from importlib import resources
 from pathlib import Path
+from typing import NamedTuple
 
 import pooch
 
@@ -78,6 +79,16 @@ class Domain:
         return f"Domain(path={self._path!r}, tasks={self._tasks!r})"
 
 
+class LabTask(NamedTuple):
+    """The attributes a downward-lab experiment reads off a task
+    (lab itself is not a dependency)."""
+
+    domain: str
+    problem: str
+    domain_file: Path
+    problem_file: Path
+
+
 class Suite:
     """A named benchmark suite: the root directory its domains live under
     and the fetched domains themselves."""
@@ -93,6 +104,21 @@ class Suite:
     @property
     def domains(self) -> list[Domain]:
         return self._domains
+
+    def lab(self) -> list[LabTask]:
+        """This suite as a flat list of tasks the way a downward-lab
+        experiment consumes them. Domain display names follow the suite
+        entry layout, e.g. "classical/htg-domains/labyrinth"."""
+        return [
+            LabTask(
+                domain=domain.path.relative_to(self._path).as_posix().replace("--", "/"),
+                problem=task.task_path.relative_to(domain.path).as_posix(),
+                domain_file=task.domain_path,
+                problem_file=task.task_path,
+            )
+            for domain in self._domains
+            for task in domain.tasks
+        ]
 
     def __repr__(self) -> str:
         return f"Suite(path={self._path!r}, domains={self._domains!r})"
