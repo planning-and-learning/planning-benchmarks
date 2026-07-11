@@ -5,7 +5,11 @@ Install Git LFS, then clone the repository:
 ```sh
 git lfs install
 git clone git@github.com:planning-and-learning/planning-benchmarks.git
+cd planning-benchmarks
+git lfs pull
 ```
+
+`git lfs pull` replaces all LFS pointer files with the complete benchmark files.
 
 # Add large PDDL files
 
