@@ -16,7 +16,6 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest"]
-validate = ["pypddl>=1.0.19"]
 
 [project.urls]
 Homepage = "https://github.com/planning-and-learning/planning-benchmarks"
