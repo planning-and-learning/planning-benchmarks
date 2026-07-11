@@ -1,8 +1,10 @@
 """Download and cache the planning-benchmarks PDDL suites.
 
-Data is not shipped with this package; each domain is downloaded on first use
-from the matching GitHub release and cached locally (override the cache
-location with the PYPDDL_DATASETS_CACHE environment variable).
+Data is not shipped with this package: the first fetch downloads the pinned
+data release (one archive) and unpacks it into the local cache; every later
+call reuses that extraction. Override the cache location with the
+PYPDDL_DATASETS_CACHE environment variable, or point PYPDDL_DATASETS_DATA at
+a local checkout's data/ directory to use it directly (no download).
 """
 
 from __future__ import annotations
@@ -10,7 +12,6 @@ from __future__ import annotations
 import os
 import re
 import shutil
-from importlib import resources
 from pathlib import Path
 
 import pooch
@@ -19,17 +20,21 @@ from .suites import SUITES
 
 __version__ = "0.0.1"
 
-_ARCHIVE_SUFFIX = ".tar.gz"
+# The pinned data release: updated when a new data-v* release is cut
+# (its workflow prints the archive's sha256). Empty sha256 = development
+# build without a pinned release; only PYPDDL_DATASETS_DATA works then.
+DATA_VERSION = "data-v1"
+DATA_SHA256 = ""
+
+_ARCHIVE = "data.tar.gz"  # single asset on the data release
+
+_CACHE = Path(os.environ.get("PYPDDL_DATASETS_CACHE", pooch.os_cache("pypddl-datasets"))) / DATA_VERSION
 
 _POOCH = pooch.create(
-    path=pooch.os_cache("pypddl-datasets"),
-    base_url="https://github.com/planning-and-learning/planning-benchmarks/releases/download/v{version}/",
-    version=__version__,
-    registry=None,
-    env="PYPDDL_DATASETS_CACHE",
+    path=_CACHE,
+    base_url=f"https://github.com/planning-and-learning/planning-benchmarks/releases/download/{DATA_VERSION}/",
+    registry={_ARCHIVE: f"sha256:{DATA_SHA256}"},
 )
-with resources.as_file(resources.files(__package__) / "registry.txt") as _registry:
-    _POOCH.load_registry(_registry)
 
 
 class Task:
@@ -115,8 +120,22 @@ def list_suites() -> list[str]:
 
 
 def list_domains() -> list[str]:
-    """Domain names accepted by fetch_domain() and fetch_task()."""
-    return sorted(name[: -len(_ARCHIVE_SUFFIX)].replace("--", "/") for name in _POOCH.registry)
+    """Domain names accepted by fetch_domain() and fetch_task(); triggers the
+    one-time data download when no local data is configured. A domain is a
+    maximal directory containing .pddl files directly."""
+    root = _data_root()
+    domains: list[str] = []
+
+    def walk(directory: Path) -> None:
+        if any(child.suffix == ".pddl" for child in directory.iterdir() if child.is_file()):
+            domains.append(directory.relative_to(root).as_posix())
+            return
+        for child in directory.iterdir():
+            if child.is_dir():
+                walk(child)
+
+    walk(root)
+    return sorted(domains)
 
 
 def fetch_domain(name: str) -> Domain:
@@ -169,58 +188,44 @@ def export_suite(suite: str, dest: str | Path) -> list[Path]:
     return paths
 
 
-def _require_registry() -> None:
-    if not _POOCH.registry:
+def _data_root() -> Path:
+    """The root directory the data lives under, downloading and unpacking the
+    pinned data release once if necessary.
+
+    If PYPDDL_DATASETS_DATA is set (e.g. to a local checkout's data/ dir on
+    machines without internet access), it is used directly instead."""
+    local_root = os.environ.get("PYPDDL_DATASETS_DATA")
+    if local_root:
+        return Path(local_root)
+    if not DATA_SHA256:
         raise KeyError(
-            "this pypddl-datasets build has an empty registry (it is only filled at "
-            "release time); set PYPDDL_DATASETS_DATA to a local checkout's data/ "
+            "this pypddl-datasets build has no pinned data release (development "
+            "build); set PYPDDL_DATASETS_DATA to a local checkout's data/ "
             "directory or install a released version"
         )
-
-
-def _data_root() -> Path:
-    """The root directory fetched domains live under."""
-    local_root = os.environ.get("PYPDDL_DATASETS_DATA")
-    return Path(local_root) if local_root else Path(_POOCH.abspath)
+    _POOCH.fetch(_ARCHIVE, processor=pooch.Untar(extract_dir="data"))
+    return _CACHE / "data"
 
 
 def _split_task_name(name: str) -> tuple[str, str]:
     """Split "classical/tests/gripper/test-1.pddl" into domain and task part.
     Unique because domain directories are maximal (never nested)."""
+    root = _data_root()
     parts = name.split("/")
-    local_root = os.environ.get("PYPDDL_DATASETS_DATA")
-    if not local_root:
-        _require_registry()
     for index in range(1, len(parts)):
         domain = "/".join(parts[:index])
-        if local_root:
-            directory = Path(local_root) / domain
-            if directory.is_dir() and any(directory.glob("*.pddl")):
-                return domain, "/".join(parts[index:])
-        elif domain.replace("/", "--") + _ARCHIVE_SUFFIX in _POOCH.registry:
+        directory = root / domain
+        if directory.is_dir() and any(directory.glob("*.pddl")):
             return domain, "/".join(parts[index:])
     raise KeyError(f"no domain found in task name {name!r}; see list_domains()")
 
 
 def _fetch_directory(name: str) -> Path:
-    """The local directory of a domain, downloaded if necessary.
-
-    If PYPDDL_DATASETS_DATA is set (e.g. to a local checkout's data/ dir on
-    machines without internet access), domains are resolved there instead
-    and nothing is downloaded."""
-    local_root = os.environ.get("PYPDDL_DATASETS_DATA")
-    if local_root:
-        path = Path(local_root) / name
-        if not path.is_dir():
-            raise KeyError(f"domain {name!r} not found under PYPDDL_DATASETS_DATA={local_root}")
-        return path
-    _require_registry()
-    stem = name.replace("/", "--")
-    archive = stem + _ARCHIVE_SUFFIX
-    if archive not in _POOCH.registry:
+    """The local directory of a domain, downloading the data if necessary."""
+    path = _data_root() / name
+    if not path.is_dir() or not any(path.glob("*.pddl")):
         raise KeyError(f"unknown domain {name!r}; see list_domains()")
-    _POOCH.fetch(archive, processor=pooch.Untar(extract_dir=stem))
-    return Path(_POOCH.abspath) / stem
+    return path
 
 
 # Domain/problem pairing, following the same rules as the repository's validate.py.

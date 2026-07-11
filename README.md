@@ -47,22 +47,33 @@ and domains resolve there without downloading.
 - `src/pypddl_datasets/` — the package: fetch API, suite definitions, and the
   instance generators (including the train/valid/test split configurations).
 - `data/` — all benchmark data, organized as `<formalism>/<collection>/<domain>`
-  (`classical/`, `numeric/`). Not shipped in the package;
-  released as per-domain tarballs.
+  (`classical/`, `numeric/`). Not shipped in the package; released as a single
+  archive on `data-v*` GitHub releases, downloaded and unpacked once per
+  machine on first use.
 - `data/classical/generated/<domain>-{train,valid,test}/` — fixed learning
   splits produced by the generators. These committed instances are the
   reproducibility contract; regenerate with
   `python -m pypddl_datasets.generators.classical.<domain>.generate_instances`.
-- `scripts/package_data.py` — turns `data/` into release tarballs + registry.
+- `scripts/package_data.py` — turns `data/` into the byte-reproducible
+  `data.tar.gz` release archive.
 - `validate.py` — parses every domain/problem with pypddl; must pass for a
-  release to go out.
+  data release to go out.
 
 ## Releasing
 
-Bump `version` in `pyproject.toml`, tag `v<version>`, and push the tag. The
-release workflow validates all PDDL, uploads per-domain tarballs to a GitHub
-release, and publishes the package to PyPI — in that order, so a validation
-failure stops anything from being published.
+Data and package releases are decoupled; data releases are permanent
+(published package versions pin them by tag).
+
+1. **Data changed?** Tag and push `data-v<N>`. The workflow validates all
+   PDDL (aborting the release on failure), packages `data.tar.gz`, and
+   uploads it to the `data-v<N>` GitHub release. Copy the sha256 it prints
+   into `DATA_SHA256` (and bump `DATA_VERSION`) in
+   `src/pypddl_datasets/__init__.py`.
+2. **Package release:** bump `version` in `pyproject.toml`, tag and push
+   `v<version>`. The workflow verifies the tag matches the version and that
+   the pinned data release exists with the pinned hash, then builds and
+   publishes to PyPI via trusted publishing. No assets are uploaded — code
+   releases cost nothing in storage.
 
 ## Contributing data
 

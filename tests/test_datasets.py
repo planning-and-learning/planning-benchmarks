@@ -11,7 +11,7 @@ import pypddl_datasets
 from pypddl_datasets.suites import SUITES
 
 from conftest import REPO_ROOT
-from package_data import archive_name, discover_domains
+from package_data import discover_domains
 
 DATA_ROOT = REPO_ROOT / "data"
 
@@ -36,14 +36,6 @@ def test_test_suites_select_from_their_base_suite():
                 assert entry.partition(":")[0] in set(base), f"{suite}: {entry}"
 
 
-def test_archive_names_round_trip():
-    for domain in discover_domains(DATA_ROOT):
-        name = archive_name(domain, DATA_ROOT)
-        relative = domain.relative_to(DATA_ROOT).as_posix()
-        assert name[: -len(".tar.gz")].replace("--", "/") == relative
-        assert "--" not in relative, f"'--' in {relative} breaks the / <-> -- mapping"
-
-
 GENERATOR_DOMAINS = sorted(
     p.parent.name
     for p in (REPO_ROOT / "src/pypddl_datasets/generators/classical").glob("*/generate_instances.py")
@@ -63,24 +55,34 @@ def test_regenerated_instance_matches_committed_data():
     assert module.make_problem(num_children, num_trays, gluten_factor, const_ratio, seed) == committed
 
 
-def test_package_and_fetch_round_trip(tmp_path):
-    assets = tmp_path / "assets"
-    subprocess.run(
+def _package(data_root: Path, archive: Path) -> str:
+    """Run package_data.py and return the printed sha256."""
+    result = subprocess.run(
         [sys.executable, str(REPO_ROOT / "scripts/package_data.py"),
-         "--only", "classical/tests/gripper", "--output", str(assets)],
-        check=True,
+         "--data-root", str(data_root), "--output", str(archive)],
+        check=True, capture_output=True, text=True,
     )
+    return result.stdout.rsplit("sha256:", 1)[1].strip()
 
-    downloads = pooch.create(path=tmp_path / "cache", base_url="https://example.invalid/", registry=None)
-    downloads.load_registry(assets / "registry.txt")
-    stem = "classical--tests--gripper"
+
+def test_package_and_fetch_round_trip(tmp_path):
+    archive = tmp_path / "assets" / "data.tar.gz"
+    sha = _package(DATA_ROOT / "classical" / "tests", archive)
+    # byte-reproducible: repackaging yields the identical hash
+    assert _package(DATA_ROOT / "classical" / "tests", tmp_path / "again.tar.gz") == sha
+
+    downloads = pooch.create(
+        path=tmp_path / "cache",
+        base_url="https://example.invalid/",
+        registry={"data.tar.gz": f"sha256:{sha}"},
+    )
     downloads.fetch(
-        stem + ".tar.gz",
-        processor=pooch.Untar(extract_dir=stem),
-        downloader=lambda url, output, _: shutil.copy(assets / Path(url).name, output),
+        "data.tar.gz",
+        processor=pooch.Untar(extract_dir="data"),
+        downloader=lambda url, output, _: shutil.copy(archive, output),
     )
 
-    fetched = Path(downloads.abspath) / stem
+    fetched = tmp_path / "cache" / "data" / "gripper"
     original = DATA_ROOT / "classical/tests/gripper"
     assert {f.name for f in fetched.iterdir()} == {f.name for f in original.iterdir()}
     for f in original.iterdir():

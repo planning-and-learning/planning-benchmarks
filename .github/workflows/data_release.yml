@@ -1,0 +1,35 @@
+name: data release
+
+on:
+  push:
+    tags:
+      - "data-v*"
+
+jobs:
+  release-data:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'planning-and-learning'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          lfs: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install pypddl
+        run: pip install pypddl
+      - name: Validate all PDDL
+        run: python validate.py --root data
+      - name: Package data
+        # prints the archive sha256 -> pin it as DATA_SHA256 in the package
+        run: python scripts/package_data.py --output dist-data/data.tar.gz
+      - name: Create release and upload data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || \
+            gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" \
+              --notes "Benchmark data for pypddl-datasets (pinned via DATA_VERSION=$GITHUB_REF_NAME). Do not delete: published package versions depend on it."
+          gh release upload "$GITHUB_REF_NAME" dist-data/data.tar.gz --clobber

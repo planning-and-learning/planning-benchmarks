@@ -6,17 +6,13 @@ on:
       - "v*"
 
 jobs:
-  # validate and package share one job: a failed validation aborts before any
-  # upload, and the 1.4 GB LFS checkout happens only once per release.
-  release-data:
+  publish:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'planning-and-learning'
     permissions:
-      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v6
-        with:
-          lfs: true
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
@@ -28,66 +24,38 @@ jobs:
             echo "Version mismatch: pyproject.toml=$VERSION tag=$TAG"
             exit 1
           fi
-      - name: Install pypddl
-        run: pip install pypddl
-      - name: Validate all PDDL
-        run: python validate.py --root data
-      - name: Package data into per-domain tarballs
-        run: python scripts/package_data.py --output dist-data
-      - name: Create draft release and upload data
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Check pinned data release
         run: |
-          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || \
-            gh release create "$GITHUB_REF_NAME" --draft --title "$GITHUB_REF_NAME" \
-              --notes "Benchmark data for pypddl-datasets $GITHUB_REF_NAME."
-          gh release upload "$GITHUB_REF_NAME" dist-data/* --clobber
-      - uses: actions/upload-artifact@v5
-        with:
-          name: registry
-          path: dist-data/registry.txt
+          python - <<'EOF'
+          import hashlib, re, urllib.request
+          from pathlib import Path
 
-  publish:
-    needs: release-data
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: write
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.13"
-      - uses: actions/download-artifact@v5
-        with:
-          name: registry
-          path: registry-artifact
-      - name: Inject registry into package
-        run: cp -f registry-artifact/registry.txt src/pypddl_datasets/registry.txt
+          text = Path("src/pypddl_datasets/__init__.py").read_text()
+          version = re.search(r'DATA_VERSION = "([^"]+)"', text).group(1)
+          sha = re.search(r'DATA_SHA256 = "([^"]*)"', text).group(1)
+          assert sha, "DATA_SHA256 is empty: cut a data release and pin it first"
+          url = ("https://github.com/planning-and-learning/planning-benchmarks"
+                 f"/releases/download/{version}/data.tar.gz")
+          digest = hashlib.sha256(urllib.request.urlopen(url).read()).hexdigest()
+          assert digest == sha, f"pinned sha256 {sha} != released {digest}"
+          print(f"data pin OK: {version}")
+          EOF
       - name: Build distributions
         run: |
           pip install build
           python -m build
           find dist -maxdepth 1 -type f
-      - name: Check wheel
+      - name: Check wheel contains no benchmark data
         run: |
           python - <<'EOF'
           import glob, zipfile
           wheel = glob.glob("dist/*.whl")[0]
-          archive = zipfile.ZipFile(wheel)
-          names = archive.namelist()
+          names = zipfile.ZipFile(wheel).namelist()
           bad = [n for n in names if n.endswith(".pddl") and "/generators/" not in n]
           assert not bad, bad
-          registry = next(n for n in names if n.endswith("registry.txt"))
-          entries = [l for l in archive.read(registry).decode().splitlines() if l and not l.startswith("#")]
-          assert entries, "registry.txt is empty"
-          print(f"{wheel}: {len(entries)} registry entries, no benchmark data")
+          print(f"{wheel}: {len(names)} files, no benchmark data")
           EOF
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist
-      - name: Publish GitHub release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh release edit "$GITHUB_REF_NAME" --draft=false

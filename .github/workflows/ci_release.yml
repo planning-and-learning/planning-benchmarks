@@ -18,8 +18,8 @@ jobs:
         run: pip install build
       - name: Dry-run data packaging
         run: python scripts/package_data.py --dry-run
-      - name: Package one collection (no LFS content needed)
-        run: python scripts/package_data.py --only classical/tests --output dist-data
+      - name: Package a small subset (no LFS content needed)
+        run: python scripts/package_data.py --data-root data/classical/tests --output dist-data/data.tar.gz
       - name: Build distributions
         run: python -m build
       - name: Check wheel contains no benchmark data
