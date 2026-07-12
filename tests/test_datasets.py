@@ -206,6 +206,20 @@ def test_requirement_queries():
         pypddl_datasets.find_domains(supported=[":stripss"])
 
 
+def test_task_requirements():
+    R = pypddl_datasets.Requirement
+    assert pypddl_datasets.task_requirements("classical/tests/gripper/test-1.pddl") == {R.STRIPS}
+    # per-task precision: the positional GED encoding declares :adl, original does not
+    assert R.ADL in pypddl_datasets.task_requirements(
+        "classical/htg-domains/genome-edit-distance/d-1-2-positional.pddl")
+    assert R.ADL not in pypddl_datasets.task_requirements(
+        "classical/htg-domains/genome-edit-distance/d-1-2-original.pddl")
+    # bare-name lookup for nested layouts, KeyError on unknown
+    assert pypddl_datasets.task_requirements("numeric/ipc2026/2048/pfile10.pddl")
+    with pytest.raises(KeyError):
+        pypddl_datasets.task_requirements("classical/tests/gripper/no-such.pddl")
+
+
 def test_find_tasks_and_per_task_overrides():
     R = pypddl_datasets.Requirement
     # genome-edit-distance mixes encodings: only the positional tasks declare :adl

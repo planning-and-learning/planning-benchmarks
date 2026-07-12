@@ -46,7 +46,8 @@ from pypddl_datasets import Requirement as R
 
 SUPPORTED = {R.STRIPS, R.TYPING, R.ACTION_COSTS, R.NEGATIVE_PRECONDITIONS}
 
-pb.domain_requirements("classical/tests/gripper")     # frozenset({R.STRIPS})
+pb.task_requirements("classical/tests/gripper/test-1.pddl")  # frozenset({R.STRIPS})
+pb.domain_requirements("classical/tests/gripper")     # union over the domain's tasks
 pb.find_tasks(requires={R.CONDITIONAL_EFFECTS})       # task names, per-task precision
 pb.find_domains(suite="ipc-satisficing-strips", supported=SUPPORTED)
 pb.find_suites(supported=SUPPORTED)                   # suites runnable in full

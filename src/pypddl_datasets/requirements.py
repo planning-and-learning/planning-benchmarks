@@ -117,6 +117,25 @@ def domain_requirements(name: str) -> frozenset[Requirement]:
     return frozenset(Requirement(value) for value in _domain_entry(name))
 
 
+def task_requirements(name: str) -> frozenset[Requirement]:
+    """The requirements of one task: its own declarations plus its specific
+    domain file's, e.g. task_requirements("classical/tests/gripper/test-1.pddl")."""
+    tasks = _load("requirements.tasks.json")
+    parts = name.split("/")
+    for index in range(1, len(parts)):
+        domain, problem = "/".join(parts[:index]), "/".join(parts[index:])
+        if domain not in tasks:
+            continue
+        by_problem = tasks[domain]
+        if problem not in by_problem:
+            matches = [p for p in by_problem if p.rsplit("/", 1)[-1] == problem]
+            if len(matches) != 1:
+                raise KeyError(f"no task {problem!r} in domain {domain!r}")
+            problem = matches[0]
+        return frozenset(Requirement(value) for value in by_problem[problem])
+    raise KeyError(f"no domain found in task name {name!r}; see list_domains()")
+
+
 def find_domains(
     supported: Requirements | None = None,
     requires: Requirements | None = None,

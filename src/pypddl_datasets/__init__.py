@@ -25,6 +25,7 @@ from .requirements import (
     find_domains,
     find_suites,
     find_tasks,
+    task_requirements,
 )
 from .suites import SUITES
 
