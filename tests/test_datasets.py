@@ -1,4 +1,5 @@
 import importlib
+import json
 import shutil
 import subprocess
 import sys
@@ -165,6 +166,67 @@ def test_export_suite_materializes_tree(local_data, tmp_path):
     exported = pypddl_datasets.export_suite("tests-classical", tmp_path)
     assert (tmp_path / "classical/tests/gripper/domain.pddl").is_file()
     assert len(exported) == len(SUITES["tests-classical"])
+
+
+def test_requirement_queries():
+    R = pypddl_datasets.Requirement
+    assert pypddl_datasets.domain_requirements("classical/tests/gripper") == {R.STRIPS}
+    assert R.ADL in pypddl_datasets.domain_requirements("classical/downward-benchmarks/miconic-fulladl")
+
+    # supported: capability ceiling with composite expansion (:adl domain matches atomic list)
+    supported = [R.STRIPS, R.TYPING, R.NEGATIVE_PRECONDITIONS, R.DISJUNCTIVE_PRECONDITIONS,
+                 R.EQUALITY, R.EXISTENTIAL_PRECONDITIONS, R.UNIVERSAL_PRECONDITIONS, R.CONDITIONAL_EFFECTS]
+    assert "classical/downward-benchmarks/miconic-fulladl" in pypddl_datasets.find_domains(supported=supported)
+    strips_only = pypddl_datasets.find_domains(supported=[R.STRIPS])
+    assert "classical/tests/gripper" in strips_only
+    assert "classical/downward-benchmarks/miconic-fulladl" not in strips_only
+
+    # requires: feature floor, satisfied through :adl expansion
+    assert "classical/downward-benchmarks/miconic-fulladl" in pypddl_datasets.find_domains(
+        requires=[R.CONDITIONAL_EFFECTS])
+
+    # suite scoping and find_suites
+    scoped = pypddl_datasets.find_domains(suite="ipc-satisficing-adl", supported=supported)
+    assert set(scoped) <= {e.partition(":")[0] for e in SUITES["ipc-satisficing-adl"]}
+    assert "tests-classical" not in pypddl_datasets.find_suites(supported=[R.STRIPS])
+    assert "cnot-synthesis" in pypddl_datasets.find_suites(requires=[R.TYPING])
+
+    # strings are coerced; typos raise instead of silently filtering
+    assert pypddl_datasets.find_domains(supported=[":strips"]) == strips_only
+    with pytest.raises(ValueError):
+        pypddl_datasets.find_domains(supported=[":stripss"])
+
+
+def test_find_tasks_and_per_task_overrides():
+    R = pypddl_datasets.Requirement
+    # genome-edit-distance mixes encodings: only the positional tasks declare :adl
+    tasks = pypddl_datasets.find_tasks(
+        supported=[R.STRIPS, R.TYPING, R.EQUALITY, R.NEGATIVE_PRECONDITIONS, R.ACTION_COSTS])
+    ged = [t for t in tasks if "genome-edit-distance" in t]
+    assert ged and all("positional" not in t for t in ged)
+    # suite-scoped -test entries yield one task per domain
+    smoke = pypddl_datasets.find_tasks(suite="pushworld-test")
+    assert len(smoke) == len(SUITES["pushworld-test"])
+
+
+def test_fetch_suite_filters(local_data):
+    R = pypddl_datasets.Requirement
+    full = pypddl_datasets.fetch_suite("htg-test")
+    strips_typed = pypddl_datasets.fetch_suite("htg-test", supported=[R.STRIPS, R.TYPING, R.ACTION_COSTS])
+    assert 0 < len(strips_typed.domains) < len(full.domains)
+    nothing = pypddl_datasets.fetch_suite("htg-test", requires=[R.DURATIVE_ACTIONS])
+    assert nothing.domains == []
+
+
+def test_requirements_metadata_is_fresh():
+    pointer_probe = DATA_ROOT / "classical/pushworld/level1/Pulling.pddl"
+    if pointer_probe.read_bytes().startswith(b"version https://git-lfs"):
+        pytest.skip("LFS content not available; extraction would differ")
+    sys.path.insert(0, str(REPO_ROOT / "scripts"))
+    from extract_requirements import generate
+
+    committed = json.loads((REPO_ROOT / "src/pypddl_datasets/requirements.json").read_text())
+    assert generate(DATA_ROOT) == committed, "regenerate with scripts/extract_requirements.py"
 
 
 def test_pairing_tolerates_lfs_pointer_stubs(monkeypatch, tmp_path):

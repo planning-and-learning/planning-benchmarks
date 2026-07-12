@@ -17,6 +17,15 @@ from pathlib import Path
 
 import pooch
 
+from .requirements import (
+    Requirement,
+    Requirements,
+    _matches,
+    domain_requirements,
+    find_domains,
+    find_suites,
+    find_tasks,
+)
 from .suites import SUITES
 
 __version__ = "0.0.1"
@@ -121,22 +130,9 @@ def list_suites() -> list[str]:
 
 
 def list_domains() -> list[str]:
-    """Domain names accepted by fetch_domain() and fetch_task(); triggers the
-    one-time data download when no local data is configured. A domain is a
-    maximal directory containing .pddl files directly."""
-    root = _data_root()
-    domains: list[str] = []
-
-    def walk(directory: Path) -> None:
-        if any(child.suffix == ".pddl" for child in directory.iterdir() if child.is_file()):
-            domains.append(directory.relative_to(root).as_posix())
-            return
-        for child in directory.iterdir():
-            if child.is_dir():
-                walk(child)
-
-    walk(root)
-    return sorted(domains)
+    """Domain names accepted by fetch_domain() and fetch_task().
+    Metadata-only: nothing is downloaded."""
+    return find_domains()
 
 
 def fetch_domain(name: str) -> Domain:
@@ -158,15 +154,26 @@ def fetch_task(name: str) -> Task:
     raise KeyError(f"no task {task!r} in domain {domain!r}")
 
 
-def fetch_suite(suite: str) -> Suite:
+def fetch_suite(
+    suite: str,
+    supported: Requirements | None = None,
+    requires: Requirements | None = None,
+) -> Suite:
     """Fetch all entries of a named suite; see list_suites(). A plain domain
     entry yields the whole domain; a "<domain>:<instance>" entry (as used by
-    the "-test" suites) yields a Domain restricted to that single task."""
+    the "-test" suites) yields a Domain restricted to that single task.
+
+    `supported` keeps only domains whose requirements the caller can handle
+    (subset test); `requires` keeps only domains using all the given
+    requirements. Composite requirements like Requirement.ADL are expanded
+    on both sides."""
     if suite not in SUITES:
         raise KeyError(f"unknown suite {suite!r}; see list_suites()")
     domains = []
     for entry in SUITES[suite]:
         name, _, instance = entry.partition(":")
+        if not _matches(domain_requirements(name), supported, requires):
+            continue
         if instance:
             task = fetch_task(f"{name}/{instance}")
             domains.append(Domain(task.path, [task]))

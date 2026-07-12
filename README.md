@@ -36,6 +36,23 @@ entries are one representative task per domain — a cheap smoke run before
 committing to a full suite. `pb.export_suite(suite, dest)` materializes a
 suite as a plain directory tree for non-Python tools.
 
+Domains can be filtered by their declared PDDL requirements — `supported` is
+a capability ceiling (keep what your planner handles), `requires` a feature
+floor (keep what exercises a feature). Composites like `:adl` are expanded on
+both sides, and all queries are metadata-only (no download):
+
+```python
+from pypddl_datasets import Requirement as R
+
+SUPPORTED = {R.STRIPS, R.TYPING, R.ACTION_COSTS, R.NEGATIVE_PRECONDITIONS}
+
+pb.domain_requirements("classical/tests/gripper")     # frozenset({R.STRIPS})
+pb.find_tasks(requires={R.CONDITIONAL_EFFECTS})       # task names, per-task precision
+pb.find_domains(suite="ipc-satisficing-strips", supported=SUPPORTED)
+pb.find_suites(supported=SUPPORTED)                   # suites runnable in full
+pb.fetch_suite("ipc-satisficing-strips", supported=SUPPORTED)   # filtered fetch
+```
+
 `pb.list_domains()` lists every individually fetchable domain. The cache
 location defaults to the platform cache dir and can be overridden with the
 `PYPDDL_DATASETS_CACHE` environment variable. On machines without internet
@@ -56,6 +73,8 @@ and domains resolve there without downloading.
   `python -m pypddl_datasets.generators.classical.<domain>.generate_instances`.
 - `scripts/package_data.py` — turns `data/` into the byte-reproducible
   `data.tar.gz` release archive.
+- `scripts/extract_requirements.py` — regenerates the committed
+  `requirements.json` (run after changing data; a test guards freshness).
 - `validate.py` — parses every domain/problem with pypddl; must pass for a
   data release to go out.
 
