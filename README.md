@@ -19,7 +19,7 @@ pb.list_suites()          # ['autoscale-agile-strips', ..., 'ipc-optimal-strips'
 task = pb.fetch_task("classical/tests/gripper/test-1.pddl")
 task.domain_path          # .../gripper/domain.pddl   (correct also where instances
 task.task_path            # .../gripper/test-1.pddl    carry their own domain files)
-task.domain, task.problem # "classical/tests/gripper", "test-1.pddl" — display names
+task.domain, task.problem # "classical-tests-gripper", "test-1.pddl" — lab-safe display names
 
 domain = pb.fetch_domain("classical/downward-benchmarks/gripper")
 domain.path               # the domain directory
@@ -112,5 +112,6 @@ git add .gitattributes data
 ```
 
 Domain directories must contain their `.pddl` files directly (that is how
-`scripts/package_data.py` discovers them), and directory names must not
-contain `--`. Run `pytest tests` to check suite definitions stay consistent.
+`scripts/package_data.py` discovers them), and domain names flattened with
+`/` → `-` must stay unique (Task.domain; test-guarded). Run `pytest tests`
+to check suite definitions stay consistent.

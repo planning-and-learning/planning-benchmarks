@@ -28,7 +28,7 @@ from .requirements import (
 )
 from .suites import SUITES
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 # The pinned data release: updated when a new data-v* release is cut
 # (its workflow prints the archive's sha256). Empty sha256 = development
@@ -50,7 +50,12 @@ _POOCH = pooch.create(
 class Task:
     """A single planning task of a domain: display names (domain, problem),
     the domain directory it belongs to, its domain file, and its problem
-    file."""
+    file.
+
+    `domain` is a globally unique, filesystem- and lab-safe identifier: the
+    fetch name with "/" replaced by "-" (e.g. "classical-tests-gripper"),
+    directly usable as an experiment property. Uniqueness across all domains
+    is test-guarded. The real paths live in path/domain_path/task_path."""
 
     def __init__(self, domain: str, problem: str, path: Path, domain_path: Path, task_path: Path) -> None:
         self._domain = domain
@@ -281,7 +286,7 @@ def _pair_tasks(domain: str, directory: Path) -> list[Task]:
             problem_files.append(path)
     return [
         Task(
-            domain,
+            domain.replace("/", "-"),
             problem.relative_to(directory).as_posix(),
             directory,
             _resolve_domain(problem, domain_files, directory),

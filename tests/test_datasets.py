@@ -155,11 +155,20 @@ def test_fetch_suite_test_entries_are_single_task_domains(local_data):
 def test_task_display_names(local_data):
     tasks = [t for d in pypddl_datasets.fetch_suite("htg-test").domains for t in d.tasks]
     assert len(tasks) == len(SUITES["htg-test"])
-    labyrinth = next(t for t in tasks if t.domain == "classical/htg-domains/labyrinth")
+    labyrinth = next(t for t in tasks if t.domain == "classical-htg-domains-labyrinth")
     assert labyrinth.problem == labyrinth.task_path.name
     nested = pypddl_datasets.fetch_task("numeric/ipc2026/2048/pfile10.pddl")
-    assert nested.domain == "numeric/ipc2026/2048"
+    assert nested.domain == "numeric-ipc2026-2048"
     assert nested.problem == "instances/pfile10.pddl"
+
+
+def test_task_domain_is_lab_safe_and_unique():
+    # "/" would break lab run dirs/report keys; flattening with "-" must
+    # remain collision-free across all domains.
+    names = pypddl_datasets.list_domains()
+    flattened = {name.replace("/", "-") for name in names}
+    assert len(flattened) == len(names)
+    assert all("/" not in flat for flat in flattened)
 
 
 def test_export_suite_materializes_tree(local_data, tmp_path):
