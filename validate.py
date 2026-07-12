@@ -60,24 +60,19 @@ def find_domain(
     root: Path,
     domains_by_directory: dict[Path, list[tuple[Path, str]]],
 ) -> tuple[Path | None, ResolutionError | None]:
-    directory = problem_path.parent
-    while directory == root or root in directory.parents:
-        domains = domains_by_directory.get(directory, [])
-        by_name = {path.name: path for path, _ in domains}
-        for candidate in domain_candidates(problem_path):
-            if candidate in by_name:
-                return by_name[candidate], None
+    # Domain files live next to their problems; there is no upward search.
+    domains = domains_by_directory.get(problem_path.parent, [])
+    by_name = {path.name: path for path, _ in domains}
+    for candidate in domain_candidates(problem_path):
+        if candidate in by_name:
+            return by_name[candidate], None
 
-        matching = [path for path, name in domains if problem_domain and name.lower() == problem_domain.lower()]
-        if len(matching) == 1:
-            return matching[0], None
-        if len(matching) > 1:
-            names = ", ".join(path.relative_to(root).as_posix() for path in matching)
-            return None, ("AmbiguousDomainError", f"multiple matching domain files: {names}")
-
-        if directory == root:
-            break
-        directory = directory.parent
+    matching = [path for path, name in domains if problem_domain and name.lower() == problem_domain.lower()]
+    if len(matching) == 1:
+        return matching[0], None
+    if len(matching) > 1:
+        names = ", ".join(path.relative_to(root).as_posix() for path in matching)
+        return None, ("AmbiguousDomainError", f"multiple matching domain files: {names}")
     return None, ("DomainNotFoundError", f"no domain file found for domain {problem_domain!r}")
 
 

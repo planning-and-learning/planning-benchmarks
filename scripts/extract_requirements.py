@@ -5,8 +5,7 @@ parser (repository tooling, not shipped with the package):
 - requirements.tasks.json:   {domain: {task: [requirements]}}
   (a task's requirements = pypddl's view of its domain file plus its own)
 - requirements.domains.json: {domain: [union over its tasks]}
-- requirements.suites.json:  {suite: {"union": [...], "intersection": [...]}}
-  so find_suites answers both filter directions with one subset test each.
+- requirements.suites.json:  {suite: [union over its domains]}
 """
 
 from __future__ import annotations
@@ -60,13 +59,9 @@ def generate(data_root: Path) -> dict[str, dict]:
         tasks[name] = dict(sorted(by_problem.items()))
         domains[name] = sorted(set().union(*map(set, by_problem.values()))) if by_problem else []
 
-    suites: dict[str, dict[str, list[str]]] = {}
+    suites: dict[str, list[str]] = {}
     for suite, entries in SUITES.items():
-        sets = [frozenset(domains[entry.partition(":")[0]]) for entry in entries]
-        suites[suite] = {
-            "union": sorted(frozenset().union(*sets)),
-            "intersection": sorted(frozenset.intersection(*sets)),
-        }
+        suites[suite] = sorted(set().union(*(set(domains[entry.partition(":")[0]]) for entry in entries)))
 
     return {
         "requirements.tasks.json": tasks,

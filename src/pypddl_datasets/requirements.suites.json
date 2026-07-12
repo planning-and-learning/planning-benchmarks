@@ -1,568 +1,320 @@
 {
- "autoscale-agile-strips": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "autoscale-agile-strips-test": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "autoscale-optimal-strips": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "autoscale-optimal-strips-test": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "beluga2025-scalability-deterministic": {
-  "intersection": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "beluga2025-scalability-deterministic-test": {
-  "intersection": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "cnot-synthesis": {
-  "intersection": [
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ],
-  "union": [
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "cnot-synthesis-test": {
-  "intersection": [
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ],
-  "union": [
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "generated-test": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "generated-train": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "generated-valid": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "htg": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "htg-test": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "ipc-optimal-adl": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":derived-predicates",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "ipc-optimal-adl-test": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":derived-predicates",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "ipc-optimal-strips": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc-optimal-strips-test": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc-satisficing-adl": {
-  "intersection": [
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":derived-predicates",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "ipc-satisficing-adl-test": {
-  "intersection": [
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":derived-predicates",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "ipc-satisficing-strips": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc-satisficing-strips-test": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc2023-learning": {
-  "intersection": [
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc2023-learning-test": {
-  "intersection": [
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc2023-numeric": {
-  "intersection": [
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":action-costs",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc2023-numeric-test": {
-  "intersection": [
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":action-costs",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc2026-numeric": {
-  "intersection": [
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":action-costs",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ]
- },
- "ipc2026-numeric-test": {
-  "intersection": [
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":action-costs",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ]
- },
- "mine-pddl-classical": {
-  "intersection": [
-   ":disjunctive-preconditions",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":disjunctive-preconditions",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "mine-pddl-classical-test": {
-  "intersection": [
-   ":disjunctive-preconditions",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":disjunctive-preconditions",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing"
-  ]
- },
- "mine-pddl-numeric": {
-  "intersection": [
-   ":disjunctive-preconditions",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":disjunctive-preconditions",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ]
- },
- "mine-pddl-numeric-test": {
-  "intersection": [
-   ":disjunctive-preconditions",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":disjunctive-preconditions",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ]
- },
- "profiling-htg": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "profiling-ipc2023-numeric": {
-  "intersection": [
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ],
-  "union": [
-   ":action-costs",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing"
-  ]
- },
- "pushworld": {
-  "intersection": [
-   ":conditional-effects",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ],
-  "union": [
-   ":conditional-effects",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "pushworld-test": {
-  "intersection": [
-   ":conditional-effects",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ],
-  "union": [
-   ":conditional-effects",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "tests-classical": {
-  "intersection": [
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":conditional-effects",
-   ":derived-predicates",
-   ":disjunctive-preconditions",
-   ":equality",
-   ":existential-preconditions",
-   ":negative-preconditions",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- },
- "tests-numeric": {
-  "intersection": [
-   ":numeric-fluents",
-   ":strips"
-  ],
-  "union": [
-   ":action-costs",
-   ":equality",
-   ":negative-preconditions",
-   ":numeric-fluents",
-   ":strips",
-   ":typing",
-   ":universal-preconditions"
-  ]
- }
+ "autoscale-agile-strips": [
+  ":action-costs",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "autoscale-agile-strips-test": [
+  ":action-costs",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "autoscale-optimal-strips": [
+  ":action-costs",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "autoscale-optimal-strips-test": [
+  ":action-costs",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "beluga2025-scalability-deterministic": [
+  ":action-costs",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "beluga2025-scalability-deterministic-test": [
+  ":action-costs",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "cnot-synthesis": [
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "cnot-synthesis-test": [
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "generated-test": [
+  ":action-costs",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "generated-train": [
+  ":action-costs",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "generated-valid": [
+  ":action-costs",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "htg": [
+  ":action-costs",
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "htg-test": [
+  ":action-costs",
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc-optimal-adl": [
+  ":action-costs",
+  ":conditional-effects",
+  ":derived-predicates",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc-optimal-adl-test": [
+  ":action-costs",
+  ":conditional-effects",
+  ":derived-predicates",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc-optimal-strips": [
+  ":action-costs",
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "ipc-optimal-strips-test": [
+  ":action-costs",
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "ipc-satisficing-adl": [
+  ":action-costs",
+  ":conditional-effects",
+  ":derived-predicates",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc-satisficing-adl-test": [
+  ":action-costs",
+  ":conditional-effects",
+  ":derived-predicates",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc-satisficing-strips": [
+  ":action-costs",
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "ipc-satisficing-strips-test": [
+  ":action-costs",
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2023-learning": [
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2023-learning-test": [
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2023-numeric": [
+  ":action-costs",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2023-numeric-test": [
+  ":action-costs",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2026-numeric": [
+  ":action-costs",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2026-numeric-test": [
+  ":action-costs",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "mine-pddl-classical": [
+  ":disjunctive-preconditions",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "mine-pddl-classical-test": [
+  ":disjunctive-preconditions",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "mine-pddl-numeric": [
+  ":disjunctive-preconditions",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "mine-pddl-numeric-test": [
+  ":disjunctive-preconditions",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "profiling-htg": [
+  ":action-costs",
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "profiling-ipc2023-numeric": [
+  ":action-costs",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "pushworld": [
+  ":conditional-effects",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "pushworld-test": [
+  ":conditional-effects",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "tests-classical": [
+  ":action-costs",
+  ":conditional-effects",
+  ":derived-predicates",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "tests-numeric": [
+  ":action-costs",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ]
 }

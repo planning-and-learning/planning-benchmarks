@@ -279,14 +279,15 @@ def _pair_tasks(domain: str, directory: Path) -> list[Task]:
             domain.replace("/", "-"),
             problem.relative_to(directory).as_posix(),
             directory,
-            _resolve_domain(problem, domain_files, directory),
+            _resolve_domain(problem, domain_files),
             problem,
         )
         for problem in problem_files
     ]
 
 
-def _resolve_domain(problem: Path, domain_files: dict[Path, str], root: Path) -> Path:
+def _resolve_domain(problem: Path, domain_files: dict[Path, str]) -> Path:
+    # Domain files live next to their problems; there is no upward search.
     stem = problem.stem
     candidates = (
         "domain.pddl",
@@ -296,13 +297,9 @@ def _resolve_domain(problem: Path, domain_files: dict[Path, str], root: Path) ->
         f"domain-{problem.name}",
     )
     directory = problem.parent
-    while True:
-        for candidate in candidates:
-            if directory / candidate in domain_files:
-                return directory / candidate
-        if directory == root:
-            break
-        directory = directory.parent
+    for candidate in candidates:
+        if directory / candidate in domain_files:
+            return directory / candidate
     if len(domain_files) == 1:
         return next(iter(domain_files))
     reference = _DOMAIN_REFERENCE.search(problem.read_text(encoding="utf-8", errors="replace"))

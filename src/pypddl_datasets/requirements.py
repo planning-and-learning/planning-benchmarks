@@ -103,8 +103,8 @@ def _domain_metadata() -> dict[str, list[str]]:
     return cast("dict[str, list[str]]", _load("requirements.domains.json"))
 
 
-def _suite_metadata() -> dict[str, dict[str, list[str]]]:
-    return cast("dict[str, dict[str, list[str]]]", _load("requirements.suites.json"))
+def _suite_metadata() -> dict[str, list[str]]:
+    return cast("dict[str, list[str]]", _load("requirements.suites.json"))
 
 
 def _domain_entry(name: str) -> list[str]:
@@ -189,15 +189,9 @@ def find_suites(
     supported: Requirements | None = None,
     requires: Requirements | None = None,
 ) -> list[str]:
-    """Suites in which every domain matches the filters. One subset test per
-    suite against precomputed sets: all domains are supported iff the suite
-    union is; all domains require X iff the suite intersection contains X."""
+    """Suites matched against the union of their domains' requirements, with
+    the same semantics as everywhere else: `supported` keeps suites whose
+    every file the caller can handle; `requires` keeps suites in which each
+    given requirement is used somewhere."""
     suites = _suite_metadata()
-    names: list[str] = []
-    for suite, entry in suites.items():
-        if supported is not None and not _coerce(entry["union"]) <= _coerce(supported):
-            continue
-        if requires is not None and not _coerce(requires) <= _coerce(entry["intersection"]):
-            continue
-        names.append(suite)
-    return sorted(names)
+    return sorted(suite for suite, union in suites.items() if matches(union, supported, requires))
