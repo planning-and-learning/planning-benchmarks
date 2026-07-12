@@ -335,6 +335,7 @@ SUITE_MINEPDDL_CLASSICAL = [
     "classical/mine-pddl/Pickup_Diamond",
     "classical/mine-pddl/Place_Wood",
     "classical/mine-pddl/Scaled_Move_to_Location",
+    "classical/mine-pddl/Scaled_Move_to_Location_extended",
 ]
 
 SUITE_GENERATED_TRAIN = [
@@ -937,6 +938,7 @@ SUITE_MINEPDDL_CLASSICAL_TEST = [
     "classical/mine-pddl/Pickup_Diamond:Pickup_Diamond_Easy.pddl",
     "classical/mine-pddl/Place_Wood:Place_Wood_Easy.pddl",
     "classical/mine-pddl/Scaled_Move_to_Location:Scaled_Move_to_Location_49.pddl",
+    "classical/mine-pddl/Scaled_Move_to_Location_extended:Scaled_Move_to_Location_170.pddl",
 ]
 
 # One representative instance per domain of SUITE_IPC2023_NUMERIC, for quick planner smoke runs.
