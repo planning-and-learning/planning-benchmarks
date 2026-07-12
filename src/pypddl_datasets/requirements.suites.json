@@ -383,6 +383,22 @@
    ":typing"
   ]
  },
+ "ipc2026-numeric-test": {
+  "intersection": [
+   ":numeric-fluents",
+   ":strips",
+   ":typing"
+  ],
+  "union": [
+   ":action-costs",
+   ":disjunctive-preconditions",
+   ":equality",
+   ":negative-preconditions",
+   ":numeric-fluents",
+   ":strips",
+   ":typing"
+  ]
+ },
  "mine-pddl-classical": {
   "intersection": [
    ":disjunctive-preconditions",

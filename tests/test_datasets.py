@@ -123,8 +123,8 @@ def test_fetch_domain_local_data_override(local_data: None):
         ("classical/downward-benchmarks/airport", "p01-airport1-p1.pddl", "p01-domain.pddl"),
         ("classical/downward-benchmarks/openstacks-strips", "p01.pddl", "domain_p01.pddl"),
         ("classical/htg-domains/genome-edit-distance", "d-1-2-original.pddl", "d-1-2-original-domain.pddl"),
-        # tasks in an instances/ subdir, domain file at the domain root
-        ("numeric/ipc2026/2048", "instances/pfile10.pddl", "domain.pddl"),
+        # numeric collection, shared domain.pddl
+        ("numeric/ipc2026/2048", "pfile10.pddl", "domain.pddl"),
     ],
 )
 def test_task_pairing(local_data: None, domain: str, task: str, expected_domain_file: str) -> None:
@@ -159,9 +159,9 @@ def test_task_display_names(local_data: None):
     assert len(tasks) == len(SUITES["htg-test"])
     labyrinth = next(t for t in tasks if t.domain == "classical-htg-domains-labyrinth")
     assert labyrinth.problem == labyrinth.task_path.name
-    nested = pypddl_datasets.fetch_task("numeric/ipc2026/2048/pfile10.pddl")
-    assert nested.domain == "numeric-ipc2026-2048"
-    assert nested.problem == "instances/pfile10.pddl"
+    numeric = pypddl_datasets.fetch_task("numeric/ipc2026/2048/pfile10.pddl")
+    assert numeric.domain == "numeric-ipc2026-2048"
+    assert numeric.problem == "pfile10.pddl"
 
 
 def test_task_domain_is_lab_safe_and_unique():

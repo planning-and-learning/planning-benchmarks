@@ -963,6 +963,26 @@ SUITE_IPC2023_NUMERIC_TEST = [
     "numeric/ipc2023/zenotravel:pfile1.pddl",
 ]
 
+# One representative instance per domain of SUITE_IPC2026_NUMERIC, for quick planner smoke runs.
+SUITE_IPC2026_NUMERIC_TEST = [
+    "numeric/ipc2026/2048:pfile10.pddl",
+    "numeric/ipc2026/coins:pfile01.pddl",
+    "numeric/ipc2026/expedition:pfile1.pddl",
+    "numeric/ipc2026/factory-robot:pfile1.pddl",
+    "numeric/ipc2026/forestfire:prob01.pddl",
+    "numeric/ipc2026/gear-car:p000.pddl",
+    "numeric/ipc2026/line-exchange-snp:3_10_50_10.pddl",
+    "numeric/ipc2026/onlycraft-opt:P01_opt.pddl",
+    "numeric/ipc2026/onlycraft-sat:P01_sat.pddl",
+    "numeric/ipc2026/petri-net:prob06-1.pddl",
+    "numeric/ipc2026/rainbowttles-opt:p11.pddl",
+    "numeric/ipc2026/rainbowttles-sat:p31.pddl",
+    "numeric/ipc2026/sailing-wind-opt:problem_0.pddl",
+    "numeric/ipc2026/sailing-wind-sat:problem_0.pddl",
+    "numeric/ipc2026/settlers-snp:pfile1.pddl",
+    "numeric/ipc2026/ztalloc-sum:pfile1.pddl",
+]
+
 # One representative instance per domain of SUITE_MINEPDDL_NUMERIC, for quick planner smoke runs.
 SUITE_MINEPDDL_NUMERIC_TEST = [
     "numeric/mine-pddl/Bridge:Bridge_Easy.pddl",
@@ -1015,6 +1035,7 @@ SUITES = {
     "ipc2023-numeric": SUITE_IPC2023_NUMERIC,
     "ipc2023-numeric-test": SUITE_IPC2023_NUMERIC_TEST,
     "ipc2026-numeric": SUITE_IPC2026_NUMERIC,
+    "ipc2026-numeric-test": SUITE_IPC2026_NUMERIC_TEST,
     "mine-pddl-numeric": SUITE_MINEPDDL_NUMERIC,
     "mine-pddl-numeric-test": SUITE_MINEPDDL_NUMERIC_TEST,
     "tests-numeric": SUITE_TESTS_NUMERIC,

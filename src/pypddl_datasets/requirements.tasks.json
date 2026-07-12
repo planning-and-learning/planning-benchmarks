@@ -83170,121 +83170,121 @@
   ]
  },
  "numeric/ipc2026/2048": {
-  "instances/pfile10.pddl": [
+  "pfile10.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile11.pddl": [
+  "pfile11.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile12.pddl": [
+  "pfile12.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile13.pddl": [
+  "pfile13.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile14.pddl": [
+  "pfile14.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile15.pddl": [
+  "pfile15.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile16.pddl": [
+  "pfile16.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile17.pddl": [
+  "pfile17.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile18.pddl": [
+  "pfile18.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile19.pddl": [
+  "pfile19.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile20.pddl": [
+  "pfile20.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile21.pddl": [
+  "pfile21.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile22.pddl": [
+  "pfile22.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile23.pddl": [
+  "pfile23.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile24.pddl": [
+  "pfile24.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile25.pddl": [
+  "pfile25.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile26.pddl": [
+  "pfile26.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile29.pddl": [
+  "pfile29.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile8.pddl": [
+  "pfile8.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile9.pddl": [
+  "pfile9.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
@@ -83292,325 +83292,325 @@
   ]
  },
  "numeric/ipc2026/coins": {
-  "instances/pfile01.pddl": [
+  "pfile01.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile02.pddl": [
+  "pfile02.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile03.pddl": [
+  "pfile03.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile04.pddl": [
+  "pfile04.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile05.pddl": [
+  "pfile05.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile06.pddl": [
+  "pfile06.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile07.pddl": [
+  "pfile07.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile08.pddl": [
+  "pfile08.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile09.pddl": [
+  "pfile09.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile10.pddl": [
+  "pfile10.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile11.pddl": [
+  "pfile11.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile12.pddl": [
+  "pfile12.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile13.pddl": [
+  "pfile13.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile14.pddl": [
+  "pfile14.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile15.pddl": [
+  "pfile15.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile16.pddl": [
+  "pfile16.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile17.pddl": [
+  "pfile17.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile18.pddl": [
+  "pfile18.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile19.pddl": [
+  "pfile19.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile20.pddl": [
+  "pfile20.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ]
  },
  "numeric/ipc2026/expedition": {
-  "instances/pfile1.pddl": [
+  "pfile1.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile10.pddl": [
+  "pfile10.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile11.pddl": [
+  "pfile11.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile12.pddl": [
+  "pfile12.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile13.pddl": [
+  "pfile13.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile14.pddl": [
+  "pfile14.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile15.pddl": [
+  "pfile15.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile16.pddl": [
+  "pfile16.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile17.pddl": [
+  "pfile17.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile18.pddl": [
+  "pfile18.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile19.pddl": [
+  "pfile19.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile2.pddl": [
+  "pfile2.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile20.pddl": [
+  "pfile20.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile3.pddl": [
+  "pfile3.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile4.pddl": [
+  "pfile4.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile5.pddl": [
+  "pfile5.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile6.pddl": [
+  "pfile6.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile7.pddl": [
+  "pfile7.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile8.pddl": [
+  "pfile8.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile9.pddl": [
+  "pfile9.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ]
  },
  "numeric/ipc2026/factory-robot": {
-  "instances/pfile1.pddl": [
+  "pfile1.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile10.pddl": [
+  "pfile10.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile11.pddl": [
+  "pfile11.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile12.pddl": [
+  "pfile12.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile13.pddl": [
+  "pfile13.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile14.pddl": [
+  "pfile14.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile15.pddl": [
+  "pfile15.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile16.pddl": [
+  "pfile16.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile17.pddl": [
+  "pfile17.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile18.pddl": [
+  "pfile18.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile19.pddl": [
+  "pfile19.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile2.pddl": [
+  "pfile2.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile20.pddl": [
+  "pfile20.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile3.pddl": [
+  "pfile3.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile4.pddl": [
+  "pfile4.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile5.pddl": [
+  "pfile5.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile6.pddl": [
+  "pfile6.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile7.pddl": [
+  "pfile7.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile8.pddl": [
+  "pfile8.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile9.pddl": [
+  "pfile9.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
@@ -83618,325 +83618,325 @@
   ]
  },
  "numeric/ipc2026/forestfire": {
-  "instances/prob01.pddl": [
+  "prob01.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob02.pddl": [
+  "prob02.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob03.pddl": [
+  "prob03.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob04.pddl": [
+  "prob04.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob05.pddl": [
+  "prob05.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob06.pddl": [
+  "prob06.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob07.pddl": [
+  "prob07.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob08.pddl": [
+  "prob08.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob09.pddl": [
+  "prob09.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob10.pddl": [
+  "prob10.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob11.pddl": [
+  "prob11.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob12.pddl": [
+  "prob12.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob13.pddl": [
+  "prob13.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob14.pddl": [
+  "prob14.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob15.pddl": [
+  "prob15.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob16.pddl": [
+  "prob16.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob17.pddl": [
+  "prob17.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob18.pddl": [
+  "prob18.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob19.pddl": [
+  "prob19.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob20.pddl": [
+  "prob20.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ]
  },
  "numeric/ipc2026/gear-car": {
-  "instances/p000.pddl": [
+  "p000.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p01.pddl": [
+  "p01.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p02.pddl": [
+  "p02.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p03.pddl": [
+  "p03.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p04.pddl": [
+  "p04.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p05.pddl": [
+  "p05.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p06.pddl": [
+  "p06.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p07.pddl": [
+  "p07.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p08.pddl": [
+  "p08.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p09.pddl": [
+  "p09.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p10.pddl": [
+  "p10.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p11.pddl": [
+  "p11.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p12.pddl": [
+  "p12.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p13.pddl": [
+  "p13.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p14.pddl": [
+  "p14.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p15.pddl": [
+  "p15.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p16.pddl": [
+  "p16.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p17.pddl": [
+  "p17.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p18.pddl": [
+  "p18.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/p19.pddl": [
+  "p19.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ]
  },
  "numeric/ipc2026/line-exchange-snp": {
-  "instances/3_10_50_10.pddl": [
+  "3_10_50_10.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/3_10_90_50.pddl": [
+  "3_10_90_50.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/3_15_25_100.pddl": [
+  "3_15_25_100.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/3_15_90_10.pddl": [
+  "3_15_90_10.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/3_5_50_50.pddl": [
+  "3_5_50_50.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/3_5_90_100.pddl": [
+  "3_5_90_100.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/4_10_25_10.pddl": [
+  "4_10_25_10.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/4_10_50_50.pddl": [
+  "4_10_50_50.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/4_10_90_100.pddl": [
+  "4_10_90_100.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/4_15_50_10.pddl": [
+  "4_15_50_10.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/4_15_90_50.pddl": [
+  "4_15_90_50.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/4_5_25_50.pddl": [
+  "4_5_25_50.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/4_5_50_100.pddl": [
+  "4_5_50_100.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/5_10_25_50.pddl": [
+  "5_10_25_50.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/5_10_50_100.pddl": [
+  "5_10_50_100.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/5_15_25_10.pddl": [
+  "5_15_25_10.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/5_15_50_50.pddl": [
+  "5_15_50_50.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/5_15_90_100.pddl": [
+  "5_15_90_100.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/5_5_25_100.pddl": [
+  "5_5_25_100.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/5_5_90_10.pddl": [
+  "5_5_90_10.pddl": [
    ":negative-preconditions",
    ":numeric-fluents",
    ":strips",
@@ -83944,313 +83944,313 @@
   ]
  },
  "numeric/ipc2026/onlycraft-opt": {
-  "instances/P01_opt.pddl": [
+  "P01_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P02_opt.pddl": [
+  "P02_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P03_opt.pddl": [
+  "P03_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P04_opt.pddl": [
+  "P04_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P05_opt.pddl": [
+  "P05_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P06_opt.pddl": [
+  "P06_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P07_opt.pddl": [
+  "P07_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P08_opt.pddl": [
+  "P08_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P09_opt.pddl": [
+  "P09_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P10_opt.pddl": [
+  "P10_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P11_opt.pddl": [
+  "P11_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P12_opt.pddl": [
+  "P12_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P13_opt.pddl": [
+  "P13_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P14_opt.pddl": [
+  "P14_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P15_opt.pddl": [
+  "P15_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P16_opt.pddl": [
+  "P16_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P17_opt.pddl": [
+  "P17_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P18_opt.pddl": [
+  "P18_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P19_opt.pddl": [
+  "P19_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P20_opt.pddl": [
+  "P20_opt.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ]
  },
  "numeric/ipc2026/onlycraft-sat": {
-  "instances/P01_sat.pddl": [
+  "P01_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P02_sat.pddl": [
+  "P02_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P03_sat.pddl": [
+  "P03_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P04_sat.pddl": [
+  "P04_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P05_sat.pddl": [
+  "P05_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P06_sat.pddl": [
+  "P06_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P07_sat.pddl": [
+  "P07_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P08_sat.pddl": [
+  "P08_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P09_sat.pddl": [
+  "P09_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P10_sat.pddl": [
+  "P10_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P11_sat.pddl": [
+  "P11_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P12_sat.pddl": [
+  "P12_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P13_sat.pddl": [
+  "P13_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P14_sat.pddl": [
+  "P14_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P15_sat.pddl": [
+  "P15_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P16_sat.pddl": [
+  "P16_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P17_sat.pddl": [
+  "P17_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P18_sat.pddl": [
+  "P18_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P19_sat.pddl": [
+  "P19_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/P20_sat.pddl": [
+  "P20_sat.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ]
  },
  "numeric/ipc2026/petri-net": {
-  "instances/prob06-1.pddl": [
+  "prob06-1.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob06-2.pddl": [
+  "prob06-2.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob06-3.pddl": [
+  "prob06-3.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob06-4.pddl": [
+  "prob06-4.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob07-1.pddl": [
+  "prob07-1.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob07-2.pddl": [
+  "prob07-2.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob07-3.pddl": [
+  "prob07-3.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob07-4.pddl": [
+  "prob07-4.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob08-1.pddl": [
+  "prob08-1.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob08-2.pddl": [
+  "prob08-2.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob08-3.pddl": [
+  "prob08-3.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob08-4.pddl": [
+  "prob08-4.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob09-1.pddl": [
+  "prob09-1.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob09-2.pddl": [
+  "prob09-2.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob09-3.pddl": [
+  "prob09-3.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob09-4.pddl": [
+  "prob09-4.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob10-1.pddl": [
+  "prob10-1.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob10-2.pddl": [
+  "prob10-2.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob10-3.pddl": [
+  "prob10-3.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/prob10-4.pddl": [
+  "prob10-4.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ]
  },
  "numeric/ipc2026/rainbowttles-opt": {
-  "instances/p11.pddl": [
+  "p11.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84258,7 +84258,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p12.pddl": [
+  "p12.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84266,7 +84266,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p13.pddl": [
+  "p13.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84274,7 +84274,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p14.pddl": [
+  "p14.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84282,7 +84282,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p15.pddl": [
+  "p15.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84290,7 +84290,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p16.pddl": [
+  "p16.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84298,7 +84298,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p17.pddl": [
+  "p17.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84306,7 +84306,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p18.pddl": [
+  "p18.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84314,7 +84314,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p19.pddl": [
+  "p19.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84322,7 +84322,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p20.pddl": [
+  "p20.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84330,7 +84330,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p21.pddl": [
+  "p21.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84338,7 +84338,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p22.pddl": [
+  "p22.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84346,7 +84346,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p23.pddl": [
+  "p23.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84354,7 +84354,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p24.pddl": [
+  "p24.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84362,7 +84362,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p25.pddl": [
+  "p25.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84370,7 +84370,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p26.pddl": [
+  "p26.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84378,7 +84378,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p27.pddl": [
+  "p27.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84386,7 +84386,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p28.pddl": [
+  "p28.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84394,7 +84394,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p29.pddl": [
+  "p29.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84402,7 +84402,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p30.pddl": [
+  "p30.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84412,7 +84412,7 @@
   ]
  },
  "numeric/ipc2026/rainbowttles-sat": {
-  "instances/p31.pddl": [
+  "p31.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84420,7 +84420,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p32.pddl": [
+  "p32.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84428,7 +84428,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p33.pddl": [
+  "p33.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84436,7 +84436,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p34.pddl": [
+  "p34.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84444,7 +84444,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p35.pddl": [
+  "p35.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84452,7 +84452,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p36.pddl": [
+  "p36.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84460,7 +84460,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p37.pddl": [
+  "p37.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84468,7 +84468,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p38.pddl": [
+  "p38.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84476,7 +84476,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p39.pddl": [
+  "p39.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84484,7 +84484,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p40.pddl": [
+  "p40.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84492,7 +84492,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p41.pddl": [
+  "p41.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84500,7 +84500,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p42.pddl": [
+  "p42.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84508,7 +84508,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p43.pddl": [
+  "p43.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84516,7 +84516,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p44.pddl": [
+  "p44.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84524,7 +84524,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p45.pddl": [
+  "p45.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84532,7 +84532,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p46.pddl": [
+  "p46.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84540,7 +84540,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p47.pddl": [
+  "p47.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84548,7 +84548,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p48.pddl": [
+  "p48.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84556,7 +84556,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p49.pddl": [
+  "p49.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84564,7 +84564,7 @@
    ":strips",
    ":typing"
   ],
-  "instances/p50.pddl": [
+  "p50.pddl": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
@@ -84574,121 +84574,121 @@
   ]
  },
  "numeric/ipc2026/sailing-wind-opt": {
-  "instances/problem_0.pddl": [
+  "problem_0.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_1.pddl": [
+  "problem_1.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_10.pddl": [
+  "problem_10.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_11.pddl": [
+  "problem_11.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_12.pddl": [
+  "problem_12.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_13.pddl": [
+  "problem_13.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_14.pddl": [
+  "problem_14.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_15.pddl": [
+  "problem_15.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_16.pddl": [
+  "problem_16.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_17.pddl": [
+  "problem_17.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_18.pddl": [
+  "problem_18.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_19.pddl": [
+  "problem_19.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_2.pddl": [
+  "problem_2.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_3.pddl": [
+  "problem_3.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_4.pddl": [
+  "problem_4.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_5.pddl": [
+  "problem_5.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_6.pddl": [
+  "problem_6.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_7.pddl": [
+  "problem_7.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_8.pddl": [
+  "problem_8.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_9.pddl": [
+  "problem_9.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
@@ -84696,121 +84696,121 @@
   ]
  },
  "numeric/ipc2026/sailing-wind-sat": {
-  "instances/problem_0.pddl": [
+  "problem_0.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_1.pddl": [
+  "problem_1.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_10.pddl": [
+  "problem_10.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_11.pddl": [
+  "problem_11.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_12.pddl": [
+  "problem_12.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_13.pddl": [
+  "problem_13.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_14.pddl": [
+  "problem_14.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_15.pddl": [
+  "problem_15.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_16.pddl": [
+  "problem_16.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_17.pddl": [
+  "problem_17.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_18.pddl": [
+  "problem_18.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_19.pddl": [
+  "problem_19.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_2.pddl": [
+  "problem_2.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_3.pddl": [
+  "problem_3.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_4.pddl": [
+  "problem_4.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_5.pddl": [
+  "problem_5.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_6.pddl": [
+  "problem_6.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_7.pddl": [
+  "problem_7.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_8.pddl": [
+  "problem_8.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/problem_9.pddl": [
+  "problem_9.pddl": [
    ":disjunctive-preconditions",
    ":numeric-fluents",
    ":strips",
@@ -84818,223 +84818,223 @@
   ]
  },
  "numeric/ipc2026/settlers-snp": {
-  "instances/pfile1.pddl": [
+  "pfile1.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile10.pddl": [
+  "pfile10.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile11.pddl": [
+  "pfile11.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile12.pddl": [
+  "pfile12.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile13.pddl": [
+  "pfile13.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile14.pddl": [
+  "pfile14.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile15.pddl": [
+  "pfile15.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile16.pddl": [
+  "pfile16.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile17.pddl": [
+  "pfile17.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile18.pddl": [
+  "pfile18.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile19.pddl": [
+  "pfile19.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile2.pddl": [
+  "pfile2.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile20.pddl": [
+  "pfile20.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile3.pddl": [
+  "pfile3.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile4.pddl": [
+  "pfile4.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile5.pddl": [
+  "pfile5.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile6.pddl": [
+  "pfile6.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile7.pddl": [
+  "pfile7.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile8.pddl": [
+  "pfile8.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile9.pddl": [
+  "pfile9.pddl": [
    ":numeric-fluents",
    ":strips",
    ":typing"
   ]
  },
  "numeric/ipc2026/ztalloc-sum": {
-  "instances/pfile1.pddl": [
+  "pfile1.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile10.pddl": [
+  "pfile10.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile11.pddl": [
+  "pfile11.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile12.pddl": [
+  "pfile12.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile13.pddl": [
+  "pfile13.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile14.pddl": [
+  "pfile14.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile15.pddl": [
+  "pfile15.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile16.pddl": [
+  "pfile16.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile17.pddl": [
+  "pfile17.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile18.pddl": [
+  "pfile18.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile19.pddl": [
+  "pfile19.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile2.pddl": [
+  "pfile2.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile20.pddl": [
+  "pfile20.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile3.pddl": [
+  "pfile3.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile4.pddl": [
+  "pfile4.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile5.pddl": [
+  "pfile5.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile6.pddl": [
+  "pfile6.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile7.pddl": [
+  "pfile7.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile8.pddl": [
+  "pfile8.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
    ":typing"
   ],
-  "instances/pfile9.pddl": [
+  "pfile9.pddl": [
    ":action-costs",
    ":numeric-fluents",
    ":strips",
