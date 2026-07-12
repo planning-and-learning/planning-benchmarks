@@ -1,5 +1,5 @@
 (define (domain zeno-travel)
-(:requirements :typing)
+(:requirements :strips :typing)
 (:types aircraft person city flevel - object)
 (:predicates (at ?x - (either person aircraft) ?c - city)
              (in ?p - person ?a - aircraft)

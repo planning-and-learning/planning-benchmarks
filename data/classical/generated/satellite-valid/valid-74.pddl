@@ -1,21 +1,22 @@
-(define (problem satellite-s3-i5-m3-t3-o5)
+(define (problem satellite-s4-i5-m3-t3-o4-p50)
   (:domain satellite)
   (:objects
-    satellite0 satellite1 satellite2 - satellite
+    satellite0 satellite1 satellite2 satellite3 - satellite
     instrument0 instrument1 instrument2 instrument3 instrument4 - instrument
     infrared0 image1 spectrograph2 - mode
-    target0 target1 target2 observation0 observation1 observation2 observation3 observation4 - direction
+    target0 target1 target2 observation0 observation1 observation2 observation3 - direction
   )
   (:init
     (power_avail satellite0)
-    (pointing satellite0 target2)
+    (pointing satellite0 target1)
     (power_avail satellite1)
-    (pointing satellite1 observation4)
+    (pointing satellite1 observation0)
     (power_avail satellite2)
-    (pointing satellite2 observation2)
+    (pointing satellite2 target2)
+    (power_avail satellite3)
+    (pointing satellite3 observation0)
     (on_board instrument0 satellite0)
     (calibration_target instrument0 target0)
-    (supports instrument0 image1)
     (supports instrument0 infrared0)
     (on_board instrument1 satellite1)
     (calibration_target instrument1 target1)
@@ -25,21 +26,22 @@
     (calibration_target instrument2 target2)
     (supports instrument2 infrared0)
     (supports instrument2 spectrograph2)
-    (on_board instrument3 satellite0)
+    (on_board instrument3 satellite3)
     (calibration_target instrument3 target0)
     (supports instrument3 infrared0)
-    (on_board instrument4 satellite1)
+    (supports instrument3 spectrograph2)
+    (on_board instrument4 satellite0)
     (calibration_target instrument4 target1)
     (supports instrument4 image1)
-    (supports instrument4 spectrograph2)
   )
   (:goal
     (and
       (have_image observation0 infrared0)
       (have_image observation1 image1)
       (have_image observation2 infrared0)
-      (have_image observation3 infrared0)
-      (have_image observation4 spectrograph2)
+      (have_image observation3 spectrograph2)
+      (pointing satellite1 target0)
+      (pointing satellite2 observation0)
     )
   )
 )

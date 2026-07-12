@@ -1,5 +1,5 @@
 (define (domain petri-net-alignment)
-(:requirements :action-costs :typing  )
+(:requirements :strips :action-costs :typing)
 (:types
     place event
 )

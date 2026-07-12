@@ -1,4 +1,4 @@
-(define (problem satellite-s3-i4-m3-t3-o4)
+(define (problem satellite-s3-i4-m3-t3-o4-p25)
   (:domain satellite)
   (:objects
     satellite0 satellite1 satellite2 - satellite
@@ -36,6 +36,7 @@
       (have_image observation1 infrared0)
       (have_image observation2 spectrograph2)
       (have_image observation3 infrared0)
+      (pointing satellite2 observation2)
     )
   )
 )

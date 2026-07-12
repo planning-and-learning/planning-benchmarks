@@ -1,10 +1,10 @@
-(define (problem satellite-s5-i6-m4-t6-o6)
+(define (problem satellite-s5-i6-m4-t5-o7-p25)
   (:domain satellite)
   (:objects
     satellite0 satellite1 satellite2 satellite3 satellite4 - satellite
     instrument0 instrument1 instrument2 instrument3 instrument4 instrument5 - instrument
     infrared0 image1 spectrograph2 thermograph3 - mode
-    target0 target1 target2 target3 target4 target5 observation0 observation1 observation2 observation3 observation4 observation5 - direction
+    target0 target1 target2 target3 target4 observation0 observation1 observation2 observation3 observation4 observation5 observation6 - direction
   )
   (:init
     (power_avail satellite0)
@@ -12,11 +12,11 @@
     (power_avail satellite1)
     (pointing satellite1 target3)
     (power_avail satellite2)
-    (pointing satellite2 observation0)
+    (pointing satellite2 observation1)
     (power_avail satellite3)
-    (pointing satellite3 observation2)
+    (pointing satellite3 observation3)
     (power_avail satellite4)
-    (pointing satellite4 observation1)
+    (pointing satellite4 observation2)
     (on_board instrument0 satellite0)
     (calibration_target instrument0 target0)
     (supports instrument0 infrared0)
@@ -35,7 +35,7 @@
     (supports instrument4 image1)
     (supports instrument4 infrared0)
     (on_board instrument5 satellite0)
-    (calibration_target instrument5 target5)
+    (calibration_target instrument5 target0)
     (supports instrument5 image1)
     (supports instrument5 infrared0)
   )
@@ -47,6 +47,9 @@
       (have_image observation3 image1)
       (have_image observation4 infrared0)
       (have_image observation5 infrared0)
+      (have_image observation6 infrared0)
+      (pointing satellite0 observation2)
+      (pointing satellite4 observation5)
     )
   )
 )

@@ -8,16 +8,21 @@ from pathlib import Path
 
 from .generator import make_problem
 
+from collections.abc import Iterable
+from typing import Any
+
+Config = tuple[Any, ...]
+
 
 NUM_INSTANCES_PER_SPLIT = 100
 
 
-def cartesian(*dimensions):
+def cartesian(*dimensions: Iterable[Any]) -> list[Config]:
     return list(product(*dimensions))
 
 
-def assert_pairwise_disjoint(configs_by_split):
-    seen = {}
+def assert_pairwise_disjoint(configs_by_split: dict[str, list[Config]]) -> None:
+    seen: dict[Config, str] = {}
     for split, configs in configs_by_split.items():
         for config in configs:
             previous = seen.setdefault(config, split)
@@ -25,7 +30,7 @@ def assert_pairwise_disjoint(configs_by_split):
                 raise ValueError(f"Config {config} occurs in both {previous} and {split}")
 
 
-STRUCTURAL_SPACES = {
+STRUCTURAL_SPACES: dict[str, list[Config]] = {
     "train": cartesian(range(1, 4), range(2, 5), range(2, 4)),
     "valid": cartesian(range(4, 5), range(5, 6), range(4, 6)),
     "test": cartesian(range(5, 6), range(6, 8), range(5, 7)),

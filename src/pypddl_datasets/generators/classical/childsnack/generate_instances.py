@@ -8,32 +8,37 @@ from pathlib import Path
 
 from .generator import make_problem
 
+from collections.abc import Callable, Iterable
+from typing import Any
+
+Config = tuple[Any, ...]
+
 
 NUM_INSTANCES_PER_SPLIT = 100
 
 
-def cartesian(*dimensions, predicate=None):
-    configs = []
+def cartesian(*dimensions: Iterable[Any], predicate: Callable[..., bool] | None = None) -> list[Config]:
+    configs: list[Config] = []
     for values in product(*dimensions):
         if predicate is None or predicate(*values):
             configs.append(values)
     return configs
 
 
-def first_n(configs, count: int = NUM_INSTANCES_PER_SPLIT):
+def first_n(configs: list[Config], count: int = NUM_INSTANCES_PER_SPLIT) -> list[Config]:
     if len(configs) < count:
         raise ValueError(f"Need {count} configs, got {len(configs)}")
     return configs[:count]
 
 
-def with_instance_seeds(configs, seed_start: int, count: int = NUM_INSTANCES_PER_SPLIT):
+def with_instance_seeds(configs: list[Config], seed_start: int, count: int = NUM_INSTANCES_PER_SPLIT) -> list[Config]:
     if not configs:
         raise ValueError("Need at least one structural config")
     return [(*configs[index % len(configs)], seed_start + index) for index in range(count)]
 
 
-def assert_pairwise_disjoint(configs_by_split):
-    seen = {}
+def assert_pairwise_disjoint(configs_by_split: dict[str, list[Config]]) -> None:
+    seen: dict[Config, str] = {}
     for split, configs in configs_by_split.items():
         for config in configs:
             previous = seen.setdefault(config, split)
@@ -41,7 +46,7 @@ def assert_pairwise_disjoint(configs_by_split):
                 raise ValueError(f"Config {config} occurs in both {previous} and {split}")
 
 
-STRUCTURAL_SPACES = {
+STRUCTURAL_SPACES: dict[str, list[Config]] = {
     "train": cartesian(range(2, 5), range(1, 3), [0.25, 0.5, 0.75], [1.2, 1.5]),
     "valid": cartesian(range(7, 11), range(1, 4), [0.25, 0.5, 0.75], [1.2, 1.5]),
     "test": cartesian(range(11, 17), range(2, 5), [0.25, 0.5, 0.75], [1.2, 1.5]),
@@ -49,7 +54,7 @@ STRUCTURAL_SPACES = {
 
 assert_pairwise_disjoint(STRUCTURAL_SPACES)
 
-CONFIGS = {
+CONFIGS: dict[str, list[Config]] = {
     "train": with_instance_seeds(STRUCTURAL_SPACES["train"], 101),
     "valid": with_instance_seeds(STRUCTURAL_SPACES["valid"], 201),
     "test": with_instance_seeds(STRUCTURAL_SPACES["test"], 301),

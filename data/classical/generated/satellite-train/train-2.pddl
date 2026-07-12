@@ -1,10 +1,10 @@
-(define (problem satellite-s1-i1-m2-t1-o2)
+(define (problem satellite-s1-i1-m2-t1-o1-p50)
   (:domain satellite)
   (:objects
     satellite0 - satellite
     instrument0 - instrument
     infrared0 image1 - mode
-    target0 observation0 observation1 - direction
+    target0 observation0 - direction
   )
   (:init
     (power_avail satellite0)
@@ -17,7 +17,6 @@
   (:goal
     (and
       (have_image observation0 image1)
-      (have_image observation1 image1)
     )
   )
 )

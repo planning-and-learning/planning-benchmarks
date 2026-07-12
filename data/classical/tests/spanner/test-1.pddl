@@ -1,6 +1,5 @@
 (define (problem prob)
  (:domain spanner)
- (:requirements :typing)
  (:objects
      bob - man
  spanner1 - spanner

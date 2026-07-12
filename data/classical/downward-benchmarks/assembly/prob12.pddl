@@ -1,6 +1,5 @@
 (define (problem assem-x-12)
    (:domain assembly)
-   (:requirements :adl)
    (:objects hack foobar-10 contraption-32 bracket-9 whatsis-14
              socket-11 widget-12 coil-13 thingumbob-7 valve-15 mount-16
              tube-5 connector-6 kludge-2 plug-8 sprocket-1

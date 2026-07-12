@@ -1,6 +1,5 @@
 (define (problem prob)
  (:domain barman)
- (:requirements :strips :typing )
  (:objects
       shaker1 - shaker
       left right - hand

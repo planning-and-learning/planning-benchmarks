@@ -1,6 +1,5 @@
 (define (problem assem-x-9)
    (:domain assembly)
-   (:requirements :adl)
    (:objects mount hack-15 wire-13 frob-7 sprocket-16 foobar-5
              bracket-6 tube fastener-8 hoozawhatsie-3 contraption-4 unit-1
              doodad-2 hack kludge coil sprocket foobar fastener contraption

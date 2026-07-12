@@ -1,19 +1,21 @@
 import importlib
+import importlib.util
 import json
 import shutil
 import subprocess
 import sys
+from collections.abc import Callable
 from pathlib import Path
+from typing import cast
 
 import pooch
 import pytest
 
 import pypddl_datasets
+from pypddl_datasets.discovery import discover_domains
 from pypddl_datasets.suites import SUITES
 
-from conftest import REPO_ROOT
-from package_data import discover_domains
-
+REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = REPO_ROOT / "data"
 
 
@@ -44,7 +46,7 @@ GENERATOR_DOMAINS = sorted(
 
 
 @pytest.mark.parametrize("domain", GENERATOR_DOMAINS)
-def test_split_configs_importable_and_disjoint(domain):
+def test_split_configs_importable_and_disjoint(domain: str) -> None:
     # module import runs the assert_pairwise_disjoint checks on train/valid/test configs
     importlib.import_module(f"pypddl_datasets.generators.classical.{domain}.generate_instances")
 
@@ -66,7 +68,7 @@ def _package(data_root: Path, archive: Path) -> str:
     return result.stdout.rsplit("sha256:", 1)[1].strip()
 
 
-def test_package_and_fetch_round_trip(tmp_path):
+def test_package_and_fetch_round_trip(tmp_path: Path) -> None:
     archive = tmp_path / "assets" / "data.tar.gz"
     sha = _package(DATA_ROOT / "classical" / "tests", archive)
     # byte-reproducible: repackaging yields the identical hash
@@ -91,18 +93,18 @@ def test_package_and_fetch_round_trip(tmp_path):
 
 
 @pytest.fixture
-def local_data(monkeypatch):
+def local_data(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("PYPDDL_DATASETS_DATA", str(DATA_ROOT))
 
 
-def test_fetch_domain_rejects_unknown_name(local_data):
+def test_fetch_domain_rejects_unknown_name(local_data: None):
     with pytest.raises(KeyError):
         pypddl_datasets.fetch_domain("classical/no-such-collection/no-such-domain")
     with pytest.raises(KeyError):
         pypddl_datasets.fetch_suite("no-such-suite")
 
 
-def test_fetch_domain_local_data_override(local_data):
+def test_fetch_domain_local_data_override(local_data: None):
     domain = pypddl_datasets.fetch_domain("classical/tests/gripper")
     assert domain.path == DATA_ROOT / "classical/tests/gripper"
     assert [t.task_path.name for t in domain.tasks] == ["test-1.pddl"]
@@ -125,7 +127,7 @@ def test_fetch_domain_local_data_override(local_data):
         ("numeric/ipc2026/2048", "instances/pfile10.pddl", "domain.pddl"),
     ],
 )
-def test_task_pairing(local_data, domain, task, expected_domain_file):
+def test_task_pairing(local_data: None, domain: str, task: str, expected_domain_file: str) -> None:
     fetched = pypddl_datasets.fetch_task(f"{domain}/{task}")
     assert fetched.path == DATA_ROOT / domain
     assert fetched.task_path == DATA_ROOT / domain / task
@@ -133,7 +135,7 @@ def test_task_pairing(local_data, domain, task, expected_domain_file):
     assert fetched.domain_path.is_file()
 
 
-def test_fetch_task_accepts_bare_name_and_rejects_unknown(local_data):
+def test_fetch_task_accepts_bare_name_and_rejects_unknown(local_data: None):
     by_bare_name = pypddl_datasets.fetch_task("numeric/ipc2026/2048/pfile10.pddl")
     assert by_bare_name.task_path.name == "pfile10.pddl"
     with pytest.raises(KeyError):
@@ -142,7 +144,7 @@ def test_fetch_task_accepts_bare_name_and_rejects_unknown(local_data):
         pypddl_datasets.fetch_task("classical/no-such-domain/task.pddl")
 
 
-def test_fetch_suite_test_entries_are_single_task_domains(local_data):
+def test_fetch_suite_test_entries_are_single_task_domains(local_data: None):
     suite = pypddl_datasets.fetch_suite("pushworld-test")
     assert suite.path == DATA_ROOT
     assert len(suite.domains) == len(SUITES["pushworld-test"])
@@ -152,7 +154,7 @@ def test_fetch_suite_test_entries_are_single_task_domains(local_data):
         assert fetched.tasks[0].task_path.is_file()
 
 
-def test_task_display_names(local_data):
+def test_task_display_names(local_data: None):
     tasks = [t for d in pypddl_datasets.fetch_suite("htg-test").domains for t in d.tasks]
     assert len(tasks) == len(SUITES["htg-test"])
     labyrinth = next(t for t in tasks if t.domain == "classical-htg-domains-labyrinth")
@@ -171,7 +173,7 @@ def test_task_domain_is_lab_safe_and_unique():
     assert all("/" not in flat for flat in flattened)
 
 
-def test_export_suite_materializes_tree(local_data, tmp_path):
+def test_export_suite_materializes_tree(local_data: None, tmp_path: Path):
     exported = pypddl_datasets.export_suite("tests-classical", tmp_path)
     assert (tmp_path / "classical/tests/gripper/domain.pddl").is_file()
     assert len(exported) == len(SUITES["tests-classical"])
@@ -180,9 +182,10 @@ def test_export_suite_materializes_tree(local_data, tmp_path):
 def test_requirement_queries():
     R = pypddl_datasets.Requirement
     assert pypddl_datasets.domain_requirements("classical/tests/gripper") == {R.STRIPS}
-    assert R.ADL in pypddl_datasets.domain_requirements("classical/downward-benchmarks/miconic-fulladl")
+    # the data is strict-clean: declarations are atomic and exact (no :adl anywhere)
+    assert R.CONDITIONAL_EFFECTS in pypddl_datasets.domain_requirements("classical/downward-benchmarks/miconic-fulladl")
 
-    # supported: capability ceiling with composite expansion (:adl domain matches atomic list)
+    # supported: capability ceiling over explicit requirements
     supported = [R.STRIPS, R.TYPING, R.NEGATIVE_PRECONDITIONS, R.DISJUNCTIVE_PRECONDITIONS,
                  R.EQUALITY, R.EXISTENTIAL_PRECONDITIONS, R.UNIVERSAL_PRECONDITIONS, R.CONDITIONAL_EFFECTS]
     assert "classical/downward-benchmarks/miconic-fulladl" in pypddl_datasets.find_domains(supported=supported)
@@ -190,7 +193,7 @@ def test_requirement_queries():
     assert "classical/tests/gripper" in strips_only
     assert "classical/downward-benchmarks/miconic-fulladl" not in strips_only
 
-    # requires: feature floor, satisfied through :adl expansion
+    # requires: feature floor
     assert "classical/downward-benchmarks/miconic-fulladl" in pypddl_datasets.find_domains(
         requires=[R.CONDITIONAL_EFFECTS])
 
@@ -209,15 +212,30 @@ def test_requirement_queries():
 def test_task_requirements():
     R = pypddl_datasets.Requirement
     assert pypddl_datasets.task_requirements("classical/tests/gripper/test-1.pddl") == {R.STRIPS}
-    # per-task precision: the positional GED encoding declares :adl, original does not
-    assert R.ADL in pypddl_datasets.task_requirements(
+    # per-task precision: the positional GED encoding needs conditional effects, original does not
+    assert R.CONDITIONAL_EFFECTS in pypddl_datasets.task_requirements(
         "classical/htg-domains/genome-edit-distance/d-1-2-positional.pddl")
-    assert R.ADL not in pypddl_datasets.task_requirements(
+    assert R.CONDITIONAL_EFFECTS not in pypddl_datasets.task_requirements(
         "classical/htg-domains/genome-edit-distance/d-1-2-original.pddl")
     # bare-name lookup for nested layouts, KeyError on unknown
     assert pypddl_datasets.task_requirements("numeric/ipc2026/2048/pfile10.pddl")
     with pytest.raises(KeyError):
         pypddl_datasets.task_requirements("classical/tests/gripper/no-such.pddl")
+
+
+def test_composites_resolve_to_explicit_requirements():
+    # CompositeRequirements documents the aggregates; each must map to explicit
+    # Requirements, and none may ever appear in the (strict-clean) metadata.
+    from pypddl_datasets import COMPOSITE_TO_REQUIREMENTS, CompositeRequirements, Requirement
+
+    for composite in CompositeRequirements:
+        atoms = COMPOSITE_TO_REQUIREMENTS[composite]
+        assert atoms and all(isinstance(atom, Requirement) for atom in atoms)
+
+    composite_tokens = {c.value for c in CompositeRequirements}
+    for filename in ("requirements.tasks.json", "requirements.domains.json", "requirements.suites.json"):
+        text = (REPO_ROOT / "src/pypddl_datasets" / filename).read_text()
+        assert not any(f'"{token}"' in text for token in composite_tokens), filename
 
 
 def test_find_tasks_and_per_task_overrides():
@@ -232,7 +250,7 @@ def test_find_tasks_and_per_task_overrides():
     assert len(smoke) == len(SUITES["pushworld-test"])
 
 
-def test_fetch_suite_filters(local_data):
+def test_fetch_suite_filters(local_data: None):
     R = pypddl_datasets.Requirement
     full = pypddl_datasets.fetch_suite("htg-test")
     strips_typed = pypddl_datasets.fetch_suite("htg-test", supported=[R.STRIPS, R.TYPING, R.ACTION_COSTS])
@@ -241,19 +259,25 @@ def test_fetch_suite_filters(local_data):
     assert nothing.domains == []
 
 
-def test_requirements_metadata_is_fresh():
+def test_requirements_metadata_is_fresh() -> None:
     pointer_probe = DATA_ROOT / "classical/pushworld/level1/Pulling.pddl"
     if pointer_probe.read_bytes().startswith(b"version https://git-lfs"):
         pytest.skip("LFS content not available; extraction would differ")
-    sys.path.insert(0, str(REPO_ROOT / "scripts"))
-    from extract_requirements import generate
+    pytest.importorskip("pypddl")
+
+    # scripts/ is repo tooling, not an importable package: load by path
+    spec = importlib.util.spec_from_file_location("extract_requirements", REPO_ROOT / "scripts" / "extract_requirements.py")
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    generate = cast("Callable[[Path], dict[str, object]]", module.generate)
 
     for filename, generated in generate(DATA_ROOT).items():
-        committed = json.loads((REPO_ROOT / "src/pypddl_datasets" / filename).read_text())
+        committed = cast("object", json.loads((REPO_ROOT / "src/pypddl_datasets" / filename).read_text()))
         assert generated == committed, f"{filename} is stale; regenerate with scripts/extract_requirements.py"
 
 
-def test_pairing_tolerates_lfs_pointer_stubs(monkeypatch, tmp_path):
+def test_pairing_tolerates_lfs_pointer_stubs(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     # A checkout without `git lfs pull` has pointer stubs instead of PDDL;
     # pairing must classify them by file name (as CI runners do).
     domain_dir = tmp_path / "classical" / "stub-domain"

@@ -19,7 +19,7 @@
 
 
 (define (domain data-network)
-(:requirements :adl :typing :negative-preconditions  :action-costs)
+(:requirements :strips :action-costs :negative-preconditions :typing)
 
 (:types data script server numbers)
 

@@ -5,7 +5,7 @@
 ;; collection of rovers navigate a planet surface, finding samples and
 ;; communicating them back to a lander.
 (define (domain rover)
-(:requirements :typing :numeric-fluents)
+(:requirements :strips :numeric-fluents :typing)
 (:types rover -object waypoint -object store -object camera -object mode -object lander -object objective -object)
 (:predicates (in ?x - rover ?y - waypoint)
              (at_lander ?x - lander ?y - waypoint)

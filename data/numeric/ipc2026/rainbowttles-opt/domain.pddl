@@ -10,7 +10,7 @@
 ;;;
 
 (define (domain rainbowttles-constant-free)
-  (:requirements :typing :action-costs :negative-preconditions :numeric-fluents :equality)
+  (:requirements :strips :action-costs :equality :negative-preconditions :numeric-fluents :typing)
 
   (:types
       bottle colour - object

@@ -4,7 +4,6 @@
 
 (define (problem prob-snack)
   (:domain child-snack)
-  (:requirements :typing)
   (:objects
     child1 child2 child3 child4 child5 child6 - child
     bread1 bread2 bread3 bread4 bread5 bread6 - bread-portion

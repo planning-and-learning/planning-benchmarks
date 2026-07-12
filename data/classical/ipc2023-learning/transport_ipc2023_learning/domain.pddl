@@ -4,7 +4,7 @@
 ;  - capacity type now is size
 ;  - capacity-number predicate now is capacity
 (define (domain transport)
-  (:requirements :typing)
+  (:requirements :strips :typing)
   (:types
         size location locatable - object
         vehicle package - locatable

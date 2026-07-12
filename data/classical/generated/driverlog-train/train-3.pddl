@@ -1,10 +1,10 @@
-(define (problem driverlog-l4-d1-t1-p3-pg50-dg50-tg100)
+(define (problem driverlog-l4-d2-t2-p4-pg50-dg50-tg100)
   (:domain driverlog)
   (:objects
       s0 s1 s2 s3 - location
-      driver1 - driver
-      truck1 - truck
-      package1 package2 package3 - obj
+      driver1 driver2 - driver
+      truck1 truck2 - truck
+      package1 package2 package3 package4 - obj
   )
   (:init
     (link s0 s1)
@@ -30,17 +30,22 @@
     (path s2 s3)
     (path s3 s2)
     (at driver1 s3)
-    (at truck1 s3)
+    (at driver2 s3)
+    (at truck1 s1)
+    (at truck2 s1)
     (empty truck1)
-    (at package1 s1)
+    (empty truck2)
+    (at package1 s0)
     (at package2 s1)
-    (at package3 s1)
+    (at package3 s3)
+    (at package4 s1)
   )
   (:goal
     (and
-      (at package2 s0)
-      (at driver1 s1)
+      (at package1 s1)
+      (at driver2 s0)
       (at truck1 s0)
+      (at truck2 s3)
     )
   )
 )

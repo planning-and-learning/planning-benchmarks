@@ -1,5 +1,5 @@
 (define (domain ricochet-robots)
-(:requirements :typing :adl :action-costs)
+(:requirements :strips :action-costs :negative-preconditions :typing)
 
 (:types
     robot - object

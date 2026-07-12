@@ -1,5 +1,5 @@
 (define (domain citycar)
-(:requirements :typing  :negative-preconditions :action-costs :conditional-effects :universal-preconditions)
+(:requirements :strips :action-costs :conditional-effects :negative-preconditions :typing :universal-preconditions)
   (:types  
 	car
 	junction	

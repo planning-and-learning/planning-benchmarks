@@ -5,7 +5,6 @@
 
 (define (problem cave-diving-adl-p01)
   (:domain cave-diving-adl)
-  (:requirements :typing :action-costs :numeric-fluents)
   (:objects
     l0 l1 l2 l3 - location
     d0 d1 d2 d3 - diver

@@ -1,5 +1,5 @@
 (define (domain sokoban-sequential)
-  (:requirements :typing :action-costs)
+  (:requirements :strips :action-costs :typing)
   (:types thing location direction - object
           player stone - thing)
   (:predicates (clear ?l - location)

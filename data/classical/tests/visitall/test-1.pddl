@@ -1,6 +1,5 @@
 (define (problem grid-3)
 (:domain grid-visit-all)
-(:requirements :typing)
 (:objects
 	loc-x0-y0
 	loc-x0-y1

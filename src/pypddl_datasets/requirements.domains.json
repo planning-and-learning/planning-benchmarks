@@ -2,9 +2,11 @@
  "classical/autoscale-benchmarks-main/21.11-agile-strips/agricola": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/airport": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/barman": [
@@ -16,12 +18,13 @@
   ":strips"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/childsnack": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/data-network": [
   ":action-costs",
-  ":adl",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/depots": [
@@ -29,14 +32,17 @@
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/driverlog": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/elevators": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/floortile": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/freecell": [
@@ -46,7 +52,8 @@
  "classical/autoscale-benchmarks-main/21.11-agile-strips/ged": [
   ":action-costs",
   ":equality",
-  ":negative-preconditions"
+  ":negative-preconditions",
+  ":strips"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/grid": [
   ":strips"
@@ -68,24 +75,30 @@
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/mprime": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/nomystery": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/openstacks": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/organic-synthesis-split": [
   ":action-costs",
-  ":adl",
-  ":negative-preconditions"
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/parcprinter": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/parking": [
@@ -96,11 +109,14 @@
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/pathways": [
-  ":adl",
+  ":disjunctive-preconditions",
+  ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/pegsol": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/pipesworld-notankage": [
@@ -121,6 +137,7 @@
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/scanalyzer": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/snake": [
@@ -130,22 +147,27 @@
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/sokoban": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/storage": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/termes": [
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/tetris": [
   ":action-costs",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/thoughtful": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/tidybot": [
@@ -159,24 +181,30 @@
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/transport": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/visitall": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/woodworking": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-agile-strips/zenotravel": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/agricola": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/airport": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/barman": [
@@ -188,12 +216,13 @@
   ":strips"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/childsnack": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/data-network": [
   ":action-costs",
-  ":adl",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/depots": [
@@ -201,14 +230,17 @@
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/driverlog": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/elevators": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/floortile": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/freecell": [
@@ -218,7 +250,8 @@
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/ged": [
   ":action-costs",
   ":equality",
-  ":negative-preconditions"
+  ":negative-preconditions",
+  ":strips"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/grid": [
   ":strips"
@@ -240,24 +273,30 @@
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/mprime": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/nomystery": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/openstacks": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/organic-synthesis-split": [
   ":action-costs",
-  ":adl",
-  ":negative-preconditions"
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/parcprinter": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/parking": [
@@ -268,11 +307,13 @@
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/pathways": [
-  ":adl",
+  ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/pegsol": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/pipesworld-notankage": [
@@ -293,6 +334,7 @@
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/scanalyzer": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/snake": [
@@ -302,22 +344,27 @@
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/sokoban": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/storage": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/termes": [
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/tetris": [
   ":action-costs",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/thoughtful": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/tidybot": [
@@ -331,28 +378,34 @@
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/transport": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/visitall": [
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/woodworking": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/autoscale-benchmarks-main/21.11-optimal-strips/zenotravel": [
+  ":strips",
   ":typing"
  ],
  "classical/beluga2025/scalability-deterministic": [
   ":action-costs",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/cnot-synthesis/cnot-synthesis-lifted": [
   ":conditional-effects",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
@@ -360,6 +413,7 @@
   ":conditional-effects",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
@@ -367,27 +421,45 @@
   ":conditional-effects",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
  "classical/downward-benchmarks/agricola-opt18-strips": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/agricola-sat18-strips": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/airport": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/airport-adl": [
-  ":adl"
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/assembly": [
-  ":adl"
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/barman-mco14-strips": [
   ":strips",
@@ -418,6 +490,7 @@
   ":conditional-effects",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
@@ -425,33 +498,50 @@
   ":conditional-effects",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
  "classical/downward-benchmarks/caldera-split-opt18-adl": [
   ":action-costs",
-  ":adl"
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/caldera-split-sat18-adl": [
   ":action-costs",
-  ":adl"
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/cavediving-14-adl": [
   ":action-costs",
-  ":adl",
+  ":conditional-effects",
+  ":negative-preconditions",
   ":numeric-fluents",
-  ":typing"
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/childsnack-opt14-strips": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/childsnack-sat14-strips": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/citycar-opt14-adl": [
   ":action-costs",
   ":conditional-effects",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
@@ -460,19 +550,20 @@
   ":conditional-effects",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
  "classical/downward-benchmarks/data-network-opt18-strips": [
   ":action-costs",
-  ":adl",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/data-network-sat18-strips": [
   ":action-costs",
-  ":adl",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/depot": [
@@ -483,50 +574,67 @@
  ],
  "classical/downward-benchmarks/elevators-opt08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/elevators-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/elevators-sat08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/elevators-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/flashfill-sat18-adl": [
   ":action-costs",
-  ":adl",
   ":conditional-effects",
   ":negative-preconditions",
-  ":typing"
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/floortile-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/floortile-opt14-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/floortile-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/floortile-sat14-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/folding-opt23-adl": [
   ":action-costs",
-  ":adl"
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/downward-benchmarks/folding-sat23-adl": [
   ":action-costs",
-  ":adl"
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/downward-benchmarks/freecell": [
   ":strips"
@@ -534,12 +642,14 @@
  "classical/downward-benchmarks/ged-opt14-strips": [
   ":action-costs",
   ":equality",
-  ":negative-preconditions"
+  ":negative-preconditions",
+  ":strips"
  ],
  "classical/downward-benchmarks/ged-sat14-strips": [
   ":action-costs",
   ":equality",
-  ":negative-preconditions"
+  ":negative-preconditions",
+  ":strips"
  ],
  "classical/downward-benchmarks/grid": [
   ":strips"
@@ -567,11 +677,17 @@
  ],
  "classical/downward-benchmarks/labyrinth-opt23-adl": [
   ":action-costs",
-  ":adl"
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/downward-benchmarks/labyrinth-sat23-adl": [
   ":action-costs",
-  ":adl"
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/downward-benchmarks/logistics00": [
   ":strips"
@@ -580,104 +696,144 @@
   ":strips"
  ],
  "classical/downward-benchmarks/maintenance-opt14-adl": [
-  ":adl",
   ":conditional-effects",
-  ":typing"
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/maintenance-sat14-adl": [
-  ":adl",
   ":conditional-effects",
-  ":typing"
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/miconic": [
   ":strips"
  ],
  "classical/downward-benchmarks/miconic-fulladl": [
-  ":adl"
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/miconic-simpleadl": [
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/movie": [
   ":strips"
  ],
  "classical/downward-benchmarks/mprime": [
   ":equality",
-  ":negative-preconditions"
+  ":negative-preconditions",
+  ":strips"
  ],
  "classical/downward-benchmarks/mystery": [
   ":strips"
  ],
  "classical/downward-benchmarks/nomystery-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/nomystery-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/nurikabe-opt18-adl": [
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/nurikabe-sat18-adl": [
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/openstacks": [
-  ":adl",
-  ":typing"
+  ":disjunctive-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/openstacks-agl14-strips": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/openstacks-opt08-adl": [
   ":action-costs",
-  ":adl",
-  ":typing"
+  ":disjunctive-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/openstacks-opt08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/openstacks-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/openstacks-opt14-strips": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/openstacks-sat08-adl": [
   ":action-costs",
-  ":adl",
-  ":typing"
+  ":disjunctive-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/openstacks-sat08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/openstacks-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/openstacks-sat14-strips": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/openstacks-strips": [
   ":strips"
  ],
  "classical/downward-benchmarks/optical-telegraphs": [
-  ":adl",
   ":derived-predicates",
+  ":disjunctive-preconditions",
   ":equality",
-  ":typing"
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/organic-synthesis-opt18-strips": [
   ":equality",
@@ -693,24 +849,31 @@
  ],
  "classical/downward-benchmarks/organic-synthesis-split-opt18-strips": [
   ":action-costs",
-  ":adl",
-  ":negative-preconditions"
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/downward-benchmarks/organic-synthesis-split-sat18-strips": [
   ":action-costs",
-  ":adl",
-  ":negative-preconditions"
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/downward-benchmarks/parcprinter-08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/parcprinter-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/parcprinter-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/parking-opt11-strips": [
@@ -734,31 +897,41 @@
   ":typing"
  ],
  "classical/downward-benchmarks/pathways": [
-  ":adl",
+  ":disjunctive-preconditions",
+  ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/pegsol-08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/pegsol-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/pegsol-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/petri-net-alignment-opt18-strips": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/philosophers": [
-  ":adl",
   ":derived-predicates",
+  ":disjunctive-preconditions",
   ":equality",
-  ":typing"
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/pipesworld-notankage": [
   ":strips",
@@ -769,12 +942,26 @@
   ":typing"
  ],
  "classical/downward-benchmarks/psr-large": [
-  ":adl",
-  ":derived-predicates"
+  ":conditional-effects",
+  ":derived-predicates",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/psr-middle": [
-  ":adl",
-  ":derived-predicates"
+  ":conditional-effects",
+  ":derived-predicates",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/psr-small": [
   ":strips"
@@ -791,57 +978,82 @@
  ],
  "classical/downward-benchmarks/recharging-robots-opt23-adl": [
   ":action-costs",
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/recharging-robots-sat23-adl": [
   ":action-costs",
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/ricochet-robots-opt23-adl": [
   ":action-costs",
-  ":adl",
+  ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/ricochet-robots-sat23-adl": [
   ":action-costs",
-  ":adl",
+  ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/rovers": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/rubiks-cube-opt23-adl": [
-  ":adl"
+  ":conditional-effects",
+  ":strips",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/rubiks-cube-sat23-adl": [
-  ":adl"
+  ":conditional-effects",
+  ":strips",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/satellite": [
   ":strips"
  ],
  "classical/downward-benchmarks/scanalyzer-08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/scanalyzer-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/scanalyzer-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/schedule": [
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/settlers-opt18-adl": [
   ":action-costs",
   ":conditional-effects",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
@@ -850,15 +1062,18 @@
   ":conditional-effects",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
  "classical/downward-benchmarks/slitherlink-opt23-adl": [
-  ":adl",
+  ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/slitherlink-sat23-adl": [
-  ":adl",
+  ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/snake-opt18-strips": [
@@ -873,59 +1088,72 @@
  ],
  "classical/downward-benchmarks/sokoban-opt08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/sokoban-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/sokoban-sat08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/sokoban-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/spider-opt18-strips": [
   ":action-costs",
   ":conditional-effects",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/spider-sat18-strips": [
   ":action-costs",
   ":conditional-effects",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/storage": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/termes-opt18-strips": [
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/termes-sat18-strips": [
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/tetris-opt14-strips": [
   ":action-costs",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/tetris-sat14-strips": [
   ":action-costs",
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/thoughtful-mco14-strips": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/thoughtful-sat14-strips": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/tidybot-opt11-strips": [
@@ -949,31 +1177,39 @@
  ],
  "classical/downward-benchmarks/transport-opt08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/transport-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/transport-opt14-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/transport-sat08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/transport-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/transport-sat14-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/trucks": [
-  ":adl",
-  ":typing"
+  ":disjunctive-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/downward-benchmarks/trucks-strips": [
   ":strips"
@@ -985,31 +1221,39 @@
   ":strips"
  ],
  "classical/downward-benchmarks/visitall-opt11-strips": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/visitall-opt14-strips": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/visitall-sat11-strips": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/visitall-sat14-strips": [
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/woodworking-opt08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/woodworking-opt11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/woodworking-sat08-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/woodworking-sat11-strips": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/downward-benchmarks/zenotravel": [
@@ -1055,36 +1299,45 @@
   ":strips"
  ],
  "classical/generated/childsnack-test": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/childsnack-train": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/childsnack-valid": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/delivery-test": [
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/generated/delivery-train": [
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/generated/delivery-valid": [
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/generated/driverlog-test": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/driverlog-train": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/driverlog-valid": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/ferry-test": [
@@ -1098,23 +1351,29 @@
  ],
  "classical/generated/floortile-test": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/generated/floortile-train": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/generated/floortile-valid": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/generated/goldminer-test": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/goldminer-train": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/goldminer-valid": [
+  ":strips",
   ":typing"
  ],
  "classical/generated/grid-test": [
@@ -1222,18 +1481,24 @@
  "classical/htg-domains/childsnack-large": [
   ":equality",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/htg-domains/genome-edit-distance": [
   ":action-costs",
-  ":adl",
+  ":conditional-effects",
   ":equality",
   ":negative-preconditions",
-  ":typing"
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/htg-domains/labyrinth": [
   ":action-costs",
-  ":adl"
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/htg-domains/logistics-large": [
   ":strips"
@@ -1262,6 +1527,7 @@
  ],
  "classical/ipc2023-learning/childsnack_ipc2023_learning": [
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/ipc2023-learning/ferry_ipc2023_learning": [
@@ -1270,6 +1536,7 @@
   ":typing"
  ],
  "classical/ipc2023-learning/floortile_ipc2023_learning": [
+  ":strips",
   ":typing"
  ],
  "classical/ipc2023-learning/miconic_ipc2023_learning": [
@@ -1286,6 +1553,7 @@
   ":typing"
  ],
  "classical/ipc2023-learning/sokoban_ipc2023_learning": [
+  ":strips",
   ":typing"
  ],
  "classical/ipc2023-learning/spanner_ipc2023_learning": [
@@ -1293,134 +1561,161 @@
   ":typing"
  ],
  "classical/ipc2023-learning/transport_ipc2023_learning": [
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Bridge": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Build_Cabin": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Build_Cross": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Build_Shape": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Build_Wall": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Build_Well": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Climb_Place": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Collect_Build_Shape": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Cut_Tree": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Gather_Multiple_Wood": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Gather_Wood": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Move_to_Location": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Pickup_Diamond": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Pickup_and_Place": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Place_Wood": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Scaled_Move_to_Location": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/mine-pddl/Scaled_Move_to_Location_extended": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/profiling/blocksworld-large-simple": [
   ":strips"
  ],
  "classical/profiling/childsnack-contents": [
+  ":strips",
   ":typing"
  ],
  "classical/profiling/genome-edit-distance": [
   ":action-costs",
   ":equality",
-  ":negative-preconditions"
+  ":negative-preconditions",
+  ":strips"
  ],
  "classical/profiling/genome-edit-distance-positional": [
   ":action-costs",
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/profiling/genome-edit-distance-split": [
   ":action-costs",
   ":equality",
-  ":negative-preconditions"
+  ":negative-preconditions",
+  ":strips"
  ],
  "classical/profiling/labyrinth": [
   ":action-costs",
-  ":adl"
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
  ],
  "classical/profiling/logistics-large-simple": [
   ":strips"
@@ -1498,14 +1793,28 @@
  "classical/tests/agricola": [
   ":action-costs",
   ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/tests/airport": [
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/tests/assembly": [
-  ":adl"
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/tests/barman": [
   ":action-costs",
@@ -1521,12 +1830,15 @@
   ":typing"
  ],
  "classical/tests/childsnack": [
+  ":strips",
   ":typing"
  ],
  "classical/tests/delivery": [
+  ":strips",
   ":typing"
  ],
  "classical/tests/driverlog": [
+  ":strips",
   ":typing"
  ],
  "classical/tests/ferry": [
@@ -1554,29 +1866,52 @@
   ":typing"
  ],
  "classical/tests/miconic-fulladl": [
-  ":adl"
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/tests/miconic-simpleadl": [
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/tests/parcprinter": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/tests/pathways": [
-  ":adl",
+  ":disjunctive-preconditions",
+  ":negative-preconditions",
+  ":strips",
   ":typing"
  ],
  "classical/tests/philosophers": [
-  ":adl",
   ":derived-predicates",
+  ":disjunctive-preconditions",
   ":equality",
-  ":typing"
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/tests/psr-middle": [
-  ":adl",
-  ":derived-predicates"
+  ":conditional-effects",
+  ":derived-predicates",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/tests/pushworld": [
   ":conditional-effects",
@@ -1587,6 +1922,7 @@
   ":universal-preconditions"
  ],
  "classical/tests/reward": [
+  ":strips",
   ":typing"
  ],
  "classical/tests/rovers": [
@@ -1598,10 +1934,15 @@
   ":typing"
  ],
  "classical/tests/schedule": [
-  ":adl",
-  ":typing"
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/tests/sokoban": [
+  ":strips",
   ":typing"
  ],
  "classical/tests/spanner": [
@@ -1610,128 +1951,152 @@
  ],
  "classical/tests/transport": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "classical/tests/visitall": [
+  ":strips",
   ":typing"
  ],
  "classical/tests/woodworking": [
   ":action-costs",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/block-grouping": [
   ":disjunctive-preconditions",
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/counters": [
-  ":adl",
   ":numeric-fluents",
   ":strips",
   ":typing"
  ],
  "numeric/ipc2023/delivery": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/drone": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/expedition": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/ext-plant-watering": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/farmland": [
   ":equality",
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/fo-counters": [
   ":action-costs",
-  ":adl",
   ":numeric-fluents",
   ":strips",
   ":typing"
  ],
  "numeric/ipc2023/fo-farmland": [
-  ":adl",
-  ":fluents",
-  ":strips"
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
  ],
  "numeric/ipc2023/fo-sailing": [
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/hydropower": [
-  ":adl",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/markettrader": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/mprime": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/pathwaysmetric": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/rover": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/sailing": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/settlersnumeric": [
-  ":fluents",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/sugar": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/tpp": [
   ":action-costs",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2023/zenotravel": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/2048": [
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/coins": [
-  ":fluents",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/expedition": [
-  ":fluents",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/factory-robot": [
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/forestfire": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/gear-car": [
@@ -1742,15 +2107,16 @@
  "numeric/ipc2026/line-exchange-snp": [
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/onlycraft-opt": [
-  ":fluents",
+  ":numeric-fluents",
   ":strips",
   ":typing"
  ],
  "numeric/ipc2026/onlycraft-sat": [
-  ":fluents",
+  ":numeric-fluents",
   ":strips",
   ":typing"
  ],
@@ -1764,6 +2130,7 @@
   ":equality",
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/rainbowttles-sat": [
@@ -1771,21 +2138,24 @@
   ":equality",
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/sailing-wind-opt": [
   ":disjunctive-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/sailing-wind-sat": [
   ":disjunctive-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/settlers-snp": [
-  ":adl",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/ipc2026/ztalloc-sum": [
@@ -1797,305 +2167,355 @@
  "numeric/mine-pddl/Bridge": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Build_Cabin": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Build_Cross": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Build_Shape": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Build_Wall": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Build_Well": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Climb_Place": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Collect_Build_Shape": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Cut_Tree": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Gather_Multiple_Wood": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Gather_Wood": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Move_to_Location": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Pickup_Diamond": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Pickup_and_Place": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Place_Wood": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/mine-pddl/Scaled_Move_to_Location": [
   ":disjunctive-preconditions",
   ":existential-preconditions",
-  ":fluents",
   ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/block-grouping": [
   ":disjunctive-preconditions",
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/counters": [
-  ":adl",
   ":numeric-fluents",
   ":strips",
   ":typing"
  ],
  "numeric/profiling/delivery": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/drone": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/expedition": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/ext-plant-watering": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/farmland": [
   ":equality",
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/fo-counters": [
   ":action-costs",
-  ":adl",
   ":numeric-fluents",
   ":strips",
   ":typing"
  ],
  "numeric/profiling/fo-farmland": [
-  ":adl",
-  ":fluents",
-  ":strips"
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
  ],
  "numeric/profiling/fo-sailing": [
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/hydropower": [
-  ":adl",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/markettrader": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/mprime": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/pathwaysmetric": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/rover": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/sailing": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/settlersnumeric": [
-  ":fluents",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/sugar": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/tpp": [
   ":action-costs",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/profiling/zenotravel": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/block-grouping": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/counters": [
-  ":adl",
   ":numeric-fluents",
   ":strips",
   ":typing"
  ],
  "numeric/tests/delivery": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/drone": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/expedition": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/ext-plant-watering": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/farmland": [
   ":equality",
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/fo-counters": [
   ":action-costs",
-  ":adl",
   ":numeric-fluents",
   ":strips",
   ":typing"
  ],
  "numeric/tests/fo-farmland": [
-  ":adl",
-  ":fluents",
-  ":strips"
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
  ],
  "numeric/tests/fo-sailing": [
   ":negative-preconditions",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/hydropower": [
-  ":adl",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/markettrader": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/mprime": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/pathwaysmetric": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/refuel": [
-  ":numeric-fluents"
+  ":numeric-fluents",
+  ":strips"
  ],
  "numeric/tests/refuel-adl": [
   ":numeric-fluents",
+  ":strips",
   ":typing",
   ":universal-preconditions"
  ],
  "numeric/tests/rover": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/sailing": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/settersnumeric": [
-  ":fluents",
+  ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/sugar": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/tpp": [
   ":action-costs",
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ],
  "numeric/tests/zenotravel": [
   ":numeric-fluents",
+  ":strips",
   ":typing"
  ]
 }

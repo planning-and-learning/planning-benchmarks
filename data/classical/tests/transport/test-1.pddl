@@ -2,7 +2,6 @@
 
 (define (problem transport-city-sequential-3nodes-1000size-2degree-100mindistance-2trucks-2packages-2008seed)
  (:domain transport)
- (:requirements :typing :action-costs)
  (:objects
   city-loc-1 - location
   city-loc-2 - location

@@ -1,6 +1,5 @@
 (define (problem DLOG-1-1-1)
 	(:domain driverlog)
-	(:requirements :typing)
 	(:objects
 	driver1 - driver
 	truck1 - truck

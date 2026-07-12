@@ -12,7 +12,6 @@
 (define (problem PROBLEM_X)
 
 (:domain airport)
-(:requirements :adl)
 (:objects
 
       ;; the airplanes (3)

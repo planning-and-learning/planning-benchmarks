@@ -1,58 +1,52 @@
 {
  "autoscale-agile-strips": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "autoscale-agile-strips-test": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "autoscale-optimal-strips": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
-   ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "autoscale-optimal-strips-test": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
-   ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "beluga2025-scalability-deterministic": {
@@ -60,12 +54,14 @@
    ":action-costs",
    ":equality",
    ":negative-preconditions",
+   ":strips",
    ":typing"
   ],
   "union": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
+   ":strips",
    ":typing"
   ]
  },
@@ -74,12 +70,14 @@
    ":action-costs",
    ":equality",
    ":negative-preconditions",
+   ":strips",
    ":typing"
   ],
   "union": [
    ":action-costs",
    ":equality",
    ":negative-preconditions",
+   ":strips",
    ":typing"
   ]
  },
@@ -88,6 +86,7 @@
    ":conditional-effects",
    ":equality",
    ":negative-preconditions",
+   ":strips",
    ":typing",
    ":universal-preconditions"
   ],
@@ -95,6 +94,7 @@
    ":conditional-effects",
    ":equality",
    ":negative-preconditions",
+   ":strips",
    ":typing",
    ":universal-preconditions"
   ]
@@ -104,6 +104,7 @@
    ":conditional-effects",
    ":equality",
    ":negative-preconditions",
+   ":strips",
    ":typing",
    ":universal-preconditions"
   ],
@@ -111,12 +112,15 @@
    ":conditional-effects",
    ":equality",
    ":negative-preconditions",
+   ":strips",
    ":typing",
    ":universal-preconditions"
   ]
  },
  "generated-test": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":equality",
@@ -126,7 +130,9 @@
   ]
  },
  "generated-train": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":equality",
@@ -136,7 +142,9 @@
   ]
  },
  "generated-valid": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":equality",
@@ -146,13 +154,13 @@
   ]
  },
  "htg": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":conditional-effects",
-   ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
    ":typing",
@@ -160,13 +168,13 @@
   ]
  },
  "htg-test": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":conditional-effects",
-   ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
    ":typing",
@@ -175,10 +183,7 @@
  },
  "ipc-optimal-adl": {
   "intersection": [
-   ":conditional-effects",
-   ":negative-preconditions",
-   ":typing",
-   ":universal-preconditions"
+   ":strips"
   ],
   "union": [
    ":action-costs",
@@ -196,10 +201,7 @@
  },
  "ipc-optimal-adl-test": {
   "intersection": [
-   ":conditional-effects",
-   ":negative-preconditions",
-   ":typing",
-   ":universal-preconditions"
+   ":strips"
   ],
   "union": [
    ":action-costs",
@@ -216,38 +218,36 @@
   ]
  },
  "ipc-optimal-strips": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "ipc-optimal-strips-test": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "ipc-satisficing-adl": {
   "intersection": [
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
+   ":strips",
    ":typing",
    ":universal-preconditions"
   ],
@@ -267,9 +267,7 @@
  },
  "ipc-satisficing-adl-test": {
   "intersection": [
-   ":conditional-effects",
-   ":equality",
-   ":negative-preconditions",
+   ":strips",
    ":typing",
    ":universal-preconditions"
   ],
@@ -288,35 +286,36 @@
   ]
  },
  "ipc-satisficing-strips": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "ipc-satisficing-strips-test": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "ipc2023-learning": {
   "intersection": [
+   ":strips",
    ":typing"
   ],
   "union": [
@@ -327,6 +326,7 @@
  },
  "ipc2023-learning-test": {
   "intersection": [
+   ":strips",
    ":typing"
   ],
   "union": [
@@ -338,58 +338,49 @@
  "ipc2023-numeric": {
   "intersection": [
    ":numeric-fluents",
+   ":strips",
    ":typing"
   ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "ipc2023-numeric-test": {
   "intersection": [
    ":numeric-fluents",
+   ":strips",
    ":typing"
   ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "ipc2026-numeric": {
   "intersection": [
    ":numeric-fluents",
+   ":strips",
    ":typing"
   ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "mine-pddl-classical": {
@@ -397,12 +388,14 @@
    ":disjunctive-preconditions",
    ":existential-preconditions",
    ":negative-preconditions",
+   ":strips",
    ":typing"
   ],
   "union": [
    ":disjunctive-preconditions",
    ":existential-preconditions",
    ":negative-preconditions",
+   ":strips",
    ":typing"
   ]
  },
@@ -411,12 +404,14 @@
    ":disjunctive-preconditions",
    ":existential-preconditions",
    ":negative-preconditions",
+   ":strips",
    ":typing"
   ],
   "union": [
    ":disjunctive-preconditions",
    ":existential-preconditions",
    ":negative-preconditions",
+   ":strips",
    ":typing"
   ]
  },
@@ -426,7 +421,7 @@
    ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
+   ":strips",
    ":typing"
   ],
   "union": [
@@ -434,7 +429,7 @@
    ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
+   ":strips",
    ":typing"
   ]
  },
@@ -444,7 +439,7 @@
    ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
+   ":strips",
    ":typing"
   ],
   "union": [
@@ -452,18 +447,18 @@
    ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
+   ":strips",
    ":typing"
   ]
  },
  "profiling-htg": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":conditional-effects",
-   ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":strips",
    ":typing",
@@ -473,20 +468,17 @@
  "profiling-ipc2023-numeric": {
   "intersection": [
    ":numeric-fluents",
+   ":strips",
    ":typing"
   ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
    ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
    ":strips",
-   ":typing",
-   ":universal-preconditions"
+   ":typing"
   ]
  },
  "pushworld": {
@@ -526,7 +518,9 @@
   ]
  },
  "tests-classical": {
-  "intersection": [],
+  "intersection": [
+   ":strips"
+  ],
   "union": [
    ":action-costs",
    ":conditional-effects",
@@ -542,17 +536,14 @@
  },
  "tests-numeric": {
   "intersection": [
-   ":numeric-fluents"
+   ":numeric-fluents",
+   ":strips"
   ],
   "union": [
    ":action-costs",
-   ":conditional-effects",
-   ":disjunctive-preconditions",
    ":equality",
-   ":existential-preconditions",
    ":negative-preconditions",
    ":numeric-fluents",
-   ":object-fluents",
    ":strips",
    ":typing",
    ":universal-preconditions"

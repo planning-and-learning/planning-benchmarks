@@ -5,11 +5,7 @@
 ;;
 
 (define (domain PolyCraft)
-  (:requirements
-    :strips
-    :typing
-    :fluents
-  )
+  (:requirements :strips :numeric-fluents :typing)
 
   (:types
     cell - object

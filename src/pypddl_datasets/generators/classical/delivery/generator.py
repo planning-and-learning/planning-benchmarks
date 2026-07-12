@@ -55,7 +55,6 @@ def make_problem(grid_size: int, num_packages: int, seed: int | None = None) -> 
 
     return f"""(define (problem delivery-{grid_size}x{grid_size}-{num_packages})
     (:domain delivery)
-    (:requirements :typing)
     (:objects
         {objects_cells} - cell
         {objects_packages} - package

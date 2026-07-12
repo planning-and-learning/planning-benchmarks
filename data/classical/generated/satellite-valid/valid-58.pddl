@@ -1,10 +1,10 @@
-(define (problem satellite-s4-i5-m3-t3-o5)
+(define (problem satellite-s4-i4-m3-t4-o5-p25)
   (:domain satellite)
   (:objects
     satellite0 satellite1 satellite2 satellite3 - satellite
-    instrument0 instrument1 instrument2 instrument3 instrument4 - instrument
+    instrument0 instrument1 instrument2 instrument3 - instrument
     infrared0 image1 spectrograph2 - mode
-    target0 target1 target2 observation0 observation1 observation2 observation3 observation4 - direction
+    target0 target1 target2 target3 observation0 observation1 observation2 observation3 observation4 - direction
   )
   (:init
     (power_avail satellite0)
@@ -12,36 +12,31 @@
     (power_avail satellite1)
     (pointing satellite1 target2)
     (power_avail satellite2)
-    (pointing satellite2 observation3)
+    (pointing satellite2 observation4)
     (power_avail satellite3)
-    (pointing satellite3 observation0)
+    (pointing satellite3 observation2)
     (on_board instrument0 satellite0)
     (calibration_target instrument0 target0)
     (supports instrument0 infrared0)
     (on_board instrument1 satellite1)
     (calibration_target instrument1 target1)
     (supports instrument1 image1)
-    (supports instrument1 spectrograph2)
+    (supports instrument1 infrared0)
     (on_board instrument2 satellite2)
     (calibration_target instrument2 target2)
-    (supports instrument2 infrared0)
     (supports instrument2 spectrograph2)
     (on_board instrument3 satellite3)
-    (calibration_target instrument3 target0)
+    (calibration_target instrument3 target3)
     (supports instrument3 infrared0)
-    (supports instrument3 spectrograph2)
-    (on_board instrument4 satellite0)
-    (calibration_target instrument4 target1)
-    (supports instrument4 image1)
-    (supports instrument4 infrared0)
   )
   (:goal
     (and
       (have_image observation0 infrared0)
-      (have_image observation1 spectrograph2)
-      (have_image observation2 infrared0)
-      (have_image observation3 spectrograph2)
-      (have_image observation4 image1)
+      (have_image observation1 infrared0)
+      (have_image observation2 spectrograph2)
+      (have_image observation3 infrared0)
+      (have_image observation4 infrared0)
+      (pointing satellite1 observation0)
     )
   )
 )

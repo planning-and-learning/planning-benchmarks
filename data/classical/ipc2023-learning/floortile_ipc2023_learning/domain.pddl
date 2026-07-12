@@ -5,7 +5,7 @@
 ;;   - all action names use underscore
 
 (define (domain floortile)
-(:requirements :typing)
+(:requirements :strips :typing)
 (:types robot tile color - object)
 
 (:predicates

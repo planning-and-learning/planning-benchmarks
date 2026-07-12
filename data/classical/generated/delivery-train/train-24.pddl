@@ -1,6 +1,5 @@
 (define (problem delivery-3x3-4)
     (:domain delivery)
-    (:requirements :typing)
     (:objects
         c_0_0 c_0_1 c_0_2 c_1_0 c_1_1 c_1_2 c_2_0 c_2_1 c_2_2 - cell
         p1 p2 p3 p4 - package

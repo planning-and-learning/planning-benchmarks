@@ -10,7 +10,7 @@
 ; Going upwind or fully downwind is slower. We assume that wind comes from the north.
 
 (define (domain sailing)
-    (:requirements :typing :numeric-fluents)
+    (:requirements :strips :numeric-fluents :typing)
     (:types boat - object person - object)
     (:predicates
         (saved ?t - person)

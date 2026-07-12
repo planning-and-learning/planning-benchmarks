@@ -1,7 +1,7 @@
 ;; 12-action variant
 (define
     (domain rubiks-cube)
-    (:requirements :adl)
+  (:requirements :strips :conditional-effects :universal-preconditions)
     (:predicates
         (cube1 ?x ?y ?z)
         (cube2 ?x ?y ?z)

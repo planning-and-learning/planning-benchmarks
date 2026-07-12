@@ -6,7 +6,7 @@
 ; Authors: Alfonso Gerevini and Alessandro Saetti
 
 (define (domain TPP-Metric)
-(:requirements :typing :action-costs :numeric-fluents)
+(:requirements :strips :action-costs :numeric-fluents :typing)
 (:types place locatable - object
     depot market -place
 	truck goods -locatable)

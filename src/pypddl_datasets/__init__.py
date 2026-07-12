@@ -14,13 +14,24 @@ import os
 import re
 import shutil
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pooch
 
+if TYPE_CHECKING:
+    from typing import override
+else:  # typing.override needs Python 3.12; a no-op keeps 3.10/3.11 working
+
+    def override(func):  # noqa: ANN001, ANN201
+        return func
+
+
 from .requirements import (
+    COMPOSITE_TO_REQUIREMENTS,
+    CompositeRequirements,
     Requirement,
     Requirements,
-    _matches,
+    matches as _matches,
     domain_requirements,
     find_domains,
     find_suites,
@@ -28,6 +39,29 @@ from .requirements import (
     task_requirements,
 )
 from .suites import SUITES
+
+__all__ = [
+    "COMPOSITE_TO_REQUIREMENTS",
+    "DATA_SHA256",
+    "DATA_VERSION",
+    "CompositeRequirements",
+    "Domain",
+    "Requirement",
+    "Requirements",
+    "Suite",
+    "Task",
+    "domain_requirements",
+    "export_suite",
+    "fetch_domain",
+    "fetch_suite",
+    "fetch_task",
+    "find_domains",
+    "find_suites",
+    "find_tasks",
+    "list_domains",
+    "list_suites",
+    "task_requirements",
+]
 
 __version__ = "0.0.3"
 
@@ -85,6 +119,7 @@ class Task:
     def task_path(self) -> Path:
         return self._task_path
 
+    @override
     def __repr__(self) -> str:
         return f"Task(domain={self._domain!r}, problem={self._problem!r})"
 
@@ -106,6 +141,7 @@ class Domain:
     def tasks(self) -> list[Task]:
         return self._tasks
 
+    @override
     def __repr__(self) -> str:
         return f"Domain(path={self._path!r}, tasks={self._tasks!r})"
 
@@ -126,6 +162,7 @@ class Suite:
     def domains(self) -> list[Domain]:
         return self._domains
 
+    @override
     def __repr__(self) -> str:
         return f"Suite(path={self._path!r}, domains={self._domains!r})"
 
@@ -171,11 +208,10 @@ def fetch_suite(
 
     `supported` keeps only domains whose requirements the caller can handle
     (subset test); `requires` keeps only domains using all the given
-    requirements. Composite requirements like Requirement.ADL are expanded
-    on both sides."""
+    requirements."""
     if suite not in SUITES:
         raise KeyError(f"unknown suite {suite!r}; see list_suites()")
-    domains = []
+    domains: list[Domain] = []
     for entry in SUITES[suite]:
         name, _, instance = entry.partition(":")
         if not _matches(domain_requirements(name), supported, requires):
@@ -193,7 +229,7 @@ def export_suite(suite: str, dest: str | Path) -> list[Path]:
     that expect benchmark files in a fixed directory tree."""
     if suite not in SUITES:
         raise KeyError(f"unknown suite {suite!r}; see list_suites()")
-    paths = []
+    paths: list[Path] = []
     for entry in SUITES[suite]:
         name = entry.partition(":")[0]
         target = Path(dest) / name

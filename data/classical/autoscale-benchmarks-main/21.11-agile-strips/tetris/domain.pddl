@@ -2,7 +2,7 @@
 ; Author: Mauro Vallati
 
 (define (domain tetris)
-(:requirements :typing :equality :negative-preconditions :action-costs)
+(:requirements :strips :action-costs :equality :negative-preconditions :typing)
   (:types  
 	one_square two_straight right_l - pieces
 	position pieces

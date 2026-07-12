@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Regenerate the committed requirement metadata from data/:
+"""Regenerate the committed requirement metadata from data/ using the pypddl
+parser (repository tooling, not shipped with the package):
 
-- requirements.tasks.json:   {domain: {task: [declared requirements]}}
-  (a task's requirements = its own declarations plus its domain file's)
-- requirements.domains.json: {domain: [union of declared requirements]}
+- requirements.tasks.json:   {domain: {task: [requirements]}}
+  (a task's requirements = pypddl's view of its domain file plus its own)
+- requirements.domains.json: {domain: [union over its tasks]}
 - requirements.suites.json:  {suite: {"union": [...], "intersection": [...]}}
-  over the EXPANDED domain requirements, so find_suites answers both filter
-  directions with one subset test each.
+  so find_suites answers both filter directions with one subset test each.
 """
 
 from __future__ import annotations
@@ -15,49 +15,57 @@ import argparse
 import functools
 import json
 import os
-import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-_REQUIREMENTS = re.compile(r"\(\s*:requirements([^)]*)\)", re.IGNORECASE)
-_HEAD_BYTES = 262144  # declarations live in the define header
+sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import pypddl_datasets
+from pypddl_datasets.discovery import discover_domains
+from pypddl.formalism import Parser, ParserOptions
+from pypddl_datasets.requirements import Requirement
+from pypddl_datasets.suites import SUITES
 
 
 def generate(data_root: Path) -> dict[str, dict]:
     os.environ["PYPDDL_DATASETS_DATA"] = str(data_root)
-    sys.path.insert(0, str(ROOT / "src"))
-    import pypddl_datasets
-    from pypddl_datasets.requirements import Requirement, _expand
-    from pypddl_datasets.suites import SUITES
 
-    from package_data import discover_domains
+    options = ParserOptions()
+    options.add_action_costs = False
 
     @functools.cache
-    def declared(path: Path) -> frozenset[str]:
-        text = re.sub(r";[^\n]*", "", path.read_text(encoding="utf-8", errors="replace")[:_HEAD_BYTES])
-        tokens = {token.lower() for match in _REQUIREMENTS.finditer(text) for token in match.group(1).split()}
-        for token in tokens:
-            Requirement(token)  # unknown tokens fail generation loudly
-        return frozenset(tokens)
+    def domain_parser(domain_path: Path) -> Parser:
+        return Parser(domain_path, options)
+
+    def tokens(requirements) -> frozenset[str]:
+        values = frozenset(str(requirement) for requirement in requirements)
+        for value in values:
+            # pypddl reports usage-based explicit requirements only; a composite
+            # or unknown token leaking through is a pypddl bug and fails loudly.
+            Requirement(value)
+        return values
 
     tasks: dict[str, dict[str, list[str]]] = {}
     domains: dict[str, list[str]] = {}
     for domain_dir in discover_domains(data_root):
         name = domain_dir.relative_to(data_root).as_posix()
-        by_problem = {
-            task.problem: sorted((declared(task.domain_path) | declared(task.task_path)) or {":strips"})
-            for task in pypddl_datasets.fetch_domain(name).tasks
-        }
+        by_problem = {}
+        for task in pypddl_datasets.fetch_domain(name).tasks:
+            parser = domain_parser(task.domain_path)
+            parsed = parser.parse_task(task.task_path)
+            declared = tokens(parser.domain().get_requirements()) | tokens(parsed.get_requirements())
+            by_problem[task.problem] = sorted(declared)
         tasks[name] = dict(sorted(by_problem.items()))
-        domains[name] = sorted(set().union(*map(set, by_problem.values()))) if by_problem else [":strips"]
+        domains[name] = sorted(set().union(*map(set, by_problem.values()))) if by_problem else []
 
     suites: dict[str, dict[str, list[str]]] = {}
     for suite, entries in SUITES.items():
-        expanded = [_expand(domains[entry.partition(":")[0]]) for entry in entries]
+        sets = [frozenset(domains[entry.partition(":")[0]]) for entry in entries]
         suites[suite] = {
-            "union": sorted(frozenset().union(*expanded)),
-            "intersection": sorted(frozenset.intersection(*expanded)),
+            "union": sorted(frozenset().union(*sets)),
+            "intersection": sorted(frozenset.intersection(*sets)),
         }
 
     return {

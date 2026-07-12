@@ -1,5 +1,5 @@
 (define (domain recharging-robots)
-(:requirements :typing :adl :action-costs)
+(:requirements :strips :action-costs :conditional-effects :disjunctive-preconditions :equality :negative-preconditions :typing :universal-preconditions)
 (:types
     location - object
     robot - object

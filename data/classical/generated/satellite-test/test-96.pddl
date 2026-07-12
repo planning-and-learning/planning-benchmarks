@@ -1,10 +1,10 @@
-(define (problem satellite-s5-i7-m5-t6-o8)
+(define (problem satellite-s5-i8-m5-t5-o7-p75)
   (:domain satellite)
   (:objects
     satellite0 satellite1 satellite2 satellite3 satellite4 - satellite
-    instrument0 instrument1 instrument2 instrument3 instrument4 instrument5 instrument6 - instrument
+    instrument0 instrument1 instrument2 instrument3 instrument4 instrument5 instrument6 instrument7 - instrument
     infrared0 image1 spectrograph2 thermograph3 infrared4 - mode
-    target0 target1 target2 target3 target4 target5 observation0 observation1 observation2 observation3 observation4 observation5 observation6 observation7 - direction
+    target0 target1 target2 target3 target4 observation0 observation1 observation2 observation3 observation4 observation5 observation6 - direction
   )
   (:init
     (power_avail satellite0)
@@ -12,11 +12,11 @@
     (power_avail satellite1)
     (pointing satellite1 target4)
     (power_avail satellite2)
-    (pointing satellite2 observation4)
+    (pointing satellite2 observation5)
     (power_avail satellite3)
     (pointing satellite3 target4)
     (power_avail satellite4)
-    (pointing satellite4 observation2)
+    (pointing satellite4 observation3)
     (on_board instrument0 satellite0)
     (calibration_target instrument0 target0)
     (supports instrument0 image1)
@@ -38,13 +38,17 @@
     (supports instrument4 infrared4)
     (supports instrument4 spectrograph2)
     (on_board instrument5 satellite0)
-    (calibration_target instrument5 target5)
+    (calibration_target instrument5 target0)
     (supports instrument5 infrared0)
     (supports instrument5 infrared4)
     (on_board instrument6 satellite1)
-    (calibration_target instrument6 target0)
+    (calibration_target instrument6 target1)
     (supports instrument6 image1)
     (supports instrument6 spectrograph2)
+    (on_board instrument7 satellite2)
+    (calibration_target instrument7 target2)
+    (supports instrument7 infrared4)
+    (supports instrument7 spectrograph2)
   )
   (:goal
     (and
@@ -55,7 +59,10 @@
       (have_image observation4 spectrograph2)
       (have_image observation5 infrared0)
       (have_image observation6 spectrograph2)
-      (have_image observation7 infrared0)
+      (pointing satellite0 observation1)
+      (pointing satellite1 target0)
+      (pointing satellite2 target4)
+      (pointing satellite3 observation0)
     )
   )
 )

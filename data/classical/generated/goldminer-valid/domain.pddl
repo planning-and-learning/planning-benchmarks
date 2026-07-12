@@ -26,7 +26,7 @@
 
 
 (define (domain gold-miner-typed)
-(:requirements :typing)
+(:requirements :strips :typing)
 (:types LOC)
 
 (:predicates

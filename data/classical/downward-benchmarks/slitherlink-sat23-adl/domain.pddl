@@ -1,5 +1,5 @@
 (define (domain slitherlink)
-(:requirements :typing :adl)
+(:requirements :strips :negative-preconditions :typing)
 
 (:types
     node - object

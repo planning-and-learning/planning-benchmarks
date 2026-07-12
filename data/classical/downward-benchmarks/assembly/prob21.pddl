@@ -1,6 +1,5 @@
 (define (problem assem-x-21)
    (:domain assembly)
-   (:requirements :adl)
    (:objects hack thingumbob-61 unit-62 wire-18 hoozawhatsie-63
              connector-64 bracket-17 socket-24 device-19 coil-20 valve-23
              mount-21 kludge-22 bracket-31 mount-25 plug-26

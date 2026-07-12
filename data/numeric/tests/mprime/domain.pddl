@@ -4,7 +4,7 @@
 ;;     the ability to squirt a unit of fuel from any node to a neighboring node
 ;;     provided the originating node has at least two units.
 (define (domain mystery-prime-typed)
-   (:requirements :typing :numeric-fluents)
+   (:requirements :strips :numeric-fluents :typing)
    (:types food emotion - object
            pleasure pain - emotion)
    (:predicates

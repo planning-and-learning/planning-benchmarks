@@ -2,7 +2,7 @@
 ;;
 
 (define (domain schedule)
-  (:requirements :adl :typing)
+  (:requirements :strips :conditional-effects :equality :negative-preconditions :typing :universal-preconditions)
   (:types temperature-type
 	  ashape
 	  surface

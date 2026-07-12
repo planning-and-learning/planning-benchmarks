@@ -1,5 +1,5 @@
 (define (domain scanalyzer3d)
-  (:requirements :typing :action-costs)
+  (:requirements :strips :action-costs :typing)
   (:types segment car - object)
   (:predicates (on ?c - car ?s - segment)
 	       (analyzed ?c - car)

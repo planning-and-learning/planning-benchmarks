@@ -1,6 +1,5 @@
 (define (problem assem-x-19)
    (:domain assembly)
-   (:requirements :adl)
    (:objects unit plug-20 mount-17 whatsis-18 connector-19
              device-24 valve-21 widget-22 bracket-23 plug-31 gimcrack-25
              doodad-27 kludge-28 hoozawhatsie-29 contraption-30 device-13

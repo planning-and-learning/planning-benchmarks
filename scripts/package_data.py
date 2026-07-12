@@ -7,26 +7,15 @@ from __future__ import annotations
 import argparse
 import gzip
 import hashlib
+import sys
 import tarfile
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+from pypddl_datasets.discovery import discover_domains
+
 LFS_POINTER_PREFIX = b"version https://git-lfs.github.com/spec/v1"
-
-
-def discover_domains(data_root: Path) -> list[Path]:
-    """A domain is a maximal directory containing at least one .pddl file directly."""
-    domains: list[Path] = []
-
-    def walk(directory: Path) -> None:
-        if any(child.suffix == ".pddl" for child in directory.iterdir() if child.is_file()):
-            domains.append(directory)
-            return
-        for child in directory.iterdir():
-            if child.is_dir():
-                walk(child)
-
-    walk(data_root)
-    return sorted(domains)
 
 
 def assert_no_lfs_pointers(data_root: Path) -> None:

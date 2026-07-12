@@ -3,7 +3,7 @@
 ;;See MIT License attached
 
 (define (domain floor-tile)
-(:requirements :typing :action-costs)
+(:requirements :strips :action-costs :typing)
 (:types robot tile color - object)
 
 (:predicates

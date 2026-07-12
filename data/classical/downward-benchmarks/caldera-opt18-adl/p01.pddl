@@ -3,7 +3,6 @@
 ; This has 2 hosts, 4 user, 2 admin per host, 1 active account per host
 (define (problem p2_hosts_trial_15)
 (:domain caldera)
-(:requirements :typing)
 (:objects
     id_ttimedelta id_batimedelta - observedtimedelta
     id_zhost id_shost - observedhost

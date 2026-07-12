@@ -1,6 +1,5 @@
 (define (problem assem-x-26)
    (:domain assembly)
-   (:requirements :adl)
    (:objects valve unit-56 gimcrack-51 contraption-52 hack-53
              sprocket-54 thingumbob-55 fastener-60 valve-57 foobar-58
              socket-59 coil-64 widget-61 device-63 connector-20 mount-17

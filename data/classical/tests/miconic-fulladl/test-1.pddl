@@ -1,6 +1,5 @@
 (define (problem num_passengers_2)
    (:domain miconic)
-   (:requirements :adl)
    (:objects
       p0 p1 p2 - passenger
       f0 f1 f2 - floor)

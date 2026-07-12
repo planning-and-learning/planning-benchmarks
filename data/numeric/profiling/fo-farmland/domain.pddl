@@ -8,7 +8,7 @@
 ;; with which it is possible to move more workers per time from place to place, yet paying a higher cost
 
 (define (domain farmland_ln)
-    (:requirements :strips :fluents :adl)
+    (:requirements :strips :equality :negative-preconditions :numeric-fluents :typing)
     (:types farm -object
             
     )

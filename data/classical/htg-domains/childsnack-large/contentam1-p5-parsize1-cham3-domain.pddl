@@ -1,6 +1,6 @@
 
 (define (domain htg-child-snack)
-(:requirements :typing )
+(:requirements :strips :typing)
 (:types child bread-portion content-portion content-description sandwich tray place)
 (:constants kitchen - place)
 

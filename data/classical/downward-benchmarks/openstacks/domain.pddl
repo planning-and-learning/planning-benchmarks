@@ -5,7 +5,7 @@
 ; Barbara Smith & Ian Gent (see http://www.dcs.st-and.ac.uk/~ipg/challenge/).
 
 (define (domain openstacks-sequencedstrips)
-  (:requirements :typing :adl)
+  (:requirements :strips :disjunctive-preconditions :negative-preconditions :typing :universal-preconditions)
   (:types order product count)
   (:predicates (includes ?o - order ?p - product)
 	       (waiting ?o - order)

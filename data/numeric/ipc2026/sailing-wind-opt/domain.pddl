@@ -4,7 +4,7 @@
 
 (define (domain sailing-wind)
 
-(:requirements :typing :numeric-fluents :disjunctive-preconditions)
+(:requirements :strips :disjunctive-preconditions :numeric-fluents :typing)
 
 (:types 
     boat - object

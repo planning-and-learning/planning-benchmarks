@@ -1,6 +1,5 @@
 (define (problem assem-x-6)
    (:domain assembly)
-   (:requirements :adl)
    (:objects bracket doodad wire-3 plug-7 thingumbob-8 gimcrack
              socket-4 connector-1 device-2 device plug kludge fastener wire
              frob thingumbob mount socket coil contraption widget

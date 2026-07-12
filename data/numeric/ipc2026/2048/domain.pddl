@@ -23,7 +23,7 @@
 
 (define (domain twenty-forty-eight)
 
-    (:requirements :fluents :typing :negative-preconditions)
+    (:requirements :strips :negative-preconditions :numeric-fluents :typing)
 
     (:types pos status direction idx)
 

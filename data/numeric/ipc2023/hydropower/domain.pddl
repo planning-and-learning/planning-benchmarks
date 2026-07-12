@@ -7,7 +7,7 @@
 ;; Journal of Artificial Intelligence Research 46 (2013): 343-412.
 (define (domain hydropower)
 
-	(:requirements :adl :typing :numeric-fluents)
+	(:requirements :strips :numeric-fluents :typing)
 
 	(:types powerstation time turnvalue)
 

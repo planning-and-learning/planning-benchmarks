@@ -1,6 +1,5 @@
 (define (problem assem-x-29)
    (:domain assembly)
-   (:requirements :adl)
    (:objects hack tube-49 sprocket-45 widget-46 hack-47
              fastener-48 device-56 unit-50 whatsis-51 fastener-52 coil-53
              hoozawhatsie-54 bracket-55 widget-63 wire-57 sprocket-58 valve-59

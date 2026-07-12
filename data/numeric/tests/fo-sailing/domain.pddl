@@ -8,7 +8,7 @@
 ;; a first order control behind the classical moving actions.
 
 (define (domain sailing_ln)
-    (:requirements :typing :numeric-fluents :negative-preconditions)
+    (:requirements :strips :negative-preconditions :numeric-fluents :typing)
     (:types boat - object person - object)
     (:predicates
         (saved ?t - person)

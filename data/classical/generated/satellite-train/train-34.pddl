@@ -1,29 +1,24 @@
-(define (problem satellite-s1-i3-m3-t2-o1)
+(define (problem satellite-s1-i1-m3-t2-o3-p25)
   (:domain satellite)
   (:objects
     satellite0 - satellite
-    instrument0 instrument1 instrument2 - instrument
+    instrument0 - instrument
     infrared0 image1 spectrograph2 - mode
-    target0 target1 observation0 - direction
+    target0 target1 observation0 observation1 observation2 - direction
   )
   (:init
     (power_avail satellite0)
-    (pointing satellite0 target1)
+    (pointing satellite0 observation1)
     (on_board instrument0 satellite0)
     (calibration_target instrument0 target0)
     (supports instrument0 infrared0)
     (supports instrument0 spectrograph2)
-    (on_board instrument1 satellite0)
-    (calibration_target instrument1 target1)
-    (supports instrument1 image1)
-    (supports instrument1 infrared0)
-    (on_board instrument2 satellite0)
-    (calibration_target instrument2 target0)
-    (supports instrument2 spectrograph2)
   )
   (:goal
     (and
       (have_image observation0 infrared0)
+      (have_image observation1 infrared0)
+      (have_image observation2 infrared0)
     )
   )
 )

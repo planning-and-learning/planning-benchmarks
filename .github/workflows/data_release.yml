@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
-      - name: Install pypddl
-        run: pip install pypddl
+      - name: Install pypddl and package
+        run: pip install pypddl -e .
       - name: Validate all PDDL
         # reports must not land inside data/ (they would end up in the archive)
         run: python validate.py --root data --success-output /tmp/validate.success.json --error-output /tmp/validate.error.json

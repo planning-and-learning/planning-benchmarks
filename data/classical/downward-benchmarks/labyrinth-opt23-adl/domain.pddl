@@ -1,5 +1,5 @@
 (define (domain labyrinth)
-(:requirements :adl :action-costs)
+(:requirements :strips :action-costs :equality :negative-preconditions :typing)
 
 (:types
     ;; card with 2 to 4 paths

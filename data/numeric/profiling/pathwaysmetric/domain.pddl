@@ -10,7 +10,7 @@
 ; Authors: Yannis Dimopoulos, Alfonso Gerevini and Alessandro Saetti
 
 (define (domain Pathways-Metric)
-(:requirements :typing :numeric-fluents)
+(:requirements :strips :numeric-fluents :typing)
 
 (:types level molecule - object
 	simple complex - molecule)

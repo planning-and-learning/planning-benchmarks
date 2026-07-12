@@ -1,6 +1,6 @@
 ;; Enrico Scala (enricos83@gmail.com) and Miquel Ramirez (miquel.ramirez@gmail.com)
 (define (domain civ) 
- (:requirements :adl :typing :numeric-fluents)
+ (:requirements :strips :numeric-fluents :typing)
  (:types resource - object vehicle - store place - store store)
  (:constants ore - resource iron - resource stone - resource wood - resource
   timber - resource coal - resource)

@@ -1,6 +1,5 @@
 (define (problem assem-x-25)
    (:domain assembly)
-   (:requirements :adl)
    (:objects gimcrack whatsis-57 doodad-53 gimcrack-54 socket-55
              wire-56 fastener-63 bracket-59 connector-60 kludge-61
              mount-62 widget-22 coil-64 device-17 frob-18 valve-20

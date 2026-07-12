@@ -1,6 +1,5 @@
 (define (problem assem-x-20)
    (:domain assembly)
-   (:requirements :adl)
    (:objects unit bracket-21 fastener-17 plug-63 wire-64
              connector-20 doodad-18 unit-19 contraption-28 hack-22 socket-23
              contraption-24 sprocket-25 mount-26 doodad-27 socket-10 hack-29

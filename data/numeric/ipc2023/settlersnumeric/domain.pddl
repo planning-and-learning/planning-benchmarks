@@ -5,7 +5,7 @@
 ;; effects). 
 
 (define (domain civ) 
-  (:requirements :fluents :typing)
+  (:requirements :strips :numeric-fluents :typing)
   (:types place vehicle - store
 	  store resource)
   (:constants timber wood coal stone iron ore - resource)

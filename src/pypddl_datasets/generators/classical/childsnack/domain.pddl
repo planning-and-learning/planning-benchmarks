@@ -20,7 +20,7 @@
 
 
 (define (domain child-snack)
-(:requirements :typing )
+(:requirements :strips :typing)
 (:types child bread-portion content-portion sandwich tray place)
 (:constants kitchen - place)
 

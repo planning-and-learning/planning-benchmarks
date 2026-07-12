@@ -1,5 +1,5 @@
 (define (domain organic-synthesis-split)
-(:requirements :adl :action-costs :negative-preconditions)
+(:requirements :strips :action-costs :equality :negative-preconditions :typing)
 (:types
     chemical_atom - object
     phosphorus - chemical_atom

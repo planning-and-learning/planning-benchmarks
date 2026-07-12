@@ -9,7 +9,7 @@
 ;; The rate of such counter is however variable!
 
 (define (domain fn-counters)
-    (:requirements :strips :typing  :adl :numeric-fluents :action-costs)
+    (:requirements :strips :action-costs :numeric-fluents :typing)
     (:types counter)
 
     (:functions

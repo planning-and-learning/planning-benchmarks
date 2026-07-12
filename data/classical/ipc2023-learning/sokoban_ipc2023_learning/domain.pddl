@@ -3,7 +3,7 @@
 ;;   - only focus on microban instances, hence 4 constant directions
 ;;
 (define (domain sokoban)
-(:requirements :typing)
+(:requirements :strips :typing)
 (:types location direction box)
 
 (:constants down up left right - direction)

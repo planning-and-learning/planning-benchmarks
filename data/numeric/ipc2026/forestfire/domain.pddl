@@ -1,7 +1,7 @@
 ;; Alexander Shleyfman (shleyfman.alexander@gmail.com)
 (define (domain forestfire)
 
-    (:requirements :typing :numeric-fluents)
+    (:requirements :strips :numeric-fluents :typing)
 
   (:types location locatable - object
           bushes grass - location

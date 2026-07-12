@@ -1,6 +1,5 @@
 (define (problem Hiking-1-1-2)
 (:domain hiking)
-(:requirements :strips  :typing )
 (:objects
  car0 - car
  tent0 - tent

@@ -20,7 +20,7 @@
 ;; of one.
 ;;
 (define (domain folding)
-(:requirements :adl :action-costs)
+(:requirements :strips :action-costs :disjunctive-preconditions :equality :negative-preconditions :typing)
 
 (:types
     node - object

@@ -1,5 +1,5 @@
 (define (domain driverlog)
-  (:requirements :typing) 
+  (:requirements :strips :typing) 
   (:types         location locatable - object
 		driver truck obj - locatable
   

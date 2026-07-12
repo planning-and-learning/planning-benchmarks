@@ -38,8 +38,9 @@ suite as a plain directory tree for non-Python tools.
 
 Domains can be filtered by their declared PDDL requirements — `supported` is
 a capability ceiling (keep what your planner handles), `requires` a feature
-floor (keep what exercises a feature). Composites like `:adl` are expanded on
-both sides, and all queries are metadata-only (no download):
+floor (keep what exercises a feature). The data declares exactly the atomic
+requirements each file uses (strict-validated; aggregates like `:adl` never
+appear), and all queries are metadata-only (no download):
 
 ```python
 from pypddl_datasets import Requirement as R

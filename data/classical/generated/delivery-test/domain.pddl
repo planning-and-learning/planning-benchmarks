@@ -1,5 +1,5 @@
 (define (domain delivery)
-    (:requirements :typing :equality :negative-preconditions)
+    (:requirements :strips :equality :negative-preconditions :typing)
     (:types
         cell - object
         locatable - object

@@ -2,7 +2,7 @@
 ;; Relational multi-step domain formulation, with ITT operations only.
 
 (define (domain genome-edit-distance)
-  (:requirements :action-costs :negative-preconditions :equality)
+  (:requirements :strips :action-costs :equality :negative-preconditions)
   (:predicates
    ;; Static predicate, identifies duplicate copies of genes.
    ;; The "duplicate" relation is symmetric; "swappable" is an

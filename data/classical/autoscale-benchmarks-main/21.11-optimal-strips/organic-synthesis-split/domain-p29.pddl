@@ -1,5 +1,5 @@
 (define (domain CHEMICAL)
-(:requirements :adl :action-costs :negative-preconditions)
+(:requirements :strips :action-costs :equality :negative-preconditions :typing)
 (:types
 CHEMICAL_ATOM - OBJECT
 PHOSPHORUS - CHEMICAL_ATOM

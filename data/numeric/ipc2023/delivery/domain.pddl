@@ -6,7 +6,7 @@
 ; The items have numeric weights, and the robots have weight capacity limits
 
 (define (domain delivery)
-  (:requirements :typing :numeric-fluents)
+  (:requirements :strips :numeric-fluents :typing)
   (:types room item arm bot - object)
    (:predicates (at-bot ?b - bot ?x - room)
 		 (at ?i - item ?x - room)

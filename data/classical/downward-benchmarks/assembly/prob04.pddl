@@ -1,6 +1,5 @@
 (define (problem assem-x-4)
    (:domain assembly)
-   (:requirements :adl)
    (:objects frob connector socket-1 contraption-2 coil whatsis
              bracket hoozawhatsie thingumbob contraption unit hack widget
              sprocket device tube doodad fastener plug gimcrack socket valve

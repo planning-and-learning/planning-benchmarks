@@ -5,10 +5,8 @@
 
 (define (domain protocol)
 
-(:requirements  :equality :derived-predicates :adl
- ;; equality needed for blocked transition in case of a mismatch
-
- :typing)
+;; equality needed for blocked transition in case of a mismatch
+(:requirements :strips :derived-predicates :disjunctive-preconditions :equality :existential-preconditions :negative-preconditions :typing :universal-preconditions)
 (:types process proctype state queue transition
         number_ message
  ;; tags for size and messages

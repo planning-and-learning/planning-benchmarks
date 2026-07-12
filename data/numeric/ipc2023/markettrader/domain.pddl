@@ -7,7 +7,7 @@
 ;; "A hybrid LP-RPG heuristic for modelling numeric resource flows in planning."
 ;; Journal of Artificial Intelligence Research 46 (2013): 343-412.
 (define (domain Trader)
-(:requirements :typing :numeric-fluents)
+(:requirements :strips :numeric-fluents :typing)
 (:types market - place
 	camel goods - locatable
 	place locatable)

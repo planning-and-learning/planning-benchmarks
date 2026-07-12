@@ -1,5 +1,5 @@
 (define (domain beluga)
-	(:requirements :typing :equality :action-costs :negative-preconditions)
+	(:requirements :strips :action-costs :equality :negative-preconditions :typing)
 	(:types
 		beluga - location
 		hangar - location

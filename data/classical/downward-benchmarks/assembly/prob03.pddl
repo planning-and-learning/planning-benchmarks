@@ -1,6 +1,5 @@
 (define (problem assem-x-3)
    (:domain assembly)
-   (:requirements :adl)
    (:objects foobar coil widget tube frob socket hack hoozawhatsie
              sprocket thingumbob whatsis doodad gimcrack kludge contraption
              connector wire plug device fastener valve mount bracket unit

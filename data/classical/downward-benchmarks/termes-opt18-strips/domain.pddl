@@ -1,5 +1,5 @@
 (define (domain termes)
-(:requirements :typing :negative-preconditions)
+(:requirements :strips :negative-preconditions :typing)
 (:types
     numb - object
     position - object

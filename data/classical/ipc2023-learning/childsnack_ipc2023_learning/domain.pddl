@@ -5,7 +5,7 @@
 ;;   - action move_tray has a new precondition: (not (at ?t ?p2))
 
 (define (domain childsnack)
-(:requirements :typing :negative-preconditions)
+(:requirements :strips :negative-preconditions :typing)
 (:types child bread-portion content-portion sandwich tray place)
 (:constants kitchen - place)
 

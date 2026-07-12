@@ -1,5 +1,4 @@
 (define (problem roverprob2) (:domain rover)
-(:requirements :strips :typing)
 (:objects
 	general - lander
 	colour high_res - mode

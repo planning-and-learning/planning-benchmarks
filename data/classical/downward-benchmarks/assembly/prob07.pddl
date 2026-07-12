@@ -1,6 +1,5 @@
 (define (problem assem-x-7)
    (:domain assembly)
-   (:requirements :adl)
    (:objects unit kludge-4 connector-5 gimcrack-6 mount-7
              sprocket-3 foobar device-1 socket-2 wire kludge whatsis plug
              widget socket doodad thingumbob gimcrack tube contraption

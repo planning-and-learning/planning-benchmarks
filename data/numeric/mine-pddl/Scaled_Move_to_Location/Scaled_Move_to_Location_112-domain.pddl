@@ -1,5 +1,5 @@
 (define (domain Scaled_Move_to_Location_112)
-(:requirements :typing :fluents :negative-preconditions  :existential-preconditions :disjunctive-preconditions)
+(:requirements :strips :disjunctive-preconditions :existential-preconditions :negative-preconditions :numeric-fluents :typing)
 (:types
 	locatable - object
 	agent block item - locatable

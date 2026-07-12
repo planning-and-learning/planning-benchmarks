@@ -15,7 +15,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (define (domain mt-block-grouping)
-    (:requirements :typing :numeric-fluents  )
+    (:requirements :strips :numeric-fluents :typing)
     (:types block - object )
     (:functions
         (x ?b - block)  ;; The position of a block

@@ -1,6 +1,5 @@
 (define (problem assem-x-27)
    (:domain assembly)
-   (:requirements :adl)
    (:objects connector frob-51 mount-49 tube-58 wire-52 kludge-53
              device-54 bracket-56 thingumbob-17 hack-59 valve-61 widget-62
              connector-63 unit-64 fastener-24 foobar-18 contraption-19 plug-21

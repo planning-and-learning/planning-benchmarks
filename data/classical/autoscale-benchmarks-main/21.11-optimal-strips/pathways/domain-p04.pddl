@@ -1,5 +1,5 @@
 (define (domain Pathways-Propositional)
-(:requirements :typing :adl)
+(:requirements :strips :negative-preconditions :typing)
 
 (:types
     level molecule - object

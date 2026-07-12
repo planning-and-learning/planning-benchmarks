@@ -1,6 +1,5 @@
 (define (problem assem-x-30)
    (:domain assembly)
-   (:requirements :adl)
    (:objects wire socket-47 mount-43 wire-44 unit-45 frob-46
              mount-53 gimcrack-48 socket-49 whatsis-50 wire-51 valve-52
              sprocket-60 foobar-54 unit-55 doodad-56 kludge-57 coil-58

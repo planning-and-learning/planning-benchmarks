@@ -1,6 +1,5 @@
 (define (problem thoughtful-s13-t7)
 (:domain thoughtful-typed)
-(:requirements :typing)
 (:objects
     C0 CA C2 C3 C4 C5 C6 C7 C8 C9 CT CJ CQ CK
     D0 DA D2 D3 D4 D5 D6 D7 D8 D9 DT DJ DQ DK

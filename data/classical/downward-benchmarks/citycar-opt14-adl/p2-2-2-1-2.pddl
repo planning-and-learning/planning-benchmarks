@@ -1,6 +1,5 @@
 (define (problem citycar-2-2-2)
 (:domain citycar)
-(:requirements :typing :action-costs)
 (:objects  
 junction0-0 junction0-1 
 junction1-0 junction1-1 - junction

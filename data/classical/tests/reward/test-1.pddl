@@ -6,7 +6,6 @@
 
 (define (problem reward-1x3)
     (:domain reward-strips)
-    (:requirements :typing)
     (:objects
         c_0_0 c_0_1 c_0_2 - cell
     )

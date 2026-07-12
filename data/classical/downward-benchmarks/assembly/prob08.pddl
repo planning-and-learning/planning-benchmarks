@@ -1,6 +1,5 @@
 (define (problem assem-x-8)
    (:domain assembly)
-   (:requirements :adl)
    (:objects mount gimcrack-15 wire-16 coil-7 unit-5 tube-6
              hoozawhatsie thingumbob-8 bracket-4 widget-1 valve frob tube device
              foobar whatsis plug gimcrack hack sprocket connector fastener

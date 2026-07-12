@@ -1,6 +1,5 @@
 (define (problem assem-x-14)
    (:domain assembly)
-   (:requirements :adl)
    (:objects frob whatsis-27 connector-28 kludge-9 coil-29
              thingumbob-30 bracket-31 wire-32 device-16 doodad-11 tube-15
              fastener-12 frob-13 valve-14 socket-1 contraption-5 hack-6

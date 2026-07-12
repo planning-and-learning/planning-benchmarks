@@ -1,6 +1,5 @@
 (define (problem assem-x-16)
    (:domain assembly)
-   (:requirements :adl)
    (:objects connector unit-26 hoozawhatsie-23 socket-24
              contraption-25 frob-32 device-27 valve-28 mount-31 doodad-29 tube-30
              hoozawhatsie-15 kludge-9 hack-10 foobar-14 thingumbob-11

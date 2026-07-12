@@ -1,5 +1,5 @@
 (define (domain openstacks-sequencedstrips-nonADL)
-(:requirements :typing :action-costs :negative-preconditions)
+(:requirements :strips :action-costs :negative-preconditions :typing)
 (:types order product count)
 (:constants
  p1 p2 p3 p4 p5 - product

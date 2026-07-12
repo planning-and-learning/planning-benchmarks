@@ -1,6 +1,5 @@
 (define (problem assem-x-10)
    (:domain assembly)
-   (:requirements :adl)
    (:objects wire thingumbob-15 bracket-12 whatsis-13 wire-14
              sprocket-7 widget-16 coil-5 frob-6 whatsis unit-8 hack-3
              contraption-4 valve-1 foobar-2 gimcrack connector device foobar

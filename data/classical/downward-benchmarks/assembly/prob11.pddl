@@ -1,6 +1,5 @@
 (define (problem assem-x-11)
    (:domain assembly)
-   (:requirements :adl)
    (:objects connector mount-9 doodad-10 valve-13 tube-11 coil-12
              hack-16 widget-14 hoozawhatsie-15 frob-7 foobar-5 bracket-6
              device gimcrack-8 wire-3 whatsis-4 fastener-1 connector-2

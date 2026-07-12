@@ -1,5 +1,5 @@
 (define (domain fuel)
-    (:requirements :numeric-fluents)
+    (:requirements :strips :numeric-fluents)
 
     (:functions
         (fuel) ; amount of fuel

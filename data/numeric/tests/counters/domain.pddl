@@ -15,7 +15,7 @@
 ;; configurations of such counters.
 
 (define (domain fn-counters)
-    (:requirements :strips :typing  :adl :numeric-fluents)
+    (:requirements :strips :numeric-fluents :typing)
     (:types counter)
 
     (:functions

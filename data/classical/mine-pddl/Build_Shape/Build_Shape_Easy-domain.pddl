@@ -1,5 +1,5 @@
 (define (domain Build_Shape_Easy)
-(:requirements :typing :negative-preconditions  :existential-preconditions :disjunctive-preconditions)
+(:requirements :strips :disjunctive-preconditions :existential-preconditions :negative-preconditions :typing)
 (:types
 	locatable int - object
 	agent block item - locatable

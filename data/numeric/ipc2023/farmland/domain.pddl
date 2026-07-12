@@ -8,7 +8,7 @@
 ;; each farm to the benefit is a function of the number of workers assigned
 ;; Each farm requires at least one worker
 (define (domain farmland)
-    (:requirements :typing :numeric-fluents :negative-preconditions :equality)
+    (:requirements :strips :equality :negative-preconditions :numeric-fluents :typing)
     (:types farm - object)
     (:predicates (adj ?f1 ?f2 - farm))
     (:functions

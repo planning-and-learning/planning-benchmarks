@@ -1,6 +1,5 @@
 (define (problem assem-x-23)
    (:domain assembly)
-   (:requirements :adl)
    (:objects tube mount-17 device-57 hoozawhatsie-58 widget-59
              thingumbob-60 tube-61 coil-62 connector-63 foobar-64 whatsis-22
              kludge-18 unit-21 contraption-19 socket-20 kludge-29

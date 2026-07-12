@@ -6,7 +6,7 @@
 ;; parameters from three to only two.
 
 (define (domain GENOME-EDIT-DISTANCE)
-(:requirements :equality :action-costs :negative-preconditions)
+(:requirements :strips :action-costs :equality :negative-preconditions)
   (:predicates
    ;; Static predicate, identifies duplicate copies of genes.
    ;; The "duplicate" relation is symmetric; "swappable" is an

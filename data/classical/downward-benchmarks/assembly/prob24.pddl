@@ -1,6 +1,5 @@
 (define (problem assem-x-24)
    (:domain assembly)
-   (:requirements :adl)
    (:objects widget doodad-63 connector-57 wire-55
              hoozawhatsie-56 plug-62 hack-58 frob-59 fastener-60 valve-61
              sprocket-22 gimcrack-18 device-64 bracket-17 mount-21 coil-19

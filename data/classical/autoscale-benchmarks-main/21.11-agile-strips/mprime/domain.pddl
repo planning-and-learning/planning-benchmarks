@@ -1,5 +1,5 @@
 (define (domain mprime-strips)
-   (:requirements :typing)
+   (:requirements :strips :typing)
    (:types location space fuel locatable - object
            vehicle cargo - locatable)
    (:predicates

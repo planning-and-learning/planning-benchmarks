@@ -1,5 +1,5 @@
 (define (domain assembly)
-   (:requirements :adl)
+  (:requirements :strips :conditional-effects :disjunctive-preconditions :equality :existential-preconditions :negative-preconditions :typing :universal-preconditions)
    (:types assembly resource - object)   ; Individual parts are atomic assemblies
    (:predicates (available ?x - object)
 		(complete ?a - assembly)

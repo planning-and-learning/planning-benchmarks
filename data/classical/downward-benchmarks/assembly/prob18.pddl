@@ -1,6 +1,5 @@
 (define (problem assem-x-18)
    (:domain assembly)
-   (:requirements :adl)
    (:objects connector connector-23 plug-19 coil-20 tube-21
              gimcrack-22 thingumbob-29 frob-24 frob-25 hack-28 unit-26 tube-27
              bracket-12 widget-30 connector-31 gimcrack-32 valve-9 device-10

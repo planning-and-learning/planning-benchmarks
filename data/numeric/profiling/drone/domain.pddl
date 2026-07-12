@@ -7,7 +7,7 @@
 
     (define
     (domain domain_name)
-    (:requirements :typing :numeric-fluents)
+    (:requirements :strips :numeric-fluents :typing)
     (:types
            location - object
     )

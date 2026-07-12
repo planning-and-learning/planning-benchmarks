@@ -1,7 +1,7 @@
 ;; Peg Solitaire sequential domain
 
 (define (domain pegsolitaire-sequential)
-    (:requirements :typing :action-costs)
+    (:requirements :strips :action-costs :typing)
     (:types location - object)
     (:predicates
         (IN-LINE ?x ?y ?z - location)

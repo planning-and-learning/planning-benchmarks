@@ -11,7 +11,7 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define (domain expedition)
-(:requirements :typing :numeric-fluents)
+(:requirements :strips :numeric-fluents :typing)
      (:types sled waypoint - object)
 
      (:predicates

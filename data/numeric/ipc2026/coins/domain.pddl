@@ -11,7 +11,7 @@
 
 (define (domain coins)
 
-    (:requirements :fluents :typing)
+    (:requirements :strips :numeric-fluents :typing)
 
     (:types
         coin

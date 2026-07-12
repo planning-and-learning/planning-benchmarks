@@ -37,7 +37,7 @@
 
 (define (domain factory-robot)
 
-  (:requirements :typing :numeric-fluents :negative-preconditions)
+  (:requirements :strips :negative-preconditions :numeric-fluents :typing)
   (:types robot station - object)
 
   (:predicates

@@ -1,6 +1,5 @@
 (define (problem assem-x-22)
    (:domain assembly)
-   (:requirements :adl)
    (:objects mount sprocket-17 wire-59 coil-60 connector-61
              tube-62 thingumbob-63 whatsis-64 hoozawhatsie-22 foobar-18
              hack-19 contraption-20 socket-21 tube-25 fastener-23

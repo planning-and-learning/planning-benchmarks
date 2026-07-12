@@ -9,7 +9,7 @@
 ;; 3. On-line Planning and Scheduling for High-speed Manufacturing
 ;;	Wheeler Ruml, Minh B. Do, and Markus P.J. Fromherz. ICAPS'05
 (define (domain eTipp)
-(:requirements :typing :action-costs)
+(:requirements :strips :action-costs :typing)
 (:types  size_t location_t side_t color_t image_t resource_t sheet_t)
 (:constants
 		Letter - size_t

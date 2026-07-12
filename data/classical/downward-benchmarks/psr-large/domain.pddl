@@ -1,5 +1,5 @@
 (define (domain psr)
-  (:requirements :adl :derived-predicates)
+  (:requirements :strips :conditional-effects :derived-predicates :disjunctive-preconditions :equality :existential-preconditions :negative-preconditions :typing :universal-preconditions)
   (:types DEVICE SIDE LINE)
   (:constants side1 side2 - SIDE earth - DEVICE)
   (:predicates (ext ?l - LINE ?x - DEVICE ?s - SIDE)

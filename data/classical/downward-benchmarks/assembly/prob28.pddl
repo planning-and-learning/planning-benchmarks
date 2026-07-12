@@ -1,6 +1,5 @@
 (define (problem assem-x-28)
    (:domain assembly)
-   (:requirements :adl)
    (:objects hack sprocket-54 plug-47 contraption-48
              hoozawhatsie-49 unit-50 socket-51 coil-52 kludge-53 device-61
              connector-55 frob-56 contraption-60 doodad-57 thingumbob-58

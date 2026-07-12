@@ -1,5 +1,5 @@
 (define (domain Cnot-Synthesis)
-(:requirements :conditional-effects :typing :equality :negative-preconditions :universal-preconditions)
+(:requirements :strips :conditional-effects :equality :negative-preconditions :typing :universal-preconditions)
 
 (:types row qubit - object)
 

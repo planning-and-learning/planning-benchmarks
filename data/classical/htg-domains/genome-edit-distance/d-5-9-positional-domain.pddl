@@ -2,7 +2,7 @@
 ;; Positional single-step domain formulation, ITT operations only.
 
 (define (domain genome-edit-distance)
-  (:requirements :typing :adl :action-costs)
+  (:requirements :strips :action-costs :conditional-effects :negative-preconditions :typing :universal-preconditions)
 
   ;; for VAL:
   ;; (:requirements :typing :adl :fluents)

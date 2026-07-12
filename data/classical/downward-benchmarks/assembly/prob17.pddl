@@ -1,6 +1,5 @@
 (define (problem assem-x-17)
    (:domain assembly)
-   (:requirements :adl)
    (:objects hoozawhatsie socket-23 unit-22 frob-26 connector-24
              tube-25 connector-29 device-27 valve-28 foobar-32 widget-30
              whatsis-31 bracket-15 hoozawhatsie-9 kludge-10 socket-11

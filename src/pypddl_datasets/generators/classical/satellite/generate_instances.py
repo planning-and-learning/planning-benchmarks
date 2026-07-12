@@ -8,16 +8,21 @@ from pathlib import Path
 
 from .generator import make_problem
 
+from collections.abc import Iterable
+from typing import Any
+
+Config = tuple[int, int, int, int, int, float]
+
 
 NUM_INSTANCES_PER_SPLIT = 100
 
 
-def cartesian(*dimensions):
+def cartesian(*dimensions: Iterable[Any]) -> list[Config]:
     return list(product(*dimensions))
 
 
-def assert_pairwise_disjoint(configs_by_split):
-    seen = {}
+def assert_pairwise_disjoint(configs_by_split: dict[str, list[Config]]) -> None:
+    seen: dict[Config, str] = {}
     for split, configs in configs_by_split.items():
         for config in configs:
             previous = seen.setdefault(config, split)
@@ -27,7 +32,7 @@ def assert_pairwise_disjoint(configs_by_split):
 
 POINTING_GOAL_PROBABILITIES = [0.25, 0.5, 0.75]
 
-STRUCTURAL_SPACES = {
+STRUCTURAL_SPACES: dict[str, list[Config]] = {
     "train": cartesian(range(1, 3), range(1, 4), range(2, 4), range(1, 3), range(1, 4), POINTING_GOAL_PROBABILITIES),
     "valid": cartesian(range(3, 5), range(4, 6), range(3, 5), range(3, 5), range(4, 6), POINTING_GOAL_PROBABILITIES),
     "test": cartesian(range(5, 7), range(6, 9), range(4, 6), range(5, 7), range(6, 9), POINTING_GOAL_PROBABILITIES),

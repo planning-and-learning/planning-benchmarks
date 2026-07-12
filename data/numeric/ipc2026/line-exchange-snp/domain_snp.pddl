@@ -1,7 +1,7 @@
 
 (define (domain line-exchange)
 
-  (:requirements :typing :numeric-fluents :negative-preconditions)
+  (:requirements :strips :negative-preconditions :numeric-fluents :typing)
 
   (:types
     robot - object
