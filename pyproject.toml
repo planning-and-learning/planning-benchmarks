@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pypddl-datasets"
-version = "0.0.4"
+version = "0.0.5"
 description = "Download PDDL planning benchmark suites: classical, numeric, profiling, and learning splits."
 readme = "README.md"
 license = "GPL-3.0-or-later"

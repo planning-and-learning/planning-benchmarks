@@ -170,6 +170,13 @@ def fetch_suite(
     return Suite(_data_root(), domains)
 
 
+def data_root() -> Path:
+    """The root directory all benchmark domains live under, downloading and
+    unpacking the pinned data release once if necessary. The layout matches
+    the repository's data/ tree, e.g. data_root() / "classical/tests/gripper"."""
+    return _data_root()
+
+
 def export_suite(suite: str, dest: str | Path) -> list[Path]:
     """Copy all domains of a named suite into dest/<domain path>/, for tools
     that expect benchmark files in a fixed directory tree."""

@@ -13,6 +13,7 @@ from .fetching import (
     Domain,
     Suite,
     Task,
+    data_root,
     export_suite,
     fetch_domain,
     fetch_suite,
@@ -42,6 +43,7 @@ __all__ = [
     "Requirements",
     "Suite",
     "Task",
+    "data_root",
     "domain_requirements",
     "export_suite",
     "fetch_domain",
@@ -55,4 +57,4 @@ __all__ = [
     "task_requirements",
 ]
 
-__version__ = "0.0.4"
+__version__ = "0.0.5"

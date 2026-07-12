@@ -154,6 +154,11 @@ def test_fetch_suite_test_entries_are_single_task_domains(local_data: None):
         assert fetched.tasks[0].task_path.is_file()
 
 
+def test_data_root(local_data: None):
+    assert pypddl_datasets.data_root() == DATA_ROOT
+    assert (pypddl_datasets.data_root() / "classical/tests/gripper/domain.pddl").is_file()
+
+
 def test_task_display_names(local_data: None):
     tasks = [t for d in pypddl_datasets.fetch_suite("htg-test").domains for t in d.tasks]
     assert len(tasks) == len(SUITES["htg-test"])
