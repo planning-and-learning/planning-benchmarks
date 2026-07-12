@@ -234,8 +234,9 @@ def test_requirements_metadata_is_fresh():
     sys.path.insert(0, str(REPO_ROOT / "scripts"))
     from extract_requirements import generate
 
-    committed = json.loads((REPO_ROOT / "src/pypddl_datasets/requirements.json").read_text())
-    assert generate(DATA_ROOT) == committed, "regenerate with scripts/extract_requirements.py"
+    for filename, generated in generate(DATA_ROOT).items():
+        committed = json.loads((REPO_ROOT / "src/pypddl_datasets" / filename).read_text())
+        assert generated == committed, f"{filename} is stale; regenerate with scripts/extract_requirements.py"
 
 
 def test_pairing_tolerates_lfs_pointer_stubs(monkeypatch, tmp_path):

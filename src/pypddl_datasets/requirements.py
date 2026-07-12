@@ -84,14 +84,14 @@ def _matches(declared: Requirements, supported: Requirements | None, requires: R
 
 
 @functools.cache
-def _metadata() -> dict:
-    with resources.as_file(resources.files(__package__) / "requirements.json") as path:
+def _load(filename: str) -> dict:
+    with resources.as_file(resources.files(__package__) / filename) as path:
         return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _entry(name: str) -> dict:
+def _domain_entry(name: str) -> list[str]:
     try:
-        return _metadata()[name]
+        return _load("requirements.domains.json")[name]
     except KeyError:
         raise KeyError(f"unknown domain {name!r}; see list_domains()") from None
 
@@ -114,7 +114,7 @@ def _suite_scope(suite: str) -> dict[str, set[str] | None]:
 
 def domain_requirements(name: str) -> frozenset[Requirement]:
     """The union of the requirements declared by a domain's files."""
-    return frozenset(Requirement(value) for value in _entry(name)["requirements"])
+    return frozenset(Requirement(value) for value in _domain_entry(name))
 
 
 def find_domains(
@@ -124,8 +124,8 @@ def find_domains(
 ) -> list[str]:
     """Domain names whose declared requirements stay within `supported` and
     include `requires`; optionally restricted to a named suite."""
-    names = _suite_scope(suite) if suite is not None else _metadata()
-    return sorted(name for name in names if _matches(_entry(name)["requirements"], supported, requires))
+    names = _suite_scope(suite) if suite is not None else _load("requirements.domains.json")
+    return sorted(name for name in names if _matches(_domain_entry(name), supported, requires))
 
 
 def find_tasks(
@@ -133,17 +133,17 @@ def find_tasks(
     requires: Requirements | None = None,
     suite: str | None = None,
 ) -> list[str]:
-    """Task names (as accepted by fetch_task) matching the filters."""
+    """Task names (as accepted by fetch_task) matching the filters, using
+    each task's own requirements (tasks within a domain may differ)."""
+    tasks = _load("requirements.tasks.json")
     scope = _suite_scope(suite) if suite is not None else None
     names: list[str] = []
-    for name in scope if scope is not None else _metadata():
-        entry = _entry(name)
+    for name in scope if scope is not None else tasks:
         allowed = scope[name] if scope is not None else None
-        overrides = entry.get("tasks", {})
-        for problem in entry["problems"]:
+        for problem, declared in tasks[name].items():
             if allowed is not None and problem not in allowed and problem.rsplit("/", 1)[-1] not in allowed:
                 continue
-            if _matches(overrides.get(problem, entry["requirements"]), supported, requires):
+            if _matches(declared, supported, requires):
                 names.append(f"{name}/{problem}")
     return sorted(names)
 
@@ -152,12 +152,16 @@ def find_suites(
     supported: Requirements | None = None,
     requires: Requirements | None = None,
 ) -> list[str]:
-    """Suites in which every domain matches the filters."""
-    return sorted(
-        suite
-        for suite in SUITES
-        if all(
-            _matches(_entry(entry.partition(":")[0])["requirements"], supported, requires)
-            for entry in SUITES[suite]
-        )
-    )
+    """Suites in which every domain matches the filters. One subset test per
+    suite against precomputed expanded sets: all domains are supported iff
+    the suite union is; all domains require X iff the suite intersection
+    contains X."""
+    suites = _load("requirements.suites.json")
+    names = []
+    for suite, entry in suites.items():
+        if supported is not None and not _expand(entry["union"]) <= _expand(supported):
+            continue
+        if requires is not None and not _expand(requires) <= _expand(entry["intersection"]):
+            continue
+        names.append(suite)
+    return sorted(names)

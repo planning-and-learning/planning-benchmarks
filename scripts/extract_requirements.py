@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Regenerate src/pypddl_datasets/requirements.json from data/.
+"""Regenerate the committed requirement metadata from data/:
 
-Per domain: the union of the requirements declared by all of its files, its
-task inventory, and per-task overrides where a task's requirements (its own
-declarations plus its specific domain file's) differ from the domain union.
+- requirements.tasks.json:   {domain: {task: [declared requirements]}}
+  (a task's requirements = its own declarations plus its domain file's)
+- requirements.domains.json: {domain: [union of declared requirements]}
+- requirements.suites.json:  {suite: {"union": [...], "intersection": [...]}}
+  over the EXPANDED domain requirements, so find_suites answers both filter
+  directions with one subset test each.
 """
 
 from __future__ import annotations
@@ -21,11 +24,12 @@ _REQUIREMENTS = re.compile(r"\(\s*:requirements([^)]*)\)", re.IGNORECASE)
 _HEAD_BYTES = 262144  # declarations live in the define header
 
 
-def generate(data_root: Path) -> dict:
+def generate(data_root: Path) -> dict[str, dict]:
     os.environ["PYPDDL_DATASETS_DATA"] = str(data_root)
     sys.path.insert(0, str(ROOT / "src"))
     import pypddl_datasets
-    from pypddl_datasets.requirements import Requirement
+    from pypddl_datasets.requirements import Requirement, _expand
+    from pypddl_datasets.suites import SUITES
 
     from package_data import discover_domains
 
@@ -37,36 +41,42 @@ def generate(data_root: Path) -> dict:
             Requirement(token)  # unknown tokens fail generation loudly
         return frozenset(tokens)
 
-    entries: dict[str, dict] = {}
+    tasks: dict[str, dict[str, list[str]]] = {}
+    domains: dict[str, list[str]] = {}
     for domain_dir in discover_domains(data_root):
         name = domain_dir.relative_to(data_root).as_posix()
-        tasks = pypddl_datasets.fetch_domain(name).tasks
         by_problem = {
-            task.problem: (declared(task.domain_path) | declared(task.task_path)) or frozenset({":strips"})
-            for task in tasks
+            task.problem: sorted((declared(task.domain_path) | declared(task.task_path)) or {":strips"})
+            for task in pypddl_datasets.fetch_domain(name).tasks
         }
-        union = sorted(set().union(*by_problem.values())) if by_problem else [":strips"]
-        entry: dict = {"requirements": union, "problems": sorted(by_problem)}
-        overrides = {
-            problem: sorted(requirements)
-            for problem, requirements in by_problem.items()
-            if requirements != set(union)
+        tasks[name] = dict(sorted(by_problem.items()))
+        domains[name] = sorted(set().union(*map(set, by_problem.values()))) if by_problem else [":strips"]
+
+    suites: dict[str, dict[str, list[str]]] = {}
+    for suite, entries in SUITES.items():
+        expanded = [_expand(domains[entry.partition(":")[0]]) for entry in entries]
+        suites[suite] = {
+            "union": sorted(frozenset().union(*expanded)),
+            "intersection": sorted(frozenset.intersection(*expanded)),
         }
-        if overrides:
-            entry["tasks"] = dict(sorted(overrides.items()))
-        entries[name] = entry
-    return entries
+
+    return {
+        "requirements.tasks.json": tasks,
+        "requirements.domains.json": domains,
+        "requirements.suites.json": suites,
+    }
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-root", type=Path, default=ROOT / "data")
-    parser.add_argument("--output", type=Path, default=ROOT / "src/pypddl_datasets/requirements.json")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "src/pypddl_datasets")
     args = parser.parse_args()
 
-    entries = generate(args.data_root.resolve())
-    args.output.write_text(json.dumps(entries, indent=1, sort_keys=True) + "\n", encoding="utf-8")
-    print(f"[extract-requirements] wrote {len(entries)} domains to {args.output}")
+    for filename, content in generate(args.data_root.resolve()).items():
+        path = args.output_dir / filename
+        path.write_text(json.dumps(content, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+        print(f"[extract-requirements] wrote {len(content)} entries to {path}")
     return 0
 
 

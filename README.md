@@ -74,7 +74,8 @@ and domains resolve there without downloading.
 - `scripts/package_data.py` — turns `data/` into the byte-reproducible
   `data.tar.gz` release archive.
 - `scripts/extract_requirements.py` — regenerates the committed
-  `requirements.json` (run after changing data; a test guards freshness).
+  `requirements.{tasks,domains,suites}.json` metadata files (run after
+  changing data; a test guards freshness).
 - `validate.py` — parses every domain/problem with pypddl; must pass for a
   data release to go out.
 

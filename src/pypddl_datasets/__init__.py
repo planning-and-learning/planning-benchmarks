@@ -28,7 +28,7 @@ from .requirements import (
 )
 from .suites import SUITES
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 # The pinned data release: updated when a new data-v* release is cut
 # (its workflow prints the archive's sha256). Empty sha256 = development
