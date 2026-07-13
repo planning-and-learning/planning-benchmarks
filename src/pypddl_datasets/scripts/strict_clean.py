@@ -10,13 +10,9 @@ import argparse
 import functools
 import os
 import re
-import sys
 from collections import Counter
+from collections.abc import Callable
 from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "src"))
-sys.path.insert(0, str(ROOT / "scripts"))
 
 import pypddl_datasets
 from pypddl_datasets.discovery import discover_domains
@@ -52,18 +48,16 @@ def edit_requirements(path: Path, add: str | None = None, remove: str | None = N
                 start, end = line_start, (len(text) if line_end == -1 else line_end + 1)
         text = text[:start] + replacement + text[end:]
     elif add:
-        anchor = DOMAIN_HEADER.search(text) or PROBLEM_DOMAIN.search(text)
+        # problems declare requirements after (:domain ...); domains after the define header
+        anchor = PROBLEM_DOMAIN.search(text) or DOMAIN_HEADER.search(text)
         if anchor is None:
             raise RuntimeError(f"no insertion anchor in {path}")
-        # problems declare requirements after (:domain ...); domains after the define header
-        if DOMAIN_HEADER.search(text) and PROBLEM_DOMAIN.search(text):
-            anchor = PROBLEM_DOMAIN.search(text)
         end = anchor.end()
         text = text[:end] + f"\n  (:requirements {add})" + text[end:]
     path.write_text(text, encoding="utf-8")
 
 
-def repair(path: Path, parse, stats: Counter, failures: list[str]) -> None:
+def repair(path: Path, parse: Callable[[], object], stats: Counter[str], failures: list[str]) -> None:
     for _ in range(MAX_ROUNDS):
         try:
             parse()
@@ -86,15 +80,15 @@ def repair(path: Path, parse, stats: Counter, failures: list[str]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data-root", type=Path, default=ROOT / "data")
+    parser.add_argument("--data-root", type=Path, default=Path.cwd() / "data")
     args = parser.parse_args()
     data_root = args.data_root.resolve()
     os.environ["PYPDDL_DATASETS_DATA"] = str(data_root)
 
     options = ParserOptions()
-    options.strict = True  # add_action_costs stays default, matching validate.py --strict
+    options.strict = True  # add_action_costs stays default, matching validation.pddl --strict
 
-    stats: Counter = Counter()
+    stats: Counter[str] = Counter()
     failures: list[str] = []
 
     @functools.cache
@@ -111,7 +105,14 @@ def main() -> int:
             domain_parser = repaired_domain_parser(task.domain_path)
             if domain_parser is None:
                 continue
-            repair(task.task_path, lambda: repaired_domain_parser(task.domain_path).parse_task(task.task_path), stats, failures)
+            # generated pypddl stub types parse_task with a bare os.PathLike;
+            # drop the suppression once the loki stubgen emits os.PathLike[str]
+            repair(
+                task.task_path,
+                lambda parser=domain_parser, path=task.task_path: parser.parse_task(path),  # pyright: ignore[reportUnknownMemberType]
+                stats,
+                failures,
+            )
         if index % 50 == 0:
             print(f"[strict-clean] {index} domains processed", flush=True)
 

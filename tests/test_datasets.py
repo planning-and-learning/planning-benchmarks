@@ -1,10 +1,8 @@
 import importlib
-import importlib.util
 import json
 import shutil
 import subprocess
 import sys
-from collections.abc import Callable
 from pathlib import Path
 from typing import cast
 
@@ -59,9 +57,9 @@ def test_regenerated_instance_matches_committed_data():
 
 
 def _package(data_root: Path, archive: Path) -> str:
-    """Run package_data.py and return the printed sha256."""
+    """Run the packaging module and return the printed sha256."""
     result = subprocess.run(
-        [sys.executable, str(REPO_ROOT / "scripts/package_data.py"),
+        [sys.executable, "-m", "pypddl_datasets.scripts.package_data",
          "--data-root", str(data_root), "--output", str(archive)],
         check=True, capture_output=True, text=True,
     )
@@ -269,17 +267,11 @@ def test_requirements_metadata_is_fresh() -> None:
     if pointer_probe.read_bytes().startswith(b"version https://git-lfs"):
         pytest.skip("LFS content not available; extraction would differ")
     pytest.importorskip("pypddl")
-
-    # scripts/ is repo tooling, not an importable package: load by path
-    spec = importlib.util.spec_from_file_location("extract_requirements", REPO_ROOT / "scripts" / "extract_requirements.py")
-    assert spec is not None and spec.loader is not None
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    generate = cast("Callable[[Path], dict[str, object]]", module.generate)
+    from pypddl_datasets.scripts.extract_requirements import generate
 
     for filename, generated in generate(DATA_ROOT).items():
         committed = cast("object", json.loads((REPO_ROOT / "src/pypddl_datasets" / filename).read_text()))
-        assert generated == committed, f"{filename} is stale; regenerate with scripts/extract_requirements.py"
+        assert generated == committed, f"{filename} is stale; regenerate with pypddl_datasets.scripts.extract_requirements"
 
 
 def test_pairing_tolerates_lfs_pointer_stubs(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:

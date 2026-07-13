@@ -18,11 +18,16 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
-      - name: Install package
-        run: pip install -e .
+      - name: Install pypddl and package
+        run: pip install 'pypddl>=1.0.23,<1.1' -e .
+      - name: Validate layout and PDDL content
+        # reports must not land inside data/ (they would end up in the archive)
+        run: python -m pypddl_datasets.validation --root data --strict --success-output /tmp/validate.success.json --error-output /tmp/validate.error.json
+      - name: Check requirements metadata is up to date
+        run: python -m pypddl_datasets.validation.requirements --root data
       - name: Package data
         # prints the archive sha256 -> pin it as DATA_SHA256 in the package
-        run: python scripts/package_data.py --output dist-data/data.tar.gz
+        run: python -m pypddl_datasets.scripts.package_data --output dist-data/data.tar.gz
       - name: Create release and upload data
         env:
           GH_TOKEN: ${{ github.token }}

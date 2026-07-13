@@ -1,0 +1,32 @@
+name: data release build
+
+on:
+  push:
+    branches: [main, dev]
+    paths:
+      - "data/**"
+      - "src/**"
+      - ".github/workflows/ci_data_release.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "src/**"
+      - ".github/workflows/ci_data_release.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          lfs: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install pypddl and package
+        run: pip install 'pypddl>=1.0.23,<1.1' -e .
+      - name: Validate layout and PDDL content
+        # same gate as data_release.yml, without publishing; metadata
+        # freshness is deliberately release-only (pypddl_datasets.validation.requirements)
+        run: python -m pypddl_datasets.validation --root data --strict --success-output /tmp/validate.success.json --error-output /tmp/validate.error.json

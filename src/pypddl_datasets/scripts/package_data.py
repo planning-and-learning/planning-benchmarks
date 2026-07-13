@@ -7,11 +7,8 @@ from __future__ import annotations
 import argparse
 import gzip
 import hashlib
-import sys
 import tarfile
 from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from pypddl_datasets.discovery import discover_domains
 
@@ -47,7 +44,7 @@ def write_archive(data_root: Path, domains: list[Path], tar_path: Path) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data-root", type=Path, default=Path(__file__).resolve().parents[1] / "data")
+    parser.add_argument("--data-root", type=Path, default=Path.cwd() / "data")
     parser.add_argument("--output", type=Path, default=Path("dist-data/data.tar.gz"))
     parser.add_argument("--dry-run", action="store_true", help="List domains without writing anything.")
     args = parser.parse_args()

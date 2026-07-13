@@ -128,7 +128,7 @@ def fetch_domain(name: str) -> Domain:
     """Fetch a domain such as "classical/downward-benchmarks/gripper",
     downloading it if necessary."""
     directory = _fetch_directory(name)
-    return Domain(directory, _pair_tasks(name, directory))
+    return Domain(directory, pair_tasks(name, directory))
 
 
 def fetch_task(name: str) -> Task:
@@ -137,7 +137,7 @@ def fetch_task(name: str) -> Task:
     domain and task file is unambiguous because domains are never nested."""
     domain, task = _split_task_name(name)
     directory = _fetch_directory(domain)
-    for candidate in _pair_tasks(domain, directory):
+    for candidate in pair_tasks(domain, directory):
         if task in (candidate.problem, candidate.task_path.name):
             return candidate
     raise KeyError(f"no task {task!r} in domain {domain!r}")
@@ -238,7 +238,7 @@ def _fetch_directory(name: str) -> Path:
     return path
 
 
-# Domain/problem pairing, following the same rules as the repository's validate.py.
+# Domain/problem pairing, also used by pypddl_datasets.validation.layout.
 
 _DECLARATION = re.compile(r"\(\s*define\s*\(\s*(domain|problem)\s+([^\s()]+)", re.IGNORECASE)
 _DOMAIN_REFERENCE = re.compile(r"\(\s*:domain\s+([^\s()]+)", re.IGNORECASE)
@@ -262,7 +262,7 @@ def _declaration(path: Path) -> tuple[str, str | None] | None:
     return (match.group(1).lower(), match.group(2)) if match else None
 
 
-def _pair_tasks(domain: str, directory: Path) -> list[Task]:
+def pair_tasks(domain: str, directory: Path) -> list[Task]:
     domain_files: dict[Path, str] = {}
     problem_files: list[Path] = []
     for path in sorted(directory.rglob("*.pddl")):

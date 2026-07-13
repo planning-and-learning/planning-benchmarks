@@ -17,9 +17,9 @@ jobs:
       - name: Install build tool and package
         run: pip install build -e .
       - name: Dry-run data packaging
-        run: python scripts/package_data.py --dry-run
+        run: python -m pypddl_datasets.scripts.package_data --dry-run
       - name: Package a small subset (no LFS content needed)
-        run: python scripts/package_data.py --data-root data/classical/tests --output dist-data/data.tar.gz
+        run: python -m pypddl_datasets.scripts.package_data --data-root data/classical/tests --output dist-data/data.tar.gz
       - name: Build distributions
         run: python -m build
       - name: Check wheel contains no benchmark data
@@ -29,6 +29,7 @@ jobs:
           wheel = glob.glob("dist/*.whl")[0]
           names = zipfile.ZipFile(wheel).namelist()
           bad = [n for n in names if n.endswith(".pddl") and "/generators/" not in n]
+          bad += [n for n in names if "pypddl_datasets/validation/" in n or "pypddl_datasets/scripts/" in n]
           assert not bad, bad
           print(f"{wheel}: {len(names)} files, no benchmark data")
           EOF

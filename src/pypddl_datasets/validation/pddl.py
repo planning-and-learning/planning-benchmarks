@@ -17,10 +17,10 @@ ResolutionError = tuple[str, str]
 
 
 def positive_int(value: str) -> int:
-    value = int(value)
-    if value < 1:
+    number = int(value)
+    if number < 1:
         raise argparse.ArgumentTypeError("must be at least 1")
-    return value
+    return number
 
 
 def classify(path: Path, root: Path) -> Record:
@@ -103,8 +103,8 @@ def validate(root: Path, error_limit: int | None, strict: bool = False) -> Recor
     checked_domains = 0
     checked_problems = 0
     terminated_early = False
-    valid_domains = set()
-    domains_by_directory = {}
+    valid_domains: set[Path] = set()
+    domains_by_directory: dict[Path, list[tuple[Path, str]]] = {}
     parser_options = ParserOptions()
     parser_options.strict = strict
 
@@ -143,8 +143,8 @@ def validate(root: Path, error_limit: int | None, strict: bool = False) -> Recor
                 domain_path, resolution_error = find_domain(
                     problem_path, record["domain"], root, domains_by_directory
                 )
-                if resolution_error:
-                    set_error(record, *resolution_error)
+                if resolution_error or domain_path is None:  # find_domain returns a path or an error
+                    set_error(record, *(resolution_error or ("DomainNotFoundError", f"no domain file found for domain {record['domain']!r}")))
                     errors += 1
                 elif domain_path not in valid_domains:
                     relative_domain = domain_path.relative_to(root).as_posix()
@@ -154,7 +154,9 @@ def validate(root: Path, error_limit: int | None, strict: bool = False) -> Recor
                 else:
                     record["domain_file"] = domain_path.relative_to(root).as_posix()
                     try:
-                        Parser(domain_path, parser_options).parse_task(problem_path)
+                        # generated pypddl stub types parse_task with a bare os.PathLike;
+                        # drop the suppression once the loki stubgen emits os.PathLike[str]
+                        Parser(domain_path, parser_options).parse_task(problem_path)  # pyright: ignore[reportUnknownMemberType]
                         record["status"] = "ok"
                     except Exception as error:
                         set_error(record, type(error).__name__, str(error))
@@ -211,7 +213,7 @@ def split_report(report: Record) -> tuple[Record, Record]:
     )
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     script_root: Path = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description="Recursively validate PDDL domains and problems with pypddl.")
     parser.add_argument("--root", type=Path, default=script_root, help="Directory to traverse (default: repository root).")
@@ -219,7 +221,7 @@ def main() -> int:
     parser.add_argument("--error-output", type=Path, help="Error report path (default: <root>/validate.error.json).")
     parser.add_argument("--limit", type=positive_int, help="Stop after this many errors.")
     parser.add_argument("--strict", action="store_true", help="Enable strict semantic PDDL validation.")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     root: Path = args.root.resolve()
     if not root.is_dir():

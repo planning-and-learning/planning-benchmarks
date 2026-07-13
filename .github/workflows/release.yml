@@ -52,6 +52,7 @@ jobs:
           wheel = glob.glob("dist/*.whl")[0]
           names = zipfile.ZipFile(wheel).namelist()
           bad = [n for n in names if n.endswith(".pddl") and "/generators/" not in n]
+          bad += [n for n in names if "pypddl_datasets/validation/" in n or "pypddl_datasets/scripts/" in n]
           assert not bad, bad
           print(f"{wheel}: {len(names)} files, no benchmark data")
           EOF

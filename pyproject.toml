@@ -22,6 +22,11 @@ Homepage = "https://github.com/planning-and-learning/planning-benchmarks"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pypddl_datasets"]
+# repository tooling: importable in the checkout, never shipped
+exclude = [
+    "src/pypddl_datasets/validation",
+    "src/pypddl_datasets/scripts",
+]
 
 [tool.hatch.build.targets.sdist]
 only-include = ["src", "README.md"]

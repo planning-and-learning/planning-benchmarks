@@ -73,13 +73,17 @@ and domains resolve there without downloading.
   splits produced by the generators. These committed instances are the
   reproducibility contract; regenerate with
   `python -m pypddl_datasets.generators.classical.<domain>.generate_instances`.
-- `scripts/package_data.py` — turns `data/` into the byte-reproducible
-  `data.tar.gz` release archive.
-- `scripts/extract_requirements.py` — regenerates the committed
-  `requirements.{tasks,domains,suites}.json` metadata files (run after
-  changing data; a test guards freshness).
-- `validate.py` — parses every domain/problem with pypddl; must pass for a
-  data release to go out.
+- `pypddl_datasets.scripts` — repository tooling, importable in a checkout
+  but never shipped in the wheel: `package_data` (byte-reproducible
+  `data.tar.gz`), `extract_requirements` (regenerates the committed
+  `requirements.{tasks,domains,suites}.json`), `strict_clean` (mechanical
+  requirements-declaration repair). Run with
+  `python -m pypddl_datasets.scripts.<name>`.
+- `pypddl_datasets.validation` — data checks; must pass for a data release
+  to go out: `python -m pypddl_datasets.validation` chains the layout check
+  (flat domain directories, every problem pairs) and the PDDL content check
+  (parses everything with pypddl); `validation.requirements` guards metadata
+  freshness at release time.
 
 ## Releasing
 
@@ -90,7 +94,7 @@ Data and package releases are decoupled; data releases are permanent
    PDDL (aborting the release on failure), packages `data.tar.gz`, and
    uploads it to the `data-v<N>` GitHub release. Copy the sha256 it prints
    into `DATA_SHA256` (and bump `DATA_VERSION`) in
-   `src/pypddl_datasets/__init__.py`.
+   `src/pypddl_datasets/fetching.py`.
 2. **Package release:** bump `version` in `pyproject.toml`, tag and push
    `v<version>`. The workflow verifies the tag matches the version and that
    the pinned data release exists with the pinned hash, then builds and
@@ -114,7 +118,20 @@ find data -type f -name '*.pddl' -size +10M -print0 | xargs -0 git lfs track --f
 git add .gitattributes data
 ```
 
-Domain directories must contain their `.pddl` files directly (that is how
-`scripts/package_data.py` discovers them), and domain names flattened with
-`/` → `-` must stay unique (Task.domain; test-guarded). Run `pytest tests`
-to check suite definitions stay consistent.
+Domain directories must contain their `.pddl` files directly, with no
+subdirectories (that is how discovery and domain/problem pairing work), and
+domain names flattened with `/` → `-` must stay unique (Task.domain;
+test-guarded).
+
+Before opening a pull request, run the same checks the CI and the data
+release gate run:
+
+```sh
+pip install 'pypddl>=1.0.23,<1.1' -e .
+python -m pypddl_datasets.validation --root data --strict   # layout + PDDL content, same as the CI gate
+pytest tests                                                # suite definitions stay consistent
+```
+
+The `requirements.*.json` metadata is regenerated at release time
+(`pypddl_datasets.validation.requirements` gates the data release), so pull
+requests do not need to touch it.
