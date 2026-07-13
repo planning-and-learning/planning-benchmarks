@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pypddl-datasets"
-version = "0.0.7"
+dynamic = ["version"]
 description = "Download PDDL planning benchmark suites: classical, numeric, profiling, and learning splits."
 readme = "README.md"
 license = "GPL-3.0-or-later"
@@ -19,6 +19,9 @@ test = ["pytest"]
 
 [project.urls]
 Homepage = "https://github.com/planning-and-learning/planning-benchmarks"
+
+[tool.hatch.version]
+path = "src/pypddl_datasets/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pypddl_datasets"]

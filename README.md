@@ -87,19 +87,27 @@ and domains resolve there without downloading.
 
 ## Releasing
 
-Data and package releases are decoupled; data releases are permanent
-(published package versions pin them by tag).
+Releases run from the Actions "release" workflow (Run workflow); tags are
+outputs of the workflow, never triggers — pushing `v*` or `data-v*` tags by
+hand publishes nothing.
 
-1. **Data changed?** Tag and push `data-v<N>`. The workflow validates all
-   PDDL (aborting the release on failure), packages `data.tar.gz`, and
-   uploads it to the `data-v<N>` GitHub release. Copy the sha256 it prints
-   into `DATA_SHA256` (and bump `DATA_VERSION`) in
-   `src/pypddl_datasets/fetching.py`.
-2. **Package release:** bump `version` in `pyproject.toml`, tag and push
-   `v<version>`. The workflow verifies the tag matches the version and that
-   the pinned data release exists with the pinned hash, then builds and
-   publishes to PyPI via trusted publishing. No assets are uploaded — code
-   releases cost nothing in storage.
+- **scope** — `package` publishes a new package version. `data-and-package`
+  first validates the data (layout, strict PDDL content, metadata
+  freshness), uploads the byte-reproducible `data.tar.gz` to a new immutable
+  `data-v<N>` GitHub release, and commits the pin (`DATA_VERSION` and
+  `DATA_SHA256` in `src/pypddl_datasets/fetching.py`) to main.
+- **bump** — `patch` or `minor`. The workflow bumps `__version__` in
+  `src/pypddl_datasets/__init__.py` (the single version source; pyproject
+  reads it dynamically), independently re-verifies the pinned data release
+  against the actual GitHub asset, builds, checks the wheel contents,
+  commits + tags `v<version>`, and publishes to PyPI via trusted publishing.
+  A final job installs the published package on a clean runner and fetches a
+  task through a fresh cache — the full user path, end to end.
+- **dry_run** — rehearses all gates, packaging, and builds with no tags,
+  commits, uploads, or publishing.
+
+Data releases are permanent: published package versions pin them by tag and
+sha256, so never delete a `data-v*` release.
 
 ## Contributing data
 

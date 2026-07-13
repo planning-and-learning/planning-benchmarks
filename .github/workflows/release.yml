@@ -1,30 +1,107 @@
 name: release
 
+# The only way anything is released: tags are outputs of this workflow, never
+# triggers. scope=package publishes a new package version; data-and-package
+# first cuts an immutable data-v* release and pins it. dry_run rehearses all
+# gates and builds with zero mutations.
 on:
-  push:
-    tags:
-      - "v*"
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "What to release."
+        type: choice
+        options: [package, data-and-package]
+        default: package
+      bump:
+        description: "Version bump for the package."
+        type: choice
+        options: [patch, minor]
+        default: patch
+      dry_run:
+        description: "Rehearse everything; no tags, commits, uploads, or publishing."
+        type: boolean
+        default: false
+
+concurrency:
+  group: release
 
 jobs:
-  publish:
+  data:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'planning-and-learning'
+    if: github.repository_owner == 'planning-and-learning' && inputs.scope == 'data-and-package'
     permissions:
-      id-token: write
+      contents: write
+    outputs:
+      tag: ${{ steps.name.outputs.tag }}
+      sha256: ${{ steps.package.outputs.sha256 }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: main
+          lfs: true
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
-      - name: Check version matches tag
+      - name: Install pypddl and package
+        run: pip install 'pypddl>=1.0.23,<1.1' -e .
+      - name: Validate layout and PDDL content
+        # reports must not land inside data/ (they would end up in the archive)
+        run: python -m pypddl_datasets.validation --root data --strict --success-output /tmp/validate.success.json --error-output /tmp/validate.error.json
+      - name: Check requirements metadata is up to date
+        run: python -m pypddl_datasets.validation.requirements --root data
+      - name: Next data release name
+        id: name
         run: |
-          VERSION=$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['version'])")
-          TAG=${GITHUB_REF#refs/tags/v}
-          if [ "$VERSION" != "$TAG" ]; then
-            echo "Version mismatch: pyproject.toml=$VERSION tag=$TAG"
-            exit 1
-          fi
+          last=$(git tag -l 'data-v*' | sed 's/^data-v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)
+          next=$(python -c "import sys; a, b, c = map(int, '${last:-0.0.0}'.split('.')); print(f'{a}.{b}.{c + 1}')")
+          echo "tag=data-v${next}" >> "$GITHUB_OUTPUT"
+          echo "next data release: data-v${next} (last: ${last:-none})"
+      - name: Package data
+        id: package
+        run: |
+          python -m pypddl_datasets.scripts.package_data --output dist-data/data.tar.gz
+          echo "sha256=$(sha256sum dist-data/data.tar.gz | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - name: Create data release and upload archive
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # create-only: data releases are immutable once cut (packages pin them)
+          gh release create "${{ steps.name.outputs.tag }}" dist-data/data.tar.gz \
+            --target "$(git rev-parse HEAD)" --title "${{ steps.name.outputs.tag }}" \
+            --notes "Benchmark data for pypddl-datasets (pinned via DATA_VERSION=${{ steps.name.outputs.tag }}). Do not delete: published package versions depend on it."
+      - name: Pin the release in fetching.py and push to main
+        if: ${{ !inputs.dry_run }}
+        run: |
+          sed -i "s|^DATA_VERSION = \".*\"|DATA_VERSION = \"${{ steps.name.outputs.tag }}\"|" src/pypddl_datasets/fetching.py
+          sed -i "s|^DATA_SHA256 = \".*\"|DATA_SHA256 = \"${{ steps.package.outputs.sha256 }}\"|" src/pypddl_datasets/fetching.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "pin ${{ steps.name.outputs.tag }}"
+          git push origin HEAD:main
+      - name: Dry-run summary
+        if: ${{ inputs.dry_run }}
+        run: echo "dry run — would have released ${{ steps.name.outputs.tag }} (sha256 ${{ steps.package.outputs.sha256 }}) and pinned it on main"
+
+  package:
+    runs-on: ubuntu-latest
+    needs: data
+    if: ${{ !cancelled() && github.repository_owner == 'planning-and-learning' && (needs.data.result == 'success' || needs.data.result == 'skipped') }}
+    permissions:
+      contents: write
+      id-token: write
+    outputs:
+      version: ${{ steps.bump.outputs.version }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
       - name: Check pinned data release
+        # never trust the write-back: re-download the pinned asset and re-derive the sha
         run: |
           python - <<'EOF'
           import hashlib, re, urllib.request
@@ -40,12 +117,34 @@ jobs:
           assert digest == sha, f"pinned sha256 {sha} != released {digest}"
           print(f"data pin OK: {version}")
           EOF
+      - name: Bump version
+        id: bump
+        run: |
+          version=$(python - <<'EOF'
+          import re
+          from pathlib import Path
+
+          path = Path("src/pypddl_datasets/__init__.py")
+          text = path.read_text()
+          match = re.search(r'__version__ = "(\d+)\.(\d+)\.(\d+)"', text)
+          major, minor, patch = map(int, match.groups())
+          if "${{ inputs.bump }}" == "minor":
+              minor, patch = minor + 1, 0
+          else:
+              patch += 1
+          version = f"{major}.{minor}.{patch}"
+          path.write_text(text[: match.start()] + f'__version__ = "{version}"' + text[match.end() :])
+          print(version)
+          EOF
+          )
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "releasing version ${version}"
       - name: Build distributions
         run: |
           pip install build
           python -m build
           find dist -maxdepth 1 -type f
-      - name: Check wheel contains no benchmark data
+      - name: Check wheel contents
         run: |
           python - <<'EOF'
           import glob, zipfile
@@ -54,9 +153,52 @@ jobs:
           bad = [n for n in names if n.endswith(".pddl") and "/generators/" not in n]
           bad += [n for n in names if "pypddl_datasets/validation/" in n or "pypddl_datasets/scripts/" in n]
           assert not bad, bad
-          print(f"{wheel}: {len(names)} files, no benchmark data")
+          print(f"{wheel}: {len(names)} files, no benchmark data, no repo tooling")
           EOF
+      - name: Commit version and tag
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "version ${{ steps.bump.outputs.version }}"
+          git tag "v${{ steps.bump.outputs.version }}"
+          git push origin HEAD:main "v${{ steps.bump.outputs.version }}"
       - name: Publish to PyPI
+        if: ${{ !inputs.dry_run }}
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist
+      - name: Dry-run summary
+        if: ${{ inputs.dry_run }}
+        run: echo "dry run — would have tagged v${{ steps.bump.outputs.version }} and published to PyPI"
+
+  verify:
+    runs-on: ubuntu-latest
+    needs: package
+    if: ${{ !cancelled() && needs.package.result == 'success' && !inputs.dry_run }}
+    steps:
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install the published package from PyPI
+        run: |
+          version="${{ needs.package.outputs.version }}"
+          for attempt in $(seq 1 30); do
+            if pip install --no-cache-dir "pypddl-datasets==${version}"; then
+              break
+            fi
+            echo "not on the index yet (attempt ${attempt}); retrying in 30s"
+            sleep 30
+          done
+          python -c "import pypddl_datasets; assert pypddl_datasets.__version__ == '${version}', pypddl_datasets.__version__"
+      - name: Fetch through a fresh cache
+        run: |
+          python - <<'EOF'
+          import pypddl_datasets as pd
+
+          print("DATA_VERSION:", pd.DATA_VERSION)
+          task = pd.fetch_task("classical/tests/gripper/test-1.pddl")
+          text = task.domain_path.read_text(encoding="utf-8")
+          assert "(define (domain" in text
+          print("end-to-end OK:", task.domain, task.problem)
+          EOF
