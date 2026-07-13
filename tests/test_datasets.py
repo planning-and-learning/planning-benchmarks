@@ -10,31 +10,17 @@ import pooch
 import pytest
 
 import pypddl_datasets
-from pypddl_datasets.discovery import discover_domains
 from pypddl_datasets.suites import SUITES
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = REPO_ROOT / "data"
 
 
-def test_suite_entries_resolve():
-    domains = {d.relative_to(DATA_ROOT).as_posix() for d in discover_domains(DATA_ROOT)}
-    for suite, entries in SUITES.items():
-        assert entries, suite
-        for entry in entries:
-            domain, _, instance = entry.partition(":")
-            assert domain in domains, f"{suite}: {domain} is not a packagable domain dir"
-            if instance:
-                assert (DATA_ROOT / domain / instance).is_file(), f"{suite}: {entry}"
+def test_suites_configuration():
+    # one implementation, two harnesses: per-PR via pytest, release-time via the umbrella
+    from pypddl_datasets.validation.suites import main
 
-
-def test_test_suites_select_from_their_base_suite():
-    # "generated-test" is the held-out split suite, not a fragment suite; it has no base.
-    for suite in SUITES:
-        base = SUITES.get(suite.removesuffix("-test"))
-        if suite.endswith("-test") and base is not None:
-            for entry in SUITES[suite]:
-                assert entry.partition(":")[0] in set(base), f"{suite}: {entry}"
+    assert main(["--root", str(DATA_ROOT)]) == 0
 
 
 GENERATOR_DOMAINS = sorted(

@@ -81,7 +81,10 @@ and domains resolve there without downloading.
   `python -m pypddl_datasets.scripts.<name>`.
 - `pypddl_datasets.validation` — data checks; must pass for a data release
   to go out: `python -m pypddl_datasets.validation` chains the layout check
-  (flat domain directories, every problem pairs) and the PDDL content check
+  (flat domain directories, every problem pairs), the suite-configuration
+  check (every SUITES entry resolves, `-test` suites select from their base,
+  benchmark suites have a `-test` companion — a one-instance-per-domain
+  miniature for dry-running experiment pipelines), and the PDDL content check
   (parses everything with pypddl); `validation.requirements` guards metadata
   freshness at release time.
 
