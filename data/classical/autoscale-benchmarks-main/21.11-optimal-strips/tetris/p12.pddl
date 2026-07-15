@@ -16,6 +16,7 @@ straight0 straight1 straight2 straight3 - two_straight
 nisba- right_l
 )
 (:init
+    (= (total-cost) 0)
 (connected f0-0f f0-1f)
 (connected f0-1f f0-0f)
 (connected f0-1f f0-2f)
@@ -209,6 +210,7 @@ nisba- right_l
 (clear f4-3f)
 )
 )
+  (:metric minimize (total-cost))
 )
 ;; DESCRIPTION OF THE INITIAL STATE
 ;; 0   **  **  **  ** 

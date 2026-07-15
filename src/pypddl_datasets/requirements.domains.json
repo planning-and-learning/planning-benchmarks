@@ -2126,7 +2126,6 @@
   ":typing"
  ],
  "numeric/ipc2026/rainbowttles-opt": [
-  ":action-costs",
   ":equality",
   ":negative-preconditions",
   ":numeric-fluents",
@@ -2134,7 +2133,6 @@
   ":typing"
  ],
  "numeric/ipc2026/rainbowttles-sat": [
-  ":action-costs",
   ":equality",
   ":negative-preconditions",
   ":numeric-fluents",

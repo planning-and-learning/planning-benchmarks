@@ -54,6 +54,7 @@ nada- two_straight
 rightl0 rightl1 - right_l
 )
 (:init
+    (= (total-cost) 0)
 (connected f0-0f f0-1f)
 (connected f0-1f f0-0f)
 (connected f0-1f f0-2f)
@@ -1007,6 +1008,7 @@ rightl0 rightl1 - right_l
 (clear f23-3f)
 )
 )
+  (:metric minimize (total-cost))
 )
 ;; DESCRIPTION OF THE INITIAL STATE
 ;; 0   **  **  **  ** 

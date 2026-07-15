@@ -6,6 +6,7 @@
   )
 
   (:init
+    (= (total-cost) 0)
     (= (max_int) 40)
         (= (value c0) 0)
         (= (value c1) 0)
@@ -71,4 +72,5 @@
     (<= (+ (value c17) 1) (value c18))
     (<= (+ (value c18) 1) (value c19))
   ))
+  (:metric minimize (total-cost))
 )

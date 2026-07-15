@@ -5,6 +5,7 @@
      curb_0 curb_1 curb_2 curb_3 curb_4 curb_5 curb_6 - curb
   )
   (:init
+    (= (total-cost) 0)
     (at-curb car_01)
     (at-curb-num car_01 curb_0)
     (behind-car car_00 car_01)
@@ -45,6 +46,7 @@
       (at-curb-num car_06 curb_6)
     )
   )
+  (:metric minimize (total-cost))
 )
 ; =========== INIT =========== 
 ;  curb_0: car_01 car_00 

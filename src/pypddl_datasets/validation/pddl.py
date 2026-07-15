@@ -107,6 +107,9 @@ def validate(root: Path, error_limit: int | None, strict: bool = False) -> Recor
     domains_by_directory: dict[Path, list[tuple[Path, str]]] = {}
     parser_options = ParserOptions()
     parser_options.strict = strict
+    # Validate the files as written: no synthesized total-cost metric/initial
+    # value. In strict mode, incomplete :action-costs tasks are rejected.
+    parser_options.add_action_costs = False
 
     for record in unknown:
         set_error(record, "ClassificationError", "missing '(define (domain ...)' or '(define (problem ...)' declaration")

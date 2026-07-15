@@ -9,7 +9,8 @@
       dispenser1 dispenser2 dispenser3 dispenser4 dispenser5 dispenser6 - dispenser
       l0 l1 l2 - level
 )
- (:init 
+ (:init
+    (= (total-cost) 0) 
   (ontable shaker1)
   (ontable shot1)
   (ontable shot2)
@@ -223,4 +224,5 @@
       (contains shot30 cocktail30)
       (contains shot31 cocktail23)
       (contains shot32 cocktail29)
-)))
+))  (:metric minimize (total-cost))
+)

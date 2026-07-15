@@ -3,6 +3,7 @@
 (:objects
 )
 (:init
+    (= (total-cost) 0)
     (hiindex str i3)
     (loindex str i0)
     (hiindex str2 i3)

@@ -84251,7 +84251,6 @@
  },
  "numeric/ipc2026/rainbowttles-opt": {
   "p11.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84259,7 +84258,6 @@
    ":typing"
   ],
   "p12.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84267,7 +84265,6 @@
    ":typing"
   ],
   "p13.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84275,7 +84272,6 @@
    ":typing"
   ],
   "p14.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84283,7 +84279,6 @@
    ":typing"
   ],
   "p15.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84291,7 +84286,6 @@
    ":typing"
   ],
   "p16.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84299,7 +84293,6 @@
    ":typing"
   ],
   "p17.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84307,7 +84300,6 @@
    ":typing"
   ],
   "p18.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84315,7 +84307,6 @@
    ":typing"
   ],
   "p19.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84323,7 +84314,6 @@
    ":typing"
   ],
   "p20.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84331,7 +84321,6 @@
    ":typing"
   ],
   "p21.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84339,7 +84328,6 @@
    ":typing"
   ],
   "p22.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84347,7 +84335,6 @@
    ":typing"
   ],
   "p23.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84355,7 +84342,6 @@
    ":typing"
   ],
   "p24.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84363,7 +84349,6 @@
    ":typing"
   ],
   "p25.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84371,7 +84356,6 @@
    ":typing"
   ],
   "p26.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84379,7 +84363,6 @@
    ":typing"
   ],
   "p27.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84387,7 +84370,6 @@
    ":typing"
   ],
   "p28.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84395,7 +84377,6 @@
    ":typing"
   ],
   "p29.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84403,7 +84384,6 @@
    ":typing"
   ],
   "p30.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84413,7 +84393,6 @@
  },
  "numeric/ipc2026/rainbowttles-sat": {
   "p31.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84421,7 +84400,6 @@
    ":typing"
   ],
   "p32.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84429,7 +84407,6 @@
    ":typing"
   ],
   "p33.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84437,7 +84414,6 @@
    ":typing"
   ],
   "p34.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84445,7 +84421,6 @@
    ":typing"
   ],
   "p35.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84453,7 +84428,6 @@
    ":typing"
   ],
   "p36.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84461,7 +84435,6 @@
    ":typing"
   ],
   "p37.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84469,7 +84442,6 @@
    ":typing"
   ],
   "p38.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84477,7 +84449,6 @@
    ":typing"
   ],
   "p39.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84485,7 +84456,6 @@
    ":typing"
   ],
   "p40.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84493,7 +84463,6 @@
    ":typing"
   ],
   "p41.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84501,7 +84470,6 @@
    ":typing"
   ],
   "p42.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84509,7 +84477,6 @@
    ":typing"
   ],
   "p43.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84517,7 +84484,6 @@
    ":typing"
   ],
   "p44.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84525,7 +84491,6 @@
    ":typing"
   ],
   "p45.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84533,7 +84498,6 @@
    ":typing"
   ],
   "p46.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84541,7 +84505,6 @@
    ":typing"
   ],
   "p47.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84549,7 +84512,6 @@
    ":typing"
   ],
   "p48.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84557,7 +84519,6 @@
    ":typing"
   ],
   "p49.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",
@@ -84565,7 +84526,6 @@
    ":typing"
   ],
   "p50.pddl": [
-   ":action-costs",
    ":equality",
    ":negative-preconditions",
    ":numeric-fluents",

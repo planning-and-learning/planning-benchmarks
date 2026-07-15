@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Make data/ strict-clean: iteratively parse every domain/task with pypddl in
-strict mode and repair the (:requirements ...) declarations the errors point
-at — remove aggregates and unused tokens, add missing ones. Repository
-tooling; file contents outside the requirements line are never touched."""
+strict mode (without action-cost completion, matching validation.pddl) and
+repair what the errors point at — requirements declarations (remove aggregates
+and unused tokens, add missing ones) and, for :action-costs tasks, the missing
+(:metric minimize (total-cost)) and (= (total-cost) 0) forms. Repository
+tooling; nothing else in the files is touched."""
 
 from __future__ import annotations
 
@@ -57,6 +59,20 @@ def edit_requirements(path: Path, add: str | None = None, remove: str | None = N
     path.write_text(text, encoding="utf-8")
 
 
+def add_total_cost_metric(path: Path) -> None:
+    text = path.read_text(encoding="utf-8")
+    end = text.rindex(")")  # closing paren of the (define ...) form
+    path.write_text(text[:end] + "  (:metric minimize (total-cost))\n" + text[end:], encoding="utf-8")
+
+
+def add_total_cost_initial_value(path: Path) -> None:
+    text = path.read_text(encoding="utf-8")
+    match = re.search(r"\(\s*:init\b", text, re.IGNORECASE)
+    if match is None:
+        raise RuntimeError(f"no (:init ...) form in {path}")
+    path.write_text(text[: match.end()] + "\n    (= (total-cost) 0)" + text[match.end() :], encoding="utf-8")
+
+
 def repair(path: Path, parse: Callable[[], object], stats: Counter[str], failures: list[str]) -> None:
     for _ in range(MAX_ROUNDS):
         try:
@@ -72,6 +88,17 @@ def repair(path: Path, parse: Callable[[], object], stats: Counter[str], failure
             assert token, str(error)
             edit_requirements(path, add=token.group(1))
             stats[f"added {token.group(1)}"] += 1
+        except formalism.SemanticError as error:
+            message = str(error)
+            if "Missing total-cost metric for :action-costs" in message:
+                add_total_cost_metric(path)
+                stats["added (:metric minimize (total-cost))"] += 1
+            elif "Missing initial value for total-cost for :action-costs" in message:
+                add_total_cost_initial_value(path)
+                stats["added (= (total-cost) 0)"] += 1
+            else:  # anything non-mechanical is reported, not guessed at
+                failures.append(f"{path}: {type(error).__name__}: {message.splitlines()[0] if message else ''}")
+                return
         except Exception as error:  # noqa: BLE001 — anything non-mechanical is reported, not guessed at
             failures.append(f"{path}: {type(error).__name__}: {str(error).splitlines()[0] if str(error) else ''}")
             return
@@ -86,7 +113,8 @@ def main() -> int:
     os.environ["PYPDDL_DATASETS_DATA"] = str(data_root)
 
     options = ParserOptions()
-    options.strict = True  # add_action_costs stays default, matching validation.pddl --strict
+    options.strict = True
+    options.add_action_costs = False  # matching validation.pddl: validate/repair the files as written
 
     stats: Counter[str] = Counter()
     failures: list[str] = []

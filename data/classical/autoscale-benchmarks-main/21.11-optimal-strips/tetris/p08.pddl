@@ -22,6 +22,7 @@ straight0 straight1 straight2 straight3 straight4 straight5 straight6 - two_stra
 rightl0 - right_l
 )
 (:init
+    (= (total-cost) 0)
 (connected f0-0f f0-1f)
 (connected f0-1f f0-0f)
 (connected f0-1f f0-2f)
@@ -330,6 +331,7 @@ rightl0 - right_l
 (clear f7-3f)
 )
 )
+  (:metric minimize (total-cost))
 )
 ;; DESCRIPTION OF THE INITIAL STATE
 ;; 0   ##  ##  **  ** 
