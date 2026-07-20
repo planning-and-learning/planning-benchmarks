@@ -248,10 +248,58 @@ def test_fetch_suite_filters(local_data: None):
     assert nothing.domains == []
 
 
+def test_large_file_pack_unpack_round_trip(tmp_path: Path) -> None:
+    from pypddl_datasets.scripts.large_files import main
+
+    domain = tmp_path / "data" / "big"
+    domain.mkdir(parents=True)
+    content = b"(define (problem p) (:domain d))" * 70000  # ~2.2 MB
+    (domain / "huge.pddl").write_bytes(content)
+    (domain / "small.pddl").write_bytes(b"(define (problem q) (:domain d))")
+
+    assert main(["pack", "--root", str(tmp_path / "data"), "--threshold-mb", "1"]) == 0
+    twin = domain / "huge.pddl.gz"
+    assert twin.is_file() and not (domain / "small.pddl.gz").exists()
+    first = twin.read_bytes()
+    assert main(["pack", "--root", str(tmp_path / "data"), "--threshold-mb", "1"]) == 0
+    assert twin.read_bytes() == first  # idempotent and byte-reproducible
+
+    ignore = (tmp_path / ".gitignore").read_text()
+    assert "data/big/huge.pddl" in ignore and "small" not in ignore
+
+    (domain / "huge.pddl").unlink()
+    assert main(["unpack", "--root", str(tmp_path / "data")]) == 0
+    assert (domain / "huge.pddl").read_bytes() == content
+
+
+def test_layout_large_file_rules(tmp_path: Path) -> None:
+    from pypddl_datasets.scripts.large_files import main as large_files
+    from pypddl_datasets.validation.layout import large_file_errors
+
+    root = tmp_path / "data"
+    domain = root / "big"
+    domain.mkdir(parents=True)
+    (tmp_path / ".git").mkdir()
+    (domain / "huge.pddl").write_bytes(b"x" * (51 * 1024 * 1024))
+    (domain / "domain.pddl").write_bytes(b"(define (domain d))")
+
+    oversized = large_file_errors(root)
+    assert any("exceeds the large-file threshold" in e for e in oversized)
+
+    large_files(["pack", "--root", str(root)])
+    assert large_file_errors(root) == []
+
+    (domain / "huge.pddl").unlink()
+    missing = large_file_errors(root)
+    assert any("not materialized" in e for e in missing)
+
+    large_files(["unpack", "--root", str(root)])
+    (tmp_path / ".gitignore").write_text("")
+    unignored = large_file_errors(root)
+    assert any("missing from the managed .gitignore block" in e for e in unignored)
+
+
 def test_requirements_metadata_is_fresh() -> None:
-    pointer_probe = DATA_ROOT / "classical/pushworld/level1/Pulling.pddl"
-    if pointer_probe.read_bytes().startswith(b"version https://git-lfs"):
-        pytest.skip("LFS content not available; extraction would differ")
     pytest.importorskip("pypddl")
     from pypddl_datasets.scripts.extract_requirements import generate
 
@@ -259,18 +307,3 @@ def test_requirements_metadata_is_fresh() -> None:
         committed = cast("object", json.loads((REPO_ROOT / "src/pypddl_datasets" / filename).read_text()))
         assert generated == committed, f"{filename} is stale; regenerate with pypddl_datasets.scripts.extract_requirements"
 
-
-def test_pairing_tolerates_lfs_pointer_stubs(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
-    # A checkout without `git lfs pull` has pointer stubs instead of PDDL;
-    # pairing must classify them by file name (as CI runners do).
-    domain_dir = tmp_path / "classical" / "stub-domain"
-    domain_dir.mkdir(parents=True)
-    pointer = "version https://git-lfs.github.com/spec/v1\noid sha256:abc\nsize 1\n"
-    (domain_dir / "domain_p28.pddl").write_text(pointer)
-    (domain_dir / "p28.pddl").write_text("(define (problem p28) (:domain openstacks))")
-    (domain_dir / "p29.pddl").write_text(pointer)
-    monkeypatch.setenv("PYPDDL_DATASETS_DATA", str(tmp_path))
-    domain = pypddl_datasets.fetch_domain("classical/stub-domain")
-    by_problem = {t.problem: t for t in domain.tasks}
-    assert by_problem["p28.pddl"].domain_path.name == "domain_p28.pddl"
-    assert "p29.pddl" in by_problem

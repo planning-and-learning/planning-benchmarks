@@ -114,20 +114,18 @@ sha256, so never delete a `data-v*` release.
 
 ## Contributing data
 
-Clone with Git LFS (large instances are LFS-tracked):
+Oversized PDDL files (>= 50 MiB) are committed as gzipped `.pddl.gz` twins
+and materialized locally (the plain files are gitignored). After cloning:
 
 ```sh
-git lfs install
-git clone git@github.com:planning-and-learning/planning-benchmarks.git
-cd planning-benchmarks && git lfs pull
+pip install -e .
+python -m pypddl_datasets.scripts.large_files unpack
 ```
 
-Track PDDL files larger than 10 MiB before staging them:
-
-```sh
-find data -type f -name '*.pddl' -size +10M -print0 | xargs -0 git lfs track --filename
-git add .gitattributes data
-```
+When adding files that large, `python -m pypddl_datasets.scripts.large_files
+pack` creates the twins and updates the managed `.gitignore` block — the
+layout validation refuses anything oversized left unpacked, so CI will tell
+you.
 
 Domain directories must contain their `.pddl` files directly, with no
 subdirectories (that is how discovery and domain/problem pairing work), and

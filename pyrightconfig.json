@@ -1,4 +1,8 @@
 {
+  // Type checking resolves the compiled bindings from the active .venv (compiled
+  // extension + generated .pyi stubs + py.typed). Install the package into .venv
+  // first (`uv sync` or `uv pip install -e .`) and rebuild after C++/binding changes
+  // so the stubs regenerate; otherwise pyright reports the bindings as unresolved or untyped.
   "typeCheckingMode": "strict",
 
   "pythonVersion": "3.13",

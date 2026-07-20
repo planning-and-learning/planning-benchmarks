@@ -12,15 +12,10 @@ from pathlib import Path
 
 from pypddl_datasets.discovery import discover_domains
 
-LFS_POINTER_PREFIX = b"version https://git-lfs.github.com/spec/v1"
-
-
-def assert_no_lfs_pointers(data_root: Path) -> None:
-    for path in sorted(data_root.rglob("*")):
-        if path.is_file():
-            with path.open("rb") as stream:
-                if stream.read(len(LFS_POINTER_PREFIX)) == LFS_POINTER_PREFIX:
-                    raise SystemExit(f"LFS pointer file at {path}; run 'git lfs pull' first")
+def assert_unpacked(data_root: Path) -> None:
+    for twin in sorted(data_root.rglob("*.pddl.gz")):
+        if not twin.with_name(twin.name[: -len(".gz")]).is_file():
+            raise SystemExit(f"{twin} is not materialized; run 'python -m pypddl_datasets.scripts.large_files unpack' first")
 
 
 def write_archive(data_root: Path, domains: list[Path], tar_path: Path) -> None:
@@ -28,7 +23,8 @@ def write_archive(data_root: Path, domains: list[Path], tar_path: Path) -> None:
     produces identical bytes, so the pinned sha256 stays valid. Only files
     inside domain directories are included, so stray files under the data
     root (e.g. tool outputs) can never leak into the archive."""
-    files = sorted(path for domain in domains for path in domain.rglob("*") if path.is_file())
+    # .pddl.gz twins are repository storage; the archive ships plain files only
+    files = sorted(path for domain in domains for path in domain.rglob("*") if path.is_file() and path.suffix != ".gz")
     with open(tar_path, "wb") as out:
         with gzip.GzipFile(filename="", fileobj=out, mode="wb", mtime=0) as stream:
             with tarfile.open(fileobj=stream, mode="w") as tar:
@@ -58,7 +54,7 @@ def main() -> int:
             print(domain.relative_to(args.data_root).as_posix())
         return 0
 
-    assert_no_lfs_pointers(args.data_root)
+    assert_unpacked(args.data_root)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     write_archive(args.data_root, domains, args.output)
     digest = hashlib.sha256(args.output.read_bytes()).hexdigest()

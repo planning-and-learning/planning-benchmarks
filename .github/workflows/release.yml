@@ -38,13 +38,14 @@ jobs:
       - uses: actions/checkout@v6
         with:
           ref: main
-          lfs: true
           fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
       - name: Install pypddl and package
         run: pip install 'pypddl>=1.0.23,<1.1' -e .
+      - name: Materialize large files
+        run: python -m pypddl_datasets.scripts.large_files unpack
       - name: Validate layout and PDDL content
         # reports must not land inside data/ (they would end up in the archive)
         run: python -m pypddl_datasets.validation --root data --strict --success-output /tmp/validate.success.json --error-output /tmp/validate.error.json
