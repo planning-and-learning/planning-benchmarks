@@ -10,6 +10,8 @@ import pooch
 import pytest
 
 import pypddl_datasets
+from pypddl_datasets.generators.classical.blocks_3.generator import make_problem as make_blocks_3_problem
+from pypddl_datasets.generators.classical.blocks_4.generator import make_problem as make_blocks_4_problem
 from pypddl_datasets.suites import SUITES
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +42,22 @@ def test_regenerated_instance_matches_committed_data():
     committed = (DATA_ROOT / "classical/generated/childsnack-train/train-1.pddl").read_text(encoding="utf-8")
     num_children, num_trays, gluten_factor, const_ratio, seed = module.CONFIGS["train"][0]
     assert module.make_problem(num_children, num_trays, gluten_factor, const_ratio, seed) == committed
+
+
+def test_blocksworld_goals_include_stack_boundaries():
+    for make_problem in (make_blocks_3_problem, make_blocks_4_problem):
+        goal = make_problem(1, 0).split("(:goal", 1)[1]
+        assert "(on-table b1)" in goal
+        assert "(clear b1)" in goal
+
+
+def test_blocksworld_uniform_state_counts():
+    expected = [1, 1, 3, 13, 73, 501, 4_051, 37_633, 394_353]
+    for domain in ("blocks_3", "blocks_4"):
+        module = importlib.import_module(
+            f"pypddl_datasets.generators.classical.{domain}.generator"
+        )
+        assert [row[0] for row in module._completion_counts(8)] == expected
 
 
 def _package(data_root: Path, archive: Path) -> str:
@@ -306,4 +324,3 @@ def test_requirements_metadata_is_fresh() -> None:
     for filename, generated in generate(DATA_ROOT).items():
         committed = cast("object", json.loads((REPO_ROOT / "src/pypddl_datasets" / filename).read_text()))
         assert generated == committed, f"{filename} is stale; regenerate with pypddl_datasets.scripts.extract_requirements"
-
