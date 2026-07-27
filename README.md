@@ -136,7 +136,7 @@ Before opening a pull request, run the same checks the CI and the data
 release gate run:
 
 ```sh
-pip install 'pypddl>=1.0.23,<1.1' -e .
+pip install 'pypddl>=1.0.25,<1.1' -e .
 python -m pypddl_datasets.validation --root data --strict   # layout + PDDL content, same as the CI gate
 pytest tests                                                # suite definitions stay consistent
 ```

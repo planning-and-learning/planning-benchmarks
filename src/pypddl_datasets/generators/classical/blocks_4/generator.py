@@ -48,8 +48,6 @@ def make_problem(num_blocks: int, seed: int | None = None) -> str:
     initial_stacks = _make_stacks(blocks, rng)
     goal_stacks = _make_stacks(blocks, rng)
     goal_facts = _goal_facts(goal_stacks)
-    if not goal_facts:
-        goal_facts = ["      (clear b1)"]
 
     return f"""(define (problem blocks-4-{num_blocks})
   (:domain {DOMAIN_NAME})

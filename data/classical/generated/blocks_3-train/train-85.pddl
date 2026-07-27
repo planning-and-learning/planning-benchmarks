@@ -10,7 +10,7 @@
   )
   (:goal
     (and
-      (clear b1)
+
     )
   )
 )

@@ -10,6 +10,7 @@ import shutil
 from pathlib import Path
 
 import pooch
+from typing_extensions import override
 
 from .requirements import Requirements, domain_requirements, find_domains, matches as _matches
 from .suites import SUITES
@@ -68,6 +69,7 @@ class Task:
     def task_path(self) -> Path:
         return self._task_path
 
+    @override
     def __repr__(self) -> str:
         return f"Task(domain={self._domain!r}, problem={self._problem!r})"
 
@@ -89,6 +91,7 @@ class Domain:
     def tasks(self) -> list[Task]:
         return self._tasks
 
+    @override
     def __repr__(self) -> str:
         return f"Domain(path={self._path!r}, tasks={self._tasks!r})"
 
@@ -109,6 +112,7 @@ class Suite:
     def domains(self) -> list[Domain]:
         return self._domains
 
+    @override
     def __repr__(self) -> str:
         return f"Suite(path={self._path!r}, domains={self._domains!r})"
 

@@ -12,6 +12,7 @@ requires-python = ">=3.10"
 authors = [{ name = "Dominik Drexler", email = "dominik.drexler@liu.se" }]
 dependencies = [
     "pooch>=1.8",
+    "typing-extensions>=4.4",  # typing.override backport for py<3.12 (requires-python is 3.10)
 ]
 
 [project.optional-dependencies]

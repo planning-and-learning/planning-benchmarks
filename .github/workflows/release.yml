@@ -43,7 +43,7 @@ jobs:
         with:
           python-version: "3.13"
       - name: Install pypddl and package
-        run: pip install 'pypddl>=1.0.23,<1.1' -e .
+        run: pip install 'pypddl>=1.0.26,<1.1' -e .
       - name: Materialize large files
         run: python -m pypddl_datasets.scripts.large_files unpack
       - name: Validate layout and PDDL content

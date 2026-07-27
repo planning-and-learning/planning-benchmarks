@@ -8,6 +8,7 @@
   "pythonVersion": "3.13",
   "venvPath": ".",
   "venv": ".venv",
+  "stubPath": "typings",
 
   "include": [
     "src",
@@ -36,6 +37,7 @@
   "reportUntypedClassDecorator": "error",
 
   "reportPrivateImportUsage": "error",
+  "reportImplicitOverride": "error",
 
   "reportUnusedImport": "error",
   "reportUnusedVariable": "error",
