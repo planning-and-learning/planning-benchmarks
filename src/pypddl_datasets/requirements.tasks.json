@@ -66862,6 +66862,260 @@
    ":typing"
   ]
  },
+ "classical/htg-domains/agricola-large": {
+  "prob10-10-1.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob10-11-2.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob10-12-3.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob10-13-4.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob10-14-5.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob11-10-7.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob11-11-8.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob11-12-9.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob11-13-10.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob11-14-11.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob12-10-13.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob12-11-14.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob12-12-15.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob12-13-16.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob12-14-17.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob13-10-19.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob13-11-20.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob13-12-21.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob13-13-22.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob13-14-23.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob14-10-25.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob14-11-26.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob14-12-27.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob14-13-28.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "prob14-14-29.pddl": [
+   ":action-costs",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ]
+ },
+ "classical/htg-domains/blocks-large": {
+  "p100.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p76.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p77.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p78.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p79.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p80.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p81.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p82.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p83.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p84.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p85.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p86.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p87.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p88.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p89.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p90.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p91.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p92.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p93.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p94.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p95.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p96.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p97.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p98.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p99.pddl": [
+   ":strips",
+   ":typing"
+  ]
+ },
  "classical/htg-domains/blocksworld-large": {
   "p-100-2-goal-2.pddl": [
    ":strips"
@@ -66982,6 +67236,208 @@
   ],
   "p-900-5-goal-5.pddl": [
    ":strips"
+  ]
+ },
+ "classical/htg-domains/caldera-large": {
+  "12_hosts_trial_1.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "12_hosts_trial_2.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "12_hosts_trial_3.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "12_hosts_trial_4.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "12_hosts_trial_5.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "13_hosts_trial_1.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "13_hosts_trial_2.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "13_hosts_trial_3.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "13_hosts_trial_4.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "13_hosts_trial_5.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "14_hosts_trial_1.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "14_hosts_trial_2.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "14_hosts_trial_3.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "14_hosts_trial_4.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "14_hosts_trial_5.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "15_hosts_trial_1.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "15_hosts_trial_2.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "15_hosts_trial_3.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "15_hosts_trial_4.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "15_hosts_trial_5.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "16_hosts_trial_1.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "16_hosts_trial_2.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "16_hosts_trial_3.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "16_hosts_trial_4.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
+  ],
+  "16_hosts_trial_5.pddl": [
+   ":conditional-effects",
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing",
+   ":universal-preconditions"
   ]
  },
  "classical/htg-domains/childsnack-large": {
@@ -67774,6 +68230,108 @@
   "contentam6-p5-parsize4-cham7.pddl": [
    ":equality",
    ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ]
+ },
+ "classical/htg-domains/depots-large": {
+  "p01-10-10-8-9-9-30.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p02-10-10-8-9-9-32.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p03-11-11-9-10-10-34.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p04-12-12-10-11-11-36.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p05-12-12-10-11-11-38.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p06-13-13-11-12-12-40.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p07-14-14-12-13-13-42.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p08-14-14-12-13-13-44.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p09-15-15-13-14-14-46.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p10-16-16-14-15-15-48.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p11-16-16-14-15-15-50.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p12-17-17-15-16-16-52.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p13-18-18-16-17-17-54.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p14-18-18-16-17-17-56.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p15-19-19-17-18-18-58.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p16-20-20-18-19-19-60.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p17-20-20-18-19-19-62.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p18-21-21-19-20-20-64.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p19-22-22-20-21-21-66.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p20-22-22-20-21-21-68.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p21-6-6-4-5-5-20.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p22-7-7-5-6-6-22.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p23-8-8-6-7-7-24.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p24-8-8-6-7-7-26.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p25-9-9-7-8-8-28.pddl": [
    ":strips",
    ":typing"
   ]
@@ -72002,6 +72560,260 @@
    ":typing"
   ],
   "p-r1-w5500-o1-1-g8-goal-8.pddl": [
+   ":strips",
+   ":typing"
+  ]
+ },
+ "classical/htg-domains/satellite-large": {
+  "p01-10-4-6-204-204.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p02-12-5-7-204-204.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p03-10-4-6-212-212.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p04-12-5-7-212-212.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p05-11-4-6-220-220.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p06-13-5-8-220-220.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p07-11-4-6-228-228.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p08-13-5-8-228-228.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p09-11-4-6-236-236.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p10-13-5-8-236-236.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p11-12-5-7-244-244.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p12-14-6-9-244-244.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p13-12-5-7-252-252.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p14-14-6-9-252-252.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p15-13-5-8-260-260.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p16-15-6-10-260-260.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p17-13-5-8-268-268.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p18-15-6-10-268-268.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p19-13-5-8-276-276.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p20-15-6-10-276-276.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p21-14-6-9-284-284.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p22-16-7-10-284-284.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p23-14-6-9-292-292.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p24-16-7-10-292-292.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ],
+  "p25-15-6-10-300-300.pddl": [
+   ":equality",
+   ":negative-preconditions",
+   ":strips",
+   ":typing"
+  ]
+ },
+ "classical/htg-domains/tpp-large": {
+  "p01-30-20-6-7-7.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p02-32-21-7-8-8.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p03-34-22-7-8-8.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p04-36-24-8-9-9.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p05-38-25-8-9-9.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p06-40-26-9-10-10.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p07-42-28-9-10-10.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p08-44-29-10-11-11.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p09-46-30-10-11-11.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p10-48-32-11-12-12.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p11-50-33-11-12-12.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p12-52-34-12-13-13.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p13-54-36-12-13-13.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p14-56-37-13-14-14.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p15-58-38-13-14-14.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p16-60-40-14-15-15.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p17-62-41-14-15-15.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p18-64-42-15-16-16.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p19-66-44-15-16-16.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p20-68-45-16-17-17.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p21-20-13-4-5-5.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p22-22-14-4-5-5.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p23-24-16-5-6-6.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p24-26-17-5-6-6.pddl": [
+   ":strips",
+   ":typing"
+  ],
+  "p25-28-18-6-7-7.pddl": [
    ":strips",
    ":typing"
   ]

@@ -277,6 +277,25 @@ SUITE_HTG = [
     "classical/htg-domains/visitall-multidimensional",
 ]
 
+SUITE_HTG_GNAD_AAAI2019 = [
+    "classical/htg-domains/agricola-large",
+    "classical/htg-domains/blocks-large",
+    "classical/htg-domains/caldera-large",
+    "classical/htg-domains/depots-large",
+    "classical/htg-domains/satellite-large",
+    "classical/htg-domains/tpp-large",
+]
+
+# One representative instance per domain, for quick planner smoke runs.
+SUITE_HTG_GNAD_AAAI2019_TEST = [
+    "classical/htg-domains/agricola-large:prob10-10-1.pddl",
+    "classical/htg-domains/blocks-large:p76.pddl",
+    "classical/htg-domains/caldera-large:12_hosts_trial_1.pddl",
+    "classical/htg-domains/depots-large:p01-10-10-8-9-9-30.pddl",
+    "classical/htg-domains/satellite-large:p01-10-4-6-204-204.pddl",
+    "classical/htg-domains/tpp-large:p01-30-20-6-7-7.pddl",
+]
+
 # One representative instance per domain of SUITE_HTG, for quick planner smoke runs.
 SUITE_HTG_TEST = [
     "classical/htg-domains/blocksworld-large:p-100-2-goal-2.pddl",
@@ -1017,6 +1036,8 @@ SUITES = {
     "generated-train": SUITE_GENERATED_TRAIN,
     "generated-valid": SUITE_GENERATED_VALID,
     "htg": SUITE_HTG,
+    "htg-gnad-aaai2019": SUITE_HTG_GNAD_AAAI2019,
+    "htg-gnad-aaai2019-test": SUITE_HTG_GNAD_AAAI2019_TEST,
     "htg-test": SUITE_HTG_TEST,
     "ipc-optimal-adl": SUITE_IPC_OPTIMAL_ADL,
     "ipc-optimal-adl-test": SUITE_IPC_OPTIMAL_ADL_TEST,

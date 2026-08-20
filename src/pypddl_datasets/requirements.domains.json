@@ -1475,12 +1475,34 @@
   ":strips",
   ":typing"
  ],
+ "classical/htg-domains/agricola-large": [
+  ":action-costs",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "classical/htg-domains/blocks-large": [
+  ":strips",
+  ":typing"
+ ],
  "classical/htg-domains/blocksworld-large": [
   ":strips"
+ ],
+ "classical/htg-domains/caldera-large": [
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "classical/htg-domains/childsnack-large": [
   ":equality",
   ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "classical/htg-domains/depots-large": [
   ":strips",
   ":typing"
  ],
@@ -1514,6 +1536,16 @@
   ":typing"
  ],
  "classical/htg-domains/rovers-large": [
+  ":strips",
+  ":typing"
+ ],
+ "classical/htg-domains/satellite-large": [
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "classical/htg-domains/tpp-large": [
   ":strips",
   ":typing"
  ],

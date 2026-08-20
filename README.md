@@ -136,11 +136,12 @@ Before opening a pull request, run the same checks the CI and the data
 release gate run:
 
 ```sh
-pip install 'pypddl>=1.0.25,<1.1' -e .
+pip install 'pypddl>=1.0.27,<1.1' -e .
 python -m pypddl_datasets.validation --root data --strict   # layout + PDDL content, same as the CI gate
 pytest tests                                                # suite definitions stay consistent
 ```
 
-The `requirements.*.json` metadata is regenerated at release time
-(`pypddl_datasets.validation.requirements` gates the data release), so pull
-requests do not need to touch it.
+Data pull requests do not need to update the shared `requirements.*.json`
+metadata. Before a data release, regenerate and commit it with
+`python -m pypddl_datasets.scripts.extract_requirements --data-root data`;
+the release workflow only verifies that it is fresh.

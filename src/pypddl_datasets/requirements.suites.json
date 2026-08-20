@@ -89,6 +89,24 @@
   ":typing",
   ":universal-preconditions"
  ],
+ "htg-gnad-aaai2019": [
+  ":action-costs",
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "htg-gnad-aaai2019-test": [
+  ":action-costs",
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
  "htg-test": [
   ":action-costs",
   ":conditional-effects",
