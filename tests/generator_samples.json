@@ -1,0 +1,4339 @@
+{
+ "classical/autoscale/blocksworld": [
+  {
+   "num_blocks": 1,
+   "seed": 3
+  },
+  {
+   "num_blocks": 2,
+   "seed": 3
+  },
+  {
+   "num_blocks": 5,
+   "seed": 3
+  },
+  {
+   "num_blocks": 12,
+   "seed": 3
+  },
+  {
+   "num_blocks": 7,
+   "seed": 11
+  }
+ ],
+ "classical/autoscale/freecell": [
+  {
+   "num_cells": 0,
+   "num_columns": 1,
+   "num_stacks": 1,
+   "num_suits": 4,
+   "seed": 3,
+   "suit_size": 1
+  },
+  {
+   "num_cells": 3,
+   "num_columns": 5,
+   "num_stacks": 2,
+   "num_suits": 4,
+   "seed": 0,
+   "suit_size": 3
+  },
+  {
+   "num_cells": 2,
+   "num_columns": 6,
+   "num_stacks": 4,
+   "num_suits": 4,
+   "seed": 3,
+   "suit_size": 4
+  },
+  {
+   "num_cells": 2,
+   "num_columns": 6,
+   "num_stacks": 4,
+   "num_suits": 4,
+   "seed": 9,
+   "suit_size": 5
+  },
+  {
+   "num_cells": 4,
+   "num_columns": 8,
+   "num_stacks": 8,
+   "num_suits": 4,
+   "seed": 3,
+   "suit_size": 13
+  }
+ ],
+ "classical/autoscale/logistics": [
+  {
+   "city_size": 2,
+   "num_airplanes": 0,
+   "num_cities": 1,
+   "num_packages": 1,
+   "num_trucks": null,
+   "seed": 0
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 1,
+   "num_cities": 3,
+   "num_packages": 4,
+   "num_trucks": 4,
+   "seed": 9
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 0,
+   "num_cities": 1,
+   "num_packages": 1,
+   "num_trucks": null,
+   "seed": 1
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 0,
+   "num_cities": 1,
+   "num_packages": 1,
+   "num_trucks": null,
+   "seed": 2
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 0,
+   "num_cities": 1,
+   "num_packages": 1,
+   "num_trucks": null,
+   "seed": 3
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 0,
+   "num_cities": 1,
+   "num_packages": 1,
+   "num_trucks": null,
+   "seed": 4
+  }
+ ],
+ "classical/autoscale/mprime": [
+  {
+   "max_fuel": 1,
+   "max_space": 1,
+   "num_cargos": 1,
+   "num_locations": 2,
+   "num_vehicles": 1,
+   "seed": 2
+  },
+  {
+   "max_fuel": 4,
+   "max_space": 2,
+   "num_cargos": 3,
+   "num_locations": 5,
+   "num_vehicles": 2,
+   "seed": 7
+  },
+  {
+   "max_fuel": 8,
+   "max_space": 3,
+   "num_cargos": 6,
+   "num_locations": 10,
+   "num_vehicles": 3,
+   "seed": 2
+  },
+  {
+   "max_fuel": 15,
+   "max_space": 2,
+   "num_cargos": 10,
+   "num_locations": 5,
+   "num_vehicles": 8,
+   "seed": 0
+  }
+ ],
+ "classical/ipc/agricola": [
+  {
+   "last_stage": 3,
+   "must_create_workers": false,
+   "num_ints": 16,
+   "num_workers": 4,
+   "seed": 0
+  },
+  {
+   "last_stage": 4,
+   "must_create_workers": true,
+   "num_ints": 16,
+   "num_workers": 6,
+   "seed": 2
+  },
+  {
+   "last_stage": 5,
+   "must_create_workers": false,
+   "num_ints": 16,
+   "num_workers": 6,
+   "seed": 0
+  },
+  {
+   "last_stage": 5,
+   "must_create_workers": false,
+   "num_ints": 16,
+   "num_workers": 6,
+   "seed": 1
+  },
+  {
+   "last_stage": 5,
+   "must_create_workers": false,
+   "num_ints": 16,
+   "num_workers": 6,
+   "seed": 2
+  },
+  {
+   "last_stage": 5,
+   "must_create_workers": false,
+   "num_ints": 16,
+   "num_workers": 6,
+   "seed": 3
+  }
+ ],
+ "classical/ipc/assembly": [
+  {
+   "deep_internal_probability": 0.11,
+   "depth": 2,
+   "internal_probability": 0.94,
+   "max_sons": 2,
+   "num_parts": 2,
+   "num_resources": 1,
+   "order_probability": 0.5,
+   "requires_probability": 0.84,
+   "seed": 0,
+   "tool_probability": 0.5,
+   "transient_probability": 0.5
+  },
+  {
+   "deep_internal_probability": 0.11,
+   "depth": 2,
+   "internal_probability": 0.94,
+   "max_sons": 2,
+   "num_parts": 2,
+   "num_resources": 1,
+   "order_probability": 0.5,
+   "requires_probability": 0.84,
+   "seed": 1,
+   "tool_probability": 0.5,
+   "transient_probability": 0.5
+  },
+  {
+   "deep_internal_probability": 0.11,
+   "depth": 2,
+   "internal_probability": 0.94,
+   "max_sons": 2,
+   "num_parts": 2,
+   "num_resources": 1,
+   "order_probability": 0.5,
+   "requires_probability": 0.84,
+   "seed": 2,
+   "tool_probability": 0.5,
+   "transient_probability": 0.5
+  },
+  {
+   "deep_internal_probability": 0.11,
+   "depth": 2,
+   "internal_probability": 0.94,
+   "max_sons": 2,
+   "num_parts": 2,
+   "num_resources": 1,
+   "order_probability": 0.5,
+   "requires_probability": 0.84,
+   "seed": 3,
+   "tool_probability": 0.5,
+   "transient_probability": 0.5
+  },
+  {
+   "deep_internal_probability": 0.11,
+   "depth": 2,
+   "internal_probability": 0.94,
+   "max_sons": 2,
+   "num_parts": 2,
+   "num_resources": 1,
+   "order_probability": 0.5,
+   "requires_probability": 0.84,
+   "seed": 4,
+   "tool_probability": 0.5,
+   "transient_probability": 0.5
+  },
+  {
+   "deep_internal_probability": 0.11,
+   "depth": 3,
+   "internal_probability": 0.94,
+   "max_sons": 6,
+   "num_parts": 3,
+   "num_resources": 1,
+   "order_probability": 0.18,
+   "requires_probability": 0.84,
+   "seed": 0,
+   "tool_probability": 0.03,
+   "transient_probability": 0.05
+  }
+ ],
+ "classical/ipc/barman": [
+  {
+   "action_costs": false,
+   "num_cocktails": 1,
+   "num_ingredients": 2,
+   "num_shots": 2,
+   "seed": 3
+  },
+  {
+   "action_costs": true,
+   "num_cocktails": 3,
+   "num_ingredients": 4,
+   "num_shots": 6,
+   "seed": 1
+  },
+  {
+   "action_costs": false,
+   "num_cocktails": 2,
+   "num_ingredients": 3,
+   "num_shots": 3,
+   "seed": 1
+  },
+  {
+   "action_costs": false,
+   "num_cocktails": 3,
+   "num_ingredients": 4,
+   "num_shots": 5,
+   "seed": 3
+  },
+  {
+   "action_costs": false,
+   "num_cocktails": 3,
+   "num_ingredients": 4,
+   "num_shots": 12,
+   "seed": 0
+  },
+  {
+   "action_costs": false,
+   "num_cocktails": 3,
+   "num_ingredients": 4,
+   "num_shots": 12,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/blocks_3": [
+  {
+   "num_blocks": 1,
+   "seed": 0
+  },
+  {
+   "num_blocks": 4,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/blocks_4": [
+  {
+   "goal": "full",
+   "num_blocks": 1,
+   "seed": 0
+  },
+  {
+   "goal": "tower",
+   "num_blocks": 1,
+   "seed": 3
+  },
+  {
+   "goal": "tower",
+   "num_blocks": 4,
+   "seed": 1
+  },
+  {
+   "goal": "tower",
+   "num_blocks": 2,
+   "seed": 3
+  },
+  {
+   "goal": "full",
+   "num_blocks": 5,
+   "seed": 1
+  },
+  {
+   "goal": "tower",
+   "num_blocks": 6,
+   "seed": 3
+  }
+ ],
+ "classical/ipc/cavediving": [
+  {
+   "cave_branches": [
+    2
+   ],
+   "max_hiring_cost": 100,
+   "min_hiring_cost": 10,
+   "name": null,
+   "neg_link_prob": 0.5,
+   "objectives": [
+    2
+   ],
+   "other_action_cost": 1,
+   "perturb_hiring_costs": 0.1,
+   "seed": 0
+  },
+  {
+   "cave_branches": [
+    3,
+    2,
+    2
+   ],
+   "max_hiring_cost": 100,
+   "min_hiring_cost": 10,
+   "name": null,
+   "neg_link_prob": 0.5,
+   "objectives": [
+    2,
+    2
+   ],
+   "other_action_cost": 1,
+   "perturb_hiring_costs": 0.1,
+   "seed": 0
+  },
+  {
+   "cave_branches": [
+    4,
+    3
+   ],
+   "max_hiring_cost": 100,
+   "min_hiring_cost": 10,
+   "name": null,
+   "neg_link_prob": 0.5,
+   "objectives": [
+    4,
+    3
+   ],
+   "other_action_cost": 1,
+   "perturb_hiring_costs": 0.1,
+   "seed": 0
+  },
+  {
+   "cave_branches": [
+    2
+   ],
+   "max_hiring_cost": 100,
+   "min_hiring_cost": 10,
+   "name": null,
+   "neg_link_prob": 0.5,
+   "objectives": [
+    2
+   ],
+   "other_action_cost": 1,
+   "perturb_hiring_costs": 0.1,
+   "seed": 1
+  },
+  {
+   "cave_branches": [
+    3,
+    2,
+    2
+   ],
+   "max_hiring_cost": 100,
+   "min_hiring_cost": 10,
+   "name": null,
+   "neg_link_prob": 0.5,
+   "objectives": [
+    2,
+    2
+   ],
+   "other_action_cost": 1,
+   "perturb_hiring_costs": 0.1,
+   "seed": 1
+  },
+  {
+   "cave_branches": [
+    4,
+    3
+   ],
+   "max_hiring_cost": 100,
+   "min_hiring_cost": 10,
+   "name": null,
+   "neg_link_prob": 0.5,
+   "objectives": [
+    4,
+    3
+   ],
+   "other_action_cost": 1,
+   "perturb_hiring_costs": 0.1,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/childsnack": [
+  {
+   "const_ratio": 1.2,
+   "gluten_factor": 0.5,
+   "num_children": 3,
+   "num_trays": 2,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/citycar": [
+  {
+   "density": 1.0,
+   "num_cars": 2,
+   "num_columns": 2,
+   "num_garages": 1,
+   "num_rows": 2,
+   "seed": 2
+  },
+  {
+   "density": 1.0,
+   "num_cars": 2,
+   "num_columns": 2,
+   "num_garages": 2,
+   "num_rows": 2,
+   "seed": 1
+  },
+  {
+   "density": 1.0,
+   "num_cars": 3,
+   "num_columns": 2,
+   "num_garages": 1,
+   "num_rows": 2,
+   "seed": 2
+  },
+  {
+   "density": 1.0,
+   "num_cars": 3,
+   "num_columns": 2,
+   "num_garages": 2,
+   "num_rows": 2,
+   "seed": 1
+  },
+  {
+   "density": 1.0,
+   "num_cars": 1,
+   "num_columns": 2,
+   "num_garages": 1,
+   "num_rows": 2,
+   "seed": 5
+  },
+  {
+   "density": 1.0,
+   "num_cars": 3,
+   "num_columns": 2,
+   "num_garages": 2,
+   "num_rows": 2,
+   "seed": 2
+  }
+ ],
+ "classical/ipc/data_network": [
+  {
+   "network": "ring-network",
+   "num_items": 3,
+   "num_layers": 2,
+   "num_scripts": 1,
+   "seed": 7
+  },
+  {
+   "network": "small-network",
+   "num_items": 3,
+   "num_layers": 2,
+   "num_scripts": 1,
+   "seed": 7
+  },
+  {
+   "network": "tiny-network",
+   "num_items": 3,
+   "num_layers": 2,
+   "num_scripts": 1,
+   "seed": 7
+  },
+  {
+   "network": "ring-network",
+   "num_items": 22,
+   "num_layers": 5,
+   "num_scripts": 30,
+   "seed": 7
+  },
+  {
+   "network": "small-network",
+   "num_items": 22,
+   "num_layers": 5,
+   "num_scripts": 30,
+   "seed": 7
+  },
+  {
+   "network": "tiny-network",
+   "num_items": 22,
+   "num_layers": 5,
+   "num_scripts": 30,
+   "seed": 7
+  }
+ ],
+ "classical/ipc/delivery": [
+  {
+   "grid_size": 3,
+   "num_packages": 2,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/depots": [
+  {
+   "num_crates": 1,
+   "num_depots": 1,
+   "num_distributors": 1,
+   "num_hoists": 1,
+   "num_pallets": 1,
+   "num_trucks": 1,
+   "seed": 3,
+   "typed": false
+  },
+  {
+   "num_crates": 3,
+   "num_depots": 1,
+   "num_distributors": 1,
+   "num_hoists": 2,
+   "num_pallets": 2,
+   "num_trucks": 1,
+   "seed": 4,
+   "typed": true
+  },
+  {
+   "num_crates": 3,
+   "num_depots": 1,
+   "num_distributors": 1,
+   "num_hoists": 2,
+   "num_pallets": 2,
+   "num_trucks": 1,
+   "seed": 4,
+   "typed": false
+  },
+  {
+   "num_crates": 5,
+   "num_depots": 2,
+   "num_distributors": 1,
+   "num_hoists": 3,
+   "num_pallets": 4,
+   "num_trucks": 2,
+   "seed": 9,
+   "typed": false
+  },
+  {
+   "num_crates": 9,
+   "num_depots": 3,
+   "num_distributors": 2,
+   "num_hoists": 4,
+   "num_pallets": 7,
+   "num_trucks": 2,
+   "seed": 3,
+   "typed": false
+  },
+  {
+   "num_crates": 3,
+   "num_depots": 9,
+   "num_distributors": 2,
+   "num_hoists": 11,
+   "num_pallets": 16,
+   "num_trucks": 2,
+   "seed": 3,
+   "typed": false
+  }
+ ],
+ "classical/ipc/driverlog": [
+  {
+   "num_drivers": 1,
+   "num_locations": 1,
+   "num_packages": 1,
+   "num_trucks": 1,
+   "seed": 6,
+   "typed": true
+  },
+  {
+   "num_drivers": 2,
+   "num_locations": 3,
+   "num_packages": 3,
+   "num_trucks": 2,
+   "seed": 1,
+   "typed": false
+  },
+  {
+   "num_drivers": 1,
+   "num_locations": 3,
+   "num_packages": 2,
+   "num_trucks": 1,
+   "seed": 6,
+   "typed": true
+  },
+  {
+   "num_drivers": 2,
+   "num_locations": 4,
+   "num_packages": 5,
+   "num_trucks": 2,
+   "seed": 0,
+   "typed": true
+  },
+  {
+   "num_drivers": 2,
+   "num_locations": 4,
+   "num_packages": 5,
+   "num_trucks": 2,
+   "seed": 1,
+   "typed": true
+  },
+  {
+   "num_drivers": 2,
+   "num_locations": 4,
+   "num_packages": 5,
+   "num_trucks": 2,
+   "seed": 2,
+   "typed": true
+  }
+ ],
+ "classical/ipc/elevators": [
+  {
+   "area_size": 2,
+   "fast_capacity": 3,
+   "fast_cost": 3,
+   "num_areas": 2,
+   "num_fast_elevators": 0,
+   "num_passengers": 5,
+   "num_slow_elevators": 1,
+   "seed": 4,
+   "slow_capacity": 2,
+   "slow_cost": 1,
+   "stop_fast_cost": 1,
+   "stop_slow_cost": 5
+  },
+  {
+   "area_size": 6,
+   "fast_capacity": 3,
+   "fast_cost": 3,
+   "num_areas": 3,
+   "num_fast_elevators": 1,
+   "num_passengers": 3,
+   "num_slow_elevators": 1,
+   "seed": 4,
+   "slow_capacity": 2,
+   "slow_cost": 1,
+   "stop_fast_cost": 1,
+   "stop_slow_cost": 5
+  },
+  {
+   "area_size": 4,
+   "fast_capacity": 3,
+   "fast_cost": 3,
+   "num_areas": 2,
+   "num_fast_elevators": 2,
+   "num_passengers": 6,
+   "num_slow_elevators": 1,
+   "seed": 9,
+   "slow_capacity": 3,
+   "slow_cost": 1,
+   "stop_fast_cost": 1,
+   "stop_slow_cost": 5
+  },
+  {
+   "area_size": 5,
+   "fast_capacity": 3,
+   "fast_cost": 3,
+   "num_areas": 4,
+   "num_fast_elevators": 3,
+   "num_passengers": 10,
+   "num_slow_elevators": 2,
+   "seed": 4,
+   "slow_capacity": 2,
+   "slow_cost": 1,
+   "stop_fast_cost": 1,
+   "stop_slow_cost": 5
+  }
+ ],
+ "classical/ipc/ferry": [
+  {
+   "num_cars": 3,
+   "num_locations": 3,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/flashfill": [
+  {
+   "family": "initials",
+   "max_size": 7,
+   "min_size": 3,
+   "num_tests": 2,
+   "seed": 4
+  },
+  {
+   "family": "add-paren",
+   "max_size": 7,
+   "min_size": 3,
+   "num_tests": 3,
+   "seed": 5
+  },
+  {
+   "family": "extract-minutes",
+   "max_size": 7,
+   "min_size": 3,
+   "num_tests": 3,
+   "seed": 5
+  },
+  {
+   "family": "first-last-initial",
+   "max_size": 7,
+   "min_size": 3,
+   "num_tests": 3,
+   "seed": 5
+  },
+  {
+   "family": "initials",
+   "max_size": 7,
+   "min_size": 3,
+   "num_tests": 3,
+   "seed": 5
+  }
+ ],
+ "classical/ipc/floortile": [
+  {
+   "name": null,
+   "num_columns": 3,
+   "num_robots": 2,
+   "num_rows": 3,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/folding": [
+  {
+   "num_folds": 4,
+   "num_nodes": 8,
+   "scenario": "spiral",
+   "seed": 3
+  },
+  {
+   "num_folds": 6,
+   "num_nodes": 10,
+   "scenario": "bias-spiral",
+   "seed": 2
+  },
+  {
+   "num_folds": 7,
+   "num_nodes": 12,
+   "scenario": "zigzag",
+   "seed": 5
+  },
+  {
+   "num_folds": 7,
+   "num_nodes": 12,
+   "scenario": "spiral",
+   "seed": 5
+  },
+  {
+   "num_folds": 7,
+   "num_nodes": 12,
+   "scenario": "bias-spiral",
+   "seed": 5
+  },
+  {
+   "num_folds": 7,
+   "num_nodes": 8,
+   "scenario": "zigzag",
+   "seed": 1229
+  }
+ ],
+ "classical/ipc/freecell": [
+  {
+   "num_cards": 2,
+   "num_cells": 2,
+   "num_columns": 4,
+   "seed": 3,
+   "style": "ipc2002"
+  },
+  {
+   "num_cards": 3,
+   "num_cells": 4,
+   "num_columns": 8,
+   "seed": 0,
+   "style": "ipc2000"
+  },
+  {
+   "num_cards": 1,
+   "num_cells": 4,
+   "num_columns": 8,
+   "seed": 3,
+   "style": "ipc2000"
+  },
+  {
+   "num_cards": 5,
+   "num_cells": 4,
+   "num_columns": 8,
+   "seed": 3,
+   "style": "ipc2000"
+  },
+  {
+   "num_cards": 4,
+   "num_cells": 2,
+   "num_columns": 5,
+   "seed": 9,
+   "style": "ipc2002"
+  },
+  {
+   "num_cards": 9,
+   "num_cells": 4,
+   "num_columns": 7,
+   "seed": 3,
+   "style": "ipc2002"
+  }
+ ],
+ "classical/ipc/goldminer": [
+  {
+   "num_cols": 4,
+   "num_rows": 3,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/grid": [
+  {
+   "goal_probability": null,
+   "height": 3,
+   "num_keys": null,
+   "num_locks": null,
+   "num_shapes": null,
+   "seed": 1,
+   "style": "ipc",
+   "width": 3
+  },
+  {
+   "goal_probability": 1.0,
+   "height": 3,
+   "num_keys": 4,
+   "num_locks": 1,
+   "num_shapes": 1,
+   "seed": 0,
+   "style": "ipc",
+   "width": 3
+  },
+  {
+   "goal_probability": 1.0,
+   "height": 3,
+   "num_keys": 4,
+   "num_locks": 1,
+   "num_shapes": 1,
+   "seed": 0,
+   "style": "autoscale",
+   "width": 3
+  },
+  {
+   "goal_probability": null,
+   "height": 5,
+   "num_keys": null,
+   "num_locks": 3,
+   "num_shapes": null,
+   "seed": 7,
+   "style": "ipc",
+   "width": 4
+  },
+  {
+   "goal_probability": null,
+   "height": 5,
+   "num_keys": null,
+   "num_locks": null,
+   "num_shapes": null,
+   "seed": 2,
+   "style": "ipc",
+   "width": 5
+  },
+  {
+   "goal_probability": 1.0,
+   "height": 3,
+   "num_keys": 4,
+   "num_locks": 1,
+   "num_shapes": 1,
+   "seed": 1,
+   "style": "ipc",
+   "width": 3
+  }
+ ],
+ "classical/ipc/gripper": [
+  {
+   "num_balls": 1
+  },
+  {
+   "num_balls": 3
+  },
+  {
+   "num_balls": 20
+  }
+ ],
+ "classical/ipc/hiking": [
+  {
+   "num_cars": 2,
+   "num_couples": 2,
+   "num_places": 4,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/labyrinth": [
+  {
+   "num_rotations": 1,
+   "seed": 1229,
+   "size": 3
+  },
+  {
+   "num_rotations": 2,
+   "seed": 1231,
+   "size": 4
+  },
+  {
+   "num_rotations": 3,
+   "seed": 1237,
+   "size": 4
+  },
+  {
+   "num_rotations": 4,
+   "seed": 1249,
+   "size": 4
+  },
+  {
+   "num_rotations": 5,
+   "seed": 1259,
+   "size": 4
+  },
+  {
+   "num_rotations": 1,
+   "seed": 1277,
+   "size": 5
+  }
+ ],
+ "classical/ipc/logistics": [
+  {
+   "city_size": 2,
+   "num_airplanes": 1,
+   "num_cities": 2,
+   "num_goals": null,
+   "num_packages": 3,
+   "num_trucks": null,
+   "seed": 0,
+   "style": "98"
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 1,
+   "num_cities": 2,
+   "num_goals": null,
+   "num_packages": 6,
+   "num_trucks": null,
+   "seed": 4,
+   "style": "00"
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 1,
+   "num_cities": 3,
+   "num_goals": 7,
+   "num_packages": 9,
+   "num_trucks": null,
+   "seed": 1,
+   "style": "00"
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 1,
+   "num_cities": 3,
+   "num_goals": 4,
+   "num_packages": 6,
+   "num_trucks": 5,
+   "seed": 4,
+   "style": "98"
+  },
+  {
+   "city_size": 2,
+   "num_airplanes": 1,
+   "num_cities": 2,
+   "num_goals": null,
+   "num_packages": 3,
+   "num_trucks": null,
+   "seed": 1,
+   "style": "98"
+  },
+  {
+   "city_size": 3,
+   "num_airplanes": 1,
+   "num_cities": 2,
+   "num_goals": null,
+   "num_packages": 3,
+   "num_trucks": null,
+   "seed": 1,
+   "style": "98"
+  }
+ ],
+ "classical/ipc/maintenance": [
+  {
+   "num_days": 1,
+   "num_planes": 1,
+   "num_visits": 1,
+   "seed": 3
+  },
+  {
+   "num_days": 10,
+   "num_planes": 10,
+   "num_visits": 2,
+   "seed": 0
+  },
+  {
+   "num_days": 10,
+   "num_planes": 10,
+   "num_visits": 2,
+   "seed": 1
+  },
+  {
+   "num_days": 10,
+   "num_planes": 10,
+   "num_visits": 2,
+   "seed": 2
+  },
+  {
+   "num_days": 10,
+   "num_planes": 10,
+   "num_visits": 2,
+   "seed": 3
+  },
+  {
+   "num_days": 15,
+   "num_planes": 20,
+   "num_visits": 2,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/miconic": [
+  {
+   "num_floors": 2,
+   "num_passengers": 1,
+   "seed": 0,
+   "typed": true
+  },
+  {
+   "num_floors": 3,
+   "num_passengers": 3,
+   "seed": 1,
+   "typed": false
+  },
+  {
+   "num_floors": 2,
+   "num_passengers": 1,
+   "seed": 1,
+   "typed": true
+  },
+  {
+   "num_floors": 2,
+   "num_passengers": 1,
+   "seed": 2,
+   "typed": true
+  },
+  {
+   "num_floors": 2,
+   "num_passengers": 1,
+   "seed": 4,
+   "typed": false
+  },
+  {
+   "num_floors": 4,
+   "num_passengers": 2,
+   "seed": 5,
+   "typed": false
+  }
+ ],
+ "classical/ipc/miconic_fulladl": [
+  {
+   "attendant": 60,
+   "conflict_a": 20,
+   "conflict_b": 80,
+   "going_nonstop": 5,
+   "never_alone": 10,
+   "no_access": 50,
+   "no_access_floors": 5,
+   "num_floors": 2,
+   "num_passengers": 1,
+   "seed": 0,
+   "up_down": 20,
+   "vip": 5
+  },
+  {
+   "attendant": 60,
+   "conflict_a": 20,
+   "conflict_b": 80,
+   "going_nonstop": 5,
+   "never_alone": 10,
+   "no_access": 50,
+   "no_access_floors": 5,
+   "num_floors": 10,
+   "num_passengers": 5,
+   "seed": 2,
+   "up_down": 20,
+   "vip": 5
+  },
+  {
+   "attendant": 60,
+   "conflict_a": 20,
+   "conflict_b": 80,
+   "going_nonstop": 5,
+   "never_alone": 10,
+   "no_access": 50,
+   "no_access_floors": 5,
+   "num_floors": 36,
+   "num_passengers": 18,
+   "seed": 1,
+   "up_down": 20,
+   "vip": 5
+  },
+  {
+   "attendant": 60,
+   "conflict_a": 20,
+   "conflict_b": 80,
+   "going_nonstop": 5,
+   "never_alone": 10,
+   "no_access": 50,
+   "no_access_floors": 5,
+   "num_floors": 60,
+   "num_passengers": 30,
+   "seed": 3,
+   "up_down": 20,
+   "vip": 5
+  },
+  {
+   "attendant": 60,
+   "conflict_a": 20,
+   "conflict_b": 80,
+   "going_nonstop": 5,
+   "never_alone": 10,
+   "no_access": 50,
+   "no_access_floors": 5,
+   "num_floors": 60,
+   "num_passengers": 30,
+   "seed": 4,
+   "up_down": 20,
+   "vip": 5
+  }
+ ],
+ "classical/ipc/movie": [
+  {
+   "num_snacks": 3
+  },
+  {
+   "num_snacks": 5
+  },
+  {
+   "num_snacks": 21
+  },
+  {
+   "num_snacks": 34
+  }
+ ],
+ "classical/ipc/mystery": [
+  {
+   "num_cargos": 1,
+   "num_fuel_levels": 2,
+   "num_goals": 1,
+   "num_locations": 2,
+   "num_space_levels": 2,
+   "num_vehicles": 1,
+   "prime": false,
+   "seed": 3
+  },
+  {
+   "num_cargos": 3,
+   "num_fuel_levels": 5,
+   "num_goals": 2,
+   "num_locations": 5,
+   "num_space_levels": 3,
+   "num_vehicles": 2,
+   "prime": true,
+   "seed": 1
+  },
+  {
+   "num_cargos": 3,
+   "num_fuel_levels": 4,
+   "num_goals": 1,
+   "num_locations": 5,
+   "num_space_levels": 3,
+   "num_vehicles": 2,
+   "prime": false,
+   "seed": 2
+  },
+  {
+   "num_cargos": 2,
+   "num_fuel_levels": 6,
+   "num_goals": 1,
+   "num_locations": 4,
+   "num_space_levels": 4,
+   "num_vehicles": 2,
+   "prime": true,
+   "seed": 6
+  },
+  {
+   "num_cargos": 6,
+   "num_fuel_levels": 5,
+   "num_goals": 2,
+   "num_locations": 8,
+   "num_space_levels": 4,
+   "num_vehicles": 3,
+   "prime": false,
+   "seed": 1
+  },
+  {
+   "num_cargos": 6,
+   "num_fuel_levels": 5,
+   "num_goals": 2,
+   "num_locations": 8,
+   "num_space_levels": 4,
+   "num_vehicles": 3,
+   "prime": true,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/nomystery": [
+  {
+   "constrainedness": 1.5,
+   "edge_factor": 1.5,
+   "full_sum_table": true,
+   "max_edge_cost": 25,
+   "num_locations": 4,
+   "num_packages": 3,
+   "seed": 0
+  },
+  {
+   "constrainedness": 1.0,
+   "edge_factor": 1.5,
+   "full_sum_table": false,
+   "max_edge_cost": 25,
+   "num_locations": 4,
+   "num_packages": 2,
+   "seed": 3
+  },
+  {
+   "constrainedness": 1.5,
+   "edge_factor": 1.5,
+   "full_sum_table": true,
+   "max_edge_cost": 25,
+   "num_locations": 4,
+   "num_packages": 3,
+   "seed": 1
+  },
+  {
+   "constrainedness": 1.0,
+   "edge_factor": 1.5,
+   "full_sum_table": true,
+   "max_edge_cost": 25,
+   "num_locations": 4,
+   "num_packages": 2,
+   "seed": 3
+  },
+  {
+   "constrainedness": 1.5,
+   "edge_factor": 1.5,
+   "full_sum_table": true,
+   "max_edge_cost": 25,
+   "num_locations": 4,
+   "num_packages": 3,
+   "seed": 2
+  },
+  {
+   "constrainedness": 1.5,
+   "edge_factor": 1.5,
+   "full_sum_table": false,
+   "max_edge_cost": 25,
+   "num_locations": 4,
+   "num_packages": 3,
+   "seed": 2
+  }
+ ],
+ "classical/ipc/nurikabe": [
+  {
+   "height": null,
+   "seed": 1,
+   "width": 3
+  },
+  {
+   "height": 3,
+   "seed": 2,
+   "width": 3
+  },
+  {
+   "height": null,
+   "seed": 2,
+   "width": 5
+  },
+  {
+   "height": null,
+   "seed": 4,
+   "width": 6
+  },
+  {
+   "height": null,
+   "seed": 3,
+   "width": 7
+  },
+  {
+   "height": 3,
+   "seed": 10,
+   "width": 3
+  }
+ ],
+ "classical/ipc/openstacks": [
+  {
+   "density": 25,
+   "model": "clustered",
+   "num_orders": 7,
+   "num_products": 8,
+   "seed": 2,
+   "shuffle": true,
+   "style": "06"
+  },
+  {
+   "density": 30,
+   "model": "clustered",
+   "num_orders": 9,
+   "num_products": 12,
+   "seed": 0,
+   "shuffle": true,
+   "style": "08"
+  },
+  {
+   "density": 30,
+   "model": "uniform",
+   "num_orders": 9,
+   "num_products": 12,
+   "seed": 0,
+   "shuffle": true,
+   "style": "08"
+  },
+  {
+   "density": 40,
+   "model": "uniform",
+   "num_orders": 5,
+   "num_products": 6,
+   "seed": 3,
+   "shuffle": true,
+   "style": "06"
+  },
+  {
+   "density": 20,
+   "model": "clustered",
+   "num_orders": 60,
+   "num_products": 60,
+   "seed": 0,
+   "shuffle": false,
+   "style": "08"
+  },
+  {
+   "density": 30,
+   "model": "clustered",
+   "num_orders": 9,
+   "num_products": 12,
+   "seed": 1,
+   "shuffle": true,
+   "style": "08"
+  }
+ ],
+ "classical/ipc/parking": [
+  {
+   "num_cars": 1,
+   "num_curbs": 2,
+   "seed": 4
+  },
+  {
+   "num_cars": 4,
+   "num_curbs": 3,
+   "seed": 4
+  },
+  {
+   "num_cars": 7,
+   "num_curbs": 5,
+   "seed": 9
+  },
+  {
+   "num_cars": 14,
+   "num_curbs": 9,
+   "seed": 4
+  },
+  {
+   "num_cars": 16,
+   "num_curbs": 9,
+   "seed": 4
+  },
+  {
+   "num_cars": 84,
+   "num_curbs": 43,
+   "seed": 4
+  }
+ ],
+ "classical/ipc/pathways": [
+  {
+   "min_reactions": 10,
+   "num_goals": 2,
+   "num_substances": 3,
+   "seed": 1,
+   "strips_wrapper": true
+  },
+  {
+   "min_reactions": 12,
+   "num_goals": 1,
+   "num_substances": 3,
+   "seed": 1,
+   "strips_wrapper": false
+  },
+  {
+   "min_reactions": 24,
+   "num_goals": 2,
+   "num_substances": 3,
+   "seed": 5,
+   "strips_wrapper": false
+  },
+  {
+   "min_reactions": 20,
+   "num_goals": 25,
+   "num_substances": 22,
+   "seed": 4,
+   "strips_wrapper": true
+  },
+  {
+   "min_reactions": 60,
+   "num_goals": 8,
+   "num_substances": 10,
+   "seed": 2,
+   "strips_wrapper": true
+  },
+  {
+   "min_reactions": 72,
+   "num_goals": 6,
+   "num_substances": 7,
+   "seed": 2,
+   "strips_wrapper": false
+  }
+ ],
+ "classical/ipc/pegsol": [
+  {
+   "num_pegs": 1,
+   "seed": 0
+  },
+  {
+   "num_pegs": 5,
+   "seed": 1
+  },
+  {
+   "num_pegs": 9,
+   "seed": 2
+  },
+  {
+   "num_pegs": 12,
+   "seed": 3
+  },
+  {
+   "num_pegs": 32,
+   "seed": 0
+  },
+  {
+   "num_pegs": 32,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/recharging_robots": [
+  {
+   "charge_multiplier": 1.0,
+   "kind": "single-source-move-to-locations",
+   "max_distance": 0.35,
+   "max_square_width": 0.3,
+   "min_cover": 1,
+   "move_from_source": false,
+   "num_areas": 1,
+   "num_obstacles": 5,
+   "num_robots": 3,
+   "num_viewpoints": 10,
+   "seed": 0
+  },
+  {
+   "charge_multiplier": 1.0,
+   "kind": "covers",
+   "max_distance": 0.35,
+   "max_square_width": 0.3,
+   "min_cover": 2,
+   "move_from_source": false,
+   "num_areas": 1,
+   "num_obstacles": 2,
+   "num_robots": 2,
+   "num_viewpoints": 15,
+   "seed": 0
+  },
+  {
+   "charge_multiplier": 1.0,
+   "kind": "single-source-move-to-locations",
+   "max_distance": 0.35,
+   "max_square_width": 0.3,
+   "min_cover": 1,
+   "move_from_source": true,
+   "num_areas": 1,
+   "num_obstacles": 5,
+   "num_robots": 4,
+   "num_viewpoints": 15,
+   "seed": 0
+  },
+  {
+   "charge_multiplier": 1.0,
+   "kind": "single-source-move-to-locations",
+   "max_distance": 0.35,
+   "max_square_width": 0.3,
+   "min_cover": 1,
+   "move_from_source": false,
+   "num_areas": 1,
+   "num_obstacles": 5,
+   "num_robots": 3,
+   "num_viewpoints": 10,
+   "seed": 1
+  },
+  {
+   "charge_multiplier": 1.0,
+   "kind": "single-source-move-to-locations",
+   "max_distance": 0.35,
+   "max_square_width": 0.3,
+   "min_cover": 1,
+   "move_from_source": false,
+   "num_areas": 1,
+   "num_obstacles": 5,
+   "num_robots": 3,
+   "num_viewpoints": 10,
+   "seed": 2
+  },
+  {
+   "charge_multiplier": 1.0,
+   "kind": "covers",
+   "max_distance": 0.35,
+   "max_square_width": 0.3,
+   "min_cover": 2,
+   "move_from_source": false,
+   "num_areas": 1,
+   "num_obstacles": 2,
+   "num_robots": 2,
+   "num_viewpoints": 15,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/ricochet_robots": [
+  {
+   "board": "random",
+   "board_size": 6,
+   "max_states": 200000,
+   "num_barriers": null,
+   "seed": 2
+  },
+  {
+   "board": "asp2015",
+   "board_size": 16,
+   "max_states": 200000,
+   "num_barriers": null,
+   "seed": 1
+  },
+  {
+   "board": "random",
+   "board_size": 5,
+   "max_states": 1000000,
+   "num_barriers": 6,
+   "seed": 4
+  },
+  {
+   "board": "random",
+   "board_size": 3,
+   "max_states": 200000,
+   "num_barriers": null,
+   "seed": 7
+  },
+  {
+   "board": "random",
+   "board_size": 5,
+   "max_states": 200000,
+   "num_barriers": null,
+   "seed": 7
+  },
+  {
+   "board": "random",
+   "board_size": 8,
+   "max_states": 200000,
+   "num_barriers": null,
+   "seed": 7
+  }
+ ],
+ "classical/ipc/rovers": [
+  {
+   "autoscale": false,
+   "num_cameras": 1,
+   "num_goals": 1,
+   "num_objectives": 2,
+   "num_rovers": 1,
+   "num_waypoints": 4,
+   "seed": 0
+  },
+  {
+   "autoscale": true,
+   "num_cameras": 7,
+   "num_goals": 5,
+   "num_objectives": 8,
+   "num_rovers": 6,
+   "num_waypoints": 20,
+   "seed": 0
+  },
+  {
+   "autoscale": false,
+   "num_cameras": 1,
+   "num_goals": 1,
+   "num_objectives": 2,
+   "num_rovers": 1,
+   "num_waypoints": 4,
+   "seed": 1
+  },
+  {
+   "autoscale": false,
+   "num_cameras": 1,
+   "num_goals": 1,
+   "num_objectives": 2,
+   "num_rovers": 1,
+   "num_waypoints": 4,
+   "seed": 2
+  },
+  {
+   "autoscale": false,
+   "num_cameras": 1,
+   "num_goals": 1,
+   "num_objectives": 2,
+   "num_rovers": 1,
+   "num_waypoints": 4,
+   "seed": 3
+  },
+  {
+   "autoscale": false,
+   "num_cameras": 1,
+   "num_goals": 1,
+   "num_objectives": 2,
+   "num_rovers": 1,
+   "num_waypoints": 4,
+   "seed": 4
+  }
+ ],
+ "classical/ipc/rubiks_cube": [
+  {
+   "num_moves": 3,
+   "seed": 1087
+  },
+  {
+   "num_moves": 7,
+   "seed": 1087
+  },
+  {
+   "num_moves": 4,
+   "seed": 1129
+  },
+  {
+   "num_moves": 8,
+   "seed": 1129
+  },
+  {
+   "num_moves": 2,
+   "seed": 2999
+  },
+  {
+   "num_moves": 5,
+   "seed": 2999
+  }
+ ],
+ "classical/ipc/satellite": [
+  {
+   "max_instruments": 1,
+   "num_modes": 1,
+   "num_observations": 1,
+   "num_satellites": 1,
+   "num_targets": 1,
+   "patched": true,
+   "seed": 0,
+   "typed": true
+  },
+  {
+   "max_instruments": 3,
+   "num_modes": 3,
+   "num_observations": 3,
+   "num_satellites": 2,
+   "num_targets": 4,
+   "patched": false,
+   "seed": 1,
+   "typed": false
+  },
+  {
+   "max_instruments": 1,
+   "num_modes": 1,
+   "num_observations": 1,
+   "num_satellites": 1,
+   "num_targets": 1,
+   "patched": true,
+   "seed": 1,
+   "typed": true
+  },
+  {
+   "max_instruments": 1,
+   "num_modes": 1,
+   "num_observations": 1,
+   "num_satellites": 1,
+   "num_targets": 1,
+   "patched": true,
+   "seed": 2,
+   "typed": true
+  },
+  {
+   "max_instruments": 3,
+   "num_modes": 3,
+   "num_observations": 10,
+   "num_satellites": 1,
+   "num_targets": 3,
+   "patched": false,
+   "seed": 0,
+   "typed": false
+  },
+  {
+   "max_instruments": 3,
+   "num_modes": 3,
+   "num_observations": 10,
+   "num_satellites": 1,
+   "num_targets": 3,
+   "patched": false,
+   "seed": 1,
+   "typed": false
+  }
+ ],
+ "classical/ipc/scanalyzer": [
+  {
+   "inout": "none",
+   "segment_type": "empty",
+   "size": 1
+  },
+  {
+   "inout": "none",
+   "segment_type": "ab",
+   "size": 1
+  },
+  {
+   "inout": "in",
+   "segment_type": "empty",
+   "size": 1
+  },
+  {
+   "inout": "in",
+   "segment_type": "ab",
+   "size": 1
+  },
+  {
+   "inout": "both",
+   "segment_type": "empty",
+   "size": 1
+  },
+  {
+   "inout": "both",
+   "segment_type": "ab",
+   "size": 1
+  }
+ ],
+ "classical/ipc/schedule": [
+  {
+   "num_parts": 3,
+   "seed": null
+  },
+  {
+   "num_parts": 1,
+   "seed": 3
+  },
+  {
+   "num_parts": 2,
+   "seed": 3
+  },
+  {
+   "num_parts": 10,
+   "seed": 3
+  },
+  {
+   "num_parts": 30,
+   "seed": 0
+  },
+  {
+   "num_parts": 30,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/settlers": [
+  {
+   "num_edges": 2,
+   "num_goals": 1,
+   "num_locations": 3,
+   "num_seas": 0,
+   "prob_coast": 2,
+   "prob_goal_building": 3,
+   "prob_goal_house": 3,
+   "prob_goal_raillink": 4,
+   "seed": 191,
+   "track": "opt"
+  },
+  {
+   "num_edges": 5,
+   "num_goals": 4,
+   "num_locations": 5,
+   "num_seas": 1,
+   "prob_coast": 2,
+   "prob_goal_building": 3,
+   "prob_goal_house": 3,
+   "prob_goal_raillink": 4,
+   "seed": 120205,
+   "track": "sat"
+  },
+  {
+   "num_edges": 2,
+   "num_goals": 6,
+   "num_locations": 3,
+   "num_seas": 0,
+   "prob_coast": 2,
+   "prob_goal_building": 3,
+   "prob_goal_house": 3,
+   "prob_goal_raillink": 4,
+   "seed": 10490,
+   "track": "opt"
+  },
+  {
+   "num_edges": 2,
+   "num_goals": 2,
+   "num_locations": 3,
+   "num_seas": 0,
+   "prob_coast": 2,
+   "prob_goal_building": 3,
+   "prob_goal_house": 3,
+   "prob_goal_raillink": 4,
+   "seed": 20376,
+   "track": "opt"
+  },
+  {
+   "num_edges": 2,
+   "num_goals": 2,
+   "num_locations": 3,
+   "num_seas": 0,
+   "prob_coast": 2,
+   "prob_goal_building": 3,
+   "prob_goal_house": 3,
+   "prob_goal_raillink": 4,
+   "seed": 20964,
+   "track": "opt"
+  },
+  {
+   "num_edges": 2,
+   "num_goals": 3,
+   "num_locations": 3,
+   "num_seas": 0,
+   "prob_coast": 2,
+   "prob_goal_building": 3,
+   "prob_goal_house": 3,
+   "prob_goal_raillink": 4,
+   "seed": 30110,
+   "track": "opt"
+  }
+ ],
+ "classical/ipc/slitherlink": [
+  {
+   "cols": 3,
+   "rows": 2,
+   "seed": 2
+  },
+  {
+   "cols": 5,
+   "rows": 4,
+   "seed": 2
+  },
+  {
+   "cols": 4,
+   "rows": 3,
+   "seed": 9
+  }
+ ],
+ "classical/ipc/snake": [
+  {
+   "height": 7,
+   "num_initial_apples": 5,
+   "seed": 3,
+   "snake_size": 1,
+   "spawn_percentage": 70,
+   "width": 6
+  },
+  {
+   "height": 5,
+   "num_initial_apples": 5,
+   "seed": 2019,
+   "snake_size": 1,
+   "spawn_percentage": 40,
+   "width": 5
+  },
+  {
+   "height": 6,
+   "num_initial_apples": 5,
+   "seed": 2020,
+   "snake_size": 1,
+   "spawn_percentage": 40,
+   "width": 5
+  },
+  {
+   "height": 14,
+   "num_initial_apples": 5,
+   "seed": 2048,
+   "snake_size": 1,
+   "spawn_percentage": 40,
+   "width": 13
+  }
+ ],
+ "classical/ipc/sokoban": [
+  {
+   "grid": "square",
+   "height": 6,
+   "num_floor": 10,
+   "num_players": 1,
+   "num_pulls": null,
+   "num_stones": 1,
+   "seed": 0,
+   "style": "ipc",
+   "width": 6
+  },
+  {
+   "grid": "hex",
+   "height": 7,
+   "num_floor": 10,
+   "num_players": 1,
+   "num_pulls": null,
+   "num_stones": 1,
+   "seed": 0,
+   "style": "ipc",
+   "width": 9
+  },
+  {
+   "grid": "square",
+   "height": 7,
+   "num_floor": 14,
+   "num_players": 1,
+   "num_pulls": null,
+   "num_stones": 2,
+   "seed": 0,
+   "style": "learning",
+   "width": 7
+  },
+  {
+   "grid": "square",
+   "height": 6,
+   "num_floor": 10,
+   "num_players": 1,
+   "num_pulls": null,
+   "num_stones": 1,
+   "seed": 1,
+   "style": "ipc",
+   "width": 6
+  },
+  {
+   "grid": "square",
+   "height": 6,
+   "num_floor": 10,
+   "num_players": 1,
+   "num_pulls": null,
+   "num_stones": 1,
+   "seed": 2,
+   "style": "ipc",
+   "width": 6
+  },
+  {
+   "grid": "square",
+   "height": 6,
+   "num_floor": 10,
+   "num_players": 1,
+   "num_pulls": null,
+   "num_stones": 1,
+   "seed": 3,
+   "style": "ipc",
+   "width": 6
+  }
+ ],
+ "classical/ipc/spanner": [
+  {
+   "name": "prob",
+   "num_locations": 3,
+   "num_nuts": 2,
+   "num_spanners": 2,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/spider": [
+  {
+   "num_deals": 0,
+   "num_decks": 1,
+   "num_piles": 2,
+   "num_suits": 1,
+   "num_values": 4,
+   "seed": 7
+  },
+  {
+   "num_deals": 2,
+   "num_decks": 2,
+   "num_piles": 4,
+   "num_suits": 2,
+   "num_values": 5,
+   "seed": 3
+  },
+  {
+   "num_deals": 2,
+   "num_decks": 1,
+   "num_piles": 3,
+   "num_suits": 4,
+   "num_values": 3,
+   "seed": 7
+  },
+  {
+   "num_deals": 2,
+   "num_decks": 2,
+   "num_piles": 6,
+   "num_suits": 2,
+   "num_values": 9,
+   "seed": 7
+  },
+  {
+   "num_deals": 2,
+   "num_decks": 4,
+   "num_piles": 8,
+   "num_suits": 1,
+   "num_values": 12,
+   "seed": 7
+  }
+ ],
+ "classical/ipc/storage": [
+  {
+   "num_containers": null,
+   "num_crates": 1,
+   "num_depots": 1,
+   "num_hoists": 1,
+   "num_store_areas": 1,
+   "seed": 11
+  },
+  {
+   "num_containers": 3,
+   "num_crates": 3,
+   "num_depots": 3,
+   "num_hoists": 2,
+   "num_store_areas": 10,
+   "seed": 11
+  },
+  {
+   "num_containers": null,
+   "num_crates": 4,
+   "num_depots": 2,
+   "num_hoists": 3,
+   "num_store_areas": 12,
+   "seed": 9
+  },
+  {
+   "num_containers": null,
+   "num_crates": 10,
+   "num_depots": 1,
+   "num_hoists": 2,
+   "num_store_areas": 20,
+   "seed": 1
+  },
+  {
+   "num_containers": null,
+   "num_crates": 4,
+   "num_depots": 2,
+   "num_hoists": 6,
+   "num_store_areas": 15,
+   "seed": 11
+  },
+  {
+   "num_containers": null,
+   "num_crates": 18,
+   "num_depots": 4,
+   "num_hoists": 27,
+   "num_store_areas": 39,
+   "seed": 11
+  }
+ ],
+ "classical/ipc/termes": [
+  {
+   "max_height": 1,
+   "min_height": 1,
+   "num_towers": 1,
+   "seed": 5,
+   "size_x": 3,
+   "size_y": 3
+  },
+  {
+   "max_height": 4,
+   "min_height": 1,
+   "num_towers": 4,
+   "seed": 5,
+   "size_x": 4,
+   "size_y": 4
+  },
+  {
+   "max_height": 4,
+   "min_height": 2,
+   "num_towers": 3,
+   "seed": 7,
+   "size_x": 5,
+   "size_y": 6
+  },
+  {
+   "max_height": 3,
+   "min_height": 2,
+   "num_towers": 12,
+   "seed": 5,
+   "size_x": 3,
+   "size_y": 3
+  },
+  {
+   "max_height": 5,
+   "min_height": 3,
+   "num_towers": 6,
+   "seed": 5,
+   "size_x": 6,
+   "size_y": 6
+  }
+ ],
+ "classical/ipc/tetris": [
+  {
+   "block_type": 1,
+   "num_rows": 4,
+   "seed": 0
+  },
+  {
+   "block_type": 1,
+   "num_rows": 4,
+   "seed": 1
+  },
+  {
+   "block_type": 2,
+   "num_rows": 4,
+   "seed": 0
+  },
+  {
+   "block_type": 1,
+   "num_rows": 4,
+   "seed": 2
+  },
+  {
+   "block_type": 4,
+   "num_rows": 4,
+   "seed": 0
+  },
+  {
+   "block_type": 1,
+   "num_rows": 4,
+   "seed": 3
+  }
+ ],
+ "classical/ipc/tidybot": [
+  {
+   "cupboard_size": 4,
+   "max_table_size": 2,
+   "min_table_size": 1,
+   "num_cupboards": 1,
+   "num_tables": 0,
+   "seed": 3,
+   "world_size": 5
+  },
+  {
+   "cupboard_size": 4,
+   "max_table_size": 2,
+   "min_table_size": 1,
+   "num_cupboards": 1,
+   "num_tables": 3,
+   "seed": 3,
+   "world_size": 9
+  },
+  {
+   "cupboard_size": 4,
+   "max_table_size": 2,
+   "min_table_size": 1,
+   "num_cupboards": 1,
+   "num_tables": 3,
+   "seed": 4,
+   "world_size": 9
+  },
+  {
+   "cupboard_size": 4,
+   "max_table_size": 2,
+   "min_table_size": 1,
+   "num_cupboards": 3,
+   "num_tables": 5,
+   "seed": 3,
+   "world_size": 12
+  },
+  {
+   "cupboard_size": 4,
+   "max_table_size": 2,
+   "min_table_size": 1,
+   "num_cupboards": 2,
+   "num_tables": 7,
+   "seed": 3,
+   "world_size": 12
+  }
+ ],
+ "classical/ipc/tpp": [
+  {
+   "max_level": 1,
+   "num_depots": 1,
+   "num_markets": 1,
+   "num_products": 1,
+   "num_trucks": 1,
+   "seed": 0
+  },
+  {
+   "max_level": 1,
+   "num_depots": 1,
+   "num_markets": 1,
+   "num_products": 1,
+   "num_trucks": 1,
+   "seed": 1
+  },
+  {
+   "max_level": 1,
+   "num_depots": 1,
+   "num_markets": 1,
+   "num_products": 1,
+   "num_trucks": 1,
+   "seed": 2
+  },
+  {
+   "max_level": 2,
+   "num_depots": 1,
+   "num_markets": 2,
+   "num_products": 2,
+   "num_trucks": 2,
+   "seed": 1
+  },
+  {
+   "max_level": 7,
+   "num_depots": 1,
+   "num_markets": 3,
+   "num_products": 2,
+   "num_trucks": 2,
+   "seed": 0
+  },
+  {
+   "max_level": 7,
+   "num_depots": 1,
+   "num_markets": 3,
+   "num_products": 2,
+   "num_trucks": 2,
+   "seed": 1
+  }
+ ],
+ "classical/ipc/transport": [
+  {
+   "action_costs": true,
+   "degree": 3,
+   "kind": "city",
+   "min_distance": 100,
+   "num_nodes": 2,
+   "num_packages": 1,
+   "num_trucks": 1,
+   "seed": 0,
+   "size": 1000
+  },
+  {
+   "action_costs": false,
+   "degree": 3,
+   "kind": "city",
+   "min_distance": 100,
+   "num_nodes": 5,
+   "num_packages": 3,
+   "num_trucks": 2,
+   "seed": 1,
+   "size": 1000
+  },
+  {
+   "action_costs": false,
+   "degree": 3,
+   "kind": "two-cities",
+   "min_distance": 100,
+   "num_nodes": 5,
+   "num_packages": 3,
+   "num_trucks": 2,
+   "seed": 1,
+   "size": 1000
+  },
+  {
+   "action_costs": false,
+   "degree": 3,
+   "kind": "three-cities",
+   "min_distance": 100,
+   "num_nodes": 5,
+   "num_packages": 3,
+   "num_trucks": 2,
+   "seed": 1,
+   "size": 1000
+  },
+  {
+   "action_costs": true,
+   "degree": 3,
+   "kind": "two-cities",
+   "min_distance": 100,
+   "num_nodes": 5,
+   "num_packages": 3,
+   "num_trucks": 2,
+   "seed": 1,
+   "size": 1000
+  },
+  {
+   "action_costs": true,
+   "degree": 3,
+   "kind": "three-cities",
+   "min_distance": 100,
+   "num_nodes": 5,
+   "num_packages": 3,
+   "num_trucks": 2,
+   "seed": 1,
+   "size": 1000
+  }
+ ],
+ "classical/ipc/trucks": [
+  {
+   "name": 1,
+   "num_areas": 2,
+   "num_locations": 3,
+   "num_packages": 3,
+   "num_trucks": 1,
+   "seed": 1
+  },
+  {
+   "name": null,
+   "num_areas": 4,
+   "num_locations": 5,
+   "num_packages": 9,
+   "num_trucks": 2,
+   "seed": 3
+  },
+  {
+   "name": 2,
+   "num_areas": 2,
+   "num_locations": 3,
+   "num_packages": 4,
+   "num_trucks": 1,
+   "seed": 5
+  },
+  {
+   "name": 7,
+   "num_areas": 3,
+   "num_locations": 4,
+   "num_packages": 6,
+   "num_trucks": 1,
+   "seed": 7
+  },
+  {
+   "name": 19,
+   "num_areas": 5,
+   "num_locations": 6,
+   "num_packages": 12,
+   "num_trucks": 1,
+   "seed": 19
+  }
+ ],
+ "classical/ipc/visitall": [
+  {
+   "goal_ratio": 1.0,
+   "height": 3,
+   "num_unavailable": 0,
+   "seed": 1,
+   "width": 3
+  }
+ ],
+ "classical/ipc/woodworking": [
+  {
+   "num_machines": 2,
+   "num_parts": 3,
+   "seed": 1,
+   "wood_factor": 1.0
+  },
+  {
+   "num_machines": 1,
+   "num_parts": 4,
+   "seed": 2,
+   "wood_factor": 1.2
+  }
+ ],
+ "classical/ipc/zenotravel": [
+  {
+   "distance": 0,
+   "num_cities": 1,
+   "num_people": 1,
+   "num_planes": 1,
+   "seed": 5,
+   "typed": false
+  },
+  {
+   "distance": 0,
+   "num_cities": 3,
+   "num_people": 2,
+   "num_planes": 2,
+   "seed": 1,
+   "typed": true
+  },
+  {
+   "distance": 0,
+   "num_cities": 3,
+   "num_people": 5,
+   "num_planes": 2,
+   "seed": 5,
+   "typed": false
+  },
+  {
+   "distance": 0,
+   "num_cities": 17,
+   "num_people": 5,
+   "num_planes": 6,
+   "seed": 5,
+   "typed": false
+  },
+  {
+   "distance": 0,
+   "num_cities": 5,
+   "num_people": 20,
+   "num_planes": 20,
+   "seed": 0,
+   "typed": false
+  },
+  {
+   "distance": 0,
+   "num_cities": 5,
+   "num_people": 20,
+   "num_planes": 20,
+   "seed": 1,
+   "typed": false
+  }
+ ],
+ "classical/ipc_learning/blocksworld": [
+  {
+   "num_blocks": 6,
+   "seed": 0
+  },
+  {
+   "num_blocks": 6,
+   "seed": 1
+  },
+  {
+   "num_blocks": 6,
+   "seed": 2
+  },
+  {
+   "num_blocks": 6,
+   "seed": 3
+  }
+ ],
+ "classical/ipc_learning/childsnack": [
+  {
+   "const_ratio": 1.2,
+   "gluten_factor": 0.4,
+   "num_children": 5,
+   "num_trays": 2,
+   "seed": 0
+  },
+  {
+   "const_ratio": 1.2,
+   "gluten_factor": 0.4,
+   "num_children": 5,
+   "num_trays": 2,
+   "seed": 1
+  },
+  {
+   "const_ratio": 1.2,
+   "gluten_factor": 1.0,
+   "num_children": 5,
+   "num_trays": 2,
+   "seed": 1
+  },
+  {
+   "const_ratio": 1.2,
+   "gluten_factor": 0.4,
+   "num_children": 5,
+   "num_trays": 2,
+   "seed": 2
+  },
+  {
+   "const_ratio": 1.2,
+   "gluten_factor": 0.4,
+   "num_children": 5,
+   "num_trays": 2,
+   "seed": 3
+  }
+ ],
+ "classical/ipc_learning/ferry": [
+  {
+   "num_cars": 4,
+   "num_locations": 3,
+   "seed": 0
+  },
+  {
+   "num_cars": 4,
+   "num_locations": 3,
+   "seed": 1
+  },
+  {
+   "num_cars": 4,
+   "num_locations": 3,
+   "seed": 2
+  },
+  {
+   "num_cars": 4,
+   "num_locations": 3,
+   "seed": 3
+  }
+ ],
+ "classical/ipc_learning/floortile": [
+  {
+   "name": null,
+   "num_columns": 4,
+   "num_robots": 2,
+   "num_rows": 3,
+   "seed": 0
+  },
+  {
+   "name": null,
+   "num_columns": 4,
+   "num_robots": 2,
+   "num_rows": 3,
+   "seed": 1
+  },
+  {
+   "name": null,
+   "num_columns": 4,
+   "num_robots": 2,
+   "num_rows": 3,
+   "seed": 2
+  },
+  {
+   "name": null,
+   "num_columns": 4,
+   "num_robots": 2,
+   "num_rows": 3,
+   "seed": 3
+  }
+ ],
+ "classical/ipc_learning/miconic": [
+  {
+   "lift_start": "random",
+   "num_floors": 5,
+   "num_passengers": 4,
+   "seed": 0
+  },
+  {
+   "lift_start": "bottom",
+   "num_floors": 8,
+   "num_passengers": 3,
+   "seed": 0
+  },
+  {
+   "lift_start": "random",
+   "num_floors": 5,
+   "num_passengers": 4,
+   "seed": 1
+  },
+  {
+   "lift_start": "random",
+   "num_floors": 5,
+   "num_passengers": 4,
+   "seed": 2
+  },
+  {
+   "lift_start": "random",
+   "num_floors": 8,
+   "num_passengers": 3,
+   "seed": 0
+  },
+  {
+   "lift_start": "random",
+   "num_floors": 5,
+   "num_passengers": 4,
+   "seed": 3
+  }
+ ],
+ "classical/ipc_learning/rovers": [
+  {
+   "learning_goals": true,
+   "learning_graphs": true,
+   "num_cameras": 2,
+   "num_goals": 4,
+   "num_objectives": 3,
+   "num_rovers": 2,
+   "num_waypoints": 6,
+   "seed": 0
+  },
+  {
+   "learning_goals": false,
+   "learning_graphs": false,
+   "num_cameras": 2,
+   "num_goals": 4,
+   "num_objectives": 3,
+   "num_rovers": 2,
+   "num_waypoints": 40,
+   "seed": 0
+  },
+  {
+   "learning_goals": true,
+   "learning_graphs": true,
+   "num_cameras": 2,
+   "num_goals": 4,
+   "num_objectives": 3,
+   "num_rovers": 2,
+   "num_waypoints": 6,
+   "seed": 1
+  },
+  {
+   "learning_goals": true,
+   "learning_graphs": true,
+   "num_cameras": 2,
+   "num_goals": 4,
+   "num_objectives": 3,
+   "num_rovers": 2,
+   "num_waypoints": 6,
+   "seed": 2
+  },
+  {
+   "learning_goals": true,
+   "learning_graphs": true,
+   "num_cameras": 2,
+   "num_goals": 4,
+   "num_objectives": 3,
+   "num_rovers": 2,
+   "num_waypoints": 6,
+   "seed": 3
+  },
+  {
+   "learning_goals": true,
+   "learning_graphs": true,
+   "num_cameras": 2,
+   "num_goals": 4,
+   "num_objectives": 3,
+   "num_rovers": 2,
+   "num_waypoints": 40,
+   "seed": 0
+  }
+ ],
+ "classical/ipc_learning/satellite": [
+  {
+   "num_instruments": 3,
+   "num_modes": 2,
+   "num_observations": 2,
+   "num_satellites": 3,
+   "num_targets": 2,
+   "pointing_goal_may_hold": true,
+   "pointing_goal_probability": 1.0,
+   "seed": 0
+  },
+  {
+   "num_instruments": 3,
+   "num_modes": 2,
+   "num_observations": 2,
+   "num_satellites": 3,
+   "num_targets": 2,
+   "pointing_goal_may_hold": false,
+   "pointing_goal_probability": 1.0,
+   "seed": 0
+  },
+  {
+   "num_instruments": 3,
+   "num_modes": 2,
+   "num_observations": 2,
+   "num_satellites": 3,
+   "num_targets": 2,
+   "pointing_goal_may_hold": true,
+   "pointing_goal_probability": 1.0,
+   "seed": 1
+  },
+  {
+   "num_instruments": 3,
+   "num_modes": 2,
+   "num_observations": 2,
+   "num_satellites": 3,
+   "num_targets": 2,
+   "pointing_goal_may_hold": false,
+   "pointing_goal_probability": 1.0,
+   "seed": 1
+  },
+  {
+   "num_instruments": 3,
+   "num_modes": 2,
+   "num_observations": 2,
+   "num_satellites": 3,
+   "num_targets": 2,
+   "pointing_goal_may_hold": true,
+   "pointing_goal_probability": 1.0,
+   "seed": 2
+  },
+  {
+   "num_instruments": 3,
+   "num_modes": 2,
+   "num_observations": 2,
+   "num_satellites": 3,
+   "num_targets": 2,
+   "pointing_goal_may_hold": false,
+   "pointing_goal_probability": 1.0,
+   "seed": 2
+  }
+ ],
+ "classical/ipc_learning/spanner": [
+  {
+   "name": "prob",
+   "num_locations": 5,
+   "num_nuts": 2,
+   "num_spanners": 3,
+   "seed": 0
+  },
+  {
+   "name": "prob",
+   "num_locations": 5,
+   "num_nuts": 2,
+   "num_spanners": 3,
+   "seed": 1
+  },
+  {
+   "name": "prob",
+   "num_locations": 5,
+   "num_nuts": 2,
+   "num_spanners": 3,
+   "seed": 2
+  },
+  {
+   "name": "prob",
+   "num_locations": 5,
+   "num_nuts": 2,
+   "num_spanners": 3,
+   "seed": 3
+  }
+ ],
+ "classical/ipc_learning/transport": [
+  {
+   "capacity": 2,
+   "extra_edges": 1,
+   "num_locations": 6,
+   "num_packages": 4,
+   "num_trucks": 2,
+   "random_capacities": true,
+   "seed": 0
+  },
+  {
+   "capacity": 4,
+   "extra_edges": null,
+   "num_locations": 10,
+   "num_packages": 3,
+   "num_trucks": 4,
+   "random_capacities": true,
+   "seed": 0
+  },
+  {
+   "capacity": 4,
+   "extra_edges": 0,
+   "num_locations": 10,
+   "num_packages": 3,
+   "num_trucks": 4,
+   "random_capacities": false,
+   "seed": 0
+  },
+  {
+   "capacity": 2,
+   "extra_edges": 1,
+   "num_locations": 6,
+   "num_packages": 4,
+   "num_trucks": 2,
+   "random_capacities": true,
+   "seed": 1
+  },
+  {
+   "capacity": 2,
+   "extra_edges": 1,
+   "num_locations": 6,
+   "num_packages": 4,
+   "num_trucks": 2,
+   "random_capacities": true,
+   "seed": 2
+  },
+  {
+   "capacity": 2,
+   "extra_edges": 1,
+   "num_locations": 6,
+   "num_packages": 4,
+   "num_trucks": 2,
+   "random_capacities": true,
+   "seed": 3
+  }
+ ],
+ "classical/misc/hiking_binary": [
+  {
+   "num_cars": 3,
+   "num_couples": 2,
+   "num_places": 4,
+   "seed": 1
+  }
+ ],
+ "classical/misc/transport_fuel": [
+  {
+   "capacity": 2,
+   "extra_edges": 0,
+   "fuel": 0,
+   "num_locations": 2,
+   "num_packages": 1,
+   "num_trucks": 1,
+   "seed": 0
+  },
+  {
+   "capacity": 1,
+   "extra_edges": 0,
+   "fuel": null,
+   "num_locations": 2,
+   "num_packages": 4,
+   "num_trucks": 2,
+   "seed": 0
+  },
+  {
+   "capacity": 2,
+   "extra_edges": 0,
+   "fuel": 1,
+   "num_locations": 2,
+   "num_packages": 1,
+   "num_trucks": 1,
+   "seed": 0
+  },
+  {
+   "capacity": 2,
+   "extra_edges": 0,
+   "fuel": 3,
+   "num_locations": 2,
+   "num_packages": 1,
+   "num_trucks": 1,
+   "seed": 0
+  },
+  {
+   "capacity": 1,
+   "extra_edges": 0,
+   "fuel": null,
+   "num_locations": 2,
+   "num_packages": 4,
+   "num_trucks": 2,
+   "seed": 1
+  },
+  {
+   "capacity": 1,
+   "extra_edges": 0,
+   "fuel": null,
+   "num_locations": 2,
+   "num_packages": 4,
+   "num_trucks": 2,
+   "seed": 2
+  }
+ ],
+ "numeric/ipc/block_grouping": [
+  {
+   "num_blocks": 3,
+   "num_colours": 1,
+   "seed": 7,
+   "size": 1
+  },
+  {
+   "num_blocks": 8,
+   "num_colours": 1,
+   "seed": 1,
+   "size": 6
+  },
+  {
+   "num_blocks": 5,
+   "num_colours": 2,
+   "seed": 3,
+   "size": 7
+  },
+  {
+   "num_blocks": 8,
+   "num_colours": 3,
+   "seed": 1,
+   "size": 6
+  },
+  {
+   "num_blocks": 10,
+   "num_colours": 2,
+   "seed": 7,
+   "size": 5
+  },
+  {
+   "num_blocks": 15,
+   "num_colours": 3,
+   "seed": 7,
+   "size": 20
+  }
+ ],
+ "numeric/ipc/coins": [
+  {
+   "denominations": [
+    1,
+    2,
+    3,
+    5,
+    7
+   ],
+   "target": 29
+  },
+  {
+   "denominations": [
+    1,
+    2,
+    3,
+    5,
+    7
+   ],
+   "target": 38
+  },
+  {
+   "denominations": [
+    1,
+    2,
+    3,
+    5,
+    7
+   ],
+   "target": 48
+  },
+  {
+   "denominations": [
+    1,
+    2,
+    3,
+    5,
+    7
+   ],
+   "target": 62
+  },
+  {
+   "denominations": [
+    1,
+    2,
+    3,
+    5,
+    7
+   ],
+   "target": 79
+  },
+  {
+   "denominations": [
+    1,
+    2,
+    3,
+    5,
+    7
+   ],
+   "target": 100
+  }
+ ],
+ "numeric/ipc/counters": [
+  {
+   "init": "reverse",
+   "num_counters": 4,
+   "seed": null
+  },
+  {
+   "init": "zero",
+   "num_counters": 4,
+   "seed": null
+  },
+  {
+   "init": "random",
+   "num_counters": 4,
+   "seed": 2
+  },
+  {
+   "init": "zero",
+   "num_counters": 6,
+   "seed": 3
+  },
+  {
+   "init": "reverse",
+   "num_counters": 6,
+   "seed": 3
+  },
+  {
+   "init": "random",
+   "num_counters": 6,
+   "seed": 3
+  }
+ ],
+ "numeric/ipc/delivery": [
+  {
+   "directed": true,
+   "extra_doors": 1,
+   "load_limit": null,
+   "max_weight": 2,
+   "num_arms": 2,
+   "num_bots": 2,
+   "num_items": 6,
+   "num_rooms": 4,
+   "seed": 2,
+   "spread": 0.2,
+   "stay_probability": 0.02
+  },
+  {
+   "directed": false,
+   "extra_doors": 0,
+   "load_limit": null,
+   "max_weight": 3,
+   "num_arms": 3,
+   "num_bots": 2,
+   "num_items": 8,
+   "num_rooms": 1,
+   "seed": 4,
+   "spread": 0.2,
+   "stay_probability": 0.02
+  },
+  {
+   "directed": true,
+   "extra_doors": 0,
+   "load_limit": null,
+   "max_weight": 3,
+   "num_arms": 3,
+   "num_bots": 2,
+   "num_items": 8,
+   "num_rooms": 1,
+   "seed": 4,
+   "spread": 0.2,
+   "stay_probability": 0.02
+  },
+  {
+   "directed": false,
+   "extra_doors": 0,
+   "load_limit": null,
+   "max_weight": 2,
+   "num_arms": 2,
+   "num_bots": 2,
+   "num_items": 10,
+   "num_rooms": 5,
+   "seed": 0,
+   "spread": 0.2,
+   "stay_probability": 0.02
+  },
+  {
+   "directed": false,
+   "extra_doors": 1,
+   "load_limit": null,
+   "max_weight": 3,
+   "num_arms": 3,
+   "num_bots": 2,
+   "num_items": 8,
+   "num_rooms": 3,
+   "seed": 4,
+   "spread": 0.2,
+   "stay_probability": 0.02
+  },
+  {
+   "directed": true,
+   "extra_doors": 1,
+   "load_limit": null,
+   "max_weight": 3,
+   "num_arms": 3,
+   "num_bots": 2,
+   "num_items": 8,
+   "num_rooms": 3,
+   "seed": 4,
+   "spread": 0.2,
+   "stay_probability": 0.02
+  }
+ ],
+ "numeric/ipc/drone": [
+  {
+   "size_x": 1,
+   "size_y": 1,
+   "size_z": 2
+  },
+  {
+   "size_x": 1,
+   "size_y": 1,
+   "size_z": 4
+  },
+  {
+   "size_x": 5,
+   "size_y": 2,
+   "size_z": 2
+  },
+  {
+   "size_x": 1,
+   "size_y": 8,
+   "size_z": 1
+  },
+  {
+   "size_x": 3,
+   "size_y": 3,
+   "size_z": 4
+  },
+  {
+   "size_x": 8,
+   "size_y": 1,
+   "size_z": 2
+  }
+ ],
+ "numeric/ipc/expedition": [
+  {
+   "capacity": 4,
+   "depot_supplies": 1000,
+   "initial_supplies": 1,
+   "num_sleds": 2,
+   "num_waypoints": 6,
+   "separate_tracks": false
+  },
+  {
+   "capacity": 4,
+   "depot_supplies": 1000,
+   "initial_supplies": 1,
+   "num_sleds": 2,
+   "num_waypoints": 6,
+   "separate_tracks": true
+  },
+  {
+   "capacity": 4,
+   "depot_supplies": 1000,
+   "initial_supplies": 1,
+   "num_sleds": 2,
+   "num_waypoints": 7,
+   "separate_tracks": false
+  },
+  {
+   "capacity": 4,
+   "depot_supplies": 1000,
+   "initial_supplies": 1,
+   "num_sleds": 2,
+   "num_waypoints": 7,
+   "separate_tracks": true
+  },
+  {
+   "capacity": 4,
+   "depot_supplies": 1000,
+   "initial_supplies": 1,
+   "num_sleds": 2,
+   "num_waypoints": 8,
+   "separate_tracks": false
+  },
+  {
+   "capacity": 4,
+   "depot_supplies": 1000,
+   "initial_supplies": 1,
+   "num_sleds": 2,
+   "num_waypoints": 8,
+   "separate_tracks": true
+  }
+ ],
+ "numeric/ipc/ext_plant_watering": [
+  {
+   "max_carry": 5,
+   "max_poured": 10,
+   "num_agents": 2,
+   "num_plants": 2,
+   "num_taps": 1,
+   "seed": 5,
+   "size": 3
+  },
+  {
+   "max_carry": 5,
+   "max_poured": 10,
+   "num_agents": 2,
+   "num_plants": 4,
+   "num_taps": 1,
+   "seed": 1,
+   "size": 6
+  },
+  {
+   "max_carry": 5,
+   "max_poured": 10,
+   "num_agents": 2,
+   "num_plants": 6,
+   "num_taps": 1,
+   "seed": 2,
+   "size": 8
+  },
+  {
+   "max_carry": 5,
+   "max_poured": 10,
+   "num_agents": 2,
+   "num_plants": 5,
+   "num_taps": 1,
+   "seed": 5,
+   "size": 10
+  },
+  {
+   "max_carry": 5,
+   "max_poured": 10,
+   "num_agents": 3,
+   "num_plants": 19,
+   "num_taps": 2,
+   "seed": 5,
+   "size": 15
+  }
+ ],
+ "numeric/ipc/factory_robot": [
+  {
+   "max_temp": 20,
+   "num_robots": 2,
+   "num_stations": 5,
+   "seed": 5,
+   "workload": 40
+  },
+  {
+   "max_temp": 20,
+   "num_robots": 3,
+   "num_stations": 6,
+   "seed": 42,
+   "workload": 45
+  },
+  {
+   "max_temp": 30,
+   "num_robots": 6,
+   "num_stations": 9,
+   "seed": 5,
+   "workload": 70
+  },
+  {
+   "max_temp": 50,
+   "num_robots": 12,
+   "num_stations": 14,
+   "seed": 5,
+   "workload": 130
+  }
+ ],
+ "numeric/ipc/farmland": [
+  {
+   "num_farms": 4,
+   "num_units": 200,
+   "seed": 1229
+  },
+  {
+   "num_farms": 2,
+   "num_units": 300,
+   "seed": 1229
+  },
+  {
+   "num_farms": 4,
+   "num_units": 300,
+   "seed": 1229
+  },
+  {
+   "num_farms": 4,
+   "num_units": 400,
+   "seed": 1229
+  },
+  {
+   "num_farms": 6,
+   "num_units": 500,
+   "seed": 1229
+  },
+  {
+   "num_farms": 2,
+   "num_units": 600,
+   "seed": 1229
+  }
+ ],
+ "numeric/ipc/fo_counters": [
+  {
+   "num_counters": 2
+  },
+  {
+   "num_counters": 3
+  },
+  {
+   "num_counters": 4
+  },
+  {
+   "num_counters": 5
+  },
+  {
+   "num_counters": 6
+  },
+  {
+   "num_counters": 7
+  }
+ ],
+ "numeric/ipc/fo_farmland": [
+  {
+   "num_farms": 6,
+   "num_units": 100,
+   "seed": 1229
+  },
+  {
+   "num_farms": 2,
+   "num_units": 200,
+   "seed": 1229
+  },
+  {
+   "num_farms": 4,
+   "num_units": 300,
+   "seed": 1229
+  },
+  {
+   "num_farms": 2,
+   "num_units": 400,
+   "seed": 1229
+  },
+  {
+   "num_farms": 4,
+   "num_units": 400,
+   "seed": 1229
+  },
+  {
+   "num_farms": 6,
+   "num_units": 400,
+   "seed": 1229
+  }
+ ],
+ "numeric/ipc/fo_sailing": [
+  {
+   "max_distance": 500,
+   "nonnegative_distances": true,
+   "num_boats": 2,
+   "num_people": 3,
+   "seed": 1
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 1,
+   "num_people": 1,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 1,
+   "num_people": 2,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 2,
+   "num_people": 1,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 1,
+   "num_people": 3,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 2,
+   "num_people": 2,
+   "seed": 1229
+  }
+ ],
+ "numeric/ipc/forestfire": [
+  {
+   "axe_durability": 3,
+   "extra_trees": 0,
+   "fire_probability": 0.6,
+   "fire_rows": 1,
+   "gate_tree": 6,
+   "height": 3,
+   "max_fire": 3,
+   "max_tree": 3,
+   "num_axes": 1,
+   "num_bots": 1,
+   "seed": 7,
+   "water_capacity": 6,
+   "width": 3
+  },
+  {
+   "axe_durability": 3,
+   "extra_trees": 0,
+   "fire_probability": 0.6,
+   "fire_rows": 1,
+   "gate_tree": 6,
+   "height": 4,
+   "max_fire": 3,
+   "max_tree": 3,
+   "num_axes": 2,
+   "num_bots": 1,
+   "seed": 3,
+   "water_capacity": 6,
+   "width": 5
+  },
+  {
+   "axe_durability": 3,
+   "extra_trees": 3,
+   "fire_probability": 0.6,
+   "fire_rows": 2,
+   "gate_tree": 6,
+   "height": 6,
+   "max_fire": 3,
+   "max_tree": 3,
+   "num_axes": 2,
+   "num_bots": 2,
+   "seed": 7,
+   "water_capacity": 6,
+   "width": 5
+  },
+  {
+   "axe_durability": 3,
+   "extra_trees": 10,
+   "fire_probability": 0.6,
+   "fire_rows": 2,
+   "gate_tree": 6,
+   "height": 7,
+   "max_fire": 3,
+   "max_tree": 3,
+   "num_axes": 2,
+   "num_bots": 3,
+   "seed": 7,
+   "water_capacity": 6,
+   "width": 9
+  }
+ ],
+ "numeric/ipc/game_2048": [
+  {
+   "num_moves": 8,
+   "num_tiles": null,
+   "seed": 3,
+   "target": 128
+  },
+  {
+   "num_moves": 12,
+   "num_tiles": null,
+   "seed": 1,
+   "target": 512
+  },
+  {
+   "num_moves": 14,
+   "num_tiles": null,
+   "seed": 3,
+   "target": 1024
+  },
+  {
+   "num_moves": 29,
+   "num_tiles": null,
+   "seed": 3,
+   "target": 2048
+  },
+  {
+   "num_moves": 20,
+   "num_tiles": null,
+   "seed": 3,
+   "target": 8192
+  }
+ ],
+ "numeric/ipc/gear_car": [
+  {
+   "distance": 100,
+   "num_gears": 3
+  },
+  {
+   "distance": 260,
+   "num_gears": 2
+  },
+  {
+   "distance": 470,
+   "num_gears": 3
+  },
+  {
+   "distance": 920,
+   "num_gears": 4
+  },
+  {
+   "distance": 1620,
+   "num_gears": 5
+  }
+ ],
+ "numeric/ipc/hydropower": [
+  {
+   "capacity": 3,
+   "seed": 0
+  },
+  {
+   "capacity": 18,
+   "seed": 0
+  },
+  {
+   "capacity": 28,
+   "seed": 0
+  },
+  {
+   "capacity": 30,
+   "seed": 0
+  },
+  {
+   "capacity": 33,
+   "seed": 0
+  },
+  {
+   "capacity": 38,
+   "seed": 0
+  }
+ ],
+ "numeric/ipc/line_exchange_snp": [
+  {
+   "mean_load": 5,
+   "num_robots": 3,
+   "seed": 2,
+   "segment": 10,
+   "spread": 25
+  },
+  {
+   "mean_load": 5,
+   "num_robots": 3,
+   "seed": 1,
+   "segment": 50,
+   "spread": 50
+  },
+  {
+   "mean_load": 10,
+   "num_robots": 4,
+   "seed": 2,
+   "segment": 50,
+   "spread": 50
+  },
+  {
+   "mean_load": 15,
+   "num_robots": 5,
+   "seed": 2,
+   "segment": 100,
+   "spread": 90
+  }
+ ],
+ "numeric/ipc/markettrader": [
+  {
+   "num_markets": 2,
+   "seed": 0
+  },
+  {
+   "num_markets": 3,
+   "seed": 0
+  },
+  {
+   "num_markets": 2,
+   "seed": 1
+  },
+  {
+   "num_markets": 3,
+   "seed": 1
+  },
+  {
+   "num_markets": 2,
+   "seed": 2
+  },
+  {
+   "num_markets": 5,
+   "seed": 0
+  }
+ ],
+ "numeric/ipc/mprime": [
+  {
+   "num_cargos": 3,
+   "num_fuel_levels": 5,
+   "num_goals": 2,
+   "num_locations": 5,
+   "num_space_levels": 3,
+   "num_vehicles": 2,
+   "seed": 1
+  },
+  {
+   "num_cargos": 2,
+   "num_fuel_levels": 6,
+   "num_goals": 1,
+   "num_locations": 4,
+   "num_space_levels": 4,
+   "num_vehicles": 2,
+   "seed": 6
+  },
+  {
+   "num_cargos": 6,
+   "num_fuel_levels": 6,
+   "num_goals": 3,
+   "num_locations": 10,
+   "num_space_levels": 3,
+   "num_vehicles": 3,
+   "seed": 6
+  },
+  {
+   "num_cargos": 12,
+   "num_fuel_levels": 8,
+   "num_goals": 3,
+   "num_locations": 18,
+   "num_space_levels": 4,
+   "num_vehicles": 6,
+   "seed": 6
+  }
+ ],
+ "numeric/ipc/onlycraft": [
+  {
+   "grid_size": null,
+   "num_pogo_sticks": 1,
+   "num_trees": null,
+   "seed": 3
+  },
+  {
+   "grid_size": 5,
+   "num_pogo_sticks": 3,
+   "num_trees": null,
+   "seed": 1
+  },
+  {
+   "grid_size": null,
+   "num_pogo_sticks": 10,
+   "num_trees": null,
+   "seed": 3
+  },
+  {
+   "grid_size": null,
+   "num_pogo_sticks": 200,
+   "num_trees": null,
+   "seed": 3
+  }
+ ],
+ "numeric/ipc/pathwaysmetric": [
+  {
+   "min_reactions": 300,
+   "num_goals": 1,
+   "seed": 0
+  },
+  {
+   "min_reactions": 300,
+   "num_goals": 1,
+   "seed": 1
+  },
+  {
+   "min_reactions": 300,
+   "num_goals": 1,
+   "seed": 2
+  },
+  {
+   "min_reactions": 300,
+   "num_goals": 1,
+   "seed": 3
+  },
+  {
+   "min_reactions": 300,
+   "num_goals": 1,
+   "seed": 4
+  },
+  {
+   "min_reactions": 300,
+   "num_goals": 1,
+   "seed": 5
+  }
+ ],
+ "numeric/ipc/petri_net": [
+  {
+   "chain_length": null,
+   "goal": null,
+   "goal_tokens": null,
+   "name": "prob",
+   "net": "mesh",
+   "seed": 0
+  },
+  {
+   "chain_length": null,
+   "goal": null,
+   "goal_tokens": null,
+   "name": "prob",
+   "net": "pipeline",
+   "seed": 0
+  },
+  {
+   "chain_length": null,
+   "goal": null,
+   "goal_tokens": null,
+   "name": "prob",
+   "net": "merge",
+   "seed": 0
+  },
+  {
+   "chain_length": 1,
+   "goal": null,
+   "goal_tokens": null,
+   "name": "prob",
+   "net": "merge",
+   "seed": 2
+  },
+  {
+   "chain_length": null,
+   "goal": "empty",
+   "goal_tokens": 4,
+   "name": "prob",
+   "net": "merge",
+   "seed": null
+  },
+  {
+   "chain_length": 5,
+   "goal": "hubs",
+   "goal_tokens": null,
+   "name": "prob",
+   "net": "mesh",
+   "seed": 1
+  },
+  {
+   "chain_length": 6,
+   "goal": null,
+   "goal_tokens": null,
+   "name": "prob",
+   "net": "mesh",
+   "seed": 0
+  }
+ ],
+ "numeric/ipc/rainbowttles": [
+  {
+   "bottles_per_colour": 1,
+   "capacity": 4,
+   "name": "rainbowttles-constant-free",
+   "num_colours": 3,
+   "num_spare": 2,
+   "scramble_steps": 6,
+   "seed": 0
+  },
+  {
+   "bottles_per_colour": 1,
+   "capacity": 4,
+   "name": "rainbowttles-constant-free",
+   "num_colours": 3,
+   "num_spare": 2,
+   "scramble_steps": 6,
+   "seed": 1
+  },
+  {
+   "bottles_per_colour": 1,
+   "capacity": 4,
+   "name": "rainbowttles-constant-free",
+   "num_colours": 3,
+   "num_spare": 2,
+   "scramble_steps": 6,
+   "seed": 2
+  },
+  {
+   "bottles_per_colour": 1,
+   "capacity": 4,
+   "name": "rainbowttles-constant-free",
+   "num_colours": 3,
+   "num_spare": 2,
+   "scramble_steps": 6,
+   "seed": 3
+  },
+  {
+   "bottles_per_colour": 1,
+   "capacity": 4,
+   "name": "rainbowttles-constant-free",
+   "num_colours": 3,
+   "num_spare": 2,
+   "scramble_steps": 6,
+   "seed": 4
+  },
+  {
+   "bottles_per_colour": 1,
+   "capacity": 4,
+   "name": "rainbowttles-constant-free",
+   "num_colours": 3,
+   "num_spare": 2,
+   "scramble_steps": 6,
+   "seed": 5
+  }
+ ],
+ "numeric/ipc/rover": [
+  {
+   "num_cameras": 2,
+   "num_goals": 3,
+   "num_objectives": 2,
+   "num_rovers": 1,
+   "num_waypoints": 4,
+   "seed": 3
+  },
+  {
+   "num_cameras": 2,
+   "num_goals": 4,
+   "num_objectives": 3,
+   "num_rovers": 2,
+   "num_waypoints": 6,
+   "seed": 7
+  },
+  {
+   "num_cameras": 4,
+   "num_goals": 8,
+   "num_objectives": 5,
+   "num_rovers": 4,
+   "num_waypoints": 10,
+   "seed": 3
+  },
+  {
+   "num_cameras": 6,
+   "num_goals": 20,
+   "num_objectives": 8,
+   "num_rovers": 8,
+   "num_waypoints": 25,
+   "seed": 3
+  }
+ ],
+ "numeric/ipc/sailing": [
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 2,
+   "num_people": 1,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 2,
+   "num_people": 2,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 1,
+   "num_people": 4,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 1,
+   "num_people": 5,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 2,
+   "num_people": 4,
+   "seed": 1229
+  },
+  {
+   "max_distance": 500,
+   "nonnegative_distances": false,
+   "num_boats": 4,
+   "num_people": 2,
+   "seed": 1229
+  }
+ ],
+ "numeric/ipc/sailing_wind": [
+  {
+   "angle_step": null,
+   "inertia": 0.9,
+   "max_distance": 40,
+   "min_distance": 20,
+   "name": "test",
+   "num_boats": 2,
+   "num_persons": 3,
+   "seed": 0
+  },
+  {
+   "angle_step": 90,
+   "inertia": 0.5,
+   "max_distance": 100,
+   "min_distance": 100,
+   "name": "test",
+   "num_boats": 1,
+   "num_persons": 4,
+   "seed": 2
+  },
+  {
+   "angle_step": null,
+   "inertia": 0.9,
+   "max_distance": 40,
+   "min_distance": 20,
+   "name": "test",
+   "num_boats": 2,
+   "num_persons": 3,
+   "seed": 1
+  },
+  {
+   "angle_step": null,
+   "inertia": 0.9,
+   "max_distance": 40,
+   "min_distance": 20,
+   "name": "test",
+   "num_boats": 2,
+   "num_persons": 3,
+   "seed": 2
+  },
+  {
+   "angle_step": null,
+   "inertia": 0.9,
+   "max_distance": 40,
+   "min_distance": 20,
+   "name": "test",
+   "num_boats": 2,
+   "num_persons": 3,
+   "seed": 3
+  },
+  {
+   "angle_step": null,
+   "inertia": 0.9,
+   "max_distance": 40,
+   "min_distance": 20,
+   "name": "test",
+   "num_boats": 2,
+   "num_persons": 3,
+   "seed": 4
+  }
+ ],
+ "numeric/ipc/settlers_snp": [
+  {
+   "land_density": null,
+   "num_goals": null,
+   "num_locations": 2,
+   "num_vehicles": null,
+   "seed": 0
+  },
+  {
+   "land_density": null,
+   "num_goals": 5,
+   "num_locations": 6,
+   "num_vehicles": null,
+   "seed": 2
+  },
+  {
+   "land_density": null,
+   "num_goals": 12,
+   "num_locations": 8,
+   "num_vehicles": 3,
+   "seed": 5
+  },
+  {
+   "land_density": null,
+   "num_goals": null,
+   "num_locations": 5,
+   "num_vehicles": null,
+   "seed": 1
+  },
+  {
+   "land_density": null,
+   "num_goals": null,
+   "num_locations": 5,
+   "num_vehicles": null,
+   "seed": 5
+  },
+  {
+   "land_density": null,
+   "num_goals": null,
+   "num_locations": 9,
+   "num_vehicles": null,
+   "seed": 2
+  }
+ ],
+ "numeric/ipc/settlersnumeric": [
+  {
+   "num_goals": 1,
+   "num_islands": 1,
+   "num_locations": 1,
+   "num_vehicles": 1,
+   "seed": 8
+  },
+  {
+   "num_goals": 5,
+   "num_islands": 2,
+   "num_locations": 6,
+   "num_vehicles": 4,
+   "seed": 2
+  },
+  {
+   "num_goals": 3,
+   "num_islands": 1,
+   "num_locations": 5,
+   "num_vehicles": 5,
+   "seed": 8
+  },
+  {
+   "num_goals": 5,
+   "num_islands": 3,
+   "num_locations": 12,
+   "num_vehicles": 15,
+   "seed": 8
+  },
+  {
+   "num_goals": 30,
+   "num_islands": 1,
+   "num_locations": 15,
+   "num_vehicles": 10,
+   "seed": 8
+  }
+ ],
+ "numeric/ipc/sugar": [
+  {
+   "num_goals": 1,
+   "num_mills": 2,
+   "seed": 0
+  },
+  {
+   "num_goals": 1,
+   "num_mills": 3,
+   "seed": 0
+  },
+  {
+   "num_goals": 1,
+   "num_mills": 2,
+   "seed": 1
+  },
+  {
+   "num_goals": 1,
+   "num_mills": 3,
+   "seed": 1
+  },
+  {
+   "num_goals": 1,
+   "num_mills": 2,
+   "seed": 2
+  },
+  {
+   "num_goals": 1,
+   "num_mills": 3,
+   "seed": 2
+  }
+ ],
+ "numeric/ipc/tpp": [
+  {
+   "num_depots": 1,
+   "num_goods": 1,
+   "num_markets": 1,
+   "num_trucks": 1,
+   "seed": 2
+  },
+  {
+   "num_depots": 1,
+   "num_goods": 4,
+   "num_markets": 5,
+   "num_trucks": 1,
+   "seed": 2
+  },
+  {
+   "num_depots": 1,
+   "num_goods": 3,
+   "num_markets": 5,
+   "num_trucks": 1,
+   "seed": 4
+  },
+  {
+   "num_depots": 2,
+   "num_goods": 3,
+   "num_markets": 6,
+   "num_trucks": 2,
+   "seed": 2
+  },
+  {
+   "num_depots": 1,
+   "num_goods": 39,
+   "num_markets": 40,
+   "num_trucks": 1,
+   "seed": 2
+  }
+ ],
+ "numeric/ipc/zenotravel": [
+  {
+   "distance": 50,
+   "metric": "weighted",
+   "num_cities": 25,
+   "num_people": 40,
+   "num_planes": 5,
+   "seed": 4
+  },
+  {
+   "distance": 1000,
+   "metric": "fuel",
+   "num_cities": 2,
+   "num_people": 1,
+   "num_planes": 1,
+   "seed": 1
+  },
+  {
+   "distance": 1000,
+   "metric": "weighted",
+   "num_cities": 1,
+   "num_people": 1,
+   "num_planes": 1,
+   "seed": 4
+  },
+  {
+   "distance": 1000,
+   "metric": "weighted",
+   "num_cities": 4,
+   "num_people": 5,
+   "num_planes": 2,
+   "seed": 1
+  },
+  {
+   "distance": 1000,
+   "metric": "fuel",
+   "num_cities": 4,
+   "num_people": 5,
+   "num_planes": 2,
+   "seed": 1
+  },
+  {
+   "distance": 1000,
+   "metric": "weighted",
+   "num_cities": 3,
+   "num_people": 5,
+   "num_planes": 2,
+   "seed": 4
+  }
+ ],
+ "numeric/ipc/ztalloc_sum": [
+  {
+   "max_target": 20,
+   "min_target": 10,
+   "name": "p1",
+   "num_registers": 4,
+   "seed": 3,
+   "target": null
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p1",
+   "num_registers": 3,
+   "seed": null,
+   "target": 187
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p2",
+   "num_registers": 3,
+   "seed": null,
+   "target": 233
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p3",
+   "num_registers": 3,
+   "seed": null,
+   "target": 329
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p4",
+   "num_registers": 3,
+   "seed": null,
+   "target": 489
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p5",
+   "num_registers": 3,
+   "seed": null,
+   "target": 705
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p6",
+   "num_registers": 4,
+   "seed": null,
+   "target": 873
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p7",
+   "num_registers": 4,
+   "seed": null,
+   "target": 1163
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p8",
+   "num_registers": 4,
+   "seed": null,
+   "target": 1474
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p9",
+   "num_registers": 4,
+   "seed": null,
+   "target": 1898
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p10",
+   "num_registers": 4,
+   "seed": null,
+   "target": 2466
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p11",
+   "num_registers": 5,
+   "seed": null,
+   "target": 2922
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p12",
+   "num_registers": 5,
+   "seed": null,
+   "target": 4269
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p13",
+   "num_registers": 5,
+   "seed": null,
+   "target": 5057
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p14",
+   "num_registers": 5,
+   "seed": null,
+   "target": 5842
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p15",
+   "num_registers": 5,
+   "seed": null,
+   "target": 7135
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p16",
+   "num_registers": 6,
+   "seed": null,
+   "target": 8763
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p17",
+   "num_registers": 6,
+   "seed": null,
+   "target": 9902
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p18",
+   "num_registers": 6,
+   "seed": null,
+   "target": 10860
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p19",
+   "num_registers": 6,
+   "seed": null,
+   "target": 11681
+  },
+  {
+   "max_target": 1000,
+   "min_target": 1,
+   "name": "p20",
+   "num_registers": 6,
+   "seed": null,
+   "target": 12347
+  }
+ ]
+}
