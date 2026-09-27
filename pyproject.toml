@@ -7,7 +7,10 @@ name = "pypddl-datasets"
 dynamic = ["version"]
 description = "Download PDDL planning benchmark suites: classical, numeric, profiling, and learning splits."
 readme = "README.md"
-license = "GPL-3.0-or-later"
+# The FF-collection ports listed in src/pypddl_datasets/generators/CREDITS.md
+# keep their original non-commercial notice (LicenseRef-Freiburg).
+license = "GPL-3.0-or-later AND LicenseRef-Freiburg"
+license-files = ["LICENSES/*"]
 requires-python = ">=3.10"
 authors = [{ name = "Dominik Drexler", email = "dominik.drexler@liu.se" }]
 dependencies = [
@@ -33,4 +36,4 @@ exclude = [
 ]
 
 [tool.hatch.build.targets.sdist]
-only-include = ["src", "README.md"]
+only-include = ["src", "README.md", "LICENSES"]

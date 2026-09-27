@@ -13,6 +13,7 @@ jobs:
         with:
           python-version: "3.13"
       - name: Install
-        run: pip install -e ".[test]"
+        # pypddl for the generator tests' strict parse checks (not a package dependency: cycle)
+        run: pip install 'pypddl>=1.0.27,<1.1' -e ".[test]"
       - name: Run tests
         run: pytest tests

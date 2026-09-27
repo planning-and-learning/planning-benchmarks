@@ -1,5 +1,6 @@
 import importlib
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -10,8 +11,8 @@ import pooch
 import pytest
 
 import pypddl_datasets
-from pypddl_datasets.generators.classical.blocks_3.generator import make_problem as make_blocks_3_problem
-from pypddl_datasets.generators.classical.blocks_4.generator import make_problem as make_blocks_4_problem
+from pypddl_datasets.generators.classical.ipc.blocks_3.generator import make_problem as make_blocks_3_problem
+from pypddl_datasets.generators.classical.ipc.blocks_4.generator import make_problem as make_blocks_4_problem
 from pypddl_datasets.suites import SUITES
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -26,17 +27,123 @@ def test_suites_configuration():
 
 
 def test_blocksworld_goals_include_stack_boundaries():
-    for make_problem in (make_blocks_3_problem, make_blocks_4_problem):
-        goal = make_problem(1, 0).split("(:goal", 1)[1]
-        assert "(on-table b1)" in goal
-        assert "(clear b1)" in goal
+    goal = make_blocks_3_problem(1, 0).split("(:goal", 1)[1]
+    assert "(on-table b1)" in goal and "(clear b1)" in goal
+    # blocks_4 defaults to the IPC single-tower goal; the full goal state is opt-in
+    goal = make_blocks_4_problem(1, 0, goal="full").split("(:goal", 1)[1]
+    assert "(ontable b1)" in goal and "(clear b1)" in goal
+
+
+GENERATORS = REPO_ROOT / "src/pypddl_datasets/generators/classical"
+AUTOSCALE_DOMAINS = sorted(p.name for p in (GENERATORS / "autoscale").iterdir() if (p / "generator.py").is_file())
+
+
+AGILE = DATA_ROOT / "classical/autoscale-benchmarks-main/21.11-agile-strips"
+# No public generator, or ground per task (openstacks): nothing to generate.
+AGILE_WITHOUT_GENERATOR = {
+    "airport", "ged", "openstacks", "organic-synthesis-split", "parcprinter",
+    "pipesworld-notankage", "pipesworld-tankage", "thoughtful",
+}
+
+
+def test_autoscale_covers_every_agile_domain_with_a_generator():
+    agile = {p.name for p in AGILE.iterdir() if p.is_dir()} - AGILE_WITHOUT_GENERATOR
+    assert {d.replace("_", "-") for d in AUTOSCALE_DOMAINS} == agile
+
+
+@pytest.mark.parametrize("domain", AUTOSCALE_DOMAINS)
+def test_autoscale_generator_uses_autoscale_domain_file(domain: str) -> None:
+    importlib.import_module(f"pypddl_datasets.generators.classical.autoscale.{domain}.generator")
+    ours = GENERATORS / "autoscale" / domain / "domain.pddl"
+    if domain == "pathways":  # per-task domain from make_task, like the agile tasks
+        assert not ours.exists()
+        return
+    agile = AGILE / domain.replace("_", "-") / "domain.pddl"
+    assert ours.read_text(encoding="utf-8") == lower_pddl(agile.read_text(encoding="utf-8"))
+
+
+# Generators without their own test file: one small task each must be lowercase
+# and parse strictly against the package's domain.pddl.
+SMOKE_CASES: dict[str, tuple[object, ...]] = {
+    "barman": (2, 3, 3, 1),
+    "blocks_3": (4, 1),
+    "blocks_4": (4, 1),
+    "childsnack": (3, 2, 0.5, 1.2, 1),
+    "delivery": (3, 2, 1),
+    "driverlog": (3, 2, 3, 2, 1),
+    "ferry": (3, 3, 1),
+    "floortile": (3, 3, 2, 1),
+    "goldminer": (3, 4, 1),
+    "grid": (4, 4, 1, 2, 2, 1.0, 1),
+    "hiking": (2, 2, 4, 1),
+    "misc/hiking_binary": (2, 3, 4, 1),
+    "logistics": (2, 3, 3, 1, 1),
+    "miconic": (3, 3, 1),
+    "nomystery": (4, 3, 1.5, 25, 1.5, 1),
+    "rovers": (2, 5, 2, 2, 3, 1),
+    "satellite": (2, 3, 3, 4, 3, 1),
+    "schedule": (3,),
+    "spanner": (2, 2, 3, 1),
+    "tpp": (2, 2, 2, 1, 2, 1),
+    "visitall": (3, 3, 1.0, 0, 1),
+    "woodworking": (3, 2, 1.0, 1),
+}
+
+
+@pytest.mark.parametrize("domain", sorted(SMOKE_CASES))
+def test_untested_ipc_generator_output_parses(domain: str, tmp_path: Path) -> None:
+    from pypddl.formalism import Parser, ParserOptions
+
+    package = domain if "/" in domain else f"ipc/{domain}"
+    module = importlib.import_module(f"pypddl_datasets.generators.classical.{package.replace('/', '.')}.generator")
+    problem: str = module.make_problem(*SMOKE_CASES[domain])
+    assert problem == problem.lower()
+    (tmp_path / "p.pddl").write_text(problem, encoding="utf-8")
+    options = ParserOptions()
+    options.strict = True
+    Parser(GENERATORS / package / "domain.pddl", options).parse_task(tmp_path / "p.pddl")  # pyright: ignore[reportUnknownMemberType]
+
+
+def lower_pddl(text: str) -> str:
+    """Lowercase PDDL but keep ';' comments verbatim (they carry license notices)."""
+    lines = text.splitlines(keepends=True)
+    return "".join(line[: line.find(";")].lower() + line[line.find(";") :] if ";" in line else line.lower() for line in lines)
+
+
+NUMERIC = REPO_ROOT / "src/pypddl_datasets/generators/numeric/ipc"
+NUMERIC_REFERENCES = sorted(
+    p for year in ("ipc2023", "ipc2026") for p in (DATA_ROOT / "numeric" / year).iterdir() if p.is_dir()
+)
+
+
+def numeric_package(reference: Path) -> str:
+    name = reference.name.removesuffix("-opt").removesuffix("-sat").replace("-", "_")
+    return "game_2048" if name == "2048" else name
+
+
+@pytest.mark.parametrize("reference", NUMERIC_REFERENCES, ids=lambda p: f"{p.parent.name}/{p.name}")
+def test_numeric_generator_uses_reference_domain_file(reference: Path) -> None:
+    package = NUMERIC / numeric_package(reference)
+    importlib.import_module(f"pypddl_datasets.generators.numeric.ipc.{package.name}.generator")
+    (domain,) = reference.glob("*domain*.pddl")
+    # opt/sat and 2023/2026 copies differ only in comments and layout; compare the PDDL itself
+    def pddl(text: str) -> str:
+        return " ".join(re.sub(r";[^\n]*", "", text).lower().split())
+
+    assert pddl((package / "domain.pddl").read_text(encoding="utf-8")) == pddl(domain.read_text(encoding="utf-8"))
+
+
+def test_generator_domain_files_are_lowercase():
+    for path in [*GENERATORS.glob("*/*/domain*.pddl"), *NUMERIC.glob("*/domain*.pddl")]:
+        text = path.read_text(encoding="utf-8")
+        assert text == lower_pddl(text), path
 
 
 def test_blocksworld_uniform_state_counts():
     expected = [1, 1, 3, 13, 73, 501, 4_051, 37_633, 394_353]
     for domain in ("blocks_3", "blocks_4"):
         module = importlib.import_module(
-            f"pypddl_datasets.generators.classical.{domain}.generator"
+            f"pypddl_datasets.generators.classical.ipc.{domain}.generator"
         )
         assert [row[0] for row in module._completion_counts(8)] == expected
 

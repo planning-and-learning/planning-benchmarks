@@ -1,0 +1,14 @@
+The generator modules listed in src/pypddl_datasets/generators/CREDITS.md
+under "Freiburg" are Python ports of generators from Jörg Hoffmann's FF domain
+collection. They are distributed under the terms of the original notice below,
+not under GPL-3.0-or-later: use for non-commercial research purposes only.
+
+(C) Copyright 2001 Albert Ludwigs University Freiburg
+    Institute of Computer Science
+
+All rights reserved. Use of this software is permitted for
+non-commercial research purposes, and it may be copied only
+for that use.  All copies must include this copyright message.
+This software is made available AS IS, and neither the authors
+nor the  Albert Ludwigs University Freiburg make any warranty
+about the software or its performance.

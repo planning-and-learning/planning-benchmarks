@@ -108,6 +108,17 @@ hand publishes nothing.
 Data releases are permanent: published package versions pin them by tag and
 sha256, so never delete a `data-v*` release.
 
+## License
+
+GPL-3.0-or-later ([`LICENSES/GPL-3.0-or-later.txt`](LICENSES/GPL-3.0-or-later.txt)),
+except seventeen generator modules ported from Jörg Hoffmann's FF domain
+collection. They keep their original notice and may be used for non-commercial
+research only ([`LICENSES/LicenseRef-Freiburg.txt`](LICENSES/LicenseRef-Freiburg.txt));
+each carries `SPDX-License-Identifier: LicenseRef-Freiburg`, and
+[`CREDITS.md`](src/pypddl_datasets/generators/CREDITS.md) lists them together with
+the authors of all domains and generators. The benchmark data is not part of
+the package and keeps the terms of its sources.
+
 ## Contributing data
 
 Oversized PDDL files (>= 50 MiB) are committed as gzipped `.pddl.gz` twins
