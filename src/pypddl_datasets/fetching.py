@@ -18,8 +18,8 @@ from .suites import SUITES
 # The pinned data release: updated when a new data-v* release is cut
 # (its workflow prints the archive's sha256). Empty sha256 = development
 # build without a pinned release; only PYPDDL_DATASETS_DATA works then.
-DATA_VERSION = "data-v0.0.4"
-DATA_SHA256 = "da8e893e1f45319fc5ebcaee89c5f8953e0eb96666f3622ea16123361722655e"
+DATA_VERSION = "data-v0.0.5"
+DATA_SHA256 = "c03a63f10022b9b5be3d4b5028fe5b242e7030aa65924cbdec657f0f8f686532"
 
 _ARCHIVE = "data.tar.gz"  # single asset on the data release
 
