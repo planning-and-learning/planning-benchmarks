@@ -21,6 +21,10 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_locations: int,
     max_fuel: int,
@@ -42,7 +46,7 @@ def make_problem(
         ("num_vehicles", num_vehicles, 1),
         ("num_cargos", num_cargos, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
 
     rng = random.Random(seed)

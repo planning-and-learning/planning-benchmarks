@@ -7,15 +7,32 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from collections.abc import Iterator
+from dataclasses import dataclass
 
 COLOURS = ("red", "green", "blue", "yellow", "purple", "orange", "cyan", "magenta", "lime", "teal")
+
+
+@dataclass
+class Block:
+    """``segments`` contiguous segments of one colour inside a bottle."""
+
+    colour: str
+    segments: int
+
+
+Bottle = list[Block]  # bottom first
+
+
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
 
 
 def _wrap(names: list[str], type_name: str) -> list[str]:
     return [f"    {' '.join(names[i:i + 8])} - {type_name}" for i in range(0, len(names), 8)]
 
 
-def _reverse_moves(bottles: list[list[list]], capacity: int):
+def _reverse_moves(bottles: list[Bottle], capacity: int) -> Iterator[tuple[int, int, int]]:
     """Legal reversed pours: take k segments of b1's top block onto bottle b.
 
     A forward pour moves a whole top block, so the reverse either splits a top
@@ -25,14 +42,14 @@ def _reverse_moves(bottles: list[list[list]], capacity: int):
     for i, source in enumerate(bottles):
         if not source:
             continue
-        colour, size = source[-1]
+        colour, size = source[-1].colour, source[-1].segments
         for k in range(1, size + 1):
             if k == size and len(source) > 1:
                 continue
             for j, target in enumerate(bottles):
-                if j == i or any(c == colour for c, _ in target):
+                if j == i or any(block.colour == colour for block in target):
                     continue
-                if sum(n for _, n in target) + k <= capacity:
+                if sum(block.segments for block in target) + k <= capacity:
                     yield i, j, k
 
 
@@ -59,33 +76,33 @@ def make_problem(
         ("capacity", capacity, 1, 99),
         ("scramble_steps", scramble_steps, 0, 10**6),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or not minimum <= value <= maximum:
+        if not _is_int(value) or not minimum <= value <= maximum:
             raise ValueError(f"{label} must be an integer in [{minimum}, {maximum}]")
 
     rng = random.Random(seed)
     colours = list(COLOURS[:num_colours])
-    # bottle = stack of [colour, segments] blocks, bottom first
-    bottles = [[[c, capacity]] for c in colours for _ in range(bottles_per_colour)] + [[] for _ in range(num_spare)]
+    bottles: list[Bottle] = [[Block(c, capacity)] for c in colours for _ in range(bottles_per_colour)]
+    bottles += [[] for _ in range(num_spare)]
     rng.shuffle(bottles)
     for _ in range(scramble_steps):
         moves = list(_reverse_moves(bottles, capacity))
         if not moves:
             break
         i, j, k = rng.choice(moves)
-        colour = bottles[i][-1][0]
-        bottles[i][-1][1] -= k
-        if bottles[i][-1][1] == 0:
+        colour = bottles[i][-1].colour
+        bottles[i][-1].segments -= k
+        if bottles[i][-1].segments == 0:
             bottles[i].pop()
-        bottles[j].append([colour, k])
+        bottles[j].append(Block(colour, k))
 
     names = [f"bottle{i:02d}" for i in range(1, len(bottles) + 1)]
     init = [f"  (real-colour {c})" for c in colours] + ["  (empty-colour empty)", ""]
     init += [f"  (= (bottle-capacity {b}) {capacity})" for b in names] + [""]
     for b, stack in zip(names, bottles):
-        amounts = {c: n for c, n in stack}
+        amounts = {block.colour: block.segments for block in stack}
         init += [f"  (= (colour-segments {b} {c}) {amounts.get(c, 0)})" for c in colours]
         init += [f"  (= (colour-segments {b} empty) 0)", f"  (= (segments-filled {b}) {sum(amounts.values())})"]
-        chain = [c for c, _ in reversed(stack)] + ["empty"]
+        chain = [block.colour for block in reversed(stack)] + ["empty"]
         init.append(f"  (upper-colour {b} {chain[0]})")
         init += [f"  (colour-below {b} {a} {below})" for a, below in zip(chain, chain[1:])]
         init.append("")

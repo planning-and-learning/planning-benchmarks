@@ -14,6 +14,10 @@ WORK_COSTS = (8, 10, 12, 15)
 COOLING_POWERS = (4, 6)
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_robots: int = 2,
     num_stations: int | None = None,
@@ -34,7 +38,7 @@ def make_problem(
     num_stations = num_robots + 3 if num_stations is None else num_stations
     for name, value, minimum in (("num_robots", num_robots, 1), ("num_stations", num_stations, 3),
                                  ("workload", workload, 3), ("max_temp", max_temp, 0)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_stations < num_robots + 2:
         raise ValueError("num_stations must be at least num_robots + 2 (robots need free stations to move)")
@@ -44,11 +48,16 @@ def make_problem(
     robots = [f"r{i}" for i in range(num_robots)]
     starts = rng.sample(stations, num_robots)
     cooling_power = rng.choice(COOLING_POWERS)
-    specs = []
+    specs: list[dict[str, int]] = []
     for _ in robots:
         capacity = rng.choice(CAPACITIES)
-        specs.append(dict(capacity=capacity, energy=capacity - rng.randint(0, 20), work_cost=rng.choice(WORK_COSTS),
-                          max_temp=max_temp + rng.randint(0, 5), efficiency=rng.randint(2, 4)))
+        specs.append({  # drawn in key order
+            "capacity": capacity,
+            "energy": capacity - rng.randint(0, 20),
+            "work_cost": rng.choice(WORK_COSTS),
+            "max_temp": max_temp + rng.randint(0, 5),
+            "efficiency": rng.randint(2, 4),
+        })
     targets = [workload + rng.randint(-2, 2) for _ in robots]
 
     init = [f"(at {r} {s})" for r, s in zip(robots, starts)]
@@ -60,7 +69,9 @@ def make_problem(
     for fluent, key in (("energy", "energy"), ("workload", None), ("temperature", None), ("production", None)):
         init += [f"(= ({fluent} {r}) {spec[key] if key else 0})" for r, spec in zip(robots, specs)]
     init.append("")
-    for fluent, key in (("capacity", "capacity"), ("work-cost", "work_cost"), ("max-temp", "max_temp"), ("efficiency", "efficiency")):
+    for fluent, key in (
+        ("capacity", "capacity"), ("work-cost", "work_cost"), ("max-temp", "max_temp"), ("efficiency", "efficiency")
+    ):
         init += [f"(= ({fluent} {r}) {spec[key]})" for r, spec in zip(robots, specs)]
     init += [f"(= (cooling-power {s}) {cooling_power if s == 'cooling' else 0})" for s in stations]
     goal = [f"(>= (workload {r}) {t})" for r, t in zip(robots, targets)] + [f"(<= (temperature r0) {max_temp})"]

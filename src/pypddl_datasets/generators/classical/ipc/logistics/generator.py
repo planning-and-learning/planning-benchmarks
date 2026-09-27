@@ -56,14 +56,15 @@ def make_problem(
         num_trucks = num_cities
     if num_goals is None:
         num_goals = num_packages
-    for name, value, minimum in (
+    checks: list[tuple[str, object, int]] = [
         ("num_cities", num_cities, 1),
         ("city_size", city_size, 1),
         ("num_packages", num_packages, 1),
         ("num_airplanes", num_airplanes, 1),
         ("num_trucks", num_trucks, num_cities),
         ("num_goals", num_goals, 0),
-    ):
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_goals > num_packages:
@@ -115,7 +116,8 @@ def make_problem(
     ]
     objects = [*packages, *(city_name(c) for c in cities), *trucks, *planes, *all_locations]
 
-    return (f"""(define (problem logistics{style}-c{num_cities}-s{city_size}-p{num_packages}-a{num_airplanes}-t{num_trucks}-g{num_goals})
+    name = f"logistics{style}-c{num_cities}-s{city_size}-p{num_packages}-a{num_airplanes}-t{num_trucks}-g{num_goals}"
+    return (f"""(define (problem {name})
   (:domain {domain})
   (:objects {" ".join(objects)})
   (:init

@@ -8,6 +8,10 @@ import argparse
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(size_x: int, size_y: int, size_z: int) -> str:
     """Generate a Drone task over all points of a ``size_x x size_y x size_z`` grid.
 
@@ -17,7 +21,7 @@ def make_problem(size_x: int, size_y: int, size_z: int) -> str:
     tasks, so the drone may leave the grid by one step.
     """
     for name, value in (("size_x", size_x), ("size_y", size_y), ("size_z", size_z)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+        if not _is_int(value) or value < 1:
             raise ValueError(f"{name} must be an integer at least 1")
 
     points = [(x, y, z) for x in range(size_x) for y in range(size_y) for z in range(size_z)]

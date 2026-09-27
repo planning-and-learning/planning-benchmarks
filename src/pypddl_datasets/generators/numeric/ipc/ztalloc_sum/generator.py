@@ -9,6 +9,10 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_registers: int,
     target: int | None = None,
@@ -22,18 +26,18 @@ def make_problem(
     Without ``target`` it is drawn uniformly from ``[min_target, max_target]``.
     """
     for label, value, minimum in (("num_registers", num_registers, 1), ("min_target", min_target, 1)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{label} must be an integer at least {minimum}")
     if max_target < min_target:
         raise ValueError("max_target must be at least min_target")
     if target is None:
         target = random.Random(seed).randint(min_target, max_target)
-    if not isinstance(target, int) or isinstance(target, bool) or target < 1:
+    if not _is_int(target) or target < 1:
         raise ValueError("target must be an integer at least 1")
 
     registers = [f"r{i}" for i in range(1, num_registers + 1)]
     init = ["        (free)"]
-    goal = []
+    goal: list[str] = []
     for r in registers:
         init += [f"        (normal {r})", f"        (= (value {r}) 1)", f"        (= (work-value {r}) 0)"]
         goal += [f"            (normal {r})", f"            (= (work-value {r}) 0)"]

@@ -13,6 +13,10 @@ import sys
 METRICS = ("weighted", "fuel")
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_cities: int,
     num_planes: int,
@@ -38,7 +42,7 @@ def make_problem(
         ("num_people", num_people, 1),
         ("distance", distance, 2),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if metric not in METRICS:
         raise ValueError(f"metric must be one of {', '.join(METRICS)}")
@@ -50,7 +54,8 @@ def make_problem(
         for j in range(i + 1, num_cities):
             path[i][j] = path[j][i] = rng.randrange(half) + half
 
-    init, goals = [], []
+    init: list[str] = []
+    goals: list[str] = []
     for plane in range(1, num_planes + 1):
         location, destination = rng.randrange(num_cities), rng.randrange(num_cities)
         slow_burn = 1 + rng.randrange(5)

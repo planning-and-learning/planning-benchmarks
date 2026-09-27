@@ -22,11 +22,12 @@ def make_problem(
     seed: int | None = None,
     action_costs: bool = False,
 ) -> str:
-    for name, value, minimum in (
+    checks: list[tuple[str, object, int]] = [
         ("num_cocktails", num_cocktails, 1),
         ("num_ingredients", num_ingredients, 2),
         ("num_shots", num_shots, num_cocktails + 1),
-    ):
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
 

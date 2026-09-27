@@ -18,11 +18,13 @@ from __future__ import annotations
 
 import argparse
 import sys
+from typing import cast
 
 
 def make_problem(num_balls: int) -> str:
     """All balls start in rooma and must reach roomb; rooms are objects, not constants."""
-    if not isinstance(num_balls, int) or isinstance(num_balls, bool) or num_balls < 1:
+    checked = cast(object, num_balls)  # runtime guard: callers may pass floats or bools
+    if not isinstance(checked, int) or isinstance(checked, bool) or checked < 1:
         raise ValueError("num_balls must be an integer at least 1")
     balls = [f"ball{i}" for i in range(1, num_balls + 1)]
     ball_facts = "\n".join(f"    (ball {ball})" for ball in balls)

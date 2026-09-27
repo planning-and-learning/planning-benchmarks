@@ -17,9 +17,10 @@ import os
 from collections.abc import Iterable
 from pathlib import Path
 
+from pypddl.formalism import Parser, ParserOptions
+
 import pypddl_datasets
 from pypddl_datasets.discovery import discover_domains
-from pypddl.formalism import Parser, ParserOptions
 from pypddl_datasets.requirements import Requirement
 from pypddl_datasets.suites import SUITES
 
@@ -52,9 +53,7 @@ def generate(data_root: Path) -> dict[str, Metadata]:
         by_problem: dict[str, list[str]] = {}
         for task in pypddl_datasets.fetch_domain(name).tasks:
             parser = domain_parser(task.domain_path)
-            # generated pypddl stub types parse_task with a bare os.PathLike;
-            # drop the suppression once the loki stubgen emits os.PathLike[str]
-            parsed = parser.parse_task(task.task_path)  # pyright: ignore[reportUnknownMemberType]
+            parsed = parser.parse_task(task.task_path)
             declared = tokens(parser.domain().get_requirements()) | tokens(parsed.get_requirements())
             by_problem[task.problem] = sorted(declared)
         tasks[name] = dict(sorted(by_problem.items()))

@@ -44,7 +44,10 @@ def make_problem(
     """
     if style not in STYLES:
         raise ValueError(f"style must be one of {', '.join(STYLES)}")
-    for name, value, minimum in (("num_products", num_products, 1), ("num_orders", num_orders, 1), ("density", density, 0)):
+    checks: list[tuple[str, object, int]] = [
+        ("num_products", num_products, 1), ("num_orders", num_orders, 1), ("density", density, 0),
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if model not in MODELS:
@@ -55,7 +58,7 @@ def make_problem(
     rng = random.Random(seed)
     products, orders = range(num_products), range(num_orders)
     if model == "uniform":
-        matrix = [[rng.randrange(100) < density for p in products] for o in orders]
+        matrix = [[rng.randrange(100) < density for _ in products] for _ in orders]
     else:
         matrix = [[_includes(p, o, num_products, density, rng) for p in products] for o in orders]
     for o in orders:
@@ -105,9 +108,17 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("num_orders", type=int)
     parser.add_argument("density", type=int, help="upstream density parameter (0-100)")
     parser.add_argument("-s", "--seed", type=int)
-    parser.add_argument("--style", choices=STYLES, default="08", help="08: IPC 2008 ADL (domain.pddl), 06: IPC 2006 (domain_openstacks06.pddl)")
-    parser.add_argument("--model", choices=MODELS, default="clustered", help="clustered: upstream's diagonal model; uniform: iid with probability density/100")
-    parser.add_argument("--no-shuffle", dest="shuffle", action="store_false", help="keep upstream's diagonal-clustered order")
+    parser.add_argument(
+        "--style", choices=STYLES, default="08",
+        help="08: IPC 2008 ADL (domain.pddl), 06: IPC 2006 (domain_openstacks06.pddl)",
+    )
+    parser.add_argument(
+        "--model", choices=MODELS, default="clustered",
+        help="clustered: upstream's diagonal model; uniform: iid with probability density/100",
+    )
+    parser.add_argument(
+        "--no-shuffle", dest="shuffle", action="store_false", help="keep upstream's diagonal-clustered order"
+    )
     args = parser.parse_args(argv)
     try:
         problem = make_problem(**vars(args))

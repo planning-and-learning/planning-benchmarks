@@ -12,6 +12,7 @@ import math
 import random
 import sys
 from collections import deque
+from typing import cast
 
 KINDS = ("covers", "single-source-move-to-locations")
 MIN_SQUARE_WIDTH = 0.08
@@ -21,6 +22,8 @@ MIN_OBSTACLE_OBSTACLE_DISTANCE = 0.05
 MAX_ATTEMPTS = 10000
 
 Point = tuple[float, float]
+# robot starts, battery charges, goal locations, guard areas
+Setup = tuple[list[int], list[int], list[int], list[list[int]]]
 
 
 class _Redraw(Exception):
@@ -64,7 +67,7 @@ def _delaunay_edges(points: list[Point]) -> set[tuple[int, int]]:
                 boundary[key] = boundary.get(key, 0) + 1
         triangles = [t for t in triangles if t not in bad]
         triangles += [(a, b, i) for (a, b), count in boundary.items() if count == 1]
-    edges = set()
+    edges: set[tuple[int, int]] = set()
     for t in triangles:
         for a, b in ((t[0], t[1]), (t[1], t[2]), (t[2], t[0])):
             if a < n and b < n:
@@ -96,10 +99,11 @@ class _Map:
             raise ValueError("num_obstacles/num_viewpoints do not fit into the unit square")
 
         self.locations = list(viewpoints)
-        diagonals = set()
+        diagonals: set[tuple[int, int]] = set()
         for (x, y), w in obstacles:
             base = len(self.locations)
-            self.locations += [(x - w / 2, y - w / 2), (x + w / 2, y - w / 2), (x + w / 2, y + w / 2), (x - w / 2, y + w / 2)]
+            h = w / 2
+            self.locations += [(x - h, y - h), (x + h, y - h), (x + h, y + h), (x - h, y + h)]
             diagonals |= {(base, base + 2), (base + 1, base + 3)}
         # Upstream drops edges longer than max_distance and edges inside an obstacle
         # (shapely `contains`); corners of different obstacles and viewpoints never
@@ -223,7 +227,7 @@ def _gen_areas(m: _Map, rng: random.Random, num_areas: int, min_cover: int) -> l
 
 
 def _covers(m: _Map, rng: random.Random, num_robots: int, min_cover: int, num_areas: int,
-            charge_multiplier: float):
+            charge_multiplier: float) -> Setup:
     areas = _gen_areas(m, rng, num_areas, min_cover)
     outside = sorted(set(range(len(m.locations))) - set(itertools.chain(*areas)))
     rng.shuffle(outside)
@@ -231,7 +235,7 @@ def _covers(m: _Map, rng: random.Random, num_robots: int, min_cover: int, num_ar
     if len(start) != num_robots:
         raise _Redraw
 
-    best = None
+    best: tuple[int, list[list[int]], list[list[int]]] | None = None
     for ordered in itertools.permutations(areas):
         # rendezvous: the location minimising the summed distance from the starts
         meet = min(range(len(m.locations)), key=lambda lid: (sum(m.dist[lid][s] for s in start), lid))
@@ -241,8 +245,10 @@ def _covers(m: _Map, rng: random.Random, num_robots: int, min_cover: int, num_ar
             move, targets = m.min_cost_cover(area, states[-1])
             cost += move
             states.append(targets)
-        if best is None or cost < best[0]:
+        best_cost = cost if best is None else best[0]
+        if best is None or cost < best_cost:
             best = (cost, states, list(ordered))
+    assert best is not None  # permutations() always yields at least one ordering
     cost, states, ordered = best
     min_charge = [m.dist[s][states[1][0]] for s in start]
     required = [sum(m.dist[a[r]][b[r]] for a, b in zip(states, states[1:])) for r in range(num_robots)]
@@ -261,7 +267,9 @@ def _covers(m: _Map, rng: random.Random, num_robots: int, min_cover: int, num_ar
     return start, charge, [], ordered
 
 
-def _single_source(m: _Map, rng: random.Random, num_robots: int, charge_multiplier: float, move_from_source: bool):
+def _single_source(
+    m: _Map, rng: random.Random, num_robots: int, charge_multiplier: float, move_from_source: bool
+) -> Setup:
     n = len(m.locations)
     if n <= num_robots:
         raise ValueError("num_robots must be smaller than the number of locations")
@@ -272,7 +280,8 @@ def _single_source(m: _Map, rng: random.Random, num_robots: int, charge_multipli
         if t != source and t not in targets:
             targets.append(t)
     charge_amount = math.ceil(sum(m.dist[source][t] for t in targets) * charge_multiplier)
-    charge, remain = [], charge_amount
+    charge: list[int] = []
+    remain = charge_amount
     for _ in targets:
         c = rng.choice(range(remain + 1))
         charge.append(c)
@@ -315,12 +324,16 @@ def make_problem(
     if kind not in KINDS:
         raise ValueError(f"kind must be one of {', '.join(KINDS)}")
     for name, value, minimum in (
-        ("num_robots", num_robots, 1), ("num_obstacles", num_obstacles, 0), ("num_viewpoints", num_viewpoints, 0),
-        ("min_cover", min_cover, 1), ("num_areas", num_areas, 1),
+        ("num_robots", num_robots, 1),
+        ("num_obstacles", num_obstacles, 0),
+        ("num_viewpoints", num_viewpoints, 0),
+        ("min_cover", min_cover, 1),
+        ("num_areas", num_areas, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
-    if not charge_multiplier >= 1.0:
+    if not charge_multiplier >= 1.0:  # pylint: disable=unnecessary-negation  # also rejects NaN
         raise ValueError("charge_multiplier must be at least 1")
     if kind == "covers" and min_cover > num_robots:
         raise ValueError("min_cover must not exceed num_robots")
@@ -334,14 +347,15 @@ def make_problem(
             continue
         try:
             if kind == "covers":
-                starts, charge, goal_targets, areas = _covers(m, rng, num_robots, min_cover, num_areas, charge_multiplier)
+                setup = _covers(m, rng, num_robots, min_cover, num_areas, charge_multiplier)
             else:
-                starts, charge, goal_targets, areas = _single_source(m, rng, num_robots, charge_multiplier, move_from_source)
+                setup = _single_source(m, rng, num_robots, charge_multiplier, move_from_source)
         except _Redraw:
             continue
         break
     else:
         raise ValueError("no valid task in 100 maps; check num_robots, min_cover, num_areas and max_distance")
+    starts, charge, goal_targets, areas = setup
     if kind == "covers":
         name = f"recharging-robots-cover-robots{num_robots}-areas{num_areas}-{seed}-{rng.randint(0, 10000)}"
     else:
@@ -377,7 +391,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("charge_multiplier", type=float, nargs="?", default=1.0)
     parser.add_argument("--min-cover", type=int, default=1, help="covers: robots needed to guard each area")
     parser.add_argument("--num-areas", type=int, default=1, help="covers: number of areas")
-    parser.add_argument("--move-from-source", action="store_true", help="single-source: move robots away from the source first")
+    parser.add_argument(
+        "--move-from-source", action="store_true", help="single-source: move robots away from the source first"
+    )
     parser.add_argument("--max-distance", type=float, default=0.35)
     parser.add_argument("--max-square-width", type=float, default=0.3)
     parser.add_argument("-s", "--seed", type=int)

@@ -33,7 +33,7 @@ def make_problem(
     floor i to j costs ``stop_cost + |i - j| * cost`` for the elevator kind.
     Every passenger starts and ends on different uniformly drawn floors.
     """
-    for name, value, minimum in (
+    checks: list[tuple[str, object, int]] = [
         ("num_areas", num_areas, 1),
         ("area_size", area_size, 2),
         ("num_passengers", num_passengers, 1),
@@ -45,7 +45,8 @@ def make_problem(
         ("slow_cost", slow_cost, 0),
         ("stop_slow_cost", stop_slow_cost, 0),
         ("slow_capacity", slow_capacity, 1),
-    ):
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
 
@@ -100,7 +101,8 @@ def make_problem(
         if names:
             objects.append(f"    {' '.join(names)} - {kind}-elevator")
 
-    return (f"""(define (problem elevators-a{num_areas}-s{area_size}-p{num_passengers}-f{num_fast_elevators}-l{num_slow_elevators})
+    name = f"elevators-a{num_areas}-s{area_size}-p{num_passengers}-f{num_fast_elevators}-l{num_slow_elevators}"
+    return (f"""(define (problem {name})
   (:domain elevators-sequencedstrips)
   (:objects
 {chr(10).join(objects)}

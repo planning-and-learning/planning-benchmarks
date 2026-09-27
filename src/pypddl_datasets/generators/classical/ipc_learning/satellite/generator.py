@@ -33,7 +33,7 @@ def make_problem(
     observations = [f"observation{i}" for i in range(num_observations)]
     directions = targets + observations
 
-    init_facts = []
+    init_facts: list[str] = []
     initial_pointings = {}
     for satellite in satellites:
         initial_pointing = rng.choice(directions)
@@ -51,7 +51,7 @@ def make_problem(
         instrument_modes[instrument] = sorted(supported)
         init_facts.extend(f"    (supports {instrument} {mode})" for mode in instrument_modes[instrument])
 
-    goals = []
+    goals: list[str] = []
     for index, observation in enumerate(observations):
         instrument = instruments[index % len(instruments)]
         mode = rng.choice(instrument_modes[instrument])
@@ -59,11 +59,18 @@ def make_problem(
     for satellite in satellites:
         if rng.random() < pointing_goal_probability:
             # learning track: any direction, possibly the current one; off: a different one
-            goal_directions = [direction for direction in directions if pointing_goal_may_hold or direction != initial_pointings[satellite]]
+            goal_directions = [
+                direction for direction in directions
+                if pointing_goal_may_hold or direction != initial_pointings[satellite]
+            ]
             goals.append(f"      (pointing {satellite} {rng.choice(goal_directions)})")
 
     probability_name = f"p{int(pointing_goal_probability * 100):02d}"
-    return f'''(define (problem satellite-s{num_satellites}-i{num_instruments}-m{num_modes}-t{num_targets}-o{num_observations}-{probability_name})
+    problem_name = (
+        f"satellite-s{num_satellites}-i{num_instruments}-m{num_modes}-t{num_targets}"
+        f"-o{num_observations}-{probability_name}"
+    )
+    return f'''(define (problem {problem_name})
   (:domain satellite)
   (:objects
     {' '.join(satellites)} - satellite
@@ -92,7 +99,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("num_observations", type=int)
     parser.add_argument("pointing_goal_probability", type=float, nargs="?", default=0.0)
     parser.add_argument("-s", "--seed", type=int)
-    parser.add_argument("--distinct-pointing-goal", dest="pointing_goal_may_hold", action="store_false", help="pointing goals differ from the start direction")
+    parser.add_argument(
+        "--distinct-pointing-goal",
+        dest="pointing_goal_may_hold",
+        action="store_false",
+        help="pointing goals differ from the start direction",
+    )
     args = parser.parse_args(argv)
 
     problem = make_problem(

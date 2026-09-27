@@ -1,0 +1,23 @@
+name: lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install into .venv (pyrightconfig.json resolves imports there)
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip
+          .venv/bin/pip install -e . --group dev
+      - name: pyright
+        run: .venv/bin/pyright
+      - name: pylint
+        run: .venv/bin/pylint src/pypddl_datasets tests

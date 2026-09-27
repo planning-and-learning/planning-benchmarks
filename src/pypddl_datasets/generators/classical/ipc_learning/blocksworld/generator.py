@@ -63,7 +63,7 @@ def _make_stacks(
 
 def _state_facts(stacks: list[list[str]]) -> list[str]:
     facts = ["    (arm-empty)"]
-    clear_blocks = set()
+    clear_blocks: set[str] = set()
     for stack in stacks:
         facts.append(f"    (on-table {stack[0]})")
         for lower, upper in zip(stack, stack[1:]):
@@ -74,7 +74,7 @@ def _state_facts(stacks: list[list[str]]) -> list[str]:
 
 
 def _goal_facts(stacks: list[list[str]]) -> list[str]:
-    facts = []
+    facts: list[str] = []
     for stack in stacks:
         facts.append(f"      (on-table {stack[0]})")
         for lower, upper in zip(stack, stack[1:]):

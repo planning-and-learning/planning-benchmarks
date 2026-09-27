@@ -10,6 +10,10 @@ import sys
 from itertools import combinations
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(size: int, num_blocks: int, num_colours: int, seed: int | None = None) -> str:
     """Generate a Block Grouping task on a ``size x size`` grid (coordinates 1..size).
 
@@ -19,7 +23,7 @@ def make_problem(size: int, num_blocks: int, num_colours: int, seed: int | None 
     cells otherwise.
     """
     for name, value, minimum in (("size", size, 1), ("num_blocks", num_blocks, 1), ("num_colours", num_colours, 1)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if size * size < num_colours:
         raise ValueError("size * size must be at least num_colours so every colour fits its own cell")
@@ -31,7 +35,7 @@ def make_problem(size: int, num_blocks: int, num_colours: int, seed: int | None 
 
     init = [f"(= (x {b}) {x})\n\t(= (y {b}) {y})" for b, (x, y) in position.items()]
     init += [f"(= (max_x) {size} )", "(= (min_x) 1 )", f"(= (max_y) {size} )", "(= (min_y) 1 )"]
-    goals = []
+    goals: list[str] = []
     for a, b in combinations(sorted(blocks), 2):  # name order, as in the IPC tasks
         if colour[a] == colour[b]:
             goals.append(f"(= (x {a}) (x {b}))\n(= (y {a}) (y {b}))")

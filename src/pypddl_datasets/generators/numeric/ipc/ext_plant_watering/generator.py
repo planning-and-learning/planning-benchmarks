@@ -9,6 +9,10 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     size: int,
     num_plants: int,
@@ -33,7 +37,7 @@ def make_problem(
         ("max_carry", max_carry, 1),
         ("max_poured", max_poured, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     things = (
         [f"plant{i}" for i in range(1, num_plants + 1)]

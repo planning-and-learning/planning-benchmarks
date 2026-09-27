@@ -1,5 +1,6 @@
 import re
 from pathlib import Path
+from typing import Any
 
 import pytest
 from pypddl.formalism import Parser, ParserOptions
@@ -9,7 +10,7 @@ from pypddl_datasets.generators.numeric.ipc.settlers_snp.generator import main, 
 
 
 @pytest.mark.parametrize("num_locations,seed", [(2, 0), (5, 1), (9, 2), (15, 3)])
-def test_world_is_connected_and_goals_are_buildable(num_locations, seed):
+def test_world_is_connected_and_goals_are_buildable(num_locations: int, seed: int) -> None:
     problem = make_problem(num_locations, seed=seed)
     assert problem == make_problem(num_locations, seed=seed)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -32,14 +33,14 @@ def test_world_is_connected_and_goals_are_buildable(num_locations, seed):
     assert "(potential vehicle0)" in init and not re.search(r"\(= \([^)]*\) [1-9]", init)
 
 
-def test_goal_count_and_vehicles():
+def test_goal_count_and_vehicles() -> None:
     problem = make_problem(8, num_vehicles=3, num_goals=12, seed=5)
     goal = problem.split("(:goal")[1]
     assert len(re.findall(r"\((?:>= \(housing|has-|connected-by-rail)", goal)) == 12
     assert re.findall(r"\(potential ([^\s)]+)\)", problem) == ["vehicle0", "vehicle1", "vehicle2"]
 
 
-def test_parses_strictly(tmp_path):
+def test_parses_strictly(tmp_path: Path) -> None:
     options = ParserOptions()
     options.strict = True
     for n in (5, 15):
@@ -47,9 +48,14 @@ def test_parses_strictly(tmp_path):
         Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / f"p{n}.pddl")
 
 
-def test_cli_and_validation(capsys):
+def test_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-l", "6", "-g", "5", "-s", "2"]) == 0
     assert capsys.readouterr().out == make_problem(6, num_goals=5, seed=2)
-    for kwargs in (dict(num_locations=1), dict(num_locations=4, num_vehicles=0), dict(num_locations=4, land_density=2.0)):
+    kwargs: dict[str, Any]
+    for kwargs in (
+        {"num_locations": 1},
+        {"num_locations": 4, "num_vehicles": 0},
+        {"num_locations": 4, "land_density": 2.0},
+    ):
         with pytest.raises(ValueError):
             make_problem(**kwargs)

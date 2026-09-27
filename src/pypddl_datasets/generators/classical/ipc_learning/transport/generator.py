@@ -7,6 +7,10 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_locations: int,
     num_trucks: int,
@@ -32,7 +36,7 @@ def make_problem(
         ("capacity", capacity, 1),
         ("extra_edges", 0 if extra_edges is None else extra_edges, 0),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     max_extra_edges = (num_locations - 1) * (num_locations - 2) // 2
     if extra_edges is not None and extra_edges > max_extra_edges:
@@ -48,7 +52,7 @@ def make_problem(
 
     order = list(range(num_locations))
     rng.shuffle(order)
-    edges = set()
+    edges: set[tuple[int, int]] = set()
     for index in range(1, num_locations):
         left, right = order[index], order[rng.randrange(index)]
         edges.add((min(left, right), max(left, right)))
@@ -61,7 +65,7 @@ def make_problem(
         ]
         edges.update(rng.sample(missing_edges, extra_edges))
 
-    init_facts = []
+    init_facts: list[str] = []
     for left, right in sorted(edges):
         init_facts.append(f"    (road {locations[left]} {locations[right]})")
         init_facts.append(f"    (road {locations[right]} {locations[left]})")
@@ -71,9 +75,10 @@ def make_problem(
     )
     for truck in trucks:
         init_facts.append(f"    (at {truck} {rng.choice(locations)})")
-        init_facts.append(f"    (capacity {truck} {sizes[rng.randint(1, capacity) if random_capacities else capacity]})")
+        truck_capacity = rng.randint(1, capacity) if random_capacities else capacity
+        init_facts.append(f"    (capacity {truck} {sizes[truck_capacity]})")
 
-    goals = []
+    goals: list[str] = []
     for package in packages:
         origin, destination = rng.sample(locations, 2)
         init_facts.append(f"    (at {package} {origin})")
@@ -105,8 +110,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("-t", "--num-trucks", type=int, required=True)
     parser.add_argument("-p", "--num-packages", type=int, required=True)
     parser.add_argument("-c", "--capacity", type=int, default=2, help="maximum truck capacity (default: 2)")
-    parser.add_argument("-e", "--extra-edges", type=int, help="roads beyond a spanning tree (default: random, as the learning track)")
-    parser.add_argument("--equal-capacities", dest="random_capacities", action="store_false", help="every truck gets the maximum capacity")
+    parser.add_argument(
+        "-e", "--extra-edges", type=int, help="roads beyond a spanning tree (default: random, as the learning track)"
+    )
+    parser.add_argument(
+        "--equal-capacities",
+        dest="random_capacities",
+        action="store_false",
+        help="every truck gets the maximum capacity",
+    )
     parser.add_argument("-s", "--seed", type=int)
     args = parser.parse_args(argv)
     try:

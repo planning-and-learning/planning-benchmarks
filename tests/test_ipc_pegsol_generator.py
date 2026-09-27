@@ -1,4 +1,5 @@
 import re
+from typing import Any
 
 import pytest
 
@@ -10,7 +11,7 @@ def _solves_to_centre(pegs: frozenset[tuple[int, int]]) -> bool:
 
     def search(state: frozenset[tuple[int, int]]) -> bool:
         if len(state) == 1:
-            return state == {(3, 3)}
+            return state == frozenset({(3, 3)})
         if state in dead:
             return False
         for frm, over, to in LINES:
@@ -23,7 +24,7 @@ def _solves_to_centre(pegs: frozenset[tuple[int, int]]) -> bool:
 
 
 @pytest.mark.parametrize("num_pegs,seed", [(1, 0), (5, 1), (9, 2), (12, 3)])
-def test_pegsol_positions_are_solvable_end_games(num_pegs, seed):
+def test_pegsol_positions_are_solvable_end_games(num_pegs: int, seed: int) -> None:
     problem = make_problem(num_pegs, seed=seed)
     assert problem == make_problem(num_pegs, seed=seed) and problem == problem.lower()
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -37,18 +38,19 @@ def test_pegsol_positions_are_solvable_end_games(num_pegs, seed):
     assert _solves_to_centre(occupied)
 
 
-def test_pegsol_full_board_holes_and_large_counts():
-    holes = set()
+def test_pegsol_full_board_holes_and_large_counts() -> None:
+    holes: set[str] = set()
     for seed in range(30):
         init = make_problem(32, seed=seed).split("(:init", 1)[1].split("(:goal", 1)[0]
         holes |= set(re.findall(r"\(free (pos-\d-\d)\)", init))
     assert holes == {"pos-0-3", "pos-3-0", "pos-3-3", "pos-3-6", "pos-6-3"}
-    assert len(re.findall(r"\(occupied ", make_problem(28, seed=4).split("(:goal")[0])) == 28
+    assert len(re.findall(r"\(occupied ", make_problem(28, seed=4).split("(:goal", maxsplit=1)[0])) == 28
 
 
-def test_pegsol_cli_and_validation(capsys):
+def test_pegsol_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-n", "7", "-s", "3"]) == 0
     assert capsys.readouterr().out == make_problem(7, seed=3)
-    for value in (0, 33, 2.5, True):
+    invalid: list[Any] = [0, 33, 2.5, True]
+    for value in invalid:
         with pytest.raises(ValueError, match="num_pegs"):
             make_problem(value)

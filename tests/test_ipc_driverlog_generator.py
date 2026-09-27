@@ -1,7 +1,10 @@
 import re
+from collections.abc import Iterable
 from pathlib import Path
+from typing import Any
 
 import pytest
+from pypddl.formalism import Parser, ParserOptions
 
 from pypddl_datasets.generators.classical.autoscale.driverlog.generator import make_problem as make_typed
 from pypddl_datasets.generators.classical.ipc.driverlog import generator as ipc_generator
@@ -12,12 +15,10 @@ GENERATORS = Path(ipc_generator.__file__).parents[2]
 
 
 def _parse(problem: str, domain_file: Path, tmp_path: Path) -> None:
-    from pypddl.formalism import Parser, ParserOptions
-
     (tmp_path / "p.pddl").write_text(problem, encoding="utf-8")
     options = ParserOptions()
     options.strict = True
-    Parser(domain_file, options).parse_task(tmp_path / "p.pddl")  # pyright: ignore[reportUnknownMemberType]
+    Parser(domain_file, options).parse_task(tmp_path / "p.pddl")
 
 
 def _facts(problem: str) -> set[str]:
@@ -25,7 +26,7 @@ def _facts(problem: str) -> set[str]:
     return set(re.findall(r"\([^()]+\)", init))
 
 
-def _reachable(edges, start):
+def _reachable(edges: Iterable[tuple[str, str]], start: str) -> set[str]:
     reached, frontier = {start}, [start]
     while frontier:
         current = frontier.pop()
@@ -37,7 +38,9 @@ def _reachable(edges, start):
 
 
 @pytest.mark.parametrize("locations,drivers,packages,trucks", [(1, 1, 1, 1), (3, 1, 2, 1), (10, 4, 12, 4)])
-def test_driverlog_road_and_foot_networks_are_connected(locations, drivers, packages, trucks):
+def test_driverlog_road_and_foot_networks_are_connected(
+    locations: int, drivers: int, packages: int, trucks: int
+) -> None:
     problem = make_typed(locations, drivers, packages, trucks, seed=6)
     assert problem == make_typed(locations, drivers, packages, trucks, seed=6)
     objects, rest = problem.split("(:init", 1)
@@ -62,28 +65,28 @@ def test_driverlog_road_and_foot_networks_are_connected(locations, drivers, pack
     assert set(goals) <= set(at) and set(goals.values()) <= junctions
 
 
-def test_driverlog_goal_probabilities_follow_upstream():
+def test_driverlog_goal_probabilities_follow_upstream() -> None:
     goals = [make_problem(4, 20, 20, 20, seed=seed).split("(:goal", 1)[1] for seed in range(50)]
     for prefix, low, high in (("driver", 0.65, 0.75), ("truck", 0.65, 0.75), ("package", 0.92, 0.98)):
         rate = sum(len(re.findall(rf"\(at {prefix}\d", goal)) for goal in goals) / 1000
         assert low < rate < high, prefix
 
 
-def test_driverlog_cli_matches_make_problem(capsys):
+def test_driverlog_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-l", "5", "-d", "2", "-p", "4", "-t", "3", "-s", "9"]) == 0
     assert capsys.readouterr().out == make_problem(5, 2, 4, 3, seed=9)
 
 
 @pytest.mark.parametrize("parameter", ["num_locations", "num_drivers", "num_packages", "num_trucks"])
-def test_driverlog_rejects_invalid_parameters(parameter):
-    parameters = dict(num_locations=3, num_drivers=1, num_packages=1, num_trucks=1)
+def test_driverlog_rejects_invalid_parameters(parameter: str) -> None:
+    parameters: dict[str, Any] = {"num_locations": 3, "num_drivers": 1, "num_packages": 1, "num_trucks": 1}
     parameters[parameter] = 0
     with pytest.raises(ValueError, match=parameter):
         make_problem(**parameters)
 
 
 @pytest.mark.parametrize("seed", range(3))
-def test_driverlog_encodings_differ_only_in_type_predicates(seed, tmp_path):
+def test_driverlog_encodings_differ_only_in_type_predicates(seed: int, tmp_path: Path) -> None:
     untyped, typed = make_problem(4, 2, 5, 2, seed=seed), make_typed(4, 2, 5, 2, seed=seed)
     kinds = {fact for fact in _facts(untyped) if re.fullmatch(r"\((driver|truck|obj|location) [\w-]+\)", fact)}
     assert _facts(untyped) - kinds == _facts(typed)

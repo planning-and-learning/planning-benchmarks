@@ -20,7 +20,8 @@ def make_problem(num_curbs: int, num_cars: int, seed: int | None = None) -> str:
     remaining cars are parked behind them. The goal is the canonical layout:
     car i at curb i, and the remaining cars behind cars 0, 1, ...
     """
-    for name, value, minimum in (("num_curbs", num_curbs, 2), ("num_cars", num_cars, 1)):
+    checks: list[tuple[str, object, int]] = [("num_curbs", num_curbs, 2), ("num_cars", num_cars, 1)]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     max_cars = 2 * num_curbs - 2
@@ -40,7 +41,7 @@ def make_problem(num_curbs: int, num_cars: int, seed: int | None = None) -> str:
     goal = layout(cars, min(num_curbs, num_cars))
 
     init_facts = ["    (= (total-cost) 0)"]
-    goals = []
+    goals: list[str] = []
     for curb in curbs:
         if curb not in initial:
             init_facts.append(f"    (curb-clear {curb})")

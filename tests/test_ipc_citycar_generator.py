@@ -12,12 +12,12 @@ HERE = Path(generator.__file__).parent
 IPC = Path(__file__).resolve().parents[1] / "data/classical/downward-benchmarks"
 
 
-def _kinds(text):
+def _kinds(text: str):
     return Counter(re.findall(r"\(([a-z_]+) ", re.sub(r";[^\n]*", "", text.lower()).split("(:init")[1]))
 
 
 @pytest.mark.parametrize("rows,columns,cars,garages", [(2, 2, 1, 1), (3, 4, 3, 2), (4, 4, 5, 3)])
-def test_citycar_structure(rows, columns, cars, garages):
+def test_citycar_structure(rows: int, columns: int, cars: int, garages: int) -> None:
     problem = make_problem(rows, columns, cars, garages, seed=5)
     assert problem == make_problem(rows, columns, cars, garages, seed=5) == problem.lower()
     assert len(re.findall(r"\(clear ", problem)) == rows * columns
@@ -27,7 +27,7 @@ def test_citycar_structure(rows, columns, cars, garages):
     assert len(re.findall(r"\(starting ", problem)) == cars and "(:metric minimize (total-cost))" in problem
 
 
-def test_citycar_matches_ipc_fact_counts():
+def test_citycar_matches_ipc_fact_counts() -> None:
     for track in ("opt", "sat"):
         for path in sorted((IPC / f"citycar-{track}14-adl").glob("p*.pddl")):
             a = list(map(int, path.stem[1:].split("-")))
@@ -35,20 +35,20 @@ def test_citycar_matches_ipc_fact_counts():
             assert _kinds(make_problem(rows, columns, cars, garages, seed=seed)) == _kinds(path.read_text()), path.name
 
 
-def test_density_only_blocks_interior_junctions():
+def test_density_only_blocks_interior_junctions() -> None:
     problem = make_problem(5, 5, 2, 2, density=0.0, seed=1)
     assert len(re.findall(r"\(clear ", problem)) == 25 - 9
 
 
 @pytest.mark.parametrize("domain", ["domain.pddl", "domain_citycar14opt.pddl"])
-def test_citycar_parses_strictly(domain, tmp_path):
+def test_citycar_parses_strictly(domain: str, tmp_path: Path) -> None:
     (tmp_path / "p.pddl").write_text(make_problem(4, 3, 3, 2, density=0.8, seed=2))
     options = ParserOptions()
     options.strict = True
     Parser(HERE / domain, options).parse_task(tmp_path / "p.pddl")
 
 
-def test_citycar_cli_and_validation(capsys):
+def test_citycar_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["3", "3", "2", "2", "-s", "4", "--density", "0.5"]) == 0
     assert capsys.readouterr().out == make_problem(3, 3, 2, 2, density=0.5, seed=4)
     with pytest.raises(ValueError, match="num_rows"):

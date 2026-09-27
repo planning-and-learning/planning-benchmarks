@@ -21,6 +21,16 @@ dependencies = [
 [project.optional-dependencies]
 test = ["pytest"]
 
+[dependency-groups]
+# pypddl: strict parse checks in tests and import resolution for the linters
+# (not a package dependency: it would be a cycle).
+dev = [
+    "pytest",
+    "pypddl>=1.0.27,<1.1",
+    "pyright==1.1.411",
+    "pylint==4.0.9",
+]
+
 [project.urls]
 Homepage = "https://github.com/planning-and-learning/planning-benchmarks"
 
@@ -37,3 +47,21 @@ exclude = [
 
 [tool.hatch.build.targets.sdist]
 only-include = ["src", "README.md", "LICENSES"]
+
+[tool.pylint.main]
+jobs = 0
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint."messages control"]
+# design/duplicate-code: the generators are ports whose structure is frozen by
+# the draw order of their random choices, and ipc/autoscale/ipc_learning
+# variants repeat code on purpose. Docstrings are not enforced by pylint.
+disable = [
+    "design",
+    "duplicate-code",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+]

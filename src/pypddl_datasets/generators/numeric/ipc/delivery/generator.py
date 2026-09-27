@@ -13,6 +13,10 @@ import sys
 ARM_NAMES = {1: ["arm"], 2: ["left", "right"], 3: ["left", "mid", "right"]}
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_rooms: int,
     num_items: int,
@@ -34,7 +38,8 @@ def make_problem(
     one-way chords, so every map is strongly connected. All bots start in rooma.
     Items weigh uniformly 1..``max_weight``, start in rooma or, with probability
     ``spread``, in a uniform room, and must reach a uniform other room (their
-    start with probability ``stay_probability``, as in a few IPC tasks). ``load_limit`` defaults to ``2 * num_arms * max_weight``; it must be at
+    start with probability ``stay_probability``, as in a few IPC tasks).
+    ``load_limit`` defaults to ``2 * num_arms * max_weight``; it must be at
     least ``max_weight`` so every item can be carried.
     """
     for name, value, minimum in (
@@ -45,13 +50,13 @@ def make_problem(
         ("max_weight", max_weight, 1),
         ("extra_doors", extra_doors, 0),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_rooms > len(string.ascii_lowercase):
         raise ValueError(f"num_rooms must be at most {len(string.ascii_lowercase)}")
     if load_limit is None:
         load_limit = 2 * num_arms * max_weight
-    if not isinstance(load_limit, int) or isinstance(load_limit, bool) or load_limit < max_weight:
+    if not _is_int(load_limit) or load_limit < max_weight:
         raise ValueError("load_limit must be an integer at least max_weight")
     for name, value in (("spread", spread), ("stay_probability", stay_probability)):
         if not 0.0 <= value <= 1.0:

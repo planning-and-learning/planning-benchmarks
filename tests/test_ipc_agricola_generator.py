@@ -1,4 +1,5 @@
 import re
+from typing import Any
 from pathlib import Path
 
 import pytest
@@ -19,17 +20,21 @@ def _deterministic_facts(problem: str) -> tuple[list[str], list[str], list[str]]
 
 @pytest.mark.parametrize(
     "path,last_stage,workers,must",
-    [("agricola-opt18-strips/p01.pddl", 3, 4, False), ("agricola-sat18-strips/p10.pddl", 12, 10, False),
-     ("agricola-sat18-strips/p17.pddl", 9, 7, True)],
+    [
+        ("agricola-opt18-strips/p01.pddl", 3, 4, False),
+        ("agricola-sat18-strips/p10.pddl", 12, 10, False),
+        ("agricola-sat18-strips/p17.pddl", 9, 7, True),
+    ],
 )
-def test_agricola_reproduces_ipc_tasks_up_to_random_draws(path, last_stage, workers, must):
+def test_agricola_reproduces_ipc_tasks_up_to_random_draws(path: str, last_stage: int, workers: int, must: bool) -> None:
     problem = make_problem(last_stage, workers, must, seed=0)
     assert problem == make_problem(last_stage, workers, must, seed=0) and problem == problem.lower()
     assert _deterministic_facts(problem) == _deterministic_facts((IPC / path).read_text())
 
 
-def test_agricola_random_draws():
-    foods, first_cards = set(), set()
+def test_agricola_random_draws() -> None:
+    foods: set[str] = set()
+    first_cards: set[str] = set()
     for seed in range(40):
         init = make_problem(5, 6, seed=seed).split("(:init", 1)[1]
         draws = dict((int(r), c) for c, r in re.findall(r"\(drawcard_round (\S+) round(\d+)\)", init))
@@ -41,9 +46,10 @@ def test_agricola_random_draws():
     assert foods == {"0", "1", "2", "3"} and first_cards == set(ROUND_CARDS[:4])
 
 
-def test_agricola_cli_and_validation(capsys):
+def test_agricola_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["4", "-w", "6", "--must-create-workers", "-s", "2"]) == 0
     assert capsys.readouterr().out == make_problem(4, 6, True, seed=2)
-    for parameters, name in (((0,), "last_stage"), ((13,), "last_stage"), ((3, 1), "num_workers")):
+    invalid: list[tuple[tuple[Any, ...], str]] = [((0,), "last_stage"), ((13,), "last_stage"), ((3, 1), "num_workers")]
+    for parameters, name in invalid:
         with pytest.raises(ValueError, match=name):
             make_problem(*parameters)

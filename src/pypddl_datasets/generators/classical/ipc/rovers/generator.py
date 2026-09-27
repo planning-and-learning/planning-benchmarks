@@ -7,6 +7,34 @@ import random
 import sys
 import time
 from collections import deque
+from typing import TypedDict
+
+
+class _Rover(TypedDict):
+    location: int
+    soil: bool
+    rock: bool
+    image: bool
+    traversals: list[tuple[int, int]]
+    reachable: set[int]
+    cameras: list[int]
+
+
+class _Camera(TypedDict):
+    target: int
+    onboard: int
+    modes: list[str]
+
+
+class _Objective(TypedDict):
+    visible_from: set[int]
+    requests: set[tuple[int, str]]
+
+
+class _Waypoint(TypedDict):
+    soil: bool
+    rock: bool
+    sunny: bool
 
 
 def make_problem(
@@ -30,7 +58,9 @@ def make_problem(
     seed = seed if seed is not None else int(time.time())
     rng = random.Random(seed)
     while True:
-        problem, goals = _generate(rng, seed, num_rovers, num_waypoints, num_objectives, num_cameras, num_goals, autoscale)
+        problem, goals = _generate(
+            rng, seed, num_rovers, num_waypoints, num_objectives, num_cameras, num_goals, autoscale
+        )
         if autoscale or all(any(kind in goal for goal in goals) for kind in ("soil", "rock", "image")):
             return problem
 
@@ -48,13 +78,13 @@ def _generate(
 
     def random_flags() -> tuple[bool, bool, bool]:
         value = rng.randrange(7)
-        flags = []
+        flags: list[bool] = []
         for _ in range(3):
             flags.append(value % 2 == 0)
             value //= 2
         return flags[0], flags[1], flags[2]
 
-    paths = [set() for _ in range(num_waypoints)]
+    paths: list[set[int]] = [set() for _ in range(num_waypoints)]
     for _ in range(num_waypoints):
         for _ in range(5):
             source = rng.randrange(num_waypoints)
@@ -62,7 +92,7 @@ def _generate(
             if source != target and source not in paths[target]:
                 paths[source].add(target)
 
-    reached = set()
+    reached: set[int] = set()
     start = rng.randrange(num_waypoints)
     pending = deque([start])
     while pending:
@@ -85,11 +115,11 @@ def _generate(
             pending.extend(paths[waypoint] - reached)
 
     lander_waypoint = rng.randrange(num_waypoints)
-    rovers = []
+    rovers: list[_Rover] = []
     for _ in range(num_rovers):
         location = rng.randrange(num_waypoints)
         soil, rock, image = random_flags()
-        traversals = []
+        traversals: list[tuple[int, int]] = []
         reachable = {location}
         pending = deque([location])
         radius = num_waypoints // 3 + rng.randrange(num_waypoints)
@@ -137,7 +167,7 @@ def _generate(
             waypoint = rng.choice(sorted(locations - {lander_waypoint}))
             paths[lander_waypoint].add(waypoint)
 
-    cameras = []
+    cameras: list[_Camera] = []
 
     def add_camera(onboard: int | None = None) -> None:
         target = rng.randrange(num_objectives)
@@ -174,7 +204,7 @@ def _generate(
             add_camera(rover_id)
             rover["cameras"].append(len(cameras) - 1)
 
-    objectives = []
+    objectives: list[_Objective] = []
     for _ in range(num_objectives):
         if autoscale:
             visible_from = {
@@ -185,7 +215,7 @@ def _generate(
             visible_from = set(range(rng.randrange(1, num_waypoints + 1)))
         objectives.append({"visible_from": visible_from, "requests": set()})
 
-    waypoints = []
+    waypoints: list[_Waypoint] = []
     for _ in range(num_waypoints):
         waypoints.append(
             {
@@ -207,8 +237,8 @@ def _generate(
     rock_goal_count = rng.randrange(1, num_goals + 1) + num_goals // 3
     image_goal_count = rng.randrange(1, num_goals + 1) + num_goals // 3
 
-    soil_sites = []
-    rock_sites = []
+    soil_sites: list[int] = []
+    rock_sites: list[int] = []
     for rover in rovers:
         reachable = {
             waypoint
@@ -228,10 +258,10 @@ def _generate(
                 if waypoint in reachable and waypoints[waypoint]["rock"]
             )
 
-    goals = []
+    goals: list[str] = []
 
     def add_sample_goals(kind: str, sites: list[int], count: int) -> None:
-        selected = set()
+        selected: set[int] = set()
         count = min(count, len(set(sites)))
         while len(selected) < count:
             waypoint = rng.choice(sites)
@@ -250,14 +280,14 @@ def _generate(
         if objective["visible_from"].isdisjoint(reachable):
             objective["visible_from"].add(rng.choice(sorted(reachable)))
 
-    suitable = []
+    suitable: list[tuple[int, int]] = []
     for rover_id, rover in enumerate(rovers):
         if not rover["cameras"]:
             continue
         for objective_id, objective in enumerate(objectives):
             for waypoint in sorted(objective["visible_from"]):
                 for left, right in rover["traversals"]:
-                    if left == waypoint or right == waypoint:
+                    if waypoint in (left, right):
                         suitable.append((objective_id, rover_id))
 
     for _ in range(min(image_goal_count, len(suitable))):
@@ -291,8 +321,8 @@ def _generate(
         object_lines.append(f"{camera_names} - camera")
     object_lines.append(f"{objective_names} - objective")
 
-    init_facts = []
-    written_edges = set()
+    init_facts: list[str] = []
+    written_edges: set[frozenset[int]] = set()
     for left, targets in enumerate(paths):
         for right in sorted(targets):
             edge = frozenset((left, right))
@@ -382,7 +412,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("num_cameras", type=int, help="number of cameras")
     parser.add_argument("num_goals", type=int, help="goal-density parameter")
     parser.add_argument("-s", "--seed", type=int, help="random seed")
-    parser.add_argument("--autoscale", action="store_true", help="2021 rovgen as used by Autoscale instead of the IPC 2002 tasks")
+    parser.add_argument(
+        "--autoscale", action="store_true", help="2021 rovgen as used by Autoscale instead of the IPC 2002 tasks"
+    )
     args = parser.parse_args(argv)
 
     if args.num_rovers < 1:

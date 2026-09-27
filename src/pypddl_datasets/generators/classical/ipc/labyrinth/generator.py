@@ -10,15 +10,19 @@ import random
 import sys
 from collections import deque
 
-DIRECTIONS = ("N", "E", "S", "W")
+DIRECTIONS: tuple[str, ...] = ("N", "E", "S", "W")
 OPPOSITE = {"N": "S", "S": "N", "E": "W", "W": "E"}
 STEP = {"N": (0, -1), "E": (1, 0), "S": (0, 1), "W": (-1, 0)}
 MAX_SHIFT_ATTEMPTS = 100_000
 
+Grid = list[list[int]]  # grid[x][y] = card at column x, row y
+Paths = dict[int, dict[str, bool]]  # card -> direction -> open
+Pos = tuple[int, int]
 
-def _neighbours(grid, paths, size, x, y):
+
+def _neighbours(grid: Grid, paths: Paths, size: int, x: int, y: int) -> list[tuple[str, Pos]]:
     """Upstream get_reachable_positions: order W, E, N, S; both cards must be open."""
-    out = []
+    out: list[tuple[str, Pos]] = []
     for d in ("W", "E", "N", "S"):
         nx, ny = x + STEP[d][0], y + STEP[d][1]
         if 0 <= nx < size and 0 <= ny < size and paths[grid[x][y]][d] and paths[grid[nx][ny]][OPPOSITE[d]]:
@@ -26,7 +30,7 @@ def _neighbours(grid, paths, size, x, y):
     return out
 
 
-def _exit_reachable(grid, paths, size):
+def _exit_reachable(grid: Grid, paths: Paths, size: int) -> bool:
     seen, queue = {(0, 0)}, deque([(0, 0)])
     while queue:
         x, y = queue.popleft()
@@ -39,7 +43,7 @@ def _exit_reachable(grid, paths, size):
     return False
 
 
-def _shift(grid, size, index, direction):
+def _shift(grid: Grid, size: int, index: int, direction: str) -> None:
     """Upstream Board.rotate: push column (N/S) or row (E/W) ``index`` by one, wrapping around."""
     if direction in ("N", "S"):
         column = grid[index]
@@ -61,15 +65,19 @@ def make_problem(size: int, num_rotations: int, seed: int = 0) -> str:
     unreachable without pushing. The robot starts on card0 in the top-left
     corner and must leave through the bottom of the bottom-right card.
     """
-    for name, value, minimum in (("size", size, 3), ("num_rotations", num_rotations, 0), ("seed", seed, 0)):
+    checks: list[tuple[str, object, int]] = [("size", size, 3), ("num_rotations", num_rotations, 0), ("seed", seed, 0)]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     rng = random.Random(seed)
 
     # Random walk on the open board (upstream generate_random_labyrinth).
-    open_paths = {c: dict.fromkeys(DIRECTIONS, True) for c in range(size * size)}
+    open_paths: Paths = {c: dict.fromkeys(DIRECTIONS, True) for c in range(size * size)}
     grid = [[x + y * size for y in range(size)] for x in range(size)]
-    pos, trace, sequence, tries = (0, 0), [], [(0, 0)], 0
+    pos: Pos = (0, 0)
+    trace: list[str] = []
+    sequence: list[Pos] = [(0, 0)]
+    tries = 0
     while pos != (size - 1, size - 1):
         tries += 1
         if tries >= 10000:
@@ -86,7 +94,7 @@ def make_problem(size: int, num_rotations: int, seed: int = 0) -> str:
             trace.append(direction)
         pos = nxt
 
-    paths = {c: dict.fromkeys(DIRECTIONS, False) for c in range(size * size)}
+    paths: Paths = {c: dict.fromkeys(DIRECTIONS, False) for c in range(size * size)}
     paths[grid[size - 1][size - 1]]["S"] = True
     for i, direction in enumerate(trace):
         (x, y), (nx, ny) = sequence[i], sequence[i + 1]
@@ -106,7 +114,8 @@ def make_problem(size: int, num_rotations: int, seed: int = 0) -> str:
 
     # Pushes that make the exit unreachable without pushing (upstream mix_up_labyrinth).
     if num_rotations:
-        accepted, previous, attempts = 0, None, 0
+        accepted, attempts = 0, 0
+        previous: tuple[str, int] | None = None
         while accepted < num_rotations:
             attempts += 1
             if attempts > MAX_SHIFT_ATTEMPTS:  # ponytail: upstream loops forever here; never hit at IPC sizes
@@ -130,8 +139,9 @@ def make_problem(size: int, num_rotations: int, seed: int = 0) -> str:
     for y in range(size):
         for x in range(size):
             lines += [f"\t(blocked card{grid[x][y]} {d})" for d in DIRECTIONS if not paths[grid[x][y]][d]] + [""]
-    lines += ["", "\t(robot-at card0)", "", "\t(= (total-cost) 0)", "\t(= (move-robot-cost) 1)", "\t(= (move-card) 1)", ")",
-              "(:goal", "\t(and", "\t\t(left)", "\t)", ")", "\t(:metric minimize (total-cost))", ")", ""]
+    lines += ["", "\t(robot-at card0)", "", "\t(= (total-cost) 0)", "\t(= (move-robot-cost) 1)",
+              "\t(= (move-card) 1)", ")", "(:goal", "\t(and", "\t\t(left)", "\t)", ")",
+              "\t(:metric minimize (total-cost))", ")", ""]
     return ("\n".join(lines)).lower()
 
 

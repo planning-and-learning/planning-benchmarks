@@ -43,7 +43,15 @@ MISSING_GOODS_PROBABILITY = 0.1  # a market lacks Kittens and Gold (and sometime
 MAX_ATTEMPTS = 1000
 
 
-def _profitable(markets, roads, prices, on_sale) -> bool:
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def _profitable(
+    roads: dict[tuple[str, str], float],
+    prices: dict[tuple[str, str], float],
+    on_sale: dict[str, dict[str, int]],
+) -> bool:
     """Some good sells for more at a neighbour than it costs, with profit covering the round trip."""
     for (a, b), cost in roads.items():
         for good in on_sale:
@@ -65,7 +73,7 @@ def make_problem(num_markets: int, seed: int | None = None) -> str:
     cash 1000. Draws are repeated until a profitable trade exists, so buying low
     and selling high repeatedly reaches the goal.
     """
-    if not isinstance(num_markets, int) or isinstance(num_markets, bool) or not 2 <= num_markets <= len(MARKET_NAMES):
+    if not _is_int(num_markets) or not 2 <= num_markets <= len(MARKET_NAMES):
         raise ValueError(f"num_markets must be an integer in 2..{len(MARKET_NAMES)}")
     rng = random.Random(seed)
     for _ in range(MAX_ATTEMPTS):
@@ -77,12 +85,13 @@ def make_problem(num_markets: int, seed: int | None = None) -> str:
             (a, b) for i, a in enumerate(sorted(markets)) for b in sorted(markets)[i + 1:]
             if (a, b) not in pairs and rng.random() < EXTRA_ROAD_PROBABILITY
         }
-        roads = {}
+        roads: dict[tuple[str, str], float] = {}
         for a, b in sorted(pairs):
             roads[a, b] = roads[b, a] = rng.randint(8, 70) / 10
-        prices, on_sale = {}, {}
+        prices: dict[tuple[str, str], float] = {}
+        on_sale: dict[str, dict[str, int]] = {}
         for market in markets:
-            missing = set()
+            missing: set[str] = set()
             if rng.random() < MISSING_GOODS_PROBABILITY:
                 missing = {"Kittens", "Gold"} | ({"Copper"} if rng.random() < 1 / 3 else set())
             for good, low, high, zero, sale_low, sale_high in GOODS:
@@ -90,12 +99,12 @@ def make_problem(num_markets: int, seed: int | None = None) -> str:
                     continue
                 prices[good, market] = rng.randint(round(10 * low), round(10 * high)) / 10
                 on_sale.setdefault(good, {})[market] = 0 if rng.random() < zero else rng.randint(sale_low, sale_high)
-        if _profitable(markets, roads, prices, on_sale):
+        if _profitable(roads, prices, on_sale):
             break
     else:
         raise ValueError(f"no profitable market draw in {MAX_ATTEMPTS} attempts")
 
-    init = []
+    init: list[str] = []
     for market in markets:
         for good, *_ in GOODS:
             if (good, market) in prices:

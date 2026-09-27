@@ -16,10 +16,11 @@ from collections import Counter
 from collections.abc import Callable
 from pathlib import Path
 
-import pypddl_datasets
-from pypddl_datasets.discovery import discover_domains
 from pypddl import formalism
 from pypddl.formalism import Parser, ParserOptions
+
+import pypddl_datasets
+from pypddl_datasets.discovery import discover_domains
 
 TOKEN = re.compile(
     r"(?:Missing required PDDL requirement|Aggregate PDDL requirement must be declared atomically"
@@ -78,7 +79,9 @@ def repair(path: Path, parse: Callable[[], object], stats: Counter[str], failure
         try:
             parse()
             return
-        except (formalism.AggregateRequirementError, formalism.UnusedRequirementError, formalism.RedundantRequirementError) as error:
+        except (
+            formalism.AggregateRequirementError, formalism.UnusedRequirementError, formalism.RedundantRequirementError
+        ) as error:
             token = TOKEN.search(str(error))
             assert token, str(error)
             edit_requirements(path, remove=token.group(1))
@@ -99,7 +102,7 @@ def repair(path: Path, parse: Callable[[], object], stats: Counter[str], failure
             else:  # anything non-mechanical is reported, not guessed at
                 failures.append(f"{path}: {type(error).__name__}: {message.splitlines()[0] if message else ''}")
                 return
-        except Exception as error:  # noqa: BLE001 — anything non-mechanical is reported, not guessed at
+        except Exception as error:  # noqa: BLE001  # pylint: disable=broad-exception-caught  # reported, not guessed at
             failures.append(f"{path}: {type(error).__name__}: {str(error).splitlines()[0] if str(error) else ''}")
             return
     failures.append(f"{path}: did not converge after {MAX_ROUNDS} rounds")
@@ -124,7 +127,7 @@ def main() -> int:
         repair(domain_path, lambda: Parser(domain_path, options), stats, failures)
         try:
             return Parser(domain_path, options)
-        except Exception:  # noqa: BLE001 — already recorded by repair()
+        except Exception:  # noqa: BLE001  # pylint: disable=broad-exception-caught  # already recorded by repair()
             return None
 
     for index, domain_dir in enumerate(discover_domains(data_root), start=1):
@@ -133,11 +136,9 @@ def main() -> int:
             domain_parser = repaired_domain_parser(task.domain_path)
             if domain_parser is None:
                 continue
-            # generated pypddl stub types parse_task with a bare os.PathLike;
-            # drop the suppression once the loki stubgen emits os.PathLike[str]
             repair(
                 task.task_path,
-                lambda parser=domain_parser, path=task.task_path: parser.parse_task(path),  # pyright: ignore[reportUnknownMemberType]
+                lambda parser=domain_parser, path=task.task_path: parser.parse_task(path),
                 stats,
                 failures,
             )

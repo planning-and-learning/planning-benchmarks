@@ -1,4 +1,5 @@
 import re
+from typing import Any
 
 import pytest
 
@@ -8,7 +9,9 @@ from pypddl_datasets.generators.classical.ipc.spider.generator import main, make
 @pytest.mark.parametrize(
     "decks,suits,values,piles,deals", [(1, 4, 3, 3, 2), (2, 2, 9, 6, 2), (4, 1, 12, 8, 2), (1, 1, 4, 2, 0)]
 )
-def test_spider_places_every_card_once_and_movable_runs_are_on_top(decks, suits, values, piles, deals):
+def test_spider_places_every_card_once_and_movable_runs_are_on_top(
+    decks: int, suits: int, values: int, piles: int, deals: int
+) -> None:
     problem = make_problem(decks, suits, values, piles, deals, seed=7)
     assert problem == make_problem(decks, suits, values, piles, deals, seed=7)
     assert problem == problem.lower()
@@ -32,16 +35,17 @@ def test_spider_places_every_card_once_and_movable_runs_are_on_top(decks, suits,
     assert "(= (total-cost) 0)" in init and "(:metric minimize (total-cost))" in problem
 
 
-def test_spider_cli_matches_make_problem(capsys):
+def test_spider_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-d", "2", "-u", "2", "-v", "5", "-p", "4", "-s", "3"]) == 0
     assert capsys.readouterr().out == make_problem(2, 2, 5, 4, seed=3)
 
 
 @pytest.mark.parametrize(
-    "parameter,value", [("num_decks", 0), ("num_suits", 0), ("num_values", 0), ("num_piles", 0), ("num_deals", -1), ("num_piles", 5)]
+    "parameter,value",
+    [("num_decks", 0), ("num_suits", 0), ("num_values", 0), ("num_piles", 0), ("num_deals", -1), ("num_piles", 5)],
 )
-def test_spider_rejects_invalid_parameters(parameter, value):
-    parameters = dict(num_decks=1, num_suits=4, num_values=3, num_piles=3, num_deals=2)
+def test_spider_rejects_invalid_parameters(parameter: str, value: int) -> None:
+    parameters: dict[str, Any] = {"num_decks": 1, "num_suits": 4, "num_values": 3, "num_piles": 3, "num_deals": 2}
     parameters[parameter] = value
     with pytest.raises(ValueError, match=parameter):
         make_problem(**parameters)

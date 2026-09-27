@@ -37,6 +37,7 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from typing import cast
 
 Cell = tuple[int, int]
 DIRECTIONS = ((0, 1), (1, 0), (0, -1), (-1, 0))  # right, down, left, up
@@ -72,8 +73,11 @@ class _Grid:
     def __init__(self, rows: int, cols: int):
         self.rows, self.cols = rows, cols
         self.edge_nodes: list[tuple[int, int]] = []
-        index: dict[tuple, int] = {}
-        node = lambda r, c: r * (cols + 1) + c  # noqa: E731
+        index: dict[tuple[str, int, int], int] = {}
+
+        def node(r: int, c: int) -> int:
+            return r * (cols + 1) + c
+
         for r in range(rows + 1):
             for c in range(cols):
                 index["h", r, c] = len(self.edge_nodes)
@@ -109,7 +113,8 @@ class _Grid:
                     unknown = [x for x in edges if state[x] < 0]
                     if on > 2 or (on == 1 and not unknown):
                         return False
-                    value = 0 if on == 2 or (on == 0 and len(unknown) == 1) else 1 if on == 1 and len(unknown) == 1 else None
+                    single = len(unknown) == 1
+                    value = 0 if on == 2 or (on == 0 and single) else 1 if on == 1 and single else None
                     if value is not None:
                         for x in unknown:
                             state[x] = value
@@ -223,7 +228,8 @@ def make_puzzle(rows: int, cols: int, seed: int | None = None) -> dict[Cell, int
 def make_problem(rows: int, cols: int, seed: int | None = None) -> str:
     """Generate a Slitherlink task on a rows x cols grid with a unique solution."""
     for name, value in (("rows", rows), ("cols", cols)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < 1:
             raise ValueError(f"{name} must be an integer at least 1")
     if rows * cols < 2:
         raise ValueError("rows * cols must be at least 2")
@@ -235,13 +241,13 @@ def to_pddl(rows: int, cols: int, clues: dict[Cell, int], name: str) -> str:
     """generate-pddl.py's encoding of one puzzle (no start edge, as in `gen`)."""
     nodes = [f"n-{r}-{c}" for r in range(rows + 1) for c in range(cols + 1)]
     cells = [f"cell-{r}-{c}" for r in range(rows) for c in range(cols)]
-    outside = []
+    outside: list[str] = []
     for r in range(rows):
         outside += [f"cell-outside-{r}-left", f"cell-outside-{r}-right"]
     for c in range(cols):
         outside += [f"cell-outside-{c}-up", f"cell-outside-{c}-down"]
 
-    cell_edges = []
+    cell_edges: list[str] = []
     for r in range(1, rows):
         for c in range(cols):
             cell_edges.append(f"(cell-edge cell-{r - 1}-{c} cell-{r}-{c} n-{r}-{c} n-{r}-{c + 1})")

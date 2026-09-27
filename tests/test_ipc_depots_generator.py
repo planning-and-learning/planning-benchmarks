@@ -1,19 +1,22 @@
 import re
+from typing import Any
 
 import pytest
 
 from pypddl_datasets.generators.classical.ipc.depots.generator import main, make_problem
+from pypddl_datasets.generators.classical.autoscale.depots.generator import make_problem as make_typed
 
 
-def _towers(on_facts, num_pallets):
+def _towers(on_facts: list[tuple[str, str]], num_pallets: int) -> dict[str, list[str]]:
     """Follow each pallet's tower upwards; fails on cycles or crates on two surfaces."""
-    above = {}
+    above: dict[str, str] = {}
     for crate, surface in on_facts:
         assert surface not in above, f"{surface} carries two crates"
         above[surface] = crate
-    towers = {}
+    towers: dict[str, list[str]] = {}
     for pallet in range(num_pallets):
-        tower, surface = [], f"pallet{pallet}"
+        tower: list[str] = []
+        surface = f"pallet{pallet}"
         while surface in above:
             surface = above[surface]
             tower.append(surface)
@@ -22,10 +25,11 @@ def _towers(on_facts, num_pallets):
 
 
 @pytest.mark.parametrize(
-    "depots,distributors,trucks,pallets,hoists,crates",
-    [(1, 1, 1, 1, 1, 1), (3, 2, 2, 7, 4, 9), (9, 2, 2, 16, 11, 3)],
+    "depots,distributors,trucks,pallets,hoists,crates", [(1, 1, 1, 1, 1, 1), (3, 2, 2, 7, 4, 9), (9, 2, 2, 16, 11, 3)]
 )
-def test_depots_stacks_are_consistent_and_every_place_has_a_hoist(depots, distributors, trucks, pallets, hoists, crates):
+def test_depots_stacks_are_consistent_and_every_place_has_a_hoist(
+    depots: int, distributors: int, trucks: int, pallets: int, hoists: int, crates: int
+) -> None:
     problem = make_problem(depots, distributors, trucks, pallets, hoists, crates, seed=3)
     assert problem == make_problem(depots, distributors, trucks, pallets, hoists, crates, seed=3)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -54,23 +58,32 @@ def test_depots_stacks_are_consistent_and_every_place_has_a_hoist(depots, distri
     assert goal_crates == sorted(goal_crates)
 
 
-def test_depots_cli_matches_make_problem(capsys):
+def test_depots_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-e", "2", "-i", "1", "-t", "2", "-p", "4", "-u", "3", "-c", "5", "-s", "9"]) == 0
     assert capsys.readouterr().out == make_problem(2, 1, 2, 4, 3, 5, seed=9)
 
 
-@pytest.mark.parametrize("parameter", ["num_depots", "num_distributors", "num_trucks", "num_pallets", "num_hoists", "num_crates"])
-def test_depots_rejects_invalid_parameters(parameter):
-    parameters = dict(num_depots=1, num_distributors=1, num_trucks=1, num_pallets=1, num_hoists=1, num_crates=1)
+@pytest.mark.parametrize(
+    "parameter", ["num_depots", "num_distributors", "num_trucks", "num_pallets", "num_hoists", "num_crates"]
+)
+def test_depots_rejects_invalid_parameters(parameter: str) -> None:
+    parameters: dict[str, Any] = {
+        "num_depots": 1,
+        "num_distributors": 1,
+        "num_trucks": 1,
+        "num_pallets": 1,
+        "num_hoists": 1,
+        "num_crates": 1,
+    }
     parameters[parameter] = 0
     with pytest.raises(ValueError, match=parameter):
         make_problem(**parameters)
 
 
-def test_depots_ipc_encoding_uses_type_predicates():
-    from pypddl_datasets.generators.classical.autoscale.depots.generator import make_problem as make_typed
-
+def test_depots_ipc_encoding_uses_type_predicates() -> None:
     untyped, typed = make_problem(1, 1, 1, 2, 2, 3, seed=4), make_typed(1, 1, 1, 2, 2, 3, seed=4)
     assert "(:domain depot)" in untyped and " - " not in untyped.split("(:init")[0]
-    assert {"(place depot0)", "(place distributor0)", "(surface crate0)", "(pallet pallet0)"} <= set(re.findall(r"\(\w+ \w+\)", untyped))
+    assert {"(place depot0)", "(place distributor0)", "(surface crate0)", "(pallet pallet0)"} <= set(
+        re.findall(r"\(\w+ \w+\)", untyped)
+    )
     assert "(:domain depots)" in typed and "crate0 crate1 crate2 - crate" in typed and "(place " not in typed

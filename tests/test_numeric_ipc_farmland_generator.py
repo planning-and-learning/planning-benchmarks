@@ -1,4 +1,5 @@
 import re
+from collections.abc import Callable
 from pathlib import Path
 
 import pytest
@@ -11,7 +12,7 @@ GENERATORS = Path(__file__).resolve().parents[1] / "src/pypddl_datasets/generato
 IPC = Path(__file__).resolve().parents[1] / "data/numeric/ipc2023"
 
 
-def structure(text):
+def structure(text: str) -> tuple[list[str], list[str], int, bool]:
     init = re.sub(r";[^\n]*", "", text.split("(:goal")[0]).lower()
     units = sorted(int(v) for v in re.findall(r"\(x farm\d+\) (\d+)\)", init))
     fluents = sorted(set(re.findall(r"\(= \((\S+?)[ )]", init)))
@@ -22,14 +23,16 @@ def structure(text):
 # 0/1 allocations cannot be reproduced; the ladder, fluents and source size can.
 @pytest.mark.parametrize("package,make", [("farmland", farm), ("fo-farmland", fo_farm)])
 @pytest.mark.parametrize("index", range(1, 21))
-def test_initial_states_match_ipc_structure(package, make, index):
+def test_initial_states_match_ipc_structure(package: str, make: Callable[..., str], index: int) -> None:
     ipc = (IPC / package / f"pfile{index}.pddl").read_text()
-    farms, units, seed = map(int, re.search(r"instance_(\d+)_(\d+)_(\d+)_ladder", ipc).groups())
+    match = re.search(r"instance_(\d+)_(\d+)_(\d+)_ladder", ipc)
+    assert match is not None
+    farms, units, seed = map(int, match.groups())
     assert structure(make(farms, units, seed=seed)) == structure(ipc)
 
 
 @pytest.mark.parametrize("package,make", [("farmland", farm), ("fo_farmland", fo_farm)])
-def test_farmland_structure_and_strict_parse(package, make, tmp_path):
+def test_farmland_structure_and_strict_parse(package: str, make: Callable[..., str], tmp_path: Path) -> None:
     problem = make(6, 500, seed=4)
     assert problem == make(6, 500, seed=4)
     units = [int(v) for v in re.findall(r"\(x farm\d+\) (\d+)\)", problem.split("(:goal")[0])]
@@ -41,14 +44,14 @@ def test_farmland_structure_and_strict_parse(package, make, tmp_path):
     (tmp_path / "p.pddl").write_text(problem)
     options = ParserOptions()
     options.strict = True
-    Parser(GENERATORS / package / "domain.pddl", options).parse_task(tmp_path / "p.pddl")  # pyright: ignore[reportUnknownMemberType]
+    Parser(GENERATORS / package / "domain.pddl", options).parse_task(tmp_path / "p.pddl")
 
 
-def test_farmland_cli_and_validation(capsys):
+def test_farmland_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert farm_main(["-f", "4", "-u", "300", "-s", "1"]) == 0
     assert capsys.readouterr().out == farm(4, 300, seed=1)
     assert fo_main(["-f", "4", "-u", "300", "-s", "1"]) == 0
     assert capsys.readouterr().out == fo_farm(4, 300, seed=1)
-    for bad in (dict(num_farms=3, num_units=10), dict(num_farms=1, num_units=10), dict(num_farms=4, num_units=0)):
+    for num_farms, num_units in ((3, 10), (1, 10), (4, 0)):
         with pytest.raises(ValueError):
-            farm(**bad)
+            farm(num_farms, num_units)

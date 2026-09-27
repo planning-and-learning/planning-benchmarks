@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from typing import cast
 
 SEGMENT_TYPES = ("empty", "ab")
 INOUT_TYPES = ("none", "in", "both")
@@ -20,7 +21,8 @@ def make_problem(size: int, segment_type: str = "empty", inout: str = "in") -> s
     which segments are connected to the analysis station: only segment 1 on
     each side ("none"), all in-segments ("in"), or all segments ("both").
     """
-    if not isinstance(size, int) or isinstance(size, bool) or size < 1:
+    checked = cast(object, size)  # runtime check: callers may pass any type
+    if not isinstance(checked, int) or isinstance(checked, bool) or checked < 1:
         raise ValueError("size must be an integer at least 1")
     if segment_type not in SEGMENT_TYPES:
         raise ValueError(f"segment_type must be one of {SEGMENT_TYPES}")

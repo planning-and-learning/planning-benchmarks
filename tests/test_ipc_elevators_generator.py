@@ -1,4 +1,5 @@
 import re
+from typing import Any
 
 import pytest
 
@@ -10,7 +11,9 @@ from pypddl_datasets.generators.classical.ipc.elevators.generator import main, m
     # (3, 6, 3, 1, 1) are the parameters of Autoscale 21.11 agile p01.
     [(3, 6, 3, 1, 1), (2, 2, 5, 0, 1), (4, 5, 10, 3, 2)],
 )
-def test_elevators_floors_connected_and_costs(num_areas, area_size, num_passengers, num_fast, num_slow):
+def test_elevators_floors_connected_and_costs(
+    num_areas: int, area_size: int, num_passengers: int, num_fast: int, num_slow: int
+) -> None:
     problem = make_problem(num_areas, area_size, num_passengers, num_fast, num_slow, seed=4)
     assert problem == make_problem(num_areas, area_size, num_passengers, num_fast, num_slow, seed=4)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -46,18 +49,24 @@ def test_elevators_floors_connected_and_costs(num_areas, area_size, num_passenge
     assert set(re.findall(r"\(can-hold slow\S+ (\S+)\)", init)) == {"n1", "n2"}
 
 
-def test_elevators_cli_matches_make_problem(capsys):
+def test_elevators_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["2", "4", "6", "2", "--slow-capacity", "3", "-s", "9"]) == 0
     assert capsys.readouterr().out == make_problem(2, 4, 6, 2, slow_capacity=3, seed=9)
 
 
 @pytest.mark.parametrize(
     "parameter,value",
-    [("num_areas", 0), ("area_size", 1), ("num_passengers", 0), ("num_fast_elevators", -1),
-     ("num_slow_elevators", 0), ("fast_capacity", True)],
+    [
+        ("num_areas", 0),
+        ("area_size", 1),
+        ("num_passengers", 0),
+        ("num_fast_elevators", -1),
+        ("num_slow_elevators", 0),
+        ("fast_capacity", True),
+    ],
 )
-def test_elevators_rejects_invalid_parameters(parameter, value):
-    parameters = dict(num_areas=2, area_size=3, num_passengers=2, num_fast_elevators=1)
+def test_elevators_rejects_invalid_parameters(parameter: str, value: int | bool) -> None:
+    parameters: dict[str, Any] = {"num_areas": 2, "area_size": 3, "num_passengers": 2, "num_fast_elevators": 1}
     parameters[parameter] = value
     with pytest.raises(ValueError, match=parameter):
         make_problem(**parameters)

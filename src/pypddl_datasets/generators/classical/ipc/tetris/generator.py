@@ -9,19 +9,25 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from typing import cast
 
 COLUMNS = 4
+
+
+# grid, squares, 2x1 pieces, L pieces, at-facts
+Placement = tuple[list[list[str]], list[str], list[str], list[str], list[str]]
 
 
 def _cell(row: int, column: int) -> str:
     return f"f{row}-{column}f"
 
 
-def _place_squares_only(rng: random.Random, num_rows: int):
+def _place_squares_only(rng: random.Random, num_rows: int) -> Placement:
     """Type 1: 1..half*4 squares on uniform free cells of rows 0..num_rows/2 (upstream's inclusive bound)."""
     grid = [["free"] * COLUMNS for _ in range(num_rows)]
     free = [(x, y) for x in range(num_rows // 2 + 1) for y in range(COLUMNS)]
-    squares, at_facts = [], []
+    squares: list[str] = []
+    at_facts: list[str] = []
     for index in range(rng.randint(1, (num_rows // 2) * COLUMNS)):
         x, y = free.pop(rng.randrange(len(free)))
         name = f"square{index}"
@@ -31,21 +37,25 @@ def _place_squares_only(rng: random.Random, num_rows: int):
     return grid, squares, [], [], at_facts
 
 
-def _place_straights_only(rng: random.Random, num_rows: int):
+def _place_straights_only(rng: random.Random, num_rows: int) -> Placement | None:
     """Type 2: 1..(num_rows/2)*2 2x1 pieces, each on a uniform free cell of rows 0..num_rows/2
     and upstream's direction rule (1 up, 2 right, 3 down, 4 left; up at row 0 falls through
     to right, right at the last column to left). None where upstream would loop forever."""
     grid = [["free"] * COLUMNS for _ in range(num_rows)]
     top = num_rows // 2
-    straights, at_facts = [], []
+    straights: list[str] = []
+    at_facts: list[str] = []
     target = rng.randint(1, (num_rows // 2) * (COLUMNS // 2))
 
     def free(x: int, y: int) -> bool:
         return 0 <= x < num_rows and 0 <= y < COLUMNS and grid[x][y] == "free"
 
     while len(straights) < target:
-        if not any(free(x, y) and any(free(x + dx, y + dy) for dx, dy in ((-1, 0), (0, 1), (1, 0), (0, -1)))
-                   for x in range(top + 1) for y in range(COLUMNS)):
+        if not any(
+            free(x, y) and any(free(x + dx, y + dy) for dx, dy in ((-1, 0), (0, 1), (1, 0), (0, -1)))
+            for x in range(top + 1)
+            for y in range(COLUMNS)
+        ):
             return None
         x, y = rng.randint(0, top), rng.randint(0, COLUMNS - 1)
         if not free(x, y):
@@ -75,7 +85,7 @@ def _place_straights_only(rng: random.Random, num_rows: int):
     return grid, [], straights, [], at_facts
 
 
-def _place(rng: random.Random, num_rows: int, block_type: int = 4) -> tuple[list[list[str]], list[str], list[str], list[str], list[str]] | None:
+def _place(rng: random.Random, num_rows: int, block_type: int = 4) -> Placement | None:
     """One upstream draw; None where upstream would loop forever (no room left for a piece)."""
     if block_type == 1:
         return _place_squares_only(rng, num_rows)
@@ -126,15 +136,18 @@ def make_problem(num_rows: int, seed: int | None = None, block_type: int = 4) ->
 
     ``block_type`` 1: only 1x1 pieces (1..num_rows*2, uniform free cells of rows
     0..num_rows/2); 2: only 2x1 pieces (1..num_rows, upstream's random direction
-    rule); 3: only L-pieces (as in type 4); 4 (IPC): L-pieces (1..num_rows//4*2 of them) are dropped on uniform free anchors in the
-    upper half; then each free vertical pair in rows 0..num_rows/2-1, columns 0-2,
+    rule); 3: only L-pieces (as in type 4); 4 (IPC): L-pieces (1..num_rows//4*2 of
+    them) are dropped on uniform free anchors in the upper half; then each free
+    vertical pair in rows 0..num_rows/2-1, columns 0-2,
     gets a 2x1 piece with probability 1/2, then each free cell there a 1x1 piece
     with probability 1/2. Draws where upstream would hang are redrawn. Solvability
     is not guaranteed, as upstream.
     """
-    if not isinstance(num_rows, int) or isinstance(num_rows, bool) or num_rows < 4 or num_rows % 2:
+    checked = cast(object, num_rows)  # runtime check: callers may pass any type
+    if not isinstance(checked, int) or isinstance(checked, bool) or checked < 4 or checked % 2:
         raise ValueError("num_rows must be an even integer at least 4")
-    if block_type not in (1, 2, 3, 4) or isinstance(block_type, bool):
+    kind = cast(object, block_type)  # runtime check: callers may pass any type
+    if isinstance(kind, bool) or kind not in (1, 2, 3, 4):
         raise ValueError("block_type must be 1, 2, 3 or 4")
     rng = random.Random(seed)
     placed = None
@@ -143,14 +156,21 @@ def make_problem(num_rows: int, seed: int | None = None, block_type: int = 4) ->
     grid, squares, straights, right_ls, at_facts = placed
 
     positions = "\n".join(" ".join(_cell(row, column) for column in range(COLUMNS)) for row in range(num_rows))
-    connected = []
+    connected: list[str] = []
     for row in range(num_rows):
         for column in range(COLUMNS - 1):
-            connected += [f"(connected {_cell(row, column)} {_cell(row, column + 1)})", f"(connected {_cell(row, column + 1)} {_cell(row, column)})"]
+            a, b = _cell(row, column), _cell(row, column + 1)
+            connected += [f"(connected {a} {b})", f"(connected {b} {a})"]
     for row in range(num_rows - 1):
         for column in range(COLUMNS):
-            connected += [f"(connected {_cell(row, column)} {_cell(row + 1, column)})", f"(connected {_cell(row + 1, column)} {_cell(row, column)})"]
-    clear = [f"(clear {_cell(row, column)})" for row in range(num_rows) for column in range(COLUMNS) if grid[row][column] == "free"]
+            a, b = _cell(row, column), _cell(row + 1, column)
+            connected += [f"(connected {a} {b})", f"(connected {b} {a})"]
+    clear = [
+        f"(clear {_cell(row, column)})"
+        for row in range(num_rows)
+        for column in range(COLUMNS)
+        if grid[row][column] == "free"
+    ]
     goal = [f"(clear {_cell(row, column)})" for row in range(num_rows // 2) for column in range(COLUMNS)]
     return (f"""(define (problem tetris-{num_rows}-{block_type}-{rng.randint(0, 9875232)})
 (:domain tetris)
@@ -178,7 +198,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate a Tetris PDDL problem (IPC 2014 / Autoscale).")
     parser.add_argument("-r", "--num-rows", type=int, required=True, help="even number of grid rows; 4 columns")
     parser.add_argument("-s", "--seed", type=int)
-    parser.add_argument("-b", "--block-type", type=int, default=4, help="1 = 1x1, 2 = 2x1, 3 = L, 4 = mix (IPC, default)")
+    parser.add_argument(
+        "-b", "--block-type", type=int, default=4, help="1 = 1x1, 2 = 2x1, 3 = L, 4 = mix (IPC, default)"
+    )
     args = parser.parse_args(argv)
     try:
         problem = make_problem(args.num_rows, args.seed, args.block_type)

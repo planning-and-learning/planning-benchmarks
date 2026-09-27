@@ -34,8 +34,8 @@ EXTRACT_MINUTES_SIZE = 6  # the IPC extract-minutes examples: 7 characters, hiin
 
 @dataclass
 class _Example:
-    init: list[str] = field(default_factory=list)
-    goal: list[str] = field(default_factory=list)
+    init: list[str] = field(default_factory=list[str])
+    goal: list[str] = field(default_factory=list[str])
 
 
 def _letters(rng: random.Random, n: int) -> list[str]:
@@ -63,8 +63,14 @@ def _example(family: str, rng: random.Random, size: int) -> _Example:
         goal = [*(f"(assignment res i{i} {c})" for i, c in enumerate(chars)), f"(assignment res i{size} rpar)"]
     elif family == "extract-minutes":  # gen02: "h:mm.ss" -> "mm" (keeps upstream's extra lpar at i0)
         hour, minutes, seconds = rng.randint(0, 9), rng.randint(0, 59), rng.randint(0, 59)
-        digits = [f"n{hour}", "colon", f"n{minutes // 10}", f"n{minutes % 10}", "dot", f"n{seconds // 10}", f"n{seconds % 10}"]
-        init = [*_single_input(size), "(assignment str i0 lpar)", *(f"(assignment str i{i} {c})" for i, c in enumerate(digits))]
+        digits = [
+            f"n{hour}", "colon", f"n{minutes // 10}", f"n{minutes % 10}", "dot", f"n{seconds // 10}", f"n{seconds % 10}"
+        ]
+        init = [
+            *_single_input(size),
+            "(assignment str i0 lpar)",
+            *(f"(assignment str i{i} {c})" for i, c in enumerate(digits)),
+        ]
         goal = [f"(assignment res i0 n{minutes // 10})", f"(assignment res i1 n{minutes % 10})"]
     else:  # gen04 "Name Surname" -> "Name S", gen05 -> "N S"
         name, surname = _letters(rng, size), _letters(rng, size)
@@ -135,12 +141,15 @@ _RESETS = """        (forall (?string1 - string ?index2 - index ?char3 - char)
 
 
 def _test_actions(examples: list[_Example], lines: int) -> str:
-    indent = lambda facts: "".join(f"        {f}\n" for f in facts)  # noqa: E731
-    actions = []
+    def indent(facts: list[str]) -> str:
+        return "".join(f"        {f}\n" for f in facts)
+
+    actions: list[str] = []
     for k, example in enumerate(examples):
         for line in range(1, lines):
             if k + 1 < len(examples):
-                effect = (f"        (not (test-{k}))\n        (test-{k + 1})\n        (not (stack-line-{line} ?stackrow0))\n"
+                effect = (f"        (not (test-{k}))\n        (test-{k + 1})\n"
+                          f"        (not (stack-line-{line} ?stackrow0))\n"
                           f"        (stack-line-0 ?stackrow0)\n{indent(examples[k + 1].init)}{_RESETS}\n")
             else:
                 effect = "        (done-programming)\n"
@@ -193,7 +202,10 @@ def _test_actions(examples: list[_Example], lines: int) -> str:
 
 def _constants(examples: list[_Example], two_inputs: bool) -> str:
     symbols = {f.split()[-1].rstrip(")") for e in examples for f in [*e.init, *e.goal] if f.startswith("(assignment")}
-    indices = {tok.rstrip(")") for e in examples for f in [*e.init, *e.goal] for tok in f.split()[1:] if tok.rstrip(")")[:1] == "i" and tok.rstrip(")")[1:].isdigit()}
+    indices = {
+        tok.rstrip(")") for e in examples for f in [*e.init, *e.goal] for tok in f.split()[1:]
+        if tok.rstrip(")")[:1] == "i" and tok.rstrip(")")[1:].isdigit()
+    }
     inputs, variables = ("str str2", "str-var str2-var") if two_inputs else ("str", "str-var")
     return "\n".join([
         f"    {' '.join(sorted(symbols - set(LIMITERS)))} - char",
@@ -239,7 +251,9 @@ def _task(family: str, examples: list[_Example], name: str) -> tuple[str, str]:
     return domain.lower(), problem.lower()
 
 
-def make_task(family: str, num_tests: int, min_size: int = 3, max_size: int = 7, seed: int | None = None) -> tuple[str, str]:
+def make_task(
+    family: str, num_tests: int, min_size: int = 3, max_size: int = 7, seed: int | None = None
+) -> tuple[str, str]:
     """Generate a Flashfill task as (domain, problem).
 
     `num_tests` examples of the family's string transformation; each example's string
@@ -249,13 +263,19 @@ def make_task(family: str, num_tests: int, min_size: int = 3, max_size: int = 7,
     """
     if family not in FAMILIES:
         raise ValueError(f"family must be one of {', '.join(FAMILIES)}")
-    for name, value, minimum in (("num_tests", num_tests, 1), ("min_size", min_size, 2), ("max_size", max_size, 2)):
+    checks: list[tuple[str, object, int]] = [
+        ("num_tests", num_tests, 1), ("min_size", min_size, 2), ("max_size", max_size, 2),
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if max_size < min_size:
         raise ValueError("max_size must be at least min_size")
     rng = random.Random(seed)
-    sizes = [EXTRACT_MINUTES_SIZE if family == "extract-minutes" else rng.randint(min_size, max_size) for _ in range(num_tests)]
+    sizes = [
+        EXTRACT_MINUTES_SIZE if family == "extract-minutes" else rng.randint(min_size, max_size)
+        for _ in range(num_tests)
+    ]
     examples = [_example(family, rng, size) for size in sizes]
     return _task(family, examples, f"{family}-{num_tests}-{max(sizes)}-{seed}")
 
@@ -274,8 +294,8 @@ def main(argv: list[str] | None = None) -> int:
         domain, problem = make_task(args.family, args.num_tests, args.min_size, args.max_size, args.seed)
     except ValueError as error:
         parser.error(str(error))
-    Path(args.domain).write_text(domain)
-    Path(args.problem).write_text(problem)
+    Path(args.domain).write_text(domain, encoding="utf-8")
+    Path(args.problem).write_text(problem, encoding="utf-8")
     return 0
 
 

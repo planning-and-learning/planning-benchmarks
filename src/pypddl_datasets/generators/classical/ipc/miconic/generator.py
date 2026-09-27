@@ -27,7 +27,8 @@ def make_problem(num_floors: int, num_passengers: int, seed: int | None = None, 
     type predicates; ``typed`` gives Autoscale's typed STRIPS encoding. The IPC
     tasks all use ``num_floors = 2 * num_passengers``.
     """
-    for name, value, minimum in (("num_floors", num_floors, 2), ("num_passengers", num_passengers, 1)):
+    checks: list[tuple[str, object, int]] = [("num_floors", num_floors, 2), ("num_passengers", num_passengers, 1)]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
 

@@ -18,6 +18,10 @@ PROPERTIES = (("mountain", 0.44), ("woodland", 0.74), ("by-coast", 0.52), ("meta
 GOAL_KINDS = (("rail", 50), ("housing", 46), ("has-ironworks", 32), ("has-sawmill", 31), ("has-coal-stack", 26))
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_locations: int,
     num_vehicles: int | None = None,
@@ -34,7 +38,7 @@ def make_problem(
     housing (1 or 2), coal stacks, sawmills, ironworks and rail links, the rail
     links as short walks along roads.
     """
-    if not isinstance(num_locations, int) or isinstance(num_locations, bool) or num_locations < 2:
+    if not _is_int(num_locations) or num_locations < 2:
         raise ValueError("num_locations must be an integer at least 2")
     rng = random.Random(seed)
     n = num_locations
@@ -42,7 +46,7 @@ def make_problem(
     num_goals = rng.randint(max(1, n - 2), max(2, int(1.6 * n))) if num_goals is None else num_goals
     land_density = max(0.0, 0.8 - 0.025 * n) if land_density is None else land_density
     for label, value in (("num_vehicles", num_vehicles), ("num_goals", num_goals)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+        if not _is_int(value) or value < 1:
             raise ValueError(f"{label} must be an integer at least 1")
     if not 0 <= land_density <= 1:
         raise ValueError("land_density must be in [0, 1]")
@@ -78,7 +82,8 @@ def make_problem(
     init += [f"(potential {v})" for v in vehicles]
 
     neighbours = {l: [locs[b] for e in edges for a, b in (sorted(e), sorted(e)[::-1]) if locs[a] == l] for l in locs}
-    kinds, weights = zip(*GOAL_KINDS)
+    kinds = [kind for kind, _ in GOAL_KINDS]
+    weights = [weight for _, weight in GOAL_KINDS]
     goals: list[str] = []
     seen: set[str] = set()
     attempts = 0
@@ -90,7 +95,9 @@ def make_problem(
             new = [f"(>= (housing {place}) {rng.randint(1, 2)})"]
             key = [f"housing {place}"]
         elif kind == "rail":  # a walk of 1-5 roads, each road once as a goal
-            new, key, current = [], [], place
+            new: list[str] = []
+            key: list[str] = []
+            current = place
             for _ in range(rng.randint(1, 5)):
                 nxt = rng.choice(neighbours[current])
                 new.append(f"(connected-by-rail {current} {nxt})")
@@ -103,7 +110,10 @@ def make_problem(
                 seen.add(k)
                 goals.append(g)
 
-    decl = " ".join(f"{v} - vehicle" for v in reversed(vehicles)) + " " + " ".join(f"{l} - place" for l in reversed(locs))
+    decl = (
+        " ".join(f"{v} - vehicle" for v in reversed(vehicles)) + " "
+        + " ".join(f"{l} - place" for l in reversed(locs))
+    )
     nl = "\n"
     return (f""";; enrico scala (enricos83@gmail.com) and miquel ramirez (miquel.ramirez@gmail.com)
 (define (problem settlers) (:domain civ)

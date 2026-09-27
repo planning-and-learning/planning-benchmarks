@@ -25,6 +25,10 @@ SUITS = "chsd"
 PARTNERS = {0: (1, 3), 1: (0, 2), 2: (1, 3), 3: (0, 2)}
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def _card(suit: int, index: int) -> str:
     return f"{SUITS[suit]}{'a' if index == 0 else index + 1}"
 
@@ -51,7 +55,7 @@ def make_problem(
         ("suit_size", suit_size, 1),
         ("num_suits", num_suits, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_suits > 4:
         raise ValueError("num_suits must be at most 4")
@@ -68,7 +72,7 @@ def make_problem(
         stacks[rng.randrange(num_stacks)].append((suit, index))
 
     suits = range(num_suits)
-    init = []
+    init: list[str] = []
     for s in suits:
         init.append(f"(value {SUITS[s]}0 n0)")
         init += [f"(value {_card(s, j)} n{j + 1})" for j in range(suit_size)]

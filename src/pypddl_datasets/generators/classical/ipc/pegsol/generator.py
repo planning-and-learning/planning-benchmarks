@@ -10,6 +10,8 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from collections.abc import Callable
+from typing import cast
 
 SIZE = 7
 TARGET = (3, 3)
@@ -21,7 +23,7 @@ FULL_BOARD_HOLES = [(0, 3), (3, 0), (3, 3), (3, 6), (6, 3)]
 
 def _lines() -> list[tuple[tuple[int, int], tuple[int, int], tuple[int, int]]]:
     """(from, over, to) triples in upstream's IN-LINE order (both directions)."""
-    lines = []
+    lines: list[tuple[tuple[int, int], tuple[int, int], tuple[int, int]]] = []
     for r, c in CELLS:
         for dr, dc in ((0, 1), (1, 0)):
             over, to = (r + dr, c + dc), (r + 2 * dr, c + 2 * dc)
@@ -36,13 +38,11 @@ LINES = _lines()
 INDEX = {cell: i for i, cell in enumerate(CELLS)}
 LINE_BITS = [(1 << INDEX[a], 1 << INDEX[b], 1 << INDEX[c]) for a, b, c in LINES]
 # The 8 symmetries of the board all fix the centre; dead ends are shared among images.
-SYMMETRIES = [
-    [INDEX[f(r, c)] for r, c in CELLS]
-    for f in (
-        lambda r, c: (r, c), lambda r, c: (c, 6 - r), lambda r, c: (6 - r, 6 - c), lambda r, c: (6 - c, r),
-        lambda r, c: (r, 6 - c), lambda r, c: (6 - r, c), lambda r, c: (c, r), lambda r, c: (6 - c, 6 - r),
-    )
-]
+_SYMMETRY_MAPS: tuple[Callable[[int, int], tuple[int, int]], ...] = (
+    lambda r, c: (r, c), lambda r, c: (c, 6 - r), lambda r, c: (6 - r, 6 - c), lambda r, c: (6 - c, r),
+    lambda r, c: (r, 6 - c), lambda r, c: (6 - r, c), lambda r, c: (c, r), lambda r, c: (6 - c, 6 - r),
+)
+SYMMETRIES = [[INDEX[f(r, c)] for r, c in CELLS] for f in _SYMMETRY_MAPS]
 
 
 RESTART_BUDGET = 2000
@@ -93,7 +93,8 @@ def _backward_position(num_pegs: int, rng: random.Random) -> frozenset[tuple[int
 
 def make_problem(num_pegs: int, seed: int | None = None) -> str:
     """Generate a Peg Solitaire task with ``num_pegs`` pegs, goal: one peg on the centre."""
-    if not isinstance(num_pegs, int) or isinstance(num_pegs, bool) or not 1 <= num_pegs <= MAX_PEGS:
+    checked = cast(object, num_pegs)  # runtime guard: callers may pass floats or bools
+    if not isinstance(checked, int) or isinstance(checked, bool) or not 1 <= checked <= MAX_PEGS:
         raise ValueError(f"num_pegs must be an integer in 1..{MAX_PEGS}")
     pegs = _backward_position(num_pegs, random.Random(seed))
 

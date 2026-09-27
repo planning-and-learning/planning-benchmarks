@@ -10,12 +10,15 @@ import argparse
 import math
 import random
 import sys
+from typing import cast
 
 KINDS = ("city", "two-cities", "three-cities")
 MAX_CAPACITY = 4
 MAX_EPSILON_ATTEMPTS = 1000
 
 Point = tuple[int, int]
+City = tuple[list[Point], list[tuple[int, int]]]  # locations, directed roads
+Connection = tuple[tuple[int, int], tuple[int, int], float]  # (city, node) pairs and road length
 
 
 def _distance(a: Point, b: Point) -> float:
@@ -26,7 +29,9 @@ def _round_distance(a: Point, b: Point) -> int:
     return int(round(_distance(a, b)))
 
 
-def _generate(rng, num_nodes, width, height, connect_distance, epsilon):
+def _generate(
+    rng: random.Random, num_nodes: int, width: int, height: int, connect_distance: float, epsilon: int
+) -> City:
     points: list[Point] = []
     edges: list[tuple[int, int]] = []
     for _ in range(num_nodes):
@@ -44,7 +49,7 @@ def _generate(rng, num_nodes, width, height, connect_distance, epsilon):
     return points, edges
 
 
-def _is_connected(num_nodes, edges):
+def _is_connected(num_nodes: int, edges: list[tuple[int, int]]) -> bool:
     reached, frontier = {0}, [0]
     while frontier:
         current = frontier.pop()
@@ -55,7 +60,7 @@ def _is_connected(num_nodes, edges):
     return len(reached) == num_nodes
 
 
-def _generate_city(rng, num_nodes, size, connect_distance, epsilon):
+def _generate_city(rng: random.Random, num_nodes: int, size: int, connect_distance: float, epsilon: int) -> City:
     # generate_connected_safe: on placement failure enlarge the area by 1.5x.
     width = height = size
     while True:
@@ -73,7 +78,9 @@ def _generate_city(rng, num_nodes, size, connect_distance, epsilon):
             connect_distance *= 1.5
 
 
-def _shortest_route(city_a, city_b, size, ox, oy):
+def _shortest_route(
+    city_a: list[Point], city_b: list[Point], size: int, ox: int, oy: int
+) -> tuple[tuple[int, int], float]:
     # Faithful to upstream three-cities-generator.py: always scans cities a x b, compares
     # at offset (ox, oy) but stores the distance at offset (2 * size, 0).
     best, best_distance = (0, 0), -1.0
@@ -113,7 +120,8 @@ def make_problem(
         ("size", size, 1),
         ("min_distance", min_distance, 0),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
 
     rng = random.Random(seed)
@@ -139,13 +147,14 @@ def make_problem(
             road(loc(city, u), loc(city, v), _round_distance(points[u], points[v]))
 
     if kind == "two-cities":
-        (a, b), length = (0, 0), 4 * size
+        a, b = 0, 0
+        length: float = 4 * size
         for i, v in enumerate(cities[0][0]):
             for j, u in enumerate(cities[1][0]):
                 distance = _distance(v, (u[0] + 2 * size, u[1]))
                 if distance < length:
                     (a, b), length = (i, j), distance
-        connections = [((0, a), (1, b), length)]
+        connections: list[Connection] = [((0, a), (1, b), length)]
     elif kind == "three-cities":
         city_a, city_b = cities[0][0], cities[1][0]
         connections = []
@@ -169,7 +178,7 @@ def make_problem(
         init_facts.append(f"    (at truck-{truck + 1} {loc(city, rng.randrange(num_nodes))})")
         init_facts.append(f"    (capacity truck-{truck + 1} capacity-{rng.randint(2, MAX_CAPACITY)})")
 
-    goals = []
+    goals: list[str] = []
     for package, start in enumerate(starts):
         if kind == "two-cities":
             target = (1, rng.randrange(num_nodes))
@@ -215,7 +224,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--size", type=int, default=1000, help="city side length (default: 1000)")
     parser.add_argument("--min-distance", type=int, default=100, help="minimum location distance (default: 100)")
     parser.add_argument("-s", "--seed", type=int)
-    parser.add_argument("--action-costs", action="store_true", help="IPC encoding with road lengths and a total-cost metric")
+    parser.add_argument(
+        "--action-costs", action="store_true", help="IPC encoding with road lengths and a total-cost metric"
+    )
     args = parser.parse_args(argv)
     try:
         problem = make_problem(**vars(args))

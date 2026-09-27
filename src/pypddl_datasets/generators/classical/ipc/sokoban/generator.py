@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from typing import cast
 
 Cell = tuple[int, int]  # (column, row)
 Dirs = dict[str, tuple[int, int]]
@@ -106,7 +107,7 @@ def _scramble(
         pulls = _pulls(floor, stones, player, dirs)
         if not pulls:
             break
-        weights = []
+        weights: list[int] = []
         for pull in pulls:
             after = _pull(stones, pull)
             (x, y), (dx, dy) = pull
@@ -132,7 +133,7 @@ def _scramble_players(
     """
     stones, players = set(goals), list(players)
     for _ in range(num_pulls):
-        options = []
+        options: list[tuple[int, set[Cell], list[tuple[Cell, Cell]]]] = []
         for index, player in enumerate(players):
             own_floor = floor - {p for i, p in enumerate(players) if i != index}
             pulls = _pulls(own_floor, stones, player, dirs)
@@ -141,7 +142,7 @@ def _scramble_players(
         if not options:
             break
         index, own_floor, pulls = rng.choice(options)
-        weights = []
+        weights: list[int] = []
         for pull in pulls:
             after = _pull(stones, pull)
             (x, y), (dx, dy) = pull
@@ -195,7 +196,8 @@ def make_problem(
         ("width", width, 3), ("height", height, 3), ("num_floor", num_floor, 2), ("num_stones", num_stones, 1),
         ("num_players", num_players, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     dirs = HEX_DIRECTIONS if grid == "hex" else DIRECTIONS
     if num_floor > len(_interior(width, height, dirs)):
@@ -211,8 +213,12 @@ def make_problem(
         cells = sorted(full_floor)
         # Goals where a stone can be pulled away at all (two free cells in a line).
         pullable = [
-            cell for cell in cells
-            if any((cell[0] + dx, cell[1] + dy) in full_floor and (cell[0] + 2 * dx, cell[1] + 2 * dy) in full_floor for dx, dy in dirs.values())
+            cell
+            for cell in cells
+            if any(
+                (cell[0] + dx, cell[1] + dy) in full_floor and (cell[0] + 2 * dx, cell[1] + 2 * dy) in full_floor
+                for dx, dy in dirs.values()
+            )
         ]
         goals = set(rng.sample(pullable if len(pullable) >= num_stones else cells, num_stones))
         free = [c for c in cells if c not in goals]
@@ -221,14 +227,18 @@ def make_problem(
         if num_players == 1:
             stones, player, where = min(
                 (_scramble(rng, full_floor, goals, rng.choice(free), num_pulls, dirs) for _ in range(ATTEMPTS)),
-                key=lambda result: len(result[0] & goals),
+                key=lambda result: len(result[0] & goals),  # pylint: disable=cell-var-from-loop  # min() calls it now
             )
             placed = [player]
         else:
             stones, placed = min(
-                (_scramble_players(rng, full_floor, goals, rng.sample(free, num_players), num_pulls, dirs) for _ in range(ATTEMPTS)),
-                key=lambda result: len(result[0] & goals),
+                (
+                    _scramble_players(rng, full_floor, goals, rng.sample(free, num_players), num_pulls, dirs)
+                    for _ in range(ATTEMPTS)
+                ),
+                key=lambda result: len(result[0] & goals),  # pylint: disable=cell-var-from-loop  # min() calls it now
             )
+            where: dict[Cell, Cell] = {}  # only style="learning" uses it, which needs one player
         if stones != goals:
             break
     else:
@@ -254,7 +264,7 @@ def make_problem(
     digits = len(str(max(rows, cols)))
 
     def pos(cell: Cell) -> str:
-        return "pos-%0*d-%0*d" % (digits, cell[0] + 1, digits, cell[1] + 1)
+        return f"pos-{cell[0] + 1:0{digits}d}-{cell[1] + 1:0{digits}d}"
 
     def symbol(cell: Cell) -> str:
         if cell in walls:
@@ -267,11 +277,11 @@ def make_problem(
 
     maze = ["".join(symbol((x, y)) for x in range(cols)).rstrip() for y in range(rows)]
     ordered = sorted(stones)
-    stone_names = {cell: "stone-%02d" % (i + 1) for i, cell in enumerate(sorted(stones, key=lambda c: (c[1], c[0])))}
-    player_names = {cell: "player-%02d" % (i + 1) for i, cell in enumerate(sorted(players, key=lambda c: (c[1], c[0])))}
+    stone_names = {cell: f"stone-{i + 1:02d}" for i, cell in enumerate(sorted(stones, key=lambda c: (c[1], c[0])))}
+    player_names = {cell: f"player-{i + 1:02d}" for i, cell in enumerate(sorted(players, key=lambda c: (c[1], c[0])))}
     objects = [f"{d} - direction" for d in dirs] + [f"{name} - player" for name in player_names.values()]
     objects += [f"{name} - stone" for name in stone_names.values()]
-    init = []
+    init: list[str] = []
     for y in range(rows):
         for x in range(cols):
             cell = (x, y)
@@ -296,18 +306,19 @@ def make_problem(
 
     name = f"{'hexoban' if grid == 'hex' else 'sokoban'}-{cols}x{rows}-f{num_floor}-s{num_stones}"
     name += (f"-p{num_players}" if num_players > 1 else "") + (f"-{seed}" if seed is not None else "")
-    return ("\n".join(
-        [*(f";; {line}" for line in maze), "", f"(define (problem {name})", "  (:domain sokoban-sequential)", "  (:objects"]
-        + [f"    {o}" for o in sorted(objects)] + ["  )", "  (:init"] + [f"    {f}" for f in sorted(init)]
-        + ["    (= (total-cost) 0)", "  )", "  (:goal (and"] + [f"    {g}" for g in goal]
-        + ["  ))", "  (:metric minimize (total-cost))", ")"]
-    ) + "\n").lower()
+    lines = [*(f";; {line}" for line in maze), "", f"(define (problem {name})", "  (:domain sokoban-sequential)"]
+    lines += ["  (:objects", *(f"    {o}" for o in sorted(objects)), "  )"]
+    lines += ["  (:init", *(f"    {fact}" for fact in sorted(init)), "    (= (total-cost) 0)", "  )"]
+    lines += ["  (:goal (and", *(f"    {g}" for g in goal), "  ))", "  (:metric minimize (total-cost))", ")"]
+    return ("\n".join(lines) + "\n").lower()
 
 
 LEARNING_DIRECTIONS = {(0, 1): "down", (-1, 0): "left", (0, -1): "up", (1, 0): "right"}
 
 
-def _learning_problem(cols: int, rows: int, floor: set[Cell], players: set[Cell], where: dict[Cell, Cell], seed: int | None) -> str:
+def _learning_problem(
+    cols: int, rows: int, floor: set[Cell], players: set[Cell], where: dict[Cell, Cell], seed: int | None
+) -> str:
     """IPC 2023 learning-track Sokoban encoding (typed, direction constants, box -> goal cell)."""
     def loc(cell: Cell) -> str:
         return f"loc_{cell[1] + 1}_{cell[0] + 1}"
@@ -323,11 +334,10 @@ def _learning_problem(cols: int, rows: int, floor: set[Cell], players: set[Cell]
                 init.append(f"(adjacent {loc(cell)} {loc((cell[0] + dx, cell[1] + dy))} {direction})")
     locations = " ".join(loc((x, y)) for y in range(rows) for x in range(cols))
     name = f"sokoban-{cols}x{rows}-b{len(boxes)}" + (f"-{seed}" if seed is not None else "")
-    return ("\n".join(
-        [f"(define (problem {name})", " (:domain sokoban)", " (:objects", f"    {locations} - location",
-         f"    {' '.join(boxes.values())} - box", "    )", " (:init"] + [f"    {f}" for f in init]
-        + ["    )", " (:goal (and"] + [f"    (at {boxes[cell]} {loc(goal)})" for cell, goal in goal_of.items()] + ["    ))", ")"]
-    ) + "\n").lower()
+    lines = [f"(define (problem {name})", " (:domain sokoban)", " (:objects", f"    {locations} - location"]
+    lines += [f"    {' '.join(boxes.values())} - box", "    )", " (:init", *(f"    {fact}" for fact in init), "    )"]
+    lines += [" (:goal (and", *(f"    (at {boxes[cell]} {loc(goal)})" for cell, goal in goal_of.items()), "    ))", ")"]
+    return ("\n".join(lines) + "\n").lower()
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -338,9 +348,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("-b", "--num-stones", type=int, required=True)
     parser.add_argument("-s", "--seed", type=int)
     parser.add_argument("--num-pulls", type=int, help="random reverse pushes (default: 20 * num_stones)")
-    parser.add_argument("--grid", choices=("square", "hex"), default="square", help="square (IPC) or hexagonal (Hexoban) grid")
+    parser.add_argument(
+        "--grid", choices=("square", "hex"), default="square", help="square (IPC) or hexagonal (Hexoban) grid"
+    )
     parser.add_argument("--num-players", type=int, default=1, help="players (default: 1)")
-    parser.add_argument("--style", choices=("ipc", "learning"), default="ipc", help="IPC or IPC 2023 learning-track encoding")
+    parser.add_argument(
+        "--style", choices=("ipc", "learning"), default="ipc", help="IPC or IPC 2023 learning-track encoding"
+    )
     args = parser.parse_args(argv)
     try:
         problem = make_problem(**vars(args))

@@ -50,22 +50,27 @@ def make_problem(
     nothing) is a transient part of a random whole. Base parts, tools and
     resources are available.
     """
-    for name, value, minimum in (
-        ("num_parts", num_parts, 1), ("num_resources", num_resources, 1), ("depth", depth, 1), ("max_sons", max_sons, 1),
-    ):
+    checks: list[tuple[str, object, int]] = [
+        ("num_parts", num_parts, 1), ("num_resources", num_resources, 1),
+        ("depth", depth, 1), ("max_sons", max_sons, 1),
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
-    for name, value in (
+    probabilities = (
         ("internal_probability", internal_probability), ("deep_internal_probability", deep_internal_probability),
         ("requires_probability", requires_probability), ("order_probability", order_probability),
         ("transient_probability", transient_probability), ("tool_probability", tool_probability),
-    ):
+    )
+    for name, value in probabilities:
         if not 0.0 <= value <= 1.0:
             raise ValueError(f"{name} must be in [0, 1]")
 
     rng = random.Random(seed)
     # nodes are ints; level[n], parent[n], sons[n]
-    level, parent, sons = [0], [-1], [[]]
+    level: list[int] = [0]
+    parent: list[int] = [-1]
+    sons: list[list[int]] = [[]]
     frontier = [0]
     while frontier:
         node = frontier.pop(0)
@@ -89,7 +94,7 @@ def make_problem(
     orders: list[tuple[int, int, int]] = []  # (prev, part, whole)
     removes: list[tuple[int, int, int]] = []  # (prev, transient, whole)
     transients: list[tuple[int, int]] = []
-    rank = {}
+    rank: dict[int, int] = {}
     for whole in range(num_nodes):
         order = sons[whole][:]
         rng.shuffle(order)
@@ -120,7 +125,7 @@ def make_problem(
         # t goes in right before x in whole's order, so whole's own orders stay acyclic
         later = [y for y in parts if rank[y] >= rank[x]]
         firsts = [x] + ([rng.choice(later)] if len(later) > 1 and rng.random() < 0.37 else [])
-        new = []
+        new: list[tuple[int, int, int]] = []
         for y in dict.fromkeys(firsts):
             new.append((t, y, whole))
             if parent[t] >= 0:
@@ -140,9 +145,12 @@ def make_problem(
         if level[t] < 2:
             continue
         for whole in range(num_nodes):
-            if sons[whole] and level[whole] == level[t] - 1 and whole != parent[t] and rng.random() < transient_probability:
+            if (
+                sons[whole] and level[whole] == level[t] - 1 and whole != parent[t]
+                and rng.random() < transient_probability
+            ):
                 add_transient(t, whole)
-    tools = []
+    tools: list[int] = []
     wholes = [w for w in range(num_nodes) if sons[w] and w != 0]
     if wholes and rng.random() < tool_probability:
         level.append(-1)
@@ -152,9 +160,15 @@ def make_problem(
         add_transient(tools[0], rng.choice(wholes))
         num_nodes += 1
 
-    names = [NAMES[i % len(NAMES)] + (f"-{i}" if i >= len(NAMES) else "") for i in rng.sample(range(num_nodes + len(NAMES)), num_nodes)]
-    resources = [RESOURCES[i] if i < len(RESOURCES) else f"resource-{i}" for i in rng.sample(range(max(num_resources, len(RESOURCES))), num_resources)]
-    requires = [(n, rng.choice(resources)) for n in range(1, num_nodes) if sons[n] and rng.random() < requires_probability]
+    names = [
+        NAMES[i % len(NAMES)] + (f"-{i}" if i >= len(NAMES) else "")
+        for i in rng.sample(range(num_nodes + len(NAMES)), num_nodes)
+    ]
+    picked: list[int] = rng.sample(range(max(num_resources, len(RESOURCES))), num_resources)
+    resources = [RESOURCES[i] if i < len(RESOURCES) else f"resource-{i}" for i in picked]
+    requires = [
+        (n, rng.choice(resources)) for n in range(1, num_nodes) if sons[n] and rng.random() < requires_probability
+    ]
 
     facts = [f"(available {names[n]})" for n in range(num_nodes) if not sons[n]]
     facts += [f"(available {r})" for r in resources]

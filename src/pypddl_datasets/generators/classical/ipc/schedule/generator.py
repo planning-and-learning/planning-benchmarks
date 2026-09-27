@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from typing import cast
 
 SHAPES = ("cylindrical", "circular", "oblong")
 SURFACES = ("polished", "rough", "smooth")
@@ -42,7 +43,8 @@ def make_problem(num_parts: int, seed: int | None = None) -> str:
     "change the surface" or "repaint" (to a uniform different value). There
     are no hole goals.
     """
-    if not isinstance(num_parts, int) or isinstance(num_parts, bool) or num_parts < 1:
+    checked = cast(object, num_parts)  # runtime check: callers may pass any type
+    if not isinstance(checked, int) or isinstance(checked, bool) or checked < 1:
         raise ValueError("num_parts must be an integer at least 1")
     rng = random.Random(seed)
     parts = [part_name(i) for i in range(num_parts)]
@@ -51,8 +53,13 @@ def make_problem(num_parts: int, seed: int | None = None) -> str:
         for _ in parts
     ]
 
-    candidates = [(i, kind) for i, state in enumerate(states) for kind in ("shape", "surface", "paint") if kind != "shape" or state[0] != "cylindrical"]
-    goals = []
+    candidates = [
+        (i, kind)
+        for i, state in enumerate(states)
+        for kind in ("shape", "surface", "paint")
+        if kind != "shape" or state[0] != "cylindrical"
+    ]
+    goals: list[str] = []
     for i, kind in rng.sample(candidates, num_parts):  # at least 2 candidates per part
         shape, surface, colour = states[i][:3]
         if kind == "shape":
@@ -62,7 +69,7 @@ def make_problem(num_parts: int, seed: int | None = None) -> str:
         else:
             goals.append(f"(painted {parts[i]} {rng.choice([c for c in COLOURS if c != colour])})")
 
-    init = []
+    init: list[str] = []
     for part, (shape, surface, colour, width, orientation) in zip(parts, states):
         init += [
             f"(shape {part} {shape})",

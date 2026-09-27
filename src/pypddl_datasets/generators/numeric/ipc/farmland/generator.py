@@ -11,16 +11,21 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def _ladder_edges(num_farms: int) -> list[tuple[int, int]]:
     """networkx.ladder_graph(num_farms // 2): two paths 0..k-1 and k..2k-1 plus rungs i -- i+k."""
     k = num_farms // 2
-    edges = [(i, i + 1) for i in range(k - 1)] + [(k + i, k + i + 1) for i in range(k - 1)] + [(i, i + k) for i in range(k)]
+    rails = [(i, i + 1) for i in range(k - 1)] + [(k + i, k + i + 1) for i in range(k - 1)]
+    edges = rails + [(i, i + k) for i in range(k)]
     return edges
 
 
-def _make(num_farms: int, num_units: int, seed: int | None, first_order: bool) -> str:
+def build(num_farms: int, num_units: int, seed: int | None, first_order: bool) -> str:
     for name, value, minimum in (("num_farms", num_farms, 2), ("num_units", num_units, 1)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_farms % 2:
         raise ValueError("num_farms must be even (ladder graph)")
@@ -28,7 +33,8 @@ def _make(num_farms: int, num_units: int, seed: int | None, first_order: bool) -
     rng = random.Random(seed)
     farms = [f"farm{i}" for i in range(num_farms)]
     source = rng.randint(0, num_farms - 1)
-    units, weights = [], []
+    units: list[int] = []
+    weights: list[str] = []
     for i in range(num_farms):
         if i == source:
             units.append(num_units)
@@ -78,17 +84,18 @@ def make_problem(num_farms: int, num_units: int, seed: int | None = None) -> str
     1.0..2.0 (one decimal). Goal: every farm has a worker and the weighted
     reward reaches 1.4 * num_units.
     """
-    return _make(num_farms, num_units, seed, first_order=False)
+    return build(num_farms, num_units, seed, first_order=False)
 
 
 def main(argv: list[str] | None = None, first_order: bool = False) -> int:
-    parser = argparse.ArgumentParser(description=f"Generate a numeric {'FO-' if first_order else ''}Farmland PDDL problem.")
+    prefix = "FO-" if first_order else ""
+    parser = argparse.ArgumentParser(description=f"Generate a numeric {prefix}Farmland PDDL problem.")
     parser.add_argument("-f", "--num-farms", type=int, required=True, help="number of farms (even)")
     parser.add_argument("-u", "--num-units", type=int, required=True, help="workers on the source farm")
     parser.add_argument("-s", "--seed", type=int)
     args = parser.parse_args(argv)
     try:
-        problem = _make(args.num_farms, args.num_units, args.seed, first_order)
+        problem = build(args.num_farms, args.num_units, args.seed, first_order)
     except ValueError as error:
         parser.error(str(error))
     print(problem, end="")

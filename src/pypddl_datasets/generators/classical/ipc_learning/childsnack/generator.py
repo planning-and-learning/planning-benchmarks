@@ -13,7 +13,9 @@ def _objects(names: list[str], type_name: str) -> str:
     return f"      {' '.join(names)} - {type_name}" if names else ""
 
 
-def make_problem(num_children: int, num_trays: int, gluten_factor: float, const_ratio: float = 1.2, seed: int | None = None) -> str:
+def make_problem(
+    num_children: int, num_trays: int, gluten_factor: float, const_ratio: float = 1.2, seed: int | None = None
+) -> str:
     rng = random.Random(seed if seed is not None else int(time.time()))
 
     num_sandwiches = int(ceil(num_children * const_ratio))
@@ -39,13 +41,15 @@ def make_problem(num_children: int, num_trays: int, gluten_factor: float, const_
         _objects(tables, "place"),
     ]
 
-    init_facts = []
+    init_facts: list[str] = []
     init_facts.extend(f"    (at {tray} kitchen)" for tray in trays)
     init_facts.extend(f"    (at_kitchen_bread {bread})" for bread in breads)
     init_facts.extend(f"    (at_kitchen_content {content})" for content in contents)
     init_facts.extend(f"    (no_gluten_bread {bread})" for bread in sorted(gluten_free_breads))
     init_facts.extend(f"    (no_gluten_content {content})" for content in sorted(gluten_free_contents))
-    init_facts.extend(f"    ({'allergic_gluten' if child in allergic_children else 'not_allergic_gluten'} {child})" for child in children)
+    for child in children:
+        allergy = 'allergic_gluten' if child in allergic_children else 'not_allergic_gluten'
+        init_facts.append(f"    ({allergy} {child})")
     init_facts.extend(f"    (waiting {child} {rng.choice(tables)})" for child in children)
     init_facts.extend(f"    (notexist {sandwich})" for sandwich in sandwiches)
 

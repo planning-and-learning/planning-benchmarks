@@ -7,7 +7,9 @@ from pypddl_datasets.generators.classical.ipc.data_network.generator import NETW
 
 @pytest.mark.parametrize("network", sorted(NETWORKS))
 @pytest.mark.parametrize("num_items,num_layers,num_scripts", [(3, 2, 1), (12, 3, 52), (22, 5, 30)])
-def test_data_network_items_are_producible_and_goals_unconsumed(network, num_items, num_layers, num_scripts):
+def test_data_network_items_are_producible_and_goals_unconsumed(
+    network: str, num_items: int, num_layers: int, num_scripts: int
+) -> None:
     problem = make_problem(num_items, num_layers, num_scripts, network, seed=7)
     assert problem == make_problem(num_items, num_layers, num_scripts, network, seed=7)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -35,7 +37,7 @@ def test_data_network_items_are_producible_and_goals_unconsumed(network, num_ite
     assert all(int(cost) >= 1 for cost in re.findall(r"\(= \(process-cost \S+ \S+\) (-?\d+)\)", init))
 
 
-def test_data_network_cli_matches_make_problem(capsys):
+def test_data_network_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["12", "3", "52", "ring-network", "2019"]) == 0
     assert capsys.readouterr().out == make_problem(12, 3, 52, "ring-network", 2019)
 
@@ -50,6 +52,8 @@ def test_data_network_cli_matches_make_problem(capsys):
         ((5, 2, True, "tiny-network"), "num_scripts"),
     ],
 )
-def test_data_network_rejects_invalid_parameters(arguments, match):
+def test_data_network_rejects_invalid_parameters(
+    arguments: tuple[int, int, int, str] | tuple[int, int, bool, str], match: str
+) -> None:
     with pytest.raises(ValueError, match=match):
         make_problem(*arguments)

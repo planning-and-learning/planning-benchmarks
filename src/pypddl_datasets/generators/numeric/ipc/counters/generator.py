@@ -13,6 +13,10 @@ import sys
 INITS = ("zero", "reverse", "random")
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(num_counters: int, init: str = "random", seed: int | None = None) -> str:
     """Generate a Counters task: counters c0..c{n-1}, max_int = 2n, goal
     value(c_i) + 1 <= value(c_{i+1}) for every i.
@@ -21,7 +25,7 @@ def make_problem(num_counters: int, init: str = "random", seed: int | None = Non
     (``zero``), strictly decreasing 2(n-1-i) (``reverse``), or uniform in
     0..max_int-1 (``random``).
     """
-    if not isinstance(num_counters, int) or isinstance(num_counters, bool) or num_counters < 2:
+    if not _is_int(num_counters) or num_counters < 2:
         raise ValueError("num_counters must be an integer at least 2")
     if init not in INITS:
         raise ValueError(f"init must be one of {', '.join(INITS)}")

@@ -1,4 +1,5 @@
 import re
+from collections.abc import Callable
 
 import pytest
 
@@ -6,13 +7,14 @@ from pypddl_datasets.generators.classical.autoscale.grid.generator import make_p
 from pypddl_datasets.generators.classical.ipc.grid.generator import main, make_problem
 
 
-def init_goal(problem):
+def init_goal(problem: str | None) -> tuple[str, str]:
+    assert problem is not None  # make_problem returns None when the lock walk fails
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
     return init, goal
 
 
 @pytest.mark.parametrize("size,seed", [(3, 1), (5, 2), (9, 3)])
-def test_grid_ipc_default_has_one_connected_lock_region(size, seed):
+def test_grid_ipc_default_has_one_connected_lock_region(size: int, seed: int) -> None:
     problem = make_problem(size, size, seed=seed)
     assert problem == make_problem(size, size, seed=seed)
     init, goal = init_goal(problem)
@@ -23,7 +25,8 @@ def test_grid_ipc_default_has_one_connected_lock_region(size, seed):
     assert len(locked) == size * size // 4
     # locks are one 4-connected region, as in the IPC tasks
     cells = {tuple(map(int, c[4:].split("-"))) for c in locked}
-    seen, stack = set(), [next(iter(cells))]
+    seen: set[tuple[int, ...]] = set()
+    stack = [next(iter(cells))]
     while stack:
         x, y = stack.pop()
         if (x, y) in seen:
@@ -31,12 +34,14 @@ def test_grid_ipc_default_has_one_connected_lock_region(size, seed):
         seen.add((x, y))
         stack += [c for c in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)) if c in cells]
     assert seen == cells
-    robot = re.search(r"\(at-robot (\S+)\)", init).group(1)
+    robot_match = re.search(r"\(at-robot (\S+)\)", init)
+    assert robot_match is not None
+    robot = robot_match.group(1)
     assert robot.startswith("node") and robot not in locked and re.findall(r"\(at key\d+ \S+\)", goal)
 
 
-def test_grid_ipc_goals_may_equal_start_autoscale_never():
-    def hits(make):
+def test_grid_ipc_goals_may_equal_start_autoscale_never() -> None:
+    def hits(make: Callable[..., str | None]) -> int:
         count = 0
         for seed in range(100):
             init, goal = init_goal(make(3, 3, 1, 4, 1, 1.0, seed))
@@ -48,12 +53,12 @@ def test_grid_ipc_goals_may_equal_start_autoscale_never():
     assert hits(make_autoscale) == 0
 
 
-def test_grid_autoscale_keeps_upstream_shapes_and_names():
+def test_grid_autoscale_keeps_upstream_shapes_and_names() -> None:
     init, _ = init_goal(make_autoscale(7, 7, 2, 3, 24, 1.0, 1))
     assert set(re.findall(r"\(lock-shape \S+ (\w+)\)", init)) == {"shape0", "shape1"}
     assert "(place pos0-0)" in init
 
 
-def test_grid_cli_matches_make_problem(capsys):
+def test_grid_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["4", "5", "--locks", "3", "-s", "7"]) == 0
     assert capsys.readouterr().out == make_problem(4, 5, num_locks=3, seed=7)

@@ -12,7 +12,7 @@ IPC = Path(__file__).resolve().parents[1] / "data/classical/downward-benchmarks"
 
 
 @pytest.mark.parametrize("days,planes,visits", [(1, 1, 1), (10, 10, 2), (60, 180, 5)])
-def test_maintenance_structure(days, planes, visits):
+def test_maintenance_structure(days: int, planes: int, visits: int) -> None:
     problem = make_problem(days, planes, visits, seed=3)
     assert problem == make_problem(days, planes, visits, seed=3) == problem.lower()
     at = re.findall(r"\(at (ap\d+) d(\d+) (\w+)\)", problem)
@@ -22,21 +22,24 @@ def test_maintenance_structure(days, planes, visits):
     assert re.findall(r"\(done (\S+)\)", problem) == [f"ap{i + 1}" for i in range(planes)]
 
 
-def test_maintenance_matches_ipc_fact_counts():
+def _count(text: str) -> Counter[str]:
+    return Counter(re.findall(r"\((today|at|done) ", text.lower()))
+
+
+def test_maintenance_matches_ipc_fact_counts() -> None:
     for path in sorted(IPC.glob("maintenance-*14-adl/maintenance-*.pddl")):
         days, planes, visits, index = map(int, path.stem.split("-")[3:])
-        count = lambda text: Counter(re.findall(r"\((today|at|done) ", text.lower()))  # noqa: E731
-        assert count(make_problem(days, planes, visits, seed=index)) == count(path.read_text()), path.name
+        assert _count(make_problem(days, planes, visits, seed=index)) == _count(path.read_text()), path.name
 
 
-def test_maintenance_parses_strictly(tmp_path):
+def test_maintenance_parses_strictly(tmp_path: Path) -> None:
     (tmp_path / "p.pddl").write_text(make_problem(8, 12, 3, seed=1))
     options = ParserOptions()
     options.strict = True
     Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / "p.pddl")
 
 
-def test_maintenance_cli_and_validation(capsys):
+def test_maintenance_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["5", "4", "2", "-s", "9"]) == 0
     assert capsys.readouterr().out == make_problem(5, 4, 2, seed=9)
     with pytest.raises(ValueError, match="num_visits"):

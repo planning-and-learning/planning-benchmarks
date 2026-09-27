@@ -8,28 +8,34 @@ from pypddl_datasets.generators.numeric.ipc.ext_plant_watering import generator
 from pypddl_datasets.generators.numeric.ipc.ext_plant_watering.generator import main, make_problem
 
 
+def _match(pattern: str, text: str, flags: int = 0) -> re.Match[str]:
+    match = re.search(pattern, text, flags)
+    assert match is not None, pattern
+    return match
+
+
 @pytest.mark.parametrize("size,plants,agents,taps", [(3, 2, 2, 1), (10, 5, 2, 1), (15, 19, 3, 2)])
-def test_plant_watering_reserve_covers_demand(size, plants, agents, taps):
+def test_plant_watering_reserve_covers_demand(size: int, plants: int, agents: int, taps: int) -> None:
     problem = make_problem(size, plants, agents, taps, seed=5)
     assert problem == make_problem(size, plants, agents, taps, seed=5)
     init, goal = problem.split("(:goal", 1)
     demand = [int(v) for v in re.findall(r"\(= \(poured \S+\) (\d+)\)", goal)]
     assert len(demand) == plants and all(1 <= d <= 10 for d in demand)
-    reserve = int(re.search(r"\(= \(water_reserve\) (\d+)\)", init).group(1))
+    reserve = int(_match(r"\(= \(water_reserve\) (\d+)\)", init).group(1))
     assert reserve == sum(demand) + sum(demand) // 10
     cells = list(zip(re.findall(r"\(= \(x \S+\) (\d+)\)", init), re.findall(r"\(= \(y \S+\) (\d+)\)", init)))
     assert len(cells) == plants + agents + taps == len(set(cells))
     assert "(= (total_poured) (total_loaded))" in goal
 
 
-def test_plant_watering_parses_strictly(tmp_path):
+def test_plant_watering_parses_strictly(tmp_path: Path) -> None:
     (tmp_path / "p.pddl").write_text(make_problem(8, 6, seed=2))
     options = ParserOptions()
     options.strict = True
     Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / "p.pddl")
 
 
-def test_plant_watering_cli_and_validation(capsys):
+def test_plant_watering_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["6", "4", "-s", "1"]) == 0
     assert capsys.readouterr().out == make_problem(6, 4, seed=1)
     with pytest.raises(ValueError, match="size is too small"):

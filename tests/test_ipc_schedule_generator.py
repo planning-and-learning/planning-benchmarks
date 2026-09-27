@@ -7,7 +7,7 @@ from pypddl_datasets.generators.classical.ipc.schedule.generator import main, ma
 
 
 @pytest.mark.parametrize("num_parts", [1, 2, 10, 50])
-def test_schedule_follows_ipc_task_structure(num_parts):
+def test_schedule_follows_ipc_task_structure(num_parts: int) -> None:
     problem = make_problem(num_parts, seed=3)
     assert problem == make_problem(num_parts, seed=3)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -26,20 +26,24 @@ def test_schedule_follows_ipc_task_structure(num_parts):
     assert all(value == "cylindrical" for kind, _, value in goals if kind == "shape")
 
 
-def test_schedule_goal_kind_shares_match_ipc():
+def test_schedule_goal_kind_shares_match_ipc() -> None:
     # IPC 2000 (150 tasks): shape 0.256, surface 0.379, paint 0.366.
-    kinds = Counter(kind for seed in range(40) for kind in re.findall(r"\((shape|surface-condition|painted) ", make_problem(30, seed=seed).split("(:goal")[1]))
+    kinds = Counter(
+        kind
+        for seed in range(40)
+        for kind in re.findall(r"\((shape|surface-condition|painted) ", make_problem(30, seed=seed).split("(:goal")[1])
+    )
     total = sum(kinds.values())
     assert abs(kinds["shape"] / total - 0.256) < 0.03
     assert abs(kinds["surface-condition"] / total - 0.379) < 0.03
     assert abs(kinds["painted"] / total - 0.366) < 0.03
 
 
-def test_schedule_part_names_follow_ipc():
+def test_schedule_part_names_follow_ipc() -> None:
     assert [part_name(i) for i in (0, 14, 15, 16, 22, 23)] == ["a0", "o0", "q0", "p0", "z0", "a1"]
 
 
-def test_schedule_cli(capsys):
+def test_schedule_cli(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-p", "4", "-r", "2"]) == 0
     assert capsys.readouterr().out == make_problem(4, seed=2)
     with pytest.raises(ValueError, match="num_parts"):

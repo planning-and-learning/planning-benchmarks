@@ -11,6 +11,10 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(num_pogo_sticks: int, num_trees: int | None = None, grid_size: int | None = None,
                  seed: int | None = None) -> str:
     """Generate an OnlyCraft task: craft ``num_pogo_sticks`` pogo sticks.
@@ -24,7 +28,7 @@ def make_problem(num_pogo_sticks: int, num_trees: int | None = None, grid_size: 
     grid_size = math.isqrt(num_trees) + 1 if grid_size is None else grid_size
     for name, value, minimum in (("num_pogo_sticks", num_pogo_sticks, 1), ("num_trees", num_trees, 1),
                                  ("grid_size", grid_size, 1)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_trees > grid_size * grid_size:
         raise ValueError(f"num_trees must be at most grid_size^2 = {grid_size * grid_size}")

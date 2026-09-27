@@ -12,8 +12,12 @@ import sys
 NORMAL_ROUNDS = [1, 2, 3, 5, 6, 8, 10, 12]
 HARVEST_ROUNDS = [r for r in range(1, 21) if r not in NORMAL_ROUNDS]
 MAX_STAGE = len(HARVEST_ROUNDS)  # 12: round 21 is the last one upstream can name
-OPEN_CARDS = ["act_labor", "act_wood", "act_clay", "act_reed", "act_build", "act_plow", "act_grain", "act_stone"]
-ROUND_CARDS = ["act_fences", "act_sheep", "act_sow", "act_family", "act_improve", "act_carrot", "act_boar", "act_cattle"]
+OPEN_CARDS = [
+    "act_labor", "act_wood", "act_clay", "act_reed", "act_build", "act_plow", "act_grain", "act_stone",
+]
+ROUND_CARDS = [
+    "act_fences", "act_sheep", "act_sow", "act_family", "act_improve", "act_carrot", "act_boar", "act_cattle",
+]
 
 
 def make_problem(
@@ -32,7 +36,10 @@ def make_problem(
     (rounds 5-8) and the initial food in 0..3. With ``must_create_workers`` the
     goal also demands growing the family to ``num_workers`` workers.
     """
-    for name, value, minimum in (("last_stage", last_stage, 1), ("num_workers", num_workers, 2), ("num_ints", num_ints, 1)):
+    checks: list[tuple[str, object, int]] = [
+        ("last_stage", last_stage, 1), ("num_workers", num_workers, 2), ("num_ints", num_ints, 1)
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if last_stage > MAX_STAGE:
@@ -52,7 +59,9 @@ def make_problem(
     init += [f"(next_round round{i} round{i + 1})" for i in range(1, num_rounds)]
     init += [f"(next_worker worker{i} worker{i - 1})" for i in range(num_workers, 1, -1)]
     init.append("(next_worker worker1 noworker)")
-    init += [f"(category_round round{j} {'tnormal' if j in NORMAL_ROUNDS else 'tharvest'})" for j in range(1, num_rounds + 1)]
+    init += [
+        f"(category_round round{j} {'tnormal' if j in NORMAL_ROUNDS else 'tharvest'})" for j in range(1, num_rounds + 1)
+    ]
     init += [f"(open_action {card})" for card in OPEN_CARDS]
     stage1, stage2 = ROUND_CARDS[:4], ROUND_CARDS[4:]
     rng.shuffle(stage1)

@@ -15,7 +15,9 @@ from pypddl_datasets.discovery import discover_domains
 def assert_unpacked(data_root: Path) -> None:
     for twin in sorted(data_root.rglob("*.pddl.gz")):
         if not twin.with_name(twin.name[: -len(".gz")]).is_file():
-            raise SystemExit(f"{twin} is not materialized; run 'python -m pypddl_datasets.scripts.large_files unpack' first")
+            raise SystemExit(
+                f"{twin} is not materialized; run 'python -m pypddl_datasets.scripts.large_files unpack' first"
+            )
 
 
 def write_archive(data_root: Path, domains: list[Path], tar_path: Path) -> None:

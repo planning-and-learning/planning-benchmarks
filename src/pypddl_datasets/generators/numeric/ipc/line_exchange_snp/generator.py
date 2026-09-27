@@ -9,6 +9,10 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(num_robots: int, mean_load: int, spread: int, segment: int, seed: int | None = None) -> str:
     """Generate a Line Exchange task.
 
@@ -21,7 +25,7 @@ def make_problem(num_robots: int, mean_load: int, spread: int, segment: int, see
     """
     for name, value, minimum in (("num_robots", num_robots, 2), ("mean_load", mean_load, 1),
                                  ("spread", spread, 1), ("segment", segment, 2)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if spread > 100:
         raise ValueError("spread must be at most 100 (a percentage)")
@@ -31,7 +35,8 @@ def make_problem(num_robots: int, mean_load: int, spread: int, segment: int, see
     rng = random.Random(seed)
     while True:
         loads = [mean_load] * num_robots
-        # ponytail: weight exponent fitted to the IPC max deviations (0.26/0.39/0.84 vs ours 0.31/0.42/0.72 at spread 25/50/90)
+        # ponytail: weight exponent fitted to the IPC max deviations
+    # (0.26/0.39/0.84 vs ours 0.31/0.42/0.72 at spread 25/50/90)
         weights = [rng.expovariate(1) ** (0.8 * spread / 100) for _ in range(num_robots)]
         for owner in range(num_robots):
             for _ in range(mean_load):

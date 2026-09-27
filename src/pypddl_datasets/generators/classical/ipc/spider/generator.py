@@ -9,12 +9,18 @@ import argparse
 import random
 import sys
 from itertools import product
+from typing import cast
 
 Card = tuple[int, int, int]
 
 
+def _short(card: Card) -> str:
+    deck, suit, value = card
+    return f"d{deck}-s{suit}-v{value}"
+
+
 def _name(card: Card) -> str:
-    return "card-d%s-s%s-v%s" % card
+    return f"card-{_short(card)}"
 
 
 def _movable_top(pile: list[Card]) -> list[Card]:
@@ -50,7 +56,8 @@ def make_problem(
         ("num_piles", num_piles),
         ("num_deals", num_deals),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < (0 if name == "num_deals" else 1):
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < (0 if name == "num_deals" else 1):
             raise ValueError(f"{name} must be an integer at least {0 if name == 'num_deals' else 1}")
     num_cards = num_decks * num_suits * num_values
     if num_cards < (num_deals + 1) * num_piles:
@@ -66,19 +73,27 @@ def make_problem(
     for pile, card in zip(piles, rest[num_piles * per_pile :]):
         pile.append(card)
 
-    comments = [f"using {num_decks} decks of cards with {num_suits} suits per deck and {num_values} values per suit", "", "deals"]
-    comments += [f"deal {i}: " + " ".join("d%s-s%s-v%s" % c for c in deal) for i, deal in enumerate(deals)]
+    comments = [
+        f"using {num_decks} decks of cards with {num_suits} suits per deck and {num_values} values per suit",
+        "",
+        "deals",
+    ]
+    comments += [f"deal {i}: " + " ".join(_short(c) for c in deal) for i, deal in enumerate(deals)]
     comments += ["", "initial configuration of piles"]
-    comments += [f"pile {i}: " + " ".join("d%s-s%s-v%s" % c for c in pile) for i, pile in enumerate(piles)]
+    comments += [f"pile {i}: " + " ".join(_short(c) for c in pile) for i, pile in enumerate(piles)]
 
     objects = [f"{_name(card)} - card" for card in product(range(num_decks), range(num_suits), range(num_values))]
     objects += [f"pile-{i} - tableau" for i in range(num_piles)]
     objects += [f"deal-{i} - deal" for i in range(num_deals + 1)]
 
-    facts = []
+    facts: list[str] = []
     for i, pile in enumerate(piles):
         facts += [f"(on {_name(upper)} {_name(lower)})" for upper, lower in zip(pile[1:], pile)]
-        facts += [f"(on {_name(pile[0])} pile-{i})", f"(clear {_name(pile[-1])})", f"(part-of-tableau pile-{i} pile-{i})"]
+        facts += [
+            f"(on {_name(pile[0])} pile-{i})",
+            f"(clear {_name(pile[-1])})",
+            f"(part-of-tableau pile-{i} pile-{i})",
+        ]
         facts += [f"(part-of-tableau {_name(card)} pile-{i})" for card in pile]
         facts += [f"(movable {_name(card)})" for card in _movable_top(pile)]
         facts += [f"(in-play {_name(card)})" for card in pile]
@@ -112,7 +127,8 @@ def make_problem(
     goals = [f"(clear pile-{i})" for i in range(num_piles)] + [f"(clear deal-{i})" for i in range(num_deals)]
     goals += [f"(on {_name(card)} discard)" for card in product(decks, suits, range(num_values))]
 
-    name = f"spider-{num_decks}-{num_suits}-{num_values}-{num_piles}-{num_deals}" + (f"-{seed}" if seed is not None else "")
+    name = f"spider-{num_decks}-{num_suits}-{num_values}-{num_piles}-{num_deals}"
+    name += f"-{seed}" if seed is not None else ""
     lines = [f"(define (problem {name})", "(:domain spider)", *(f"; {c}".rstrip() for c in comments), "(:objects"]
     lines += [f"    {o}" for o in objects] + [")", "(:init"] + [f"    {f}" for f in facts]
     lines += [")", "(:goal (and"] + [f"    {g}" for g in goals] + ["))", "(:metric minimize (total-cost))", ")"]

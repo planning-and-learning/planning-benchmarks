@@ -112,7 +112,9 @@ def validate(root: Path, error_limit: int | None, strict: bool = False) -> Recor
     parser_options.add_action_costs = False
 
     for record in unknown:
-        set_error(record, "ClassificationError", "missing '(define (domain ...)' or '(define (problem ...)' declaration")
+        set_error(
+            record, "ClassificationError", "missing '(define (domain ...)' or '(define (problem ...)' declaration"
+        )
         errors += 1
         if error_limit is not None and errors >= error_limit:
             terminated_early = True
@@ -127,7 +129,7 @@ def validate(root: Path, error_limit: int | None, strict: bool = False) -> Recor
                 Parser(path, parser_options)
                 record["status"] = "ok"
                 valid_domains.add(path)
-            except Exception as error:
+            except Exception as error:  # pylint: disable=broad-exception-caught  # any parse error is a report entry
                 set_error(record, type(error).__name__, str(error))
                 errors += 1
             log_progress("domains", checked_domains, len(domains), errors)
@@ -147,7 +149,8 @@ def validate(root: Path, error_limit: int | None, strict: bool = False) -> Recor
                     problem_path, record["domain"], root, domains_by_directory
                 )
                 if resolution_error or domain_path is None:  # find_domain returns a path or an error
-                    set_error(record, *(resolution_error or ("DomainNotFoundError", f"no domain file found for domain {record['domain']!r}")))
+                    missing = ("DomainNotFoundError", f"no domain file found for domain {record['domain']!r}")
+                    set_error(record, *(resolution_error or missing))
                     errors += 1
                 elif domain_path not in valid_domains:
                     relative_domain = domain_path.relative_to(root).as_posix()
@@ -157,11 +160,9 @@ def validate(root: Path, error_limit: int | None, strict: bool = False) -> Recor
                 else:
                     record["domain_file"] = domain_path.relative_to(root).as_posix()
                     try:
-                        # generated pypddl stub types parse_task with a bare os.PathLike;
-                        # drop the suppression once the loki stubgen emits os.PathLike[str]
-                        Parser(domain_path, parser_options).parse_task(problem_path)  # pyright: ignore[reportUnknownMemberType]
+                        Parser(domain_path, parser_options).parse_task(problem_path)
                         record["status"] = "ok"
-                    except Exception as error:
+                    except Exception as error:  # pylint: disable=broad-exception-caught  # any parse error is a report entry
                         set_error(record, type(error).__name__, str(error))
                         errors += 1
             log_progress("problems", checked_problems, len(problems), errors)
@@ -219,8 +220,12 @@ def split_report(report: Record) -> tuple[Record, Record]:
 def main(argv: list[str] | None = None) -> int:
     script_root: Path = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description="Recursively validate PDDL domains and problems with pypddl.")
-    parser.add_argument("--root", type=Path, default=script_root, help="Directory to traverse (default: repository root).")
-    parser.add_argument("--success-output", type=Path, help="Success report path (default: <root>/validate.sucess.json).")
+    parser.add_argument(
+        "--root", type=Path, default=script_root, help="Directory to traverse (default: repository root)."
+    )
+    parser.add_argument(
+        "--success-output", type=Path, help="Success report path (default: <root>/validate.sucess.json)."
+    )
     parser.add_argument("--error-output", type=Path, help="Error report path (default: <root>/validate.error.json).")
     parser.add_argument("--limit", type=positive_int, help="Stop after this many errors.")
     parser.add_argument("--strict", action="store_true", help="Enable strict semantic PDDL validation.")

@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from typing import cast
 
 NUM_FUEL_LEVELS = 7
 
@@ -35,7 +36,8 @@ def make_problem(
         ("num_people", num_people, 1),
         ("distance", distance, 0),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
 
     rng = random.Random(seed)
@@ -44,8 +46,8 @@ def make_problem(
     cities = [f"city{i}" for i in range(num_cities)]
     levels = [f"fl{i}" for i in range(NUM_FUEL_LEVELS)]
 
-    init_facts = []
-    goals = []
+    init_facts: list[str] = []
+    goals: list[str] = []
     for plane in planes:
         location, destination = rng.choice(cities), rng.choice(cities)
         fuel = rng.randrange(rng.randint(1, 5) * distance) % NUM_FUEL_LEVELS if distance else 0
@@ -98,7 +100,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("-a", "--num-planes", type=int, required=True)
     parser.add_argument("-p", "--num-people", type=int, required=True)
     parser.add_argument("-s", "--seed", type=int)
-    parser.add_argument("-d", "--distance", type=int, default=0, help="distance bound; positive values randomize initial fuel (default: 0)")
+    parser.add_argument(
+        "-d",
+        "--distance",
+        type=int,
+        default=0,
+        help="distance bound; positive values randomize initial fuel (default: 0)",
+    )
     parser.add_argument("--typed", action="store_true", help="typed encoding instead of type predicates")
     args = parser.parse_args(argv)
     try:

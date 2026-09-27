@@ -1,4 +1,5 @@
 import re
+from typing import Any
 
 import pytest
 
@@ -8,10 +9,15 @@ from pypddl_datasets.generators.classical.ipc.snake.generator import main, make_
 @pytest.mark.parametrize(
     "width,height,spawn_percentage,name",
     # Parameters and resulting apple counts of Autoscale 21.11 agile p01, p02, p30.
-    [(5, 5, 40, "snake-empty-5x5-1-5-2-2019"), (5, 6, 40, "snake-empty-5x6-1-5-5-2020"),
-     (13, 14, 40, "snake-empty-13x14-1-5-65-2048")],
+    [
+        (5, 5, 40, "snake-empty-5x5-1-5-2-2019"),
+        (5, 6, 40, "snake-empty-5x6-1-5-5-2020"),
+        (13, 14, 40, "snake-empty-13x14-1-5-65-2048"),
+    ],
 )
-def test_snake_matches_autoscale_counts_and_is_consistent(width, height, spawn_percentage, name):
+def test_snake_matches_autoscale_counts_and_is_consistent(
+    width: int, height: int, spawn_percentage: int, name: str
+) -> None:
     seed = int(name.rsplit("-", 1)[1])
     problem = make_problem(width, height, spawn_percentage, seed=seed)
     assert problem == make_problem(width, height, spawn_percentage, seed=seed)
@@ -30,7 +36,8 @@ def test_snake_matches_autoscale_counts_and_is_consistent(width, height, spawn_p
     apples = re.findall(r"\(ispoint (\S+)\)", init)
     spawn_chain = dict(re.findall(r"\(nextspawn (\S+) (\S+)\)", init))
     first = re.findall(r"\(spawn (\S+)\)", init)
-    spawned, current = [], first[0]
+    spawned: list[str] = []
+    current = first[0]
     while current != "dummypoint":
         spawned.append(current)
         current = spawn_chain[current]
@@ -40,7 +47,7 @@ def test_snake_matches_autoscale_counts_and_is_consistent(width, height, spawn_p
     assert len(re.findall(r"\(isadjacent ", init)) == 2 * ((width - 1) * height + width * (height - 1))
 
 
-def test_snake_cli_matches_make_problem(capsys):
+def test_snake_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["6", "7", "70", "-s", "3"]) == 0
     assert capsys.readouterr().out == make_problem(6, 7, 70, seed=3)
 
@@ -49,13 +56,13 @@ def test_snake_cli_matches_make_problem(capsys):
     "parameter,value",
     [("width", 0), ("height", 1.5), ("spawn_percentage", 0), ("spawn_percentage", 101), ("snake_size", True)],
 )
-def test_snake_rejects_invalid_parameters(parameter, value):
-    parameters = dict(width=5, height=5, spawn_percentage=40)
+def test_snake_rejects_invalid_parameters(parameter: str, value: bool | float) -> None:
+    parameters: dict[str, Any] = {"width": 5, "height": 5, "spawn_percentage": 40}
     parameters[parameter] = value
     with pytest.raises(ValueError, match=parameter):
         make_problem(**parameters)
 
 
-def test_snake_rejects_overfull_board():
+def test_snake_rejects_overfull_board() -> None:
     with pytest.raises(ValueError, match="too small"):
         make_problem(2, 2, 100, snake_size=3)

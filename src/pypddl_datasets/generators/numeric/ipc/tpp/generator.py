@@ -15,7 +15,13 @@ SIZE = 1000  # ponytail: side of the square the places lie in; IPC's map spans ~
 MAX_PRICE, MAX_SALE, P_ON_SALE = 50, 20, 0.525
 
 
-def make_problem(num_markets: int, num_goods: int, seed: int | None = None, num_depots: int = 1, num_trucks: int = 1) -> str:
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def make_problem(
+    num_markets: int, num_goods: int, seed: int | None = None, num_depots: int = 1, num_trucks: int = 1
+) -> str:
     """Generate a TPP-Metric task.
 
     Places lie uniformly in a 1000 x 1000 square; every ordered pair of places is
@@ -25,8 +31,10 @@ def make_problem(num_markets: int, num_goods: int, seed: int | None = None, num_
     request is uniform in 1..total supply. Trucks start at the first depot and must
     return there after buying every request.
     """
-    for name, value in (("num_markets", num_markets), ("num_goods", num_goods), ("num_depots", num_depots), ("num_trucks", num_trucks)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+    for name, value in (
+        ("num_markets", num_markets), ("num_goods", num_goods), ("num_depots", num_depots), ("num_trucks", num_trucks)
+    ):
+        if not _is_int(value) or value < 1:
             raise ValueError(f"{name} must be an integer at least 1")
     rng = random.Random(seed)
     markets = [f"market{i + 1}" for i in range(num_markets)]
@@ -34,13 +42,15 @@ def make_problem(num_markets: int, num_goods: int, seed: int | None = None, num_
     trucks = [f"truck{i}" for i in range(num_trucks)]
     goods = [f"goods{i}" for i in range(num_goods)]
 
-    sale = {}
+    sale: dict[str, dict[str, tuple[int, int]]] = {}  # good -> market -> (quantity, price)
     for g in goods:
         while True:
-            sale[g] = {m: (rng.randint(1, MAX_SALE), rng.randint(1, MAX_PRICE)) for m in markets if rng.random() < P_ON_SALE}
+            sale[g] = {
+                m: (rng.randint(1, MAX_SALE), rng.randint(1, MAX_PRICE)) for m in markets if rng.random() < P_ON_SALE
+            }
             if sale[g]:
                 break
-    init = []
+    init: list[str] = []
     for m in markets:
         for g in goods:
             if m in sale[g]:

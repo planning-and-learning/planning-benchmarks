@@ -12,20 +12,29 @@ import random
 import sys
 from collections import Counter
 from itertools import product
+from typing import TYPE_CHECKING, TypeVar
+
+from typing_extensions import override
+
+if TYPE_CHECKING:
+    from _typeshed import SupportsLenAndGetItem
 
 STOP_CHANCE = 0.01
 BRANCH_CHANCE = 0.5
 MAX_MAP_ATTEMPTS = 1000
 _M64 = (1 << 64) - 1
+_T = TypeVar("_T")
 
 
 class _Py2Random(random.Random):
     """Python 2's randint/choice on top of the (unchanged) Mersenne Twister."""
 
+    @override
     def randint(self, a: int, b: int) -> int:
         return a + int(self.random() * (b - a + 1))
 
-    def choice(self, seq):  # type: ignore[override]
+    @override
+    def choice(self, seq: SupportsLenAndGetItem[_T]) -> _T:
         return seq[int(self.random() * len(seq))]
 
 
@@ -55,7 +64,7 @@ def _py2_set_order(items: list[tuple[int, int]]) -> list[tuple[int, int]]:
 
 
 def _adjacent(width: int, height: int, x: int, y: int) -> list[tuple[int, int]]:
-    res = []
+    res: list[tuple[int, int]] = []
     if x < width - 1:
         res.append((x + 1, y))
     if y < height - 1:
@@ -72,15 +81,16 @@ def _is_number(cell: str) -> bool:
 
 
 def _reconstruct_islands(cmap: list[list[str]]) -> list[list[str]]:
+    # pylint: disable=too-many-nested-blocks  # upstream's flood fill, kept as ported
     result = [list(row) for row in cmap]
     height, width = len(result), len(result[0])
-    islands = []
+    islands: list[tuple[tuple[int, int], list[tuple[int, int]]]] = []
     for y, row in enumerate(result):
         for x, cell in enumerate(row):
             if cell == " " or _is_number(cell):
                 queue = [(x, y)]
                 result[y][x] = "X"
-                cells = []
+                cells: list[tuple[int, int]] = []
                 start = (x, y)
                 while queue:
                     cx, cy = queue.pop()
@@ -101,15 +111,16 @@ def _reconstruct_islands(cmap: list[list[str]]) -> list[list[str]]:
 
 
 def _random_map(rng: random.Random, width: int, height: int) -> list[list[str]]:
+    # pylint: disable=too-many-nested-blocks  # upstream's walk, kept as ported
     cmap = [[" " for _ in range(width)] for _ in range(height)]
     ends = [(rng.randint(0, width - 1), rng.randint(0, height - 1))]
     cmap[ends[0][1]][ends[0][0]] = "#"
-    next_ends = []
+    next_ends: list[tuple[int, int]] = []
     while ends:
         for x, y in ends:
             if rng.random() < STOP_CHANCE:
                 continue
-            neighbors = []
+            neighbors: list[tuple[int, int]] = []
             for nx, ny in [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]:
                 if 0 <= ny < height and 0 <= nx < width and cmap[ny][nx] == " ":
                     for nnx, nny in [(nx + 1, ny), (nx - 1, ny), (nx, ny + 1), (nx, ny - 1)]:
@@ -143,7 +154,8 @@ def make_problem(width: int, height: int | None = None, seed: int = 0) -> str:
     pos-0-0; cells next to one source are `part-of` it, next to two `blocked`.
     """
     height = width if height is None else height
-    for name, value in (("width", width), ("height", height), ("seed", seed)):
+    checks: list[tuple[str, object]] = [("width", width), ("height", height), ("seed", seed)]
+    for name, value in checks:
         if not isinstance(value, int) or isinstance(value, bool):
             raise ValueError(f"{name} must be an integer")
     if width < 2 or height < 2:
@@ -178,7 +190,7 @@ def make_problem(width: int, height: int | None = None, seed: int = 0) -> str:
         return f"pos-{x}-{y}"
 
     max_number = max(n for _, _, n in s)
-    connected = []
+    connected: list[str] = []
     for x, y in product(range(width), range(height)):
         connected += [f"    (connected {cell(x, y)} {cell(ax, ay)})" for ax, ay in _adjacent(width, height, x, y)]
     init = [

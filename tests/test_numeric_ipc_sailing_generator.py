@@ -1,4 +1,5 @@
 import re
+from collections.abc import Callable
 from pathlib import Path
 
 import pytest
@@ -11,16 +12,18 @@ GENERATORS = Path(__file__).resolve().parents[1] / "src/pypddl_datasets/generato
 IPC = Path(__file__).resolve().parents[1] / "data/numeric/ipc2023"
 
 
-def facts(text):
+def facts(text: str) -> tuple[list[str], list[str]]:
     text = re.sub(r";[^\n]*", "", text).lower()
     return sorted(re.findall(r"\(= \([^()]*\) -?\d+\)", text)), sorted(re.findall(r"\(saved \S+\)", text))
 
 
 @pytest.mark.parametrize("package,make", [("sailing", sail), ("fo-sailing", fo_sail)])
 @pytest.mark.parametrize("index", range(1, 21))
-def test_reproduces_ipc_tasks(package, make, index):
+def test_reproduces_ipc_tasks(package: str, make: Callable[..., str], index: int) -> None:
     ipc = (IPC / package / f"pfile{index}.pddl").read_text()
-    boats, people, seed = map(int, re.search(r"instance_(\d+)_(\d+)_(\d+)", ipc).groups())
+    match = re.search(r"instance_(\d+)_(\d+)_(\d+)", ipc)
+    assert match is not None
+    boats, people, seed = map(int, match.groups())
     distances = [int(d) for d in re.findall(r"\(d p\d+\) (-?\d+)\)", ipc)]
     if min(distances) >= 0 and package == "fo-sailing":  # the 5-boat tasks: 0..500, seeds not recoverable
         problem = make(boats, people, seed=seed, nonnegative_distances=True)
@@ -31,7 +34,7 @@ def test_reproduces_ipc_tasks(package, make, index):
 
 
 @pytest.mark.parametrize("package,make", [("sailing", sail), ("fo_sailing", fo_sail)])
-def test_sailing_structure_and_strict_parse(package, make, tmp_path):
+def test_sailing_structure_and_strict_parse(package: str, make: Callable[..., str], tmp_path: Path) -> None:
     problem = make(3, 6, seed=5)
     assert problem == make(3, 6, seed=5)
     xs = [int(x) for x in re.findall(r"\(x b\d+\) (-?\d+)\)", problem)]
@@ -41,14 +44,14 @@ def test_sailing_structure_and_strict_parse(package, make, tmp_path):
     (tmp_path / "p.pddl").write_text(problem)
     options = ParserOptions()
     options.strict = True
-    Parser(GENERATORS / package / "domain.pddl", options).parse_task(tmp_path / "p.pddl")  # pyright: ignore[reportUnknownMemberType]
+    Parser(GENERATORS / package / "domain.pddl", options).parse_task(tmp_path / "p.pddl")
 
 
-def test_sailing_cli_and_validation(capsys):
+def test_sailing_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert sail_main(["-b", "2", "-p", "3", "-s", "1"]) == 0
     assert capsys.readouterr().out == sail(2, 3, seed=1)
     assert fo_main(["-b", "2", "-p", "3", "-s", "1", "--nonnegative-distances"]) == 0
     assert capsys.readouterr().out == fo_sail(2, 3, seed=1, nonnegative_distances=True)
-    for bad in (dict(num_boats=0, num_people=1), dict(num_boats=1, num_people=0)):
+    for num_boats, num_people in ((0, 1), (1, 0)):
         with pytest.raises(ValueError):
-            sail(**bad)
+            sail(num_boats, num_people)

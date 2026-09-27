@@ -21,6 +21,14 @@ GOAL_KINDS = (
 P_COAST, P_EXTRA_SEA, P_HOUSING_ONE = 0.55, 0.1, 0.7
 
 
+def _edge(a: int, b: int) -> tuple[int, int]:
+    return (a, b) if a <= b else (b, a)
+
+
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_locations: int,
     num_vehicles: int,
@@ -48,7 +56,7 @@ def make_problem(
         ("num_goals", num_goals, 1),
         ("num_islands", num_islands, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_islands > num_locations:
         raise ValueError("num_islands must not exceed num_locations")
@@ -66,7 +74,7 @@ def make_problem(
         nodes = island[:]
         rng.shuffle(nodes)
         for i in range(1, n):
-            land.add(tuple(sorted((nodes[i], nodes[rng.randrange(i)]))))
+            land.add(_edge(nodes[i], nodes[rng.randrange(i)]))
         degree = 2.4 + 0.25 * n
         spare = n * (n - 1) // 2 - (n - 1)
         p_extra = min(1.0, max(0.0, (degree * n / 2 - (n - 1)) / spare)) if spare else 0.0
@@ -85,7 +93,7 @@ def make_problem(
     for first, second in zip(islands, islands[1:]):
         a = rng.choice(sorted(coast & set(first)))
         b = rng.choice(sorted(coast & set(second)))
-        sea.add(tuple(sorted((a, b))))
+        sea.add(_edge(a, b))
     coastal = sorted(coast)
     for i, a in enumerate(coastal):
         for b in coastal[i + 1 :]:

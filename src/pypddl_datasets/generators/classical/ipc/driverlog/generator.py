@@ -38,12 +38,13 @@ def make_problem(
     trucks keep it as a goal with probability 0.7, packages with probability 0.95.
     ``typed`` selects Autoscale's typed encoding instead of the IPC's type predicates.
     """
-    for name, value in (
+    checks: list[tuple[str, object]] = [
         ("num_locations", num_locations),
         ("num_drivers", num_drivers),
         ("num_packages", num_packages),
         ("num_trucks", num_trucks),
-    ):
+    ]
+    for name, value in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < 1:
             raise ValueError(f"{name} must be an integer at least 1")
 
@@ -61,7 +62,7 @@ def make_problem(
     road = _connect(road, rng)
 
     def placed(prefix: str, count: int, goal_probability: float) -> list[tuple[str, int, int | None]]:
-        entities = []
+        entities: list[tuple[str, int, int | None]] = []
         for i in range(1, count + 1):
             location, destination = rng.randrange(num_locations), rng.randrange(num_locations)
             entities.append((f"{prefix}{i}", location, destination if rng.random() < goal_probability else None))
@@ -75,10 +76,12 @@ def make_problem(
         return [] if typed else [f"\t({fact})"]
 
     # Every directed non-loop path edge names a location, even the unused reverse of a two-way pair.
-    path_locations = [f"p{source}-{target}" for source in sorted(path) for target in sorted(path[source]) if source != target]
+    path_locations = [
+        f"p{source}-{target}" for source in sorted(path) for target in sorted(path[source]) if source != target
+    ]
     locations = [f"s{i}" for i in range(num_locations)] + path_locations
 
-    init_facts = []
+    init_facts: list[str] = []
     for driver, location, _ in drivers:
         init_facts += [f"\t(at {driver} s{location})", *kind(f"driver {driver}")]
     for truck, location, _ in trucks:

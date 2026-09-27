@@ -9,7 +9,7 @@ from pypddl_datasets.generators.numeric.ipc.factory_robot.generator import main,
 
 
 @pytest.mark.parametrize("robots,stations,workload,max_temp", [(2, 5, 40, 20), (6, 9, 70, 30), (12, 14, 130, 50)])
-def test_factory_robot_structure(robots, stations, workload, max_temp, tmp_path):
+def test_factory_robot_structure(robots: int, stations: int, workload: int, max_temp: int, tmp_path: Path) -> None:
     problem = make_problem(robots, stations, workload, max_temp, seed=5)
     assert problem == make_problem(robots, stations, workload, max_temp, seed=5)
     at = dict(re.findall(r"\(at (r\d+) (\S+)\)", problem))
@@ -28,7 +28,7 @@ def test_factory_robot_structure(robots, stations, workload, max_temp, tmp_path)
     Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / "p.pddl")
 
 
-def test_factory_robot_cli_and_validation(capsys):
+def test_factory_robot_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["--robots", "3", "--stations", "6", "--workload", "45", "--max-temp", "20", "--seed", "42"]) == 0
     assert capsys.readouterr().out == make_problem(3, 6, 45, 20, seed=42)
     with pytest.raises(ValueError, match="num_stations"):

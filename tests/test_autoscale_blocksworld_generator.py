@@ -1,4 +1,5 @@
 import re
+from typing import Any
 
 import pytest
 
@@ -6,7 +7,7 @@ from pypddl_datasets.generators.classical.autoscale.blocksworld.generator import
 
 
 @pytest.mark.parametrize("num_blocks", [1, 2, 5, 12])
-def test_blocks_goal_is_on_facts_of_a_valid_state(num_blocks):
+def test_blocks_goal_is_on_facts_of_a_valid_state(num_blocks: int) -> None:
     problem = make_problem(num_blocks, seed=3)
     assert problem == make_problem(num_blocks, seed=3)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -22,19 +23,19 @@ def test_blocks_goal_is_on_facts_of_a_valid_state(num_blocks):
     # A state: every block supports at most one block and stacks are acyclic.
     assert len(set(goal_below.values())) == len(goal_below)
     for block in goal_below:
-        seen = set()
+        seen: set[str] = set()
         while block in goal_below:
             assert block not in seen
             seen.add(block)
             block = goal_below[block]
 
 
-def test_blocks_cli_matches_make_problem(capsys):
+def test_blocks_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["7", "11"]) == 0
     assert capsys.readouterr().out == make_problem(7, 11)
 
 
 @pytest.mark.parametrize("num_blocks", [0, True, 2.5])
-def test_blocks_rejects_invalid_parameters(num_blocks):
+def test_blocks_rejects_invalid_parameters(num_blocks: Any) -> None:
     with pytest.raises(ValueError, match="num_blocks"):
         make_problem(num_blocks)

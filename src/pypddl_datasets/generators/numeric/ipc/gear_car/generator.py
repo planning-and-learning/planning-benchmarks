@@ -13,21 +13,28 @@ import sys
 MAX_ACCELERATION, MIN_ACCELERATION, ACC_STEP = 2, -1, 1
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def gear_table(num_gears: int) -> list[dict[str, int]]:
     """Per-gear speed band, acceleration band and fuel per drive, as in the IPC tasks."""
     over_first = 15 + num_gears
     return [
-        dict(
-            v_min=2 * (i - 1),
-            v_max=2 * i,
-            min_acceleration=-1,
-            max_acceleration=2 if i == 1 else (0 if i == num_gears else 1),
-            fuel_aligned=11 if i == 1 else 11 - i,
-            fuel_under=18 if i == 1 else 17,
-            fuel_over=over_first if i == 1 else over_first - 3 - 2 * (i - 2),
-        )
+        {
+            "v_min": 2 * (i - 1),
+            "v_max": 2 * i,
+            "min_acceleration": -1,
+            "max_acceleration": 2 if i == 1 else (0 if i == num_gears else 1),
+            "fuel_aligned": 11 if i == 1 else 11 - i,
+            "fuel_under": 18 if i == 1 else 17,
+            "fuel_over": over_first if i == 1 else over_first - 3 - 2 * (i - 2),
+        }
         for i in range(1, num_gears + 1)
     ]
+
+
+State = tuple[int, int, int, int]
 
 
 def _optimum(num_gears: int, distance: int, fuel_first: bool) -> tuple[int, int]:
@@ -37,9 +44,9 @@ def _optimum(num_gears: int, distance: int, fuel_first: bool) -> tuple[int, int]
     changes are free; only drive actions move, cost time and fuel.
     """
     gears, max_speed = gear_table(num_gears), 2 * num_gears
-    start = (0, 0, 0, 0)  # distance, speed, acceleration, gear index
-    best = {start: (0, 0)}
-    queue = [((0, 0), start)]
+    start: State = (0, 0, 0, 0)  # distance, speed, acceleration, gear index
+    best: dict[State, tuple[int, int]] = {start: (0, 0)}
+    queue: list[tuple[tuple[int, int], State]] = [((0, 0), start)]
     while queue:
         cost, state = heapq.heappop(queue)
         if best[state] != cost:
@@ -48,7 +55,7 @@ def _optimum(num_gears: int, distance: int, fuel_first: bool) -> tuple[int, int]
         if distance <= d <= distance + 2 and v == 0 and a == 0 and g == 0:
             return cost
         gear = gears[g]
-        moves = []
+        moves: list[tuple[State, int, int]] = []  # next state, drives, fuel
         if a + ACC_STEP <= min(MAX_ACCELERATION, gear["max_acceleration"]):
             moves.append(((d, v, a + ACC_STEP, g), 0, 0))
         if a - ACC_STEP >= max(MIN_ACCELERATION, gear["min_acceleration"]):
@@ -80,7 +87,7 @@ def make_problem(num_gears: int, distance: int) -> str:
     alpha = beta * (fuel + 1).
     """
     for name, value, minimum in (("num_gears", num_gears, 2), ("distance", distance, 1)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     min_fuel = _optimum(num_gears, distance, fuel_first=True)[0]
     min_drives = _optimum(num_gears, distance, fuel_first=False)[0]
@@ -89,7 +96,7 @@ def make_problem(num_gears: int, distance: int) -> str:
     alpha = beta * (fuel + 1)
 
     names = [f"g{i}" for i in range(1, num_gears + 1)]
-    gear_facts = []
+    gear_facts: list[str] = []
     for name, gear in zip(names, gear_table(num_gears)):
         gear_facts += [
             f"        (= (gear_v_min {name}) {gear['v_min']})",

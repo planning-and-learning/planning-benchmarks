@@ -19,7 +19,8 @@ def make_problem(num_days: int, num_planes: int, num_visits: int, seed: int | No
     duplicated, as upstream and in the IPC tasks. Objects include one day more
     than ``today`` facts (upstream's ``d<days+1>``). Every plane must be done.
     """
-    for name, value in (("num_days", num_days), ("num_planes", num_planes), ("num_visits", num_visits)):
+    checks: list[tuple[str, object]] = [("num_days", num_days), ("num_planes", num_planes), ("num_visits", num_visits)]
+    for name, value in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < 1:
             raise ValueError(f"{name} must be an integer at least 1")
 

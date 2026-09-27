@@ -21,6 +21,10 @@ NUM_VALUES = 27
 INITIAL_FUNDS = 1000
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def _time(index: int) -> str:
     return f"t{index // 2:02d}{30 * (index % 2):02d}"
 
@@ -33,7 +37,7 @@ def make_problem(capacity: int, seed: int | None = None) -> str:
     least 10, else 10 * u with u uniform in {2 * capacity - 1, 2 * capacity}, the
     rule the reference tasks follow.
     """
-    if not isinstance(capacity, int) or isinstance(capacity, bool) or capacity < 1:
+    if not _is_int(capacity) or capacity < 1:
         raise ValueError("capacity must be an integer at least 1")
     rng = random.Random(seed)
     if capacity >= 10:

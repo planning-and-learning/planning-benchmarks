@@ -1,16 +1,19 @@
 import re
+from typing import Any
 
 import pytest
 
 from pypddl_datasets.generators.classical.ipc.tidybot.generator import main, make_problem
 
 
-def cells(pattern, text):
+def cells(pattern: str, text: str) -> list[tuple[int, int]]:
     return [(int(x), int(y)) for x, y in re.findall(pattern, text)]
 
 
 @pytest.mark.parametrize("world_size,num_tables,num_cupboards", [(5, 0, 1), (9, 3, 1), (12, 5, 3), (12, 7, 2)])
-def test_tidybot_objects_fill_cupboards_and_start_on_surfaces(world_size, num_tables, num_cupboards):
+def test_tidybot_objects_fill_cupboards_and_start_on_surfaces(
+    world_size: int, num_tables: int, num_cupboards: int
+) -> None:
     problem = make_problem(world_size, num_tables, num_cupboards, 1, 2, 4, seed=3)
     assert problem == make_problem(world_size, num_tables, num_cupboards, 1, 2, 4, seed=3)
     assert problem == problem.lower()
@@ -26,7 +29,7 @@ def test_tidybot_objects_fill_cupboards_and_start_on_surfaces(world_size, num_ta
     assert len(walls) == num_cupboards * 10 and len(inner) == num_cupboards * 4
     starts = cells(r"\(object-pos \w+ x(\d+) y(\d+)\)", init)
     assert len(set(starts)) == len(objects) and set(starts) <= surfaces
-    goals = {}
+    goals: dict[str, list[tuple[int, int]]] = {}
     for name, x, y in re.findall(r"\(object-goal (\w+) x(\d+) y(\d+)\)", init):
         goals.setdefault(name, []).append((int(x), int(y)))
     assert sorted(goals) == sorted(objects)
@@ -38,13 +41,13 @@ def test_tidybot_objects_fill_cupboards_and_start_on_surfaces(world_size, num_ta
     assert (0, 0) not in surfaces | walls and (0, 1) not in surfaces | walls  # robot and cart start cells
 
 
-def test_tidybot_cli_and_validation(capsys):
+def test_tidybot_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["9", "3", "-s", "4"]) == 0
     assert capsys.readouterr().out == make_problem(9, 3, seed=4)
     with pytest.raises(ValueError, match="cupboards do not fit"):
         make_problem(6, 0, 3)
     for parameter, value in (("world_size", 0), ("num_tables", -1), ("num_cupboards", 0), ("cupboard_size", 2)):
-        arguments = dict(world_size=9, num_tables=1)
+        arguments: dict[str, Any] = {"world_size": 9, "num_tables": 1}
         arguments[parameter] = value
         with pytest.raises(ValueError, match=parameter):
             make_problem(**arguments)

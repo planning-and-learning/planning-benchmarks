@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from typing import cast
 
 
 def make_problem(
@@ -33,13 +34,14 @@ def make_problem(
         ("num_packages", num_packages, 1),
         ("num_areas", num_areas, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{label} must be an integer at least {minimum}")
 
     rng = random.Random(seed)
     num_times = num_locations * ((num_packages - 1) // num_areas + 1) + 1
 
-    init = []
+    init: list[str] = []
     for truck in range(1, num_trucks + 1):
         init.append(f"(at truck{truck} l{rng.randrange(num_locations) + 1})")
     for truck in range(1, num_trucks + 1):
@@ -60,7 +62,7 @@ def make_problem(
     init.append("(time-now t0)")
     init.extend(f"(le t{i + 1} t{j + 1})" for i in range(num_times - 1) for j in range(i, num_times - 1))
 
-    destinations = []
+    destinations: list[int] = []
     for start in starts:
         destination = start
         while destination == start:
@@ -69,12 +71,14 @@ def make_problem(
     deadlines = [rng.randrange(num_areas) != 0 for _ in starts]
     init.extend(f"(next t{i} t{i + 1})" for i in range(num_times - 1))
 
-    goals = []
+    goals: list[str] = []
     for i, (destination, deadline) in enumerate(zip(destinations, deadlines)):
         wave = i // num_areas + 1
         time = num_locations * wave if num_locations <= num_areas else (num_areas + 1) * wave
         goals.append(
-            f"(delivered package{i + 1} l{destination} t{time})" if deadline else f"(at-destination package{i + 1} l{destination})"
+            f"(delivered package{i + 1} l{destination} t{time})"
+            if deadline
+            else f"(at-destination package{i + 1} l{destination})"
         )
 
     objects = [
@@ -84,7 +88,8 @@ def make_problem(
         *(f"t{i} - time" for i in range(num_times)),
         *(f"a{i} - truckarea" for i in range(1, num_areas + 1)),
     ]
-    problem = f"truck-{name}" if name is not None else f"truck-t{num_trucks}-l{num_locations}-p{num_packages}-a{num_areas}"
+    default_name = f"t{num_trucks}-l{num_locations}-p{num_packages}-a{num_areas}"
+    problem = f"truck-{name if name is not None else default_name}"
     nl = "\n\t"
     return f"""(define (problem {problem})
 (:domain trucks)

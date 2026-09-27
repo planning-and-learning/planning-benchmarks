@@ -7,10 +7,15 @@ from __future__ import annotations
 import argparse
 import math
 import random
+from typing import cast
 import sys
 
 # Polar diagram shared by every reference task: speed for angles 0, 15, ..., 180 to the wind.
 VMAX = (0, 0.17, 0.3, 0.45, 0.65, 1, 1.49, 1.44, 1.37, 1.26, 1.12, 0.96, 0.8)
+
+
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
 
 
 def make_problem(
@@ -30,22 +35,25 @@ def make_problem(
     sat tasks' 45). ``inertia`` is the boats' ``r`` (opt tasks 0.5, sat tasks 0.9).
     """
     for label, value in (("num_persons", num_persons), ("num_boats", num_boats)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+        if not _is_int(value) or value < 1:
             raise ValueError(f"{label} must be an integer at least 1")
     if not 0 <= min_distance <= max_distance:
         raise ValueError("need 0 <= min_distance <= max_distance")
     if not 0 <= inertia < 1:
         raise ValueError("inertia must be in [0, 1)")
-    if angle_step is not None and not (isinstance(angle_step, int) and 1 <= angle_step <= 360):
+    if angle_step is not None and not (isinstance(cast(object, angle_step), int) and 1 <= angle_step <= 360):
         raise ValueError("angle_step must be an integer in [1, 360]")
 
     rng = random.Random(seed)
     boats = [f"b{i}" for i in range(num_boats)]
     persons = [f"p{i}" for i in range(num_persons)]
-    init = []
+    init: list[str] = []
     for b in boats:
         init += [f"\t(= (vmax_{15 * i} {b}) {v})" for i, v in enumerate(VMAX)]
-        init += [f"\t(= (x {b}) 0)", f"\t(= (y {b}) 0)", f"\t(= (r {b}) {inertia})", f"\t(= (v {b}) 0)", f"\t(= (sailing-angle {b}) 0)"]
+        init += [
+            f"\t(= (x {b}) 0)", f"\t(= (y {b}) 0)", f"\t(= (r {b}) {inertia})", f"\t(= (v {b}) 0)",
+            f"\t(= (sailing-angle {b}) 0)",
+        ]
     for p in persons:
         distance = rng.uniform(min_distance, max_distance)
         angle = rng.randrange(0, 360, angle_step) if angle_step else rng.uniform(0, 360)

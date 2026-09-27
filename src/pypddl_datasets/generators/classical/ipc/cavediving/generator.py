@@ -46,9 +46,11 @@ def make_problem(
     precludes each other with ``neg_link_prob``. Hiring costs fall with the
     number of precludes, perturbed by ``perturb_hiring_costs``.
     """
-    if not cave_branches or any(not isinstance(b, int) or b < 1 for b in cave_branches):
+    branches: list[object] = [*cave_branches]  # runtime guard: callers may pass non-ints
+    if not branches or any(not isinstance(b, int) or b < 1 for b in branches):
         raise ValueError("cave_branches must be positive integers")
-    if not objectives or any(not isinstance(o, int) or o < 1 for o in objectives):
+    goal_depths: list[object] = [*objectives]
+    if not goal_depths or any(not isinstance(o, int) or o < 1 for o in goal_depths):
         raise ValueError("objectives must be positive integers")
     if cave_branches[0] < max(cave_branches):
         raise ValueError("cave_branches must start with the deepest branch")
@@ -74,7 +76,7 @@ def make_problem(
             depths.append(depths[junction] + 1 + step)
         leaves.append(len(depths) - 1)
 
-    goals = []
+    goals: list[int] = []
     for depth in objectives:
         candidates = [n for n in leaves if depths[n] == depth and n not in goals]
         if not candidates:
@@ -85,7 +87,7 @@ def make_problem(
     num_divers = sum(2 ** (depths[o] - 1) for o in goals)
 
     # helper chain: divers that must bring tanks to the diver behind them
-    positive = set()
+    positive: set[tuple[int, int]] = set()
     current = 0
     for obj in goals:
         chain = [current]
@@ -146,7 +148,9 @@ def make_problem(
 """).lower()
 
 
-def _hiring_costs(rng: random.Random, precludes: dict[int, list[int]], low: int, high: int, perturb: float) -> dict[int, int]:
+def _hiring_costs(
+    rng: random.Random, precludes: dict[int, list[int]], low: int, high: int, perturb: float
+) -> dict[int, int]:
     """Upstream make_hiring_costs: fewer precludes, higher cost."""
     counts = {d: len(v) for d, v in precludes.items()}
     if high == low:
@@ -156,7 +160,7 @@ def _hiring_costs(rng: random.Random, precludes: dict[int, list[int]], low: int,
     groups: dict[int, list[int]] = {}
     for d, n in counts.items():
         groups.setdefault(n, []).append(d)
-    costs = {}
+    costs: dict[int, int] = {}
     step = (high - low) / float(len(groups))
     for rank, n in enumerate(sorted(groups, reverse=True)):
         for d in groups[n]:
@@ -172,7 +176,9 @@ def _depths(text: str) -> list[int]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate a Cave Diving (ADL) PDDL problem.")
-    parser.add_argument("-b", "--cave-branches", type=_depths, default=[3], help="branch depths, e.g. 3:2:2 (default: 3)")
+    parser.add_argument(
+        "-b", "--cave-branches", type=_depths, default=[3], help="branch depths, e.g. 3:2:2 (default: 3)"
+    )
     parser.add_argument("-o", "--objectives", type=_depths, default=[3], help="objective depths, e.g. 2:2 (default: 3)")
     parser.add_argument("--neg-link-prob", type=float, default=0.5)
     parser.add_argument("--perturb-hiring-costs", type=float, default=0.0)

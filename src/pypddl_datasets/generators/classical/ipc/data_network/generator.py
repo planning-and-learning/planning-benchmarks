@@ -44,7 +44,10 @@ def make_problem(num_items: int, num_layers: int, num_scripts: int, network: str
     ``k - 1`` and a different input from any lower layer; remaining scripts are
     random extra producers. Items no script consumes are goals on random servers.
     """
-    for name, value, minimum in (("num_items", num_items, 3), ("num_layers", num_layers, 2), ("num_scripts", num_scripts, 1)):
+    checks: list[tuple[str, object, int]] = [
+        ("num_items", num_items, 3), ("num_layers", num_layers, 2), ("num_scripts", num_scripts, 1),
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_items <= num_layers:
@@ -59,7 +62,7 @@ def make_problem(num_items: int, num_layers: int, num_scripts: int, network: str
     servers = [f"server{i}" for i in range(1, len(server_specs) + 1)]
 
     sizes = [rng.randint(MIN_DATA_SIZE, MAX_DATA_SIZE) for _ in range(num_items)]
-    layer_of = []
+    layer_of: list[int] = []
     for index in range(num_items):
         if index < num_layers:
             layer_of.append(index)
@@ -68,14 +71,14 @@ def make_problem(num_items: int, num_layers: int, num_scripts: int, network: str
         else:
             layer_of.append(rng.randrange(num_layers))
     layers: list[list[str]] = [[] for _ in range(num_layers)]
-    size_of = {}
+    size_of: dict[str, int] = {}
     for index, (layer, size) in enumerate(zip(layer_of, sizes), start=1):
         item = f"data-{layer}-{index}"
         layers[layer].append(item)
         size_of[item] = size
 
-    scripts = []
-    used = set()
+    scripts: list[tuple[str, str, str, str]] = []
+    used: set[str] = set()
 
     def add_script(layer: int, output: str) -> None:
         input1 = rng.choice(layers[layer - 1])
@@ -95,22 +98,38 @@ def make_problem(num_items: int, num_layers: int, num_scripts: int, network: str
     # With sizes <= 5 every script fits the 16-capacity server and every item
     # fits the 8-capacity ones, so upstream's capacity checks never fire.
     max_capacity = max(spec[0] for spec in server_specs)
-    process_costs = {}
+    process_costs: dict[tuple[str, str], int] = {}
     for server, (_, _, mean, stddev) in zip(servers, server_specs):
         for script, *_ in scripts:
             process_costs[(script, server)] = max(1, int(rng.gauss(mean, stddev)))
-    init_items = sorted(((item, rng.choice(servers)) for item in layers[0]), key=lambda pair: _natural_key(pair[0]))
+    init_items = sorted(
+        ((item, rng.choice(servers)) for item in layers[0]), key=lambda pair: _natural_key(pair[0])
+    )
     goal_items = [item for layer in layers for item in layer if item not in used]
-    goal_pairs = sorted(((item, rng.choice(servers)) for item in goal_items), key=lambda pair: _natural_key(pair[0]))
+    goal_pairs = sorted(
+        ((item, rng.choice(servers)) for item in goal_items), key=lambda pair: _natural_key(pair[0])
+    )
 
     data_sizes = sorted(set(sizes))
     items = sorted(size_of, key=_natural_key)
-    lines = [f"(define (problem p{num_items}-{num_layers}-{num_scripts}-{network}-{seed})", "    (:domain data-network)", "    (:objects"]
-    for names, type_name in ((items, "data"), ([script for script, *_ in scripts], "script"), (servers, "server"), ([f"number{n}" for n in range(max_capacity + 1)], "numbers")):
+    lines = [
+        f"(define (problem p{num_items}-{num_layers}-{num_scripts}-{network}-{seed})",
+        "    (:domain data-network)",
+        "    (:objects",
+    ]
+    object_groups = (
+        (items, "data"),
+        ([script for script, *_ in scripts], "script"),
+        (servers, "server"),
+        ([f"number{n}" for n in range(max_capacity + 1)], "numbers"),
+    )
+    for names, type_name in object_groups:
         lines.extend(f"              {name}" for name in names[:-1])
         lines.append(f"              {names[-1]} - {type_name}")
     lines += ["    )", "    (:init"]
-    lines.extend(f"           (SCRIPT-IO {script} {input1} {input2} {output})" for script, input1, input2, output in scripts)
+    lines.extend(
+        f"           (SCRIPT-IO {script} {input1} {input2} {output})" for script, input1, input2, output in scripts
+    )
     for a, b, _ in sorted(connections):
         lines.append(f"           (CONNECTED server{a} server{b})")
         lines.append(f"           (CONNECTED server{b} server{a})")
@@ -122,17 +141,25 @@ def make_problem(num_items: int, num_layers: int, num_scripts: int, network: str
     for i in range(1, max_capacity + 1):
         lines.extend(f"           (LESS-EQUAL number{i} number{j})" for j in capacities if i <= j)
     lines.append("           (= (total-cost) 0)")
-    for (script, server), cost in sorted(process_costs.items(), key=lambda entry: _natural_key(entry[0][0] + entry[0][1])):
+    for (script, server), cost in sorted(
+        process_costs.items(), key=lambda entry: _natural_key(entry[0][0] + entry[0][1])
+    ):
         lines.append(f"           (= (process-cost {script} {server}) {cost})")
     send_costs = sorted(
-        ((f"server{a}", f"server{b}", f"number{size}", size * send) for size in data_sizes for a, b, send in connections),
+        (
+            (f"server{a}", f"server{b}", f"number{size}", size * send)
+            for size in data_sizes for a, b, send in connections
+        ),
         key=lambda entry: _natural_key(entry[0] + entry[1] + entry[2]),
     )
     for a, b, number, cost in send_costs:
         lines.append(f"           (= (send-cost {a} {b} {number}) {cost})")
         lines.append(f"           (= (send-cost {b} {a} {number}) {cost})")
     io_costs = sorted(
-        ((server, f"number{size}", size * spec[1]) for size in data_sizes for server, spec in zip(servers, server_specs)),
+        (
+            (server, f"number{size}", size * spec[1])
+            for size in data_sizes for server, spec in zip(servers, server_specs)
+        ),
         key=lambda entry: _natural_key(entry[0] + entry[1]),
     )
     lines.extend(f"           (= (io-cost {server} {number}) {cost})" for server, number, cost in io_costs)

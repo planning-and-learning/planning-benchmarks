@@ -27,7 +27,7 @@ NEXT_DIRECTION = {
 STEP = {"up": (0, 1), "down": (0, -1), "left": (-1, 0), "right": (1, 0)}
 
 
-def _rotate(directions: list[str], node: int, rotation: str):
+def _rotate(directions: list[str], node: int, rotation: str) -> tuple[list[tuple[int, int]], list[str]] | None:
     """Rotate the string after ``node``; None if it would intersect itself."""
     directions = directions[: node - 1] + [NEXT_DIRECTION[d, rotation] for d in directions[node - 1 :]]
     num_nodes = len(directions) + 1
@@ -36,18 +36,18 @@ def _rotate(directions: list[str], node: int, rotation: str):
         dx, dy = STEP[direction]
         nxt = (positions[-1][0] + dx, positions[-1][1] + dy)
         if nxt in positions:
-            return None, None
+            return None
         positions.append(nxt)
     return positions, directions
 
 
-def _goal_positions(rng: random.Random, scenario: str, num_nodes: int, num_folds: int):
+def _goal_positions(rng: random.Random, scenario: str, num_nodes: int, num_folds: int) -> list[tuple[int, int]]:
     for _ in range(MAX_TRIES):
         directions = ["up"] * (num_nodes - 1)
         nodes = list(range(1, num_nodes))
         rng.shuffle(nodes)
         nodes = nodes[:num_folds]
-        folds = {}
+        folds: dict[int, str] = {}
         for node in nodes:
             if scenario == "zigzag":
                 folds[node] = rng.choice(["clockwise", "counterclockwise"])
@@ -55,11 +55,13 @@ def _goal_positions(rng: random.Random, scenario: str, num_nodes: int, num_folds
                 folds[node] = "clockwise"
             else:
                 folds[node] = rng.choice(["clockwise", "clockwise", "clockwise", "counterclockwise"])
-        positions = None
+        positions: list[tuple[int, int]] | None = None
         for node in nodes:
-            positions, directions = _rotate(directions, node, folds[node])
-            if positions is None:
+            rotated = _rotate(directions, node, folds[node])
+            if rotated is None:
+                positions = None
                 break
+            positions, directions = rotated
         if positions is not None:
             return positions
     raise ValueError(f"no self-avoiding fold sequence found in {MAX_TRIES} tries")
@@ -78,7 +80,8 @@ def make_problem(scenario: str, num_nodes: int, num_folds: int, seed: int | None
     """
     if scenario not in SCENARIOS:
         raise ValueError(f"scenario must be one of {', '.join(SCENARIOS)}")
-    for name, value, minimum in (("num_nodes", num_nodes, 2), ("num_folds", num_folds, 1)):
+    checks: list[tuple[str, object, int]] = [("num_nodes", num_nodes, 2), ("num_folds", num_folds, 1)]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_folds > num_nodes - 1:

@@ -15,7 +15,7 @@ def make_problem(grid_size: int, num_packages: int, seed: int | None = None) -> 
     packages = [f"p{i}" for i in range(1, num_packages + 1)]
     truck = "t1"
 
-    adjacent_facts = []
+    adjacent_facts: list[str] = []
     for x in range(grid_size):
         for y in range(grid_size):
             current = f"c_{x}_{y}"

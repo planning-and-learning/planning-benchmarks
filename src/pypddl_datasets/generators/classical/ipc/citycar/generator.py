@@ -27,12 +27,13 @@ def make_problem(
     With ``density < 1`` each interior junction is clear only with that
     probability (upstream's sparsity); the IPC tasks use density 1.
     """
-    for name, value, minimum in (
+    checks: list[tuple[str, object, int]] = [
         ("num_rows", num_rows, 2),
         ("num_columns", num_columns, 2),
         ("num_cars", num_cars, 1),
         ("num_garages", num_garages, 1),
-    ):
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if not 0.0 <= density <= 1.0:
@@ -44,13 +45,19 @@ def make_problem(
     def j(row: int, column: int) -> str:
         return f"junction{row}-{column}"
 
-    init = []
+    init: list[str] = []
     for row in range(num_rows):
         for column in range(num_columns - 1):
-            init += [f"(same_line {j(row, column)} {j(row, column + 1)})", f"(same_line {j(row, column + 1)} {j(row, column)})"]
+            init += [
+                f"(same_line {j(row, column)} {j(row, column + 1)})",
+                f"(same_line {j(row, column + 1)} {j(row, column)})",
+            ]
     for column in range(num_columns):
         for row in range(num_rows - 1):
-            init += [f"(same_line {j(row, column)} {j(row + 1, column)})", f"(same_line {j(row + 1, column)} {j(row, column)})"]
+            init += [
+                f"(same_line {j(row, column)} {j(row + 1, column)})",
+                f"(same_line {j(row + 1, column)} {j(row, column)})",
+            ]
     for row in range(num_rows - 1):
         for column in range(num_columns - 1):
             init += [
@@ -97,7 +104,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("num_columns", type=int)
     parser.add_argument("num_cars", type=int)
     parser.add_argument("num_garages", type=int)
-    parser.add_argument("--density", type=float, default=1.0, help="probability that an interior junction is usable (default: 1.0)")
+    parser.add_argument(
+        "--density", type=float, default=1.0, help="probability that an interior junction is usable (default: 1.0)"
+    )
     parser.add_argument("-s", "--seed", type=int)
     args = parser.parse_args(argv)
     try:

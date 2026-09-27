@@ -30,7 +30,7 @@ def make_problem(
 
     used_cols = list(range(1, num_columns + 1))
     robot_locations: dict[str, str] = {}
-    init_facts = []  # learning domain has no action costs
+    init_facts: list[str] = []  # learning domain has no action costs
     for index, robot in enumerate(robots):
         row = rng.randint(0, num_rows)
         col = rng.choice(used_cols)
@@ -54,13 +54,13 @@ def make_problem(
             init_facts.append(f"    (right {tile(row, col + 1)} {tile(row, col)})")
             init_facts.append(f"    (left {tile(row, col)} {tile(row, col + 1)})")
 
-    goals = []
+    goals: list[str] = []
     for row in range(1, num_rows + 1):
         for col in range(1, num_columns + 1):
             color = "white" if (row - 1 + col - 1) % 2 == 0 else "black"
             goals.append(f"      (painted {tile(row, col)} {color})")
 
-    tile_lines = []
+    tile_lines: list[str] = []
     for row in range(num_rows + 1):
         row_tiles = " ".join(tile(row, col) for col in range(1, num_columns + 1))
         tile_lines.append(f"    {row_tiles}")

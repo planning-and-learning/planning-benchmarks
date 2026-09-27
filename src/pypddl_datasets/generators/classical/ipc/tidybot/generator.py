@@ -8,7 +8,9 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from collections.abc import Callable, Iterator
 from itertools import product
+from typing import cast
 
 GRIPPER_RADIUS = 1
 ORIENTATIONS = ("u", "d", "l", "r")
@@ -46,7 +48,8 @@ def make_problem(
         ("max_table_size", max_table_size, min_table_size),
         ("cupboard_size", cupboard_size, 3),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if cupboard_size + 1 > world_size:
         raise ValueError("cupboard_size must be smaller than world_size")
@@ -71,7 +74,9 @@ def make_problem(
 
     def collide(a: Box, b: Box) -> bool:
         # ponytail: upstream only tests corners, so long thin boxes may still cross.
-        corners = lambda box: product((box[0][0], box[1][0]), (box[0][1], box[1][1]))
+        def corners(box: Box) -> Iterator[Cell]:
+            return product((box[0][0], box[1][0]), (box[0][1], box[1][1]))
+
         return any(too_close(b, c) for c in corners(a)) or any(too_close(a, c) for c in corners(b))
 
     def place(surfaces: list[Box], count: int, cupboards: bool) -> list[Box]:
@@ -97,12 +102,13 @@ def make_problem(
 
     def walls(box: Box) -> list[Cell]:
         (x_min, y_min), (x_max, y_max), kind = box
-        opening = {
+        openings: dict[str, Callable[[int, int], bool]] = {
             "u": lambda x, y: y == y_min and x_min < x < x_max,
             "d": lambda x, y: y == y_max and x_min < x < x_max,
             "l": lambda x, y: x == x_min and y_min < y < y_max,
             "r": lambda x, y: x == x_max and y_min < y < y_max,
-        }[kind]
+        }
+        opening = openings[kind]
         return [
             (x, y) for x, y in cells(box)
             if (x in (x_min, x_max) or y in (y_min, y_max)) and not opening(x, y)
@@ -126,7 +132,7 @@ def make_problem(
         cell = rng.choice(locations)
         if cell not in starts:
             starts.append(cell)
-    objects = []
+    objects: list[tuple[str, Cell, list[Cell]]] = []  # name, start, goal cells
     for index, (goal, start) in enumerate(zip(goal_cells, starts)):
         # Upstream crashes when it wants an extra table goal but there are no tables;
         # the IPC tasks are the runs that succeeded, i.e. no extra goal then.
@@ -161,7 +167,11 @@ def make_problem(
     base = [
         "(parked pr2)", "(not-pushing pr2)", "(base-pos pr2 x0 y0)", "(base-obstacle x0 y0)",
         *(f"(base-obstacle {xc(x)} {yc(y)})(surface {xc(x)} {yc(y)})" for box in tables for x, y in cells(box)),
-        *(f"(base-obstacle {xc(x)} {yc(y)})(gripper-obstacle {xc(x)} {yc(y)})" for box in cupboards for x, y in walls(box)),
+        *(
+            f"(base-obstacle {xc(x)} {yc(y)})(gripper-obstacle {xc(x)} {yc(y)})"
+            for box in cupboards
+            for x, y in walls(box)
+        ),
         *(f"(surface {xc(x)} {yc(y)})" for box in cupboards for x, y in object_locations(box)),
     ]
     cart = ["(cart-pos cart x0 y1)", "(not-pushed cart)", "(base-obstacle x0 y1)"]

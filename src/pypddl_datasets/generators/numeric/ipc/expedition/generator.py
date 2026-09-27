@@ -8,6 +8,10 @@ import string
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_waypoints: int,
     num_sleds: int = 2,
@@ -31,7 +35,7 @@ def make_problem(
         ("initial_supplies", initial_supplies, 0),
         ("depot_supplies", depot_supplies, 0),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if initial_supplies > capacity:
         raise ValueError("initial_supplies must not exceed capacity")
@@ -42,10 +46,14 @@ def make_problem(
     tracks = [[f"w{string.ascii_lowercase[t]}{i}" for i in range(num_waypoints)] for t in range(num_tracks)]
     sleds = [f"s{i}" for i in range(num_sleds)]
 
-    init = []
+    init: list[str] = []
     for i, sled in enumerate(sleds):
         track = tracks[i % num_tracks]
-        init += [f"(at {sled} {track[0]})", f"(= (sled_capacity {sled}) {capacity})", f"(= (sled_supplies {sled}) {initial_supplies})"]
+        init += [
+            f"(at {sled} {track[0]})",
+            f"(= (sled_capacity {sled}) {capacity})",
+            f"(= (sled_supplies {sled}) {initial_supplies})",
+        ]
         if i < num_tracks:  # each chain is listed once, after its first sled
             init += [f"(= (waypoint_supplies {w}) {depot_supplies if j == 0 else 0})" for j, w in enumerate(track)]
             init += [f"(is_next {a} {b})" for a, b in zip(track, track[1:])]

@@ -8,6 +8,10 @@ import sys
 from collections import deque
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def _distance(neighbors: dict[str, list[str]], source: str, target: str) -> int:
     frontier = deque([(source, 0)])
     reached = {source}
@@ -49,12 +53,12 @@ def make_problem(
         ("capacity", capacity, 1),
         ("extra_edges", extra_edges, 0),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     max_extra_edges = (num_locations - 1) * (num_locations - 2) // 2
     if extra_edges > max_extra_edges:
         raise ValueError(f"extra_edges must be at most {max_extra_edges} for {num_locations} locations")
-    if fuel is not None and (not isinstance(fuel, int) or isinstance(fuel, bool) or fuel < 0):
+    if fuel is not None and (not _is_int(fuel) or fuel < 0):
         raise ValueError("fuel must be None or an integer at least 0")
 
     rng = random.Random(seed)
@@ -65,7 +69,7 @@ def make_problem(
 
     order = list(range(num_locations))
     rng.shuffle(order)
-    edges = set()
+    edges: set[tuple[int, int]] = set()
     for index in range(1, num_locations):
         left, right = order[index], order[rng.randrange(index)]
         edges.add((min(left, right), max(left, right)))
@@ -78,7 +82,7 @@ def make_problem(
         ]
         edges.update(rng.sample(missing_edges, extra_edges))
 
-    init_facts = []
+    init_facts: list[str] = []
     for left, right in sorted(edges):
         init_facts.append(f"    (road {locations[left]} {locations[right]})")
         init_facts.append(f"    (road {locations[right]} {locations[left]})")
@@ -91,7 +95,7 @@ def make_problem(
         init_facts.append(f"    (at {truck} {location})")
         init_facts.append(f"    (capacity {truck} {sizes[-1]})")
 
-    goals = []
+    goals: list[str] = []
     route = [truck_locations[0]]
     for package in packages:
         origin, destination = rng.sample(locations, 2)
@@ -100,7 +104,7 @@ def make_problem(
         route.extend((origin, destination))
 
     if fuel is None:
-        neighbors = {location: [] for location in locations}
+        neighbors: dict[str, list[str]] = {location: [] for location in locations}
         for left, right in sorted(edges):
             neighbors[locations[left]].append(locations[right])
             neighbors[locations[right]].append(locations[left])
@@ -112,7 +116,8 @@ def make_problem(
         for index in range(fuel)
     )
 
-    return (f"""(define (problem transport-fuel-l{num_locations}-t{num_trucks}-p{num_packages}-c{capacity}-e{extra_edges}-f{fuel})
+    name = f"transport-fuel-l{num_locations}-t{num_trucks}-p{num_packages}-c{capacity}-e{extra_edges}-f{fuel}"
+    return (f"""(define (problem {name})
   (:domain transport-fuel)
   (:objects
     {' '.join(locations)} - location
@@ -138,9 +143,17 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("-l", "--num-locations", type=int, required=True)
     parser.add_argument("-t", "--num-trucks", type=int, required=True)
     parser.add_argument("-p", "--num-packages", type=int, required=True)
-    parser.add_argument("-c", "--capacity", type=int, default=2, help="capacity of each initially empty truck (default: 2)")
-    parser.add_argument("-e", "--extra-edges", type=int, default=0, help="additional undirected roads beyond a spanning tree (default: 0)")
-    parser.add_argument("-f", "--fuel", type=int, help="initial fuel per truck; default covers a constructive delivery route, lower budgets may be unsolvable")
+    parser.add_argument(
+        "-c", "--capacity", type=int, default=2, help="capacity of each initially empty truck (default: 2)"
+    )
+    parser.add_argument(
+        "-e", "--extra-edges", type=int, default=0,
+        help="additional undirected roads beyond a spanning tree (default: 0)",
+    )
+    parser.add_argument(
+        "-f", "--fuel", type=int,
+        help="initial fuel per truck; default covers a constructive delivery route, lower budgets may be unsolvable",
+    )
     parser.add_argument("-s", "--seed", type=int)
     args = parser.parse_args(argv)
     try:

@@ -69,7 +69,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("num_floors", type=int, help="number of floors")
     parser.add_argument("num_passengers", type=int, help="number of passengers")
     parser.add_argument("-s", "--seed", type=int, help="random seed")
-    parser.add_argument("--lift-start", choices=("random", "bottom"), default="random", help="lift start floor (default: random)")
+    parser.add_argument(
+        "--lift-start", choices=("random", "bottom"), default="random", help="lift start floor (default: random)"
+    )
     args = parser.parse_args(argv)
 
     if args.num_floors < 1:

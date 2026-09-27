@@ -1,3 +1,4 @@
+# pylint: disable=too-many-lines  # suite listings are data, one entry per line
 """Named benchmark suites. Entries are domain paths relative to the data root,
 resolvable with pypddl_datasets.fetch_domain()."""
 

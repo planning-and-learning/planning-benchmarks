@@ -11,17 +11,21 @@ import sys
 DENOMINATIONS = (1, 2, 3, 5, 7)
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(target: int, denominations: tuple[int, ...] = DENOMINATIONS) -> str:
     """Generate a Coins task: reach ``target`` with the fewest coins.
 
     Deterministic, like the reference tasks. ``denominations`` must contain 1 so that
     every target is reachable.
     """
-    if not isinstance(target, int) or isinstance(target, bool) or target < 1:
+    if not _is_int(target) or target < 1:
         raise ValueError("target must be an integer at least 1")
     if (
         not denominations
-        or any(not isinstance(d, int) or isinstance(d, bool) or d < 1 for d in denominations)
+        or any(not _is_int(d) or d < 1 for d in denominations)
         or len(set(denominations)) != len(denominations)
         or 1 not in denominations
     ):

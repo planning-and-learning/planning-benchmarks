@@ -61,9 +61,11 @@ def _make_stacks(
     return rooted
 
 
-def _state_facts(stacks: list[list[str]], on_table: str = "ontable", arm_empty: str = "handempty") -> list[str]:
+def _state_facts(
+    stacks: list[list[str]], on_table: str = "ontable", arm_empty: str = "handempty"
+) -> list[str]:
     facts = [f"    ({arm_empty})"]
-    clear_blocks = set()
+    clear_blocks: set[str] = set()
     for stack in stacks:
         facts.append(f"    ({on_table} {stack[0]})")
         for lower, upper in zip(stack, stack[1:]):
@@ -74,7 +76,7 @@ def _state_facts(stacks: list[list[str]], on_table: str = "ontable", arm_empty: 
 
 
 def _goal_facts(stacks: list[list[str]]) -> list[str]:
-    facts = []
+    facts: list[str] = []
     for stack in stacks:
         facts.append(f"      (ontable {stack[0]})")
         for lower, upper in zip(stack, stack[1:]):
@@ -119,7 +121,10 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate a 4-operator Blocksworld PDDL problem.")
     parser.add_argument("-b", "--num-blocks", type=int, required=True)
     parser.add_argument("-s", "--seed", type=int)
-    parser.add_argument("-g", "--goal", choices=["tower", "full"], default="tower", help="IPC single-tower goal (default) or a full random goal state")
+    parser.add_argument(
+        "-g", "--goal", choices=["tower", "full"], default="tower",
+        help="IPC single-tower goal (default) or a full random goal state",
+    )
     args = parser.parse_args(argv)
 
     if args.num_blocks < 1:

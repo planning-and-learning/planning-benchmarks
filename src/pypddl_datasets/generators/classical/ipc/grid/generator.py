@@ -126,7 +126,9 @@ def make_problem(
             if locked_shape == shape and locked_pos not in unlocked_positions:
                 unlocked_positions.append(locked_pos)
 
-        newly_reached = [locked_pos for locked_pos in sorted(reachable_locked) if locked_pos_to_shape[locked_pos] == shape]
+        newly_reached = [
+            locked_pos for locked_pos in sorted(reachable_locked) if locked_pos_to_shape[locked_pos] == shape
+        ]
         reachable_locations.extend(newly_reached)
         reachable_locked = {p for p in reachable_locked if locked_pos_to_shape[p] != shape}
 
@@ -191,7 +193,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--style", choices=STYLES, default="ipc")
     args = parser.parse_args(argv)
 
-    problem = make_problem(args.width, args.height, args.shapes, args.keys, args.locks, args.prob_goal, args.seed, args.style)
+    problem = make_problem(
+        args.width, args.height, args.shapes, args.keys, args.locks, args.prob_goal, args.seed, args.style
+    )
     if problem is None:
         parser.error("invalid or unsolvable grid configuration")
     print(problem, end="")

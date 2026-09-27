@@ -23,11 +23,20 @@ import argparse
 import random
 import sys
 
-from pypddl_datasets.generators.classical.ipc.blocks_4.generator import _completion_counts, _make_stacks, _state_facts
+# autoscale/blocksworld reuses the uniform state sampler of ipc/blocks_4 (same distribution)
+from pypddl_datasets.generators.classical.ipc.blocks_4.generator import (  # pylint: disable=protected-access
+    _completion_counts,  # pyright: ignore[reportPrivateUsage]
+    _make_stacks,  # pyright: ignore[reportPrivateUsage]
+    _state_facts,  # pyright: ignore[reportPrivateUsage]
+)
+
+
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
 
 
 def make_problem(num_blocks: int, seed: int | None = None) -> str:
-    if not isinstance(num_blocks, int) or isinstance(num_blocks, bool) or num_blocks < 1:
+    if not _is_int(num_blocks) or num_blocks < 1:
         raise ValueError("num_blocks must be an integer at least 1")
     rng = random.Random(seed)
     blocks = [f"b{i}" for i in range(1, num_blocks + 1)]

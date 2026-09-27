@@ -10,6 +10,8 @@ import argparse
 import random
 import sys
 from collections import deque
+from collections.abc import Collection, Sequence
+from typing import cast
 
 ROBOTS = ("red", "blue", "green", "yellow")
 MOVES = {"north": (0, -1), "south": (0, 1), "east": (1, 0), "west": (-1, 0)}
@@ -34,7 +36,7 @@ ASP_2015_ROBOTS = ((1, 1), (1, 16), (16, 1), (16, 16))
 
 def _barriers(rng: random.Random, size: int, num_barriers: int) -> list[tuple[int, int, str]]:
     barriers: list[tuple[int, int, str]] = []
-    seen = set()
+    seen: set[tuple[int, int, str]] = set()
     while len(barriers) < num_barriers:
         x, y = rng.randint(1, size), rng.randint(1, size)
         direction = rng.choice(["north", "south", "east", "west"])
@@ -48,10 +50,17 @@ def _barriers(rng: random.Random, size: int, num_barriers: int) -> list[tuple[in
     return barriers
 
 
-def optimal_moves(size, blocked, robots, target_robot, target, max_states):
+def optimal_moves(  # pylint: disable=unused-argument  # size: kept for callers; the border is in `blocked`
+    size: int,
+    blocked: Collection[tuple[int, int, str]],
+    robots: Sequence[tuple[int, int]],
+    target_robot: int,
+    target: tuple[int, int],
+    max_states: int,
+) -> int | None:
     """Fewest robot moves to bring ``target_robot`` to ``target``; -1 if
     impossible, None if more than ``max_states`` configurations are needed."""
-    start = tuple(robots)
+    start: tuple[tuple[int, int], ...] = tuple(robots)
     if start[target_robot] == target:
         return 0
     seen = {start}
@@ -99,9 +108,11 @@ def make_problem(
         raise ValueError("board='asp2015' is a fixed 16x16 board: use board_size=16 and no num_barriers")
     # four robots need at least one free cell to move
     for name, value, minimum in (("board_size", board_size, 3), ("max_states", max_states, 1)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
-    if num_barriers is not None and (not isinstance(num_barriers, int) or isinstance(num_barriers, bool) or num_barriers < 0):
+    barriers = cast(object, num_barriers)  # runtime check: callers may pass any type
+    if barriers is not None and (not isinstance(barriers, int) or isinstance(barriers, bool) or barriers < 0):
         raise ValueError("num_barriers must be a non-negative integer")
     max_barriers = 2 * board_size * (board_size - 1)  # interior walls
     if num_barriers is not None and num_barriers > max_barriers:
@@ -141,8 +152,9 @@ def make_problem(
     nxt += [f"(next cell-{x}-{y} cell-{x - 1}-{y} west)" for y in range(1, n + 1) for x in range(n, 1, -1)]
     free = [f"(free cell-{x}-{y})" for x in range(1, n + 1) for y in range(1, n + 1) if (x, y) not in robots]
     at = sorted(f"(at robot-{i + 1} cell-{x}-{y})" for i, (x, y) in enumerate(robots))
-    init = [*nxt, "", *(f"(blocked cell-{x}-{y} {d})" for x, y, d in blocked), "", *free, "", *at, "",
-            "(nothing-is-moving)", "", "(= (total-cost) 0)", "(= (go-cost) 1)", "(= (step-cost) 0)", "(= (stop-cost) 0)"]
+    init = [*nxt, "", *(f"(blocked cell-{x}-{y} {d})" for x, y, d in blocked), "", *free, "", *at, ""]
+    init += ["(nothing-is-moving)", "", "(= (total-cost) 0)", "(= (go-cost) 1)"]
+    init += ["(= (step-cost) 0)", "(= (stop-cost) 0)"]
     rand = int(1000000 * rng.random())
     return (f"""(define (problem ricochet-robots-{n}x{n}-{cost}-{rand})
 (:domain ricochet-robots)

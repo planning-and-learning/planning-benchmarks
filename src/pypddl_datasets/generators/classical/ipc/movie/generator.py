@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from typing import cast
 
 SNACKS = (("chips", "c"), ("dip", "d"), ("pop", "p"), ("cheese", "z"), ("crackers", "k"))
 
@@ -28,7 +29,8 @@ def make_problem(num_snacks: int) -> str:
     IPC-1998 task ``probNN`` uses ``num_snacks = NN + 4``. Objects are listed per
     kind in descending order, as in the IPC tasks.
     """
-    if not isinstance(num_snacks, int) or isinstance(num_snacks, bool) or num_snacks < 1:
+    checked = cast(object, num_snacks)  # runtime guard: callers may pass floats or bools
+    if not isinstance(checked, int) or isinstance(checked, bool) or checked < 1:
         raise ValueError("num_snacks must be an integer at least 1")
     names = [(kind, [f"{prefix}{i}" for i in range(num_snacks, 0, -1)]) for kind, prefix in SNACKS]
     objects = " ".join(name for _, group in names for name in group)

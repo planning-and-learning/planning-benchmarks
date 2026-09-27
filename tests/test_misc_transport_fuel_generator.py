@@ -1,13 +1,20 @@
 import re
 from pathlib import Path
+from typing import Any
 
 import pytest
 
 from pypddl_datasets.generators.classical.misc.transport_fuel import generator
 
 
+def _match(pattern: str, text: str, flags: int = 0) -> re.Match[str]:
+    match = re.search(pattern, text, flags)
+    assert match is not None, pattern
+    return match
+
+
 @pytest.mark.parametrize("seed", range(5))
-def test_default_fuel_covers_constructive_route(seed):
+def test_default_fuel_covers_constructive_route(seed: int) -> None:
     problem = generator.make_problem(2, 2, 4, capacity=1, seed=seed)
     assert problem == generator.make_problem(2, 2, 4, capacity=1, seed=seed)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -20,29 +27,33 @@ def test_default_fuel_covers_constructive_route(seed):
         expected_fuel += int(current != starts[package]) + int(starts[package] != destination)
         current = destination
     assert set(re.findall(r"\(fuel (\w+) (\w+)\)", init)) == {
-        ("t0", f"fuel{expected_fuel}"), ("t1", f"fuel{expected_fuel}")
+        ("t0", f"fuel{expected_fuel}"),
+        ("t1", f"fuel{expected_fuel}"),
     }
     assert problem == generator.make_problem(2, 2, 4, capacity=1, fuel=expected_fuel, seed=seed)
 
 
 @pytest.mark.parametrize("fuel", [0, 1, 3])
-def test_drive_consumes_one_fuel_and_cannot_refuel(fuel):
-    domain = Path(generator.__file__).with_name("domain.pddl").read_text()
+def test_drive_consumes_one_fuel_and_cannot_refuel(fuel: int) -> None:
+    domain = Path(generator.__file__).with_name("domain.pddl").read_text(encoding="utf-8")
     drive = domain.split("(:action drive", 1)[1].split("(:action pick-up", 1)[0]
     preconditions, effects = drive.split(":precondition", 1)[1].split(":effect", 1)
     problem = generator.make_problem(2, 1, 1, fuel=fuel, seed=0)
     init = problem.split("(:init", 1)[1].split("(:goal", 1)[0]
     state = set(re.findall(r"\([^()]+\)", init))
-    start = re.search(r"\(at t0 (\w+)\)", init).group(1)
+    start = _match(r"\(at t0 (\w+)\)", init).group(1)
     target = "l1" if start == "l0" else "l0"
-    successors = []
+    successors: list[set[str]] = []
     # Ground the small STRIPS drive schema against the generated fuel chain.
     for before in range(fuel + 1):
         for after in range(fuel + 1):
             grounded_pre, grounded_eff = preconditions, effects
             for variable, value in {
-                "?v": "t0", "?l1": start, "?l2": target,
-                "?fuel-before": f"fuel{before}", "?fuel-after": f"fuel{after}",
+                "?v": "t0",
+                "?l1": start,
+                "?l2": target,
+                "?fuel-before": f"fuel{before}",
+                "?fuel-after": f"fuel{after}",
             }.items():
                 grounded_pre = grounded_pre.replace(variable, value)
                 grounded_eff = grounded_eff.replace(variable, value)
@@ -59,12 +70,12 @@ def test_drive_consumes_one_fuel_and_cannot_refuel(fuel):
     assert re.findall(r"\(:action (\S+)", domain) == ["drive", "pick-up", "drop"]
 
 
-def test_fuel_cli_matches_make_problem(capsys):
+def test_fuel_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert generator.main(["-l", "4", "-t", "2", "-p", "3", "-c", "1", "-e", "1", "-f", "2", "-s", "7"]) == 0
     assert capsys.readouterr().out == generator.make_problem(4, 2, 3, capacity=1, extra_edges=1, fuel=2, seed=7)
 
 
 @pytest.mark.parametrize("fuel", [-1, 1.5, True])
-def test_invalid_fuel_is_rejected(fuel):
+def test_invalid_fuel_is_rejected(fuel: Any) -> None:  # deliberately not an int
     with pytest.raises(ValueError, match="fuel"):
         generator.make_problem(2, 1, 1, fuel=fuel)

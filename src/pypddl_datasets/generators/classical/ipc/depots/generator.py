@@ -29,14 +29,15 @@ def make_problem(
     drawn only as repeats stay goal-free. ``typed`` selects the typed encoding
     Autoscale uses instead of the IPC's type predicates (domain ``depot``).
     """
-    for name, value in (
+    checks: list[tuple[str, object]] = [
         ("num_depots", num_depots),
         ("num_distributors", num_distributors),
         ("num_trucks", num_trucks),
         ("num_pallets", num_pallets),
         ("num_hoists", num_hoists),
         ("num_crates", num_crates),
-    ):
+    ]
+    for name, value in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < 1:
             raise ValueError(f"{name} must be an integer at least 1")
 
@@ -52,8 +53,8 @@ def make_problem(
 
     # A surface is ("pallet", i) or ("crate", i); towers track the current top.
     top: list[tuple[str, int]] = [("pallet", i) for i in range(num_pallets)]
-    crate_pallets = []
-    crate_surfaces = []
+    crate_pallets: list[int] = []
+    crate_surfaces: list[tuple[str, int]] = []
     for crate in range(num_crates):
         pallet = rng.randrange(num_pallets)
         crate_pallets.append(pallet)
@@ -73,7 +74,7 @@ def make_problem(
     def kind(*predicates: str) -> list[str]:
         return [] if typed else [f"\t({predicate})" for predicate in predicates]
 
-    init_facts = []
+    init_facts: list[str] = []
     for pallet, place in enumerate(pallet_places):
         init_facts += kind(f"pallet pallet{pallet}", f"surface pallet{pallet}")
         init_facts.append(f"\t(at pallet{pallet} {places[place]})")
@@ -102,7 +103,8 @@ def make_problem(
     else:
         objects = "\t" + " ".join(names(prefix, count) for prefix, count in groups) + " )"
 
-    return (f"""(define (problem depot-{num_depots}-{num_distributors}-{num_trucks}-{num_pallets}-{num_hoists}-{num_crates}) (:domain {"depots" if typed else "depot"})
+    name = f"depot-{num_depots}-{num_distributors}-{num_trucks}-{num_pallets}-{num_hoists}-{num_crates}"
+    return (f"""(define (problem {name}) (:domain {"depots" if typed else "depot"})
 (:objects
 {objects}
 (:init

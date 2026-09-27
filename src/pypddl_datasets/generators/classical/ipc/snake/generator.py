@@ -8,6 +8,7 @@ import argparse
 import random
 import sys
 from itertools import product
+from typing import cast
 
 Position = tuple[int, int]
 
@@ -17,7 +18,7 @@ def _pos(position: Position) -> str:
 
 
 def _adjacent_pairs(width: int, height: int) -> list[tuple[Position, Position]]:
-    pairs = []
+    pairs: list[tuple[Position, Position]] = []
     for x in range(width):
         for y in range(height):
             if x < width - 1:
@@ -52,7 +53,8 @@ def make_problem(
         ("num_initial_apples", num_initial_apples, 1),
         ("snake_size", snake_size, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if spawn_percentage > 100:
         raise ValueError("spawn_percentage must be at most 100")
@@ -131,7 +133,8 @@ def make_problem(
     goals = [f"      (not (isPoint {_pos(apple)}))" for apple in apples + spawn]
 
     positions = " ".join(_pos(p) for p in product(range(width), range(height)))
-    return (f"""(define (problem snake-empty-{width}x{height}-{snake_size}-{num_apples}-{num_spawn}{"" if seed is None else f"-{seed}"})
+    name = f"snake-empty-{width}x{height}-{snake_size}-{num_apples}-{num_spawn}{'' if seed is None else f'-{seed}'}"
+    return (f"""(define (problem {name})
   (:domain snake)
   (:objects
     {positions}

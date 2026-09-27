@@ -9,7 +9,7 @@ from pypddl_datasets.generators.numeric.ipc.onlycraft.generator import main, mak
 
 
 @pytest.mark.parametrize("sticks,trees,grid", [(1, 4, 3), (10, 35, 6), (200, 700, 27)])
-def test_onlycraft_defaults_follow_ipc(sticks, trees, grid, tmp_path):
+def test_onlycraft_defaults_follow_ipc(sticks: int, trees: int, grid: int, tmp_path: Path) -> None:
     problem = make_problem(sticks, seed=3)
     assert problem == make_problem(sticks, seed=3)
     assert problem.count("(tree_cell ") == trees and problem.count("(air_cell ") == grid * grid - trees
@@ -21,7 +21,7 @@ def test_onlycraft_defaults_follow_ipc(sticks, trees, grid, tmp_path):
     Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / "p.pddl")
 
 
-def test_onlycraft_cli_and_validation(capsys):
+def test_onlycraft_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-p", "3", "-g", "5", "-s", "1"]) == 0
     assert capsys.readouterr().out == make_problem(3, grid_size=5, seed=1)
     with pytest.raises(ValueError, match="num_trees"):

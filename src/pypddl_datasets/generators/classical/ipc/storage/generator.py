@@ -11,6 +11,7 @@ import argparse
 import math
 import random
 import sys
+from typing import cast
 
 SA_PER_CONTAINER = 4
 SA_DEPOT_DEVIATION = 0.1
@@ -48,7 +49,8 @@ def make_problem(
     ``ceil(num_crates / 4)`` as in Autoscale.
     """
     if num_containers is None:
-        num_containers = -(-num_crates // SA_PER_CONTAINER) if isinstance(num_crates, int) else 0
+        # non-integers fall through to the ValueError below
+        num_containers = -(-num_crates // SA_PER_CONTAINER) if isinstance(cast(object, num_crates), int) else 0
     for name, value in (
         ("num_crates", num_crates),
         ("num_hoists", num_hoists),
@@ -56,7 +58,8 @@ def make_problem(
         ("num_depots", num_depots),
         ("num_containers", num_containers),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < 1:
             raise ValueError(f"{name} must be an integer at least 1")
     for name, value in (("num_crates", num_crates), ("num_depots", num_depots), ("num_hoists", num_hoists)):
         if value > num_store_areas:
@@ -70,7 +73,7 @@ def make_problem(
     per_depot = max(mean - int(mean * SA_DEPOT_DEVIATION), 1)
     remaining = num_store_areas - per_depot * num_depots
     random_bound = max(2, int(mean * SA_DEPOT_DEVIATION * 2 + 1))
-    areas_per_depot = []
+    areas_per_depot: list[int] = []
     for _ in range(num_depots - 1):
         extra = rng.randrange(min(remaining + 1, random_bound)) if remaining else 0
         areas_per_depot.append(per_depot + extra)
@@ -84,7 +87,7 @@ def make_problem(
 
     # Full containers of four when crates overflow the others, else one crate each.
     fill = SA_PER_CONTAINER if num_crates / max(num_containers - 1, 1) > SA_PER_CONTAINER else 1
-    crates_per_container = []
+    crates_per_container: list[int] = []
     left = num_crates
     for _ in range(num_containers - 1):
         take = min(fill, left)
@@ -93,8 +96,7 @@ def make_problem(
     crates_per_container.append(left)
 
     crates = [f"crate{i}" for i in range(num_crates)]
-    container_areas = []
-    crate_facts = []
+    container_areas: list[tuple[str, str, str]] = []  # (store area, container, crate)
     crate_index = 0
     for container, count in enumerate(crates_per_container):
         for k in range(count):
@@ -102,13 +104,13 @@ def make_problem(
             crate_index += 1
 
     depots = [f"depot{i}" for i in range(num_depots)]
-    depot_areas = []
-    connections = []
-    ins = []
-    doors = []
-    clears = []
-    hoist_facts = []
-    extremes = []
+    depot_areas: list[str] = []
+    connections: list[str] = []
+    ins: list[str] = []
+    doors: list[str] = []
+    clears: list[str] = []
+    hoist_facts: list[str] = []
+    extremes: list[tuple[str, str]] = []
     hoist_count = 0
     for d, depot in enumerate(depots):
         cells, door = _square_depot(areas_per_depot[d], rng)
@@ -120,7 +122,8 @@ def make_problem(
                 if (ni, nj) in cell_set:
                     connections.append(f"(connected {name} {depot}-{ni}-{nj})")
         depot_areas.extend(names)
-        doors.append(f"(connected {depot}-{door[0]}-{door[1]} loadarea)\n\t(connected loadarea {depot}-{door[0]}-{door[1]})")
+        door_area = f"{depot}-{door[0]}-{door[1]}"
+        doors.append(f"(connected {door_area} loadarea)\n\t(connected loadarea {door_area})")
         # Leftmost / rightmost cell, first in row-major order, anchor transit areas.
         left_cell = min(cells, key=lambda cell: cell[1])
         right_cell = min(cells, key=lambda cell: -cell[1])
@@ -134,13 +137,15 @@ def make_problem(
             free.pop()
         clears.extend(f"(clear {names[index]})" for index in free)
 
-    transits = []
-    transit_facts = []
+    transits: list[str] = []
+    transit_facts: list[str] = []
     for d in range(num_depots - 1):
         if right_connected[d]:
             transit = f"transit{len(transits)}"
             transits.append(transit)
-            transit_facts.append(f"(connected {transit} {extremes[d][1]})\n\t(connected {transit} {extremes[d + 1][0]})")
+            transit_facts.append(
+                f"(connected {transit} {extremes[d][1]})\n\t(connected {transit} {extremes[d + 1][0]})"
+            )
 
     # Goal: crates in depot order, at least one per depot while crates remain,
     # capped by half the depot's store areas when crates <= store areas / 2.

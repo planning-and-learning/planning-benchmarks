@@ -12,7 +12,15 @@ import argparse
 import random
 import sys
 
-from pypddl_datasets.generators.classical.ipc.pathways.generator import DASHED, EMPTY, REACTIONS, SIMPLE, _build
+# reuses the classical pathways port's reaction selection (same upstream main.c)
+from pypddl_datasets.generators.classical.ipc.pathways.generator import DASHED, EMPTY, REACTIONS, SIMPLE
+from pypddl_datasets.generators.classical.ipc.pathways.generator import (  # pylint: disable=protected-access
+    _build,  # pyright: ignore[reportPrivateUsage]
+)
+
+
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
 
 
 def _num(rng: random.Random) -> int:
@@ -34,7 +42,7 @@ def make_problem(min_reactions: int, num_goals: int, seed: int | None = None) ->
     1..4. Durations follow upstream's per-type formulas (one decimal).
     """
     for name, value in (("min_reactions", min_reactions), ("num_goals", num_goals)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+        if not _is_int(value) or value < 1:
             raise ValueError(f"{name} must be an integer at least 1")
     rng = random.Random(seed)
     applied, used, goals = _build(rng, min_reactions, num_goals)
@@ -44,11 +52,11 @@ def make_problem(min_reactions: int, num_goals: int, seed: int | None = None) ->
     simple_used = [s for s in SIMPLE if s in used and s != EMPTY]
     complex_used = [d for d in DASHED if d in used]
     objects = [f"\t{s} - simple" for s in simple_used] + [f"\t{d} - complex" for d in complex_used]
-    init = []
+    init: list[str] = []
     for s in simple_used:
         init += [f"\t(possible {s})", f"\t(= (available {s}) 0)"]
     init += [f"\t(= (available {d}) 0)" for d in complex_used]
-    durations = []
+    durations: list[str] = []
     for i in sorted(applied):
         kind, s1, s2, s3 = REACTIONS[i]
         if kind == "synthesis":
@@ -64,7 +72,8 @@ def make_problem(min_reactions: int, num_goals: int, seed: int | None = None) ->
                 f"\t(= (need-for-catalyzed-self-association {s1} {s3}) {_num(rng) + _num(rng)})",
                 f"\t(= (prod-by-catalyzed-self-association {s1} {s3}) {_num(rng)})",
             ]
-            durations.append(f"\t(= (duration-catalyzed-self-association-reaction {s1} {s3}) {2 + (0.4 - _fnum(rng) / 5):.1f})")
+            duration = 2 + (0.4 - _fnum(rng) / 5)
+            durations.append(f"\t(= (duration-catalyzed-self-association-reaction {s1} {s3}) {duration:.1f})")
         else:
             init += [
                 f"\t({kind}-reaction {s1} {s2} {s3})",

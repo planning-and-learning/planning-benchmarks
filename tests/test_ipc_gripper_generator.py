@@ -8,8 +8,8 @@ from pypddl_datasets.generators.classical.ipc.gripper.generator import main, mak
 
 
 @pytest.mark.parametrize("num_balls", [1, 20])
-def test_gripper_declares_rooms_as_objects(num_balls):
-    assert "(:constants" not in Path(generator.__file__).with_name("domain.pddl").read_text()
+def test_gripper_declares_rooms_as_objects(num_balls: int) -> None:
+    assert "(:constants" not in Path(generator.__file__).with_name("domain.pddl").read_text(encoding="utf-8")
     problem = make_problem(num_balls)
     objects = problem.split("(:objects", 1)[1].split(")", 1)[0].split()
     assert objects[:4] == ["rooma", "roomb", "left", "right"] and len(objects) == 4 + num_balls
@@ -18,7 +18,7 @@ def test_gripper_declares_rooms_as_objects(num_balls):
     assert re.findall(r"\(at (\w+) roomb\)", goal) == [f"ball{i}" for i in range(1, num_balls + 1)]
 
 
-def test_gripper_cli(capsys):
+def test_gripper_cli(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-n", "3"]) == 0
     assert capsys.readouterr().out == make_problem(3)
     with pytest.raises(ValueError, match="num_balls"):

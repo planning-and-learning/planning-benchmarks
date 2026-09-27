@@ -11,7 +11,9 @@ AGILE = Path(__file__).resolve().parents[1] / "data/classical/autoscale-benchmar
 
 
 @pytest.mark.parametrize("locations,fuel,space,vehicles,cargos", [(2, 1, 1, 1, 1), (10, 8, 3, 3, 6)])
-def test_mprime_ring_fuel_space_and_goals(locations, fuel, space, vehicles, cargos, tmp_path):
+def test_mprime_ring_fuel_space_and_goals(
+    locations: int, fuel: int, space: int, vehicles: int, cargos: int, tmp_path: Path
+) -> None:
     problem = make_problem(locations, fuel, space, vehicles, cargos, seed=2)
     assert problem == make_problem(locations, fuel, space, vehicles, cargos, seed=2) == problem.lower()
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -23,17 +25,20 @@ def test_mprime_ring_fuel_space_and_goals(locations, fuel, space, vehicles, carg
     (tmp_path / "p.pddl").write_text(problem)
     options = ParserOptions()
     options.strict = True
-    Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / "p.pddl")  # pyright: ignore[reportUnknownMemberType]
+    Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / "p.pddl")
 
 
-def test_mprime_static_facts_match_agile_task():
+def test_mprime_static_facts_match_agile_task() -> None:
     reference = re.sub(r"[ \t]+", " ", (AGILE / "p02.pddl").read_text().lower())  # l5-f15-s2-v8-c10
     problem = make_problem(5, 15, 2, 8, 10, seed=0)
-    static = lambda text: sorted(re.findall(r"\((?:not-equal|fuel-neighbor|space-neighbor|conn) [^()]*\)", text))  # noqa: E731
+
+    def static(text: str) -> list[str]:
+        return sorted(re.findall(r"\((?:not-equal|fuel-neighbor|space-neighbor|conn) [^()]*\)", text))
+
     assert static(problem) == static(reference)
 
 
-def test_mprime_cli_matches_make_problem(capsys):
+def test_mprime_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-l", "5", "-f", "4", "-s", "2", "-v", "2", "-c", "3", "-r", "7"]) == 0
     assert capsys.readouterr().out == make_problem(5, 4, 2, 2, 3, seed=7)
     with pytest.raises(ValueError, match="num_locations"):

@@ -15,6 +15,10 @@ GOALS = {"mesh": ("hubs", "sum"), "pipeline": ("drain",), "merge": ("sum", "empt
 GOAL_TOKENS = {"mesh": (2, 3), "pipeline": (1, 3), "merge": (2, 5)}
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def _mesh(chain: int):
     branches, hub = "abc", chain + 1
     petals, end = [hub + 1, hub + 2, hub + 3], hub + 4
@@ -78,9 +82,9 @@ def make_problem(
     if chain_length is not None:
         if net == "pipeline":
             raise ValueError("chain_length does not apply to the pipeline net")
-        if not isinstance(chain_length, int) or isinstance(chain_length, bool) or chain_length < 1:
+        if not _is_int(chain_length) or chain_length < 1:
             raise ValueError("chain_length must be an integer at least 1")
-    if goal_tokens is not None and (not isinstance(goal_tokens, int) or isinstance(goal_tokens, bool) or goal_tokens < 1):
+    if goal_tokens is not None and (not _is_int(goal_tokens) or goal_tokens < 1):
         raise ValueError("goal_tokens must be an integer at least 1")
 
     rng = random.Random(seed)

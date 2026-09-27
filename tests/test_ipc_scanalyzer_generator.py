@@ -1,4 +1,5 @@
 import re
+from typing import Any
 
 import pytest
 
@@ -8,7 +9,7 @@ from pypddl_datasets.generators.classical.ipc.scanalyzer.generator import main, 
 @pytest.mark.parametrize("segment_type", ["empty", "ab"])
 @pytest.mark.parametrize("inout", ["none", "in", "both"])
 @pytest.mark.parametrize("size", [1, 3])
-def test_scanalyzer_structure(size, segment_type, inout):
+def test_scanalyzer_structure(size: int, segment_type: str, inout: str) -> None:
     problem = make_problem(size, segment_type, inout)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
     halves = ["a", "b"] if segment_type == "ab" else [""]
@@ -29,14 +30,14 @@ def test_scanalyzer_structure(size, segment_type, inout):
     assert "(:metric minimize (total-cost))" in problem
 
 
-def test_scanalyzer_cli_matches_make_problem(capsys):
+def test_scanalyzer_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["4", "ab", "both"]) == 0
     assert capsys.readouterr().out == make_problem(4, "ab", "both")
 
 
 @pytest.mark.parametrize("parameter,value", [("size", 0), ("size", True), ("segment_type", "a"), ("inout", "out")])
-def test_scanalyzer_rejects_invalid_parameters(parameter, value):
-    parameters = dict(size=2, segment_type="empty", inout="in")
+def test_scanalyzer_rejects_invalid_parameters(parameter: str, value: bool | int | str) -> None:
+    parameters: dict[str, Any] = {"size": 2, "segment_type": "empty", "inout": "in"}
     parameters[parameter] = value
     with pytest.raises(ValueError, match=parameter):
         make_problem(**parameters)

@@ -1,5 +1,6 @@
 import re
 from collections import Counter
+from typing import Any
 
 import pytest
 
@@ -10,7 +11,9 @@ from pypddl_datasets.generators.classical.ipc.storage.generator import main, mak
     "crates,hoists,store_areas,depots,containers",
     [(1, 1, 1, 1, None), (4, 6, 15, 2, None), (18, 27, 39, 4, None), (30, 5, 70, 36, None), (3, 2, 10, 3, 3)],
 )
-def test_storage_depots_are_connected_grids_with_doors(crates, hoists, store_areas, depots, containers):
+def test_storage_depots_are_connected_grids_with_doors(
+    crates: int, hoists: int, store_areas: int, depots: int, containers: None | int
+) -> None:
     problem = make_problem(crates, hoists, store_areas, depots, containers, seed=11)
     assert problem == make_problem(crates, hoists, store_areas, depots, containers, seed=11)
     init, goal = problem.split("(:init", 1)[1].split("(:goal", 1)
@@ -45,23 +48,35 @@ def test_storage_depots_are_connected_grids_with_doors(crates, hoists, store_are
     assert all(goal_counts[depot] <= Counter(area_depot.values())[depot] for depot in depot_names)
 
 
-def test_storage_default_containers_hold_four_crates():
+def test_storage_default_containers_hold_four_crates() -> None:
     init = make_problem(10, 2, 20, seed=1).split("(:init", 1)[1]
-    assert Counter(re.findall(r"\(in crate\d+ (container\d+)\)", init)) == {"container0": 4, "container1": 4, "container2": 2}
+    assert Counter(re.findall(r"\(in crate\d+ (container\d+)\)", init)) == {
+        "container0": 4,
+        "container1": 4,
+        "container2": 2,
+    }
 
 
-def test_storage_cli_matches_make_problem(capsys):
+def test_storage_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-c", "4", "-n", "3", "-s", "12", "-d", "2", "-e", "9"]) == 0
     assert capsys.readouterr().out == make_problem(4, 3, 12, 2, seed=9)
 
 
 @pytest.mark.parametrize(
     "parameter,value",
-    [("num_crates", 0), ("num_hoists", 0), ("num_store_areas", 0), ("num_depots", 0), ("num_containers", 0),
-     ("num_crates", 13), ("num_hoists", 13), ("num_depots", 13)],
+    [
+        ("num_crates", 0),
+        ("num_hoists", 0),
+        ("num_store_areas", 0),
+        ("num_depots", 0),
+        ("num_containers", 0),
+        ("num_crates", 13),
+        ("num_hoists", 13),
+        ("num_depots", 13),
+    ],
 )
-def test_storage_rejects_invalid_parameters(parameter, value):
-    parameters = dict(num_crates=2, num_hoists=2, num_store_areas=12, num_depots=2)
+def test_storage_rejects_invalid_parameters(parameter: str, value: int) -> None:
+    parameters: dict[str, Any] = {"num_crates": 2, "num_hoists": 2, "num_store_areas": 12, "num_depots": 2}
     parameters[parameter] = value
     with pytest.raises(ValueError, match=parameter):
         make_problem(**parameters)

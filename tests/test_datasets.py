@@ -9,24 +9,28 @@ from typing import cast
 
 import pooch
 import pytest
+from pypddl.formalism import Parser, ParserOptions
 
 import pypddl_datasets
+from pypddl_datasets import COMPOSITE_TO_REQUIREMENTS, CompositeRequirements, Requirement
 from pypddl_datasets.generators.classical.ipc.blocks_3.generator import make_problem as make_blocks_3_problem
 from pypddl_datasets.generators.classical.ipc.blocks_4.generator import make_problem as make_blocks_4_problem
+from pypddl_datasets.scripts.extract_requirements import generate
+from pypddl_datasets.scripts.large_files import main as large_files
 from pypddl_datasets.suites import SUITES
+from pypddl_datasets.validation.layout import large_file_errors
+from pypddl_datasets.validation.suites import main as validate_suites
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = REPO_ROOT / "data"
 
 
-def test_suites_configuration():
+def test_suites_configuration() -> None:
     # one implementation, two harnesses: per-PR via pytest, release-time via the umbrella
-    from pypddl_datasets.validation.suites import main
-
-    assert main(["--root", str(DATA_ROOT)]) == 0
+    assert validate_suites(["--root", str(DATA_ROOT)]) == 0
 
 
-def test_blocksworld_goals_include_stack_boundaries():
+def test_blocksworld_goals_include_stack_boundaries() -> None:
     goal = make_blocks_3_problem(1, 0).split("(:goal", 1)[1]
     assert "(on-table b1)" in goal and "(clear b1)" in goal
     # blocks_4 defaults to the IPC single-tower goal; the full goal state is opt-in
@@ -41,12 +45,18 @@ AUTOSCALE_DOMAINS = sorted(p.name for p in (GENERATORS / "autoscale").iterdir() 
 AGILE = DATA_ROOT / "classical/autoscale-benchmarks-main/21.11-agile-strips"
 # No public generator, or ground per task (openstacks): nothing to generate.
 AGILE_WITHOUT_GENERATOR = {
-    "airport", "ged", "openstacks", "organic-synthesis-split", "parcprinter",
-    "pipesworld-notankage", "pipesworld-tankage", "thoughtful",
+    "airport",
+    "ged",
+    "openstacks",
+    "organic-synthesis-split",
+    "parcprinter",
+    "pipesworld-notankage",
+    "pipesworld-tankage",
+    "thoughtful",
 }
 
 
-def test_autoscale_covers_every_agile_domain_with_a_generator():
+def test_autoscale_covers_every_agile_domain_with_a_generator() -> None:
     agile = {p.name for p in AGILE.iterdir() if p.is_dir()} - AGILE_WITHOUT_GENERATOR
     assert {d.replace("_", "-") for d in AUTOSCALE_DOMAINS} == agile
 
@@ -92,8 +102,6 @@ SMOKE_CASES: dict[str, tuple[object, ...]] = {
 
 @pytest.mark.parametrize("domain", sorted(SMOKE_CASES))
 def test_untested_ipc_generator_output_parses(domain: str, tmp_path: Path) -> None:
-    from pypddl.formalism import Parser, ParserOptions
-
     package = domain if "/" in domain else f"ipc/{domain}"
     module = importlib.import_module(f"pypddl_datasets.generators.classical.{package.replace('/', '.')}.generator")
     problem: str = module.make_problem(*SMOKE_CASES[domain])
@@ -101,13 +109,15 @@ def test_untested_ipc_generator_output_parses(domain: str, tmp_path: Path) -> No
     (tmp_path / "p.pddl").write_text(problem, encoding="utf-8")
     options = ParserOptions()
     options.strict = True
-    Parser(GENERATORS / package / "domain.pddl", options).parse_task(tmp_path / "p.pddl")  # pyright: ignore[reportUnknownMemberType]
+    Parser(GENERATORS / package / "domain.pddl", options).parse_task(tmp_path / "p.pddl")
 
 
 def lower_pddl(text: str) -> str:
     """Lowercase PDDL but keep ';' comments verbatim (they carry license notices)."""
     lines = text.splitlines(keepends=True)
-    return "".join(line[: line.find(";")].lower() + line[line.find(";") :] if ";" in line else line.lower() for line in lines)
+    return "".join(
+        line[: line.find(";")].lower() + line[line.find(";") :] if ";" in line else line.lower() for line in lines
+    )
 
 
 NUMERIC = REPO_ROOT / "src/pypddl_datasets/generators/numeric/ipc"
@@ -126,6 +136,7 @@ def test_numeric_generator_uses_reference_domain_file(reference: Path) -> None:
     package = NUMERIC / numeric_package(reference)
     importlib.import_module(f"pypddl_datasets.generators.numeric.ipc.{package.name}.generator")
     (domain,) = reference.glob("*domain*.pddl")
+
     # opt/sat and 2023/2026 copies differ only in comments and layout; compare the PDDL itself
     def pddl(text: str) -> str:
         return " ".join(re.sub(r";[^\n]*", "", text).lower().split())
@@ -133,27 +144,35 @@ def test_numeric_generator_uses_reference_domain_file(reference: Path) -> None:
     assert pddl((package / "domain.pddl").read_text(encoding="utf-8")) == pddl(domain.read_text(encoding="utf-8"))
 
 
-def test_generator_domain_files_are_lowercase():
+def test_generator_domain_files_are_lowercase() -> None:
     for path in [*GENERATORS.glob("*/*/domain*.pddl"), *NUMERIC.glob("*/domain*.pddl")]:
         text = path.read_text(encoding="utf-8")
         assert text == lower_pddl(text), path
 
 
-def test_blocksworld_uniform_state_counts():
+def test_blocksworld_uniform_state_counts() -> None:
     expected = [1, 1, 3, 13, 73, 501, 4_051, 37_633, 394_353]
     for domain in ("blocks_3", "blocks_4"):
-        module = importlib.import_module(
-            f"pypddl_datasets.generators.classical.ipc.{domain}.generator"
-        )
-        assert [row[0] for row in module._completion_counts(8)] == expected
+        module = importlib.import_module(f"pypddl_datasets.generators.classical.ipc.{domain}.generator")
+        # the exact state counts are the private core of the uniform sampler
+        assert [row[0] for row in module._completion_counts(8)] == expected  # pylint: disable=protected-access
 
 
 def _package(data_root: Path, archive: Path) -> str:
     """Run the packaging module and return the printed sha256."""
     result = subprocess.run(
-        [sys.executable, "-m", "pypddl_datasets.scripts.package_data",
-         "--data-root", str(data_root), "--output", str(archive)],
-        check=True, capture_output=True, text=True,
+        [
+            sys.executable,
+            "-m",
+            "pypddl_datasets.scripts.package_data",
+            "--data-root",
+            str(data_root),
+            "--output",
+            str(archive),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
     )
     return result.stdout.rsplit("sha256:", 1)[1].strip()
 
@@ -165,9 +184,7 @@ def test_package_and_fetch_round_trip(tmp_path: Path) -> None:
     assert _package(DATA_ROOT / "classical" / "tests", tmp_path / "again.tar.gz") == sha
 
     downloads = pooch.create(
-        path=tmp_path / "cache",
-        base_url="https://example.invalid/",
-        registry={"data.tar.gz": f"sha256:{sha}"},
+        path=tmp_path / "cache", base_url="https://example.invalid/", registry={"data.tar.gz": f"sha256:{sha}"}
     )
     downloads.fetch(
         "data.tar.gz",
@@ -187,14 +204,16 @@ def local_data(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("PYPDDL_DATASETS_DATA", str(DATA_ROOT))
 
 
-def test_fetch_domain_rejects_unknown_name(local_data: None):
+@pytest.mark.usefixtures("local_data")
+def test_fetch_domain_rejects_unknown_name() -> None:
     with pytest.raises(KeyError):
         pypddl_datasets.fetch_domain("classical/no-such-collection/no-such-domain")
     with pytest.raises(KeyError):
         pypddl_datasets.fetch_suite("no-such-suite")
 
 
-def test_fetch_domain_local_data_override(local_data: None):
+@pytest.mark.usefixtures("local_data")
+def test_fetch_domain_local_data_override() -> None:
     domain = pypddl_datasets.fetch_domain("classical/tests/gripper")
     assert domain.path == DATA_ROOT / "classical/tests/gripper"
     assert [t.task_path.name for t in domain.tasks] == ["test-1.pddl"]
@@ -217,7 +236,8 @@ def test_fetch_domain_local_data_override(local_data: None):
         ("numeric/ipc2026/2048", "pfile10.pddl", "domain.pddl"),
     ],
 )
-def test_task_pairing(local_data: None, domain: str, task: str, expected_domain_file: str) -> None:
+@pytest.mark.usefixtures("local_data")
+def test_task_pairing(domain: str, task: str, expected_domain_file: str) -> None:
     fetched = pypddl_datasets.fetch_task(f"{domain}/{task}")
     assert fetched.path == DATA_ROOT / domain
     assert fetched.task_path == DATA_ROOT / domain / task
@@ -225,7 +245,8 @@ def test_task_pairing(local_data: None, domain: str, task: str, expected_domain_
     assert fetched.domain_path.is_file()
 
 
-def test_fetch_task_accepts_bare_name_and_rejects_unknown(local_data: None):
+@pytest.mark.usefixtures("local_data")
+def test_fetch_task_accepts_bare_name_and_rejects_unknown() -> None:
     by_bare_name = pypddl_datasets.fetch_task("numeric/ipc2026/2048/pfile10.pddl")
     assert by_bare_name.task_path.name == "pfile10.pddl"
     with pytest.raises(KeyError):
@@ -234,7 +255,8 @@ def test_fetch_task_accepts_bare_name_and_rejects_unknown(local_data: None):
         pypddl_datasets.fetch_task("classical/no-such-domain/task.pddl")
 
 
-def test_fetch_suite_test_entries_are_single_task_domains(local_data: None):
+@pytest.mark.usefixtures("local_data")
+def test_fetch_suite_test_entries_are_single_task_domains() -> None:
     suite = pypddl_datasets.fetch_suite("pushworld-test")
     assert suite.path == DATA_ROOT
     assert len(suite.domains) == len(SUITES["pushworld-test"])
@@ -244,12 +266,14 @@ def test_fetch_suite_test_entries_are_single_task_domains(local_data: None):
         assert fetched.tasks[0].task_path.is_file()
 
 
-def test_data_root(local_data: None):
+@pytest.mark.usefixtures("local_data")
+def test_data_root() -> None:
     assert pypddl_datasets.data_root() == DATA_ROOT
     assert (pypddl_datasets.data_root() / "classical/tests/gripper/domain.pddl").is_file()
 
 
-def test_task_display_names(local_data: None):
+@pytest.mark.usefixtures("local_data")
+def test_task_display_names() -> None:
     tasks = [t for d in pypddl_datasets.fetch_suite("htg-test").domains for t in d.tasks]
     assert len(tasks) == len(SUITES["htg-test"])
     labyrinth = next(t for t in tasks if t.domain == "classical-htg-domains-labyrinth")
@@ -259,7 +283,7 @@ def test_task_display_names(local_data: None):
     assert numeric.problem == "pfile10.pddl"
 
 
-def test_task_domain_is_lab_safe_and_unique():
+def test_task_domain_is_lab_safe_and_unique() -> None:
     # "/" would break lab run dirs/report keys; flattening with "-" must
     # remain collision-free across all domains.
     names = pypddl_datasets.list_domains()
@@ -268,21 +292,30 @@ def test_task_domain_is_lab_safe_and_unique():
     assert all("/" not in flat for flat in flattened)
 
 
-def test_export_suite_materializes_tree(local_data: None, tmp_path: Path):
+@pytest.mark.usefixtures("local_data")
+def test_export_suite_materializes_tree(tmp_path: Path) -> None:
     exported = pypddl_datasets.export_suite("tests-classical", tmp_path)
     assert (tmp_path / "classical/tests/gripper/domain.pddl").is_file()
     assert len(exported) == len(SUITES["tests-classical"])
 
 
-def test_requirement_queries():
+def test_requirement_queries() -> None:
     R = pypddl_datasets.Requirement
     assert pypddl_datasets.domain_requirements("classical/tests/gripper") == {R.STRIPS}
     # the data is strict-clean: declarations are atomic and exact (no :adl anywhere)
     assert R.CONDITIONAL_EFFECTS in pypddl_datasets.domain_requirements("classical/downward-benchmarks/miconic-fulladl")
 
     # supported: capability ceiling over explicit requirements
-    supported = [R.STRIPS, R.TYPING, R.NEGATIVE_PRECONDITIONS, R.DISJUNCTIVE_PRECONDITIONS,
-                 R.EQUALITY, R.EXISTENTIAL_PRECONDITIONS, R.UNIVERSAL_PRECONDITIONS, R.CONDITIONAL_EFFECTS]
+    supported = [
+        R.STRIPS,
+        R.TYPING,
+        R.NEGATIVE_PRECONDITIONS,
+        R.DISJUNCTIVE_PRECONDITIONS,
+        R.EQUALITY,
+        R.EXISTENTIAL_PRECONDITIONS,
+        R.UNIVERSAL_PRECONDITIONS,
+        R.CONDITIONAL_EFFECTS,
+    ]
     assert "classical/downward-benchmarks/miconic-fulladl" in pypddl_datasets.find_domains(supported=supported)
     strips_only = pypddl_datasets.find_domains(supported=[R.STRIPS])
     assert "classical/tests/gripper" in strips_only
@@ -290,7 +323,8 @@ def test_requirement_queries():
 
     # requires: feature floor
     assert "classical/downward-benchmarks/miconic-fulladl" in pypddl_datasets.find_domains(
-        requires=[R.CONDITIONAL_EFFECTS])
+        requires=[R.CONDITIONAL_EFFECTS]
+    )
 
     # suite scoping and find_suites
     scoped = pypddl_datasets.find_domains(suite="ipc-satisficing-adl", supported=supported)
@@ -304,25 +338,25 @@ def test_requirement_queries():
         pypddl_datasets.find_domains(supported=[":stripss"])
 
 
-def test_task_requirements():
+def test_task_requirements() -> None:
     R = pypddl_datasets.Requirement
     assert pypddl_datasets.task_requirements("classical/tests/gripper/test-1.pddl") == {R.STRIPS}
     # per-task precision: the positional GED encoding needs conditional effects, original does not
     assert R.CONDITIONAL_EFFECTS in pypddl_datasets.task_requirements(
-        "classical/htg-domains/genome-edit-distance/d-1-2-positional.pddl")
+        "classical/htg-domains/genome-edit-distance/d-1-2-positional.pddl"
+    )
     assert R.CONDITIONAL_EFFECTS not in pypddl_datasets.task_requirements(
-        "classical/htg-domains/genome-edit-distance/d-1-2-original.pddl")
+        "classical/htg-domains/genome-edit-distance/d-1-2-original.pddl"
+    )
     # bare-name lookup for nested layouts, KeyError on unknown
     assert pypddl_datasets.task_requirements("numeric/ipc2026/2048/pfile10.pddl")
     with pytest.raises(KeyError):
         pypddl_datasets.task_requirements("classical/tests/gripper/no-such.pddl")
 
 
-def test_composites_resolve_to_explicit_requirements():
+def test_composites_resolve_to_explicit_requirements() -> None:
     # CompositeRequirements documents the aggregates; each must map to explicit
     # Requirements, and none may ever appear in the (strict-clean) metadata.
-    from pypddl_datasets import COMPOSITE_TO_REQUIREMENTS, CompositeRequirements, Requirement
-
     for composite in CompositeRequirements:
         atoms = COMPOSITE_TO_REQUIREMENTS[composite]
         assert atoms and all(isinstance(atom, Requirement) for atom in atoms)
@@ -333,11 +367,12 @@ def test_composites_resolve_to_explicit_requirements():
         assert not any(f'"{token}"' in text for token in composite_tokens), filename
 
 
-def test_find_tasks_and_per_task_overrides():
+def test_find_tasks_and_per_task_overrides() -> None:
     R = pypddl_datasets.Requirement
     # genome-edit-distance mixes encodings: only the positional tasks declare :adl
     tasks = pypddl_datasets.find_tasks(
-        supported=[R.STRIPS, R.TYPING, R.EQUALITY, R.NEGATIVE_PRECONDITIONS, R.ACTION_COSTS])
+        supported=[R.STRIPS, R.TYPING, R.EQUALITY, R.NEGATIVE_PRECONDITIONS, R.ACTION_COSTS]
+    )
     ged = [t for t in tasks if "genome-edit-distance" in t]
     assert ged and all("positional" not in t for t in ged)
     # suite-scoped -test entries yield one task per domain
@@ -345,7 +380,8 @@ def test_find_tasks_and_per_task_overrides():
     assert len(smoke) == len(SUITES["pushworld-test"])
 
 
-def test_fetch_suite_filters(local_data: None):
+@pytest.mark.usefixtures("local_data")
+def test_fetch_suite_filters() -> None:
     R = pypddl_datasets.Requirement
     full = pypddl_datasets.fetch_suite("htg-test")
     strips_typed = pypddl_datasets.fetch_suite("htg-test", supported=[R.STRIPS, R.TYPING, R.ACTION_COSTS])
@@ -355,33 +391,28 @@ def test_fetch_suite_filters(local_data: None):
 
 
 def test_large_file_pack_unpack_round_trip(tmp_path: Path) -> None:
-    from pypddl_datasets.scripts.large_files import main
-
     domain = tmp_path / "data" / "big"
     domain.mkdir(parents=True)
     content = b"(define (problem p) (:domain d))" * 70000  # ~2.2 MB
     (domain / "huge.pddl").write_bytes(content)
     (domain / "small.pddl").write_bytes(b"(define (problem q) (:domain d))")
 
-    assert main(["pack", "--root", str(tmp_path / "data"), "--threshold-mb", "1"]) == 0
+    assert large_files(["pack", "--root", str(tmp_path / "data"), "--threshold-mb", "1"]) == 0
     twin = domain / "huge.pddl.gz"
     assert twin.is_file() and not (domain / "small.pddl.gz").exists()
     first = twin.read_bytes()
-    assert main(["pack", "--root", str(tmp_path / "data"), "--threshold-mb", "1"]) == 0
+    assert large_files(["pack", "--root", str(tmp_path / "data"), "--threshold-mb", "1"]) == 0
     assert twin.read_bytes() == first  # idempotent and byte-reproducible
 
     ignore = (tmp_path / ".gitignore").read_text()
     assert "data/big/huge.pddl" in ignore and "small" not in ignore
 
     (domain / "huge.pddl").unlink()
-    assert main(["unpack", "--root", str(tmp_path / "data")]) == 0
+    assert large_files(["unpack", "--root", str(tmp_path / "data")]) == 0
     assert (domain / "huge.pddl").read_bytes() == content
 
 
 def test_layout_large_file_rules(tmp_path: Path) -> None:
-    from pypddl_datasets.scripts.large_files import main as large_files
-    from pypddl_datasets.validation.layout import large_file_errors
-
     root = tmp_path / "data"
     domain = root / "big"
     domain.mkdir(parents=True)
@@ -393,7 +424,7 @@ def test_layout_large_file_rules(tmp_path: Path) -> None:
     assert any("exceeds the large-file threshold" in e for e in oversized)
 
     large_files(["pack", "--root", str(root)])
-    assert large_file_errors(root) == []
+    assert not large_file_errors(root)
 
     (domain / "huge.pddl").unlink()
     missing = large_file_errors(root)
@@ -406,9 +437,8 @@ def test_layout_large_file_rules(tmp_path: Path) -> None:
 
 
 def test_requirements_metadata_is_fresh() -> None:
-    pytest.importorskip("pypddl")
-    from pypddl_datasets.scripts.extract_requirements import generate
-
     for filename, generated in generate(DATA_ROOT).items():
         committed = cast("object", json.loads((REPO_ROOT / "src/pypddl_datasets" / filename).read_text()))
-        assert generated == committed, f"{filename} is stale; regenerate with pypddl_datasets.scripts.extract_requirements"
+        assert (
+            generated == committed
+        ), f"{filename} is stale; regenerate with pypddl_datasets.scripts.extract_requirements"

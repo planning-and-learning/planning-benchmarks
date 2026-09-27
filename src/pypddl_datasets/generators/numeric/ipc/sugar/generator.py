@@ -28,20 +28,25 @@ LABOUR_COST_PROBABILITY = 0.6
 MAX_ATTEMPTS = 1000
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(num_mills: int, num_goals: int, seed: int | None = None) -> str:
     """Generate a Sugar task with 2 or 3 mills and ``num_goals`` in-storage goals.
 
     Structure (brands, trucks, depots, cranes, complete road map, production sets)
     is the reference template. Each mill's raw cane is drawn from the reference
-    values, the unharvested fields from 3..4. Goals ask for amounts drawn from the reference tasks' amounts (1..10) of a brand
+    values, the unharvested fields from 3..4. Goals ask for amounts drawn from the
+    reference tasks' amounts (1..10) of a brand
     some mill can produce (produce set and declared in-storage fluent) at a depot, or
     with probability 0.15 at a mill that declares it; draws repeat until the total
     goal amount fits the available cane (stock plus 5 per harvest).
     """
-    if num_mills not in (2, 3) or isinstance(num_mills, bool):
+    if num_mills not in (2, 3):  # bools equal 0/1, rejected too
         raise ValueError("num_mills must be 2 or 3")
     max_goals = (len(DEPOTS) + 1) * len(BRANDS)
-    if not isinstance(num_goals, int) or isinstance(num_goals, bool) or not 1 <= num_goals <= max_goals:
+    if not _is_int(num_goals) or not 1 <= num_goals <= max_goals:
         raise ValueError(f"num_goals must be an integer in 1..{max_goals}")
     rng = random.Random(seed)
     mills = [MILLS[0], MILL2_OF_TWO] if num_mills == 2 else list(MILLS)
@@ -58,7 +63,9 @@ def make_problem(num_mills: int, num_goals: int, seed: int | None = None) -> str
                 places = [m for m, _, _, stored, _, _ in mills if brand in stored]
             else:
                 places = list(DEPOTS)
-            goals.setdefault((rng.choice(places), brand), rng.choices(list(GOAL_AMOUNTS), list(GOAL_AMOUNTS.values()))[0])
+            place = rng.choice(places)
+            amount = rng.choices(list(GOAL_AMOUNTS), list(GOAL_AMOUNTS.values()))[0]
+            goals.setdefault((place, brand), amount)
         if sum(goals.values()) <= sum(resources.values()) + 5 * unharvested:
             break
     else:
@@ -78,7 +85,8 @@ def make_problem(num_mills: int, num_goals: int, seed: int | None = None) -> str
         "",
     ]
     for mill, produce, current, _, _, _ in mills:
-        lines.append("\t\t" + " ".join(f"(produce {mill} {b})" for b in produce) + f" (current-process {mill} {current})")
+        produce_facts = " ".join(f"(produce {mill} {b})" for b in produce)
+        lines.append(f"\t\t{produce_facts} (current-process {mill} {current})")
     for mill, _, _, stored, _, _ in mills:
         lines.append("\t\t" + " ".join(
             f"(=(in-storage {mill} {b}){2 if leftover and (mill, b) == ('mill3', 'brand4') else 0})" for b in stored
@@ -91,7 +99,9 @@ def make_problem(num_mills: int, num_goals: int, seed: int | None = None) -> str
         "\t\t(=(truck-cap truck1)10) (=(truck-cap truck2)6)",
         "\t\t" + " ".join(f"(at-location crane{i + 1} {m})" for i, m in enumerate(crane_mills) if m),
         "\t\t" + " ".join(f"(ready-crane crane{i + 1})" for i, m in enumerate(crane_mills) if m),
-        "\t\t" + " ".join(f"(=(capacity crane{i + 1}){c})" for i, (m, c) in enumerate(zip(crane_mills, capacities)) if m),
+        "\t\t" + " ".join(
+            f"(=(capacity crane{i + 1}){c})" for i, (m, c) in enumerate(zip(crane_mills, capacities)) if m
+        ),
         "\t\t(=(service-time crane1)10) (=(service-time crane2)15) (=(service-time crane3)10)",
         "\t\t(=(max-service-time crane1)10) (=(max-service-time crane2)15) (=(max-service-time crane3)10)",
     ]

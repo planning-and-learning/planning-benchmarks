@@ -31,11 +31,12 @@ def make_problem(
     run up to max(num_cards, num_cells, num_columns). All cells start empty; the goal
     is every suit's top card at home.
     """
-    for name, value, minimum, maximum in (
+    checks: list[tuple[str, object, int, int]] = [
         ("num_cards", num_cards, 1, FULL_DECK),
         ("num_cells", num_cells, 0, FULL_DECK),
         ("num_columns", num_columns, 1, FULL_DECK),
-    ):
+    ]
+    for name, value, minimum, maximum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or not minimum <= value <= maximum:
             raise ValueError(f"{name} must be an integer in [{minimum}, {maximum}]")
     if style not in SUITS:
@@ -96,7 +97,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("-f", "--num-cells", type=int, default=4, help="free cells (default: 4)")
     parser.add_argument("-c", "--num-columns", type=int, default=8, help="tableau columns (default: 8)")
     parser.add_argument("-s", "--seed", type=int)
-    parser.add_argument("--style", choices=sorted(SUITS), default="ipc2000", help="deal and naming of the IPC 2000 or 2002 tasks")
+    parser.add_argument(
+        "--style", choices=sorted(SUITS), default="ipc2000", help="deal and naming of the IPC 2000 or 2002 tasks"
+    )
     args = parser.parse_args(argv)
     try:
         problem = make_problem(**vars(args))

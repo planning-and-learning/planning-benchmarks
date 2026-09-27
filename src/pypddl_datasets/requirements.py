@@ -146,10 +146,10 @@ def task_requirements(name: str) -> frozenset[Requirement]:
             continue
         by_problem = tasks[domain]
         if problem not in by_problem:
-            matches = [p for p in by_problem if p.rsplit("/", 1)[-1] == problem]
-            if len(matches) != 1:
+            candidates = [p for p in by_problem if p.rsplit("/", 1)[-1] == problem]
+            if len(candidates) != 1:
                 raise KeyError(f"no task {problem!r} in domain {domain!r}")
-            problem = matches[0]
+            problem = candidates[0]
         return frozenset(Requirement(value) for value in by_problem[problem])
     raise KeyError(f"no domain found in task name {name!r}; see list_domains()")
 

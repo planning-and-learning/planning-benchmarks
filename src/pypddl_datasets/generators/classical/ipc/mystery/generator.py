@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+from collections.abc import Sequence
 
 # Names observed in the IPC-1998 mystery/mprime tasks, per role.
 LOCATIONS = (
@@ -25,11 +26,18 @@ CARGOS = (
     "abrasion anger angina anxiety boils depression dread grief hangover jealousy laceration loneliness "
     "prostatitis sciatica"
 ).split()
-FUELS = "alsace arizona bavaria bosnia goias guanabara kentucky manitoba moravia oregon pennsylvania quebec surrey".split()
+FUELS = (
+    "alsace arizona bavaria bosnia goias guanabara kentucky manitoba moravia oregon pennsylvania quebec surrey"
+).split()
 SPACES = "earth jupiter mars mercury neptune pluto saturn uranus venus vulcan".split()
 
 
-def _names(rng: random.Random, pool: list[str], count: int) -> list[str]:
+def _pair(a: int, b: int) -> tuple[int, int]:
+    """The undirected edge {a, b} as a sorted pair."""
+    return (a, b) if a <= b else (b, a)
+
+
+def _names(rng: random.Random, pool: Sequence[str], count: int) -> list[str]:
     """``count`` distinct names: a random sample of the pool, then ``<name>-<k>`` once it runs out."""
     names = rng.sample(pool, min(count, len(pool)))
     names += [f"{rng.choice(pool)}-{k}" for k in range(1, count - len(names) + 1)]
@@ -39,7 +47,7 @@ def _names(rng: random.Random, pool: list[str], count: int) -> list[str]:
 
 def _roads(rng: random.Random, n: int) -> set[tuple[int, int]]:
     """Every location links to one random other, components are joined, degree-1 nodes get a second road."""
-    edges = {tuple(sorted((i, rng.choice([j for j in range(n) if j != i])))) for i in range(n)}
+    edges = {_pair(i, rng.choice([j for j in range(n) if j != i])) for i in range(n)}
     component = list(range(n))
 
     def find(x: int) -> int:
@@ -53,7 +61,7 @@ def _roads(rng: random.Random, n: int) -> set[tuple[int, int]]:
     while len({find(i) for i in range(n)}) > 1:
         a = rng.randrange(n)
         b = rng.choice([i for i in range(n) if find(i) != find(a)])
-        edges.add(tuple(sorted((a, b))))
+        edges.add(_pair(a, b))
         component[find(a)] = find(b)
     while True:
         degree = [0] * n
@@ -64,8 +72,8 @@ def _roads(rng: random.Random, n: int) -> set[tuple[int, int]]:
         if not low or n < 3:
             return edges
         a = rng.choice(low)
-        b = rng.choice([i for i in range(n) if i != a and tuple(sorted((a, i))) not in edges])
-        edges.add(tuple(sorted((a, b))))
+        b = rng.choice([i for i in range(n) if i != a and _pair(a, i) not in edges])
+        edges.add(_pair(a, b))
 
 
 def make_problem(
@@ -86,14 +94,15 @@ def make_problem(
     uniform destination (possibly their start). Solvability is not guaranteed,
     as in the IPC set.
     """
-    for name, value, minimum in (
+    checks: list[tuple[str, object, int]] = [
         ("num_locations", num_locations, 2),
         ("num_vehicles", num_vehicles, 1),
         ("num_cargos", num_cargos, 1),
         ("num_fuel_levels", num_fuel_levels, 2),
         ("num_space_levels", num_space_levels, 2),
         ("num_goals", num_goals, 1),
-    ):
+    ]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_goals > num_cargos:
@@ -108,7 +117,7 @@ def make_problem(
     fuels = _names(rng, FUELS, num_fuel_levels)
     spaces = _names(rng, SPACES, num_space_levels)
 
-    relations = []
+    relations: list[str] = []
     for a, b in _roads(rng, num_locations):
         relations += [f"(eats {locations[a]} {locations[b]})", f"(eats {locations[b]} {locations[a]})"]
     relations += [f"(attacks {fuels[i]} {fuels[i + 1]})" for i in range(num_fuel_levels - 1)]
@@ -137,7 +146,8 @@ def make_problem(
 
 
 def main(argv: list[str] | None = None, prime: bool = False) -> int:
-    parser = argparse.ArgumentParser(description=f"Generate an IPC-1998 {'Mystery Prime' if prime else 'Mystery'} PDDL problem.")
+    title = "Mystery Prime" if prime else "Mystery"
+    parser = argparse.ArgumentParser(description=f"Generate an IPC-1998 {title} PDDL problem.")
     parser.add_argument("-l", "--num-locations", type=int, required=True)
     parser.add_argument("-v", "--num-vehicles", type=int, required=True)
     parser.add_argument("-c", "--num-cargos", type=int, required=True)

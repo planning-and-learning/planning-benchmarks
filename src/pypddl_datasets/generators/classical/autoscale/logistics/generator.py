@@ -22,6 +22,10 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_cities: int,
     city_size: int,
@@ -46,7 +50,7 @@ def make_problem(
         ("num_airplanes", num_airplanes, 0),
         ("num_trucks", num_trucks, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if num_trucks < num_cities:
         raise ValueError("num_trucks must be at least num_cities")
@@ -80,9 +84,16 @@ def make_problem(
     init_facts.extend(f"    (at a{i} {origin})" for i, origin in enumerate(airplane_origins))
     goals = [f"        (at p{i} {destination})" for i, destination in enumerate(package_destinations)]
 
+    objects = " ".join([
+        *(f"a{i}" for i in range(num_airplanes)),
+        *(f"c{i}" for i in range(num_cities)),
+        *(f"t{i}" for i in range(num_trucks)),
+        *locations,
+        *(f"p{i}" for i in range(num_packages)),
+    ])
     return (f"""(define (problem logistics-c{num_cities}-s{city_size}-p{num_packages}-a{num_airplanes}-t{num_trucks})
 (:domain logistics-strips)
-(:objects {" ".join([*(f"a{i}" for i in range(num_airplanes)), *(f"c{i}" for i in range(num_cities)), *(f"t{i}" for i in range(num_trucks)), *locations, *(f"p{i}" for i in range(num_packages))])}
+(:objects {objects}
 )
 (:init
 {chr(10).join(init_facts)}

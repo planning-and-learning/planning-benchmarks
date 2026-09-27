@@ -10,6 +10,7 @@ import argparse
 import random
 import sys
 from math import ceil
+from typing import cast
 
 
 def _connected(edges: set[frozenset[int]], num_markets: int) -> bool:
@@ -39,7 +40,8 @@ def make_problem(
         ("num_depots", num_depots),
         ("max_level", max_level),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < 1:
             raise ValueError(f"{name} must be an integer at least 1")
 
     rng = random.Random(seed)
@@ -61,7 +63,7 @@ def make_problem(
     max_forsale = ceil(max_level / (num_markets // 2)) if num_markets > 2 else max_level
     forced_market = rng.randrange(num_markets)
     on_sale = [[0] * num_products for _ in range(num_markets)]
-    totals = []
+    totals: list[int] = []
     for product in range(num_products):
         total = 0
         for market in range(num_markets):
@@ -93,7 +95,9 @@ def make_problem(
     for depot, market in zip(depots, depot_markets):
         init_facts.extend((f"(connected {depot} {markets[market]})", f"(connected {markets[market]} {depot})"))
     init_facts.extend(
-        f"(on-sale {goods[p]} {markets[m]} level{on_sale[m][p]})" for m in range(num_markets) for p in range(num_products)
+        f"(on-sale {goods[p]} {markets[m]} level{on_sale[m][p]})"
+        for m in range(num_markets)
+        for p in range(num_products)
     )
     init_facts.extend(f"(at {truck} {depots[depot]})" for truck, depot in zip(trucks, truck_depots))
     goal_facts = [f"(stored {g} level{level})" for g, level in zip(goods, goals)]

@@ -14,6 +14,8 @@ import math
 import random
 import sys
 from collections import defaultdict
+from collections.abc import Iterable
+from typing import TypedDict, cast
 
 RESOURCES = ["stone", "timber", "ore", "wood", "coal", "iron"]
 NUM_BUILDINGS = 3  # coal stack, sawmill, ironworks (docks/wharf unsupported upstream)
@@ -26,13 +28,24 @@ TRACKS = {  # (constrainedness, constraint increment, vehicles, vehicle incremen
 MAPS = {"tiny": (3, 2, 0), "small": (5, 5, 1), "large": (8, 9, 1), "huge": (16, 18, 2)}  # locations, edges, seas
 
 
+class _Node(TypedDict):
+    """Flow-graph node: an abstract island with a cart or a concrete coastal location."""
+
+    iid: int
+    ref: int
+    abstract: bool
+    required: int
+    distributor: set[int]
+    via: int | None  # sea it was discovered through; None for the start island
+
+
 class _Py2Random(random.Random):
     """Python 2's randint/sample(k=1)/shuffle on top of the (unchanged) Mersenne Twister."""
 
     def rnd_int(self, n: int) -> int:  # randint(0, n - 1)
         return int(self.random() * n)
 
-    def rnd_sample(self, x) -> int:  # sample(sorted(x), 1)[0]
+    def rnd_sample(self, x: Iterable[int]) -> int:  # sample(sorted(x), 1)[0]
         pool = sorted(x)
         return pool[int(self.random() * len(pool))]
 
@@ -64,7 +77,8 @@ class _Map:
                     next_free_sea += 1
         # make the map connected (by land or through a shared sea)
         sea0 = self.location_to_sea[0]
-        connected = sorted({0, *(self.sea_to_locations[sea0] if sea0 is not None else [])})
+        coast0: list[int] = self.sea_to_locations[sea0] if sea0 is not None else []
+        connected = sorted({0, *coast0})
         for t in rng.rnd_shuffle([x for x in range(locations) if x not in connected]):
             if t in connected:
                 continue
@@ -72,8 +86,9 @@ class _Map:
             self._link(s, t)
             connected.append(t)
             edges -= 1
-            if self.location_to_sea[t] is not None:
-                connected += [t2 for t2 in self.sea_to_locations[self.location_to_sea[t]] if t2 not in connected]
+            sea_t = self.location_to_sea[t]
+            if sea_t is not None:
+                connected += [t2 for t2 in self.sea_to_locations[sea_t] if t2 not in connected]
         available = [x for x in range(locations) if len(self.landmap[x]) < locations - 1]
         while edges > 2:  # keep two edges for the resource connectivity below
             edges -= self._random_edge(rng, available, locations)
@@ -155,7 +170,9 @@ def _goal_fact(goal: tuple[str, int, int]) -> str:
     }[kind]
 
 
-def _goals(rng: _Py2Random, m: _Map, locations: int, num_goals: int, ph: int, pb: int, pr: int) -> list[tuple[str, int, int]]:
+def _goals(
+    rng: _Py2Random, m: _Map, locations: int, num_goals: int, ph: int, pb: int, pr: int
+) -> list[tuple[str, int, int]]:
     goals: list[tuple[str, int, int]] = []
     psum = ph + pb + pr
     locb = list(range(locations))
@@ -199,7 +216,7 @@ def _goals(rng: _Py2Random, m: _Map, locations: int, num_goals: int, ph: int, pb
     return goals
 
 
-def _transport(nodes: list[dict], num_seas: int) -> int:
+def _transport(nodes: list[_Node]) -> int:
     """Trips of a feasible solution to upstream's ship-transport MIP (an upper bound on its optimum).
 
     Each sea's single distributor (the node holding its wharf) serves the nodes discovered
@@ -209,7 +226,9 @@ def _transport(nodes: list[dict], num_seas: int) -> int:
     """
     served: dict[int, list[int]] = defaultdict(list)  # sea -> nodes discovered through it
     for node in nodes[1:]:
-        served[node["via"]].append(node["iid"])
+        via = node["via"]
+        assert via is not None  # only the start island has no sea
+        served[via].append(node["iid"])
     demand = {node["iid"]: node["required"] for node in nodes}
     trips_total = 0
     # nodes are in BFS order, so children follow parents: settle leaves first
@@ -262,7 +281,7 @@ def _min_resources(m: _Map, goals: list[tuple[str, int, int]]) -> tuple[int, int
     required = [False] * locations
     locs_req_res: set[int] = set()
     iron = coal = wood = False
-    has = set()
+    has: set[str] = set()
     base = {m.woodland, m.mountain, m.metalliferous}
     for goal in goals:
         s, t, o, p, needs_iron, needs_coal, needs_wood = _needs(goal)
@@ -295,25 +314,31 @@ def _min_resources(m: _Map, goals: list[tuple[str, int, int]]) -> tuple[int, int
 
     for num_wharfs in range(num_seas + 1):
         best: tuple[int, int, int] | None = None  # (vehicles, timber, ore)
+        best_key: tuple[int, int] | None = None  # (vehicles, timber): ties keep the first
         for root_sea in sorted(loc_to_seas[abstr_start]):
             if num_wharfs == 0:
                 continue  # goals never contain wharfs
             # choose which seas get a wharf (depth-first, as upstream), then where
             for seas_choice in _sea_selections(root_sea, abstr_start, sea_to_locs, locs_req_res, num_wharfs):
                 for wharfs in _wharf_placements(seas_choice, root_sea, abstr_start):
-                    result = _transport_cost(m, wharfs, abstr_start, abstract_of, reverse_map, reachable,
-                                             loc_to_seas, locs_req_res, required, processed, num_required, num_seas)
-                    if best is None or result[0] < best[0] or (result[0] == best[0] and result[1] < best[1]):
-                        best = result
+                    result = _transport_cost(
+                        m, wharfs, abstr_start, abstract_of, reverse_map, reachable,
+                        loc_to_seas, locs_req_res, required, processed, num_required,
+                    )
+                    key = (result[0], result[1])
+                    if best_key is None or key < best_key:
+                        best, best_key = result, key
         if best is not None:
             return stone + num_wharfs * 4, timber + best[1], ore + best[2], vehicles + best[0]
     raise ValueError("no wharf placement connects all goal locations")
 
 
-def _sea_selections(root_sea, abstr_start, sea_to_locs, locs_req_res, num_wharfs):
+def _sea_selections(
+    root_sea: int, abstr_start: int, sea_to_locs: list[set[int]], locs_req_res: set[int], num_wharfs: int
+) -> list[dict[int, set[int]]]:
     """Sets of covered seas (with candidate wharf locations) reaching all required locations."""
     num_seas = len(sea_to_locs)
-    results = []
+    results: list[dict[int, set[int]]] = []
 
     def extend(covered: dict[int, set[int]], reached: set[int], start: int) -> None:
         if locs_req_res <= reached:
@@ -332,7 +357,7 @@ def _sea_selections(root_sea, abstr_start, sea_to_locs, locs_req_res, num_wharfs
     return results
 
 
-def _wharf_placements(covered: dict[int, set[int]], root_sea: int, abstr_start: int):
+def _wharf_placements(covered: dict[int, set[int]], root_sea: int, abstr_start: int) -> list[dict[int, int]]:
     """One wharf location per covered sea (the root sea's wharf is at the start island)."""
     seas = sorted(covered)
     placements: list[dict[int, int]] = [{}]
@@ -342,8 +367,19 @@ def _wharf_placements(covered: dict[int, set[int]], root_sea: int, abstr_start: 
     return placements
 
 
-def _transport_cost(m, wharfs, abstr_start, abstract_of, reverse_map, reachable, loc_to_seas, locs_req_res,
-                    required, processed, num_required, num_seas):
+def _transport_cost(
+    m: _Map,
+    wharfs: dict[int, int],
+    abstr_start: int,
+    abstract_of: list[int],
+    reverse_map: list[set[int]],
+    reachable: list[set[int]],
+    loc_to_seas: list[set[int]],
+    locs_req_res: set[int],
+    required: list[bool],
+    processed: list[int],
+    num_required: list[int],
+) -> tuple[int, int, int]:
     covered = set(wharfs)
     wharf_at: dict[int, set[int]] = defaultdict(set)
     for sea, loc in wharfs.items():
@@ -356,15 +392,18 @@ def _transport_cost(m, wharfs, abstr_start, abstract_of, reverse_map, reachable,
         if wharf_at[x]:
             needs_cart[x] = True
         elif x in locs_req_res:
-            needs_cart[x] = any(required[loc] and (m.location_to_sea[loc] is None or m.location_to_sea[loc] not in covered)
-                                for loc in reverse_map[x])
+            needs_cart[x] = any(
+                required[loc] and (m.location_to_sea[loc] is None or m.location_to_sea[loc] not in covered)
+                for loc in reverse_map[x]
+            )
     # flow graph: abstract islands with carts, concrete coastal locations without
-    nodes = [{"iid": 0, "ref": abstr_start, "abstract": True, "required": 12 * len(wharf_at[abstr_start]),
-              "distributor": set(wharf_at[abstr_start]), "via": None}]
+    nodes: list[_Node] = [{"iid": 0, "ref": abstr_start, "abstract": True, "required": 12 * len(wharf_at[abstr_start]),
+                           "distributor": set(wharf_at[abstr_start]), "via": None}]
     lookup: dict[int, int] = {loc: 0 for loc in reverse_map[abstr_start]}
     i = 0
     while i < len(nodes):
         node = nodes[i]
+        succ: list[tuple[int, int]]
         if node["abstract"]:
             succ = [(sea, loc) for sea in sorted(loc_to_seas[node["ref"]]) for loc in m.sea_to_locations[sea]]
         else:
@@ -376,7 +415,8 @@ def _transport_cost(m, wharfs, abstr_start, abstract_of, reverse_map, reachable,
             a = abstract_of[loc]
             iid = len(nodes)
             if needs_cart[a]:
-                nodes.append({"iid": iid, "ref": a, "abstract": True, "required": processed[a] + 1 + 12 * len(wharf_at[a]),
+                nodes.append({"iid": iid, "ref": a, "abstract": True,
+                              "required": processed[a] + 1 + 12 * len(wharf_at[a]),
                               "distributor": set(wharf_at[a]), "via": sea})
                 for loc2 in reachable[loc]:
                     lookup[loc2] = iid
@@ -385,7 +425,7 @@ def _transport_cost(m, wharfs, abstr_start, abstract_of, reverse_map, reachable,
                               "distributor": set(), "via": sea})
                 lookup[loc] = iid
         i += 1
-    timber = TRIP_FUEL * _transport(nodes, num_seas)
+    timber = TRIP_FUEL * _transport(nodes)
     vehicles = ore = 0
     for x in range(len(reverse_map)):
         if x != abstr_start and needs_cart[x]:
@@ -420,9 +460,14 @@ def make_problem(
     constrainedness plus an increment (`opt`: 1.2/+4 resources, 1.2/+2 vehicles;
     `sat`: 1.5/+5, 1.5/+3).
     """
-    for name, value, minimum in (("num_locations", num_locations, 2), ("num_edges", num_edges, 1),
-                                 ("num_seas", num_seas, 0), ("num_goals", num_goals, 1)):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+    for name, value, minimum in (
+        ("num_locations", num_locations, 2),
+        ("num_edges", num_edges, 1),
+        ("num_seas", num_seas, 0),
+        ("num_goals", num_goals, 1),
+    ):
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if track not in TRACKS:
         raise ValueError(f"track must be one of {', '.join(TRACKS)}")
@@ -479,7 +524,10 @@ def make_problem(
                         init.append(f"    (add-atleast-{r} {r[0]}l{old} {r[0]}l{consumed} {r[0]}l{al})")
     init.append("    (= (total-cost) 0)")
     goal_facts = "\n".join(f"    {_goal_fact(g)}" for g in goals)
-    return (f""";; Generator input: seed={seed}, locations={num_locations}, edges={num_edges}, seas={num_seas}, goals={num_goals}, track={track}
+    header = (
+        f"seed={seed}, locations={num_locations}, edges={num_edges}, seas={num_seas}, goals={num_goals}, track={track}"
+    )
+    return (f""";; Generator input: {header}
 (define (problem settlers-{num_locations}-{num_seas}-{num_goals}-{track}-{seed})
 (:domain settlers)
 (:objects

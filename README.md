@@ -84,6 +84,21 @@ and domains resolve there without downloading.
   (parses everything with pypddl); `validation.requirements` guards metadata
   freshness at release time.
 
+## Development
+
+The `dev` dependency group pins the test and lint tools (pytest, pypddl,
+pyright, pylint). Install it into `.venv` (for example `uv sync --group dev`),
+then run what CI runs:
+
+```sh
+.venv/bin/pytest
+.venv/bin/pyright                            # strict, pyrightconfig.json
+.venv/bin/pylint src/pypddl_datasets tests   # config in pyproject.toml
+```
+
+Generator changes must keep the output byte-identical for every seed unless
+the change is meant to alter the distribution.
+
 ## Releasing
 
 Releases run from the Actions "release" workflow (Run workflow); tags are

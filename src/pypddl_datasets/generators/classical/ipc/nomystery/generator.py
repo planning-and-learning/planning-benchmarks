@@ -37,8 +37,8 @@ def _minimum_fuel(
     package_goals: list[int],
 ) -> int:
     num_locations = len(distances)
-    goals_per_start = [set() for _ in range(num_locations)]
-    starts_per_goal = [set() for _ in range(num_locations)]
+    goals_per_start: list[set[int]] = [set() for _ in range(num_locations)]
+    starts_per_goal: list[set[int]] = [set() for _ in range(num_locations)]
     for start, goal in zip(package_starts, package_goals):
         goals_per_start[start].add(goal)
         starts_per_goal[goal].add(start)
@@ -196,8 +196,8 @@ def make_problem(
         num_edges += 1
 
     truck_start = rng.randrange(num_locations)
-    package_starts = []
-    package_goals = []
+    package_starts: list[int] = []
+    package_goals: list[int] = []
     for _ in range(num_packages):
         start = rng.randrange(num_locations)
         goal = rng.randrange(num_locations)
@@ -231,7 +231,7 @@ def make_problem(
         for delta in deltas
         if post + delta <= max_fuel
     ]
-    road_facts = []
+    road_facts: list[str] = []
     for source in range(num_locations):
         for target in range(num_locations):
             edge_cost = graph[source][target]

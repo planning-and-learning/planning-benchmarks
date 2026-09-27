@@ -18,6 +18,7 @@ import argparse
 import random
 import sys
 from collections.abc import Callable
+from typing import cast
 
 Cell = tuple[int, int]
 ENSURE_PLAN_TRIES = 20
@@ -159,7 +160,8 @@ def has_scaffold(goal: list[list[int]], depot: Cell, max_height: int) -> bool:
         cell = towers[index]
         if cell in labels:
             return labels[cell] >= height(cell) and search(towers, index + 1, deferred)
-        if attempt(("search", len(towers), index, deferred | {cell}), [], lambda: search(towers, index + 1, deferred | {cell})):
+        extended = deferred | {cell}
+        if attempt(("search", len(towers), index, extended), [], lambda: search(towers, index + 1, extended)):
             return True
         if height(cell) <= top:
             for new in core_paths(cell):
@@ -179,7 +181,9 @@ def has_scaffold(goal: list[list[int]], depot: Cell, max_height: int) -> bool:
     return all(alone(tower) for tower in towers) and search(towers, 0, frozenset())
 
 
-def _goal_board(size_x: int, size_y: int, min_height: int, max_height: int, num_towers: int, rng: random.Random) -> list[list[int]]:
+def _goal_board(
+    size_x: int, size_y: int, min_height: int, max_height: int, num_towers: int, rng: random.Random
+) -> list[list[int]]:
     board = [[0] * size_x for _ in range(size_y)]
     cells = [(x, y) for x in range(size_x) for y in range(size_y)]
     for index, cell_index in enumerate(rng.sample(range(len(cells)), num_towers)):
@@ -218,7 +222,8 @@ def make_problem(
         ("max_height", max_height, 1),
         ("num_towers", num_towers, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        checked = cast(object, value)  # runtime check: callers may pass any type
+        if not isinstance(checked, int) or isinstance(checked, bool) or checked < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if min_height > max_height:
         raise ValueError("min_height must not exceed max_height")

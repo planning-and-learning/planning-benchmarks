@@ -10,6 +10,10 @@ import random
 import sys
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def _cell(x: int, y: int, mid: int) -> str:
     return f"bushes{x}_{y}" if y == 2 and x != mid else f"grass{x}_{y}"
 
@@ -43,9 +47,10 @@ def make_problem(
     for name, value, minimum in (
         ("width", width, 3), ("height", height, 3), ("num_bots", num_bots, 1), ("num_axes", num_axes, 1),
         ("water_capacity", water_capacity, 1), ("axe_durability", axe_durability, 1), ("gate_tree", gate_tree, 0),
-        ("fire_rows", fire_rows, 1), ("max_fire", max_fire, 1), ("extra_trees", extra_trees, 0), ("max_tree", max_tree, 1),
+        ("fire_rows", fire_rows, 1), ("max_fire", max_fire, 1), ("extra_trees", extra_trees, 0),
+        ("max_tree", max_tree, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     if width % 2 == 0:
         raise ValueError("width must be odd (the gate is the middle column)")
@@ -75,24 +80,28 @@ def make_problem(
     else:
         raise ValueError("no draw with reachable fires; lower extra_trees or max_tree")
 
-    name = lambda c: _cell(c[0], c[1], mid)  # noqa: E731
-    grass = [name(c) for c in cells if name(c).startswith("grass")]
-    bushes = [name(c) for c in cells if name(c).startswith("bushes")]
-    init = []
+    def cell_name(c: tuple[int, int]) -> str:
+        return _cell(c[0], c[1], mid)
+
+    grass = [cell_name(c) for c in cells if cell_name(c).startswith("grass")]
+    bushes = [cell_name(c) for c in cells if cell_name(c).startswith("bushes")]
+    init: list[str] = []
     for x, y in cells:
         for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
             if 1 <= nx <= width and 1 <= ny <= height:
-                init.append(f"(connected {name((x, y))} {name((nx, ny))})")
-    init += [f"(= (tree {name(c)}) {trees.get(c, 0)})" for c in cells]
-    init += [f"(= (fire {name(c)}) {fires.get(c, 0)})" for c in cells]
+                init.append(f"(connected {cell_name((x, y))} {cell_name((nx, ny))})")
+    init += [f"(= (tree {cell_name(c)}) {trees.get(c, 0)})" for c in cells]
+    init += [f"(= (fire {cell_name(c)}) {fires.get(c, 0)})" for c in cells]
     init += [f"(= (max-water {b}) 1)" for b in bushes]
     for i in range(1, num_bots + 1):
-        init += [f"(at bot{i} grass{i}_1)", f"(= (water-capacity bot{i}) {water_capacity})", f"(= (has-water bot{i}) 0)"]
+        init += [
+            f"(at bot{i} grass{i}_1)", f"(= (water-capacity bot{i}) {water_capacity})", f"(= (has-water bot{i}) 0)"
+        ]
     init += ["(pond grass1_1)", f"(pond grass{width}_1)"]
     for i in range(1, num_axes + 1):
         init += [f"(at axe{i} grass{i}_1)", f"(= (durability axe{i}) {axe_durability})"]
     init.append("(= (cost) 0)")
-    goal = [f"(= (fire {name(c)}) 0)" for c in sorted(fires, key=lambda c: (c[1], c[0]))]
+    goal = [f"(= (fire {cell_name(c)}) 0)" for c in sorted(fires, key=lambda c: (c[1], c[0]))]
 
     return (f"""(define (problem forestfire-w{width}-h{height}-b{num_bots}-a{num_axes})
 (:domain forestfire)

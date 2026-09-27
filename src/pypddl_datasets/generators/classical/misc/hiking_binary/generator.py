@@ -25,7 +25,7 @@ def make_problem(
     places = [f"place{i}" for i in range(num_places)]
     people = [name for i in range(num_couples) for name in (f"guy{i}", f"girl{i}")]
 
-    init_facts = []
+    init_facts: list[str] = []
     for i in range(num_couples):
         tent_state = "up" if rng.randint(1, 2) == 2 else "down"
         init_facts.extend(

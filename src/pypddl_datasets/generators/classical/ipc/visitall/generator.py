@@ -43,7 +43,7 @@ def make_problem(
     ]
     initial = rng.choice(locations)
 
-    connections = []
+    connections: list[str] = []
     for x, y in locations:
         for next_x, next_y in (
             (x - 1, y),
@@ -56,7 +56,7 @@ def make_problem(
                     f"(connected loc-x{x}-y{y} loc-x{next_x}-y{next_y})"
                 )
 
-    goals = []
+    goals: list[str] = []
     for x, y in locations:
         selected = rng.randrange(area) < goal_ratio * area
         if selected or (x, y) == initial:

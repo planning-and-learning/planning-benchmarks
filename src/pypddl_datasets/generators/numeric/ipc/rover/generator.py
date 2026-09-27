@@ -16,6 +16,10 @@ from pypddl_datasets.generators.classical.ipc.rovers.generator import make_probl
 ENERGY = 50
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def make_problem(
     num_rovers: int,
     num_waypoints: int,
@@ -39,7 +43,7 @@ def make_problem(
         ("num_cameras", num_cameras, 1),
         ("num_goals", num_goals, 1),
     ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+        if not _is_int(value) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
     strips = make_strips_problem(num_rovers, num_waypoints, num_objectives, num_cameras, num_goals, seed=seed)
     rng = random.Random(seed)

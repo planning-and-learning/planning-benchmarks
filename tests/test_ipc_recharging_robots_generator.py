@@ -1,5 +1,6 @@
 import re
 from pathlib import Path
+from typing import Any
 
 import pytest
 from pypddl.formalism import Parser, ParserOptions
@@ -7,27 +8,33 @@ from pypddl.formalism import Parser, ParserOptions
 from pypddl_datasets.generators.classical.ipc.recharging_robots import generator
 from pypddl_datasets.generators.classical.ipc.recharging_robots.generator import main, make_problem
 
-CASES = [
-    dict(kind="covers", num_robots=2, num_obstacles=2, num_viewpoints=15, min_cover=2, num_areas=1),
-    dict(kind="covers", num_robots=4, num_obstacles=5, num_viewpoints=15, min_cover=2, num_areas=3),
-    dict(kind="single-source-move-to-locations", num_robots=3, num_obstacles=5, num_viewpoints=10),
-    dict(kind="single-source-move-to-locations", num_robots=4, num_obstacles=5, num_viewpoints=15, move_from_source=True),
+CASES: list[dict[str, Any]] = [
+    {"kind": "covers", "num_robots": 2, "num_obstacles": 2, "num_viewpoints": 15, "min_cover": 2, "num_areas": 1},
+    {"kind": "covers", "num_robots": 4, "num_obstacles": 5, "num_viewpoints": 15, "min_cover": 2, "num_areas": 3},
+    {"kind": "single-source-move-to-locations", "num_robots": 3, "num_obstacles": 5, "num_viewpoints": 10},
+    {
+        "kind": "single-source-move-to-locations",
+        "num_robots": 4,
+        "num_obstacles": 5,
+        "num_viewpoints": 15,
+        "move_from_source": True,
+    },
 ]
 
 
-def _graph(problem):
-    edges = re.findall(r"\(connected (\S+) (\S+)\)", problem)
-    adj = {}
+def _graph(problem: str) -> dict[str, set[str]]:
+    edges: list[tuple[str, str]] = re.findall(r"\(connected (\S+) (\S+)\)", problem)
+    adj: dict[str, set[str]] = {}
     for a, b in edges:
         adj.setdefault(a, set()).add(b)
         adj.setdefault(b, set()).add(a)
     return adj
 
 
-def _dist(adj, source):
+def _dist(adj: dict[str, set[str]], source: str) -> dict[str, int]:
     dist, frontier = {source: 0}, [source]
     while frontier:
-        nxt = []
+        nxt: list[str] = []
         for u in frontier:
             for v in adj[u]:
                 if v not in dist:
@@ -39,7 +46,7 @@ def _dist(adj, source):
 
 @pytest.mark.parametrize("case", CASES)
 @pytest.mark.parametrize("seed", range(3))
-def test_tasks_are_connected_and_charged_enough(case, seed):
+def test_tasks_are_connected_and_charged_enough(case: dict[str, Any], seed: int) -> None:
     problem = make_problem(**case, seed=seed)
     assert problem == make_problem(**case, seed=seed) and problem == problem.lower()
     objects = problem.split("(:objects", 1)[1].split("(:init", 1)[0]
@@ -69,25 +76,32 @@ def test_tasks_are_connected_and_charged_enough(case, seed):
     assert "(:metric minimize (total-cost))" in problem
 
 
-def test_output_parses_strictly(tmp_path):
+def test_output_parses_strictly(tmp_path: Path) -> None:
     options = ParserOptions()
     options.strict = True
     for i, case in enumerate(CASES):
         (tmp_path / f"p{i}.pddl").write_text(make_problem(**case, seed=1))
-        Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / f"p{i}.pddl")  # pyright: ignore[reportUnknownMemberType]
+        Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / f"p{i}.pddl")
 
 
-def test_cli_matches_make_problem(capsys):
+def test_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["covers", "3", "2", "10", "--min-cover", "2", "--num-areas", "2", "-s", "5"]) == 0
     assert capsys.readouterr().out == make_problem("covers", 3, 2, 10, min_cover=2, num_areas=2, seed=5)
 
 
 @pytest.mark.parametrize(
     "parameter,value",
-    [("kind", "patrol"), ("num_robots", 0), ("num_obstacles", -1), ("min_cover", 0), ("num_areas", 0), ("charge_multiplier", 0.5)],
+    [
+        ("kind", "patrol"),
+        ("num_robots", 0),
+        ("num_obstacles", -1),
+        ("min_cover", 0),
+        ("num_areas", 0),
+        ("charge_multiplier", 0.5),
+    ],
 )
-def test_rejects_invalid_parameters(parameter, value):
-    parameters = dict(kind="covers", num_robots=2, num_obstacles=2, num_viewpoints=10)
+def test_rejects_invalid_parameters(parameter: str, value: str | int | float) -> None:
+    parameters: dict[str, Any] = {"kind": "covers", "num_robots": 2, "num_obstacles": 2, "num_viewpoints": 10}
     parameters[parameter] = value
     with pytest.raises(ValueError, match=parameter):
         make_problem(**parameters)

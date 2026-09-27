@@ -10,7 +10,7 @@ from pypddl_datasets.generators.numeric.ipc.block_grouping.generator import main
 
 
 @pytest.mark.parametrize("size,blocks,colours", [(1, 3, 1), (5, 10, 2), (20, 15, 3), (11, 40, 10)])
-def test_block_grouping_goal_encodes_a_colouring(size, blocks, colours):
+def test_block_grouping_goal_encodes_a_colouring(size: int, blocks: int, colours: int) -> None:
     problem = make_problem(size, blocks, colours, seed=7)
     assert problem == make_problem(size, blocks, colours, seed=7)
     init, goal = problem.split("(:goal", 1)
@@ -33,14 +33,14 @@ def test_block_grouping_goal_encodes_a_colouring(size, blocks, colours):
 
 
 @pytest.mark.parametrize("colours", [1, 3])
-def test_block_grouping_parses_strictly(colours, tmp_path):
+def test_block_grouping_parses_strictly(colours: int, tmp_path: Path) -> None:
     (tmp_path / "p.pddl").write_text(make_problem(6, 8, colours, seed=1))
     options = ParserOptions()
     options.strict = True
     Parser(Path(generator.__file__).with_name("domain.pddl"), options).parse_task(tmp_path / "p.pddl")
 
 
-def test_block_grouping_cli_and_validation(capsys):
+def test_block_grouping_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["7", "5", "2", "-s", "3"]) == 0
     assert capsys.readouterr().out == make_problem(7, 5, 2, seed=3)
     with pytest.raises(ValueError, match="num_colours"):

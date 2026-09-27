@@ -16,9 +16,11 @@ def parse(problem: str, tmp_path: Path) -> None:
 
 
 @pytest.mark.parametrize("width,height,bots,axes,extra_trees", [(3, 3, 1, 1, 0), (5, 6, 2, 2, 3), (9, 7, 3, 2, 10)])
-def test_forestfire_layout(width, height, bots, axes, extra_trees, tmp_path):
+def test_forestfire_layout(width: int, height: int, bots: int, axes: int, extra_trees: int, tmp_path: Path) -> None:
     problem = make_problem(width, height, bots, axes, fire_rows=2 if height > 4 else 1, extra_trees=extra_trees, seed=7)
-    assert problem == make_problem(width, height, bots, axes, fire_rows=2 if height > 4 else 1, extra_trees=extra_trees, seed=7)
+    assert problem == make_problem(
+        width, height, bots, axes, fire_rows=2 if height > 4 else 1, extra_trees=extra_trees, seed=7
+    )
     mid = (width + 1) // 2
     bushes = set(re.findall(r"\(= \(max-water (\S+)\) 1\)", problem))
     assert bushes == {f"bushes{x}_2" for x in range(1, width + 1) if x != mid}
@@ -33,9 +35,13 @@ def test_forestfire_layout(width, height, bots, axes, extra_trees, tmp_path):
     parse(problem, tmp_path)
 
 
-def test_forestfire_cli_and_validation(capsys):
+def test_forestfire_cli_and_validation(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["-x", "5", "-y", "4", "-s", "3"]) == 0
     assert capsys.readouterr().out == make_problem(5, 4, seed=3)
-    for kwargs in (dict(width=4, height=4), dict(width=3, height=3, fire_rows=2), dict(width=3, height=3, num_bots=4)):
+    for kwargs in (
+        {"width": 4, "height": 4},
+        {"width": 3, "height": 3, "fire_rows": 2},
+        {"width": 3, "height": 3, "num_bots": 4},
+    ):
         with pytest.raises(ValueError):
             make_problem(**kwargs)

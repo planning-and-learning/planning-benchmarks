@@ -19,6 +19,7 @@ MAX_NODES = 20_000
 MAX_RESTARTS = 20
 
 Board = tuple[tuple[int, ...], ...]
+Scramble = tuple[Board, list[str]]  # initial board, moves that solve it
 
 
 def _line_cells(direction: str, k: int) -> list[tuple[int, int]]:
@@ -32,8 +33,14 @@ def _line_cells(direction: str, k: int) -> list[tuple[int, int]]:
     return [(r, k) for r in reversed(range(SIZE))]
 
 
+def _is_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def _slide(line: list[int]) -> list[int]:
-    tiles, out, j = [v for v in line if v], [], 0
+    tiles = [v for v in line if v]
+    out: list[int] = []
+    j = 0
     while j < len(tiles):
         if j + 1 < len(tiles) and tiles[j] == tiles[j + 1]:
             out.append(2 * tiles[j])
@@ -66,7 +73,7 @@ def _unmove(rng: random.Random, board: Board, direction: str, previous: str | No
     along ``previous`` (perpendicular edge).
     """
     lines = [_line_cells(direction, k) for k in range(SIZE)]
-    pres = []
+    pres: list[list[int]] = []
     for line in lines:
         values = [board[r][c] for r, c in line]
         tiles = [v for v in values if v]
@@ -104,12 +111,12 @@ def _unmove(rng: random.Random, board: Board, direction: str, previous: str | No
     return before if before != board and move(before, direction) == board else None
 
 
-def _scramble(rng: random.Random, target: int, num_moves: int, num_tiles: int):
+def _scramble(rng: random.Random, target: int, num_moves: int, num_tiles: int) -> Scramble | None:
     """Depth-first search for ``num_moves`` inverse moves from the goal board that undo
     ``num_tiles - 1`` merges in total, backtracking out of boards no move can produce."""
     budget = [MAX_NODES]
 
-    def search(board: Board, direction: str, steps_left: int):
+    def search(board: Board, direction: str, steps_left: int) -> Scramble | None:
         tiles = sum(v > 0 for row in board for v in row)
         remaining = max(0, num_tiles - tiles)
         for _ in range(ATTEMPTS_PER_NODE):
@@ -124,6 +131,7 @@ def _scramble(rng: random.Random, target: int, num_moves: int, num_tiles: int):
                 continue
             if steps_left == 1:
                 return before, [direction]
+            assert previous is not None  # only the last inverse step draws no previous move
             rest = search(before, previous, steps_left - 1)
             if rest is not None:
                 return rest[0], rest[1] + [direction]
@@ -144,14 +152,14 @@ def make_problem(target: int, num_moves: int, num_tiles: int | None = None, seed
     initial board). An inverse move is kept only if the forward move reproduces
     the board, so the recorded moves always solve the task.
     """
-    if not isinstance(target, int) or isinstance(target, bool) or target < 4 or target & (target - 1):
+    if not _is_int(target) or target < 4 or target & (target - 1):
         raise ValueError("target must be a power of two of at least 4")
-    if not isinstance(num_moves, int) or isinstance(num_moves, bool) or num_moves < 1:
+    if not _is_int(num_moves) or num_moves < 1:
         raise ValueError("num_moves must be an integer at least 1")
     rng = random.Random(seed)
     if num_tiles is None:
         num_tiles = rng.randint(9, 16)
-    if not isinstance(num_tiles, int) or isinstance(num_tiles, bool) or not 1 <= num_tiles <= SIZE * SIZE:
+    if not _is_int(num_tiles) or not 1 <= num_tiles <= SIZE * SIZE:
         raise ValueError("num_tiles must be an integer in 1..16")
     for _ in range(MAX_RESTARTS):
         result = _scramble(rng, target, num_moves, num_tiles)
@@ -166,8 +174,9 @@ def make_problem(target: int, num_moves: int, num_tiles: int | None = None, seed
         return "\n".join(f"    ;   {' | '.join(str(v) for v in row)}" for row in b)
 
     pos = [[f"p{r + 1}{c + 1}" for c in range(SIZE)] for r in range(SIZE)]
-    init = []
-    for d, statuses, name in (("l", ROW_STATUS, "L"), ("r", ROW_STATUS, "R"), ("u", COL_STATUS, "U"), ("d", COL_STATUS, "D")):
+    init: list[str] = []
+    lines = (("l", ROW_STATUS, "L"), ("r", ROW_STATUS, "R"), ("u", COL_STATUS, "U"), ("d", COL_STATUS, "D"))
+    for d, statuses, name in lines:
         for k, status in enumerate(statuses):
             init.append("        " + " ".join(
                 f"(pos-at {name} {status} i{i + 1} {pos[r][c]})" for i, (r, c) in enumerate(_line_cells(d, k))
@@ -175,7 +184,8 @@ def make_problem(target: int, num_moves: int, num_tiles: int | None = None, seed
     for name, statuses in (("L", ROW_STATUS), ("R", ROW_STATUS), ("U", COL_STATUS), ("D", COL_STATUS)):
         chain = list(statuses) + ["done"]
         init.append("        " + " ".join(f"(next {name} {a} {b})" for a, b in zip(chain, chain[1:])))
-    init += [f"        (start-status {name} {s})" for name, s in (("L", "top"), ("R", "top"), ("U", "left"), ("D", "left"))]
+    starts = (("L", "top"), ("R", "top"), ("U", "left"), ("D", "left"))
+    init += [f"        (start-status {name} {s})" for name, s in starts]
     init.append("        (next-idx i1 i2) (next-idx i2 i3) (next-idx i3 i4)")
     init.append("        (free-to-play)")
     init += ["        " + " ".join(f"(= (value {pos[r][c]}) {board[r][c]})" for c in range(SIZE)) for r in range(SIZE)]

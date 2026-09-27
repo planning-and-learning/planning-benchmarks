@@ -22,7 +22,7 @@ GOAL_P, GOAL_Q = 40, 20  # upstream INITIAL_PROB_P / INITIAL_PROB_Q (percent)
 
 def _lines(path: Path) -> list[str]:
     """Upstream parsing: drop '%' comments and all spaces, skip empty lines."""
-    lines = []
+    lines: list[str] = []
     for line in path.read_text(encoding="utf-8").splitlines():
         line = line.split("%", 1)[0].replace(" ", "").strip()
         if line:
@@ -42,7 +42,7 @@ def _load() -> tuple[list[str], list[str], list[tuple[str, str, str, str]]]:
             if token and token not in simple_set and token not in dashed:
                 dashed.append(token)
     dashed.reverse()
-    reactions = []
+    reactions: list[tuple[str, str, str, str]] = []
     for line in reaction_lines:  # prepended twice: file order
         tokens = [t for t in re.split(r"[>\[\]+]", line) if t]
         if tokens[0] == EMPTY:  # "_ [ c ]> y": synthesis catalysed by c
@@ -69,7 +69,7 @@ def _enabled(reaction: tuple[str, str, str, str], available: set[str]) -> bool:
 def _reach(available: set[str], applied: set[int], used: set[str]) -> list[str]:
     """One upstream "flip": apply every enabled, not yet applied reaction."""
     fired = [i for i, r in enumerate(REACTIONS) if i not in applied and _enabled(r, available)]
-    new = []
+    new: list[str] = []
     for i in fired:
         applied.add(i)
         used.update(REACTIONS[i][1:])
@@ -157,7 +157,10 @@ def make_task(
     disjunctive goal action becomes two single-precondition STRIPS actions, and
     ``num_goals`` goal predicates are declared even when fewer goals are reachable.
     """
-    for name, value in (("min_reactions", min_reactions), ("num_goals", num_goals), ("num_substances", num_substances)):
+    checks: list[tuple[str, object]] = [
+        ("min_reactions", min_reactions), ("num_goals", num_goals), ("num_substances", num_substances),
+    ]
+    for name, value in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < 1:
             raise ValueError(f"{name} must be an integer at least 1")
     applied, used, goals = _build(random.Random(seed), min_reactions, num_goals)
@@ -174,7 +177,9 @@ def make_task(
     init = [f"\t(possible {s})" for s in simple_used]
     for i in sorted(applied):
         kind, s1, s2, s3 = REACTIONS[i]
-        init.append(f"\t(synthesis-reaction {s1} {s3})" if kind == "synthesis" else f"\t({kind}-reaction {s1} {s2} {s3})")
+        init.append(
+            f"\t(synthesis-reaction {s1} {s3})" if kind == "synthesis" else f"\t({kind}-reaction {s1} {s2} {s3})"
+        )
     init.append("\t(num-subs l0)")
     init += [f"\t(next l{i + 1} l{i})" for i in range(num_substances)]
 
@@ -182,7 +187,12 @@ def make_task(
         return f"{' '.join(names)} - {kind}" if names else ""
 
     typed_constants = " ".join(
-        part for part in (typed([c for c in constants if c in SIMPLE_SET], "simple"), typed([c for c in constants if c not in SIMPLE_SET], "complex")) if part
+        part
+        for part in (
+            typed([c for c in constants if c in SIMPLE_SET], "simple"),
+            typed([c for c in constants if c not in SIMPLE_SET], "complex"),
+        )
+        if part
     )
     goal_predicates = "\n".join(f"\t     (goal{g + 1})" for g in range(num_goals))
     dummies = "\n".join(
@@ -268,7 +278,9 @@ def make_task(
     return domain.lower(), problem.lower()
 
 
-def _wrapper_task(applied: set[int], used: set[str], goals: list[str], num_goals: int, num_substances: int) -> tuple[str, str]:
+def _wrapper_task(
+    applied: set[int], used: set[str], goals: list[str], num_goals: int, num_substances: int
+) -> tuple[str, str]:
     """wrapper.py's rewrite of the IPC-style output (see make_task)."""
     if not goals:
         raise ValueError("no goal is reachable; raise min_reactions")
@@ -283,7 +295,9 @@ def _wrapper_task(applied: set[int], used: set[str], goals: list[str], num_goals
     init = [f"\t(possible {s})" for s in simple_used]
     for i in sorted(applied):
         kind, s1, s2, s3 = REACTIONS[i]
-        init.append(f"\t(synthesis-reaction {s1} {s3})" if kind == "synthesis" else f"\t({kind}-reaction {s1} {s2} {s3})")
+        init.append(
+            f"\t(synthesis-reaction {s1} {s3})" if kind == "synthesis" else f"\t({kind}-reaction {s1} {s2} {s3})"
+        )
     init.append("\t(num-subs l0)")
     init += [f"\t(next l{i + 1} l{i})" for i in range(num_substances)]
     goal_predicates = "\n".join(f"    (goal{g + 1})" for g in range(num_goals))
@@ -373,16 +387,25 @@ def _wrapper_task(applied: set[int], used: set[str], goals: list[str], num_goals
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate a Pathways (IPC 2006 Propositional) domain and problem.")
-    parser.add_argument("-R", "--min-reactions", type=int, required=True, help="minimum number of reactions (upstream -R)")
+    parser.add_argument(
+        "-R", "--min-reactions", type=int, required=True, help="minimum number of reactions (upstream -R)"
+    )
     parser.add_argument("-G", "--num-goals", type=int, required=True, help="number of disjunctive goals (upstream -G)")
-    parser.add_argument("-L", "--num-substances", type=int, required=True, help="initial substances that may be chosen (upstream -L)")
+    parser.add_argument(
+        "-L", "--num-substances", type=int, required=True, help="initial substances that may be chosen (upstream -L)"
+    )
     parser.add_argument("-s", "--seed", type=int)
     parser.add_argument("--domain", default="domain.pddl", help="domain output file (default: domain.pddl)")
     parser.add_argument("--problem", default="problem.pddl", help="problem output file (default: problem.pddl)")
-    parser.add_argument("--strips-wrapper", action="store_true", help="encoding of pddl-generators pathways/wrapper.py (Autoscale optimal tasks)")
+    parser.add_argument(
+        "--strips-wrapper", action="store_true",
+        help="encoding of pddl-generators pathways/wrapper.py (Autoscale optimal tasks)",
+    )
     args = parser.parse_args(argv)
     try:
-        domain, problem = make_task(args.min_reactions, args.num_goals, args.num_substances, args.seed, args.strips_wrapper)
+        domain, problem = make_task(
+            args.min_reactions, args.num_goals, args.num_substances, args.seed, args.strips_wrapper
+        )
     except ValueError as error:
         parser.error(str(error))
     Path(args.domain).write_text(domain, encoding="utf-8")

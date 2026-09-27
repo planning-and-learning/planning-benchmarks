@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 from pathlib import Path
+from typing import Any
 
 import pytest
 from pypddl.formalism import Parser, ParserOptions
@@ -9,19 +10,19 @@ from pypddl_datasets.generators.classical.ipc.logistics import generator
 from pypddl_datasets.generators.classical.ipc.logistics.generator import main, make_problem
 
 
-def facts(problem, part):
+def facts(problem: str, part: int) -> list[tuple[str, ...]]:
     text = problem.split("(:init", 1)[1].split("(:goal", 1)[part]
     return [tuple(f.split()) for f in re.findall(r"\(([^()]+)\)", text)]
 
 
-def parses(problem, domain, tmp_path):
+def parses(problem: str, domain: str, tmp_path: Path) -> None:
     options = ParserOptions()
     options.strict = True
     (tmp_path / "p.pddl").write_text(problem)
-    Parser(Path(generator.__file__).with_name(domain), options).parse_task(tmp_path / "p.pddl")  # pyright: ignore[reportUnknownMemberType]
+    Parser(Path(generator.__file__).with_name(domain), options).parse_task(tmp_path / "p.pddl")
 
 
-def test_logistics98_trucks_goals_and_starts(tmp_path):
+def test_logistics98_trucks_goals_and_starts(tmp_path: Path) -> None:
     problem = make_problem(4, 3, 10, 2, seed=3, num_trucks=9, num_goals=6)
     assert problem == make_problem(4, 3, 10, 2, seed=3, num_trucks=9, num_goals=6)
     parses(problem, "domain.pddl", tmp_path)
@@ -37,7 +38,7 @@ def test_logistics98_trucks_goals_and_starts(tmp_path):
     assert all(at[f[1]] in airports for f in init if f[0] == "airplane")
 
 
-def test_logistics98_goal_may_equal_start():
+def test_logistics98_goal_may_equal_start() -> None:
     # IPC logistics98: 3.6% of goals already hold; uniform destinations give 1/(C*L).
     hits = total = 0
     for seed in range(200):
@@ -49,7 +50,7 @@ def test_logistics98_goal_may_equal_start():
     assert 0.15 < hits / total < 0.35
 
 
-def test_logistics00_structure(tmp_path):
+def test_logistics00_structure(tmp_path: Path) -> None:
     problem = make_problem(3, 2, 9, 1, seed=1, num_goals=7, style="00")
     parses(problem, "domain_logistics00.pddl", tmp_path)
     init, goal = facts(problem, 0), facts(problem, 1)
@@ -63,7 +64,7 @@ def test_logistics00_structure(tmp_path):
         make_problem(3, 3, 9, 1, style="00")
 
 
-def test_logistics_cli_matches_make_problem(capsys):
+def test_logistics_cli_matches_make_problem(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["3", "2", "6", "1", "-s", "4", "-t", "5", "-g", "4"]) == 0
     assert capsys.readouterr().out == make_problem(3, 2, 6, 1, seed=4, num_trucks=5, num_goals=4)
     assert main(["2", "2", "6", "1", "-s", "4", "--style", "00"]) == 0
@@ -71,8 +72,8 @@ def test_logistics_cli_matches_make_problem(capsys):
 
 
 @pytest.mark.parametrize("parameter,value", [("num_cities", 0), ("num_trucks", 1), ("num_goals", 7), ("style", "01")])
-def test_logistics_rejects_invalid_parameters(parameter, value):
-    parameters = dict(num_cities=2, city_size=2, num_packages=6, num_airplanes=1)
+def test_logistics_rejects_invalid_parameters(parameter: str, value: int | str) -> None:
+    parameters: dict[str, Any] = {"num_cities": 2, "city_size": 2, "num_packages": 6, "num_airplanes": 1}
     parameters[parameter] = value
     with pytest.raises(ValueError, match=parameter if parameter != "num_goals" else "num_goals"):
         make_problem(**parameters)

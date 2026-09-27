@@ -52,11 +52,15 @@ def make_problem(
     destinations or (for attendants) never-alone origins. The IPC tasks use
     ``num_floors = 2 * num_passengers``.
     """
-    for name, value, minimum in (("num_floors", num_floors, 2), ("num_passengers", num_passengers, 1)):
+    checks: list[tuple[str, object, int]] = [("num_floors", num_floors, 2), ("num_passengers", num_passengers, 1)]
+    for name, value, minimum in checks:
         if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
             raise ValueError(f"{name} must be an integer at least {minimum}")
-    percentages = dict(up_down=up_down, vip=vip, going_nonstop=going_nonstop, attendant=attendant, never_alone=never_alone,
-                       conflict_a=conflict_a, conflict_b=conflict_b, no_access=no_access, no_access_floors=no_access_floors)
+    percentages: dict[str, object] = {
+        "up_down": up_down, "vip": vip, "going_nonstop": going_nonstop, "attendant": attendant,
+        "never_alone": never_alone, "conflict_a": conflict_a, "conflict_b": conflict_b, "no_access": no_access,
+        "no_access_floors": no_access_floors,
+    }
     for name, value in percentages.items():
         if not isinstance(value, int) or isinstance(value, bool) or not 0 <= value <= 100:
             raise ValueError(f"{name} must be an integer percentage in [0, 100]")
@@ -96,7 +100,7 @@ def make_problem(
                     continue
                 if i in b_s and any(origin[j] == o and j in a_s for j in range(i)):
                     continue
-                if (i in a_s or i in b_s) and any((origin[j] == o or destin[j] == o) and j in vips_s for j in range(i)):
+                if (i in a_s or i in b_s) and any(o in (origin[j], destin[j]) and j in vips_s for j in range(i)):
                     continue
                 break
             else:
@@ -106,7 +110,10 @@ def make_problem(
                 d = rng.randrange(f)
                 if d == o:
                     continue
-                if i in ups_s and any(j in ups_s and ((origin[j] < destin[j] and o > d) or (origin[j] > destin[j] and o < d)) for j in range(i)):
+                if i in ups_s and any(
+                    j in ups_s and ((origin[j] < destin[j] and o > d) or (origin[j] > destin[j] and o < d))
+                    for j in range(i)
+                ):
                     continue
                 if i in vips_s and any(origin[j] == d and j in alones_s for j in range(i)):
                     continue
@@ -132,7 +139,7 @@ def make_problem(
     else:
         raise ValueError("no admissible journeys found; use more floors")
 
-    no_access_facts = []
+    no_access_facts: list[str] = []
     for x in draw(count(no_access), set()):
         for floor in range(f):
             if rng.randrange(100) >= no_access_floors or floor in (origin[x], destin[x]):
@@ -146,9 +153,11 @@ def make_problem(
 
     kinds = [f"(going_up p{x})" for x in ups if origin[x] < destin[x]]
     kinds += [f"(going_down p{x})" for x in ups if origin[x] > destin[x]]
-    kinds += [f"({kind} p{x})" for kind, group in (("vip", vips), ("going_nonstop", nonstops), ("attendant", attendants),
-                                                  ("never_alone", alones), ("conflict_a", group_a), ("conflict_b", group_b))
-              for x in group]
+    kind_groups = (
+        ("vip", vips), ("going_nonstop", nonstops), ("attendant", attendants),
+        ("never_alone", alones), ("conflict_a", group_a), ("conflict_b", group_b),
+    )
+    kinds += [f"({kind} p{x})" for kind, group in kind_groups for x in group]
     init = kinds + [f"(above f{i} f{j})" for i in range(f - 1) for j in range(i + 1, f)]
     for i in range(p):
         init += [f"(origin p{i} f{origin[i]})", f"(destin p{i} f{destin[i]})"]
@@ -171,9 +180,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate a Miconic-ADL PDDL problem (miconic.c options).")
     parser.add_argument("-f", "--num-floors", type=int, required=True)
     parser.add_argument("-p", "--num-passengers", type=int, required=True)
-    for flag, dest, default in (("-u", "up_down", 20), ("-v", "vip", 5), ("-g", "going_nonstop", 5), ("-a", "attendant", 60),
-                                ("-n", "never_alone", 10), ("-A", "conflict_a", 20), ("-B", "conflict_b", 80),
-                                ("-N", "no_access", 50), ("-F", "no_access_floors", 5)):
+    for flag, dest, default in (("-u", "up_down", 20), ("-v", "vip", 5), ("-g", "going_nonstop", 5),
+                                ("-a", "attendant", 60), ("-n", "never_alone", 10), ("-A", "conflict_a", 20),
+                                ("-B", "conflict_b", 80), ("-N", "no_access", 50), ("-F", "no_access_floors", 5)):
         parser.add_argument(flag, dest=dest, type=int, default=default)
     parser.add_argument("-r", "--seed", type=int)
     args = parser.parse_args(argv)
