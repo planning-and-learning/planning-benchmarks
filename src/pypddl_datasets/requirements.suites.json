@@ -59,27 +59,6 @@
   ":typing",
   ":universal-preconditions"
  ],
- "generated-test": [
-  ":action-costs",
-  ":equality",
-  ":negative-preconditions",
-  ":strips",
-  ":typing"
- ],
- "generated-train": [
-  ":action-costs",
-  ":equality",
-  ":negative-preconditions",
-  ":strips",
-  ":typing"
- ],
- "generated-valid": [
-  ":action-costs",
-  ":equality",
-  ":negative-preconditions",
-  ":strips",
-  ":typing"
- ],
  "htg": [
   ":action-costs",
   ":conditional-effects",

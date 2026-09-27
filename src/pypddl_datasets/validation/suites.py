@@ -18,9 +18,8 @@ from pypddl_datasets import suites as suite_definitions
 from pypddl_datasets.discovery import discover_domains
 from pypddl_datasets.suites import SUITES
 
-# tests-* are the smoke suites themselves; generated-{train,valid,test} are
-# learning splits; profiling-* feed the C++ profiling harnesses.
-EXEMPT_PREFIXES = ("tests-", "generated-", "profiling-")
+# tests-* are the smoke suites themselves; profiling-* feed the C++ profiling harnesses.
+EXEMPT_PREFIXES = ("tests-", "profiling-")
 
 
 def main(argv: list[str] | None = None) -> int:

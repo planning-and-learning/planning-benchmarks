@@ -25,25 +25,6 @@ def test_suites_configuration():
     assert main(["--root", str(DATA_ROOT)]) == 0
 
 
-GENERATOR_DOMAINS = sorted(
-    p.parent.name
-    for p in (REPO_ROOT / "src/pypddl_datasets/generators/classical").glob("*/generate_instances.py")
-)
-
-
-@pytest.mark.parametrize("domain", GENERATOR_DOMAINS)
-def test_split_configs_importable_and_disjoint(domain: str) -> None:
-    # module import runs the assert_pairwise_disjoint checks on train/valid/test configs
-    importlib.import_module(f"pypddl_datasets.generators.classical.{domain}.generate_instances")
-
-
-def test_regenerated_instance_matches_committed_data():
-    module = importlib.import_module("pypddl_datasets.generators.classical.childsnack.generate_instances")
-    committed = (DATA_ROOT / "classical/generated/childsnack-train/train-1.pddl").read_text(encoding="utf-8")
-    num_children, num_trays, gluten_factor, const_ratio, seed = module.CONFIGS["train"][0]
-    assert module.make_problem(num_children, num_trays, gluten_factor, const_ratio, seed) == committed
-
-
 def test_blocksworld_goals_include_stack_boundaries():
     for make_problem in (make_blocks_3_problem, make_blocks_4_problem):
         goal = make_problem(1, 0).split("(:goal", 1)[1]

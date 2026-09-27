@@ -1,7 +1,6 @@
 # planning-benchmarks
 
-PDDL planning benchmark suites — classical, numeric, profiling, and generated
-learning splits — published as the [`pypddl-datasets`](https://pypi.org/project/pypddl-datasets/)
+PDDL planning benchmark suites — classical, numeric, and profiling — published as the [`pypddl-datasets`](https://pypi.org/project/pypddl-datasets/)
 Python package. The package itself is small: benchmark data is downloaded on
 first use from the matching GitHub release and cached locally.
 
@@ -64,15 +63,12 @@ and domains resolve there without downloading.
 ## Repository layout
 
 - `src/pypddl_datasets/` — the package: fetch API, suite definitions, and the
-  instance generators (including the train/valid/test split configurations).
+  instance generators (`make_problem` + CLI per domain; choosing train/valid/test
+  splits is left to the user).
 - `data/` — all benchmark data, organized as `<formalism>/<collection>/<domain>`
   (`classical/`, `numeric/`). Not shipped in the package; released as a single
   archive on `data-v*` GitHub releases, downloaded and unpacked once per
   machine on first use.
-- `data/classical/generated/<domain>-{train,valid,test}/` — fixed learning
-  splits produced by the generators. These committed instances are the
-  reproducibility contract; regenerate with
-  `python -m pypddl_datasets.generators.classical.<domain>.generate_instances`.
 - `pypddl_datasets.scripts` — repository tooling, importable in a checkout
   but never shipped in the wheel: `package_data` (byte-reproducible
   `data.tar.gz`), `extract_requirements` (regenerates the committed
