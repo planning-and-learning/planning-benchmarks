@@ -2863,6 +2863,13 @@
    "seed": 1
   }
  ],
+ "classical/misc/miconic_fulladl_goal": [
+  {
+   "num_floors": 10,
+   "num_passengers": 5,
+   "seed": 2
+  }
+ ],
  "classical/misc/transport_fuel": [
   {
    "capacity": 2,

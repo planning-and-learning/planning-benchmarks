@@ -54,7 +54,7 @@ Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next
 | logistics | Manuela Veloso; AIPS-1998 version by Bart Selman and Henry Kautz | `logistics.c` (FF collection) | [Freiburg](#freiburg) |
 | maintenance | Jussi Rintanen (IPC 2014) | `maintenance.c` (Jussi Rintanen) | |
 | miconic | Jana Koehler (AIPS-2000) | `miconic.c`, the original AIPS-2000 generator (FF collection) | [Freiburg](#freiburg) |
-| miconic_fulladl, miconic_simpleadl | Jana Koehler (AIPS-2000) | `miconic.c` (FF collection); simpleadl re-exports `ipc/miconic` | fulladl: [Freiburg](#freiburg) |
+| miconic_fulladl, miconic_fulladl_goal, miconic_simpleadl | Jana Koehler (AIPS-2000) | `miconic.c` (FF collection); fulladl_goal wraps `ipc/miconic_fulladl`; simpleadl re-exports `ipc/miconic` | fulladl and fulladl_goal: [Freiburg](#freiburg) |
 | movie | Corin Anderson (AIPS-1998) | `movie.c` (FF collection) | [Freiburg](#freiburg) |
 | mprime, mystery | Drew McDermott (AIPS-1998) | McDermott's generator is not public; reconstructed from the IPC tasks, no code from `mprime.c`/`mystery.c` | |
 | nomystery | IPC 2011; not named in the sources | `nomystery` (pddl-generators); not named | |
@@ -106,6 +106,7 @@ only; the rest of the package is GPL-3.0-or-later:
 - `classical/ipc/{blocks_3,blocks_4,ferry,gripper,logistics,miconic,miconic_fulladl,movie,schedule,visitall}/generator.py`
 - `classical/autoscale/{blocksworld,freecell,logistics,mprime}/generator.py`
 - `classical/ipc_learning/{blocksworld,ferry,miconic}/generator.py`
+- `classical/misc/miconic_fulladl_goal/generator.py`
 
 `ipc/freecell`, `ipc/mprime` and `ipc/mystery` were rebuilt from the IPC tasks
 without code from `freecell.c`, `mprime.c` or `mystery.c` (the `autoscale/`

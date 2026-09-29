@@ -77,7 +77,7 @@ package: airport, ged, organic-synthesis, organic-synthesis-split,
 parcprinter, petri-net-alignment, pipesworld-notankage, pipesworld-tankage,
 psr-small, quantum-layout, thoughtful.
 
-Our own variants without reference tasks (hiking_binary, transport_fuel) live
+Our own variants without reference tasks live
 in [`../misc`](../misc).
 
 Each package's `README.md` describes its distribution and compares it with
