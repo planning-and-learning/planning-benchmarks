@@ -22,7 +22,8 @@ is guessed.
 
 ## Domains and generators
 
-The `autoscale/` and `ipc_learning/` packages of a domain credit the same
+Except for the separately listed learning-track Sokoban generator, the
+`autoscale/` and `ipc_learning/` packages of a domain credit the same
 people as the `ipc/` counterpart; `ipc_learning/` uses the learning track's
 domain files ([ipc2023-learning/benchmarks](https://github.com/ipc2023-learning/benchmarks),
 Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next section.
@@ -74,6 +75,7 @@ Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next
 | slitherlink | IPC 2023; not named in the sources | `generate.hs` (Harald Bögeholz) and `generate-pddl.py` (public domain part only) | [BSD-2-Clause](#slitherlink-generator) |
 | snake | Álvaro Torralba, Florian Pommerening (IPC 2018) | `generate.py` (same authors) | |
 | sokoban | IPC 2008 | new generator; the IPC tasks are Microban levels by David W. Skinner, converted by `build-problems.py` | |
+| sokoban (`ipc_learning`) | IPC 2023 learning track | [`sokoban/sokoban.py` at `19d6a8ad4b354328154a2cc1f1a95f7c09fa9db6`](https://github.com/ipc2023-learning/benchmarks/blob/19d6a8ad4b354328154a2cc1f1a95f7c09fa9db6/sokoban/sokoban.py), callable adaptation from `learning-module-programs-verdog/ipc2023/sokoban/generator.py` | no license statement in the upstream source |
 | spanner | Amanda Coles, Andrew Coles, Maria Fox, Derek Long (IPC 2011) | pddl-generators `spanner`; not named | |
 | spider | IPC 2018; not named in the sources | `generate.py`; not named | |
 | storage | Alfonso Gerevini, Alessandro Saetti (IPC 2006) | `main.cpp` (same authors) | |

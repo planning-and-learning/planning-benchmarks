@@ -2769,6 +2769,53 @@
    "seed": 2
   }
  ],
+ "classical/ipc_learning/sokoban": [
+  {
+   "boxes": 1,
+   "grid_size": 8,
+   "seed": 0
+  },
+  {
+   "boxes": 1,
+   "grid_size": 8,
+   "seed": 1
+  },
+  {
+   "boxes": 1,
+   "grid_size": 8,
+   "seed": 2
+  },
+  {
+   "boxes": 1,
+   "grid_size": 8,
+   "seed": 3
+  },
+  {
+   "boxes": 2,
+   "grid_size": 7,
+   "seed": 0
+  },
+  {
+   "boxes": 2,
+   "grid_size": 7,
+   "seed": 1
+  },
+  {
+   "boxes": 2,
+   "grid_size": 7,
+   "seed": 2
+  },
+  {
+   "boxes": 2,
+   "grid_size": 7,
+   "seed": 3
+  },
+  {
+   "boxes": 2,
+   "grid_size": 7,
+   "seed": 4
+  }
+ ],
  "classical/ipc_learning/spanner": [
   {
    "name": "prob",

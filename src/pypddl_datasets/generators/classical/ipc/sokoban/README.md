@@ -18,7 +18,7 @@ Sokoban: a player walks on a grid and pushes stones (never pulls) onto goal cell
 | `num_pulls` | reverse pushes used to scramble (default 20 · num_stones) | – |
 | `grid` | `square` (IPC) or `hex` (Hexoban: six directions, every second cell of the box) | IPC: square; Autoscale: 11 of 60 hex |
 | `num_players` | players; all of them pull during scrambling | IPC: 1; Autoscale: 1–20 (22 of 60 tasks have several) |
-| `style` | `ipc`, or `learning` for the IPC 2023 learning-track encoding (square grid, one player; see `ipc_learning/sokoban`) | IPC: ipc |
+| `style` | `ipc`, or `learning` for the IPC 2023 learning-track encoding (square grid, one player); `ipc_learning/sokoban` uses a different forward-walk generator with that encoding | IPC: ipc |
 | `seed` | random seed | – |
 
 ## Distribution
