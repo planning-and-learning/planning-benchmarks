@@ -43,7 +43,6 @@ Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next
 | driverlog | Derek Long, Maria Fox (IPC 2002) | `dlgen` (`generator.cc`); not named | |
 | elevators | IPC 2008; not named in the sources | `generate.py`; its README says the author is unknown | |
 | ferry | unknown; taken from the IPP domain collection | `ferry.c` (FF collection) | [Freiburg](#freiburg) |
-| flashfill | Javier Segovia-Aguas (IPC 2018; Segovia-Aguas, Jiménez, Jonsson, ICAPS 2016) | example generators `gen0*.py`; domains rebuilt from IPC skeletons | |
 | floortile | Tomás de la Rosa (IPC 2011) | `floortile-generator.py` (Tomás de la Rosa) | [MIT](#mit) |
 | folding | Daniel Fišer (IPC 2023), after the ASP Competition 2011 "Reverse Folding" problem by Agostino Dovier, Andrea Formisano and Enrico Pontelli | `generate.py` (Daniel Fišer) | public domain |
 | freecell | Fahiem Bacchus (AIPS-2000), adapted from a TLPLAN domain by Nolan Andres and Robert HillHouse | reconstructed from the IPC tasks; `freecell.c` (Jörg Hoffmann) was used as a reference only | [Freiburg](#freiburg) (`freecell.c`) |
@@ -62,7 +61,6 @@ Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next
 | nurikabe | Álvaro Torralba, Florian Pommerening (IPC 2018) | `generate.py` (same authors) | |
 | openstacks | Patrik Haslum (IPC 2006; IPC 2008 ADL cost version); 2006 instances from the 2005 Constraint Modelling Challenge (Barbara Smith, Ian Gent) | matrix generator after Ioannis Refanidis's `generate_problems` (pddl-generators `generator.py`) | |
 | parking | IPC 2008; not named in the sources | `parking-generator.pl`; not named | |
-| pathways | Yannis Dimopoulos, Alfonso Gerevini, Alessandro Saetti (IPC 2006) | `main.c` (same authors) | |
 | pegsol | IPC 2008; not named in the sources | new generator; upstream converts the Solipeg 2.2 library (J Cade Roux, GPL-2.0-or-later), from which no puzzles are included | |
 | recharging_robots | Daniel Gnad, Álvaro Torralba, with Daniel Fišer (IPC 2023) | `generator.py` (same authors) | public domain |
 | ricochet_robots | Daniel Fišer (IPC 2023), after the board game and the ASP Competition 2015 instances | `generate.py`, `asp-to-pddl.py` (Daniel Fišer) | no license statement in the repository |

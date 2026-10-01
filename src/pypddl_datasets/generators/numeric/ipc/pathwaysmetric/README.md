@@ -5,7 +5,7 @@ Biochemical pathways: combine molecule quantities through reactions until enough
 ## Source
 
 - **Domain:** Pathways (IPC 2006) by Yannis Dimopoulos, Alfonso Gerevini and Alessandro Saetti, in the atemporal metric version of Coles, Fox and Long (JAIR 2013) used by the IPC 2023 numeric track
-- **Generator:** port of `pddl-generators/pathways/main.c` in numeric mode (`-N` with random constants and disjunctive goals); reaction selection and goal molecules come from `classical/ipc/pathways`
+- **Generator:** port of `pddl-generators/pathways/main.c` in numeric mode (`-N` with random constants and disjunctive goals); reaction selection and goal sampling are implemented in `generator.py`, with the upstream reaction database shipped beside it as `reactions.txt` and `simple_substances.txt`
 - **Reference tasks:** `data/numeric/ipc2023/pathwaysmetric`
 
 ## Parameters

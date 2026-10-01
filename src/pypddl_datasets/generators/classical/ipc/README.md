@@ -19,7 +19,6 @@ lowercase. The reference distribution is the IPC instances in
 | depots | `depot` (untyped; `typed=True` gives Autoscale's encoding) |
 | driverlog | `driverlog` (untyped; `typed=True` gives Autoscale's encoding) |
 | elevators | `elevators-{opt,sat}{08,11}-strips` |
-| flashfill | `flashfill-sat18-adl` (per-task domain via `make_task`) |
 | floortile | `floortile-{opt,sat}{11,14}-strips` |
 | folding | `folding-opt23-adl` |
 | freecell | `freecell` (IPC 2000 and 2002 deals via `style`) |
@@ -39,7 +38,6 @@ lowercase. The reference distribution is the IPC instances in
 | nurikabe | `nurikabe-{opt,sat}18-adl` |
 | openstacks | `openstacks-{opt,sat}08-adl` (default) and `openstacks` (IPC 2006 ADL, `style="06"`, `domain_openstacks06.pddl`) |
 | parking | `parking-{opt,sat}{11,14}-strips` |
-| pathways | `pathways` (per-task domain via `make_task`; `strips_wrapper=True` for Autoscale's optimal set) |
 | pegsol | `pegsol-08-strips`, `pegsol-{opt,sat}11-strips` (random solvable positions; IPC uses a fixed puzzle library) |
 | recharging_robots | `recharging-robots-opt23-adl` (`kind` selects the covers or single-source scenario) |
 | ricochet_robots | `ricochet-robots-opt23-adl` (`board="asp2015"` for the fixed ASP Competition board) |
@@ -71,6 +69,7 @@ delivery, ferry, goldminer and spanner have no IPC instances in
 The STRIPS versions of openstacks and trucks (`openstacks-*-strips`,
 `trucks-strips`) are left out on purpose: they are ground per task, so there is
 no lifted structure to learn. The packages below cover their lifted ADL versions.
+Flashfill and Pathways are also excluded because each task requires its own domain.
 
 IPC STRIPS domains without a public generator, and therefore without a
 package: airport, ged, organic-synthesis, organic-synthesis-split,

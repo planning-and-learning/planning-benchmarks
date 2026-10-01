@@ -1,6 +1,6 @@
 """pytest plugin that regenerates tests/generator_samples.json from the generator tests.
 
-It records the arguments of every successful make_problem/make_task call and keeps,
+It records the arguments of every successful make_problem call and keeps,
 per generator module, the smallest call for each combination of flag/style values
 plus the smallest calls overall (6 at least). Run from the repository root:
 
@@ -42,15 +42,14 @@ def _size(kwargs: dict[str, Any]) -> float:
 
 def _profile(frame: FrameType, event: str, arg: object) -> None:
     code = frame.f_code
-    if code.co_name not in ("make_problem", "make_task") or "/generators/" not in code.co_filename:
+    if code.co_name != "make_problem" or "/generators/" not in code.co_filename:
         return
     if event == "call":
         names = code.co_varnames[: code.co_argcount + code.co_kwonlyargcount]
         _stack.append((str(frame.f_globals.get("__name__", "")), {n: frame.f_locals[n] for n in names}))
     elif event == "return" and _stack:
         module, kwargs = _stack.pop()
-        is_task = isinstance(arg, tuple) and all(isinstance(x, str) for x in cast("tuple[object, ...]", arg))
-        if not (isinstance(arg, str) or is_task) or not all(_primitive(v) for v in kwargs.values()):
+        if not isinstance(arg, str) or not all(_primitive(v) for v in kwargs.values()):
             return
         recorded = _calls.setdefault(module, [])
         if kwargs not in recorded and sum(_flags(k) == _flags(kwargs) for k in recorded) < MAX_PER_FLAGS:

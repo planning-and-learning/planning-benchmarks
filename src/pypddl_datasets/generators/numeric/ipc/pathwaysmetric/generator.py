@@ -4,19 +4,141 @@
 # constants, disjunctive goals), in the atemporal Pathways-Metric encoding of the
 # IPC 2023 numeric tasks (Coles, Fox and Long 2013): reaction durations stay in the
 # init, goal pairs become `(>= (+ (available a) (available b)) k)`. Reaction
-# selection and goal molecules come from the classical/ipc/pathways port.
+# selection and goal molecules follow the same upstream sampler. The original
+# Pathways-Reactions and Pathways-SimpleSubs data are shipped beside this module
+# as reactions.txt and simple_substances.txt.
 
 from __future__ import annotations
 
 import argparse
 import random
+import re
 import sys
+from pathlib import Path
 
-# reuses the classical pathways port's reaction selection (same upstream main.c)
-from pypddl_datasets.generators.classical.ipc.pathways.generator import DASHED, EMPTY, REACTIONS, SIMPLE
-from pypddl_datasets.generators.classical.ipc.pathways.generator import (  # pylint: disable=protected-access
-    _build,  # pyright: ignore[reportPrivateUsage]
-)
+HERE = Path(__file__).resolve().parent
+EMPTY = "_"
+GOAL_P, GOAL_Q = 40, 20  # upstream INITIAL_PROB_P / INITIAL_PROB_Q (percent)
+
+
+def _lines(path: Path) -> list[str]:
+    """Upstream parsing: drop '%' comments and all spaces, skip empty lines."""
+    lines: list[str] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.split("%", 1)[0].replace(" ", "").strip()
+        if line:
+            lines.append(line)
+    return lines
+
+
+def _load() -> tuple[list[str], list[str], list[tuple[str, str, str, str]]]:
+    # Upstream prepends while reading, so arrays hold the files in reverse order;
+    # the empty substance "_" is the last simple substance.
+    simple = [*reversed(_lines(HERE / "simple_substances.txt")), EMPTY]
+    simple_set = set(simple)
+    reaction_lines = _lines(HERE / "reactions.txt")
+    dashed: list[str] = []
+    for line in reversed(reaction_lines):
+        for token in re.split(r"[+=\[\]>]", line):
+            if token and token not in simple_set and token not in dashed:
+                dashed.append(token)
+    dashed.reverse()
+    reactions: list[tuple[str, str, str, str]] = []
+    for line in reaction_lines:  # prepended twice: file order
+        tokens = [t for t in re.split(r"[>\[\]+]", line) if t]
+        if tokens[0] == EMPTY:  # "_ [ c ]> y": synthesis catalysed by c
+            reactions.append(("synthesis", tokens[1], tokens[2], tokens[2]))
+        elif "[" in line:  # "a [ c ]> b": catalysed association
+            product = tokens[1] if tokens[2] == EMPTY else tokens[2]
+            reactions.append(("catalyzed-association", tokens[0], tokens[1], product))
+        elif "+" in line and line.index("+") < line.index(">"):  # "a + b > ab"
+            reactions.append(("association", tokens[0], tokens[1], tokens[2]))
+        else:
+            raise ValueError(f"unsupported reaction {line!r}")  # no decompositions in the data
+    return simple, dashed, reactions
+
+
+SIMPLE, DASHED, REACTIONS = _load()
+
+
+def _enabled(reaction: tuple[str, str, str, str], available: set[str]) -> bool:
+    kind, s1, s2, _ = reaction
+    return s1 in available and (kind == "synthesis" or s2 in available)
+
+
+def _reach(available: set[str], applied: set[int], used: set[str]) -> list[str]:
+    """One upstream "flip": apply every enabled, not yet applied reaction."""
+    fired = [i for i, r in enumerate(REACTIONS) if i not in applied and _enabled(r, available)]
+    new: list[str] = []
+    for i in fired:
+        applied.add(i)
+        used.update(REACTIONS[i][1:])
+        product = REACTIONS[i][3]
+        if product not in available:
+            available.add(product)
+            new.append(product)
+    return new
+
+
+def _build(rng: random.Random, min_reactions: int, num_goals: int) -> tuple[set[int], set[str], list[str]]:
+    # Incremental phase: add random simple substances until a fix point uses
+    # at least min_reactions reactions.
+    available: set[str] = set()
+    applied: set[int] = set()
+    used: set[str] = set()
+    pool = list(SIMPLE)
+    initial: list[str] = []
+    changed = True
+    while True:
+        if not changed:
+            if len(applied) >= min_reactions or not pool:
+                break
+            index = rng.randrange(len(pool))
+            substance = pool[index]
+            pool[index] = pool[-1]  # upstream swap-remove
+            pool.pop()
+            initial.append(substance)
+            available.add(substance)
+        changed = bool(_reach(available, applied, used))
+
+    # Fix-point phase from the chosen substances, recording each flip's new molecules.
+    available, applied, used = set(initial), set(), set()
+    levels: list[list[str]] = []
+    while True:
+        new = _reach(available, applied, used)
+        if not new:
+            break
+        levels.insert(0, new)  # levels[0] is the last flip
+    return applied, used, _pick_goals(rng, levels, 2 * num_goals)
+
+
+def _pick_goals(rng: random.Random, levels: list[list[str]], count: int) -> list[str]:
+    """Upstream build_goals with disjunctive goals: pairs of molecules drawn from
+    the last level (p = 40%), the second-to-last (q = 20%) or a random level;
+    every odd draw mirrors the probability. Exhausted levels are removed."""
+    goals: list[str] = []
+    while len(goals) < count and any(levels):
+        r = rng.randrange(100)
+        if len(goals) % 2:
+            r = 100 - r
+        if r < GOAL_P:
+            index = 0
+        elif r < GOAL_P + GOAL_Q:
+            index = 1 if len(levels) > 1 else 0
+        else:
+            index = max(rng.randrange(len(levels)) - 1, 0)
+        while not levels[index]:
+            if index == len(levels) - 1:
+                break
+            levels.pop(index)
+        if not levels[index]:
+            continue  # upstream retries the draw
+        level = levels[index]
+        pick = rng.randrange(len(level))
+        goals.append(level[pick])
+        level[pick] = level[-1]  # upstream swap-remove
+        level.pop()
+    return goals[: len(goals) // 2 * 2]
 
 
 def _is_int(value: object) -> bool:

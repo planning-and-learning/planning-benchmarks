@@ -43,13 +43,14 @@ AUTOSCALE_DOMAINS = sorted(p.name for p in (GENERATORS / "autoscale").iterdir() 
 
 
 AGILE = DATA_ROOT / "classical/autoscale-benchmarks-main/21.11-agile-strips"
-# No public generator, or ground per task (openstacks): nothing to generate.
+# No public generator, or task-specific domains: no supported generator package.
 AGILE_WITHOUT_GENERATOR = {
     "airport",
     "ged",
     "openstacks",
     "organic-synthesis-split",
     "parcprinter",
+    "pathways",
     "pipesworld-notankage",
     "pipesworld-tankage",
     "thoughtful",
@@ -65,9 +66,6 @@ def test_autoscale_covers_every_agile_domain_with_a_generator() -> None:
 def test_autoscale_generator_uses_autoscale_domain_file(domain: str) -> None:
     importlib.import_module(f"pypddl_datasets.generators.classical.autoscale.{domain}.generator")
     ours = GENERATORS / "autoscale" / domain / "domain.pddl"
-    if domain == "pathways":  # per-task domain from make_task, like the agile tasks
-        assert not ours.exists()
-        return
     agile = AGILE / domain.replace("_", "-") / "domain.pddl"
     assert ours.read_text(encoding="utf-8") == lower_pddl(agile.read_text(encoding="utf-8"))
 

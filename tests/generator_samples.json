@@ -746,43 +746,6 @@
    "seed": 1
   }
  ],
- "classical/ipc/flashfill": [
-  {
-   "family": "initials",
-   "max_size": 7,
-   "min_size": 3,
-   "num_tests": 2,
-   "seed": 4
-  },
-  {
-   "family": "add-paren",
-   "max_size": 7,
-   "min_size": 3,
-   "num_tests": 3,
-   "seed": 5
-  },
-  {
-   "family": "extract-minutes",
-   "max_size": 7,
-   "min_size": 3,
-   "num_tests": 3,
-   "seed": 5
-  },
-  {
-   "family": "first-last-initial",
-   "max_size": 7,
-   "min_size": 3,
-   "num_tests": 3,
-   "seed": 5
-  },
-  {
-   "family": "initials",
-   "max_size": 7,
-   "min_size": 3,
-   "num_tests": 3,
-   "seed": 5
-  }
- ],
  "classical/ipc/floortile": [
   {
    "name": null,
@@ -1454,50 +1417,6 @@
    "num_cars": 84,
    "num_curbs": 43,
    "seed": 4
-  }
- ],
- "classical/ipc/pathways": [
-  {
-   "min_reactions": 10,
-   "num_goals": 2,
-   "num_substances": 3,
-   "seed": 1,
-   "strips_wrapper": true
-  },
-  {
-   "min_reactions": 12,
-   "num_goals": 1,
-   "num_substances": 3,
-   "seed": 1,
-   "strips_wrapper": false
-  },
-  {
-   "min_reactions": 24,
-   "num_goals": 2,
-   "num_substances": 3,
-   "seed": 5,
-   "strips_wrapper": false
-  },
-  {
-   "min_reactions": 20,
-   "num_goals": 25,
-   "num_substances": 22,
-   "seed": 4,
-   "strips_wrapper": true
-  },
-  {
-   "min_reactions": 60,
-   "num_goals": 8,
-   "num_substances": 10,
-   "seed": 2,
-   "strips_wrapper": true
-  },
-  {
-   "min_reactions": 72,
-   "num_goals": 6,
-   "num_substances": 7,
-   "seed": 2,
-   "strips_wrapper": false
   }
  ],
  "classical/ipc/pegsol": [

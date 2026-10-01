@@ -32,7 +32,7 @@ All output is lowercase and each `domain.pddl` is the reference domain file.
 | markettrader | ipc2023/markettrader | reconstruction |
 | mprime | ipc2023/mprime | translation of `classical/ipc/mprime` |
 | onlycraft | ipc2026/onlycraft-{opt,sat} | reconstruction |
-| pathwaysmetric | ipc2023/pathwaysmetric | port of pathways `main.c -N` (reuses `classical/ipc/pathways`) |
+| pathwaysmetric | ipc2023/pathwaysmetric | port of pathways `main.c -N` (includes its reaction sampler and data) |
 | petri_net | ipc2026/petri-net | reconstruction (three net templates) |
 | rainbowttles | ipc2026/rainbowttles-{opt,sat} | reconstruction |
 | rover | ipc2023/rover | port of `rovgen -n` (reuses `classical/ipc/rovers`) |

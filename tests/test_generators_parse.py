@@ -35,10 +35,10 @@ def _options() -> ParserOptions:
     return options
 
 
-def _generator(package: str) -> tuple[Callable[..., object], str, dict[str, Any]]:
-    """The package's make_problem/make_task, the sample key it replays, and its fixed keywords."""
+def _generator(package: str) -> tuple[Callable[..., str], str, dict[str, Any]]:
+    """The package's make_problem, the sample key it replays, and its fixed keywords."""
     module = importlib.import_module(f"pypddl_datasets.generators.{package.replace('/', '.')}.generator")
-    fn = cast("Callable[..., object]", getattr(module, "make_problem", None) or getattr(module, "make_task"))
+    fn = cast("Callable[..., str]", module.make_problem)
     fixed: dict[str, Any] = {}
     target: Any = fn
     if isinstance(target, functools.partial):
@@ -58,6 +58,7 @@ def _domain_name(text: str) -> str:
 
 @pytest.mark.parametrize("package", PACKAGES)
 def test_domain_files_and_generated_tasks_parse(package: str, tmp_path: Path) -> None:
+    assert (GENERATORS / package / "domain.pddl").is_file(), f"{package}: no fixed domain.pddl"
     domains = sorted((GENERATORS / package).glob("domain*.pddl"))
     for domain in domains:
         Parser(domain, _options())  # the domain file alone must parse strictly
@@ -84,23 +85,16 @@ def test_domain_files_and_generated_tasks_parse(package: str, tmp_path: Path) ->
             for name, value in kwargs.items()
         )
         try:
-            output = fn(**kwargs)
+            problem_text = fn(**kwargs)
         except ValueError:
             if fixed:  # the wrapper's fixed flags rule this sample out (e.g. hex levels in style="learning")
                 continue
             raise
-        if isinstance(output, tuple):  # make_task: per-task domain
-            domain_text, problem_text = cast("tuple[str, str]", output)
-            domain_path = tmp_path / f"domain-{index}.pddl"
-            domain_path.write_text(domain_text, encoding="utf-8")
-            candidates = [domain_path]
-        else:
-            problem_text = cast("str", output)
-            match = PROBLEM_DOMAIN.search(problem_text)
-            assert match, f"sample {sample} has no (:domain ...)"
-            candidates = by_name.get(match.group(1).lower(), [])
-            if not candidates:
-                continue
+        match = PROBLEM_DOMAIN.search(problem_text)
+        assert match, f"sample {sample} has no (:domain ...)"
+        candidates = by_name.get(match.group(1).lower(), [])
+        if not candidates:
+            continue
         problem_path = tmp_path / f"p{index}.pddl"
         problem_path.write_text(problem_text, encoding="utf-8")
         errors: list[str] = []
