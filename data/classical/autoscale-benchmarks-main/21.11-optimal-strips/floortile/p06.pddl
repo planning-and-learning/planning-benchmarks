@@ -1,4 +1,4 @@
-(define (problem name)
+(define (problem floortile-p06)
  (:domain floor-tile)
  (:objects tile_0-1 tile_0-2 tile_0-3 
            tile_1-1 tile_1-2 tile_1-3 

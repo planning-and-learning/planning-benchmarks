@@ -70,6 +70,32 @@ def test_autoscale_generator_uses_autoscale_domain_file(domain: str) -> None:
     assert ours.read_text(encoding="utf-8") == lower_pddl(agile.read_text(encoding="utf-8"))
 
 
+def test_val_parses_data_network_and_floortile(tmp_path: Path) -> None:
+    validator = shutil.which("Validate") or shutil.which("validate")
+    if validator is None:
+        pytest.skip("VAL is not installed")
+    domains = [
+        *DATA_ROOT.glob("classical/**/data-network*/domain.pddl"),
+        *GENERATORS.glob("*/data_network/domain.pddl"),
+    ]
+    tasks = [(domain, AGILE / "data-network/p01.pddl") for domain in domains]
+    tasks.extend(
+        (problem.with_name("domain.pddl"), problem)
+        for problem in (DATA_ROOT / "classical/autoscale-benchmarks-main").glob("*/floortile/p*.pddl")
+    )
+    plan = tmp_path / "empty.plan"
+    plan.write_text("", encoding="utf-8")
+    for domain, problem in tasks:
+        result = subprocess.run(
+            [validator, "-v", "-a", str(domain), str(problem), str(plan)],
+            capture_output=True, text=True, check=False, timeout=10,
+        )
+        # Empty plans need not solve these tasks; reaching execution proves parsing and type checking passed.
+        assert result.returncode in (0, 1) and "Plan executed successfully" in result.stdout, (
+            domain, problem, result.stdout, result.stderr
+        )
+
+
 # Generators without their own test file: one small task each must be lowercase
 # and parse strictly against the package's domain.pddl.
 SMOKE_CASES: dict[str, tuple[object, ...]] = {

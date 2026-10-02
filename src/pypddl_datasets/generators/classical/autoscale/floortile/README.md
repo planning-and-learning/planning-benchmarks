@@ -31,7 +31,7 @@ A checkerboard painting of rows 1..`num_rows`.
 
 ### Other
 - Action costs with a `total-cost` metric.
-- Autoscale names every problem `name`; this generator names them `floortile-r..-c..-rob..` unless `name` is passed.
+- Upstream Autoscale names every problem `name`; bundled tasks use `floortile-p01`, etc. to avoid VAL's reserved `name` token. This generator uses `floortile-r..-c..-rob..` unless `name` is passed.
 - No solvability check is done.
 
 ## Comparison with reference tasks
@@ -47,5 +47,5 @@ A checkerboard painting of rows 1..`num_rows`.
 | metric | 30 | 30 |
 
 **Deviations:**
-- Problem names differ; Autoscale uses the literal `name`.
+- Problem names differ; bundled tasks use `floortile-p01`, etc.
 - Otherwise none found. Robot start rows are uniform, see `ipc/floortile`.
