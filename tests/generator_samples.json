@@ -147,6 +147,92 @@
    "seed": 0
   }
  ],
+ "classical/beluga2025/scalability_deterministic": [
+  {
+   "initial_occupancy": 0.3,
+   "jig_type_distribution": 0,
+   "jigs_per_flight": 2,
+   "max_delivery_delay": 1,
+   "max_rack_size": 40,
+   "min_rack_size": 20,
+   "num_flights": 3,
+   "num_hangars": 1,
+   "num_production_lines": 1,
+   "num_racks": 2,
+   "num_trailers": 1,
+   "seed": 0
+  },
+  {
+   "initial_occupancy": 0.3,
+   "jig_type_distribution": 1,
+   "jigs_per_flight": 2,
+   "max_delivery_delay": 1,
+   "max_rack_size": 40,
+   "min_rack_size": 20,
+   "num_flights": 3,
+   "num_hangars": 1,
+   "num_production_lines": 1,
+   "num_racks": 2,
+   "num_trailers": 1,
+   "seed": 1
+  },
+  {
+   "initial_occupancy": 0.3,
+   "jig_type_distribution": 2,
+   "jigs_per_flight": 2,
+   "max_delivery_delay": 1,
+   "max_rack_size": 40,
+   "min_rack_size": 20,
+   "num_flights": 3,
+   "num_hangars": 1,
+   "num_production_lines": 1,
+   "num_racks": 2,
+   "num_trailers": 1,
+   "seed": 2
+  },
+  {
+   "initial_occupancy": 0,
+   "jig_type_distribution": 0,
+   "jigs_per_flight": 1,
+   "max_delivery_delay": 0,
+   "max_rack_size": 8,
+   "min_rack_size": 4,
+   "num_flights": 2,
+   "num_hangars": 1,
+   "num_production_lines": 1,
+   "num_racks": 2,
+   "num_trailers": 1,
+   "seed": 0
+  },
+  {
+   "initial_occupancy": 0,
+   "jig_type_distribution": 1,
+   "jigs_per_flight": 1,
+   "max_delivery_delay": 0,
+   "max_rack_size": 8,
+   "min_rack_size": 4,
+   "num_flights": 2,
+   "num_hangars": 1,
+   "num_production_lines": 1,
+   "num_racks": 2,
+   "num_trailers": 1,
+   "seed": 1
+  },
+  {
+   "initial_occupancy": 0,
+   "jig_type_distribution": 2,
+   "jigs_per_flight": 1,
+   "max_delivery_delay": 0,
+   "max_rack_size": 8,
+   "min_rack_size": 4,
+   "num_flights": 2,
+   "num_hangars": 1,
+   "num_production_lines": 1,
+   "num_racks": 2,
+   "num_trailers": 1,
+   "seed": 2
+  }
+ ],
  "classical/ipc/agricola": [
   {
    "last_stage": 3,

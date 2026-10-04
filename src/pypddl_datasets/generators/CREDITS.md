@@ -190,6 +190,14 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 The views and conclusions contained in the software and documentation are those of the authors and should not be interpreted as representing official policies, either expressed or implied, of the FreeBSD Project.
 ```
 
+## Beluga 2025
+
+`classical/beluga2025/scalability_deterministic/domain.pddl` is copied unchanged
+from `data/classical/beluga2025/scalability-deterministic/domain.pddl`, the
+deterministic scalability domain of the TUPLES Beluga AI Challenge 2025.
+The accompanying generator is an independent training distribution; it contains
+no code from the competition toolkit and does not reproduce its sampling distribution.
+
 ## Numeric domains and generators
 
 Generators in `numeric/ipc/`. Reconstructions contain no upstream code; the
