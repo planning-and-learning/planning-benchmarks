@@ -46,14 +46,10 @@ AGILE = DATA_ROOT / "classical/autoscale-benchmarks-main/21.11-agile-strips"
 # No public generator, or task-specific domains: no supported generator package.
 AGILE_WITHOUT_GENERATOR = {
     "airport",
-    "ged",
     "openstacks",
     "organic-synthesis-split",
     "parcprinter",
     "pathways",
-    "pipesworld-notankage",
-    "pipesworld-tankage",
-    "thoughtful",
 }
 
 

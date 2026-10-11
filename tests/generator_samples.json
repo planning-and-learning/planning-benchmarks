@@ -923,6 +923,44 @@
    "style": "ipc2002"
   }
  ],
+ "classical/ipc/ged": [
+  {
+   "goal_inverted_probability": 0.45,
+   "init_inverted_probability": 0.08,
+   "num_genes": 4,
+   "seed": 4
+  },
+  {
+   "goal_inverted_probability": 0.45,
+   "init_inverted_probability": 0.08,
+   "num_genes": 5,
+   "seed": 4
+  },
+  {
+   "goal_inverted_probability": 0.5,
+   "init_inverted_probability": 0.08,
+   "num_genes": 8,
+   "seed": 2
+  },
+  {
+   "goal_inverted_probability": 0.45,
+   "init_inverted_probability": 0.08,
+   "num_genes": 12,
+   "seed": 0
+  },
+  {
+   "goal_inverted_probability": 0.45,
+   "init_inverted_probability": 0.08,
+   "num_genes": 12,
+   "seed": 1
+  },
+  {
+   "goal_inverted_probability": 0.45,
+   "init_inverted_probability": 0.08,
+   "num_genes": 12,
+   "seed": 2
+  }
+ ],
  "classical/ipc/goldminer": [
   {
    "num_cols": 4,
@@ -1529,6 +1567,50 @@
   {
    "num_pegs": 32,
    "seed": 1
+  }
+ ],
+ "classical/ipc/pipesworld_tankage": [
+  {
+   "network": 1,
+   "num_batches": 3,
+   "num_goals": 1,
+   "seed": 7,
+   "tankage": null
+  },
+  {
+   "network": 1,
+   "num_batches": 10,
+   "num_goals": 4,
+   "seed": 1,
+   "tankage": 20
+  },
+  {
+   "network": 2,
+   "num_batches": 10,
+   "num_goals": 2,
+   "seed": 1,
+   "tankage": null
+  },
+  {
+   "network": 1,
+   "num_batches": 14,
+   "num_goals": 8,
+   "seed": 7,
+   "tankage": null
+  },
+  {
+   "network": 3,
+   "num_batches": 20,
+   "num_goals": 8,
+   "seed": 7,
+   "tankage": null
+  },
+  {
+   "network": 2,
+   "num_batches": 12,
+   "num_goals": 4,
+   "seed": 2,
+   "tankage": 20
   }
  ],
  "classical/ipc/recharging_robots": [
@@ -2223,6 +2305,33 @@
    "block_type": 1,
    "num_rows": 4,
    "seed": 3
+  }
+ ],
+ "classical/ipc/thoughtful": [
+  {
+   "num_cards": 1,
+   "num_columns": 1,
+   "seed": 3
+  },
+  {
+   "num_cards": 5,
+   "num_columns": 4,
+   "seed": 3
+  },
+  {
+   "num_cards": 11,
+   "num_columns": 6,
+   "seed": 3
+  },
+  {
+   "num_cards": 13,
+   "num_columns": 7,
+   "seed": 3
+  },
+  {
+   "num_cards": 11,
+   "num_columns": 6,
+   "seed": 9
   }
  ],
  "classical/ipc/tidybot": [

@@ -22,6 +22,7 @@ lowercase. The reference distribution is the IPC instances in
 | floortile | `floortile-{opt,sat}{11,14}-strips` |
 | folding | `folding-opt23-adl` |
 | freecell | `freecell` (IPC 2000 and 2002 deals via `style`) |
+| ged | `ged-{opt,sat}14-strips` (reconstruction; synthetic genome pairs in the IPC tasks' compressed form) |
 | grid | `grid` (`style="autoscale"` for Autoscale's lock shapes) |
 | gripper | `gripper` |
 | hiking | `hiking-{agl,opt,sat}14-strips` |
@@ -39,6 +40,8 @@ lowercase. The reference distribution is the IPC instances in
 | openstacks | `openstacks-{opt,sat}08-adl` (default) and `openstacks` (IPC 2006 ADL, `style="06"`, `domain_openstacks06.pddl`) |
 | parking | `parking-{opt,sat}{11,14}-strips` |
 | pegsol | `pegsol-08-strips`, `pegsol-{opt,sat}11-strips` (random solvable positions; IPC uses a fixed puzzle library) |
+| pipesworld_notankage | `pipesworld-notankage` (reconstruction; re-exports `pipesworld_tankage` with `tankage=None`) |
+| pipesworld_tankage | `pipesworld-tankage` (reconstruction; `tankage` percent sets tank slots, random-walk goals so every task is solvable) |
 | recharging_robots | `recharging-robots-opt23-adl` (`kind` selects the covers or single-source scenario) |
 | ricochet_robots | `ricochet-robots-opt23-adl` (`board="asp2015"` for the fixed ASP Competition board) |
 | rovers | `rovers` (IPC visibility and all goal types; `autoscale=True` for Autoscale) |
@@ -54,6 +57,7 @@ lowercase. The reference distribution is the IPC instances in
 | storage | `storage` |
 | termes | `termes-{opt,sat}18-strips` |
 | tetris | `tetris-{opt,sat}14-strips` (`block_type` 1–3 for Autoscale's single-piece-type tasks) |
+| thoughtful | `thoughtful-{sat,mco}14-strips` (reconstruction; `bootstrap-typed-*` are size `(5, 4)`) |
 | tidybot | `tidybot-{opt,sat}11-strips`, `tidybot-opt14-strips` |
 | tpp | `tpp` |
 | transport | `transport-{opt,sat}{08,11,14}-strips` (IPC city generators; cost-free by default against `domain.pddl`, `action_costs=True` for the IPC encoding in `domain_action_costs.pddl`) |
@@ -72,9 +76,8 @@ no lifted structure to learn. The packages below cover their lifted ADL versions
 Flashfill and Pathways are also excluded because each task requires its own domain.
 
 IPC STRIPS domains without a public generator, and therefore without a
-package: airport, ged, organic-synthesis, organic-synthesis-split,
-parcprinter, petri-net-alignment, pipesworld-notankage, pipesworld-tankage,
-psr-small, quantum-layout, thoughtful.
+package: airport, organic-synthesis, organic-synthesis-split, parcprinter,
+petri-net-alignment, psr-small, quantum-layout.
 
 Our own variants without reference tasks live
 in [`../misc`](../misc).

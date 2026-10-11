@@ -47,6 +47,7 @@ Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next
 | folding | Daniel Fišer (IPC 2023), after the ASP Competition 2011 "Reverse Folding" problem by Agostino Dovier, Andrea Formisano and Enrico Pontelli | `generate.py` (Daniel Fišer) | public domain |
 | freecell | Fahiem Bacchus (AIPS-2000), adapted from a TLPLAN domain by Nolan Andres and Robert HillHouse | reconstructed from the IPC tasks; `freecell.c` (Jörg Hoffmann) was used as a reference only | [Freiburg](#freiburg) (`freecell.c`) |
 | goldminer | Alan Fern (IPC 2008 learning track) | generator by Madhu Srinivasan | domain: [MIT](#mit); generator: [GPL-2.0-or-later](#goldminer-generator) |
+| ged | IPC 2014; not named in the sources (Autoscale's further task sets come from Patrik Haslum's website) | reconstruction from the IPC tasks (no generator published) | |
 | grid | Drew McDermott (AIPS-1998) | `grid/generate.py` (not named); `grid.c` (FF collection) | [Freiburg](#freiburg) |
 | gripper | Jana Koehler (AIPS-1998) | `gripper.c` (FF collection) | [Freiburg](#freiburg) |
 | hiking, hiking_binary | Lee McCluskey (IPC 2014) | `generator.py` (Lee McCluskey) | domain file: [Huddersfield](#huddersfield) |
@@ -62,6 +63,7 @@ Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next
 | openstacks | Patrik Haslum (IPC 2006; IPC 2008 ADL cost version); 2006 instances from the 2005 Constraint Modelling Challenge (Barbara Smith, Ian Gent) | matrix generator after Ioannis Refanidis's `generate_problems` (pddl-generators `generator.py`) | |
 | parking | IPC 2008; not named in the sources | `parking-generator.pl`; not named | |
 | pegsol | IPC 2008; not named in the sources | new generator; upstream converts the Solipeg 2.2 library (J Cade Roux, GPL-2.0-or-later), from which no puzzles are included | |
+| pipesworld_notankage, pipesworld_tankage | Frederico Liporace, Jörg Hoffmann (IPC 2004; credited on the IPC-4 domain page, not in the domain file) | the IPC generator is not public; reconstruction from the IPC tasks (notankage re-exports the tankage generator with `tankage=None`) | |
 | recharging_robots | Daniel Gnad, Álvaro Torralba, with Daniel Fišer (IPC 2023) | `generator.py` (same authors) | public domain |
 | ricochet_robots | Daniel Fišer (IPC 2023), after the board game and the ASP Competition 2015 instances | `generate.py`, `asp-to-pddl.py` (Daniel Fišer) | no license statement in the repository |
 | rovers | IPC 2002; not named in the sources | `rovgen.cc`; not named | |
@@ -79,6 +81,7 @@ Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next
 | storage | Alfonso Gerevini, Alessandro Saetti (IPC 2006) | `main.cpp` (same authors) | |
 | termes | Sven Koenig, Satish Kumar (IPC 2018) | generator and solver by Álvaro Torralba, Florian Pommerening | |
 | tetris | Mauro Vallati (IPC 2014) | generator by Mauro Vallati | |
+| thoughtful | IPC 2008 learning track, reused in IPC 2014; not named in the sources (rules after Bjarnason, Tadepalli, Fern, "Searching Solitaire in Real Time", 2007) | reconstruction from the IPC tasks (no generator published) | |
 | tidybot | Bhaskara Marthi (IPC 2011) | `core.clj` (Bhaskara Marthi) | |
 | tpp | Alfonso Gerevini, Alessandro Saetti (IPC 2006) | `gen-TPP` (same authors) | |
 | transport, transport_fuel | IPC 2008; not named in the sources | city, two-cities and three-cities generators; not named. `misc/transport_fuel` is a variant of our own | |
