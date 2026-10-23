@@ -57,4 +57,4 @@ __all__ = [
     "task_requirements",
 ]
 
-__version__ = "0.0.17"
+__version__ = "0.0.18"
