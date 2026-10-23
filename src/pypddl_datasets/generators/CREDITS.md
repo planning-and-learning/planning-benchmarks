@@ -27,6 +27,8 @@ Except for the separately listed learning-track Sokoban generator, the
 people as the `ipc/` counterpart; `ipc_learning/` uses the learning track's
 domain files ([ipc2023-learning/benchmarks](https://github.com/ipc2023-learning/benchmarks),
 Taitler et al., AI Magazine 45(2), 2024). Notes refer to the notices in the next section.
+`optimally-tractable/` holds our own fragment generators; their domain files and
+the generators they wrap credit the same people as the `ipc/` or `ipc_learning/` counterpart.
 
 | domain | domain authors | original generator (authors) | notes |
 |---|---|---|---|
