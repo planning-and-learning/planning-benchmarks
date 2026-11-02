@@ -1,0 +1,229 @@
+{
+  "domain": "rovers",
+  "parameters": {
+    "num_rovers": 1,
+    "num_waypoints": 2,
+    "num_objectives": 1,
+    "num_cameras": 0,
+    "num_goals": 1,
+    "edge_probability": 1
+  },
+  "python": "3.13.2 (main, Mar 17 2025, 21:02:54) [Clang 20.1.0 ]",
+  "problog": "2.3.0",
+  "source_sha256": {
+    "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+    "src/pypddl_datasets/generators/_problog/choices.py": "90fdfe32e369d815de606cf25585c77fad8fd2b5e3b98cbc922874ebb9d3a1bf",
+    "src/pypddl_datasets/generators/_problog/engine.py": "a1c0a7333538310c9631f4b3bb8b6a0d1c9e7722564e531dfb34aa705dd6ac2f",
+    "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+    "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+    "src/pypddl_datasets/generators/_problog/prepared.py": "436aea2b11ae6b01f4fb3d7e304e157769e3d34935c16554fba32a40e4359f62",
+    "src/pypddl_datasets/generators/_problog/primitives.py": "69da0806e9f41c1edb034bbb08bc9384c012bbc28790d34b6de3e2bb060fbdb5",
+    "src/pypddl_datasets/generators/_problog/programs.py": "c0bcc1223fedce37f004cf79ea15f586fda325aa750e4e39e94e74b17d6bda60",
+    "src/pypddl_datasets/generators/_problog/reference.py": "59f3fbc22d6f6703da358e88af9e1ab49c917488525a05401f3c7f9d5134b72a",
+    "tests/reference_generators/rovers.py": "5f15b326c8747d0b2ffe3dc480fc25c94edfbcdc98ca47f13fe565ea2bac9de3",
+    "tests/reference_generators/graphs.py": "c16b6d8c073d0c240a107f49cd07d36101bee57bb0a92d85ecb085d1e2695af2",
+    "tests/reference_generators/tracing.py": "29c1ba83a12df9e410e804a92a97c122b321670eb30ff8d93847c8bb4d468fda",
+    "experiments/problog/verify_pilot.py": "202e4a2841b3f69e922bb32a82ca4bf13c359e2996923198d57d1f7426aef964"
+  },
+  "partition_timeout_seconds": 300.0,
+  "memory_limit_mib": 2048,
+  "model_sha256": "c13bcfd967cd01673e7a7cf3e9364cfad9d7c6cf75fd0f2f68a1433e7cae84f0",
+  "oracle": "Frozen revision-2 Python sampler, complete exact rational choice histories",
+  "reference_tasks": 12444,
+  "reference_seconds": 10.169490435000057,
+  "comparison": "All full task probabilities = verified partition mass times exact conditional probability",
+  "partitions": [
+    {
+      "index": 0,
+      "tasks": 240,
+      "mass": "1/7",
+      "seconds": 10.046839582000075
+    },
+    {
+      "index": 1,
+      "tasks": 240,
+      "mass": "1/7",
+      "seconds": 10.210911658999976
+    },
+    {
+      "index": 2,
+      "tasks": 300,
+      "mass": "1/7",
+      "seconds": 18.28355383400003
+    },
+    {
+      "index": 3,
+      "tasks": 192,
+      "mass": "1/49",
+      "seconds": 8.35537028200008
+    },
+    {
+      "index": 4,
+      "tasks": 192,
+      "mass": "1/49",
+      "seconds": 8.936370957000008
+    },
+    {
+      "index": 5,
+      "tasks": 384,
+      "mass": "1/49",
+      "seconds": 27.008063252000056
+    },
+    {
+      "index": 6,
+      "tasks": 192,
+      "mass": "1/49",
+      "seconds": 7.580214237000064
+    },
+    {
+      "index": 7,
+      "tasks": 384,
+      "mass": "1/49",
+      "seconds": 27.398433179999984
+    },
+    {
+      "index": 8,
+      "tasks": 384,
+      "mass": "1/49",
+      "seconds": 26.36794395000004
+    },
+    {
+      "index": 9,
+      "tasks": 576,
+      "mass": "1/49",
+      "seconds": 61.96131315900004
+    },
+    {
+      "index": 10,
+      "tasks": 240,
+      "mass": "1/49",
+      "seconds": 11.858761920999996
+    },
+    {
+      "index": 11,
+      "tasks": 240,
+      "mass": "1/49",
+      "seconds": 11.570319894000022
+    },
+    {
+      "index": 12,
+      "tasks": 480,
+      "mass": "1/49",
+      "seconds": 41.45229663500004
+    },
+    {
+      "index": 13,
+      "tasks": 240,
+      "mass": "1/49",
+      "seconds": 11.66352442799996
+    },
+    {
+      "index": 14,
+      "tasks": 480,
+      "mass": "1/49",
+      "seconds": 40.58104280700002
+    },
+    {
+      "index": 15,
+      "tasks": 480,
+      "mass": "1/49",
+      "seconds": 40.078699385999926
+    },
+    {
+      "index": 16,
+      "tasks": 720,
+      "mass": "1/49",
+      "seconds": 94.52755925199995
+    },
+    {
+      "index": 17,
+      "tasks": 240,
+      "mass": "1/49",
+      "seconds": 11.886880739999924
+    },
+    {
+      "index": 18,
+      "tasks": 240,
+      "mass": "1/49",
+      "seconds": 11.834263179000118
+    },
+    {
+      "index": 19,
+      "tasks": 480,
+      "mass": "1/49",
+      "seconds": 40.330592515000035
+    },
+    {
+      "index": 20,
+      "tasks": 240,
+      "mass": "1/49",
+      "seconds": 10.828041626000186
+    },
+    {
+      "index": 21,
+      "tasks": 480,
+      "mass": "1/49",
+      "seconds": 38.65561931499997
+    },
+    {
+      "index": 22,
+      "tasks": 480,
+      "mass": "1/49",
+      "seconds": 40.67852036199997
+    },
+    {
+      "index": 23,
+      "tasks": 720,
+      "mass": "1/49",
+      "seconds": 102.78559406099998
+    },
+    {
+      "index": 24,
+      "tasks": 300,
+      "mass": "1/49",
+      "seconds": 20.292402154
+    },
+    {
+      "index": 25,
+      "tasks": 300,
+      "mass": "1/49",
+      "seconds": 20.057833043000073
+    },
+    {
+      "index": 26,
+      "tasks": 600,
+      "mass": "1/49",
+      "seconds": 80.14075425500005
+    },
+    {
+      "index": 27,
+      "tasks": 300,
+      "mass": "1/49",
+      "seconds": 19.065398947999938
+    },
+    {
+      "index": 28,
+      "tasks": 600,
+      "mass": "1/49",
+      "seconds": 81.53840904100002
+    },
+    {
+      "index": 29,
+      "tasks": 600,
+      "mass": "1/49",
+      "seconds": 78.14545519100011
+    },
+    {
+      "index": 30,
+      "tasks": 900,
+      "mass": "1/49",
+      "seconds": 183.51201497400007
+    }
+  ],
+  "checked_tasks": 12444,
+  "checked_mass": "1",
+  "complete": true,
+  "peak_rss_mib": 623.55859375,
+  "elapsed_seconds": 1207.8584439410001,
+  "status": "complete"
+}

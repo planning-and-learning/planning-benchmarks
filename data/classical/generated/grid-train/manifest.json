@@ -1,0 +1,1915 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "00fda40c8349586b4b7ae05addeb2d47ecb3e3a1d5cf61d6b3404c37388e52de",
+  "generator": "classical/grid",
+  "instances": [
+    {
+      "attempt_seeds": [
+        15915724853305752794
+      ],
+      "file": "train-1.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15915724853305752794,
+      "semantic_sha256": "cf6a045aed5e58f0e8cf6f945e0d46a32c1f50d504c8f95b9ae7b27ba09f94bf",
+      "sha256": "36cad87667c75bba346357b827320a9dc6071151bf8886414c150bab30e7bb13"
+    },
+    {
+      "attempt_seeds": [
+        12158869779828615442
+      ],
+      "file": "train-2.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12158869779828615442,
+      "semantic_sha256": "4e8bf9ef086d9944f813c6e250ce972aafc490a6d3be310f85c8873a7e31d6a9",
+      "sha256": "af8d63af5ef786d44ba1797934bd0feb759df04da1f477c0eaacf25fbae2d0a9"
+    },
+    {
+      "attempt_seeds": [
+        1448911439035700372
+      ],
+      "file": "train-3.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1448911439035700372,
+      "semantic_sha256": "cb3ece7af1be4ce7f10fd996ab4ab2e7c0865b3198a89fd8348759602d94148c",
+      "sha256": "ea414de8b91a7bc9eb8e4805dce7dbbd32e7a8a993646dd526ad44b9b8091327"
+    },
+    {
+      "attempt_seeds": [
+        319457718976455182
+      ],
+      "file": "train-4.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 319457718976455182,
+      "semantic_sha256": "97ed2e8b2ba33307364de2f820989c2c3291daf87b26c40ad73aa3ec58d19ad1",
+      "sha256": "48e73312c1415c5423f44e7fae074409302ecccd6a423b2e2f135238cbff0ea1"
+    },
+    {
+      "attempt_seeds": [
+        6954443326502636033
+      ],
+      "file": "train-5.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6954443326502636033,
+      "semantic_sha256": "fac85b53586630936e393396bb962fa4b3e761e19748f3fe71b3fab6fe17e0ac",
+      "sha256": "5f8d63dac6aee8fcc1becdf50225dbfdc66a088f96ab2f82813d974b8888f27c"
+    },
+    {
+      "attempt_seeds": [
+        12801142723193147207
+      ],
+      "file": "train-6.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12801142723193147207,
+      "semantic_sha256": "a042757fa6e707a59ad2fac8d5084d8889865d84e1429df3118c508fa483aa84",
+      "sha256": "d1d5781029e0db6d731c48d5e76ce318839513a6c8a0b6e99a1fb14b14bf9a17"
+    },
+    {
+      "attempt_seeds": [
+        11987993057545635776
+      ],
+      "file": "train-7.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11987993057545635776,
+      "semantic_sha256": "accebf213c2e2bf3a09b57c4ec354063ae51c97088d5675d06730c5e12eb6961",
+      "sha256": "f07fd21c5eb01d08a7ffea2cf2d247cdd1cf75dab3f899fa6b1f616304acc21c"
+    },
+    {
+      "attempt_seeds": [
+        14076361119632381011
+      ],
+      "file": "train-8.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14076361119632381011,
+      "semantic_sha256": "9040d882c34a26fbd8bfb35ec28c0ca10971f9d6dba1b497eae10b563d5939e6",
+      "sha256": "ee255601f99b7cedee5926cf03694810752ed1312a9da36e910d11cff4a8a0a1"
+    },
+    {
+      "attempt_seeds": [
+        12847283724605788180
+      ],
+      "file": "train-9.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12847283724605788180,
+      "semantic_sha256": "923ddab201170e5c8082ac6ec6e4367c7a6eae19011811c5030474ac2a54bdb8",
+      "sha256": "519f3f395b8904d2f79ff7e4738b644fdf89df83cdec889c489ec90a57539ce5"
+    },
+    {
+      "attempt_seeds": [
+        12370272430582761936
+      ],
+      "file": "train-10.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12370272430582761936,
+      "semantic_sha256": "642006b53dab5357e011848eaee43fe9c0e8a7c5363c8eb81fc53b4c66f46d0a",
+      "sha256": "769e308bb30f0bf9c6a5d86c6932c1f6e12e3cd6b30846c55574517086652d57"
+    },
+    {
+      "attempt_seeds": [
+        6300910221081359218
+      ],
+      "file": "train-11.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6300910221081359218,
+      "semantic_sha256": "ea4b8005d329e2a814e0aa95838b0bd0f4fb8f05ae0ac0103c15faeea07862a3",
+      "sha256": "5982dc55e80242033df7a537f5d5b7566025bac181d19c879c366034aeca792c"
+    },
+    {
+      "attempt_seeds": [
+        9197391781860462693
+      ],
+      "file": "train-12.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9197391781860462693,
+      "semantic_sha256": "0fcc0a85a67a4deffb3bd92ea5f025285aae190f90c870adf899a26c18660610",
+      "sha256": "fc1b10ca7e51fd0ff6b00a38676a2fd65864e05f75d931de8a2330f4a5d54071"
+    },
+    {
+      "attempt_seeds": [
+        2403784862582008596
+      ],
+      "file": "train-13.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2403784862582008596,
+      "semantic_sha256": "d4775aeedc4a4501d56c603c013fbb79bab8e2a7fc39f920a12836645d8f5274",
+      "sha256": "6490c2bbc51617f480b18e750ad7e29090f7afa62475e5e90496ab9f702ea0e3"
+    },
+    {
+      "attempt_seeds": [
+        655469154175779217
+      ],
+      "file": "train-14.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 655469154175779217,
+      "semantic_sha256": "53382a9c614de621dc53ad8315fbb93a3d9d6a975f383e92b517f4f20b2be738",
+      "sha256": "21c2adcdf6dd164a3d1695faf1abb6fb376454e718364a6c2e184aa34d4faa8b"
+    },
+    {
+      "attempt_seeds": [
+        6549922555510992860
+      ],
+      "file": "train-15.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6549922555510992860,
+      "semantic_sha256": "154c9a3065ce4b37170d9b61d90f6ab28e71a45363837c24ad0b557e60005281",
+      "sha256": "92b283b6867408313e827ebb046548c5b3874db1d65867418cb16d0e744a8c41"
+    },
+    {
+      "attempt_seeds": [
+        1377787004252128996
+      ],
+      "file": "train-16.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1377787004252128996,
+      "semantic_sha256": "ffa40fafe4e8117eb67b45da567fc60bc2c679e747ecee3a5f93b0305b486149",
+      "sha256": "6897519266fd6901c92ed412d6ee83865b53255d9a049b3eae3647085e38139c"
+    },
+    {
+      "attempt_seeds": [
+        464071027071402840
+      ],
+      "file": "train-17.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 464071027071402840,
+      "semantic_sha256": "97324362e6aa5e1bdb6650170a9b42aa4b2629ec254a06e2867e0da92f671d00",
+      "sha256": "f66506b40e0a25dfcce276e3cb82b0b725a708a3bada6f79179a1bfab007c6e1"
+    },
+    {
+      "attempt_seeds": [
+        921844348352613852
+      ],
+      "file": "train-18.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 921844348352613852,
+      "semantic_sha256": "05fdc76039fe42df43e43821a8fb7de923763fde278588d80f10f66c97d08b09",
+      "sha256": "d220be85913e20f22c93602be09d34d04c37aa42f95c9b834ea390930510e340"
+    },
+    {
+      "attempt_seeds": [
+        3557555987187541388
+      ],
+      "file": "train-19.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3557555987187541388,
+      "semantic_sha256": "1a5a454d4029f8aa66a5fec3399586a8d9a370f237c030f68c53655933da6cc8",
+      "sha256": "fbba6f5140f241945f92ac6ec27995c9505473054da3a8ce34059ed020a71130"
+    },
+    {
+      "attempt_seeds": [
+        8734383311694424342
+      ],
+      "file": "train-20.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8734383311694424342,
+      "semantic_sha256": "cec10c62dfbf6dc300599764c754f2f93c1ae75162b165654a3446d4c99c5955",
+      "sha256": "821997fd79ee71fc439626399ea81e6222e1ae51415e41e5aebc390afd95d300"
+    },
+    {
+      "attempt_seeds": [
+        2861443975240061761
+      ],
+      "file": "train-21.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2861443975240061761,
+      "semantic_sha256": "425e8d0c1cd7e5f48b58a6881f95ac2df7063c9b652e9ab120495ac68173d320",
+      "sha256": "6d017cec09b8631aa0cd75726adf8f7ee779b3365d205c4bcf86aa3a40ffb367"
+    },
+    {
+      "attempt_seeds": [
+        5583557435190673073
+      ],
+      "file": "train-22.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5583557435190673073,
+      "semantic_sha256": "84e432bc98200fc9535ab3c579ed85bc86875dfcc99c10f8428a065e90c950e8",
+      "sha256": "86e9643d2a22888600007f2f55f98cd4104e7b25b394a3be251a6edf0d020142"
+    },
+    {
+      "attempt_seeds": [
+        5083044990083792160
+      ],
+      "file": "train-23.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5083044990083792160,
+      "semantic_sha256": "13f4003574f9ab67cb816ecacf4eb1992b9ff11e5c8c086ef558715e367b7b83",
+      "sha256": "232c35939a3232e4762f28badcd558dd4ca5a238110742dfa46f41e9401e1f86"
+    },
+    {
+      "attempt_seeds": [
+        13257673811620008045
+      ],
+      "file": "train-24.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13257673811620008045,
+      "semantic_sha256": "7b9570a0083963bc3effd9e84a48ba5f9d347b1b183d282070f871a8667f3e63",
+      "sha256": "1603a0e67eb6b67a7b09c1b2c3ec7db44149a3969d7738c7094b760e5c2dcab2"
+    },
+    {
+      "attempt_seeds": [
+        5471208142422037904
+      ],
+      "file": "train-25.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5471208142422037904,
+      "semantic_sha256": "b584e43597b64ede28010297c73d334157bb81bff1b3f486faf9ab51ee4e43a9",
+      "sha256": "0fd16c6fbb5c3fd27d659a6a3104dbe214275e2636d57d2453afdbc3ed47be07"
+    },
+    {
+      "attempt_seeds": [
+        13539587362065226288
+      ],
+      "file": "train-26.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13539587362065226288,
+      "semantic_sha256": "a4cbc4b77aa69d2b771f286e16bf42a10a75e4c34a67529793a05dfa5d075ff8",
+      "sha256": "f385a4488bea95526fe4cfb5cbce580b91cacf24a70a35952eeea8bef25aa1c2"
+    },
+    {
+      "attempt_seeds": [
+        12032787126387950419
+      ],
+      "file": "train-27.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12032787126387950419,
+      "semantic_sha256": "20736d804f5f9b4cc569cf4b97d53e96b412ed7e92c7069c42e4b071c92b90a7",
+      "sha256": "2a25a75ac4acb612c93d1e898b07aec334f29a302c758fb4359e5276d5bfe8f2"
+    },
+    {
+      "attempt_seeds": [
+        8827845607702584648
+      ],
+      "file": "train-28.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 1,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8827845607702584648,
+      "semantic_sha256": "02a3cb3f317df6d968bfaeb18e4714b33a1f106bbad8ae908dadf0d9aca9166d",
+      "sha256": "c80f9c8449a4dc03d31d1eaf30060d5505bae50cca971743aa5cb3883c833c29"
+    },
+    {
+      "attempt_seeds": [
+        8871178302017232187
+      ],
+      "file": "train-29.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8871178302017232187,
+      "semantic_sha256": "52f4b7122f80789248bcc67b2bbaa5142a00a4bd23e13448396f9ed24a5f99aa",
+      "sha256": "c540694469d634c0a3ccd93974badb817ede62bc5290cabafbbd2c0ebd9d856f"
+    },
+    {
+      "attempt_seeds": [
+        12630402388205194010
+      ],
+      "file": "train-30.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12630402388205194010,
+      "semantic_sha256": "48368c7f5739e5a551c3e3972c65ff6081641a4611b713f5a13c8f34d83aa955",
+      "sha256": "d57bbf517ef732b76482dcc5e4cb668663de2d24696c084d2668b21d9e3fd19f"
+    },
+    {
+      "attempt_seeds": [
+        4063674245143023833
+      ],
+      "file": "train-31.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4063674245143023833,
+      "semantic_sha256": "d90f07b42af54ae652bab009fbb9f54566f56ebd00d28da81a016334527906f7",
+      "sha256": "5f9c4eb78a24b9b1eea91a06b1bf438ba66a84e239aa219ac99206f734d8228d"
+    },
+    {
+      "attempt_seeds": [
+        8457221188018227874
+      ],
+      "file": "train-32.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8457221188018227874,
+      "semantic_sha256": "14ad7c5841f1af25aa9eb3842c3849be2f19195a1ea7dd69736bbf7d14526474",
+      "sha256": "7640cd46eb50e7a00f784c78713b9ff91a562305287f9581790e83f3c05dade0"
+    },
+    {
+      "attempt_seeds": [
+        18274062206516533816
+      ],
+      "file": "train-33.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18274062206516533816,
+      "semantic_sha256": "b6ec191f36702918c24fa5b27d4452127e3ec7f28686ca08b29d1ffd7e747309",
+      "sha256": "30db0154ae84918e27ad8b0f1430ae20a56ac183136b6bfa2f76aafc92b24da0"
+    },
+    {
+      "attempt_seeds": [
+        9393797782662342708
+      ],
+      "file": "train-34.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9393797782662342708,
+      "semantic_sha256": "47d000050e346c738cb6fdea60a137e9fceb4bf13999535dc38472e5574dcecb",
+      "sha256": "cfdcc02d33868b27278fe85ccb25890fcef603469707230ea809a82ec143c290"
+    },
+    {
+      "attempt_seeds": [
+        11604602106826142088
+      ],
+      "file": "train-35.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11604602106826142088,
+      "semantic_sha256": "b1d31bcfed1fe014ec76828c9fc4df5170707eeaa29bc5b7b43f581ca694b950",
+      "sha256": "580eef7027f1b35dba680ed44697c7c7569903de69a544c8875b76c470f06297"
+    },
+    {
+      "attempt_seeds": [
+        18110524772672976631
+      ],
+      "file": "train-36.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18110524772672976631,
+      "semantic_sha256": "26f76b89e6c3212e6b1ba915a0ff5fee0948b44d63ec81ca203b44d4335da57c",
+      "sha256": "bf0dc06006e8ac96c73a85e9f640f9e016604455bc8a5ffed1f29b4039fdc14c"
+    },
+    {
+      "attempt_seeds": [
+        17353070675425270907
+      ],
+      "file": "train-37.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17353070675425270907,
+      "semantic_sha256": "cea4bbcbfc0e78ae7624553e18844f221f28830835406c252e275f37accaee84",
+      "sha256": "bac338116099f42f539c5770bc31f0d78c39cbf7332d63e442b6ee5e0e16b5f8"
+    },
+    {
+      "attempt_seeds": [
+        13355988890209489300
+      ],
+      "file": "train-38.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13355988890209489300,
+      "semantic_sha256": "223020ca51775729ea9860c683f098bf3ed66db0ea08398a4997891a7c301434",
+      "sha256": "d9734344e17ff9bf187a4518b5208f28d8b0509603af4f8d46da737bf02dc22b"
+    },
+    {
+      "attempt_seeds": [
+        130606767048865947
+      ],
+      "file": "train-39.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 130606767048865947,
+      "semantic_sha256": "ecb3ba5f2cdfb9b1e7b11da8a77c5ff9c099b324d7dbff52b3a74b1650992fc6",
+      "sha256": "11949b1d9e6fcb3397018ad9c2636656d3e340b0168451290f7744f199c83c11"
+    },
+    {
+      "attempt_seeds": [
+        270890164202698438
+      ],
+      "file": "train-40.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 270890164202698438,
+      "semantic_sha256": "c900d0863aece5f70e8f0db10371e04d7209e824c1716ea936f1332bcb120c81",
+      "sha256": "33084563f67c974d1f6ccf8dc989e51258c98c918ff1ebf7bd045e268fb020ab"
+    },
+    {
+      "attempt_seeds": [
+        17017490826605348348
+      ],
+      "file": "train-41.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17017490826605348348,
+      "semantic_sha256": "1a88fdc9557a3112a0eec6c21529d8bf25c71eb2d0ac51ee714f2e8424517704",
+      "sha256": "66bef0179f9c66c08c486d73ddc217c907919e5a36d7805e63b2b3f54549c483"
+    },
+    {
+      "attempt_seeds": [
+        6429556636079360396
+      ],
+      "file": "train-42.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6429556636079360396,
+      "semantic_sha256": "af9b5a3feca19e07ca20371d006babe96f97093f7bfe6cccfa4819202e4a88a7",
+      "sha256": "a14a89ae52f624a769abf999e86d8bb0f592d2f503db9714f0266c5cdf05199f"
+    },
+    {
+      "attempt_seeds": [
+        15494325458047896603
+      ],
+      "file": "train-43.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15494325458047896603,
+      "semantic_sha256": "5e32040267c8a8698f4873e4af7a8f3f3a0cd1854e6467da2dff39d70acda2f0",
+      "sha256": "c7653e384573ed67f6fe3d342b69d0d71ede60b4996265568043ad56f506a9bc"
+    },
+    {
+      "attempt_seeds": [
+        11137726944027095824
+      ],
+      "file": "train-44.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11137726944027095824,
+      "semantic_sha256": "5f56e5a0f9dee30e79d5a9d5eb9d15a5701245964807f56afd49cd4a376407d3",
+      "sha256": "28e819c8fcfbb65472e8f9a121ae692ee73b1b9283d0213145cd838d4240325d"
+    },
+    {
+      "attempt_seeds": [
+        17745448049072500347
+      ],
+      "file": "train-45.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17745448049072500347,
+      "semantic_sha256": "87ddebbdf5063af91d3a766771f3021db3155d8eb667c8f1cc063a8b6cb290de",
+      "sha256": "8388c5e8835e762281006b177a4791578d3aa8cb675d8d8b90d34dd027dd3922"
+    },
+    {
+      "attempt_seeds": [
+        15910952176016092055
+      ],
+      "file": "train-46.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15910952176016092055,
+      "semantic_sha256": "06304e991e23f08fe497aacde72b38a470c3930921e46d8598ff5c421daf17e9",
+      "sha256": "269800b9fd0399125eff8b5a74a6088bdfae4e423a7cc2d743cce0ac06a5f8c9"
+    },
+    {
+      "attempt_seeds": [
+        5025203976141585118
+      ],
+      "file": "train-47.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5025203976141585118,
+      "semantic_sha256": "5aa31f9a797e25c2c935aaf92d05797b6f68644574f4df78a4384fd40bcac4f7",
+      "sha256": "e042d811d60a7c6b7da5a49eea25bfde97534c98703243f682cec7995de46cc7"
+    },
+    {
+      "attempt_seeds": [
+        9369429494951597301
+      ],
+      "file": "train-48.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9369429494951597301,
+      "semantic_sha256": "0748edba81e7d5aab8c4f0c0e5f7172565063b42f58c2d2bf7a29131e66cf3ed",
+      "sha256": "d33029765be44d6e0c45ed3e5bb524c0cfc4ceacd28d28ca9baffb19b20e3268"
+    },
+    {
+      "attempt_seeds": [
+        13272367514633687674
+      ],
+      "file": "train-49.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13272367514633687674,
+      "semantic_sha256": "af2e8fa7a9c4d1b0ce01c587152fe1e26fef489b1794ea44cb63b75773f86c16",
+      "sha256": "65033e1fac0b3175805f09a466923b9ba670c7eb8a276a1d7bd02a0125753f19"
+    },
+    {
+      "attempt_seeds": [
+        10876411447483446794
+      ],
+      "file": "train-50.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 1,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10876411447483446794,
+      "semantic_sha256": "07b6000814b23ef6f92bb203992ff5ae31fad68f86d07bdf448d3c5ba75008c9",
+      "sha256": "05a3fb3712092cea1140803eefb242300382b44091363c8ebeb5a2b6a4a006a3"
+    },
+    {
+      "attempt_seeds": [
+        13828232073106416678
+      ],
+      "file": "train-51.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13828232073106416678,
+      "semantic_sha256": "a9376528ce9f28459dbc64cdaa83e57ad3066c8eb590ea8ed972fd05b573847f",
+      "sha256": "325b2c111e789ba308b32dfdfab2a02252dbeb01e6fd4339002099a49de8a807"
+    },
+    {
+      "attempt_seeds": [
+        13031706870778538034
+      ],
+      "file": "train-52.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13031706870778538034,
+      "semantic_sha256": "daf59ec637962045bd4cdacbe2bc179f1afc51cf153b4e5f9b551d1e24ccad05",
+      "sha256": "56e601e74d653ca5594eca10a172aafd2b9e7f74c8f58dcb1c43401762bad83f"
+    },
+    {
+      "attempt_seeds": [
+        12593057347314958613
+      ],
+      "file": "train-53.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12593057347314958613,
+      "semantic_sha256": "e45c9c190a6c77c914e0950d4ce63b8f60a658b6ed70405a61702709fc793d78",
+      "sha256": "79d2aec785e38ae78159d274bfbd8105bcc7e0074465e4b59f1971b727e6a927"
+    },
+    {
+      "attempt_seeds": [
+        3976607272137675040
+      ],
+      "file": "train-54.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 1,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3976607272137675040,
+      "semantic_sha256": "ddf6b12016ad9ae91a2f572b2227e079c4dac413a71c8137cfc608809b9c66cf",
+      "sha256": "f07272c34e0ee5026b56c50fc28f3e16b473465f297eb6c3019626d7ed151838"
+    },
+    {
+      "attempt_seeds": [
+        18188782931715511699
+      ],
+      "file": "train-55.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18188782931715511699,
+      "semantic_sha256": "dbb6e4074cbf488a33c5d29e850d4b5d10365d794bcdca5d9e9b879749f3e2d2",
+      "sha256": "d81bee76d49fa0ac3c7e719f16fc31c3b7c7b55fbee707a432d095e134ecf178"
+    },
+    {
+      "attempt_seeds": [
+        10126104546593298129
+      ],
+      "file": "train-56.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10126104546593298129,
+      "semantic_sha256": "95109b6999587b764647e1b1ab77979aef5118c86d1c94ac5b0746462ca98dd9",
+      "sha256": "0cd319e98ec00676eaf3cd6c480cde88a9e9e61016b6caf37241a0c3b2cd4f8e"
+    },
+    {
+      "attempt_seeds": [
+        16428914702874471755
+      ],
+      "file": "train-57.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16428914702874471755,
+      "semantic_sha256": "3c94d0b7a83a030b678b0e8a8aca324eabf02176b5f7c659390548d4a01fb3ce",
+      "sha256": "c42b35ff99856cdaa79bd397b4584d84248ef756a7595fab99f09963c086eaa3"
+    },
+    {
+      "attempt_seeds": [
+        2438178860959362032
+      ],
+      "file": "train-58.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2438178860959362032,
+      "semantic_sha256": "eb73234cce6cef17ed3f250fbd2717a43cd38b2c870b604c6452b940614a4c49",
+      "sha256": "8133488ae4ec30ef22ed1e5c74e6f79afb4a39085e20b0e5727d93c7d6709538"
+    },
+    {
+      "attempt_seeds": [
+        4299622390284913239
+      ],
+      "file": "train-59.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4299622390284913239,
+      "semantic_sha256": "08fb717ad0f1f3624b6202bd59fc58c83d5260cb97827d59e07fc8b200ff2b27",
+      "sha256": "9c38485781f6406b654e298b0f0e098dbab08f1762549e709fa99c21e5e9e870"
+    },
+    {
+      "attempt_seeds": [
+        6400177317431545413
+      ],
+      "file": "train-60.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6400177317431545413,
+      "semantic_sha256": "67ae23625600d72bae6d55307cad5d6380a9a3d7003e4a9a12283e2d564720e2",
+      "sha256": "e73fe769f9bc4a4c8e34afab5c0f7ae1174d891aa3bf9a3a616c2de8fc984078"
+    },
+    {
+      "attempt_seeds": [
+        9795920976904074846
+      ],
+      "file": "train-61.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9795920976904074846,
+      "semantic_sha256": "a64fece18c9182a0d26b38dfe4548236239a4adde875a534f823479be0a3c102",
+      "sha256": "70906fcb4762be239bba8d47f7525f542dfb3f6863cfe36702dc410e8ca9951b"
+    },
+    {
+      "attempt_seeds": [
+        3724197602390130423
+      ],
+      "file": "train-62.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 1,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3724197602390130423,
+      "semantic_sha256": "a6577b5ec0b1b5008f11c5e44055647944a901ed48d42fdf582a60df00050c12",
+      "sha256": "d1777030087bfa5dfd896368567468a7677b9d48db840e5b00df1b6b224ec16d"
+    },
+    {
+      "attempt_seeds": [
+        7317865110629551210
+      ],
+      "file": "train-63.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7317865110629551210,
+      "semantic_sha256": "a880d7b22c81ee43d56da8da4dd959ad2e28b69e555434c173f822a19886c22d",
+      "sha256": "830414ab3732df642629bc365aa289d49f28fa458c2aad2adcefd8672c53160c"
+    },
+    {
+      "attempt_seeds": [
+        1971304466710930339
+      ],
+      "file": "train-64.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1971304466710930339,
+      "semantic_sha256": "d151693a6fd9bd2e6a24b2ff945b433e663600665060bb9c2eeea1deeae273bd",
+      "sha256": "362c4c266071b89d81c0eead3030c7dc9ee08ebf5d30a4171fb2ed43a91315ee"
+    },
+    {
+      "attempt_seeds": [
+        12333305992109023794
+      ],
+      "file": "train-65.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12333305992109023794,
+      "semantic_sha256": "ef608704776b6245aaca8d8b9e44c3b17d49bc094cc6311004d715035f475248",
+      "sha256": "187e6fcded858a2b92472de74e5ea8b66e551e2d2513e5d86819506663f553aa"
+    },
+    {
+      "attempt_seeds": [
+        6639424123304348701
+      ],
+      "file": "train-66.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6639424123304348701,
+      "semantic_sha256": "290916fe91ab09a13a3c3dcee32118b68c32b577dab0086ef4f6f568a5f605e4",
+      "sha256": "54dfd80968c03d307446413ee06b1bfc2942ee37f484b15eca71f2c9d480df70"
+    },
+    {
+      "attempt_seeds": [
+        5396359937161629979
+      ],
+      "file": "train-67.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5396359937161629979,
+      "semantic_sha256": "bc81213db062def451c0362379df4c6d2e51825b4d172b2c7fd49bd4a3796e45",
+      "sha256": "d0822566c6564703013acae5894dd21c235091dd7ed73ddb2c636938b93a6d7f"
+    },
+    {
+      "attempt_seeds": [
+        5964110721062335424
+      ],
+      "file": "train-68.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5964110721062335424,
+      "semantic_sha256": "3b7b4ad85a2e4865bc41e0fb95fc094aeaf0d8726c79750dbfc0ca1275c53c2e",
+      "sha256": "d6fc3c2c7f3d47d2f3cb19f3a4bfe8db8ac9139c0d5487e7b36d040d8427f892"
+    },
+    {
+      "attempt_seeds": [
+        3873814521064625619
+      ],
+      "file": "train-69.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3873814521064625619,
+      "semantic_sha256": "2edf1275d344c95e4bc9c8305408df53091f3a1b7f4c2f2b887fa5d134ff8919",
+      "sha256": "6d127af81e19a4784cf658c9424dce10304a522601f5c3285a217b6fec0e8673"
+    },
+    {
+      "attempt_seeds": [
+        17676813327626378287
+      ],
+      "file": "train-70.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17676813327626378287,
+      "semantic_sha256": "b6b806dda39df85d01276eda178ec4f01c8f6474d372b90a0d295def2f4e1bd6",
+      "sha256": "aff99b45b9286da8bef08e4d80a593fc9bdb7f9f54c341bb99c9abdb5433129d"
+    },
+    {
+      "attempt_seeds": [
+        8449031637917532438
+      ],
+      "file": "train-71.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 1,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8449031637917532438,
+      "semantic_sha256": "06bc0fb52cc4a22ccf6f4b0613244fb1957ba733724dceb5c8100ce82d54ef19",
+      "sha256": "5fa6a0ef58296c3033e5ba32e68e66d77ea27b8026ccfb5521c86c4d2053f91c"
+    },
+    {
+      "attempt_seeds": [
+        13754471599398514814
+      ],
+      "file": "train-72.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13754471599398514814,
+      "semantic_sha256": "67a62f6e9ecc57c1f486b5d827d4168548fd08c7dbdae8b48c65c63200c7a80d",
+      "sha256": "0c2cb13003b6d4413b8330d857571dbf460a6360cfe0c69a1b7ad84a1daa78a6"
+    },
+    {
+      "attempt_seeds": [
+        11743205383008504844
+      ],
+      "file": "train-73.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11743205383008504844,
+      "semantic_sha256": "fd886f31df6c5b021e9dafd1b784605b3ebe80335c77d7a2d2c04d1a2e881953",
+      "sha256": "1e08b14876eb8dfb28be7493d289c2e0fe12710f42d60ee3fbabc0a874296293"
+    },
+    {
+      "attempt_seeds": [
+        1362482388136889434
+      ],
+      "file": "train-74.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 1,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1362482388136889434,
+      "semantic_sha256": "03d28805495b98def2a3d6511ecf9ca1057e7f414b831b2dcfc3b000d1e1adda",
+      "sha256": "862bd6c37e97e7e751dee6e3ee7afd157c94d3ed2c74465dd9e9d27e7cd07291"
+    },
+    {
+      "attempt_seeds": [
+        3211729280406858215
+      ],
+      "file": "train-75.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3211729280406858215,
+      "semantic_sha256": "0863b1aeadd94eae9d6729a7d2b1223b10a4edce3b16c12dde5003d3ce563d0e",
+      "sha256": "a305cc05d1aaf94dff1c7b079b70f7b5863022471a1af196563f77f1ff923510"
+    },
+    {
+      "attempt_seeds": [
+        15307270459497538743
+      ],
+      "file": "train-76.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15307270459497538743,
+      "semantic_sha256": "9b8ce5f766e4e8243a8716ab0f09eb67fa95ff40cfae8694a02c2fefbc731548",
+      "sha256": "996f341ad0e78e74bd13e4eda71ef170fb07ae21abf9877f5690968ab381d703"
+    },
+    {
+      "attempt_seeds": [
+        8817768337844673183
+      ],
+      "file": "train-77.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8817768337844673183,
+      "semantic_sha256": "158421ca906a3193a9da87b1297a9c27fcc9098084e7a91a972f8aad87e2c6fd",
+      "sha256": "97041ccf9ad00d25e3505b9a17b9bcc1a3928c58e16d93897027ed1bbfbe0951"
+    },
+    {
+      "attempt_seeds": [
+        1563786569841776869
+      ],
+      "file": "train-78.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1563786569841776869,
+      "semantic_sha256": "3d190b22ff865aab455178a6f38a5ede7d2616d853940ce2ddb04ce6d707400a",
+      "sha256": "46eeb5523bfddee32e8ec7a1a11e27e81f5a1782c7c86db2dac30b88a772f847"
+    },
+    {
+      "attempt_seeds": [
+        4348428561109936895
+      ],
+      "file": "train-79.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4348428561109936895,
+      "semantic_sha256": "7c491ea2ba040cf54c73e8da12bedc8338b8f2a910da1110e0d842cdb2414e46",
+      "sha256": "eb25b978aba0c37f2dd5e7861e8d28eb0378444d454cb9bbd2260f87ca314f47"
+    },
+    {
+      "attempt_seeds": [
+        2442417709543442336
+      ],
+      "file": "train-80.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2442417709543442336,
+      "semantic_sha256": "fdb5325115147891bc396c5420f164aeb2f48893fab12be40a223e9f627ee4ff",
+      "sha256": "1126ae693133b68d0b3d3753f98fe8ab8222bbbae5bbc75d902c5e3c2ac0cdb3"
+    },
+    {
+      "attempt_seeds": [
+        9927347316943455602
+      ],
+      "file": "train-81.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 1,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9927347316943455602,
+      "semantic_sha256": "3dbe2cf6756c58ff0992e75bca60b512b67e44c781a8fc52db4bcb2252c945aa",
+      "sha256": "91c7735c0ed721ce428ba03e03642ac08ab4c4aa18614312bb72fdb6ef3cbe4e"
+    },
+    {
+      "attempt_seeds": [
+        1009808487665154392
+      ],
+      "file": "train-82.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1009808487665154392,
+      "semantic_sha256": "8cdb5ab4a39d3e9a8f0a60daae250ae8cbf4c2f3bbe49225e6394cce49855c40",
+      "sha256": "bd64fe9c575402b02783599a55318aec83f410e7751417fecf34f56883411987"
+    },
+    {
+      "attempt_seeds": [
+        16791533848341496715
+      ],
+      "file": "train-83.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16791533848341496715,
+      "semantic_sha256": "16623ff713440e97da84f4558a151bbd3d9348ff27d17b2a00e61ea55f5f23f2",
+      "sha256": "1cab7733cf8d00a408e1d816946f5b254040e93fc55db59a804a1dff24f1e92b"
+    },
+    {
+      "attempt_seeds": [
+        10733991852928632556
+      ],
+      "file": "train-84.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10733991852928632556,
+      "semantic_sha256": "280810bc61adbacb82c950b3741cf8a2e0455654da71c86d6677c2ac6282669d",
+      "sha256": "e55263050786213a53547980889305258125f0044f77955657d3a9fd637563b2"
+    },
+    {
+      "attempt_seeds": [
+        874840734192149281
+      ],
+      "file": "train-85.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 874840734192149281,
+      "semantic_sha256": "cba14bb7782b3b785a60bac33d5a5c640299394f4f40c8c1118e79f86a005420",
+      "sha256": "7a075ff4c38844dbd0c6b75ec49a978a2a468a434453f0410b294c270dc1435f"
+    },
+    {
+      "attempt_seeds": [
+        13065058611261556288
+      ],
+      "file": "train-86.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 1,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13065058611261556288,
+      "semantic_sha256": "b833b925c44310c98422a0295d6f0145ce262fc17cb243b2503dadc2d4f217d8",
+      "sha256": "b7d084cd61df46b463a3c1707be8edfdba4e57f249c6e56fa43f3cf15c8cc068"
+    },
+    {
+      "attempt_seeds": [
+        4505382996861971497
+      ],
+      "file": "train-87.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4505382996861971497,
+      "semantic_sha256": "7746ff53c41d23caa807ff3019decae574fad695f02caafce6bb321e752d873d",
+      "sha256": "71dcbc38a21f3e076691b26f50f8ca63edb143878ebb2587ec14f2d63d357be8"
+    },
+    {
+      "attempt_seeds": [
+        12881489557415692314
+      ],
+      "file": "train-88.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 4,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12881489557415692314,
+      "semantic_sha256": "e95ca6c53a53cf60346326f794a590952b06c042f521f9275ce3ffe9d8424ce0",
+      "sha256": "e3f7083cfe2dc115efa42c45c699d90cc5a9516820b65a569f3234c82d5d8c40"
+    },
+    {
+      "attempt_seeds": [
+        7112220554847018132
+      ],
+      "file": "train-89.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 1,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7112220554847018132,
+      "semantic_sha256": "9263ba4bd743a7dc9004f14a39ee19ccb8d046c88a201eb5c9d1430e87ec17aa",
+      "sha256": "e088ad28277928ee2cc47003899d7fc8511d0216388270bf0d7206f5fd4e8316"
+    },
+    {
+      "attempt_seeds": [
+        10600877163404762371
+      ],
+      "file": "train-90.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 4,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10600877163404762371,
+      "semantic_sha256": "3a500e4d0182d2a61b74194831bc92022cdbd338a853f4cf431fd212cf9e8faa",
+      "sha256": "4230f707303e6a95e367c78fb2f173a763ff815284e6ba09d044d76313d9ac77"
+    },
+    {
+      "attempt_seeds": [
+        5027931648876178994
+      ],
+      "file": "train-91.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5027931648876178994,
+      "semantic_sha256": "9a7f075acfc2673aed719b1075d3cf79928581b0e9108686e622ec4d140e6c19",
+      "sha256": "215e57ea070329afc570753ba0a286cb0f334810f500c8e33a787866fc68e253"
+    },
+    {
+      "attempt_seeds": [
+        11690094514922167701
+      ],
+      "file": "train-92.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11690094514922167701,
+      "semantic_sha256": "e6300043f0f9b94a8ae067697c8c33c36c2e87acef6762117cba6a88c4d3d6df",
+      "sha256": "f29e43deec5d2f82e662962990de9f77294b5253ba71d146c1a196e7654133e0"
+    },
+    {
+      "attempt_seeds": [
+        6582935651258653626
+      ],
+      "file": "train-93.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6582935651258653626,
+      "semantic_sha256": "e9a7e70fb9d2d838aef547f518658a54191b03e1d6407ec81426f6cc914beff2",
+      "sha256": "8563fa62224d1dfd3f55890bc02e231bd7f3a6b48e30a167c6e5cf121610c36c"
+    },
+    {
+      "attempt_seeds": [
+        12590219048995529824
+      ],
+      "file": "train-94.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12590219048995529824,
+      "semantic_sha256": "55f24dc18599a29b8e2fedb75f5dcfb135996c01879a660881774b963c90e6d9",
+      "sha256": "6a6f97e2de15d4c02cc0330b303be551855783efa6cd0eb419faed1c7b83b884"
+    },
+    {
+      "attempt_seeds": [
+        5552942415543655344
+      ],
+      "file": "train-95.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 2,
+        "num_locks": 2,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5552942415543655344,
+      "semantic_sha256": "07f9f9cabf7ba9bf54e19dca33227ad6ebe11458cc709832b6203919e518c467",
+      "sha256": "a542c09b8809fc24dc91786c60a5561fa4cde31e0f435c6e8355d8a721cf9a10"
+    },
+    {
+      "attempt_seeds": [
+        18328527252676914986
+      ],
+      "file": "train-96.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 2,
+        "num_locks": 3,
+        "num_shapes": 2,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18328527252676914986,
+      "semantic_sha256": "9ede7990f485e6a5532964609edf335edd33397a393b6dec578757d0f497c9fe",
+      "sha256": "b983051802cbd4a83aa306c9d5a7a4133286f46563f4dc3e0ec0b3b7a856930a"
+    },
+    {
+      "attempt_seeds": [
+        17174786697267848281
+      ],
+      "file": "train-97.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 2,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17174786697267848281,
+      "semantic_sha256": "37118f311143716ae2411de65343c9bc0056b6b141bf9793e7f75f32eef72876",
+      "sha256": "49dec3c7ca9ef1fe309358dbcb1bc3aff6d7255aeb624b593be3e6ac8d4f3876"
+    },
+    {
+      "attempt_seeds": [
+        9782826110742546063
+      ],
+      "file": "train-98.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 3,
+        "num_keys": 1,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9782826110742546063,
+      "semantic_sha256": "d189cd26ffc835aec1d3311e4c58210fdf57013096d44345ba6f792b356a672e",
+      "sha256": "4563f8caa26e6d82218f5ddcc9a0f139f65e682f7f3ccb60892f20a02137ebd9"
+    },
+    {
+      "attempt_seeds": [
+        2791619207895375042
+      ],
+      "file": "train-99.pddl",
+      "parameters": {
+        "goal_probability": 0.5,
+        "height": 2,
+        "num_keys": 1,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2791619207895375042,
+      "semantic_sha256": "d4ea9949ef2c778812d5e262aa5602710fda3b2aaeaeeb7e9d0ae355b2585afe",
+      "sha256": "91f9e7a90e21161355827565657f4495cc7927ae0f640660ffac43c08186f5a6"
+    },
+    {
+      "attempt_seeds": [
+        8710755718943626461
+      ],
+      "file": "train-100.pddl",
+      "parameters": {
+        "goal_probability": 1.0,
+        "height": 2,
+        "num_keys": 3,
+        "num_locks": 3,
+        "num_shapes": 1,
+        "width": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8710755718943626461,
+      "semantic_sha256": "7c523fbda70cf818eb9b397ab0b9a380dea79fc513305b35ec354adeeb1dd9ec",
+      "sha256": "6c003c6fb1671f971c9d4cfb2133ee012dab325f2ef4f5ebc48669d517d472cc"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "train",
+  "valid_configurations": 234
+}

@@ -1,0 +1,155 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "0424e1d6c816ceace3cdd47e385c064d5771f48b2c1b84a18a8a9e008263b5a8",
+  "generator": "classical/gripper",
+  "instances": [
+    {
+      "attempt_seeds": [
+        15106264934504141964
+      ],
+      "file": "test-1.pddl",
+      "parameters": {
+        "num_balls": 15
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15106264934504141964,
+      "semantic_sha256": "4669fc654722245167d028d8cbe0d1f5d9a108c4dc4e320507ab89394957366f",
+      "sha256": "92449d17f55a7377a9f856c4018b60e38758e68802a0d82f9088ad96b1d8f02c"
+    },
+    {
+      "attempt_seeds": [
+        1232153312645898835
+      ],
+      "file": "test-2.pddl",
+      "parameters": {
+        "num_balls": 17
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1232153312645898835,
+      "semantic_sha256": "ae6f9f4bdaeb95167edf5adab19d5b89f27fbb01b803ea91b10ad6923583e303",
+      "sha256": "e0cda075fb7c6743f3380042d2fb7677aa4ea5a93d6f3ceab2bb47bc9acf0376"
+    },
+    {
+      "attempt_seeds": [
+        5200083631062596207
+      ],
+      "file": "test-3.pddl",
+      "parameters": {
+        "num_balls": 11
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5200083631062596207,
+      "semantic_sha256": "faa78069cc7e22d0d0d7a6aad0da535930596e1d4240b9a34d51fda64d123ab3",
+      "sha256": "735e5e12d45f8dc74c86dbc60575bcebc6ce9928152871d0f637e37f861108c6"
+    },
+    {
+      "attempt_seeds": [
+        3910394465327359065
+      ],
+      "file": "test-4.pddl",
+      "parameters": {
+        "num_balls": 16
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3910394465327359065,
+      "semantic_sha256": "05da01c419430e057afac6fdce45f40cfd0db31446c4bdf0ee239ed39b65f5ff",
+      "sha256": "4ec9bfc008417cb819b6ed17e922cfa81d414f08c2f66e29505660b25b6a2667"
+    },
+    {
+      "attempt_seeds": [
+        14675217903285624722
+      ],
+      "file": "test-5.pddl",
+      "parameters": {
+        "num_balls": 13
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14675217903285624722,
+      "semantic_sha256": "f80cdd095daea989bb1bb2f3fb5a4a8a0fe3208e91a099952d16bd5f16e1dc14",
+      "sha256": "175a27355910e4257afbe72fed9906737451a5617d89b6e1f85b713d02cd8783"
+    },
+    {
+      "attempt_seeds": [
+        10458134983124680992
+      ],
+      "file": "test-6.pddl",
+      "parameters": {
+        "num_balls": 19
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10458134983124680992,
+      "semantic_sha256": "5aac737580727b1d0c2ee267dfcc84ffe7e733c96185691abdaea0c977b19ba3",
+      "sha256": "cea57e2eb099d8e9133a8dddd9eeaba15b20ac022602901f53b2ba1143a9ce1f"
+    },
+    {
+      "attempt_seeds": [
+        4216776311530660109
+      ],
+      "file": "test-7.pddl",
+      "parameters": {
+        "num_balls": 18
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4216776311530660109,
+      "semantic_sha256": "b4921217314316028914db5d62614d482118a03199085e674547dcf21740ac87",
+      "sha256": "e6c635b3314ead5cd1846cef9fb2b6158ac52c7b563e5b2bd0c7f27a7f408141"
+    },
+    {
+      "attempt_seeds": [
+        6857954119740528761
+      ],
+      "file": "test-8.pddl",
+      "parameters": {
+        "num_balls": 12
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6857954119740528761,
+      "semantic_sha256": "0fed8a2a4d97b8f6dca50c24f03e966383671862936418335e536fb072d49f23",
+      "sha256": "9daa62fe21237ce766501834edc2f35c8cc8f881f8a672a206422dba833079db"
+    },
+    {
+      "attempt_seeds": [
+        16038934522302226224
+      ],
+      "file": "test-9.pddl",
+      "parameters": {
+        "num_balls": 14
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16038934522302226224,
+      "semantic_sha256": "464b63a5dc39540756556eff2e75b5c6e506b560cc2353626bd405f5546ff930",
+      "sha256": "26424188a851486417f96cc959971ce5c589d5a6b1647a7e2de3206835209f54"
+    },
+    {
+      "attempt_seeds": [
+        13409281969918204554
+      ],
+      "file": "test-10.pddl",
+      "parameters": {
+        "num_balls": 20
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13409281969918204554,
+      "semantic_sha256": "344b8877a9ac15e2c5913aa72d6dd16ed73f75d6f61a985588db6e809131af13",
+      "sha256": "34686462fc987ba1057b3539745426b85cdbec602b34196a0135bd1964fb221f"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "test",
+  "valid_configurations": 10
+}

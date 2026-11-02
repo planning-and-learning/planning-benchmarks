@@ -1,0 +1,714 @@
+{
+  "recorded_at": "2026-09-16T13:46:27.440955+00:00",
+  "python": "3.13.2 (main, Mar 17 2025, 21:02:54) [Clang 20.1.0 ]",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "problog_version": "2.3.0",
+  "source_sha256": {
+    "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+    "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+    "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+    "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+    "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+    "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+    "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+    "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+    "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+    "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+  },
+  "samples_requested": 1,
+  "timeout_seconds": 60.0,
+  "memory_limit_mib": 2048,
+  "cases": [
+    {
+      "name": "ferry-train-max",
+      "domain": "ferry",
+      "parameters": {
+        "num_cars": 7,
+        "num_locations": 5
+      },
+      "source": "src/pypddl_datasets/generators/classical/ferry/generate_instances.py",
+      "wall_seconds": 0.31228934099999606,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 36.65625,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06501257800027815
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 12,
+          "initial": 41,
+          "goals": 7,
+          "pddl_bytes": 968,
+          "sha256": "633b4ae8eedbdb8691f7da72f1afa14fb76325069dfbbe87d448c28fc5ac60c4",
+          "seconds": 0.12400360499941598,
+          "peak_rss_mib": 36.546875
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "ferry-valid-max",
+      "domain": "ferry",
+      "parameters": {
+        "num_cars": 11,
+        "num_locations": 8
+      },
+      "source": "src/pypddl_datasets/generators/classical/ferry/generate_instances.py",
+      "wall_seconds": 0.40253230500002246,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 37.10546875,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06492946999969718
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 19,
+          "initial": 88,
+          "goals": 11,
+          "pddl_bytes": 1912,
+          "sha256": "8757fdf0e81309a2fb7ff528ec049202337006c6ff0c2898f6230ea18952b4fa",
+          "seconds": 0.22002452699962305,
+          "peak_rss_mib": 37.10546875
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "ferry-test-max",
+      "domain": "ferry",
+      "parameters": {
+        "num_cars": 17,
+        "num_locations": 12
+      },
+      "source": "src/pypddl_datasets/generators/classical/ferry/generate_instances.py",
+      "wall_seconds": 0.5265717449992735,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 37.99609375,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06117460199948255
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 29,
+          "initial": 180,
+          "goals": 17,
+          "pddl_bytes": 3805,
+          "sha256": "f7facfa4e0bfa41c0ddd090e9f90c6d72189fd9b11797c3e74f936ddcbf5f1d6",
+          "seconds": 0.34605964700040204,
+          "peak_rss_mib": 37.9296875
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "delivery-train-max",
+      "domain": "delivery",
+      "parameters": {
+        "grid_size": 5,
+        "num_packages": 4
+      },
+      "source": "src/pypddl_datasets/generators/classical/delivery/generate_instances.py",
+      "wall_seconds": 0.43452347299989924,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 37.40234375,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06019808800010651
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 30,
+          "initial": 86,
+          "goals": 4,
+          "pddl_bytes": 2660,
+          "sha256": "f2398c427d03e4ff72c6ab0dcc14be18ab5939caea2eaa7d11a7bc08b4250e3d",
+          "seconds": 0.2570935970006758,
+          "peak_rss_mib": 37.30859375
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "delivery-valid-max",
+      "domain": "delivery",
+      "parameters": {
+        "grid_size": 8,
+        "num_packages": 7
+      },
+      "source": "src/pypddl_datasets/generators/classical/delivery/generate_instances.py",
+      "wall_seconds": 0.8941307999994024,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 39.33203125,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.061213825999402616
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 72,
+          "initial": 233,
+          "goals": 7,
+          "pddl_bytes": 6905,
+          "sha256": "addd4b4475fe14e2008af88952660596a1fbcdcbae7af2862a457253604ee08e",
+          "seconds": 0.6990278149996811,
+          "peak_rss_mib": 39.30859375
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "delivery-test-max",
+      "domain": "delivery",
+      "parameters": {
+        "grid_size": 13,
+        "num_packages": 12
+      },
+      "source": "src/pypddl_datasets/generators/classical/delivery/generate_instances.py",
+      "wall_seconds": 2.806335850999858,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 46.6875,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06112125900017418
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 182,
+          "initial": 638,
+          "goals": 12,
+          "pddl_bytes": 19182,
+          "sha256": "e8fea6de889db2f8edaf4621f4046a3544ea9159ad29276ec23684b58665d931",
+          "seconds": 2.572054434000165,
+          "peak_rss_mib": 46.546875
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-test",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 1,
+        "num_waypoints": 2,
+        "num_objectives": 1,
+        "num_cameras": 1,
+        "num_goals": 1
+      },
+      "source": "data/classical/tests/rovers/test-1.pddl",
+      "wall_seconds": 0.44735441800003173,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 37.97265625,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.061265232000550895
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 10,
+          "initial": 20,
+          "goals": 2,
+          "pddl_bytes": 1058,
+          "sha256": "9fcea6690f737a887032aa04f542fae5e95e7491d7adfb6b0780d8204b7c2939",
+          "seconds": 0.257884940000622,
+          "peak_rss_mib": 37.80859375
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-downward-small",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 1,
+        "num_waypoints": 4,
+        "num_objectives": 2,
+        "num_cameras": 1,
+        "num_goals": 3
+      },
+      "source": "data/classical/downward-benchmarks/rovers/p01.pddl",
+      "wall_seconds": 0.6036880890005705,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 38.6796875,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.05999522000001889
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 13,
+          "initial": 33,
+          "goals": 5,
+          "pddl_bytes": 1714,
+          "sha256": "294c7a7cfb7ec2e38f4679ad9a4505618fa99b480cb64367b8984a03f7bf0799",
+          "seconds": 0.4128998899996077,
+          "peak_rss_mib": 38.6796875
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-downward-10",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 4,
+        "num_waypoints": 10,
+        "num_objectives": 4,
+        "num_cameras": 5,
+        "num_goals": 8
+      },
+      "source": "data/classical/downward-benchmarks/rovers/p14.pddl",
+      "wall_seconds": 3.727646102000108,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 47.56640625,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06308159899981547
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 32,
+          "initial": 205,
+          "goals": 14,
+          "pddl_bytes": 9235,
+          "sha256": "2e4780a3cc7314514c1b78d32bb699ecddb878c6585fcdee78ab58f93a047a61",
+          "seconds": 3.469121221000023,
+          "peak_rss_mib": 47.43359375
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-downward-15",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 6,
+        "num_waypoints": 15,
+        "num_objectives": 6,
+        "num_cameras": 7,
+        "num_goals": 13
+      },
+      "source": "data/classical/downward-benchmarks/rovers/p17.pddl",
+      "wall_seconds": 10.515297730999919,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 64.96875,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06156709300012153
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 44,
+          "initial": 463,
+          "goals": 19,
+          "pddl_bytes": 20749,
+          "sha256": "2fdfabe615fd9730ba315adc7493832123b2b305c7a02f134eac7d98f644a373",
+          "seconds": 10.141494076999152,
+          "peak_rss_mib": 64.69140625
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-downward-medium",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 10,
+        "num_waypoints": 25,
+        "num_objectives": 6,
+        "num_cameras": 10,
+        "num_goals": 10
+      },
+      "source": "data/classical/downward-benchmarks/rovers/p25.pddl",
+      "wall_seconds": 51.88207550900006,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 178.328125,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06911465499979386
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 68,
+          "initial": 1986,
+          "goals": 22,
+          "pddl_bytes": 89581,
+          "sha256": "dc22a322376272b2397e981bb161de0ce9b2510b2bcb4e92eb313aa25f860dad",
+          "seconds": 50.938566779999746,
+          "peak_rss_mib": 178.08984375
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-downward-large",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 14,
+        "num_waypoints": 100,
+        "num_objectives": 11,
+        "num_cameras": 15,
+        "num_goals": 69
+      },
+      "source": "data/classical/downward-benchmarks/rovers/p40.pddl",
+      "wall_seconds": 60.1211506489999,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "77bceee68d653460b1b25926738614dc1bc521447dd492b9d0089b34cf7593cf",
+        "src/pypddl_datasets/generators/probabilistic.py": "0bd1941761488d49bd5aa842574acbc12a396bedddea48866caae4d186111e4e",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": true,
+      "status": "timeout",
+      "exit_code": -9,
+      "peak_rss_mib": 153.87890625,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06816982899999857
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-ipc-medium",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 8,
+        "num_waypoints": 53,
+        "num_objectives": 53,
+        "num_cameras": 28,
+        "num_goals": 66
+      },
+      "source": "data/classical/ipc2023-learning/rovers_ipc2023_learning/medium_p16.pddl",
+      "wall_seconds": 60.09493686100086,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "cd023207f9af712e2936bcaad4cc0df0f6d251f30be3f4cb7d99a20060f88080",
+        "src/pypddl_datasets/generators/probabilistic.py": "72dc9a1fdba7de22f65d4ed63bbf10b4241b3e9a8055b0ccc25162bf900cb1ab",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "4907a2b3c409da1eb600a6b328c9a70c81e2219e6c5158d109c9d54c7ee8ed77",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": true,
+      "status": "timeout",
+      "exit_code": -9,
+      "peak_rss_mib": 104.9921875,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.0729991690004681
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-ipc-large",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 30,
+        "num_waypoints": 197,
+        "num_objectives": 236,
+        "num_cameras": 99,
+        "num_goals": 728
+      },
+      "source": "data/classical/ipc2023-learning/rovers_ipc2023_learning/hard_p30.pddl",
+      "wall_seconds": 60.10789208099959,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "cd023207f9af712e2936bcaad4cc0df0f6d251f30be3f4cb7d99a20060f88080",
+        "src/pypddl_datasets/generators/probabilistic.py": "72dc9a1fdba7de22f65d4ed63bbf10b4241b3e9a8055b0ccc25162bf900cb1ab",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "51679d0ca8b4539388b2f4be8776cff5f52833e7446b395b1304c85585637183",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "timeout",
+      "exit_code": -9,
+      "peak_rss_mib": 67.07421875,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.08039386600012222
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-htg-small",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 1,
+        "num_waypoints": 1000,
+        "num_objectives": 1,
+        "num_cameras": 1,
+        "num_goals": 2
+      },
+      "source": "data/classical/htg-domains/rovers-large/p-r1-w1000-o1-1-g2-goal-2.pddl",
+      "wall_seconds": 60.07777099900068,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "cd023207f9af712e2936bcaad4cc0df0f6d251f30be3f4cb7d99a20060f88080",
+        "src/pypddl_datasets/generators/probabilistic.py": "72dc9a1fdba7de22f65d4ed63bbf10b4241b3e9a8055b0ccc25162bf900cb1ab",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "51679d0ca8b4539388b2f4be8776cff5f52833e7446b395b1304c85585637183",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "timeout",
+      "exit_code": -9,
+      "peak_rss_mib": 500.203125,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06947335800032306
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "rovers-htg-large",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 1,
+        "num_waypoints": 5500,
+        "num_objectives": 1,
+        "num_cameras": 1,
+        "num_goals": 8
+      },
+      "source": "data/classical/htg-domains/rovers-large/p-r1-w5500-o1-1-g8-goal-8.pddl",
+      "wall_seconds": 60.090709866,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "cd023207f9af712e2936bcaad4cc0df0f6d251f30be3f4cb7d99a20060f88080",
+        "src/pypddl_datasets/generators/probabilistic.py": "72dc9a1fdba7de22f65d4ed63bbf10b4241b3e9a8055b0ccc25162bf900cb1ab",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "51679d0ca8b4539388b2f4be8776cff5f52833e7446b395b1304c85585637183",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": true,
+      "status": "timeout",
+      "exit_code": -9,
+      "peak_rss_mib": 632.765625,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.06043805399986013
+        }
+      ],
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "0424e1d6c816ceace3cdd47e385c064d5771f48b2c1b84a18a8a9e008263b5a8",
+  "generator": "classical/gripper",
+  "instances": [
+    {
+      "attempt_seeds": [
+        4419010998711582541
+      ],
+      "file": "train-1.pddl",
+      "parameters": {
+        "num_balls": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4419010998711582541,
+      "semantic_sha256": "12f2046a7c96f56db13477552fdf805609e32f758eda0e948bae7225a1f906a0",
+      "sha256": "21d1c94e88f96e48c9a73ff8b890fc044d2ce6719e084215b34faaee00fa94fb"
+    },
+    {
+      "attempt_seeds": [
+        832102952342985833
+      ],
+      "file": "train-2.pddl",
+      "parameters": {
+        "num_balls": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 832102952342985833,
+      "semantic_sha256": "8df3b9d8504da4322039cf3b271d8dbe33decf88ebe83f8ce8a08d46abd215e9",
+      "sha256": "921975a3b909b6baad744afc0aee2a9f4898477b2b6ea22d6fba9462eb833553"
+    },
+    {
+      "attempt_seeds": [
+        3836039234743486027
+      ],
+      "file": "train-3.pddl",
+      "parameters": {
+        "num_balls": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3836039234743486027,
+      "semantic_sha256": "7b2f43ae102ef45d24c987c44ecca3e620028d2345d4aece326374c1f8f5c95f",
+      "sha256": "c33dba63ce73cab617e7a4b233b3eb15fe002d8f5afb10907e508b4425a2c84a"
+    },
+    {
+      "attempt_seeds": [
+        6645556774495917016
+      ],
+      "file": "train-4.pddl",
+      "parameters": {
+        "num_balls": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6645556774495917016,
+      "semantic_sha256": "28d6c589bbc88ec3dc99591e034394ad2e4bbe34b83dbb67b5c81c3d5d6aba8c",
+      "sha256": "74c74803f7a2a607623d9cf3acdd93aee118a2b8b71e7730babfc0b829648c9b"
+    },
+    {
+      "attempt_seeds": [
+        17074709680325613274
+      ],
+      "file": "train-5.pddl",
+      "parameters": {
+        "num_balls": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17074709680325613274,
+      "semantic_sha256": "1618f16e3f88d79072d80776827af6e5122ac00b224a20d8a73dcdbe52972cdd",
+      "sha256": "28c8dab3906f785e131db3f46b35e21057f213914e17eb0f6eb691ba2d30b56c"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "train",
+  "valid_configurations": 5
+}

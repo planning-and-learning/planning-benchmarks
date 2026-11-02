@@ -1,0 +1,1515 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "b23ea6a9b252edf74edc41a4254b55421064e3d34fd765574731f0a96541f729",
+  "generator": "classical/miconic",
+  "instances": [
+    {
+      "attempt_seeds": [
+        5139946485858716386
+      ],
+      "file": "train-1.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5139946485858716386,
+      "semantic_sha256": "2796f3af2aa01ffe23fac421c36c0201a8a55d07624ad51acd413834732fcc6a",
+      "sha256": "e73fa6a1c6ce48a19efe298315d2dd8c076d7e60750505533f0a04bdb69aef42"
+    },
+    {
+      "attempt_seeds": [
+        10551981480521741055
+      ],
+      "file": "train-2.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10551981480521741055,
+      "semantic_sha256": "8e67ea64ec104237729a5247dd4a7f2328292d2adf1f983b151fb8dbc0981402",
+      "sha256": "628c3e4bc100d3a06a6e44fa42217819d592cb10aaa6a3dfdbcc3b93e1acadab"
+    },
+    {
+      "attempt_seeds": [
+        8871064224082430820
+      ],
+      "file": "train-3.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8871064224082430820,
+      "semantic_sha256": "9c84ff536a54e426948ad8c4c09343c283727dfa488c5d95109584b80d6acbc6",
+      "sha256": "6556ac2dc5a906e08f194d528cf3b5ac2021d48d8765fe043db65dff10b52ec0"
+    },
+    {
+      "attempt_seeds": [
+        5439199504082807501
+      ],
+      "file": "train-4.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5439199504082807501,
+      "semantic_sha256": "c2425f20126ac0c1c430a88fdcab3772b0e421e4ee235f0e8c2232b66fd16131",
+      "sha256": "9f10bef6b4d8d90d564f06e67b8cd43c3883ae649be56a2ef11c12cc582f2405"
+    },
+    {
+      "attempt_seeds": [
+        1629472610071889853
+      ],
+      "file": "train-5.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1629472610071889853,
+      "semantic_sha256": "37da609d1cf036be1041388c5df5b7531a80f825b855ab52a2aac3cbc716b257",
+      "sha256": "94f006a4a165aa9ee090c168e1514a173d763b04ee63cbc476e517859390ba11"
+    },
+    {
+      "attempt_seeds": [
+        12366061681042576005
+      ],
+      "file": "train-6.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12366061681042576005,
+      "semantic_sha256": "b38f9713a58e4a9696bad5bcdd1704d411c3dac3464a6d11a79d86bb46583671",
+      "sha256": "08d0ab15f88bbb68d8c713e7afb85a4ecb4582db3ae83b18e0f8106896909450"
+    },
+    {
+      "attempt_seeds": [
+        1625794935298735580
+      ],
+      "file": "train-7.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1625794935298735580,
+      "semantic_sha256": "bf6c69c1fbd26c1a7337572dbefa5d69d7b685132b8708e5db64c7b8e8ed9600",
+      "sha256": "382c23f3b69abcb51b4a4bdb58140c710348b1a2c19bf3861ef2a8954781b505"
+    },
+    {
+      "attempt_seeds": [
+        6682354531522524385
+      ],
+      "file": "train-8.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6682354531522524385,
+      "semantic_sha256": "221639c74839a2adfd459ac95294402c0f8302f8fc9841e004661ad2c8300ac9",
+      "sha256": "1a91df4369fc4bbf2c0264926e6095a947e4b57c763556d41ef136373191a75e"
+    },
+    {
+      "attempt_seeds": [
+        12794175663916447190
+      ],
+      "file": "train-9.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12794175663916447190,
+      "semantic_sha256": "b8d3e512907ae134d607ecebcffeb6af15659075d42f27519d237339d450fe77",
+      "sha256": "376f05cc0f48d8f88c857e249d56a64e6edb2c8214221d88fcb1e25f91a1bf78"
+    },
+    {
+      "attempt_seeds": [
+        779405584562920448
+      ],
+      "file": "train-10.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 779405584562920448,
+      "semantic_sha256": "4f61d250fd7b657b3680862813e6d99422de81efffcaac9efdc7c10e368d7115",
+      "sha256": "da0b9d2ca5f95c9824525748d7a0a8e2b0a7dc2436693d7d11d38bd047a055c9"
+    },
+    {
+      "attempt_seeds": [
+        7990366693508397685
+      ],
+      "file": "train-11.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7990366693508397685,
+      "semantic_sha256": "7ce9c39c372e1d230512b5807e278fbc5bf456216911059e1aa19ce9a2b08080",
+      "sha256": "1ebec30810738d02a08735968c07c78d33854594e07305074ff6ae3018b86e53"
+    },
+    {
+      "attempt_seeds": [
+        10614877496961270821
+      ],
+      "file": "train-12.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10614877496961270821,
+      "semantic_sha256": "3fed89909cbd9d54c27c32adaf518b894e9821a4a4c928fa57f8f34c34b0320a",
+      "sha256": "64a8aae7956a1e560488bdf2c95a78a2b0a97a523aec86abdb512fda6fcc1944"
+    },
+    {
+      "attempt_seeds": [
+        12437875022751781406
+      ],
+      "file": "train-13.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12437875022751781406,
+      "semantic_sha256": "1a5643d26338656535f6a80856fc64e5a174309b5d22c4889e4e34c77669c8e9",
+      "sha256": "f4f2abd1f1ddcc8263385331011a02d14842d2d7ad8a2c58c1d22cf757f1dd0f"
+    },
+    {
+      "attempt_seeds": [
+        3781586597062879271
+      ],
+      "file": "train-14.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3781586597062879271,
+      "semantic_sha256": "6cc4b074cd2fc91b449e7a864fec6ccaf752b3da56d7c3ce79bdcb7cf35dbff2",
+      "sha256": "2576d4aab50fd5772318023c6c4496000776947309b69b20654c39a9d85a8c24"
+    },
+    {
+      "attempt_seeds": [
+        15785785911498782888
+      ],
+      "file": "train-15.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15785785911498782888,
+      "semantic_sha256": "3fc01ae2e2e0776dabd311991692c4a30ed3ad10e95c70ff164985350b94d20b",
+      "sha256": "c9ba140544ee10c6f374583aef8ef6885aea59d0f601ec737045b3dff8adccc2"
+    },
+    {
+      "attempt_seeds": [
+        6956288711474378979
+      ],
+      "file": "train-16.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6956288711474378979,
+      "semantic_sha256": "2d8180020ba1ab6c6b02f70e5e85e8ea9d3e45da9e35594d3767461b142fa771",
+      "sha256": "3fdfeca99f96530e620db1f01dc690fc29d176172f35c40798a822f594d50311"
+    },
+    {
+      "attempt_seeds": [
+        13664945826744802096
+      ],
+      "file": "train-17.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13664945826744802096,
+      "semantic_sha256": "077620f501ce19c53853335f748348f1d2af4b5d824343d08adbb91718a066cb",
+      "sha256": "9c06bc4cce99adbfb8585b006d51be1c9f403327b70d1e6e38ccb878d5288a8c"
+    },
+    {
+      "attempt_seeds": [
+        3425767297863083266
+      ],
+      "file": "train-18.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3425767297863083266,
+      "semantic_sha256": "d4e59759578019b1346c9da6816a3c5328ff9895e1dbb5c4d908cfd841dab8f2",
+      "sha256": "78f751294d6084becf7b2b0cb92c004ad2a82070944ed9094627468339e8cbb6"
+    },
+    {
+      "attempt_seeds": [
+        3100081227919232830
+      ],
+      "file": "train-19.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3100081227919232830,
+      "semantic_sha256": "407614ffe50d9cb414e0cb15b9cbfd59c6cede842d3f808674cdc27d8c253760",
+      "sha256": "f53de61cdadf1ccf3d3f4f3ef575c77a7ad63a6831365333fb2474375d5f9a00"
+    },
+    {
+      "attempt_seeds": [
+        6149425264510361302
+      ],
+      "file": "train-20.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6149425264510361302,
+      "semantic_sha256": "d1554bdbb65bd87baf58c2b5a600a485d496eeb0938c1ef8734af0496f6e8e36",
+      "sha256": "178ce8e47de171a0076eb54d2cf424431c51423e45c507e0309dbe2622caf55a"
+    },
+    {
+      "attempt_seeds": [
+        11658811463227597647
+      ],
+      "file": "train-21.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11658811463227597647,
+      "semantic_sha256": "62648862fecf70b362824125cf73c4c611496686e38db94a870e4eea79b2d4ae",
+      "sha256": "6ed446cee2c8f102774243296de0091e00ed694335133d45b66814146b70d2dd"
+    },
+    {
+      "attempt_seeds": [
+        5073464710638917723
+      ],
+      "file": "train-22.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5073464710638917723,
+      "semantic_sha256": "bf6c26035db0cb8ddd28ba8c291692b545575743eb98da22ce4145a2078d40b0",
+      "sha256": "f3e9dd9f98ec11c7264413b7b2bac550c3a21ccb5a259175910ecfae5a763e30"
+    },
+    {
+      "attempt_seeds": [
+        15708783439949821941
+      ],
+      "file": "train-23.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15708783439949821941,
+      "semantic_sha256": "89bf0bfee2eb0f3a764ed2fcb5a0fa8900a946407e65b6af6cce1686c6fe0726",
+      "sha256": "801eff0a895f22ec2cd1ca814b757e5ce75985038ad03a359d741b99ef30a026"
+    },
+    {
+      "attempt_seeds": [
+        17752741156088701911
+      ],
+      "file": "train-24.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17752741156088701911,
+      "semantic_sha256": "ba74112fe1c60db97df0d034ea2459106bdb5f659a78d7fc3509e62fb3b9a08f",
+      "sha256": "9d0f879cdbc73af8c81e0c70201a4ba7f952da3d8c3dda8d74d6335c0b71ae82"
+    },
+    {
+      "attempt_seeds": [
+        13570536944205292939
+      ],
+      "file": "train-25.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13570536944205292939,
+      "semantic_sha256": "7c3792e6b257180af0a75422335b47ce7b5cb26b58d08798b2d8b0ef711f4a18",
+      "sha256": "7cc274ecdea1bf468d46f4a3f724a1420a115a3ed9e5a89fe1a05e073ee9e825"
+    },
+    {
+      "attempt_seeds": [
+        7715914767553003483
+      ],
+      "file": "train-26.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7715914767553003483,
+      "semantic_sha256": "b219c3eee67d50c5c5b629fe038924cf58216f23991fdf80c300b51bf377c6a2",
+      "sha256": "d0089c9080417218361b25030e5737405af28dce7c66a074e605f6e8e85b2c04"
+    },
+    {
+      "attempt_seeds": [
+        4430355627970110925
+      ],
+      "file": "train-27.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4430355627970110925,
+      "semantic_sha256": "50de726bffd05c7f62500b909a6bb527e4d090d4e1e2260557f95dd0f8c0c1ef",
+      "sha256": "212857d01d7ed98de48f088bc267f0faee7612da1f9dbbc314eb36adaafbad88"
+    },
+    {
+      "attempt_seeds": [
+        821549921172708290
+      ],
+      "file": "train-28.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 821549921172708290,
+      "semantic_sha256": "46e2157fccfeba3f5434a37bd95fc1d8110c474dd565611edecda4b51c1d1006",
+      "sha256": "bc33e9bd57e09e2c561cd976aacea9f1b0ae4fa1a3c6e659b72e026062739049"
+    },
+    {
+      "attempt_seeds": [
+        12520636491299488677
+      ],
+      "file": "train-29.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12520636491299488677,
+      "semantic_sha256": "f39b3d6ffe1ce4a6267b48eb2178c964e796a3bb055c572b6f4766e3c786b4e4",
+      "sha256": "cc8c923dcb722a4eabb134679f74977d22f649f39e48e2f3dc5ed4f1aace1e9e"
+    },
+    {
+      "attempt_seeds": [
+        17182155678814451120
+      ],
+      "file": "train-30.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17182155678814451120,
+      "semantic_sha256": "e2f3167112fc45efa97649c68c35faf65f2b7328f76cd01f1e5fd49109ba855d",
+      "sha256": "8bae3a24d94e1e9e434f880f82c749af649f9c07249632c2a031deeb5dbbe293"
+    },
+    {
+      "attempt_seeds": [
+        4785932487110983884
+      ],
+      "file": "train-31.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4785932487110983884,
+      "semantic_sha256": "69959906fa5b62b78f5423d653a0dd1828adfb69a90c925b2088eae53a3c899b",
+      "sha256": "be04232e736bb68235e2eb87e3cf33ab9e52857310cbdd6e032754dabc537e68"
+    },
+    {
+      "attempt_seeds": [
+        14877295101220549070
+      ],
+      "file": "train-32.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14877295101220549070,
+      "semantic_sha256": "7a3df26c1616bbd51effb72498634a0d3c0140634cc06a0e9e878af0ace3cb3f",
+      "sha256": "f56b0f5dc92a8c3a8ed6ddbb80230a6d4ad2e5c8a0e40a5bb2335364a19855e0"
+    },
+    {
+      "attempt_seeds": [
+        12757888405067459194
+      ],
+      "file": "train-33.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12757888405067459194,
+      "semantic_sha256": "1f381e2a653ea08aa2e045b9fdaeb579c54be0a1095b95b0c95e8e0c57d17014",
+      "sha256": "71a1c40f880cbeff09df633b500a8ed17154d953f80c14083c64c7c4c71f2b79"
+    },
+    {
+      "attempt_seeds": [
+        15881139412819860800
+      ],
+      "file": "train-34.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15881139412819860800,
+      "semantic_sha256": "9135c615296eecbe2570c65cfdfe1cf1bf569632a06cd20ea09766e56d3d9813",
+      "sha256": "f4e908cd66a9c082986dcc6c115d4a00f641eeae705fea3cb3ff36da858f14a2"
+    },
+    {
+      "attempt_seeds": [
+        6693448715646428640
+      ],
+      "file": "train-35.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6693448715646428640,
+      "semantic_sha256": "df5743214abd635c890734a5d4dd3a47b85b9806fb382a79f09adb880167538e",
+      "sha256": "f9bca924b7d0e80f81df9df861baab6a70c15d9d352d584d5fe4640be7080827"
+    },
+    {
+      "attempt_seeds": [
+        9960204879213108741
+      ],
+      "file": "train-36.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9960204879213108741,
+      "semantic_sha256": "93ade017879bbed2ab76c591bf76a041dba959a3f6b6fa4ec076f29a04470cdc",
+      "sha256": "109319f9e828f976cab508e5889a6764afd7f3bb41f12a5352675b8a48a5fca1"
+    },
+    {
+      "attempt_seeds": [
+        4786955303952359034
+      ],
+      "file": "train-37.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4786955303952359034,
+      "semantic_sha256": "49a9f80c836d537cc7b662fee96689fabd3f74c88a591d26d6ae8025e4d9fa1d",
+      "sha256": "7003d9725453c1333c4a8257c521f07f2f6eb99d3f91a4b37d49266dc4d05c51"
+    },
+    {
+      "attempt_seeds": [
+        2985977429312310587
+      ],
+      "file": "train-38.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2985977429312310587,
+      "semantic_sha256": "7d9dad2fa28f717fce725f8774e84a1308f3c96b8f85a35e496c77dc6f7ef99c",
+      "sha256": "cdb3e4ae1dc1bf5b978a0a6fd05d0d705cf70f33cbcf98017e42bb771f9448b3"
+    },
+    {
+      "attempt_seeds": [
+        6225772053689452012
+      ],
+      "file": "train-39.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6225772053689452012,
+      "semantic_sha256": "a42be7afa0f75939766fde7da08ad5e423d66992c2f2c1a1cbd0d5125f7fe978",
+      "sha256": "f6a022b443aefc98efc285100eb21760a81518c23770128be35990c9a062d5a6"
+    },
+    {
+      "attempt_seeds": [
+        13128170360222133635
+      ],
+      "file": "train-40.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13128170360222133635,
+      "semantic_sha256": "6cc4b074cd2fc91b449e7a864fec6ccaf752b3da56d7c3ce79bdcb7cf35dbff2",
+      "sha256": "2576d4aab50fd5772318023c6c4496000776947309b69b20654c39a9d85a8c24"
+    },
+    {
+      "attempt_seeds": [
+        10432498868411784499
+      ],
+      "file": "train-41.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10432498868411784499,
+      "semantic_sha256": "ada79e611eb0e23fc78cfc4fae485fd2d69f2b1e628ffe84882157f16988a50f",
+      "sha256": "8c4b81817368bcc3db0c5c8d082202290ddb309bf568dadf002762403b2bbefa"
+    },
+    {
+      "attempt_seeds": [
+        6481144922851656688
+      ],
+      "file": "train-42.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6481144922851656688,
+      "semantic_sha256": "e332bbbc6fd11081973040a36d35f59706715f25f6e6fb77c3564c218be6e171",
+      "sha256": "b707b7e11c353e2570c9589b18ded8b043b03011ae9cd1c1d308839743dd4023"
+    },
+    {
+      "attempt_seeds": [
+        705970990550735362
+      ],
+      "file": "train-43.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 705970990550735362,
+      "semantic_sha256": "2796f3af2aa01ffe23fac421c36c0201a8a55d07624ad51acd413834732fcc6a",
+      "sha256": "e73fa6a1c6ce48a19efe298315d2dd8c076d7e60750505533f0a04bdb69aef42"
+    },
+    {
+      "attempt_seeds": [
+        9995669972533946648
+      ],
+      "file": "train-44.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9995669972533946648,
+      "semantic_sha256": "7c610a53065eaf87f7c0e60e0d6bd798dd11be7f781663c47bbb6207f4151e38",
+      "sha256": "eae226649052b41521bf321332e83a2e7b77fd40e7fa03920429c3010f09a86e"
+    },
+    {
+      "attempt_seeds": [
+        16550053931784098548
+      ],
+      "file": "train-45.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16550053931784098548,
+      "semantic_sha256": "edf7bb9509c0995d93c8687afeb2f45893e35e763322efe769bfb8ebbac61110",
+      "sha256": "650d552307d37e0ba058d99e3465a229b4b496136d24439560da3d3c968febbd"
+    },
+    {
+      "attempt_seeds": [
+        3413450271601615479
+      ],
+      "file": "train-46.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3413450271601615479,
+      "semantic_sha256": "50de726bffd05c7f62500b909a6bb527e4d090d4e1e2260557f95dd0f8c0c1ef",
+      "sha256": "212857d01d7ed98de48f088bc267f0faee7612da1f9dbbc314eb36adaafbad88"
+    },
+    {
+      "attempt_seeds": [
+        10147016597525709003
+      ],
+      "file": "train-47.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10147016597525709003,
+      "semantic_sha256": "099fdca62522f4cb1a037c310b3537638459a230d2c2df3db5ba2fe7d0abce95",
+      "sha256": "63acf32a5e4bf0bd30158c31fb6776e7fa6fa0baddeccf57cf180d368b1cf235"
+    },
+    {
+      "attempt_seeds": [
+        17672479045596280120
+      ],
+      "file": "train-48.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17672479045596280120,
+      "semantic_sha256": "bf6c69c1fbd26c1a7337572dbefa5d69d7b685132b8708e5db64c7b8e8ed9600",
+      "sha256": "382c23f3b69abcb51b4a4bdb58140c710348b1a2c19bf3861ef2a8954781b505"
+    },
+    {
+      "attempt_seeds": [
+        3473095978154149087
+      ],
+      "file": "train-49.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3473095978154149087,
+      "semantic_sha256": "fb52b59276e4e503c4949534bc23b2ba12dd4386d77ee8a3a47ef71721c5c74d",
+      "sha256": "5a06fdd5deb85995c87ee19445a5e1f6bcec65f9365eddd6f51f7db03d309a9d"
+    },
+    {
+      "attempt_seeds": [
+        2837015507142793048
+      ],
+      "file": "train-50.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2837015507142793048,
+      "semantic_sha256": "56e10a7560d62584e0d9d2712b1e60fa2e5a00be5d6003f3a4d8e356c61d453d",
+      "sha256": "56b96b126ea000bd931e8c9485b89e1b0bac8db49db38c7806f8fedc47c50344"
+    },
+    {
+      "attempt_seeds": [
+        10195949960959874898
+      ],
+      "file": "train-51.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10195949960959874898,
+      "semantic_sha256": "b0fd3af6ddb80cf9a50cebf4de4aefb40d70f6656dfab1be5768757bbc15982b",
+      "sha256": "addbacd0b09f103c4d6a722072b1519603082c32f73f05a83cef2fa65c8a46f7"
+    },
+    {
+      "attempt_seeds": [
+        17816189486119093605
+      ],
+      "file": "train-52.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17816189486119093605,
+      "semantic_sha256": "5242f5ad18778ca1562f826bcc5b6daa78b5d4d30e772c0d2a855b42d7e3f6d5",
+      "sha256": "0bc6f047797d0d544e1ec54d69a3d239db0331ec8b300b66ab6d2070f034b8c2"
+    },
+    {
+      "attempt_seeds": [
+        6555574944841573623
+      ],
+      "file": "train-53.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6555574944841573623,
+      "semantic_sha256": "ba74112fe1c60db97df0d034ea2459106bdb5f659a78d7fc3509e62fb3b9a08f",
+      "sha256": "9d0f879cdbc73af8c81e0c70201a4ba7f952da3d8c3dda8d74d6335c0b71ae82"
+    },
+    {
+      "attempt_seeds": [
+        18109079400142677359
+      ],
+      "file": "train-54.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18109079400142677359,
+      "semantic_sha256": "e5761a4b7f0758ee14f542f675015a5ed289e2e18d996cd58778a0cde1414ab4",
+      "sha256": "3790b578f1474049d2edfdfe0b001a5f591aa1c5f90d9cbe7fa4ce368fe77c03"
+    },
+    {
+      "attempt_seeds": [
+        16450008038291130153
+      ],
+      "file": "train-55.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16450008038291130153,
+      "semantic_sha256": "b37a0a6e9353e8e7241e9d7110d8ee8d0507fd3512acbf8b24a921318377095e",
+      "sha256": "7e2876518282d03daae83d518a2ffc2ae57ffafdd2a8a1ecc5560c640c0f0ade"
+    },
+    {
+      "attempt_seeds": [
+        6624672776860637461
+      ],
+      "file": "train-56.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6624672776860637461,
+      "semantic_sha256": "d95eec6c7f56a5a4b479ba3d22c149ed5844bb96c81fac989b217b8d1b622d72",
+      "sha256": "948747ac1fa534e68a4fe29459169522fb2171e5c10ba69cf8bc019af6cdebd7"
+    },
+    {
+      "attempt_seeds": [
+        8834810517622940869
+      ],
+      "file": "train-57.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8834810517622940869,
+      "semantic_sha256": "eee6559bb62ca8185e874fe5f4053e36e6891853ea4af2a06dcb7ffdb49bd118",
+      "sha256": "3ec55308464c4086086da59789a589762a4fad84392e8f017ff507c0901800f7"
+    },
+    {
+      "attempt_seeds": [
+        2619281192186194520
+      ],
+      "file": "train-58.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2619281192186194520,
+      "semantic_sha256": "c1515ca067d3b67871f806ed4e60611ec9068cdf31d6ca1751383123a06d5633",
+      "sha256": "3d39859f7116f32f8af193ef52575357a526e1cecf3d3d6058dca7815461ea9b"
+    },
+    {
+      "attempt_seeds": [
+        14727532549079061550
+      ],
+      "file": "train-59.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14727532549079061550,
+      "semantic_sha256": "59ef6cffbbda3fed831803266c684a793d101b1618716ec4f5c63ffcdd2b132a",
+      "sha256": "0996b197e79185a443bc6587bf70f755f11ffe32121de8102d70c3e17a7b4f23"
+    },
+    {
+      "attempt_seeds": [
+        14088518756428617805
+      ],
+      "file": "train-60.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14088518756428617805,
+      "semantic_sha256": "e2aab6750fc7f591c9a3f4289da81be475e5376f592adf264a2cf17b2132176a",
+      "sha256": "5d84666b21f09884b06504571955665102762ed85e0d605a15cfe40ae3edd679"
+    },
+    {
+      "attempt_seeds": [
+        14117504103504906776
+      ],
+      "file": "train-61.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14117504103504906776,
+      "semantic_sha256": "467ac6d2a6d74e7e7c87440bc47c958e7dc9479f365db2fbfb3e9e222d243767",
+      "sha256": "17a10fc2db2748b6fcf28217df1acaf7836a9429f195cb54cb8265422b8dcc55"
+    },
+    {
+      "attempt_seeds": [
+        2140040956311460264
+      ],
+      "file": "train-62.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2140040956311460264,
+      "semantic_sha256": "a2fb5a1fa606a9fbceb0ec21ccce54483b1334893e75810744224ac09682d129",
+      "sha256": "506d0ba0a3a42ff0f6fe8bca5c8259c9b4ade8b11bfc0f194c642664d2749151"
+    },
+    {
+      "attempt_seeds": [
+        17918824136998999522
+      ],
+      "file": "train-63.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17918824136998999522,
+      "semantic_sha256": "cf90cc1fe829cce2c4aa529a0cb03522410a99600e506ce83ff1eb0c37fd24c4",
+      "sha256": "1b60daa96a673676ec792c74f21843370a69fa8239f7c0e3214f2b882439b5da"
+    },
+    {
+      "attempt_seeds": [
+        6871280498884763674
+      ],
+      "file": "train-64.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6871280498884763674,
+      "semantic_sha256": "8aa80196b9c10120d683cd41e23f3f0881456cc834203513a13d446a8bb51ce3",
+      "sha256": "15bfd185b1b392e9f03a257e9ceec206ec8b0de519b6079b06e0d1322e5008c4"
+    },
+    {
+      "attempt_seeds": [
+        4684199580098166861
+      ],
+      "file": "train-65.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4684199580098166861,
+      "semantic_sha256": "8e3938191d6571d46b4820dbbb4fcbcccc585ed7736438ebc8d37f1511728eb0",
+      "sha256": "89a0046305a5848f946b3fbfa4bb63043903b578457859036f16c7addd84e080"
+    },
+    {
+      "attempt_seeds": [
+        6735765927736434350
+      ],
+      "file": "train-66.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6735765927736434350,
+      "semantic_sha256": "d1554bdbb65bd87baf58c2b5a600a485d496eeb0938c1ef8734af0496f6e8e36",
+      "sha256": "178ce8e47de171a0076eb54d2cf424431c51423e45c507e0309dbe2622caf55a"
+    },
+    {
+      "attempt_seeds": [
+        6597752648798628233
+      ],
+      "file": "train-67.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6597752648798628233,
+      "semantic_sha256": "382147c6185e2618708793866d1ff4feda3b94652c84885ffca797587b499d9c",
+      "sha256": "f538b3f95947f4647dcf12f61414991eecd8fe27ff0a2c9314a247b71467991c"
+    },
+    {
+      "attempt_seeds": [
+        9440989217033270399
+      ],
+      "file": "train-68.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9440989217033270399,
+      "semantic_sha256": "24bb7c8b6bb7a17c6a8f3854a542ccecf859fffa0476084fb8b3759dc729bde8",
+      "sha256": "00c448d017f631992e87b2e59c3064ca5fab50c5fc5dc5e9fcfb4576e5dab196"
+    },
+    {
+      "attempt_seeds": [
+        15460704486895639399
+      ],
+      "file": "train-69.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15460704486895639399,
+      "semantic_sha256": "46d5440fc961c2cae2371f0754aa2f55797513f2357a97dd91ac42583f37cef3",
+      "sha256": "2300eca5f79f218467dd76538db4293e241ef8bdcb8ae226c423973696ace475"
+    },
+    {
+      "attempt_seeds": [
+        1350494889980423467
+      ],
+      "file": "train-70.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1350494889980423467,
+      "semantic_sha256": "74543928d8c00b591892469be8a13db4d44a8203ba4ecbce51ad9d5be990271f",
+      "sha256": "e5937129f42789b2ad7d644069af0fe80080159527d316c70bac5686ce91cbb7"
+    },
+    {
+      "attempt_seeds": [
+        8930613333903079270
+      ],
+      "file": "train-71.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8930613333903079270,
+      "semantic_sha256": "efa58db13bda4aa31992ad516c9817a62add5e4d678b90f662346134e71d8f08",
+      "sha256": "a937dec9032f0f4fdef6a3b7b88d9efdf41057bee77ba9b55ed69983ecc9065c"
+    },
+    {
+      "attempt_seeds": [
+        10232128783052820600
+      ],
+      "file": "train-72.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10232128783052820600,
+      "semantic_sha256": "c921793f13b5bec8d4cb481fa6cd14a233346f5e6a0df9297c2b6d5ee1c0dc06",
+      "sha256": "e18332e4abb33d42cd1ad7459adae75af6b120d7c3a78121c7a3fc51f34979a5"
+    },
+    {
+      "attempt_seeds": [
+        6161737870054178149
+      ],
+      "file": "train-73.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6161737870054178149,
+      "semantic_sha256": "f3443a8541539fb9fd66550d6e536fdd969c30a47ed48030b8864b378cf7028b",
+      "sha256": "b5de6dd8ecfb6b084fb3c105e7508f26f9657f96755e8f307ace22459f7a8523"
+    },
+    {
+      "attempt_seeds": [
+        8521700014145930439
+      ],
+      "file": "train-74.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8521700014145930439,
+      "semantic_sha256": "66999f5affceedf261c5c8b417977f725bad52b1d30f2b1fe01fc24fdfcdb2b4",
+      "sha256": "7c62e393647c044eb1911a0bceb8cfd92cb627e177db325d387c5d5641ba5e34"
+    },
+    {
+      "attempt_seeds": [
+        6869283693111966340
+      ],
+      "file": "train-75.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6869283693111966340,
+      "semantic_sha256": "d1554bdbb65bd87baf58c2b5a600a485d496eeb0938c1ef8734af0496f6e8e36",
+      "sha256": "178ce8e47de171a0076eb54d2cf424431c51423e45c507e0309dbe2622caf55a"
+    },
+    {
+      "attempt_seeds": [
+        16461921622370202725
+      ],
+      "file": "train-76.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16461921622370202725,
+      "semantic_sha256": "83b5489ef84e1db5bfd74a803d41372d98a47f478fecb4574b940afb4b681d1b",
+      "sha256": "6740b4a2971926f02a857b75d377861cd769c6337a8747bd2ec65531cf9acc08"
+    },
+    {
+      "attempt_seeds": [
+        8771429237872883320
+      ],
+      "file": "train-77.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8771429237872883320,
+      "semantic_sha256": "2a1c76beb3a40c04d409c66aa0b3eef9468c27a0cdf8dc008cad55f8bc1d148b",
+      "sha256": "ad773766756cdad379b18ee773661647c8125a94b68700835bfeba7b7d44a640"
+    },
+    {
+      "attempt_seeds": [
+        2347025290744656540
+      ],
+      "file": "train-78.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2347025290744656540,
+      "semantic_sha256": "5e816b61a8f3769955b07ccfce6aad0c84a5799296ac615544b8aba316be7b57",
+      "sha256": "c8e973f44ffbe1a4b974499d674025d66ab615f0f1b9d3ecd74883ef291efcec"
+    },
+    {
+      "attempt_seeds": [
+        6641513169486945065
+      ],
+      "file": "train-79.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6641513169486945065,
+      "semantic_sha256": "42443bf808ae7ed60d054881c160bd8e15f3d6f2d71880532258dd6f412c9538",
+      "sha256": "5ab66d702303734fe8ff993903ccfa8f84c007e093793897bd034d46035299f6"
+    },
+    {
+      "attempt_seeds": [
+        13524490436051199512
+      ],
+      "file": "train-80.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13524490436051199512,
+      "semantic_sha256": "d8adaf55cef073dbd4c0c9be63623fa0ab91fcee6a4750250a1dfb95ec32728d",
+      "sha256": "ca0a4d7c18430eab9e3b071d5671454e5bed8ace3ecbe02b817e2571d424157a"
+    },
+    {
+      "attempt_seeds": [
+        17640688703789019858
+      ],
+      "file": "train-81.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17640688703789019858,
+      "semantic_sha256": "6cc4b074cd2fc91b449e7a864fec6ccaf752b3da56d7c3ce79bdcb7cf35dbff2",
+      "sha256": "2576d4aab50fd5772318023c6c4496000776947309b69b20654c39a9d85a8c24"
+    },
+    {
+      "attempt_seeds": [
+        10908041815953077260
+      ],
+      "file": "train-82.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10908041815953077260,
+      "semantic_sha256": "71ff019e15ec3b1ab580222ae8892e0088abe628fc45c400e31b0335443d8b94",
+      "sha256": "24f3aabb09cbe309437cc4d95c0681a348f421295435e5f51628af667f08ccc6"
+    },
+    {
+      "attempt_seeds": [
+        10791088706997928790
+      ],
+      "file": "train-83.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10791088706997928790,
+      "semantic_sha256": "2796f3af2aa01ffe23fac421c36c0201a8a55d07624ad51acd413834732fcc6a",
+      "sha256": "e73fa6a1c6ce48a19efe298315d2dd8c076d7e60750505533f0a04bdb69aef42"
+    },
+    {
+      "attempt_seeds": [
+        7276396934916166090
+      ],
+      "file": "train-84.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7276396934916166090,
+      "semantic_sha256": "a2fb5a1fa606a9fbceb0ec21ccce54483b1334893e75810744224ac09682d129",
+      "sha256": "506d0ba0a3a42ff0f6fe8bca5c8259c9b4ade8b11bfc0f194c642664d2749151"
+    },
+    {
+      "attempt_seeds": [
+        15949684346176966406
+      ],
+      "file": "train-85.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15949684346176966406,
+      "semantic_sha256": "2b20c32ae45c018b25c57c701dd4c279ac286b358205da0c7e5fef06ce077c19",
+      "sha256": "a5a0c608e6e4d112ff062205427d6d30e6c8b094013a2e97a341bcca03f87bf5"
+    },
+    {
+      "attempt_seeds": [
+        6513557648482736760
+      ],
+      "file": "train-86.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6513557648482736760,
+      "semantic_sha256": "8b1d6844e531677199985ad6573fa676909293190b3ba69ab284bd077e245545",
+      "sha256": "af2b514236f0d865f08c2eb71ce7e2dc4063bbdf5b345238b1322518dcb5f51a"
+    },
+    {
+      "attempt_seeds": [
+        18232217022025235428
+      ],
+      "file": "train-87.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18232217022025235428,
+      "semantic_sha256": "18704e6aadbfdbfcce428351f1153bfedc477489b8ff022e075ad3ae7b3229c6",
+      "sha256": "b35746085c68e40021eb1e7e101e699691b76d5786613909c803c004dcb84fff"
+    },
+    {
+      "attempt_seeds": [
+        8363372051056007145
+      ],
+      "file": "train-88.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8363372051056007145,
+      "semantic_sha256": "b1024a655ddd473bb32311ac18c1ba97d294725d7f75bdcd8a1bc3e51bd27c62",
+      "sha256": "1b8ab02fb7002228a434cd99d12b964df7d7371fa723172607db673cf29383fd"
+    },
+    {
+      "attempt_seeds": [
+        9604080453591907519
+      ],
+      "file": "train-89.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9604080453591907519,
+      "semantic_sha256": "e7cbbc6e185a1ab9772036c66635bc5fab9304be19d4c6ac9100fd021d51edbf",
+      "sha256": "e6a86020a8523891054d54605bbe7e7f8e65df84ee5d54963737e9f5257a52d2"
+    },
+    {
+      "attempt_seeds": [
+        9939556151236057563
+      ],
+      "file": "train-90.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9939556151236057563,
+      "semantic_sha256": "33e56bd8f8f166acef250b8c776f913d337f1c0deeef432d18ab7f136c6114a4",
+      "sha256": "4ff7fbb2d6d3f7041acb2c247dae862f634bb7f5b85afccd46a3fe4dd3ab8057"
+    },
+    {
+      "attempt_seeds": [
+        8533040916455566483
+      ],
+      "file": "train-91.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8533040916455566483,
+      "semantic_sha256": "cff820f550b8b6a7f8c51e083ad3290d9a309b7dbe2b70682f3a2149f1d445cf",
+      "sha256": "2b7925b016624331be56d1af9c22ba0fe918139611217b69d91e9367f7f3db6a"
+    },
+    {
+      "attempt_seeds": [
+        13920958310463934219
+      ],
+      "file": "train-92.pddl",
+      "parameters": {
+        "num_floors": 3,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13920958310463934219,
+      "semantic_sha256": "033eec41738b535351ceb555910088772e4e2dbaa9b6cad5fe8b5f28f400f5e5",
+      "sha256": "f39a38fde92f49a1c8b6089bbdd7c64e5eded0754ff7465771f1416f51bb2437"
+    },
+    {
+      "attempt_seeds": [
+        6277581176226438261
+      ],
+      "file": "train-93.pddl",
+      "parameters": {
+        "num_floors": 6,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6277581176226438261,
+      "semantic_sha256": "1db0bd8ae451aa418e89d6fc5ff66bd1698e7ba43089cf5a35dd58003626ced0",
+      "sha256": "fe6fe824ca09eec9a9779e7531573a41cb81d39a920fdff5b7df70d9ce4f4c43"
+    },
+    {
+      "attempt_seeds": [
+        11563160440934050511
+      ],
+      "file": "train-94.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 4
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11563160440934050511,
+      "semantic_sha256": "50de726bffd05c7f62500b909a6bb527e4d090d4e1e2260557f95dd0f8c0c1ef",
+      "sha256": "212857d01d7ed98de48f088bc267f0faee7612da1f9dbbc314eb36adaafbad88"
+    },
+    {
+      "attempt_seeds": [
+        8968766530944943253
+      ],
+      "file": "train-95.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8968766530944943253,
+      "semantic_sha256": "05ded8ca78a9c5ed16b3ab0d4fbff638967809d99444c08949a42bb0e861ea62",
+      "sha256": "65f77d93a21fc34626bfdd51498e5410af7b09f1752c0ba1dacdf1ce5bf1bc59"
+    },
+    {
+      "attempt_seeds": [
+        3277242037649087793
+      ],
+      "file": "train-96.pddl",
+      "parameters": {
+        "num_floors": 5,
+        "num_passengers": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3277242037649087793,
+      "semantic_sha256": "87f4714468d89582a69aa265ff0ef7714ba3c4e81ea7343985afb3c7822a92f9",
+      "sha256": "436cf29ffec66ac12b52f3c144d0078b58e38814f7822cffaedebd3712f84766"
+    },
+    {
+      "attempt_seeds": [
+        18059933564472010999
+      ],
+      "file": "train-97.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18059933564472010999,
+      "semantic_sha256": "3b70430c0ba673e8dbf4c14981dc5953937e6bfa74dfb10e60d056e7ef9eb40d",
+      "sha256": "fd2cecf35cd346345d60c6f3ea7b2482ad2fffa49a984d5bc18143a3a540e553"
+    },
+    {
+      "attempt_seeds": [
+        821383797788210629
+      ],
+      "file": "train-98.pddl",
+      "parameters": {
+        "num_floors": 1,
+        "num_passengers": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 821383797788210629,
+      "semantic_sha256": "bf6c69c1fbd26c1a7337572dbefa5d69d7b685132b8708e5db64c7b8e8ed9600",
+      "sha256": "382c23f3b69abcb51b4a4bdb58140c710348b1a2c19bf3861ef2a8954781b505"
+    },
+    {
+      "attempt_seeds": [
+        2932654151928778553
+      ],
+      "file": "train-99.pddl",
+      "parameters": {
+        "num_floors": 4,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2932654151928778553,
+      "semantic_sha256": "f4c70b60d07eb9e29149ed7986eafecdcffbc308e4c8560a930cb6e30db4e29b",
+      "sha256": "ac9f54e1d7ec6bcb3bff4c83461e19314d7c679a91379c4ae185e0e72795939c"
+    },
+    {
+      "attempt_seeds": [
+        10120068529894639730
+      ],
+      "file": "train-100.pddl",
+      "parameters": {
+        "num_floors": 2,
+        "num_passengers": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10120068529894639730,
+      "semantic_sha256": "b5770ddfc885efc4bdd587905e0571afecb981f86928fe205059e5cf054240b2",
+      "sha256": "184df735a39875a4ed2b920730f38df02ab4ec75cb7abc34e5a93c9f266754fb"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "train",
+  "valid_configurations": 36
+}

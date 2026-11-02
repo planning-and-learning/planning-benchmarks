@@ -1,0 +1,85 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "0424e1d6c816ceace3cdd47e385c064d5771f48b2c1b84a18a8a9e008263b5a8",
+  "generator": "classical/gripper",
+  "instances": [
+    {
+      "attempt_seeds": [
+        4562022367874122202
+      ],
+      "file": "valid-1.pddl",
+      "parameters": {
+        "num_balls": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4562022367874122202,
+      "semantic_sha256": "fb21b3e715c684990e5c52429d48727f27fefe658799ff7e2edb6d0e8f190138",
+      "sha256": "3f49d8c6322b42693ff5171afb8c345259671be9b714e64330c7c543663acbb1"
+    },
+    {
+      "attempt_seeds": [
+        12486401991629272475
+      ],
+      "file": "valid-2.pddl",
+      "parameters": {
+        "num_balls": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12486401991629272475,
+      "semantic_sha256": "af93522ddbc8a27dafacc9cfd629d4f9e21c4056f6193d242f6ba5ffbd89602d",
+      "sha256": "d9656efb12502d6d731d026bb4e6a0791bcb3cf979b150c7a23cabb21afa9148"
+    },
+    {
+      "attempt_seeds": [
+        17557998496066524398
+      ],
+      "file": "valid-3.pddl",
+      "parameters": {
+        "num_balls": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17557998496066524398,
+      "semantic_sha256": "4ce836238a4a22c96112dbcc6a1edefb789845014af563af0af554d0d55112dc",
+      "sha256": "c54d2fdd3d083b2edaa1454afddcbc7e45654ef9e21b876cecc2e5dc9ea8a108"
+    },
+    {
+      "attempt_seeds": [
+        14890096551146055294
+      ],
+      "file": "valid-4.pddl",
+      "parameters": {
+        "num_balls": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14890096551146055294,
+      "semantic_sha256": "95fde898b1fd9f3c1a563565f5cd2172c30b74414e5a7a33ccaba48191eeb95b",
+      "sha256": "f55029eaed729b3dd952a7520b69e24567502016a68bf72b81d4e1fb915d3704"
+    },
+    {
+      "attempt_seeds": [
+        5349920356666221330
+      ],
+      "file": "valid-5.pddl",
+      "parameters": {
+        "num_balls": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5349920356666221330,
+      "semantic_sha256": "3413f65987cf1c48a53df96f528f32550c2b2be391c83f953dbeaa77731b3cc4",
+      "sha256": "5236349418cb47b2a199cd2427cb35e7861a4ecef3e33e3966a2771111f49829"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "valid",
+  "valid_configurations": 5
+}

@@ -1,0 +1,1615 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "99f44c36737a793d65a575673fa29eece53abbd41defc3f97623d6774afdbe7c",
+  "generator": "classical/hiking_binary",
+  "instances": [
+    {
+      "attempt_seeds": [
+        14318306906153180242
+      ],
+      "file": "train-1.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14318306906153180242,
+      "semantic_sha256": "190a5152be54065b34e67ec7fc0a2b0653f2e1ededf700bf9f49d5980fd2807f",
+      "sha256": "1b2bb4f1ad3f34f32e757e0f0d9c2541750e105be2a843177a3ef559fef2ae2e"
+    },
+    {
+      "attempt_seeds": [
+        5822485268475789033
+      ],
+      "file": "train-2.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5822485268475789033,
+      "semantic_sha256": "4e78bc57589233ae83a4580da50c6662baa6f4de16dacac44837e4d87ca25191",
+      "sha256": "4ee04caa450eef02dc7a5d42b6343bfb95e0833a5269b01e40742288b69653e7"
+    },
+    {
+      "attempt_seeds": [
+        766465972880892816
+      ],
+      "file": "train-3.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 766465972880892816,
+      "semantic_sha256": "1774f5f30fb8005cf63eb2162f45eb07ef5baa6a99a0e8a48278da60a2e8a303",
+      "sha256": "13530870c2f659b76fa3a51e437cdcfbd54e38219238be909bb2c2920d13cdae"
+    },
+    {
+      "attempt_seeds": [
+        421462201370579529
+      ],
+      "file": "train-4.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 421462201370579529,
+      "semantic_sha256": "3d4d64d53d3e6a40686ec1fd397e8da6a66d5641e75dff05fa90bf4f7f741fab",
+      "sha256": "55e822ea906fc8449f559dc7a3d864b0927159c53e1cadd36eb40af8bdb8e788"
+    },
+    {
+      "attempt_seeds": [
+        6326828682668344978
+      ],
+      "file": "train-5.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6326828682668344978,
+      "semantic_sha256": "6efa221dc3ec538d228bc95cb48815bf3778aa070d1e5903ace733f131d6b9a1",
+      "sha256": "0dd060ecf9f261a73f120d53e9dfcb822947e3348937885a6d634974f6034c98"
+    },
+    {
+      "attempt_seeds": [
+        2271905339999076012
+      ],
+      "file": "train-6.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2271905339999076012,
+      "semantic_sha256": "a1ef919bef2bb5fa09df333221986b8a566bf1e973792f80c3ac84efd887c551",
+      "sha256": "82ed00f093e810708b73f4a9a85829c4785096524c796e520b0c9824c661b0e4"
+    },
+    {
+      "attempt_seeds": [
+        10683394836982731195
+      ],
+      "file": "train-7.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10683394836982731195,
+      "semantic_sha256": "77a5b9f955b08f8079e0a88c3cd350892fcb8c831ee06f4dcbcb5bf4a1483ed0",
+      "sha256": "4456d52b00a2ce245e1e134a57f01f500cd9e82567c660c8306df6c539254b6c"
+    },
+    {
+      "attempt_seeds": [
+        13205098341290087761
+      ],
+      "file": "train-8.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13205098341290087761,
+      "semantic_sha256": "1190db8a9fbfd4e5c625358bf9199e69a3ccd34f17f664d9a5a24afbbf015fce",
+      "sha256": "9685816c79a06ece8156e981549949787d03fc04090b44defd5a3ef809765f52"
+    },
+    {
+      "attempt_seeds": [
+        16851573151333142155
+      ],
+      "file": "train-9.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16851573151333142155,
+      "semantic_sha256": "cd3c45ae8f84a773a9fc1cd4d885433c8f7eb7d0a0dd956bfddc04f841868f1c",
+      "sha256": "952310d58278b71c419dbf7518b63f49b35a6729ae93a25eae1ac705415d2bdd"
+    },
+    {
+      "attempt_seeds": [
+        10660395087539452833
+      ],
+      "file": "train-10.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10660395087539452833,
+      "semantic_sha256": "1679c8f76646faeec4ea1f2a712af672793d01dca891fb6fd1d096b23be4c9de",
+      "sha256": "4e64f8f1e2cdfef382bf8ee4e209d3bcb409f54239eed3ec9662a5af666b2176"
+    },
+    {
+      "attempt_seeds": [
+        15690257165404419601
+      ],
+      "file": "train-11.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15690257165404419601,
+      "semantic_sha256": "c3439e4c7beecd266f13b501e7c1a7cdc050d886286e6d9b29c037b1da991849",
+      "sha256": "c57ebf1e9444d3427c4e3b3c15d99b1d75b540ffb6d95024155b301a5cbab2c6"
+    },
+    {
+      "attempt_seeds": [
+        16232873243913470207
+      ],
+      "file": "train-12.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16232873243913470207,
+      "semantic_sha256": "5cfdf951ad396313cdb88d44211b84bf32b6090a977ef71a54d44c2e875dd87e",
+      "sha256": "597a5eabebfe233083dd6256eaa2e94fa71df25c37c4469c8e6494702b58aafd"
+    },
+    {
+      "attempt_seeds": [
+        1407053857929975052
+      ],
+      "file": "train-13.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1407053857929975052,
+      "semantic_sha256": "5cfdf951ad396313cdb88d44211b84bf32b6090a977ef71a54d44c2e875dd87e",
+      "sha256": "597a5eabebfe233083dd6256eaa2e94fa71df25c37c4469c8e6494702b58aafd"
+    },
+    {
+      "attempt_seeds": [
+        738380182549224568
+      ],
+      "file": "train-14.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 738380182549224568,
+      "semantic_sha256": "a225e0ddbc9c8edca2e63279eabeab9a9effd45d87a4811d0f32a72462cfdf9e",
+      "sha256": "ce01b2f1562901cb7410f6572f822e944e2f269de0aa3ef3307e87e5a081aa56"
+    },
+    {
+      "attempt_seeds": [
+        4458837258097995086
+      ],
+      "file": "train-15.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4458837258097995086,
+      "semantic_sha256": "de97304f1889eee1c3b8c6aa833fb68a662561176428da6ea995747c5b9ecaf6",
+      "sha256": "150355e9c4d59802650204e716ebf7b0abace7b91a9c8d6e151d5177cd59c70a"
+    },
+    {
+      "attempt_seeds": [
+        17205258632786410511
+      ],
+      "file": "train-16.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17205258632786410511,
+      "semantic_sha256": "2ee735013bea51946c28c2d02359d8331e0eebea424227375dbbb749f18f3a58",
+      "sha256": "93a0e1da5be6720d214e70872b22516a22e05f6eb1ea9c847015ef490220c679"
+    },
+    {
+      "attempt_seeds": [
+        743897735762034056
+      ],
+      "file": "train-17.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 743897735762034056,
+      "semantic_sha256": "e4fb937ee116f7d2a4914cfc86787e22c4b6f073ccbc416e88942fe2b01571ec",
+      "sha256": "2cb6f493ea5ec25b1cdff9afdcff5551226e6b1f1119b73101c6ea781a72d5aa"
+    },
+    {
+      "attempt_seeds": [
+        17552965678466390090
+      ],
+      "file": "train-18.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17552965678466390090,
+      "semantic_sha256": "2b434945fe0069ae48ceeb1be11f5b5bffd52785b0b0fa6901fbe7d9981ef9bf",
+      "sha256": "8aea17910cfb086f0bfe737ea114774c89ed9597630189aa8ab8c4e29216532d"
+    },
+    {
+      "attempt_seeds": [
+        13071624914227966865
+      ],
+      "file": "train-19.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13071624914227966865,
+      "semantic_sha256": "a1ef919bef2bb5fa09df333221986b8a566bf1e973792f80c3ac84efd887c551",
+      "sha256": "82ed00f093e810708b73f4a9a85829c4785096524c796e520b0c9824c661b0e4"
+    },
+    {
+      "attempt_seeds": [
+        5411795628156861790
+      ],
+      "file": "train-20.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5411795628156861790,
+      "semantic_sha256": "c3439e4c7beecd266f13b501e7c1a7cdc050d886286e6d9b29c037b1da991849",
+      "sha256": "c57ebf1e9444d3427c4e3b3c15d99b1d75b540ffb6d95024155b301a5cbab2c6"
+    },
+    {
+      "attempt_seeds": [
+        6826965615367433462
+      ],
+      "file": "train-21.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6826965615367433462,
+      "semantic_sha256": "cd3c45ae8f84a773a9fc1cd4d885433c8f7eb7d0a0dd956bfddc04f841868f1c",
+      "sha256": "952310d58278b71c419dbf7518b63f49b35a6729ae93a25eae1ac705415d2bdd"
+    },
+    {
+      "attempt_seeds": [
+        18053692475660560997
+      ],
+      "file": "train-22.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18053692475660560997,
+      "semantic_sha256": "9e803c1868fee847c24e09a86ef0512430fd258fcd774060b877e74f0c6e9dfd",
+      "sha256": "3214d24dee2d93600984f87dc3a4a0596dc3f9f7dba5d6b0ce9f3c6b23c6e584"
+    },
+    {
+      "attempt_seeds": [
+        17630318647603441452
+      ],
+      "file": "train-23.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17630318647603441452,
+      "semantic_sha256": "4e78bc57589233ae83a4580da50c6662baa6f4de16dacac44837e4d87ca25191",
+      "sha256": "4ee04caa450eef02dc7a5d42b6343bfb95e0833a5269b01e40742288b69653e7"
+    },
+    {
+      "attempt_seeds": [
+        506716802282175018
+      ],
+      "file": "train-24.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 506716802282175018,
+      "semantic_sha256": "9b257c866f04c80471e132ca822498dcf4dd3ff015414993d8f66cfd634384e4",
+      "sha256": "f70a9b5ce0c06bfcf78e188f9f8d56725cd9de8b9f47a14ffd32fe2c4ba62c22"
+    },
+    {
+      "attempt_seeds": [
+        5424897874436581723
+      ],
+      "file": "train-25.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5424897874436581723,
+      "semantic_sha256": "75f19962012b0f56a543fb2763a95c7b96ed7b79d38c21ea19d6f0c42ae6a2cf",
+      "sha256": "97fd3d12b10d4467bacbd2b4ab519d931c2551edadc441b12b77f6903e6e9ee2"
+    },
+    {
+      "attempt_seeds": [
+        10025234179249079252
+      ],
+      "file": "train-26.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10025234179249079252,
+      "semantic_sha256": "4e78bc57589233ae83a4580da50c6662baa6f4de16dacac44837e4d87ca25191",
+      "sha256": "4ee04caa450eef02dc7a5d42b6343bfb95e0833a5269b01e40742288b69653e7"
+    },
+    {
+      "attempt_seeds": [
+        10857428695710253671
+      ],
+      "file": "train-27.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10857428695710253671,
+      "semantic_sha256": "54a13e312e2a3d3790a9834236fda4ff46f3fa2db88ddd43d9995bee13de2f73",
+      "sha256": "d43bb5a917cd977218c15a64b6c702abfaa6a6021b44988da13e804979240b9b"
+    },
+    {
+      "attempt_seeds": [
+        2860631332651098570
+      ],
+      "file": "train-28.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2860631332651098570,
+      "semantic_sha256": "a225e0ddbc9c8edca2e63279eabeab9a9effd45d87a4811d0f32a72462cfdf9e",
+      "sha256": "ce01b2f1562901cb7410f6572f822e944e2f269de0aa3ef3307e87e5a081aa56"
+    },
+    {
+      "attempt_seeds": [
+        16308880540753168273
+      ],
+      "file": "train-29.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16308880540753168273,
+      "semantic_sha256": "9b257c866f04c80471e132ca822498dcf4dd3ff015414993d8f66cfd634384e4",
+      "sha256": "f70a9b5ce0c06bfcf78e188f9f8d56725cd9de8b9f47a14ffd32fe2c4ba62c22"
+    },
+    {
+      "attempt_seeds": [
+        13011413318717605947
+      ],
+      "file": "train-30.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13011413318717605947,
+      "semantic_sha256": "cd3c45ae8f84a773a9fc1cd4d885433c8f7eb7d0a0dd956bfddc04f841868f1c",
+      "sha256": "952310d58278b71c419dbf7518b63f49b35a6729ae93a25eae1ac705415d2bdd"
+    },
+    {
+      "attempt_seeds": [
+        274036607823740716
+      ],
+      "file": "train-31.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 274036607823740716,
+      "semantic_sha256": "d6521f5913fd5b0e034eb7bc34fb1705cb46620632b09dfe219646df73cf89c6",
+      "sha256": "8207a4ba656a7e0b563333665969dea40f81b89016344642cb3322f270d97a2d"
+    },
+    {
+      "attempt_seeds": [
+        15183274213569519189
+      ],
+      "file": "train-32.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15183274213569519189,
+      "semantic_sha256": "e8f26d605f29674421c9883b93ff1bb5eedde6c15337c6f70205971cbe3062e9",
+      "sha256": "90fd7fba129ba9d7e812fc6b878049711e25867a649b6da9ae527d6138838e6c"
+    },
+    {
+      "attempt_seeds": [
+        14310870312968502060
+      ],
+      "file": "train-33.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14310870312968502060,
+      "semantic_sha256": "2ee735013bea51946c28c2d02359d8331e0eebea424227375dbbb749f18f3a58",
+      "sha256": "93a0e1da5be6720d214e70872b22516a22e05f6eb1ea9c847015ef490220c679"
+    },
+    {
+      "attempt_seeds": [
+        616822917715593316
+      ],
+      "file": "train-34.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 616822917715593316,
+      "semantic_sha256": "0baa0300d091540fcba4b196f3fb91aa26ae0938fc225d44b1d444230cbfe951",
+      "sha256": "e0d7b1b88acb6ba4a32b64ce5258cfd5568f5ee616d7227f624319d9c7701372"
+    },
+    {
+      "attempt_seeds": [
+        2281054344739789888
+      ],
+      "file": "train-35.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2281054344739789888,
+      "semantic_sha256": "1190db8a9fbfd4e5c625358bf9199e69a3ccd34f17f664d9a5a24afbbf015fce",
+      "sha256": "9685816c79a06ece8156e981549949787d03fc04090b44defd5a3ef809765f52"
+    },
+    {
+      "attempt_seeds": [
+        17706164383013057028
+      ],
+      "file": "train-36.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17706164383013057028,
+      "semantic_sha256": "cbfec8129917ef70f103aca3e8d9a8f0269fdb07a3b50704c1210285fae5fc27",
+      "sha256": "4d573f5db0348f925eea3bfb85438ed1cbf12baf99929d977f5bb01cacd2d19a"
+    },
+    {
+      "attempt_seeds": [
+        3015730140565883030
+      ],
+      "file": "train-37.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3015730140565883030,
+      "semantic_sha256": "c3439e4c7beecd266f13b501e7c1a7cdc050d886286e6d9b29c037b1da991849",
+      "sha256": "c57ebf1e9444d3427c4e3b3c15d99b1d75b540ffb6d95024155b301a5cbab2c6"
+    },
+    {
+      "attempt_seeds": [
+        13579273115150716435
+      ],
+      "file": "train-38.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13579273115150716435,
+      "semantic_sha256": "2b434945fe0069ae48ceeb1be11f5b5bffd52785b0b0fa6901fbe7d9981ef9bf",
+      "sha256": "8aea17910cfb086f0bfe737ea114774c89ed9597630189aa8ab8c4e29216532d"
+    },
+    {
+      "attempt_seeds": [
+        5609865449067410814
+      ],
+      "file": "train-39.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5609865449067410814,
+      "semantic_sha256": "54a13e312e2a3d3790a9834236fda4ff46f3fa2db88ddd43d9995bee13de2f73",
+      "sha256": "d43bb5a917cd977218c15a64b6c702abfaa6a6021b44988da13e804979240b9b"
+    },
+    {
+      "attempt_seeds": [
+        6722166023836305089
+      ],
+      "file": "train-40.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6722166023836305089,
+      "semantic_sha256": "a225e0ddbc9c8edca2e63279eabeab9a9effd45d87a4811d0f32a72462cfdf9e",
+      "sha256": "ce01b2f1562901cb7410f6572f822e944e2f269de0aa3ef3307e87e5a081aa56"
+    },
+    {
+      "attempt_seeds": [
+        3534356435935161257
+      ],
+      "file": "train-41.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3534356435935161257,
+      "semantic_sha256": "3d4d64d53d3e6a40686ec1fd397e8da6a66d5641e75dff05fa90bf4f7f741fab",
+      "sha256": "55e822ea906fc8449f559dc7a3d864b0927159c53e1cadd36eb40af8bdb8e788"
+    },
+    {
+      "attempt_seeds": [
+        14926557828699701647
+      ],
+      "file": "train-42.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14926557828699701647,
+      "semantic_sha256": "de97304f1889eee1c3b8c6aa833fb68a662561176428da6ea995747c5b9ecaf6",
+      "sha256": "150355e9c4d59802650204e716ebf7b0abace7b91a9c8d6e151d5177cd59c70a"
+    },
+    {
+      "attempt_seeds": [
+        8102166895638869897
+      ],
+      "file": "train-43.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8102166895638869897,
+      "semantic_sha256": "d6e72df40e54db292bf9f7f53aa8a16f1222e08ab0df96fa23801e507beeb5d9",
+      "sha256": "3857d85c861b536bb31e0f3271347bd3621cdc69977b6088faefe83a5d7ab01d"
+    },
+    {
+      "attempt_seeds": [
+        15836537979901387916
+      ],
+      "file": "train-44.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15836537979901387916,
+      "semantic_sha256": "d6521f5913fd5b0e034eb7bc34fb1705cb46620632b09dfe219646df73cf89c6",
+      "sha256": "8207a4ba656a7e0b563333665969dea40f81b89016344642cb3322f270d97a2d"
+    },
+    {
+      "attempt_seeds": [
+        14941069937162291451
+      ],
+      "file": "train-45.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14941069937162291451,
+      "semantic_sha256": "1406f303999f91cace879f4c1e32976b5ca4d4aa16a0d1fca421ed0d7f181ef3",
+      "sha256": "1ae38fa4502b0700929e3f3cc1f7667aac6412ec1faca890a28800452e30a4b0"
+    },
+    {
+      "attempt_seeds": [
+        11632828155604028505
+      ],
+      "file": "train-46.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11632828155604028505,
+      "semantic_sha256": "4e78bc57589233ae83a4580da50c6662baa6f4de16dacac44837e4d87ca25191",
+      "sha256": "4ee04caa450eef02dc7a5d42b6343bfb95e0833a5269b01e40742288b69653e7"
+    },
+    {
+      "attempt_seeds": [
+        3420798754192022204
+      ],
+      "file": "train-47.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3420798754192022204,
+      "semantic_sha256": "1774f5f30fb8005cf63eb2162f45eb07ef5baa6a99a0e8a48278da60a2e8a303",
+      "sha256": "13530870c2f659b76fa3a51e437cdcfbd54e38219238be909bb2c2920d13cdae"
+    },
+    {
+      "attempt_seeds": [
+        7911677553532639053
+      ],
+      "file": "train-48.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7911677553532639053,
+      "semantic_sha256": "713d20286bde5840f10063e71d2c677051bad0667af860922821929d0e260682",
+      "sha256": "00b07b332b7327f552a1d10ab14152865f2b55e39a6556b4e82f47d6de8904a3"
+    },
+    {
+      "attempt_seeds": [
+        5084564041603096019
+      ],
+      "file": "train-49.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5084564041603096019,
+      "semantic_sha256": "4e78bc57589233ae83a4580da50c6662baa6f4de16dacac44837e4d87ca25191",
+      "sha256": "4ee04caa450eef02dc7a5d42b6343bfb95e0833a5269b01e40742288b69653e7"
+    },
+    {
+      "attempt_seeds": [
+        9342231833800096755
+      ],
+      "file": "train-50.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9342231833800096755,
+      "semantic_sha256": "9b257c866f04c80471e132ca822498dcf4dd3ff015414993d8f66cfd634384e4",
+      "sha256": "f70a9b5ce0c06bfcf78e188f9f8d56725cd9de8b9f47a14ffd32fe2c4ba62c22"
+    },
+    {
+      "attempt_seeds": [
+        781006705176584810
+      ],
+      "file": "train-51.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 781006705176584810,
+      "semantic_sha256": "c3439e4c7beecd266f13b501e7c1a7cdc050d886286e6d9b29c037b1da991849",
+      "sha256": "c57ebf1e9444d3427c4e3b3c15d99b1d75b540ffb6d95024155b301a5cbab2c6"
+    },
+    {
+      "attempt_seeds": [
+        2444488528184803017
+      ],
+      "file": "train-52.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2444488528184803017,
+      "semantic_sha256": "26cc6b6df196a0e7b1cf5f0c7145f08391f693b6cf20165b1661dc5067f5a8d4",
+      "sha256": "9e5c0c19b323763f39c1323078186ba75c036a4898e90fbb1bbbad115a805889"
+    },
+    {
+      "attempt_seeds": [
+        16052397749715730821
+      ],
+      "file": "train-53.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16052397749715730821,
+      "semantic_sha256": "c1aae18ff5dee1c5aa66b76096968895886beee0ee53bb881de854183e263517",
+      "sha256": "83f75bd1f0aa13c9c84ceb377b3f447fe3c3161a10e4423fe05d739e8dc99f5e"
+    },
+    {
+      "attempt_seeds": [
+        18313535969809463838
+      ],
+      "file": "train-54.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18313535969809463838,
+      "semantic_sha256": "92b0b7698ad4c6c3db4fbeec1bb0a59c76c20ca75a39ca5cc7ceac188cfe44e4",
+      "sha256": "9ede79a7a8080bf1f0420d5894f9430ca8c5b3c2b5f11767e4e60e3c05c693e0"
+    },
+    {
+      "attempt_seeds": [
+        1950048052171668803
+      ],
+      "file": "train-55.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1950048052171668803,
+      "semantic_sha256": "cd3c45ae8f84a773a9fc1cd4d885433c8f7eb7d0a0dd956bfddc04f841868f1c",
+      "sha256": "952310d58278b71c419dbf7518b63f49b35a6729ae93a25eae1ac705415d2bdd"
+    },
+    {
+      "attempt_seeds": [
+        4222315898387528200
+      ],
+      "file": "train-56.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4222315898387528200,
+      "semantic_sha256": "d6521f5913fd5b0e034eb7bc34fb1705cb46620632b09dfe219646df73cf89c6",
+      "sha256": "8207a4ba656a7e0b563333665969dea40f81b89016344642cb3322f270d97a2d"
+    },
+    {
+      "attempt_seeds": [
+        13450783478019762876
+      ],
+      "file": "train-57.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13450783478019762876,
+      "semantic_sha256": "6efa221dc3ec538d228bc95cb48815bf3778aa070d1e5903ace733f131d6b9a1",
+      "sha256": "0dd060ecf9f261a73f120d53e9dfcb822947e3348937885a6d634974f6034c98"
+    },
+    {
+      "attempt_seeds": [
+        2127034723298507710
+      ],
+      "file": "train-58.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2127034723298507710,
+      "semantic_sha256": "1190db8a9fbfd4e5c625358bf9199e69a3ccd34f17f664d9a5a24afbbf015fce",
+      "sha256": "9685816c79a06ece8156e981549949787d03fc04090b44defd5a3ef809765f52"
+    },
+    {
+      "attempt_seeds": [
+        8976440274521670118
+      ],
+      "file": "train-59.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8976440274521670118,
+      "semantic_sha256": "23696f3336923cef56f2726638c59986762a9cf3a705edcec9df12184dd511d1",
+      "sha256": "18915647c256630df51f85fb8c67ab358834e2c1479e89924396e5824ed3d905"
+    },
+    {
+      "attempt_seeds": [
+        2548907118982851981
+      ],
+      "file": "train-60.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2548907118982851981,
+      "semantic_sha256": "2ee735013bea51946c28c2d02359d8331e0eebea424227375dbbb749f18f3a58",
+      "sha256": "93a0e1da5be6720d214e70872b22516a22e05f6eb1ea9c847015ef490220c679"
+    },
+    {
+      "attempt_seeds": [
+        9464944236192017916
+      ],
+      "file": "train-61.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9464944236192017916,
+      "semantic_sha256": "a225e0ddbc9c8edca2e63279eabeab9a9effd45d87a4811d0f32a72462cfdf9e",
+      "sha256": "ce01b2f1562901cb7410f6572f822e944e2f269de0aa3ef3307e87e5a081aa56"
+    },
+    {
+      "attempt_seeds": [
+        9662436119050184349
+      ],
+      "file": "train-62.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9662436119050184349,
+      "semantic_sha256": "1406f303999f91cace879f4c1e32976b5ca4d4aa16a0d1fca421ed0d7f181ef3",
+      "sha256": "1ae38fa4502b0700929e3f3cc1f7667aac6412ec1faca890a28800452e30a4b0"
+    },
+    {
+      "attempt_seeds": [
+        5482225053030755270
+      ],
+      "file": "train-63.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5482225053030755270,
+      "semantic_sha256": "e8f26d605f29674421c9883b93ff1bb5eedde6c15337c6f70205971cbe3062e9",
+      "sha256": "90fd7fba129ba9d7e812fc6b878049711e25867a649b6da9ae527d6138838e6c"
+    },
+    {
+      "attempt_seeds": [
+        15890545103502015445
+      ],
+      "file": "train-64.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15890545103502015445,
+      "semantic_sha256": "c3439e4c7beecd266f13b501e7c1a7cdc050d886286e6d9b29c037b1da991849",
+      "sha256": "c57ebf1e9444d3427c4e3b3c15d99b1d75b540ffb6d95024155b301a5cbab2c6"
+    },
+    {
+      "attempt_seeds": [
+        3303883742507019027
+      ],
+      "file": "train-65.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3303883742507019027,
+      "semantic_sha256": "1679c8f76646faeec4ea1f2a712af672793d01dca891fb6fd1d096b23be4c9de",
+      "sha256": "4e64f8f1e2cdfef382bf8ee4e209d3bcb409f54239eed3ec9662a5af666b2176"
+    },
+    {
+      "attempt_seeds": [
+        7252971589210876773
+      ],
+      "file": "train-66.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7252971589210876773,
+      "semantic_sha256": "54a13e312e2a3d3790a9834236fda4ff46f3fa2db88ddd43d9995bee13de2f73",
+      "sha256": "d43bb5a917cd977218c15a64b6c702abfaa6a6021b44988da13e804979240b9b"
+    },
+    {
+      "attempt_seeds": [
+        6191579425665270789
+      ],
+      "file": "train-67.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6191579425665270789,
+      "semantic_sha256": "0baa0300d091540fcba4b196f3fb91aa26ae0938fc225d44b1d444230cbfe951",
+      "sha256": "e0d7b1b88acb6ba4a32b64ce5258cfd5568f5ee616d7227f624319d9c7701372"
+    },
+    {
+      "attempt_seeds": [
+        8251663972948681439
+      ],
+      "file": "train-68.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8251663972948681439,
+      "semantic_sha256": "2b434945fe0069ae48ceeb1be11f5b5bffd52785b0b0fa6901fbe7d9981ef9bf",
+      "sha256": "8aea17910cfb086f0bfe737ea114774c89ed9597630189aa8ab8c4e29216532d"
+    },
+    {
+      "attempt_seeds": [
+        3094325936764601886
+      ],
+      "file": "train-69.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3094325936764601886,
+      "semantic_sha256": "b1e681faa57b6f32a9400efa0447f2654df4086ae287904e14bb797a123661e2",
+      "sha256": "ca9eb4b93113806ab88adc263babfb67606b28f65857f301f5c9f7ad4b2c37be"
+    },
+    {
+      "attempt_seeds": [
+        17313627785933462322
+      ],
+      "file": "train-70.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17313627785933462322,
+      "semantic_sha256": "d6521f5913fd5b0e034eb7bc34fb1705cb46620632b09dfe219646df73cf89c6",
+      "sha256": "8207a4ba656a7e0b563333665969dea40f81b89016344642cb3322f270d97a2d"
+    },
+    {
+      "attempt_seeds": [
+        9431693653025284147
+      ],
+      "file": "train-71.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9431693653025284147,
+      "semantic_sha256": "75f19962012b0f56a543fb2763a95c7b96ed7b79d38c21ea19d6f0c42ae6a2cf",
+      "sha256": "97fd3d12b10d4467bacbd2b4ab519d931c2551edadc441b12b77f6903e6e9ee2"
+    },
+    {
+      "attempt_seeds": [
+        6273532680352441704
+      ],
+      "file": "train-72.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6273532680352441704,
+      "semantic_sha256": "2ee735013bea51946c28c2d02359d8331e0eebea424227375dbbb749f18f3a58",
+      "sha256": "93a0e1da5be6720d214e70872b22516a22e05f6eb1ea9c847015ef490220c679"
+    },
+    {
+      "attempt_seeds": [
+        3993776307434903166
+      ],
+      "file": "train-73.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3993776307434903166,
+      "semantic_sha256": "1774f5f30fb8005cf63eb2162f45eb07ef5baa6a99a0e8a48278da60a2e8a303",
+      "sha256": "13530870c2f659b76fa3a51e437cdcfbd54e38219238be909bb2c2920d13cdae"
+    },
+    {
+      "attempt_seeds": [
+        14560410572376876643
+      ],
+      "file": "train-74.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14560410572376876643,
+      "semantic_sha256": "fbaa09e930de190ae14f9bbd46a4d83c540f33217a4c99ad7193d8fb3d6837e2",
+      "sha256": "fd8d430045327147c78e72418ecb9962a060eb3c7c965689dd55da6118dcca98"
+    },
+    {
+      "attempt_seeds": [
+        13415622418856639904
+      ],
+      "file": "train-75.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13415622418856639904,
+      "semantic_sha256": "de97304f1889eee1c3b8c6aa833fb68a662561176428da6ea995747c5b9ecaf6",
+      "sha256": "150355e9c4d59802650204e716ebf7b0abace7b91a9c8d6e151d5177cd59c70a"
+    },
+    {
+      "attempt_seeds": [
+        5745737467365254970
+      ],
+      "file": "train-76.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5745737467365254970,
+      "semantic_sha256": "61d8b915d082cf1882d97d8168286266e53653230af7121f1caed5109dd1d2c5",
+      "sha256": "8ef0276eb76bca5e84ced5f5d5c15193572a329d944df70cd54779b079f860c0"
+    },
+    {
+      "attempt_seeds": [
+        7736340522779536206
+      ],
+      "file": "train-77.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7736340522779536206,
+      "semantic_sha256": "9b257c866f04c80471e132ca822498dcf4dd3ff015414993d8f66cfd634384e4",
+      "sha256": "f70a9b5ce0c06bfcf78e188f9f8d56725cd9de8b9f47a14ffd32fe2c4ba62c22"
+    },
+    {
+      "attempt_seeds": [
+        4130597087212817792
+      ],
+      "file": "train-78.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4130597087212817792,
+      "semantic_sha256": "e4fb937ee116f7d2a4914cfc86787e22c4b6f073ccbc416e88942fe2b01571ec",
+      "sha256": "2cb6f493ea5ec25b1cdff9afdcff5551226e6b1f1119b73101c6ea781a72d5aa"
+    },
+    {
+      "attempt_seeds": [
+        16444020908360063488
+      ],
+      "file": "train-79.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16444020908360063488,
+      "semantic_sha256": "5cfdf951ad396313cdb88d44211b84bf32b6090a977ef71a54d44c2e875dd87e",
+      "sha256": "597a5eabebfe233083dd6256eaa2e94fa71df25c37c4469c8e6494702b58aafd"
+    },
+    {
+      "attempt_seeds": [
+        12044335957830598918
+      ],
+      "file": "train-80.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12044335957830598918,
+      "semantic_sha256": "c3439e4c7beecd266f13b501e7c1a7cdc050d886286e6d9b29c037b1da991849",
+      "sha256": "c57ebf1e9444d3427c4e3b3c15d99b1d75b540ffb6d95024155b301a5cbab2c6"
+    },
+    {
+      "attempt_seeds": [
+        2076611518047930652
+      ],
+      "file": "train-81.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2076611518047930652,
+      "semantic_sha256": "1190db8a9fbfd4e5c625358bf9199e69a3ccd34f17f664d9a5a24afbbf015fce",
+      "sha256": "9685816c79a06ece8156e981549949787d03fc04090b44defd5a3ef809765f52"
+    },
+    {
+      "attempt_seeds": [
+        8135819489945854694
+      ],
+      "file": "train-82.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8135819489945854694,
+      "semantic_sha256": "a225e0ddbc9c8edca2e63279eabeab9a9effd45d87a4811d0f32a72462cfdf9e",
+      "sha256": "ce01b2f1562901cb7410f6572f822e944e2f269de0aa3ef3307e87e5a081aa56"
+    },
+    {
+      "attempt_seeds": [
+        2593304712695428065
+      ],
+      "file": "train-83.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2593304712695428065,
+      "semantic_sha256": "d6521f5913fd5b0e034eb7bc34fb1705cb46620632b09dfe219646df73cf89c6",
+      "sha256": "8207a4ba656a7e0b563333665969dea40f81b89016344642cb3322f270d97a2d"
+    },
+    {
+      "attempt_seeds": [
+        1862722842677068255
+      ],
+      "file": "train-84.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1862722842677068255,
+      "semantic_sha256": "cd3c45ae8f84a773a9fc1cd4d885433c8f7eb7d0a0dd956bfddc04f841868f1c",
+      "sha256": "952310d58278b71c419dbf7518b63f49b35a6729ae93a25eae1ac705415d2bdd"
+    },
+    {
+      "attempt_seeds": [
+        8266025384928745924
+      ],
+      "file": "train-85.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8266025384928745924,
+      "semantic_sha256": "713d20286bde5840f10063e71d2c677051bad0667af860922821929d0e260682",
+      "sha256": "00b07b332b7327f552a1d10ab14152865f2b55e39a6556b4e82f47d6de8904a3"
+    },
+    {
+      "attempt_seeds": [
+        4891313824162478463
+      ],
+      "file": "train-86.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4891313824162478463,
+      "semantic_sha256": "d6521f5913fd5b0e034eb7bc34fb1705cb46620632b09dfe219646df73cf89c6",
+      "sha256": "8207a4ba656a7e0b563333665969dea40f81b89016344642cb3322f270d97a2d"
+    },
+    {
+      "attempt_seeds": [
+        4780013980245372792
+      ],
+      "file": "train-87.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 3,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4780013980245372792,
+      "semantic_sha256": "023b19133504c9a1f883d5ee8547a96beb19e5fb094a4ee9a1791915dbbfac45",
+      "sha256": "be3f160ba4e79c628cdcd7482d4309b58afb78b51c864eef743c0cf2589b6e2c"
+    },
+    {
+      "attempt_seeds": [
+        3255713850791340119
+      ],
+      "file": "train-88.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3255713850791340119,
+      "semantic_sha256": "5cfdf951ad396313cdb88d44211b84bf32b6090a977ef71a54d44c2e875dd87e",
+      "sha256": "597a5eabebfe233083dd6256eaa2e94fa71df25c37c4469c8e6494702b58aafd"
+    },
+    {
+      "attempt_seeds": [
+        5026871151945009658
+      ],
+      "file": "train-89.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5026871151945009658,
+      "semantic_sha256": "e4fb937ee116f7d2a4914cfc86787e22c4b6f073ccbc416e88942fe2b01571ec",
+      "sha256": "2cb6f493ea5ec25b1cdff9afdcff5551226e6b1f1119b73101c6ea781a72d5aa"
+    },
+    {
+      "attempt_seeds": [
+        13705188388682723442
+      ],
+      "file": "train-90.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13705188388682723442,
+      "semantic_sha256": "1190db8a9fbfd4e5c625358bf9199e69a3ccd34f17f664d9a5a24afbbf015fce",
+      "sha256": "9685816c79a06ece8156e981549949787d03fc04090b44defd5a3ef809765f52"
+    },
+    {
+      "attempt_seeds": [
+        648369723100984086
+      ],
+      "file": "train-91.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 648369723100984086,
+      "semantic_sha256": "2ee735013bea51946c28c2d02359d8331e0eebea424227375dbbb749f18f3a58",
+      "sha256": "93a0e1da5be6720d214e70872b22516a22e05f6eb1ea9c847015ef490220c679"
+    },
+    {
+      "attempt_seeds": [
+        1144664733960021219
+      ],
+      "file": "train-92.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1144664733960021219,
+      "semantic_sha256": "de97304f1889eee1c3b8c6aa833fb68a662561176428da6ea995747c5b9ecaf6",
+      "sha256": "150355e9c4d59802650204e716ebf7b0abace7b91a9c8d6e151d5177cd59c70a"
+    },
+    {
+      "attempt_seeds": [
+        4201664659183762080
+      ],
+      "file": "train-93.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4201664659183762080,
+      "semantic_sha256": "cbfec8129917ef70f103aca3e8d9a8f0269fdb07a3b50704c1210285fae5fc27",
+      "sha256": "4d573f5db0348f925eea3bfb85438ed1cbf12baf99929d977f5bb01cacd2d19a"
+    },
+    {
+      "attempt_seeds": [
+        17657464482859984570
+      ],
+      "file": "train-94.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 2,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17657464482859984570,
+      "semantic_sha256": "e44599b110484a0aac344aa17a236620d997e841f274e986ee2c3673c236b536",
+      "sha256": "35b3705bf948a77c40c2e8cfad95c1d95130997601e2b41923d4f24f6d18f553"
+    },
+    {
+      "attempt_seeds": [
+        5946033740188814364
+      ],
+      "file": "train-95.pddl",
+      "parameters": {
+        "num_cars": 2,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5946033740188814364,
+      "semantic_sha256": "6efa221dc3ec538d228bc95cb48815bf3778aa070d1e5903ace733f131d6b9a1",
+      "sha256": "0dd060ecf9f261a73f120d53e9dfcb822947e3348937885a6d634974f6034c98"
+    },
+    {
+      "attempt_seeds": [
+        6451533880223469509
+      ],
+      "file": "train-96.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6451533880223469509,
+      "semantic_sha256": "cd3c45ae8f84a773a9fc1cd4d885433c8f7eb7d0a0dd956bfddc04f841868f1c",
+      "sha256": "952310d58278b71c419dbf7518b63f49b35a6729ae93a25eae1ac705415d2bdd"
+    },
+    {
+      "attempt_seeds": [
+        1995442480326700048
+      ],
+      "file": "train-97.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1995442480326700048,
+      "semantic_sha256": "1774f5f30fb8005cf63eb2162f45eb07ef5baa6a99a0e8a48278da60a2e8a303",
+      "sha256": "13530870c2f659b76fa3a51e437cdcfbd54e38219238be909bb2c2920d13cdae"
+    },
+    {
+      "attempt_seeds": [
+        33476695437489564
+      ],
+      "file": "train-98.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 33476695437489564,
+      "semantic_sha256": "2b434945fe0069ae48ceeb1be11f5b5bffd52785b0b0fa6901fbe7d9981ef9bf",
+      "sha256": "8aea17910cfb086f0bfe737ea114774c89ed9597630189aa8ab8c4e29216532d"
+    },
+    {
+      "attempt_seeds": [
+        1917244157371973606
+      ],
+      "file": "train-99.pddl",
+      "parameters": {
+        "num_cars": 3,
+        "num_couples": 1,
+        "num_places": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1917244157371973606,
+      "semantic_sha256": "cbfec8129917ef70f103aca3e8d9a8f0269fdb07a3b50704c1210285fae5fc27",
+      "sha256": "4d573f5db0348f925eea3bfb85438ed1cbf12baf99929d977f5bb01cacd2d19a"
+    },
+    {
+      "attempt_seeds": [
+        9988239390387709272
+      ],
+      "file": "train-100.pddl",
+      "parameters": {
+        "num_cars": 4,
+        "num_couples": 1,
+        "num_places": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9988239390387709272,
+      "semantic_sha256": "cd3c45ae8f84a773a9fc1cd4d885433c8f7eb7d0a0dd956bfddc04f841868f1c",
+      "sha256": "952310d58278b71c419dbf7518b63f49b35a6729ae93a25eae1ac705415d2bdd"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "train",
+  "valid_configurations": 12
+}

@@ -1,0 +1,142 @@
+Development profile after native ground-list membership, before the final selector-cache optimization.
+Configuration: Rovers(10,25,6,10,10), default edge_probability=0.5.
+Warmup sample_model seed=8; cProfile sample_model seed=9; no PDDL rendering.
+Profiler timings include instrumentation overhead and are not throughput measurements.
+No contemporaneous complete source-hash snapshot was recorded for this profile.
+
+         10086798 function calls (9951182 primitive calls) in 6.107 seconds
+
+   Ordered by: cumulative time
+   List reduced from 582 to 70 due to restriction <70>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    6.108    6.108 probabilistic.py:62(sample_model)
+        1    0.001    0.001    6.085    6.085 engine.py:81(sample_source)
+        1    0.000    0.000    6.081    6.081 engine.py:527(ground_queries)
+        6    0.007    0.001    6.081    1.013 engine.py:314(ground)
+        6    0.000    0.000    6.040    1.007 engine.py:409(_ground)
+     60/6    0.215    0.004    6.039    1.006 engine_stack.py:313(execute)
+33938/12093    0.208    0.000    5.189    0.000 engine_stack.py:103(eval)
+12368/7443    0.102    0.000    4.977    0.001 engine_stack.py:786(eval_call)
+10230/5396    0.042    0.000    4.064    0.001 engine_stack.py:956(eval_default)
+ 3186/829    0.009    0.000    4.025    0.005 engine_stack.py:953(eval_builtin)
+ 3186/829    0.011    0.000    4.016    0.005 eval_nodes.py:869(__call__)
+    54/15    0.000    0.000    3.103    0.207 engine_stack.py:1548(__call__)
+    54/15    0.001    0.000    3.080    0.205 engine_builtin.py:1675(_builtin_findall)
+    54/15    0.004    0.000    3.079    0.205 engine_builtin.py:1482(_builtin_findall_base)
+    54/15    0.001    0.000    3.020    0.201 engine_stack.py:533(call)
+     2080    0.023    0.000    2.633    0.001 engine_stack.py:1511(__call__)
+1951/1054    0.014    0.000    2.110    0.002 engine_stack.py:853(eval_clause)
+     1063    0.036    0.000    1.743    0.002 choices.py:51(uniform_choice)
+     7458    0.030    0.000    1.477    0.000 choices.py:24(uniform_head)
+     7520    0.045    0.000    1.156    0.000 choices.py:14(_draw)
+    22139    0.028    0.000    1.081    0.000 engine_stack.py:1466(__call__)
+    23819    0.699    0.000    1.066    0.000 logic.py:704(__eq__)
+    17869    0.047    0.000    0.936    0.000 engine_stack.py:801(result_transform)
+     9242    0.043    0.000    0.780    0.000 engine_stack.py:653(eval_define)
+    17869    0.250    0.000    0.729    0.000 engine_unify.py:386(unify_call_return)
+     9150    0.041    0.000    0.664    0.000 eval_nodes.py:91(results_to_actions)
+     7365    0.015    0.000    0.652    0.000 eval_nodes.py:397(new_result)
+     2098    0.019    0.000    0.568    0.000 eval_nodes.py:494(complete)
+    19161    0.018    0.000    0.518    0.000 eval_nodes.py:196(notifyResult)
+       22    0.007    0.000    0.311    0.014 choices.py:121(bernoulli_subset)
+   456489    0.108    0.000    0.308    0.000 {method 'get' of 'dict' objects}
+   132442    0.102    0.000    0.286    0.000 logic.py:147(is_ground)
+     3780    0.016    0.000    0.281    0.000 choices.py:114(bernoulli_member)
+129873/127656    0.116    0.000    0.279    0.000 logic.py:255(apply)
+    24656    0.038    0.000    0.264    0.000 eval_nodes.py:791(new_result)
+    15142    0.058    0.000    0.250    0.000 numbers.py:57(rational)
+   480411    0.200    0.000    0.234    0.000 logic.py:161(is_variable)
+   165191    0.085    0.000    0.223    0.000 engine_unify.py:279(substitute_simple)
+    14088    0.088    0.000    0.215    0.000 engine_stack.py:841(context_min_var)
+    44738    0.053    0.000    0.199    0.000 engine_stack.py:963(create_context)
+    18154    0.054    0.000    0.198    0.000 engine_builtin.py:604(check_mode)
+133825/111674    0.060    0.000    0.189    0.000 logic.py:762(__hash__)
+     3780    0.027    0.000    0.180    0.000 choices.py:96(bernoulli_draw)
+   257015    0.136    0.000    0.176    0.000 logic.py:598(is_ground)
+   144608    0.096    0.000    0.173    0.000 engine_stack.py:985(get_state)
+     1719    0.002    0.000    0.168    0.000 eval_nodes.py:529(flushBuffer)
+     1719    0.006    0.000    0.166    0.000 eval_nodes.py:61(collapse)
+     9242    0.006    0.000    0.162    0.000 engine_stack.py:1415(get)
+     7279    0.023    0.000    0.160    0.000 eval_nodes.py:530(func)
+   633196    0.123    0.000    0.158    0.000 {built-in method builtins.isinstance}
+    22600    0.082    0.000    0.158    0.000 fractions.py:203(__new__)
+    12374    0.034    0.000    0.156    0.000 engine_unify.py:245(substitute_call_args)
+     9242    0.019    0.000    0.155    0.000 engine_stack.py:1421(__getitem__)
+     1802    0.014    0.000    0.136    0.000 engine_stack.py:1384(__setitem__)
+    62607    0.062    0.000    0.136    0.000 engine_stack.py:1046(__init__)
+    23723    0.033    0.000    0.128    0.000 engine_unify.py:45(substitute_all)
+    62701    0.085    0.000    0.123    0.000 logic.py:621(variables)
+19461/10028    0.036    0.000    0.123    0.000 engine_unify.py:81(unify_value)
+     7218    0.008    0.000    0.118    0.000 engine_stack.py:886(result_transform)
+    21187    0.027    0.000    0.117    0.000 engine_stack.py:1068(__hash__)
+     7365    0.012    0.000    0.115    0.000 eval_nodes.py:28(__setitem__)
+27160/19977    0.054    0.000    0.108    0.000 engine_unify.py:141(unify_value_dc)
+   135499    0.064    0.000    0.099    0.000 logic.py:910(__hash__)
+   618461    0.097    0.000    0.097    0.000 {method 'popleft' of 'collections.deque' objects}
+     1381    0.045    0.000    0.097    0.000 logic.py:124(term2list)
+    41152    0.060    0.000    0.093    0.000 logic.py:189(__init__)
+    21680    0.032    0.000    0.091    0.000 engine_stack.py:1366(_reindex_vars)
+670504/666934    0.088    0.000    0.090    0.000 {built-in method builtins.len}
+    11053    0.032    0.000    0.088    0.000 engine_stack.py:1266(__getitem__)
+     9761    0.035    0.000    0.085    0.000 engine_stack.py:1293(__setitem__)
+
+
+         10086798 function calls (9951182 primitive calls) in 6.107 seconds
+
+   Ordered by: internal time
+   List reduced from 582 to 50 due to restriction <50>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    23819    0.699    0.000    1.066    0.000 logic.py:704(__eq__)
+    17869    0.250    0.000    0.729    0.000 engine_unify.py:386(unify_call_return)
+     60/6    0.215    0.004    6.039    1.006 engine_stack.py:313(execute)
+33938/12093    0.208    0.000    5.189    0.000 engine_stack.py:103(eval)
+   480411    0.200    0.000    0.234    0.000 logic.py:161(is_variable)
+   257015    0.136    0.000    0.176    0.000 logic.py:598(is_ground)
+   633196    0.123    0.000    0.158    0.000 {built-in method builtins.isinstance}
+129873/127656    0.116    0.000    0.279    0.000 logic.py:255(apply)
+   456489    0.108    0.000    0.308    0.000 {method 'get' of 'dict' objects}
+12368/7443    0.102    0.000    4.977    0.001 engine_stack.py:786(eval_call)
+   132442    0.102    0.000    0.286    0.000 logic.py:147(is_ground)
+   618461    0.097    0.000    0.097    0.000 {method 'popleft' of 'collections.deque' objects}
+   144608    0.096    0.000    0.173    0.000 engine_stack.py:985(get_state)
+670504/666934    0.088    0.000    0.090    0.000 {built-in method builtins.len}
+    14088    0.088    0.000    0.215    0.000 engine_stack.py:841(context_min_var)
+    62701    0.085    0.000    0.123    0.000 logic.py:621(variables)
+   165191    0.085    0.000    0.223    0.000 engine_unify.py:279(substitute_simple)
+   336211    0.084    0.000    0.084    0.000 {method 'extend' of 'collections.deque' objects}
+    22600    0.082    0.000    0.158    0.000 fractions.py:203(__new__)
+   718777    0.074    0.000    0.074    0.000 logic.py:205(functor)
+   476614    0.072    0.000    0.072    0.000 {built-in method builtins.id}
+   135499    0.064    0.000    0.099    0.000 logic.py:910(__hash__)
+    62607    0.062    0.000    0.136    0.000 engine_stack.py:1046(__init__)
+   309103    0.062    0.000    0.062    0.000 {method 'append' of 'list' objects}
+133825/111674    0.060    0.000    0.189    0.000 logic.py:762(__hash__)
+    41152    0.060    0.000    0.093    0.000 logic.py:189(__init__)
+    15142    0.058    0.000    0.250    0.000 numbers.py:57(rational)
+    18154    0.054    0.000    0.198    0.000 engine_builtin.py:604(check_mode)
+27160/19977    0.054    0.000    0.108    0.000 engine_unify.py:141(unify_value_dc)
+    13767    0.053    0.000    0.077    0.000 logic.py:523(with_args)
+    44738    0.053    0.000    0.199    0.000 engine_stack.py:963(create_context)
+   207150    0.051    0.000    0.051    0.000 {built-in method builtins.hasattr}
+    84435    0.049    0.000    0.049    0.000 engine_stack.py:995(__init__)
+215962/181254    0.047    0.000    0.084    0.000 {built-in method builtins.hash}
+    17869    0.047    0.000    0.936    0.000 engine_stack.py:801(result_transform)
+   455564    0.046    0.000    0.046    0.000 logic.py:586(is_var)
+     1381    0.045    0.000    0.097    0.000 logic.py:124(term2list)
+     7520    0.045    0.000    1.156    0.000 choices.py:14(_draw)
+     9242    0.043    0.000    0.780    0.000 engine_stack.py:653(eval_define)
+10230/5396    0.042    0.000    4.064    0.001 engine_stack.py:956(eval_default)
+     9150    0.041    0.000    0.664    0.000 eval_nodes.py:91(results_to_actions)
+    40098    0.039    0.000    0.054    0.000 engine_stack.py:1041(__hash__)
+    22274    0.038    0.000    0.065    0.000 formula.py:808(_add_compound)
+    24656    0.038    0.000    0.264    0.000 eval_nodes.py:791(new_result)
+     1063    0.036    0.000    1.743    0.002 choices.py:51(uniform_choice)
+19461/10028    0.036    0.000    0.123    0.000 engine_unify.py:81(unify_value)
+    26348    0.035    0.000    0.060    0.000 engine_unify.py:215(__getitem__)
+     9761    0.035    0.000    0.085    0.000 engine_stack.py:1293(__setitem__)
+    12374    0.034    0.000    0.156    0.000 engine_unify.py:245(substitute_call_args)
+    23723    0.033    0.000    0.128    0.000 engine_unify.py:45(substitute_all)
+
+

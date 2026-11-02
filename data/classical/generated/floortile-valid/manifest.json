@@ -1,0 +1,1615 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "de4170b0a98025a836c3a5e315065b502501b71228f9112acf3808fc0fc30cd8",
+  "generator": "classical/floortile",
+  "instances": [
+    {
+      "attempt_seeds": [
+        2087963619726998316
+      ],
+      "file": "valid-1.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2087963619726998316,
+      "semantic_sha256": "c8dd86c99c41fedf597c0e999aaf904c7421295a5677f487c75a27b108db8ac3",
+      "sha256": "e0eb137a019a399616788d40e9586912cae7811a2bd307277721c9f55de9cfac"
+    },
+    {
+      "attempt_seeds": [
+        16605619492549731063
+      ],
+      "file": "valid-2.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16605619492549731063,
+      "semantic_sha256": "d8a4ca573fadbb088536ba80d746b0e77099e97a101c1b443dc7010ce751f40a",
+      "sha256": "7ba8b7a6d20519cd88ece93f7d50c1c3acde2d59d93eb1f7cc3abb492b6a9243"
+    },
+    {
+      "attempt_seeds": [
+        3838990500378702882
+      ],
+      "file": "valid-3.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3838990500378702882,
+      "semantic_sha256": "1f31ea8abe73ad05e5131aa009a2160591a6d2674bfc9f88badc03125516266e",
+      "sha256": "0283d399ff43fa7f4edb6c420041a1e375d01aad0a5239c2d8d6104e79fe9bf1"
+    },
+    {
+      "attempt_seeds": [
+        15421023900231259844
+      ],
+      "file": "valid-4.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15421023900231259844,
+      "semantic_sha256": "80bb5e2f60defb11962772f690c8f123404a4f2a71472cd5e503694bbeed65da",
+      "sha256": "dac2730bd37e94ab298c658e7aa91bce37faff15b2d21d2ad35b68ecb2d9b225"
+    },
+    {
+      "attempt_seeds": [
+        5270557661396838845
+      ],
+      "file": "valid-5.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5270557661396838845,
+      "semantic_sha256": "c25567bb254119fb5c72a19eefeb0c1b0f6316880e104531f570309cfc3b36f4",
+      "sha256": "d87e057ced76413fb4cd7e112846aec7c84c1716bbee652b8bcea2c2ce1f1b8b"
+    },
+    {
+      "attempt_seeds": [
+        1153675613214725410
+      ],
+      "file": "valid-6.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1153675613214725410,
+      "semantic_sha256": "f06dff6158f0b2cec9f1a049a93164b8c3ba763d450ac4b18a93376cf5155d9c",
+      "sha256": "365e953b420ad60fda12a97e8305b0c9b0a159788b60fa3ae3dbbec00729e49d"
+    },
+    {
+      "attempt_seeds": [
+        2595216140447245998
+      ],
+      "file": "valid-7.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2595216140447245998,
+      "semantic_sha256": "4ac32e568c5beefa843209aa1d4e6387ba8e44a74a40e0612ffdfdfacb58f7f3",
+      "sha256": "bd1bcc000ab3a2cddb5504b698c57f5fb110417e4b6ca64f94dcc5440787da3c"
+    },
+    {
+      "attempt_seeds": [
+        7423559455884214065
+      ],
+      "file": "valid-8.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7423559455884214065,
+      "semantic_sha256": "618dc4b95bf4aa1e8e8241ac8107f1053c9cb0c39d5dc8205148aba3523b5966",
+      "sha256": "f7da732831a328618122733d8afecd353a5293811e92194f7c9930c07e27fb2d"
+    },
+    {
+      "attempt_seeds": [
+        12127456201902659456
+      ],
+      "file": "valid-9.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12127456201902659456,
+      "semantic_sha256": "a1cf9d50f86ebf9d6f597610525408816f7098f692dd424d0a57315bfae5bb3f",
+      "sha256": "710fb0ed74ec562b7259757567207c43a8975588b2965f4f0dd68628f312c44e"
+    },
+    {
+      "attempt_seeds": [
+        1504710448549100070
+      ],
+      "file": "valid-10.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1504710448549100070,
+      "semantic_sha256": "e4725e22ef3445ed7b91bf7ab558447dc18ae0798712d2e79d65933cf35ec44d",
+      "sha256": "820df9d63161d72db40be2c799730d9d1eac266147966e34a78f6ca241bc9a97"
+    },
+    {
+      "attempt_seeds": [
+        14805879755472999453
+      ],
+      "file": "valid-11.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14805879755472999453,
+      "semantic_sha256": "f435181acecfe713d18d648382b0444583fa7362e9b0ea5c5cb08388bba14e08",
+      "sha256": "854f8490283894904ca40775c44c02a0bc626b3f6f4f837228142f1e28bb0222"
+    },
+    {
+      "attempt_seeds": [
+        13832049566921918761
+      ],
+      "file": "valid-12.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13832049566921918761,
+      "semantic_sha256": "7e1ae98766634de93777985a7229bed18b32d692af5bdc20327cecf4603b4e85",
+      "sha256": "6dcd21ce4dda7367390019eecffa401a573c2b0a58e24af3a3d04e698b287ea9"
+    },
+    {
+      "attempt_seeds": [
+        1490527908680596184
+      ],
+      "file": "valid-13.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1490527908680596184,
+      "semantic_sha256": "abc8fda28f0c07e56211297eeaaded78ff36d19b49c072d60b201d4a6152cd96",
+      "sha256": "08f69f4ddea961ea44c34835edcdce4151c0a281357a3e0072319ffc504f59a3"
+    },
+    {
+      "attempt_seeds": [
+        13841721895020970009
+      ],
+      "file": "valid-14.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13841721895020970009,
+      "semantic_sha256": "bf4bbe70186e6a5b6dc7fee439f3bcee4970f87bd6fdd87adf2be4612c82ebe2",
+      "sha256": "32312a4a841b6c15ef174df3c5066d9346f45e44bd2881eccbcb4180eb39230e"
+    },
+    {
+      "attempt_seeds": [
+        462866213399969700
+      ],
+      "file": "valid-15.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 462866213399969700,
+      "semantic_sha256": "eebebada9a7155af81d7a8e7c655957e947e4203574de48515b7625e541c10c7",
+      "sha256": "44d040dbbaa6c22fcbafbe1d43597d22b3586593d9a58772b497769feaaf4130"
+    },
+    {
+      "attempt_seeds": [
+        4514143166024662456
+      ],
+      "file": "valid-16.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4514143166024662456,
+      "semantic_sha256": "3c2635783726cd768844eb593c0acb74053d79a01bc98867ab36c3fe4df622d9",
+      "sha256": "ab4822262e8d081b10136cb0acca8305d694caf86a064bc76888cd8fb0d35d3d"
+    },
+    {
+      "attempt_seeds": [
+        11323824696973902300
+      ],
+      "file": "valid-17.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11323824696973902300,
+      "semantic_sha256": "716141aaa794924a6fb48e4477a44991f48e0fd00679d214592e0519a49e542a",
+      "sha256": "f68f2d11a0e59f3d275e0d908cfa3d8a6cbd6616e5ad2975f6451d6fafad6dfe"
+    },
+    {
+      "attempt_seeds": [
+        14006753439605873808
+      ],
+      "file": "valid-18.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14006753439605873808,
+      "semantic_sha256": "acdcc6cddc0f384fb7f3cfb2e7f951d3e2d2750847481bfc332b527796a2123e",
+      "sha256": "86c71d3cd31659b6c6f0b9bf80bc36ec13a3fc836fd37ea8049b967122cbe0c1"
+    },
+    {
+      "attempt_seeds": [
+        593783680638264398
+      ],
+      "file": "valid-19.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 593783680638264398,
+      "semantic_sha256": "37ebcc2c6e1e7a42fc1b48966df8125d980017c0d8929cbb5cc194eb929ddfe5",
+      "sha256": "08a574f7189cf90ef3ed7e415e027487a089a18985d9e01580de9e4468e7ecdc"
+    },
+    {
+      "attempt_seeds": [
+        2793580036677132983
+      ],
+      "file": "valid-20.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2793580036677132983,
+      "semantic_sha256": "141c24c9b7f98196d2d23a28fc243714b06dbb264cd17b5046a462cee122351e",
+      "sha256": "29d3127f4a779ff2974a439aceacdbdd29aa8c5a4f9a8a3f430012f70042c7d3"
+    },
+    {
+      "attempt_seeds": [
+        12234374185319585253
+      ],
+      "file": "valid-21.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12234374185319585253,
+      "semantic_sha256": "c928484bd0da5f46ab8be09d50fd575d612284c82c05aeb4a1c843700e061d74",
+      "sha256": "763392280fc5679762e560bcc216a516dfd2c2886543336df2babb1d81ff0399"
+    },
+    {
+      "attempt_seeds": [
+        6480304558110293220
+      ],
+      "file": "valid-22.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6480304558110293220,
+      "semantic_sha256": "8b6e1595f835d76b924316c4ee0567de02bc871f528121087fca05b05cf566ed",
+      "sha256": "d3fa4b139a9432875a5349b1ee24b04f21a3d14fb8ee6121b429571cf2e33901"
+    },
+    {
+      "attempt_seeds": [
+        10101098054698241725
+      ],
+      "file": "valid-23.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10101098054698241725,
+      "semantic_sha256": "d1810321fa7225ea62885878fb0d582b7777a579052335e4f74a5fcb333eb16f",
+      "sha256": "1f29400988aae807b96b42b1e30b4cf778331a129427d6f8f5e9f414224650a1"
+    },
+    {
+      "attempt_seeds": [
+        9538373495451880386
+      ],
+      "file": "valid-24.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9538373495451880386,
+      "semantic_sha256": "13a249cdd5afea0341ad63aa1cbcee6c3b7e11be72abba6b7bbf9aad557ff557",
+      "sha256": "dda09a5677e350240985465a5389ccb9798284eddebbab1bafb02000b5bd5a0f"
+    },
+    {
+      "attempt_seeds": [
+        6342681275775553762
+      ],
+      "file": "valid-25.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6342681275775553762,
+      "semantic_sha256": "6dc90fb0e7983a4a2afce65901281f1e060f345b417750c0f066746dcfeee1b2",
+      "sha256": "826907b2aa79bb2b1dd662b20a4c297a7b3934835406f6988f71e44ecf870f23"
+    },
+    {
+      "attempt_seeds": [
+        4607035002257563826
+      ],
+      "file": "valid-26.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4607035002257563826,
+      "semantic_sha256": "e43d3ec40d53894192cb7b8da2a513c7f9cbcac5c2488bc43381189186417276",
+      "sha256": "7c101bedc001692ff02c3c95bc0b48d741398a40019b0dcdb244fb273b50a21e"
+    },
+    {
+      "attempt_seeds": [
+        10950564756331705998
+      ],
+      "file": "valid-27.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10950564756331705998,
+      "semantic_sha256": "d0fe95e9b3375171477f04c20341cae6b81ff1b4b6bdd19b7e607a2bb84a9bfe",
+      "sha256": "50de3952be404f5be4548fc5efaf21666da523850559be6defaaca0779831872"
+    },
+    {
+      "attempt_seeds": [
+        6327889085083412833
+      ],
+      "file": "valid-28.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6327889085083412833,
+      "semantic_sha256": "2b223250b276f6d69c383fad2b5efae6d025dd72ff49e9ccd0163427fd64bd2d",
+      "sha256": "6b5f0c114c88f76f0754f24cc766db95f2c66f658866764d66bcea2813acdf13"
+    },
+    {
+      "attempt_seeds": [
+        485430637738701524
+      ],
+      "file": "valid-29.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 485430637738701524,
+      "semantic_sha256": "3d986ba2efe1892510b862a1b21fedd3993b7f2fb23703c49b82748bba70a4e2",
+      "sha256": "c0dd144323df5e06ef88a258b4ea354ce639603accfbaaf1dae1d16b30d496bf"
+    },
+    {
+      "attempt_seeds": [
+        7367316965394504022
+      ],
+      "file": "valid-30.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7367316965394504022,
+      "semantic_sha256": "314a89c63a9ace3aef91b61b879c624059fb5f73b38267fe7972f449d2f0b223",
+      "sha256": "19e08b2886ac58721df15cc38097b9655724e9c0f4236a7e91870f691ec01bb6"
+    },
+    {
+      "attempt_seeds": [
+        6021065718942465859
+      ],
+      "file": "valid-31.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6021065718942465859,
+      "semantic_sha256": "a3e79c979dbd87e0cc743ac16a21a2403a6ce2dff7f5b115f53f56e23e1496eb",
+      "sha256": "e3636942e019032f2528f2ca09a0e6eeb05247996297b4bb2a5216bd2d18f21b"
+    },
+    {
+      "attempt_seeds": [
+        12662725650522500001
+      ],
+      "file": "valid-32.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12662725650522500001,
+      "semantic_sha256": "6cd4b0a205246acaf38a90330134131b148f419a5d7204bff3062111459e11fd",
+      "sha256": "21ca98d44d4afe97bdb210122f5391842ec65dd8af32eef00f927b67f0228583"
+    },
+    {
+      "attempt_seeds": [
+        15533461386207712045
+      ],
+      "file": "valid-33.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15533461386207712045,
+      "semantic_sha256": "51df67252dc0cb5548789a447f6d6147315afce91fb21832dc2c1029fe1a53f0",
+      "sha256": "5d2fb03036395a16f9d8a15937b0b8c82a26ca028095b03b37e87e76a1340cc2"
+    },
+    {
+      "attempt_seeds": [
+        7353984980681086533
+      ],
+      "file": "valid-34.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7353984980681086533,
+      "semantic_sha256": "0f1ef9f7a4f6bea79a191f80e96f2c777d90ea9d7450f8e7bba583e352e3f608",
+      "sha256": "82dad8d435b730135051cd4eee6441d92d4b74044769340f1bd872f20f4e03c5"
+    },
+    {
+      "attempt_seeds": [
+        10762265914694158825
+      ],
+      "file": "valid-35.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10762265914694158825,
+      "semantic_sha256": "258a16529ca46d2221f17b9dbfb45f13d38c21d79349232e915c55aaa1842ef8",
+      "sha256": "75668080f79eeba79d98720bcd298212cfbcbcb3fc10511fcc3022c564f2c7d3"
+    },
+    {
+      "attempt_seeds": [
+        7184010474212964634
+      ],
+      "file": "valid-36.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7184010474212964634,
+      "semantic_sha256": "1acf099036715999b29a8a5e8c5a61633afb52c8213497e89634966aa4596918",
+      "sha256": "e5804b835ade9550544c17e5255d1717767f2e7fdc4b92b25004e5cca8d75b52"
+    },
+    {
+      "attempt_seeds": [
+        8152062929000683228
+      ],
+      "file": "valid-37.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8152062929000683228,
+      "semantic_sha256": "0ad74cf7ec2b48c512babe5cad40a27ad12fccabf12a7c9a50ba41df5c21ad2c",
+      "sha256": "c9bfae7a24f62cf35344f96deedcfaead1685a81c5afa5b3c92e0f6433d5838b"
+    },
+    {
+      "attempt_seeds": [
+        10641768657128922795
+      ],
+      "file": "valid-38.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10641768657128922795,
+      "semantic_sha256": "008d98d1a6fcd2232e5dcfe163a12e6df2afb86a01d95e41459cd5f9339662ec",
+      "sha256": "5e1580d75a07fcddf50cc1271e4219bd66d2a42fe93af295beee7444332d0cfa"
+    },
+    {
+      "attempt_seeds": [
+        9079397096417529205
+      ],
+      "file": "valid-39.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9079397096417529205,
+      "semantic_sha256": "96599e5e12ec6c6359540f6eb0d230ba979f56cd8f1816216b78275a529cece7",
+      "sha256": "1b5182da485643c76cb330acab599b53fd1dd7b902c6d3b745e22dc85b2b4e80"
+    },
+    {
+      "attempt_seeds": [
+        17731642194876382084
+      ],
+      "file": "valid-40.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17731642194876382084,
+      "semantic_sha256": "cfd89a3374d5d90dca9141c1bac62fcda8c859ad607b360689139ae6378db82c",
+      "sha256": "48c339ba4cf070ca812cc1d58ac000f23ffd2914886e00a2cdbb44bccd967e9d"
+    },
+    {
+      "attempt_seeds": [
+        5212107416861057358
+      ],
+      "file": "valid-41.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5212107416861057358,
+      "semantic_sha256": "3a9a7a96d4ad8d8e4bed6c974694aadbd764f985e89761b1f767f18c4f317d71",
+      "sha256": "17a502c2b65f1108a32e8ce4a96e44553c36a51b82d639229460c089868c1532"
+    },
+    {
+      "attempt_seeds": [
+        9028667644123604849
+      ],
+      "file": "valid-42.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9028667644123604849,
+      "semantic_sha256": "34f550b8eef09d0f919cfbf800eee4fe1fc1c849088ebc20aa72258062699408",
+      "sha256": "333d7cef0fad26b7a819d186bd58f4985bfc7e0d1ac913f25e5f032366aa0f1a"
+    },
+    {
+      "attempt_seeds": [
+        16203444690802599643
+      ],
+      "file": "valid-43.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16203444690802599643,
+      "semantic_sha256": "f164418ceb1ae442149d9f0f924d2f0472a638a4e598b9e0b107e9d8f7a14b0e",
+      "sha256": "4ce39e1a66446aa3f19bfcfeaebe2fed539da551fe4e63e412e0692486a52c4e"
+    },
+    {
+      "attempt_seeds": [
+        3829531723741859164
+      ],
+      "file": "valid-44.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3829531723741859164,
+      "semantic_sha256": "f2b09b98c84bc8cc230cfadd79a794485c28aa08d99ffaf8e22bbcc977928b14",
+      "sha256": "86982676b9ce64a01719bb6e48b3e2ceee87ef3c2d91958dcc8d30631b272b10"
+    },
+    {
+      "attempt_seeds": [
+        15143741306650530545
+      ],
+      "file": "valid-45.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15143741306650530545,
+      "semantic_sha256": "a8fd38fd9d1be04873de12fac8b562d9b8ba9411e89422ff996fe1edfa07588b",
+      "sha256": "cfc4024ab0bedb1d785459b9f805e52c0f94b1a13153f4a77182fd358d86f118"
+    },
+    {
+      "attempt_seeds": [
+        11649681606029140325
+      ],
+      "file": "valid-46.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11649681606029140325,
+      "semantic_sha256": "bab39649fb285ca074fc7dc6ffb8f85073695bd31388e78fb57201d7a9d281b6",
+      "sha256": "27f0c5b74a842f2fd15d7a5f69589caf72f8a64e45d67bc8d35b3a34e613f2cb"
+    },
+    {
+      "attempt_seeds": [
+        13844650334158020120
+      ],
+      "file": "valid-47.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13844650334158020120,
+      "semantic_sha256": "abd291d4a77083e4ab23f2aed7fe4036bc1f5c701470758c9099322c2821da92",
+      "sha256": "0a1ba712dcd9eef6dfdaecd86f64c66d4a1c638f109786b99ab783ac2fe4a695"
+    },
+    {
+      "attempt_seeds": [
+        7647460123222599192
+      ],
+      "file": "valid-48.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7647460123222599192,
+      "semantic_sha256": "90c5a0eb31c9ae44531c02f955535168118812e39cd1cf47f5f0121e84a142aa",
+      "sha256": "629533dad8a4b475a30cf55755df00d6415b1fba54f194753a8fb682b87abb52"
+    },
+    {
+      "attempt_seeds": [
+        17694728765748997653
+      ],
+      "file": "valid-49.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17694728765748997653,
+      "semantic_sha256": "dfa75c4f335b9dffb898b3cfe6dbce8d2111d9d27869ce0efe1d3d3e2a84ca82",
+      "sha256": "b8ec2872a688a975e67e3a0a7cf8241e264e8fe8e3940c54b65d966f8cf33e79"
+    },
+    {
+      "attempt_seeds": [
+        5055228012419330650
+      ],
+      "file": "valid-50.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5055228012419330650,
+      "semantic_sha256": "0aab792d2b8decca955b8ed41ec132fcf1c86480aa6f6e5e2dd08ea92aa70d36",
+      "sha256": "9d1f1e897d4f9a3bc1ccc1856d8c297bfc8f7aaf8ad5aa439f1d46d2a2880bd6"
+    },
+    {
+      "attempt_seeds": [
+        12119200815180203425
+      ],
+      "file": "valid-51.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12119200815180203425,
+      "semantic_sha256": "b7859c42971bf499d9ed4e8244efcd1ce0b42ddfb0da7b9820f51a903d6208b6",
+      "sha256": "8e7efffc2f3484cff3348280f1fd4a39d7576a10423a46844221c30362fdabc9"
+    },
+    {
+      "attempt_seeds": [
+        17774974653551066530
+      ],
+      "file": "valid-52.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17774974653551066530,
+      "semantic_sha256": "8d70e8e824b2ff10ebbbfcaba20773480c9b5e78071fcf717765ea6bc8113df0",
+      "sha256": "5c3fdbd90397f1343929991c926e559e1212bf9cb6439282710a11664caeb59e"
+    },
+    {
+      "attempt_seeds": [
+        17826718771003503147
+      ],
+      "file": "valid-53.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17826718771003503147,
+      "semantic_sha256": "5c80d5b999b9f885dbe9225c29af1390fa4287d4ad1b6d72e2861257a4ba224b",
+      "sha256": "62e7e9c698bca2ce04b1c23a6880e5ca6628073dc117a026b6851e84e6a7bd4d"
+    },
+    {
+      "attempt_seeds": [
+        6379769008246808150
+      ],
+      "file": "valid-54.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6379769008246808150,
+      "semantic_sha256": "a59b81fba2dc9be914ba055067982b034bb1f52acb73e6178ca8c63fdcf41372",
+      "sha256": "700e8b20538ec51d7763f8c6653814567148d6245700e5bb75808352fbe70799"
+    },
+    {
+      "attempt_seeds": [
+        5725496829604520355
+      ],
+      "file": "valid-55.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5725496829604520355,
+      "semantic_sha256": "ec131d103a3ff997c142e3d4974e07617985704fb568a30c2531b16dd89117ce",
+      "sha256": "9e430868be3f0e34824abd82f224d73d57c0abba769b3bca817b024079d6f424"
+    },
+    {
+      "attempt_seeds": [
+        8493730617743726605
+      ],
+      "file": "valid-56.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8493730617743726605,
+      "semantic_sha256": "5240c6e2e31cad1dfb18f93279ca02aea7fe12d079e18046bfb917b9aa1d8e9d",
+      "sha256": "346ed44560366893365403b248019621285a447a8aa9d02d9699e7d2a08594af"
+    },
+    {
+      "attempt_seeds": [
+        4875058931709827028
+      ],
+      "file": "valid-57.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4875058931709827028,
+      "semantic_sha256": "d458a1880a183932265bd96a836134d273d24e1c66a2bd986346c26d129d514b",
+      "sha256": "c5a66295e8383a194f39f28201d1d2281cfc75342579b8d6abd54ada9bde990c"
+    },
+    {
+      "attempt_seeds": [
+        15207727247895136186
+      ],
+      "file": "valid-58.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15207727247895136186,
+      "semantic_sha256": "d1d6884f51f46de4850f6fb294e100601053c71d0e68d22c5597ee573bc9d197",
+      "sha256": "fb430d68562d3788fa37e8bb13df4a0c6ca215a0eecdeec0ab981f855c47ba43"
+    },
+    {
+      "attempt_seeds": [
+        7665551978532647589
+      ],
+      "file": "valid-59.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7665551978532647589,
+      "semantic_sha256": "ba3bf9e5b43695d6a4348bc681b071b94e012623f0e353da3610faf5095995a0",
+      "sha256": "8f56e8c7c7d0d5a30adf9bcbfa920f86bbdee1d1dae0438c7a6cd7e573055a62"
+    },
+    {
+      "attempt_seeds": [
+        8289553607429713877
+      ],
+      "file": "valid-60.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8289553607429713877,
+      "semantic_sha256": "08bb88d6a9049c7709ef1233f6360b050093294e1f7d6b2deb8e0c91fdd85992",
+      "sha256": "b554eb6fd176f56244c9b2bdb6cab58a29eca7d3a227b56a606be421c56d3c3f"
+    },
+    {
+      "attempt_seeds": [
+        6619321707512194247
+      ],
+      "file": "valid-61.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6619321707512194247,
+      "semantic_sha256": "391b2a3d3bab2274800b01d1357e27755f51af735798cfe59d26b3dc49995339",
+      "sha256": "0c046f3ccdc8fe685b9028cf6b8b75eed960a39b780119bb8b03393dfaf40233"
+    },
+    {
+      "attempt_seeds": [
+        359038110036071855
+      ],
+      "file": "valid-62.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 359038110036071855,
+      "semantic_sha256": "adc0f1de6ec85f45bbfbb73ed2d76b490ebbc92c12b5e6165fb5a0e67ad0ec07",
+      "sha256": "999d11f3cea1f1e03e3f0cdb81399953556bfc683655b951b985f9b0885a694b"
+    },
+    {
+      "attempt_seeds": [
+        17695883974195197362
+      ],
+      "file": "valid-63.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17695883974195197362,
+      "semantic_sha256": "e4ac867ea1da07bfef3b7668aa82b0809829e855c326df919c88ddb9bbd19cb3",
+      "sha256": "2ba48a89e4f1cf33d698217e4ffbcd14bba1fa751dbac9f8a0a1ffda4cee1c0d"
+    },
+    {
+      "attempt_seeds": [
+        16550357180647203571
+      ],
+      "file": "valid-64.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16550357180647203571,
+      "semantic_sha256": "0224a8f65ac7c63e728ae32ff6648057ad40d71ce5f2ce6117f8d49d675efacb",
+      "sha256": "e14ab8eb747ee30d9c602c8706df648ab728bafd8c4235257b388b196bced1fe"
+    },
+    {
+      "attempt_seeds": [
+        8834625019180385646
+      ],
+      "file": "valid-65.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8834625019180385646,
+      "semantic_sha256": "3fc0a7ad5f6ccdaab0ba087a3e066bf9a11941f4a4d38f850745d8de517a950d",
+      "sha256": "b332be95717191c62ef526b02791315eeab86742f1577b99f53abc50c48117aa"
+    },
+    {
+      "attempt_seeds": [
+        1628635263937317572
+      ],
+      "file": "valid-66.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1628635263937317572,
+      "semantic_sha256": "fefb5ad8adb63771c0268a05bda7ed994ebaa5dc286e791e293feb790a019da8",
+      "sha256": "54cc86b8a463f7c0507585ffc3a33d706a7b727d40e58b70d23bca01904210ad"
+    },
+    {
+      "attempt_seeds": [
+        3866460232556159699
+      ],
+      "file": "valid-67.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3866460232556159699,
+      "semantic_sha256": "a61afba1294556cdc8bb69bdceac6b7870afdb72d367ec8fdd3b66e1be00f850",
+      "sha256": "6c6e5b9ebc0ffcad9f245522d7c3509bede170b2310d7e87646a30bafd0fe284"
+    },
+    {
+      "attempt_seeds": [
+        6383401167171206141
+      ],
+      "file": "valid-68.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6383401167171206141,
+      "semantic_sha256": "c4cc980ee955d0b860af8176e0a35076feae4f11456243fe4ab063ebb657c32e",
+      "sha256": "4bea1feccbdf5632b0fe95909177e04f84ca9e65cea27e79faf2d0b5a26946ed"
+    },
+    {
+      "attempt_seeds": [
+        7358273689086949848
+      ],
+      "file": "valid-69.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7358273689086949848,
+      "semantic_sha256": "f1b7e1cffea3c78c344741947a16410f4a571ce17a3786d84b52a179c389bf7b",
+      "sha256": "78d735f85ec91fffc2e6cf46742846fef6272ff7fadbabc44680c3e2b411806b"
+    },
+    {
+      "attempt_seeds": [
+        11462654491321342922
+      ],
+      "file": "valid-70.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11462654491321342922,
+      "semantic_sha256": "5ac0e2942f405e9ec7d09fa163cb894048d41e1dd65a2b6298e96441c480333b",
+      "sha256": "e730af2704cdedd0dcd81ea01551f4d1108a87227e94ccff1dbd1a2ff44e3c60"
+    },
+    {
+      "attempt_seeds": [
+        6082491648807485473
+      ],
+      "file": "valid-71.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6082491648807485473,
+      "semantic_sha256": "f97c5f8e9d798425fbb9cf41f64ace84cd654e25f38d08d20d8402ce8bb45137",
+      "sha256": "6eba3320d84ec8bddedfc49840f7c2556683220a14782e1f5bc708212dc9c5f2"
+    },
+    {
+      "attempt_seeds": [
+        16832038593726698689
+      ],
+      "file": "valid-72.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16832038593726698689,
+      "semantic_sha256": "ef94d44aa16d4e2c4c9e6acef80e241499e2b885ac016747b07567bf03b50ae9",
+      "sha256": "da21a1071d6e2b89b880cdb42ed975cceddfd9cb8763369fe906a084e8528e6a"
+    },
+    {
+      "attempt_seeds": [
+        11439363731270675424
+      ],
+      "file": "valid-73.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11439363731270675424,
+      "semantic_sha256": "d7877445a15aa686f2027a284c25db86f3f750dab22524efbaa5034927a1d80f",
+      "sha256": "031801ee5af08213a7570f910b936aa701c5fad551751b0bb5da646406f1f026"
+    },
+    {
+      "attempt_seeds": [
+        3446171681447539563
+      ],
+      "file": "valid-74.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3446171681447539563,
+      "semantic_sha256": "21f8b2a5a29106bbdca59ada21fcc71605909bb946c18c9050f4815338ec747a",
+      "sha256": "f77b4126c978aeb465c96d3c7e408babe770f1985deddeee689b3f771d3ed302"
+    },
+    {
+      "attempt_seeds": [
+        14416599504026557555
+      ],
+      "file": "valid-75.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14416599504026557555,
+      "semantic_sha256": "ed1682a4266f051fd413ac4328e73030a955b77051b357b88cd0330bf10e9359",
+      "sha256": "ca356d34433303baaae955e2d10b23e20e1568d47daadb56fda9252571b4f804"
+    },
+    {
+      "attempt_seeds": [
+        11324645064243703102
+      ],
+      "file": "valid-76.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11324645064243703102,
+      "semantic_sha256": "204f3101a320d4dda34825e94348d1b4c3c1895da15c682eb05939b258923336",
+      "sha256": "568ff3e775b90205a59cda063b8c8a02b0f1b1fa456e2f9cc7e17a47fd3c58c9"
+    },
+    {
+      "attempt_seeds": [
+        2067690059904202152
+      ],
+      "file": "valid-77.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2067690059904202152,
+      "semantic_sha256": "6e9104264d2c5a0e7a19ce8523de54439c617ff94c36f6c2e2b91746228a4006",
+      "sha256": "dd786dda03cf7de4cf6e7674fb1b5e0f17cbdc02621948ab2dd689155bec2719"
+    },
+    {
+      "attempt_seeds": [
+        12504063833166708659
+      ],
+      "file": "valid-78.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12504063833166708659,
+      "semantic_sha256": "4299062c711afb4ae200ea2a1e49f45ba70309c36c00b8df420ef8976bbf47b8",
+      "sha256": "e013761e5f1e34a32028a526cad125ac7aac79879a3a3761165eb583361cf1ac"
+    },
+    {
+      "attempt_seeds": [
+        13598586707513157146
+      ],
+      "file": "valid-79.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13598586707513157146,
+      "semantic_sha256": "0c6074116907ebd85a5d44ca17fd19cfdf96d65ef894bce23579f6e0f6424742",
+      "sha256": "cca9f3b29e2d096e37bfe8220cc284f1c6e3d4ce7cc1c5aadf91fec691190033"
+    },
+    {
+      "attempt_seeds": [
+        991442401554034652
+      ],
+      "file": "valid-80.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 991442401554034652,
+      "semantic_sha256": "580ac5de3c6cd06a9dfc8c402dea8623b91af98e5a02faef3c18fe06d11d49da",
+      "sha256": "1b5efbfd3a16bc46272c7c975129f169862e363d409d4323d4c8a4a6363d261d"
+    },
+    {
+      "attempt_seeds": [
+        9718139778852032457
+      ],
+      "file": "valid-81.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9718139778852032457,
+      "semantic_sha256": "e59b76c57ca47c6af1fdd596f5c859198ed7fb0d3bee93354eb0d419aae69a5b",
+      "sha256": "46b6d9a47acfe6bcf502b87638f3840df55ee660ee3af4b97a425f937c328189"
+    },
+    {
+      "attempt_seeds": [
+        7353715560172167803
+      ],
+      "file": "valid-82.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7353715560172167803,
+      "semantic_sha256": "e21d3ecd398d177ca0f5e6372724e934dfc9e166c1f9d8d6b412041a52230ec0",
+      "sha256": "a83554b5b145ab89c32c966bb1c82b0031fcf9a0a78ed97392f630d33df4b7dd"
+    },
+    {
+      "attempt_seeds": [
+        4303286478648478228
+      ],
+      "file": "valid-83.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4303286478648478228,
+      "semantic_sha256": "8b052f1d26ab7bcaa15a85bf3d0698b42d469b2489be0d80683bfdd22bb74c8e",
+      "sha256": "9e64e65e8b48948a20bee17cb49b0fbece59bc943c03902d589ae6677349bd4b"
+    },
+    {
+      "attempt_seeds": [
+        12613003304790354414
+      ],
+      "file": "valid-84.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12613003304790354414,
+      "semantic_sha256": "3c4a0eb8a90e067851888c1bdc1bb635aa17a9cad1a7130a2a38cf8416a0ab40",
+      "sha256": "876f75b2e6813759b88f186f78765fea4f4646d1a56703839c6289a9578ce91b"
+    },
+    {
+      "attempt_seeds": [
+        2163888687730091434
+      ],
+      "file": "valid-85.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2163888687730091434,
+      "semantic_sha256": "f42b43d3468e9dcf09eec6f6eb086aac298ca8275d7f15d6a9e1b337c35b443b",
+      "sha256": "1726e05db26f7f9b17f0832d7778c1dd3c04a6cc17511dcbc78096b0290ebba0"
+    },
+    {
+      "attempt_seeds": [
+        7355066655882440452
+      ],
+      "file": "valid-86.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7355066655882440452,
+      "semantic_sha256": "7fc9baacc5656fe42624c75fa7f8ebffcfaf276484cecd4b6e877056e850756a",
+      "sha256": "ea2887ff5af4926171d61383781f986af2d6fa4f3c168f773f59c2bfa4b382aa"
+    },
+    {
+      "attempt_seeds": [
+        7634618363657238315
+      ],
+      "file": "valid-87.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7634618363657238315,
+      "semantic_sha256": "91d9adfb89bf8976d4670ed93e66bd1c765f754293f3ca275744b3af4e7cdf85",
+      "sha256": "a2bd3a910b205b6ac981b58e0b3c3c23c62a8aa9a064a68ab79dd0dce9706695"
+    },
+    {
+      "attempt_seeds": [
+        11327391574675050456
+      ],
+      "file": "valid-88.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11327391574675050456,
+      "semantic_sha256": "c1c84e2bffd9bd90274c10dc81506cf7356c3845c6d8926bbe298adb2da87fd1",
+      "sha256": "8e3c69584f02551593895889d23691c96722623d4dee27825480a4a1595629fe"
+    },
+    {
+      "attempt_seeds": [
+        4001826083400624475
+      ],
+      "file": "valid-89.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4001826083400624475,
+      "semantic_sha256": "34bdcd44e14d6013373947299d0a06f8250d0b50dd200c64b90070d92b5bfa0d",
+      "sha256": "ad3d1f839fbce928a126955ec14d378afcd2483bee18d4a3cee529d8d8389fbd"
+    },
+    {
+      "attempt_seeds": [
+        3496711980663498838
+      ],
+      "file": "valid-90.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3496711980663498838,
+      "semantic_sha256": "60225efa681185d3e4c8ffd0be1ffeb5646a59b450d4bca8c5da0fe6f6b0abc6",
+      "sha256": "dfc61dddf13977e99b916b687d17014bd9209397a4ec76c531da8b40d7d7188c"
+    },
+    {
+      "attempt_seeds": [
+        17029735043074470169
+      ],
+      "file": "valid-91.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17029735043074470169,
+      "semantic_sha256": "f4d773f30965605cac4e54f12080c1b91efbea69a2849523119794c0548bb216",
+      "sha256": "0508efb32b3ef07f42e854ac0e418ba4e0d644c3d670d4287f8bbe658388f820"
+    },
+    {
+      "attempt_seeds": [
+        13010057307215232840
+      ],
+      "file": "valid-92.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13010057307215232840,
+      "semantic_sha256": "6ed379ddb1d918e6b7a230e1a481bd1da4a2e5bf08529903ecfa8305290dad52",
+      "sha256": "1606ad277a2ebdde7b7f057f7cee3924f272402f92e76367214280a2dfe12dcf"
+    },
+    {
+      "attempt_seeds": [
+        17076590527085364505
+      ],
+      "file": "valid-93.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17076590527085364505,
+      "semantic_sha256": "a455fbb4393b2fe9bfe0aef9628a2366fbf5e64eaef262e178209693d2c04df9",
+      "sha256": "f264361904e4e83209bdaef9cbd8c0bd0fda13728215afc7fe622e61e2fd79fa"
+    },
+    {
+      "attempt_seeds": [
+        1860332821657043645
+      ],
+      "file": "valid-94.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1860332821657043645,
+      "semantic_sha256": "9a952b8818df439b5a79db85076595b587c93c8e6db3d9a7a66004c8474ad126",
+      "sha256": "0d29ec920906470bf5cb3e4efc6fa2a6a649ce4746911cb8ad8d33aa9ec53c65"
+    },
+    {
+      "attempt_seeds": [
+        5308879872792815782
+      ],
+      "file": "valid-95.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5308879872792815782,
+      "semantic_sha256": "b832df2efd8d87624270bcb91c89c6bc41b87f320c3220e5ddade18a4c831379",
+      "sha256": "59dfff0ab3deeb6febe2bd749568fa81634ce4534a57031f126839d22412634a"
+    },
+    {
+      "attempt_seeds": [
+        1278943752993258674
+      ],
+      "file": "valid-96.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1278943752993258674,
+      "semantic_sha256": "1b00afea0009d5eb9b1a37884e89d5d105e814b681ca0896a966e24e052b6ebd",
+      "sha256": "3e9cecbf36d5fc84dbd4435689f1bea3b3c490907f6760c23bf4355135e754a1"
+    },
+    {
+      "attempt_seeds": [
+        5091882134794998056
+      ],
+      "file": "valid-97.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5091882134794998056,
+      "semantic_sha256": "b43069f1acdff8cf72c6e9b4d7d4e1139d1e61d46213a8a38a63bd50f7e14f59",
+      "sha256": "b7d3643a6db25d9d4b1ba9b0a999396943e3c6fd2de0241bb6bb68ef0c473624"
+    },
+    {
+      "attempt_seeds": [
+        15743998048840640506
+      ],
+      "file": "valid-98.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 2,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15743998048840640506,
+      "semantic_sha256": "e31224e427f989079b01b833c7318ffc9cbd613bef127098bf3cb7515aed8fac",
+      "sha256": "49a43dcfea42d359ab1fa74c2673b5db2fd017becca14863b72a7724feb607bb"
+    },
+    {
+      "attempt_seeds": [
+        1674397287881282073
+      ],
+      "file": "valid-99.pddl",
+      "parameters": {
+        "num_columns": 7,
+        "num_robots": 3,
+        "num_rows": 5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1674397287881282073,
+      "semantic_sha256": "2f07435fac5d788b68997f590a7e01d77640f63cf0d10b027dc8926ca1bf7429",
+      "sha256": "5c363cc6758df782fb79df56bb9b986d1fe86b49c64301990c35ec6cef6e861b"
+    },
+    {
+      "attempt_seeds": [
+        5432468843562290749
+      ],
+      "file": "valid-100.pddl",
+      "parameters": {
+        "num_columns": 6,
+        "num_robots": 3,
+        "num_rows": 6
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5432468843562290749,
+      "semantic_sha256": "c117668e2f34c75a589ef309f892721acad066d98bb3ce63421c77a0766d6c92",
+      "sha256": "0abc9557875206c0868a3a137287fd92569ef353267c9d5ae7b80305be1d7276"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "valid",
+  "valid_configurations": 8
+}

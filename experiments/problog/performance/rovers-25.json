@@ -1,0 +1,102 @@
+{
+  "recorded_at": "2026-09-16T13:54:24.004432+00:00",
+  "python": "3.13.2 (main, Mar 17 2025, 21:02:54) [Clang 20.1.0 ]",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "problog_version": "2.3.0",
+  "source_sha256": {
+    "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "cd023207f9af712e2936bcaad4cc0df0f6d251f30be3f4cb7d99a20060f88080",
+    "src/pypddl_datasets/generators/probabilistic.py": "72dc9a1fdba7de22f65d4ed63bbf10b4241b3e9a8055b0ccc25162bf900cb1ab",
+    "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+    "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+    "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+    "src/pypddl_datasets/generators/classical/ferry/generator.py": "4cbdc34762f7673b81b5ffc5cce93297125c6a9fc8357353e6c5e0791dc3319e",
+    "src/pypddl_datasets/generators/classical/delivery/generator.py": "cff3b497748d05ac83a563d41026588708df9c93afa3de5558e0e4f863a45800",
+    "src/pypddl_datasets/generators/classical/rovers/generator.py": "ed03398b5bd96fac9cf5869a97db1f7794e2a8d83efa01fc2c32e1fe39a82120",
+    "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+    "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+    "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+    "src/pypddl_datasets/generators/_problog/engine.py": "bc097ad40a3cf414af5f5bbea5e42d9e5b02692b4691e05e081ac1c90363ee99",
+    "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+  },
+  "samples_requested": 3,
+  "timeout_seconds": 240.0,
+  "memory_limit_mib": 2048,
+  "cases": [
+    {
+      "name": "rovers-downward-medium",
+      "domain": "rovers",
+      "parameters": {
+        "num_rovers": 10,
+        "num_waypoints": 25,
+        "num_objectives": 6,
+        "num_cameras": 10,
+        "num_goals": 10
+      },
+      "source": "data/classical/downward-benchmarks/rovers/p25.pddl",
+      "wall_seconds": 150.28809169899978,
+      "source_sha256": {
+        "/home/dominik/projects/code/planning-and-learning/planning-benchmarks/experiments/problog/benchmark.py": "cd023207f9af712e2936bcaad4cc0df0f6d251f30be3f4cb7d99a20060f88080",
+        "src/pypddl_datasets/generators/probabilistic.py": "72dc9a1fdba7de22f65d4ed63bbf10b4241b3e9a8055b0ccc25162bf900cb1ab",
+        "src/pypddl_datasets/generators/classical/rovers/distribution.pl": "20e5fe4ef5ea192d796fc32ac87dc046d9de996474d82a6d59f3ba3ecd9949cf",
+        "src/pypddl_datasets/generators/classical/ferry/distribution.pl": "429908545c9eeaa3a08d487269b327c6c60d9a584a47094a414ebe92a56d73d4",
+        "src/pypddl_datasets/generators/classical/delivery/distribution.pl": "507fadb8f225c1b0eef523aeac8bad77e85a112676ed8f8e4f81ff753213950c",
+        "src/pypddl_datasets/generators/classical/ferry/generator.py": "4cbdc34762f7673b81b5ffc5cce93297125c6a9fc8357353e6c5e0791dc3319e",
+        "src/pypddl_datasets/generators/classical/delivery/generator.py": "cff3b497748d05ac83a563d41026588708df9c93afa3de5558e0e4f863a45800",
+        "src/pypddl_datasets/generators/classical/rovers/generator.py": "ed03398b5bd96fac9cf5869a97db1f7794e2a8d83efa01fc2c32e1fe39a82120",
+        "src/pypddl_datasets/generators/_problog/__init__.py": "af768bebfeacf11ff565ee62415314b8886bc17074b862b01f3d0e5d615435fc",
+        "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+        "src/pypddl_datasets/generators/_problog/output.py": "352f5f92862ca9f5cb67f441a431ba1eb573de3a5990e0f20703ee0bb4f0cc47",
+        "src/pypddl_datasets/generators/_problog/engine.py": "bc097ad40a3cf414af5f5bbea5e42d9e5b02692b4691e05e081ac1c90363ee99",
+        "src/pypddl_datasets/generators/_problog/library.pl": "a81788724269163a80c1bfbb76403defa3b1af67c619e24de9e8371994632275"
+      },
+      "sources_changed_during_measurement": false,
+      "status": "completed",
+      "exit_code": 0,
+      "peak_rss_mib": 178.23046875,
+      "events": [
+        {
+          "event": "ready",
+          "setup_seconds": 0.061697338999692874
+        },
+        {
+          "event": "sample",
+          "seed": 0,
+          "status": "success",
+          "objects": 68,
+          "initial": 1986,
+          "goals": 22,
+          "pddl_bytes": 89581,
+          "sha256": "dc22a322376272b2397e981bb161de0ce9b2510b2bcb4e92eb313aa25f860dad",
+          "seconds": 51.782091715000206,
+          "peak_rss_mib": 178.08984375
+        },
+        {
+          "event": "sample",
+          "seed": 1,
+          "status": "success",
+          "objects": 69,
+          "initial": 1948,
+          "goals": 23,
+          "pddl_bytes": 87662,
+          "sha256": "94b23b92c421e0212e23c31a295ef73d2141f3adf59b385926345f2db8aed6a2",
+          "seconds": 50.226391412999874,
+          "peak_rss_mib": 178.08984375
+        },
+        {
+          "event": "sample",
+          "seed": 2,
+          "status": "success",
+          "objects": 66,
+          "initial": 1974,
+          "goals": 21,
+          "pddl_bytes": 89031,
+          "sha256": "a69ffceaaed7dd6c19016fc262193a23efe49754f1a764d4d57d3bb122ff403c",
+          "seconds": 47.46815237800001,
+          "peak_rss_mib": 178.08984375
+        }
+      ],
+      "stderr": ""
+    }
+  ]
+}

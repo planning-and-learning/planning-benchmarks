@@ -1,0 +1,1815 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "1e53d7715105db947a91bdaf55c0027bccc3d037f3771cf9b5422b1fd6c58715",
+  "generator": "classical/logistics",
+  "instances": [
+    {
+      "attempt_seeds": [
+        7876960863770278868
+      ],
+      "file": "test-1.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7876960863770278868,
+      "semantic_sha256": "7bb0b871ff769febe6416097763afdbab44f1736a761def985ea95df486f1185",
+      "sha256": "7601895cb68dbe5c6daf14a4db9293e90c2222698b7da608bd37ba7de4c362a7"
+    },
+    {
+      "attempt_seeds": [
+        16300621416760776171
+      ],
+      "file": "test-2.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16300621416760776171,
+      "semantic_sha256": "538925f8b4396660a4803a70547cf670e316f90d39dd06c7b015d3e43541d2bd",
+      "sha256": "936f03edef342973ee037134348778ae9a00cafb30ff97008a381d36f3082f55"
+    },
+    {
+      "attempt_seeds": [
+        15779602934314813226
+      ],
+      "file": "test-3.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15779602934314813226,
+      "semantic_sha256": "c5c5d8dfb7cb3ab52d5a899aa726ed61eba546ddd1eb299cba8718b358459698",
+      "sha256": "07777cefde0270a8631d4b7b464e158a68a63ed126af363553b575d564b79217"
+    },
+    {
+      "attempt_seeds": [
+        9786313344124981275
+      ],
+      "file": "test-4.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9786313344124981275,
+      "semantic_sha256": "b637c5f8a0ff5253ac6cc5cce1b71aa0844b227456e7f0503a54950cf53b9913",
+      "sha256": "d9cd8737c1f832bec6d3daeffc8b35bea748633fe2705f98d04fa47126356411"
+    },
+    {
+      "attempt_seeds": [
+        14659113478805666558
+      ],
+      "file": "test-5.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14659113478805666558,
+      "semantic_sha256": "726ddef185638e48ac3ff39268467a2da4e531a27fd054197c05cef8d70c7997",
+      "sha256": "8395b3cfd2ae8d2553fde80592381b3581d76995a7a8c67c9ba97804d5a29f41"
+    },
+    {
+      "attempt_seeds": [
+        9967422716545410005
+      ],
+      "file": "test-6.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9967422716545410005,
+      "semantic_sha256": "628e5a1b4ead0aee9b3176cfaf11ef015493efa74948e53e71e5d8e5e2e969bd",
+      "sha256": "66d6b29c3cff4277b253e9cac70c295d7e3b8f59d8f89c07ea64f9a7fb715aff"
+    },
+    {
+      "attempt_seeds": [
+        14274363547281161607
+      ],
+      "file": "test-7.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14274363547281161607,
+      "semantic_sha256": "b441d3a6ebc606140e7e5077d05e3a71b48d5a524f7e6bafce98a70c6385aa30",
+      "sha256": "e7c78509af3f2e75d98b7d9957711d444cf91b5c2ab5e0dffc53f88339936fa8"
+    },
+    {
+      "attempt_seeds": [
+        2325449152768412356
+      ],
+      "file": "test-8.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2325449152768412356,
+      "semantic_sha256": "dc0db5fb0b65144a2c949b81102bae32717f2eafb5a5034ae1af175f8222919c",
+      "sha256": "d5d4ef28512520ece43e38bdacd6de83b5a923f41ca104106a18226212dbc024"
+    },
+    {
+      "attempt_seeds": [
+        8978526479876066503
+      ],
+      "file": "test-9.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8978526479876066503,
+      "semantic_sha256": "ddcf28d6628fe5fcd5dc152d5c0d81457a86df64d679aadecc76cf6d72fe4415",
+      "sha256": "aec02f525f55442ed83e3a6e9eeaf128dfaae91621d17fdecfd49fcc650e0287"
+    },
+    {
+      "attempt_seeds": [
+        11581794897361699888
+      ],
+      "file": "test-10.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11581794897361699888,
+      "semantic_sha256": "aaf7bc8bdb130c2097a4b371260631707331f1d10c58366b1f09a72f8aa05d11",
+      "sha256": "f714733b81963ede0291e6448b082b4ffeb49e889ab8c92feef95224996f6d3a"
+    },
+    {
+      "attempt_seeds": [
+        15988224370219183098
+      ],
+      "file": "test-11.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15988224370219183098,
+      "semantic_sha256": "b0f028fa4b1cf11cd5e3f2d2049c61fd6c42bbcbdcae8e4b7dc65009b2c4b749",
+      "sha256": "0f14ccfa04e6ebfdf69ca331fdf87a90eea06b8248e1ba4e1ae5ed724b84d6ec"
+    },
+    {
+      "attempt_seeds": [
+        5856760391795696000
+      ],
+      "file": "test-12.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5856760391795696000,
+      "semantic_sha256": "e85421124007d10c09afce163f2dd85ff9a8fe0174a6b497393460462a80acc0",
+      "sha256": "72433ad488ffcc57fd85c23149d8f86e787c37fe420a15da65a72116636e308b"
+    },
+    {
+      "attempt_seeds": [
+        16826605049774005605
+      ],
+      "file": "test-13.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16826605049774005605,
+      "semantic_sha256": "b564f01dea756572955662c9b991f1679d9dc2ade524858229e75663e5fd0e69",
+      "sha256": "ec33c605077d1a644a34fcc03b5e9250962b26c137d654cedf2cb2c3237e751d"
+    },
+    {
+      "attempt_seeds": [
+        4613101637095485505
+      ],
+      "file": "test-14.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4613101637095485505,
+      "semantic_sha256": "1e34b65caa5953e9b5b1490ccc53902070f6ac267e03da5da0b5a7a2511e7f63",
+      "sha256": "91ef194b59cc5102510767f92e9ef8ebdd1ac5ef6cf26f37d2de5cd210927df9"
+    },
+    {
+      "attempt_seeds": [
+        11289441920601305941
+      ],
+      "file": "test-15.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11289441920601305941,
+      "semantic_sha256": "25bde41ecb112eaf56de63ce4bfcb40884eef76828fd7f0e9d8dfa9e4e9f23c5",
+      "sha256": "9635850a4f7d24df73f4edffa187e541c9b5fa0ab97508df629c15bd13fe7f39"
+    },
+    {
+      "attempt_seeds": [
+        7245249009024633105
+      ],
+      "file": "test-16.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7245249009024633105,
+      "semantic_sha256": "f976da70a014234f83081460cdb33be64bd24e735184adb4bd22725b6c4edd25",
+      "sha256": "c9832245659a32e7093e424ca23e8d5c152a28f78dc064f7dd40608c1a1ee0b3"
+    },
+    {
+      "attempt_seeds": [
+        11431040914568686264
+      ],
+      "file": "test-17.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11431040914568686264,
+      "semantic_sha256": "807639b69f1823b46bbab4e08dea3191772a6a89af4b750c405b0b14ba021d27",
+      "sha256": "f025336a5a09bf147bb4ac40633445ef0e6d72044c1efe69f519ad5f0d5a8c9c"
+    },
+    {
+      "attempt_seeds": [
+        18134910079405629647
+      ],
+      "file": "test-18.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18134910079405629647,
+      "semantic_sha256": "e5e50b79558d0d89b8e9c0daa07d74ef2e7795c33e8b8578a226ff4a538cbfa1",
+      "sha256": "4b70607c08445ea5479f8e57931e779523d0ecf879dabe3bd30c9f7b912dca9b"
+    },
+    {
+      "attempt_seeds": [
+        175017975615147169
+      ],
+      "file": "test-19.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 175017975615147169,
+      "semantic_sha256": "31c53699188ba53f78d35d971a4630a64f3d1aa86b8c7a24f910cace68180037",
+      "sha256": "d3926e7bcdd643f0873929f586ff5a5de725563487ac105e217be4eec4ae8d8a"
+    },
+    {
+      "attempt_seeds": [
+        12667436056516602357
+      ],
+      "file": "test-20.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12667436056516602357,
+      "semantic_sha256": "65e1c42fd03f06eb12df11d80132dd91ac2c184f524a2a73a2b4ccb2b469581f",
+      "sha256": "dd969e0f0b967ae59dcac201ef3e016ede314a5092ac6035fe19944fc0f1ac5e"
+    },
+    {
+      "attempt_seeds": [
+        17839802288455125195
+      ],
+      "file": "test-21.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17839802288455125195,
+      "semantic_sha256": "bb0b8824f01dda15ab0ed92220e995971b6d14b8a44cd83f387983b661b72fc0",
+      "sha256": "861b7fe8b5f0d8a5fa9215a4f995d9881ce1b0b22fbaf20aea1823ca60de56c8"
+    },
+    {
+      "attempt_seeds": [
+        12717820931861702975
+      ],
+      "file": "test-22.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12717820931861702975,
+      "semantic_sha256": "4f0ce99e5dd858cf12579401b33bd78f8f2bdfee601893f5fc0608c64c6fe102",
+      "sha256": "90663264f9bb2724c5a09bfff4fe434b9f0fae02d7fb33f55e50a6f33f7196c2"
+    },
+    {
+      "attempt_seeds": [
+        1703184227909437090
+      ],
+      "file": "test-23.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1703184227909437090,
+      "semantic_sha256": "f9a04771016533820385b6609aff76e5f93b270b6c3351b9c27f7fcc4c02f7d9",
+      "sha256": "bae20ef15eda46ddbbf6b98d59f5f87717daf678cb3e609803ce5cae1a2ab711"
+    },
+    {
+      "attempt_seeds": [
+        6076890989273645212
+      ],
+      "file": "test-24.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6076890989273645212,
+      "semantic_sha256": "ceff3e24356b8f7812d64323b8555acefb89207a2d0d4b2565094b84d3f3a74d",
+      "sha256": "e3fdf93bb324c56f748e69bc5d73dd3ee3cefaa5e331900df0f044abcdfee020"
+    },
+    {
+      "attempt_seeds": [
+        15559065287601729982
+      ],
+      "file": "test-25.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15559065287601729982,
+      "semantic_sha256": "532e37c61bf5ec5bdf879a2ace10b91c77d954adb98452f96fde39beaddd0f2a",
+      "sha256": "032e2f480890718c72dee14ec2f6339095a269a2ef27eeda10f0ea7022ebd0aa"
+    },
+    {
+      "attempt_seeds": [
+        10450719828478752043
+      ],
+      "file": "test-26.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10450719828478752043,
+      "semantic_sha256": "7bfbec9509da56ce92eadc3256bb4fb248a286f1c1c84d598f5d103225f15ffa",
+      "sha256": "0b5085c28ef1e0d83c1dbd8be08d2d8ba6f3b877e9d8e3e9754d887b70ea291f"
+    },
+    {
+      "attempt_seeds": [
+        3431137947912667884
+      ],
+      "file": "test-27.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3431137947912667884,
+      "semantic_sha256": "935e97433fd4fa2674d16a8a5bca5e6f19f1953034e08b209804eb13efa483a2",
+      "sha256": "212f564270d7561bed3aff2b7f11e0bbe454268347a9d10d35d78a976ec048af"
+    },
+    {
+      "attempt_seeds": [
+        11015221065018942889
+      ],
+      "file": "test-28.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11015221065018942889,
+      "semantic_sha256": "3c2d17578451f30bf74e35d9a81e0a446ff005c79c8bb98e28ffcf4edb6b3466",
+      "sha256": "15e6b43b5423a4caec39bc16639c7dcbdf0e31b379d10d79bfebc4798a989eda"
+    },
+    {
+      "attempt_seeds": [
+        1535068904484243429
+      ],
+      "file": "test-29.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1535068904484243429,
+      "semantic_sha256": "786ffa3d2dffdd3d5fb625ed53f0e6b9cd3d90c1881c34e34c63ba565f7a99a5",
+      "sha256": "e4d0df495b9602906ef126b59ca489a3de52b8f65c3094aa1dd8bd90526cb70c"
+    },
+    {
+      "attempt_seeds": [
+        6008400727848861008
+      ],
+      "file": "test-30.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6008400727848861008,
+      "semantic_sha256": "7c7a7458094c5b653b454cddd7a0b18fe91cc1614cf989f6f050e96cabd5b388",
+      "sha256": "3390501fe029036228f8dc25c3df1da9cea341575113d0dbb6d0eff458c0b8ac"
+    },
+    {
+      "attempt_seeds": [
+        10572635896832412282
+      ],
+      "file": "test-31.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10572635896832412282,
+      "semantic_sha256": "9975ad62e8c032de8f25d88c33dbc2f03c00fe52638021802ef89c4359d7f08d",
+      "sha256": "34f87c946ee417274b42931029a70283542073f13c564a54723195ce86f6d31b"
+    },
+    {
+      "attempt_seeds": [
+        5538051330388755781
+      ],
+      "file": "test-32.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5538051330388755781,
+      "semantic_sha256": "22ff502b61d52d274c8d716e2e457323b71ea2c2841622e5a4f1d4c0450e1d08",
+      "sha256": "70f9091061670b0dda9393cb58a1e9728309a0e2393ff78fd4ec4aca86a17b42"
+    },
+    {
+      "attempt_seeds": [
+        3086160479787940472
+      ],
+      "file": "test-33.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3086160479787940472,
+      "semantic_sha256": "a61321c75042b3c6c4aae12f33cbb58c3a1315eacecbabce2f12e871f8180b10",
+      "sha256": "e1a74509406dbb20f30971b53344b2e7283b791871b0f4350060613144069fff"
+    },
+    {
+      "attempt_seeds": [
+        2109028236788582604
+      ],
+      "file": "test-34.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2109028236788582604,
+      "semantic_sha256": "554c99827897ea8f506d9706e8fb6593a057a6d31f059f9f29ec5ea70485ade9",
+      "sha256": "bdc971fb8605a063c6c9bfd9b2075b9ca5fc99baf7dacc2fee756e3cfa68f2ed"
+    },
+    {
+      "attempt_seeds": [
+        13180663466693781435
+      ],
+      "file": "test-35.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13180663466693781435,
+      "semantic_sha256": "8719e43c70d684858e47cf7def89ee59cabc767c6916e02217b24ea043442176",
+      "sha256": "18f92be5c357b6bfa4e6c3b8b744c9f9c7ca96bf547ee6127a7b968a68339464"
+    },
+    {
+      "attempt_seeds": [
+        6472376706180670072
+      ],
+      "file": "test-36.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6472376706180670072,
+      "semantic_sha256": "c2c5baf70c38536926152809425be18ee877c2b9f17f3770e9be8566d5d8ecee",
+      "sha256": "ff57f6b1d7956e3a0662ec17d3f451405206f96a8cc0504e62222cb56438e82a"
+    },
+    {
+      "attempt_seeds": [
+        14915242932182239917
+      ],
+      "file": "test-37.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14915242932182239917,
+      "semantic_sha256": "cc0bd1b8720903591881869061aa8e10666779b8fbd61b7e671111854a03a352",
+      "sha256": "b0102a041a86ddb6d7478759def71098fb04da094c679586af899c3c2dbe9a08"
+    },
+    {
+      "attempt_seeds": [
+        115803937844366823
+      ],
+      "file": "test-38.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 115803937844366823,
+      "semantic_sha256": "bd2f21214903140c4541c76cf6e858bf287f585a0675dbed0a71787ef8826791",
+      "sha256": "4389f87e2882f585d8ef08ddb893d2a7dea45034af4803e06efeca659b06511a"
+    },
+    {
+      "attempt_seeds": [
+        12905680919232176413
+      ],
+      "file": "test-39.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12905680919232176413,
+      "semantic_sha256": "1360d03cc18acd64e96889359818307b939dd011060081f2610ec0cc621dd038",
+      "sha256": "fb02b78f2c2bccf91f4d796d695bd7401978029ed402ef77833057cd8bc042f4"
+    },
+    {
+      "attempt_seeds": [
+        9909323190881404133
+      ],
+      "file": "test-40.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9909323190881404133,
+      "semantic_sha256": "fdb971e479d2b0ece7932ebd2012b6105bdb082035914847c37a334a9f911ad7",
+      "sha256": "2a085da40102e954e45e8567905e294b7a585f693ba9d8864f6cf54739995b77"
+    },
+    {
+      "attempt_seeds": [
+        11706129635840293335
+      ],
+      "file": "test-41.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11706129635840293335,
+      "semantic_sha256": "491e2df8410f50e46e2af2b198f4923a63e535bb6b564409ce2c8752bc8e1d5b",
+      "sha256": "26c8e5a940de65dce6efae708b5752f6734973c12e5500f283d91ba4fcead900"
+    },
+    {
+      "attempt_seeds": [
+        16732215432222220038
+      ],
+      "file": "test-42.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16732215432222220038,
+      "semantic_sha256": "8477a2b1479d350a752da0a13079b9959be11c8e9b1adfcb0102c43e9ef949f2",
+      "sha256": "81b7e7ea30956445362f6ef6557ee803e3c867f90247aaa43bce108948e0a46e"
+    },
+    {
+      "attempt_seeds": [
+        13089773435511121901
+      ],
+      "file": "test-43.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13089773435511121901,
+      "semantic_sha256": "ecba9bc33ec004718343a58f00ecdc7b96ca9c08077364db877a7c40cedd0d5e",
+      "sha256": "59aea75d5bc9c608590133186a399d8c7658a4ecab3df4d8e61d073a33b136fc"
+    },
+    {
+      "attempt_seeds": [
+        12640431437906002376
+      ],
+      "file": "test-44.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12640431437906002376,
+      "semantic_sha256": "759221fa85d21a2de152da15c346356c4996d2c4b485a3cdab29bb6076012ecb",
+      "sha256": "4411c5f4cd3447f60daf7d645b506a61636d8fdc537def405965ee8bab33da57"
+    },
+    {
+      "attempt_seeds": [
+        17289378686580106530
+      ],
+      "file": "test-45.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17289378686580106530,
+      "semantic_sha256": "0a9c7db3bd7d4faafbcf06262330883af7c8f3661bb2845c3f50db0650904dce",
+      "sha256": "413617d292f0b6c108611e3caae38bcbccd8ca5416589a133cb37fa12ce2ff07"
+    },
+    {
+      "attempt_seeds": [
+        13980779239968892236
+      ],
+      "file": "test-46.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13980779239968892236,
+      "semantic_sha256": "2dd5ff78a7e569190343eefe058f3f533ceae0457abaa6ac8077ca73085cf876",
+      "sha256": "ad4df081152d95d922333914ead03a9c2df14a1764ef0c9531e2b337fda1df91"
+    },
+    {
+      "attempt_seeds": [
+        8959073342958658812
+      ],
+      "file": "test-47.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8959073342958658812,
+      "semantic_sha256": "e5eca58ff4daa9ffb354f7fe4ec1401f97558b944c5dbf4d78ca14675e97ef52",
+      "sha256": "ba67486df22c8c12af7f100ab9b52ec34ab259e2bc45072e6df4382d52284a0c"
+    },
+    {
+      "attempt_seeds": [
+        7256685435381525238
+      ],
+      "file": "test-48.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7256685435381525238,
+      "semantic_sha256": "711e18432bda0601f99c9c6c452860873008c06644317dcf04627a4f32c315f1",
+      "sha256": "d673cbe00823cf5b2c703296542e5227decac7c18a045d3664d418c180dd2871"
+    },
+    {
+      "attempt_seeds": [
+        14179538496949355214
+      ],
+      "file": "test-49.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14179538496949355214,
+      "semantic_sha256": "4184b6bf0816ad0732ad15bf21595d20a0a300b0b631a56ce10beffdc618f2c0",
+      "sha256": "a3e7134dd2bf39b6a2ae877bed95fc879a3dd391b065a6643ae0e5e0ca937760"
+    },
+    {
+      "attempt_seeds": [
+        825635129478080420
+      ],
+      "file": "test-50.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 825635129478080420,
+      "semantic_sha256": "26debde63e4ac757bca23951980c4eeb0afa16ad0c6b35ef1631f2b2ed293df2",
+      "sha256": "4af3ec9659b5055c0e4de895063d7d6d1562ad04fff452eb5aa20cd93b1fb54d"
+    },
+    {
+      "attempt_seeds": [
+        12175439961195898238
+      ],
+      "file": "test-51.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12175439961195898238,
+      "semantic_sha256": "ce8c0bcbb2c922f27bb9a31d87e3c850041481f80d5ae9e0beeb27f95b8fbc86",
+      "sha256": "3d4b15e8eabe746590fba7011066abd0ede30446b279c2e33d468052886a9f23"
+    },
+    {
+      "attempt_seeds": [
+        17728160610156079064
+      ],
+      "file": "test-52.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17728160610156079064,
+      "semantic_sha256": "71632a4c8b43eea2a840514c60b5530c94f27c554d24568a9b654ab2f3d3b452",
+      "sha256": "efd9eb0577e7c3bcd4196034ee37ecdf8f7491530a62a875f711a260b4b347d3"
+    },
+    {
+      "attempt_seeds": [
+        9206676024379341985
+      ],
+      "file": "test-53.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9206676024379341985,
+      "semantic_sha256": "2cfa68903f1393b96987cea4a3a86bcf7521b3319e27f7872153fc0e02bf1c54",
+      "sha256": "677359dc9a2d3394a16fe8544121c43740c47a7cdbb4e1c0a31273a7662f6e19"
+    },
+    {
+      "attempt_seeds": [
+        5217793810876232238
+      ],
+      "file": "test-54.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5217793810876232238,
+      "semantic_sha256": "7df86a90bc7a1571a807358e65887224a556bd185cb19d87f27aae8f810408e2",
+      "sha256": "62e9c0d94c3059fd30ca7b7d6e046b568260c43175288cb68716f46d5d8f30d7"
+    },
+    {
+      "attempt_seeds": [
+        4648857481047426089
+      ],
+      "file": "test-55.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4648857481047426089,
+      "semantic_sha256": "361e1bf0cc66437099b75b998720785b79c3eebbfb5594c67de32ec44f412a95",
+      "sha256": "b324ddd3c596534cadf29e8aa2ac8d381563220387caed83aa6c86408cae62b9"
+    },
+    {
+      "attempt_seeds": [
+        12322755079913917639
+      ],
+      "file": "test-56.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12322755079913917639,
+      "semantic_sha256": "42e75bf81fe797adb55bd49f228cd655abc3a6167936468595d530b4722cb483",
+      "sha256": "a185906b8c48b3ae76ee4a1fc4c12f4aa8c733ebe02a4802d873aa85cd000148"
+    },
+    {
+      "attempt_seeds": [
+        11828986813943502744
+      ],
+      "file": "test-57.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11828986813943502744,
+      "semantic_sha256": "5e2d8c7e60fedbba8c8cc66e124e636d0eb7e31a4a99ac9e3c05b393d863b819",
+      "sha256": "1eaf53a67d1218143121e29519462905c03ea2d7954fe97929edcf776cdbf6f3"
+    },
+    {
+      "attempt_seeds": [
+        13630613247739686091
+      ],
+      "file": "test-58.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13630613247739686091,
+      "semantic_sha256": "e1a40069173ac807dc56f3450d988301f3329baf1451be492b2096344dad12ff",
+      "sha256": "f7e6b1d6a5ba9fa77adba8b5fdf60036870b250619f5db94b8df80614f09fd43"
+    },
+    {
+      "attempt_seeds": [
+        5875628753000139652
+      ],
+      "file": "test-59.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5875628753000139652,
+      "semantic_sha256": "d6b2f9383d06c523d4e1a9073046c484c769f65f9e87c22265729b6e9c4300b1",
+      "sha256": "52374dc9c1d214dd3d5dabc3c1a55d7be95c70d55c7e05154d0d356c742ae48a"
+    },
+    {
+      "attempt_seeds": [
+        12188439490019858351
+      ],
+      "file": "test-60.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12188439490019858351,
+      "semantic_sha256": "bbc1e7302b9463266b51e06c6d6caab6eadbea6e432a09293f9d821c75d4601c",
+      "sha256": "2a98379190ea687b9a01d4bb702dc3c7db13666107350b863136fc4af99e2c69"
+    },
+    {
+      "attempt_seeds": [
+        13639144305521537478
+      ],
+      "file": "test-61.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13639144305521537478,
+      "semantic_sha256": "7ca1ba6d289932c3084874f975925e2ae49184c8fc023112eb336efbede29675",
+      "sha256": "b6d634f9d68242bdbd3601f0baa464e6ec47d9c6e4d0a14a9377435b6745a9c0"
+    },
+    {
+      "attempt_seeds": [
+        3803413716628540442
+      ],
+      "file": "test-62.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3803413716628540442,
+      "semantic_sha256": "193f07221d1715115603f99298b141334a53ad4d600a0ce5647f2176e8eafb6b",
+      "sha256": "df33f468135c2cb1f5661c2d8ef6c222b3da1ab9826a5bf596de604a8af1be23"
+    },
+    {
+      "attempt_seeds": [
+        4014206472144780125
+      ],
+      "file": "test-63.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4014206472144780125,
+      "semantic_sha256": "1ee28cd1f727794ab85a9be93cc28c866db2526dffd79d8a56f41a0a84163792",
+      "sha256": "059ce7cd25da42074dc643ad27f2ff5bb9d0c49e21634ddcb10da2619c0e9b9d"
+    },
+    {
+      "attempt_seeds": [
+        3176983433955851935
+      ],
+      "file": "test-64.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3176983433955851935,
+      "semantic_sha256": "26f9cf7d9234d90014b3ace3990551162bfc3370479813b133ca954e086ad844",
+      "sha256": "e68c1a6a882cc7e826623ecee046fd356ce041c0f9f8087a3d1f4fad894b8652"
+    },
+    {
+      "attempt_seeds": [
+        4899783184691661359
+      ],
+      "file": "test-65.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4899783184691661359,
+      "semantic_sha256": "5a804039efe3f6e6bcf102a32a0b18b606890a2e350deb6a0327e42b881a6e59",
+      "sha256": "9af6827a7e2c1414a7193a1e60577b1a47c92cb610c871cc1f31e60c6cc2d2cf"
+    },
+    {
+      "attempt_seeds": [
+        207067555226266517
+      ],
+      "file": "test-66.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 207067555226266517,
+      "semantic_sha256": "ee4fd68eb69bdf893f0a53e928ff35e6fba79845d342e0782a6359e198b15bf1",
+      "sha256": "deb597ab558ba8ce4f1a55a422e6ff326fe0ae9b5a95ebc8d42e42f131bf64a7"
+    },
+    {
+      "attempt_seeds": [
+        49339240075248910
+      ],
+      "file": "test-67.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 49339240075248910,
+      "semantic_sha256": "e8e76dc4ce47ebbc7244a0638b0d8f30bfc73f3617f6cb229c97c8cca12ffb82",
+      "sha256": "469bde4d7af0d61ea4e47029c48380dfdca03b312dfa27c5f1fe3bf9dada0fd7"
+    },
+    {
+      "attempt_seeds": [
+        5811598672159769105
+      ],
+      "file": "test-68.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5811598672159769105,
+      "semantic_sha256": "3a821b8cf1263002fd84f06a83d350894fd3103a256836d869c5315e439b8b5c",
+      "sha256": "1ee62fb4cfe1ea5a7895ef4576bbcb74bae5f257ac4c2c519e51ef12e3df3543"
+    },
+    {
+      "attempt_seeds": [
+        8204565298629764059
+      ],
+      "file": "test-69.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8204565298629764059,
+      "semantic_sha256": "03b5c2356bc428e3b349423e6593904b0bfec40a24582b2da722670975b21803",
+      "sha256": "13d956f194e7f76ef2c9125a8a3c8125bccb88ab21832d4ace3c6f7475f2dffe"
+    },
+    {
+      "attempt_seeds": [
+        2250897822594815120
+      ],
+      "file": "test-70.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2250897822594815120,
+      "semantic_sha256": "d6405477ae0092d69b3fe7839eea9cc8ee1462aa8f582d49967ac4cdb4168e7d",
+      "sha256": "de9143a0f1a828cb4702fa6b797d868c2ea18282c442508055d3576f807ca3f5"
+    },
+    {
+      "attempt_seeds": [
+        11123991998025262076
+      ],
+      "file": "test-71.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11123991998025262076,
+      "semantic_sha256": "153c9069ab2480bc429fde93878dbded487fec425b756611e4d3647c851ca229",
+      "sha256": "c5daa057b14b513f514aecbefd39cd6f975cb36a5898b43dfde99d5fc5766f4a"
+    },
+    {
+      "attempt_seeds": [
+        14843575597627994769
+      ],
+      "file": "test-72.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14843575597627994769,
+      "semantic_sha256": "79df470525812cbf9f21ef97c5a069e27413f0fe91e6dbd69c58fabb3dd2aaf5",
+      "sha256": "96b6b1a1902b365a44a4fc05b63e6fc34a060191c9661f0a63686ca30c507be1"
+    },
+    {
+      "attempt_seeds": [
+        7478859735766025427
+      ],
+      "file": "test-73.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7478859735766025427,
+      "semantic_sha256": "11d1f5d62db3b369f0d8cb569ed5180f86767d9a281cf7a5828d726bf8eacbe0",
+      "sha256": "c04ceb59f7c9e3e8a51635abc27f8e1de95f825ea4915724a9657a668736d021"
+    },
+    {
+      "attempt_seeds": [
+        12168881064632374413
+      ],
+      "file": "test-74.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12168881064632374413,
+      "semantic_sha256": "cff448b3b770af5987050c67083c7766fb2df317ae96a36a534d0b9efa7806b3",
+      "sha256": "b700c4034c8545a33ec14b62c8fe5aa42fa5298684c65d7b1c0295e3e85ae0a2"
+    },
+    {
+      "attempt_seeds": [
+        3641954880147010504
+      ],
+      "file": "test-75.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3641954880147010504,
+      "semantic_sha256": "f5dec503beeff674b32a1471513ef4440d762e596c7d0b7fb2bfbacf2d3cda99",
+      "sha256": "577fcdeb0c0d876f6de2c352886f412cfe068bdf859e769e63e7166011821202"
+    },
+    {
+      "attempt_seeds": [
+        6095629352630256535
+      ],
+      "file": "test-76.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 5,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6095629352630256535,
+      "semantic_sha256": "2f778d31b75ed87098b2488b8bfef7b0bb4b9e486ae93ae3afd66504a9388bb9",
+      "sha256": "be978bce97706d2c9dce5f3f4336deaa92edef0036653d5bb6636c0e218cf6d2"
+    },
+    {
+      "attempt_seeds": [
+        19093665419970687
+      ],
+      "file": "test-77.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 19093665419970687,
+      "semantic_sha256": "9c2497754794e3f15029e83b6c74aca71d20dd1b22b2b02c96ea7a8b4df1d700",
+      "sha256": "b1fac5c129619d8d8394462dd5ac6ba570ef1e403e2278971211969ea7aa0eef"
+    },
+    {
+      "attempt_seeds": [
+        13195612226328207129
+      ],
+      "file": "test-78.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13195612226328207129,
+      "semantic_sha256": "fe48f7f368a97a9efe788855015bda35cfd7fa28f43abc48e28d188abc91c154",
+      "sha256": "13d924a8a01b8fcc9db85051674d41f37ceeba0f1c3b62da140bb69e39fb87f4"
+    },
+    {
+      "attempt_seeds": [
+        10610133054042548382
+      ],
+      "file": "test-79.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10610133054042548382,
+      "semantic_sha256": "499bebec2bc9db29e43d26b838b9114c05419f75525e233d50769795886242bd",
+      "sha256": "532ff8c291d495b709d5a0d0e4af95d0f8f925c2edac1e8be2873f3bc68e0405"
+    },
+    {
+      "attempt_seeds": [
+        12284754676133216392
+      ],
+      "file": "test-80.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12284754676133216392,
+      "semantic_sha256": "5c0c5396c4d59856e77c2ac9cf546fdfc72c1fcf7dd2abcbbc94b554f4228de5",
+      "sha256": "112f3250f06667958285b399608c4726995ebb110e739bfcebca4a36b73b905d"
+    },
+    {
+      "attempt_seeds": [
+        5328802670556392755
+      ],
+      "file": "test-81.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5328802670556392755,
+      "semantic_sha256": "fcedde42a7c3dc402bcdd602bafd42dcdeced861c63f0d2af8bbd70cca324d38",
+      "sha256": "bb10bbb1f31b74f1b664b253aa44981544108c460476bcba84f42dc42e180c5a"
+    },
+    {
+      "attempt_seeds": [
+        10017275677956622468
+      ],
+      "file": "test-82.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10017275677956622468,
+      "semantic_sha256": "e49f0e20f494e6ad5410f9acdb052965e25a096756bf10a19ac566a22ed00d85",
+      "sha256": "47fc700cfaf49f8f979315cfed97f38a012b2b8ede11ccdaa26ffe6142d748ff"
+    },
+    {
+      "attempt_seeds": [
+        796926638424187022
+      ],
+      "file": "test-83.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 796926638424187022,
+      "semantic_sha256": "24d1f9d44869e637b584c3ff8416034d3c8d304dc9e8032bd7430a107d43f912",
+      "sha256": "da5d15113e55b2948e899124c52d4053dceb95e48fab9188215257f81a01a650"
+    },
+    {
+      "attempt_seeds": [
+        1114971272211000629
+      ],
+      "file": "test-84.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1114971272211000629,
+      "semantic_sha256": "6c3bab3eadf92679414845b2fcb6999773c8cd58c5b1f6d436d0ade5d5fda299",
+      "sha256": "bfa063423b2aa73e18fc72464ed063dd012652860974372e77e6d419369e07f6"
+    },
+    {
+      "attempt_seeds": [
+        7126986748924696149
+      ],
+      "file": "test-85.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7126986748924696149,
+      "semantic_sha256": "85b24686f52796f4f507db86d98b3a4bf276662574345ba48f44d049f3a4e527",
+      "sha256": "ac781a1a448f383b8316bd231959e35ab32c6c7b753e5912eed86723b4435fc1"
+    },
+    {
+      "attempt_seeds": [
+        12121907538356885309
+      ],
+      "file": "test-86.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12121907538356885309,
+      "semantic_sha256": "0b42ef1d674e87e0ea0f69b3bd3370c45b665314f2c5a015644b11bafed8a052",
+      "sha256": "ad075bf6b4a9541a86bfec867a562f8329fcc3cea31c73aea9833d5f3fa6581c"
+    },
+    {
+      "attempt_seeds": [
+        15364800095895229611
+      ],
+      "file": "test-87.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15364800095895229611,
+      "semantic_sha256": "2665b05c7cd2fad6189a6d5e141f7e0eb5d7059e988d097b81ee18a8f64c7c6a",
+      "sha256": "83110a9558a32cdcd799b7c6bfa09f436dec9e40fffe8630311d2347285f9a1f"
+    },
+    {
+      "attempt_seeds": [
+        14215515997299731282
+      ],
+      "file": "test-88.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14215515997299731282,
+      "semantic_sha256": "a7e84c2d89ca40f8f347b57c3fc725169d6606ea2f2ba600d68db95eaba3497b",
+      "sha256": "764d9f9e317f0bcd5a038adc5e2fceb1155cc88b86053e352980783f3b66cfa1"
+    },
+    {
+      "attempt_seeds": [
+        14520206503231351177
+      ],
+      "file": "test-89.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14520206503231351177,
+      "semantic_sha256": "0468192c53104db5fb173ac17f9950359e3f6ac29b900427aa790fa838f14f36",
+      "sha256": "22d9ccf109d1dadb4445dbfcc2b510e7fb99921cfed020d517a0b6d7580afc7b"
+    },
+    {
+      "attempt_seeds": [
+        429846339717347096
+      ],
+      "file": "test-90.pddl",
+      "parameters": {
+        "city_size": 7,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 429846339717347096,
+      "semantic_sha256": "404fcda50bd765524dec5d4f4077e45e8e476ea1db3e7feb0c0cb468de402d14",
+      "sha256": "dd17f1b1e7e2501304402abcf796776962049f35c0451f0abd1f51374f51b383"
+    },
+    {
+      "attempt_seeds": [
+        15051789836129697846
+      ],
+      "file": "test-91.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15051789836129697846,
+      "semantic_sha256": "a0c68fc4242c47198ee902a8f64b92acca34fd243246bb8f5565e2c7cec29b6f",
+      "sha256": "60126d7cf064374eb243be2ee7289b86eca79837c9f0663c362cbe8d3fb5dcae"
+    },
+    {
+      "attempt_seeds": [
+        2115171012723925106
+      ],
+      "file": "test-92.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2115171012723925106,
+      "semantic_sha256": "8ef8ccd42834bf9f90a1aa4dfc56b5b6c8aa17aff73a908a24c7974b508d8f26",
+      "sha256": "ed6ae83157fe42ffe9cc95e0bb303aa6cc26326b4fa1521c2620bc40740a44ef"
+    },
+    {
+      "attempt_seeds": [
+        11910404803737585012
+      ],
+      "file": "test-93.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 3,
+        "num_cities": 7,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11910404803737585012,
+      "semantic_sha256": "3939141adb9a80d06ab878df3632a0c0720ed7c4af11812c162e3a9174449375",
+      "sha256": "e052fb66b15f2128e22657348209f63592cb8c97e72a6f8ab7493829c291d845"
+    },
+    {
+      "attempt_seeds": [
+        17601224405232433152
+      ],
+      "file": "test-94.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17601224405232433152,
+      "semantic_sha256": "5b35ef1b296277e2bd86ae64e22e2b4ead99a6afb68ad08c9555413f7ccf432c",
+      "sha256": "fa2c6ebc3919efca4ee4ab3c144cd224b51b0e5f14ee4cf966e213115a36c0d8"
+    },
+    {
+      "attempt_seeds": [
+        13893871527149025445
+      ],
+      "file": "test-95.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13893871527149025445,
+      "semantic_sha256": "53b03999331eff4bb3a83ca8137f3b2312c43415fb04bb287aefd3622978b51f",
+      "sha256": "6653232651b241c174192e217d5118d162476153fb74984b7f3bffe46cd063e4"
+    },
+    {
+      "attempt_seeds": [
+        1123194360452253264
+      ],
+      "file": "test-96.pddl",
+      "parameters": {
+        "city_size": 8,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 5,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1123194360452253264,
+      "semantic_sha256": "a3a6b9aae90c0cd3ade7547d9f5bd0b959a7c5d4ac1b0c9637f325c030f36efb",
+      "sha256": "217c4b17103a1a100cda0b4b1b6c5a5d60e6f17eae43572e89d4bf43b043be5f"
+    },
+    {
+      "attempt_seeds": [
+        3218867846565304170
+      ],
+      "file": "test-97.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3218867846565304170,
+      "semantic_sha256": "b5d73448284cd8920555e74d18c4f2585417adc9017b9679e9935874cb816933",
+      "sha256": "cdf1007247f996acced5daa39aab5357809e3e6bc2418b6a8da4e81aa6dcb833"
+    },
+    {
+      "attempt_seeds": [
+        4227693482914276669
+      ],
+      "file": "test-98.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 7,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4227693482914276669,
+      "semantic_sha256": "3553dcfc02af6702f9f61df39a1bd50132b256ff2c68dcb90897a7a3d6741543",
+      "sha256": "8a2aedc1236d37db7ded718ea67e519df53e0c2eb670e38e3d56c10b9bebf8df"
+    },
+    {
+      "attempt_seeds": [
+        3799020918040266012
+      ],
+      "file": "test-99.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 1.0,
+        "num_airplanes": 3,
+        "num_cities": 6,
+        "num_packages": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3799020918040266012,
+      "semantic_sha256": "be74d7bd6964a98eb3a111a4a4201a0f8756fab916e351f8d020b708eff6d5ed",
+      "sha256": "a927a36004f569e3befadd9ce8000d1f182d6894f47baa568a8d029d86740f69"
+    },
+    {
+      "attempt_seeds": [
+        5955735837571971614
+      ],
+      "file": "test-100.pddl",
+      "parameters": {
+        "city_size": 9,
+        "goal_package_probability": 0.5,
+        "num_airplanes": 2,
+        "num_cities": 6,
+        "num_packages": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5955735837571971614,
+      "semantic_sha256": "c90e18e6ca2d01618a55242c345c5bdcb7c4dff21532443adb7d16953261b9d9",
+      "sha256": "ec500edff55c91270774d89c8ab962adee1a925dee93b99489bc49cd5a91f46c"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "test",
+  "valid_configurations": 144
+}

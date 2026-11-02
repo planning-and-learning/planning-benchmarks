@@ -1,0 +1,1715 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "7c5067fe6a1eac2f52f80f2f7cf1c919cab8f5ebaa0950aeca61e853acbc6244",
+  "generator": "classical/childsnack",
+  "instances": [
+    {
+      "attempt_seeds": [
+        6978651176701714067
+      ],
+      "file": "valid-1.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 9,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6978651176701714067,
+      "semantic_sha256": "e177f378ecc6bbbc9b25ee1cb0fe8c553ceeba8f4064c196115e8dc855bde5f4",
+      "sha256": "9f6199a5c811a7402445870cdd7ccdd2bfdca6b1364b4a2862a8cfca425253db"
+    },
+    {
+      "attempt_seeds": [
+        1691316816295273480
+      ],
+      "file": "valid-2.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1691316816295273480,
+      "semantic_sha256": "c3f648e67ffa9f67f516d8eb19236854d81c2ab0d12508c99a416843ac2668cb",
+      "sha256": "8144a2440242b44b9d5484505c214a6f79172cb70a263d2568ed8a3d05b0b0d1"
+    },
+    {
+      "attempt_seeds": [
+        8310079902857341443
+      ],
+      "file": "valid-3.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8310079902857341443,
+      "semantic_sha256": "2dd8eb5a042d61451557faabbfd9faf78b16a4651bc67fc944a05178a28648d0",
+      "sha256": "d731affdf58444d6e9bcc2272dbf085d0c59ed15b86dd33fcc15269ca2c8ba51"
+    },
+    {
+      "attempt_seeds": [
+        7408767393599063474
+      ],
+      "file": "valid-4.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7408767393599063474,
+      "semantic_sha256": "d932e07c3d4142842a7d06d8717b9958df679dd61bd23829e47b3edd7aa3acf2",
+      "sha256": "c6b48ddc054654cfd9b71a6f534f943a7a39d314f81a61bd8105dd22beb94678"
+    },
+    {
+      "attempt_seeds": [
+        7487613058792517700
+      ],
+      "file": "valid-5.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 8,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7487613058792517700,
+      "semantic_sha256": "d6a0f63349aad594f16e74d5d73ced528f32357a49bca4c481e7d37650f56264",
+      "sha256": "504dc4050a2fe5a94721e619a7c823b06fbfb9da91f796acb7e7b633ac2898c8"
+    },
+    {
+      "attempt_seeds": [
+        18407875176804094569
+      ],
+      "file": "valid-6.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18407875176804094569,
+      "semantic_sha256": "aceb027558009677788e4523bdf4114f35ff116c68e440a4b0fb3374d55712b8",
+      "sha256": "5e05b7b1a2c0c397ce7728b8240bed2fbeaa9b10a3e7b77bf57daf487f20836c"
+    },
+    {
+      "attempt_seeds": [
+        6044929883948686792
+      ],
+      "file": "valid-7.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6044929883948686792,
+      "semantic_sha256": "6582ec5b80ddd69aa3da2cd6dc011c33fd798859d611b6069ffb9ff480efe263",
+      "sha256": "063233ba4affc620c562fbc26dcfbfb463a9b0079f86c8a5cd5c258c65efa12b"
+    },
+    {
+      "attempt_seeds": [
+        4288158207483688221
+      ],
+      "file": "valid-8.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4288158207483688221,
+      "semantic_sha256": "fc95ce965e9f480e12566a724159fc0947c5dd73d411a42ed5c2bdacfd40a31c",
+      "sha256": "9dcc68120d3a71b89ef4a312552098a85a3418b7e0e475aa94b967e86cd9853b"
+    },
+    {
+      "attempt_seeds": [
+        678458402400184744
+      ],
+      "file": "valid-9.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 678458402400184744,
+      "semantic_sha256": "f669c72b7548a4fb62d61cb29d1b54aa71f7b0b7a97911923c4de78ef504e604",
+      "sha256": "808915e38348b115042f639102f03af40cb4b0e7ec28c55ee471d01327c6cfd5"
+    },
+    {
+      "attempt_seeds": [
+        11313349401417064691
+      ],
+      "file": "valid-10.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 9,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11313349401417064691,
+      "semantic_sha256": "67bfc2d4018da12e3d0aa21e909a05f565b4ae4a036222dbb1c3640309bfbb48",
+      "sha256": "b0c5ea991235afe05235ecd3a6131c74a96579f425373f09ff53e96cc92bd75b"
+    },
+    {
+      "attempt_seeds": [
+        14385206975877752564
+      ],
+      "file": "valid-11.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 9,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14385206975877752564,
+      "semantic_sha256": "a3de852282a2bb1796ce36e9fadf258931ae911c00a4f0ef8b939aa17bf6d090",
+      "sha256": "db95a5ad548f9484c0be976e48ea317a288cac663b2d6ff0de70762a75107c10"
+    },
+    {
+      "attempt_seeds": [
+        3107104220967175
+      ],
+      "file": "valid-12.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3107104220967175,
+      "semantic_sha256": "92b4a892f7b2e43120fb1beab00f93483fe35b146084786857890aea5593ab3c",
+      "sha256": "95e3328cc412bd496a311f691cdd24344a0a28725c1e7721cb4cf0c7f0d44905"
+    },
+    {
+      "attempt_seeds": [
+        1061673775137849807
+      ],
+      "file": "valid-13.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 7,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1061673775137849807,
+      "semantic_sha256": "f6e0bdd857e6faad37c91388926aed1cefa57b52270c39a3bec0ce3ba953990f",
+      "sha256": "4d03ade1fb3752adcb2db8d9ab08750d4bf26b1aba36a6977afa36759e4a24d6"
+    },
+    {
+      "attempt_seeds": [
+        16412641293115985535
+      ],
+      "file": "valid-14.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16412641293115985535,
+      "semantic_sha256": "5d8de1f287293d193cd7ae51cf8f977c10371df5e3649c0803ccfa6147f830b9",
+      "sha256": "6291409dae38106dd9d2da8556377ca7d99cb07522c4329ff8bf3074f9deabea"
+    },
+    {
+      "attempt_seeds": [
+        12033049661285953144
+      ],
+      "file": "valid-15.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12033049661285953144,
+      "semantic_sha256": "36ef94ade507f744447dcfdb92486b427b8c9c1ec1a226215844e45fc28b034f",
+      "sha256": "743d798032ad9dc59d7157bc63f8c51c13064814f5fd3de124600953c16f7825"
+    },
+    {
+      "attempt_seeds": [
+        10468200048806440423
+      ],
+      "file": "valid-16.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 9,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10468200048806440423,
+      "semantic_sha256": "05453ccf84471c42f00c592ee7d6bed947661f0752e5399847152b4fdef4dd7e",
+      "sha256": "563c17e7ab1f49dd5e03dc3307ec1b6d4d573337cb09bb4e10fabcd663e16ffd"
+    },
+    {
+      "attempt_seeds": [
+        6227942087590333634
+      ],
+      "file": "valid-17.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6227942087590333634,
+      "semantic_sha256": "41fc80db673c81293fbb4615dbf16fd8021e2db0ccd2820726acb5326581025d",
+      "sha256": "3a5ec69c8acc40b556663079a9cbc450bc0133709b16d1662f9fada0d75307f9"
+    },
+    {
+      "attempt_seeds": [
+        11971306971161462556
+      ],
+      "file": "valid-18.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 9,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11971306971161462556,
+      "semantic_sha256": "b163cd942597bc034248e6ce1f7470fb86f78223ac48c88d91183618d3502ac6",
+      "sha256": "60c4f76d8947cf9cc7eabc51d65d4f04457bbb433aa9f4fccc32c44a9cbb39c5"
+    },
+    {
+      "attempt_seeds": [
+        5528293006541413761
+      ],
+      "file": "valid-19.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5528293006541413761,
+      "semantic_sha256": "2bed8900cf2dab01cda062bc051f0e0b7bf9fc26f792d1b770784116553991c1",
+      "sha256": "0036ecfa3d4cc6a4ddd96a4b46ba146d9d0eb9003c4d4d65728049b654a2448b"
+    },
+    {
+      "attempt_seeds": [
+        305957685775028369
+      ],
+      "file": "valid-20.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 305957685775028369,
+      "semantic_sha256": "665ce649eb1b99a69e154b2cb1f5b48508ee09c0e2822494b10e9fe2a53049fd",
+      "sha256": "94dc88d055bdc35f8a8a4f11a9a0696fa3ef3c8dfd925400e8b09ced400de99c"
+    },
+    {
+      "attempt_seeds": [
+        10686274300658845794
+      ],
+      "file": "valid-21.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10686274300658845794,
+      "semantic_sha256": "14ecc751020af990156c129e610f60a36cc63d797a7b779cc5bd941b944b9650",
+      "sha256": "78444db6623be5239183e75d55ed7db1f3f4edacb4220c154e99676959740809"
+    },
+    {
+      "attempt_seeds": [
+        3428169702044929080
+      ],
+      "file": "valid-22.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 7,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3428169702044929080,
+      "semantic_sha256": "808bcfe7ffc848c12816b13dbe5f0101728fdfbc38b51e56b1db113ad12c3211",
+      "sha256": "625f47cdfa8bee51a65d786a0882af8fbc9e517f1e8b2109ae22bcdf322f0481"
+    },
+    {
+      "attempt_seeds": [
+        624514062377768440
+      ],
+      "file": "valid-23.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 624514062377768440,
+      "semantic_sha256": "87b36cbaaa4edc259130b9ef8924704d6db4bcce2d8fc9b6a1aec6343fe05b5a",
+      "sha256": "2a2c98e9100a28a4c993326192895e688f17052069bdfa9ea64eeb2416c3bc33"
+    },
+    {
+      "attempt_seeds": [
+        18259224272037696004
+      ],
+      "file": "valid-24.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 9,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18259224272037696004,
+      "semantic_sha256": "98fe40d2a37fca4033919b0106f07723fd6b4d4a813dd71f4a28e42b069b7312",
+      "sha256": "2839bf8dcace710958a8702544508200f52a613f962c696d24114fd68cf9affa"
+    },
+    {
+      "attempt_seeds": [
+        3306678470081140315
+      ],
+      "file": "valid-25.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3306678470081140315,
+      "semantic_sha256": "3a5671d691b08a690fb6bbbd703a5183abdda737f3652d66aae74c19ef0257b5",
+      "sha256": "311eea472d639c289e78ae453906f4c1b6e4cf684afdc6b42b49264c638890d8"
+    },
+    {
+      "attempt_seeds": [
+        16577746194324785332
+      ],
+      "file": "valid-26.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16577746194324785332,
+      "semantic_sha256": "1a488711d39ffafd48b8cdeb673b889e97b5bab2c19da4eb6b851f1d4b617c02",
+      "sha256": "27a673612177d335606631612f935049ab3d2e766fc7ad918d0461d8e387b2db"
+    },
+    {
+      "attempt_seeds": [
+        1759454917541016316
+      ],
+      "file": "valid-27.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 8,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1759454917541016316,
+      "semantic_sha256": "4129cba84ae492123120d78eb45fa7be01bb60795736c68715464fb01b999a91",
+      "sha256": "fe58fbef7c5385028d097d22d0580370072e6c26308fa4eed8076171816fbab8"
+    },
+    {
+      "attempt_seeds": [
+        14806152625288379777
+      ],
+      "file": "valid-28.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14806152625288379777,
+      "semantic_sha256": "5e9f83af058ca356e18c7594593d84936adc605acf88c4c2602001779c50265b",
+      "sha256": "54bb1d9fa79e009224de2b2952669d8ae95b283df37475120208d3576215da55"
+    },
+    {
+      "attempt_seeds": [
+        5543214590437331250
+      ],
+      "file": "valid-29.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5543214590437331250,
+      "semantic_sha256": "d7be94a2bdd3e0e4f15e74f96dade7176a7e5a2c2e7f8659af20afb13873c03d",
+      "sha256": "ee97fac069ac45956597781006aad0066c8d5a6c23412e851748a81334a1d891"
+    },
+    {
+      "attempt_seeds": [
+        8428729935843898095
+      ],
+      "file": "valid-30.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8428729935843898095,
+      "semantic_sha256": "9fa6528d0997e5916114af9ca0c4a1850bc0c95810f9cc64a083911073d6c9ef",
+      "sha256": "e735c864e56339c0845821cb2a6e56a7c1fe2765f1ec553bfb39e89a5d15836b"
+    },
+    {
+      "attempt_seeds": [
+        13156969976690548401
+      ],
+      "file": "valid-31.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13156969976690548401,
+      "semantic_sha256": "b4db34375243e6c1b24b138f4a901fb3ee920d2ccbf84645bd0e1040d7d2c9b0",
+      "sha256": "05100a02e344fad481f0cde383733dba1131ac085e3893869900db3405add932"
+    },
+    {
+      "attempt_seeds": [
+        16820789619448311207
+      ],
+      "file": "valid-32.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16820789619448311207,
+      "semantic_sha256": "f1944a7d90a26e57a7104ec4d1e5f59a798a9023e1205cdf79770bbfb6ecaa07",
+      "sha256": "09bda9eabaf46046a486e8981c898cc840063044e28311133a63da91d0779b3d"
+    },
+    {
+      "attempt_seeds": [
+        15225298101228924731
+      ],
+      "file": "valid-33.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15225298101228924731,
+      "semantic_sha256": "71d1fcef8b5e7797434e4699ed0bf8726ea6fa16ef1898bb7d9bbfc8625a38ad",
+      "sha256": "25a44506a703bea7ff95842d3f7e45e0cb1618112841533c52a2cd5d3dbf0038"
+    },
+    {
+      "attempt_seeds": [
+        535369899242048464
+      ],
+      "file": "valid-34.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 535369899242048464,
+      "semantic_sha256": "8f94ff9bd06fac7c4e49094da5d250f0006a5bea25ca6b7b74536904657ae9de",
+      "sha256": "9225da641affec6df843c4ba6bc1748c7808f070dd9b4c1616e94a93e342ea83"
+    },
+    {
+      "attempt_seeds": [
+        8059775966460633017
+      ],
+      "file": "valid-35.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8059775966460633017,
+      "semantic_sha256": "5e0c50cf6534aee29b429d1ca2b8ef48691c7433899c2400575a3a7894d24137",
+      "sha256": "60b8bf97497cb42be54238ec0d43816bd9ca079c11c757f054ae4c92c639c05f"
+    },
+    {
+      "attempt_seeds": [
+        11901668038982933165
+      ],
+      "file": "valid-36.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11901668038982933165,
+      "semantic_sha256": "952e03a54247a6e0f74a790e90bdfc530224031e9d7f08551ddecdebe3136988",
+      "sha256": "a9b5c67971bb2b1d956560760c6aef50d3317830cc05a291d90e39ad68550ffd"
+    },
+    {
+      "attempt_seeds": [
+        10345852785290460415
+      ],
+      "file": "valid-37.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10345852785290460415,
+      "semantic_sha256": "e8ae1ad351698d993b51269e14f1f0707d6ec279ff0eeb9e5d12c3e62729bacb",
+      "sha256": "82c6259e0bda76dda1400e16db0f384e7680c678630acb3b9d204b74a2e958dd"
+    },
+    {
+      "attempt_seeds": [
+        10612248742046477715
+      ],
+      "file": "valid-38.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 9,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10612248742046477715,
+      "semantic_sha256": "b455fb91231f4dea0628b60bdd52c3c417678e185e71ca553d322d0f649c46ff",
+      "sha256": "03f3c8b4de988e8dc127e2a0c483f3f7e9c857c986e341fbf9a0bbf7da304833"
+    },
+    {
+      "attempt_seeds": [
+        6884231850244434117
+      ],
+      "file": "valid-39.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 7,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6884231850244434117,
+      "semantic_sha256": "72d4e373acb0e655b0508a18806b29111526d1165b268f00ac8271e2b44de3cc",
+      "sha256": "3e268a16b1074a6152ad7f35bcba7b10c0720b8b7def65edd257d22d20a911cf"
+    },
+    {
+      "attempt_seeds": [
+        10365495044499147855
+      ],
+      "file": "valid-40.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10365495044499147855,
+      "semantic_sha256": "a94b0f7dd90b592875fd5f960bcf0fd357a7e3707d4aeeb3d3584b93cca745af",
+      "sha256": "a4180b5a71d1dc68e2039e6914422b66808ff23b232abd3aeabfcdcb0b540ceb"
+    },
+    {
+      "attempt_seeds": [
+        9495375383132048598
+      ],
+      "file": "valid-41.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9495375383132048598,
+      "semantic_sha256": "110f4120a34b80645cf6f98d0936858946c53e9070aa3aa85c26f87aa538ea7c",
+      "sha256": "ef7f7a2628b46363ae3493a92d76f4b4366b5dffbed8b19dc253072b466cb5af"
+    },
+    {
+      "attempt_seeds": [
+        8355347376331014901
+      ],
+      "file": "valid-42.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8355347376331014901,
+      "semantic_sha256": "82e4664a77871392bc389a48f46123494277fcb2fbe0192d44bab0835f5837bb",
+      "sha256": "0346a0494f0c958f1a032247e661db043f9f7a9a2d8de3b486b38605ea9b9b67"
+    },
+    {
+      "attempt_seeds": [
+        13155238565814414185
+      ],
+      "file": "valid-43.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13155238565814414185,
+      "semantic_sha256": "8c1e96e52015a82889d2e4502652edc367e5e428809aa82667537b5fe409004e",
+      "sha256": "814443b030a49c252a68b9b24ee2f7d5b1820c1c38ec04450a93faabde765770"
+    },
+    {
+      "attempt_seeds": [
+        4625857360424417580
+      ],
+      "file": "valid-44.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 9,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4625857360424417580,
+      "semantic_sha256": "9c995799bcc95fed7a7d105ec26787ab72426afff9c0042e273f9ea5c8d9f5b0",
+      "sha256": "28a39364c5fb4090d685cc09fad7764764a6d66450237335c72c2273ad711f8d"
+    },
+    {
+      "attempt_seeds": [
+        6473089189309052589
+      ],
+      "file": "valid-45.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 7,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6473089189309052589,
+      "semantic_sha256": "28e907f3ec0f967ecc37da10cd49842c80fc2b42f3822a55a9cad95f18d6ef84",
+      "sha256": "a68995dee65c654be2b5874ef7c6ff8ef589ddb42021110722b20de5b5f07453"
+    },
+    {
+      "attempt_seeds": [
+        14879272956066118367
+      ],
+      "file": "valid-46.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14879272956066118367,
+      "semantic_sha256": "50007c50df099d6a7e6ca9164819cb26a11db61086a43157f9c71d8b0c461cdf",
+      "sha256": "5b189b3c8aa244c91b821a346e5a06aa47c0a45990197a59dcb5340ad28b1545"
+    },
+    {
+      "attempt_seeds": [
+        11409097329936080795
+      ],
+      "file": "valid-47.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11409097329936080795,
+      "semantic_sha256": "3dc04b580537ca0c206ae6f2df11387a29506de3cb78122448cc39490df42731",
+      "sha256": "b3035a919404c14b87caab584cbf37bc877131cfc4c9cbe21e66cedf64c6c14d"
+    },
+    {
+      "attempt_seeds": [
+        8127659189878086239
+      ],
+      "file": "valid-48.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 9,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8127659189878086239,
+      "semantic_sha256": "61e3a3665ebc3093e08fe70aba00163b6435e236a5e68c8a384c408bf3a4f9da",
+      "sha256": "daac826abaa7e3c5b69ca918889d7b1953e305d4152aeb53ebada2c1c53422f2"
+    },
+    {
+      "attempt_seeds": [
+        17178209888388265444
+      ],
+      "file": "valid-49.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 8,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17178209888388265444,
+      "semantic_sha256": "7dee76d43543668e157034aa9550c0b5fbe0929a43779e51c389a241d120de93",
+      "sha256": "c739d435f3cd6a83a9a3fc8468bca13db9f082e368dfda7fdd97ceec0f4e59d8"
+    },
+    {
+      "attempt_seeds": [
+        17419007538551827587
+      ],
+      "file": "valid-50.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17419007538551827587,
+      "semantic_sha256": "ff97e856f8476401d6759b95ce8e64d3dfc3b6c9f08cd60fc827b00473519a52",
+      "sha256": "4af7279126da23514679b6073f0ebc06238c67da685f090661cc31f8e536f18d"
+    },
+    {
+      "attempt_seeds": [
+        4473893763559610341
+      ],
+      "file": "valid-51.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4473893763559610341,
+      "semantic_sha256": "89e840cb2f051276d3ed8b35340bfd4928a7a0fe17aa29ce3cf68d7da70da3ca",
+      "sha256": "9181cc389e107c0cf6780dc8ae4bda2ebee48258c56c38d5931f5f4f286fa773"
+    },
+    {
+      "attempt_seeds": [
+        7112463449949000827
+      ],
+      "file": "valid-52.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 9,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7112463449949000827,
+      "semantic_sha256": "6ec00aa9c37a80034510de16538a0a4dad114725bdfcb0af57eab362c1a3e25c",
+      "sha256": "02bf3148892fe49bf7bda20a4de778b5ab6745e04e6a1def6b519f1770fbd91c"
+    },
+    {
+      "attempt_seeds": [
+        18259466368991525527
+      ],
+      "file": "valid-53.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 8,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18259466368991525527,
+      "semantic_sha256": "d027783d075092b6f8d1b1997ed45b87333cd4023730fbcba34a2a138afc5a78",
+      "sha256": "649d7817a59079b57ec0cb75203a3527c1bf16667fde41917446a30e8c5e34d5"
+    },
+    {
+      "attempt_seeds": [
+        2021749501606369522
+      ],
+      "file": "valid-54.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2021749501606369522,
+      "semantic_sha256": "61d1f250ea10139a0e4db746eafbf16ed732be4da90fb40c10c51ecccb901353",
+      "sha256": "832078e751361d8e9b25f7f0286c352a27d837781e5d19ceb05f828d542853be"
+    },
+    {
+      "attempt_seeds": [
+        16595127860629038592
+      ],
+      "file": "valid-55.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16595127860629038592,
+      "semantic_sha256": "f64ec6601faff0f5e71e878d0348f3df16813625c850b4b11a1478c015d6b6d2",
+      "sha256": "1a100ef1335996bd0025151b157a80f19f06cddc77e11f930f91e59dfde7b0f4"
+    },
+    {
+      "attempt_seeds": [
+        1160882329820603591
+      ],
+      "file": "valid-56.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1160882329820603591,
+      "semantic_sha256": "0d486c47e1e5d85601d7df26bd9f00093b8d8dde8a939902862484b19b2274b5",
+      "sha256": "b6dfa1cae96c25cdbe9ca1b92877e2f361d4d36139c443841b6b6e9ba0ed8e7f"
+    },
+    {
+      "attempt_seeds": [
+        4447005084958500705
+      ],
+      "file": "valid-57.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 9,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4447005084958500705,
+      "semantic_sha256": "7086202526e5b23f6d716f742a49108a0a27a531e1113c8a5ee407c5269a5fa4",
+      "sha256": "24bd2a85cf7577a223a236d36d5e885947eb31ac8ca65e43cdd80d1d4ca46d60"
+    },
+    {
+      "attempt_seeds": [
+        10390270110850211912
+      ],
+      "file": "valid-58.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10390270110850211912,
+      "semantic_sha256": "bf2393a2c2ae35bd8f0677af031788e693b7a1505bea368c6c33caecddd6391e",
+      "sha256": "881c23204cc5b5844b11ae52716f40d3a2dcb76270aa879c0edd2c77b3826011"
+    },
+    {
+      "attempt_seeds": [
+        6107905330849401273
+      ],
+      "file": "valid-59.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6107905330849401273,
+      "semantic_sha256": "d93fc24cf6e123438666bc0419e3dc83f18a564db8825528e270eecf755ce2a2",
+      "sha256": "df772664062cd3e1f949d19774bd3122b0050b8e7925bfc66fec65eb53b0de29"
+    },
+    {
+      "attempt_seeds": [
+        12547277407472534779
+      ],
+      "file": "valid-60.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12547277407472534779,
+      "semantic_sha256": "072c2d4547d45c2a192f659b3f0fbb77072390830b3fdf4e6ff6592d06853ad1",
+      "sha256": "7eff65165953c70f273784ad48e2ef027957e6d72310b5379b8d347ba17a9c38"
+    },
+    {
+      "attempt_seeds": [
+        18353561924666695484
+      ],
+      "file": "valid-61.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18353561924666695484,
+      "semantic_sha256": "0df90f8136c328595ec6b4e94146b201fa2136fc41eb00f9a0c907009a2d8c6f",
+      "sha256": "9dc940d08918f40e959c402161fb23480c5cfc92d28b4108129cfe30f29e8b0b"
+    },
+    {
+      "attempt_seeds": [
+        7947940323106684553
+      ],
+      "file": "valid-62.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7947940323106684553,
+      "semantic_sha256": "b0006ebbdec2949007e4050fd1e9c3d35804ca09e74b138858bbc94190bd6182",
+      "sha256": "52d783ff03ded265010746a72290b6b1d1c711e1333cc854823aa671d37fcc52"
+    },
+    {
+      "attempt_seeds": [
+        13340174946919926552
+      ],
+      "file": "valid-63.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13340174946919926552,
+      "semantic_sha256": "9cbe866e2f2be482e5630a4c3060a0b54901b4f32d549134704e09234ab1441e",
+      "sha256": "c0c353e033fbee7e6e579d360706151046f0d4e5805dea97e48371e7b6242c49"
+    },
+    {
+      "attempt_seeds": [
+        11477718623610661345
+      ],
+      "file": "valid-64.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11477718623610661345,
+      "semantic_sha256": "c27f59fa8a626930f9fc24dfe0574729c74193d98525b4d012a8779ec0168ad2",
+      "sha256": "ce4b2930842a7da32c0439cc6ef340af34a3f3b6481b4c77a3ffa4d93583e2d9"
+    },
+    {
+      "attempt_seeds": [
+        1169669981728574902
+      ],
+      "file": "valid-65.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1169669981728574902,
+      "semantic_sha256": "4477a07312f4a3539f2dbb80e06b7e16f6e91add02ee13c338f66be2d09c5b92",
+      "sha256": "adec80b57b9645cf4c6db995a959cc8af9b5157cad68dc3d55646dd6f1e30bd5"
+    },
+    {
+      "attempt_seeds": [
+        17724391629447042443
+      ],
+      "file": "valid-66.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 8,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17724391629447042443,
+      "semantic_sha256": "31455bde4b486cb0fd94b8717d090536a7a9cd8eba31e2d4bae93dcf1c7b5467",
+      "sha256": "207aa70703a12270a28e4579374fa2226cb94c9478786060ef003177b18e0a34"
+    },
+    {
+      "attempt_seeds": [
+        7953665599502195455
+      ],
+      "file": "valid-67.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 8,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7953665599502195455,
+      "semantic_sha256": "ef98d66872091cc005ec8d82a4ab7799b6e09574528f6c715f05c2ca7791f060",
+      "sha256": "476478d8f12df9ebfac9ba7d1f5daecb2fb696215d7e4659c941b5c666e13de4"
+    },
+    {
+      "attempt_seeds": [
+        10918718792845437732
+      ],
+      "file": "valid-68.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10918718792845437732,
+      "semantic_sha256": "19d7bf9c95fb07a7d8eb142cd7aeaad431cf51acf9f358e9f1de92f97f1c038b",
+      "sha256": "79bd6589a323f5d8114a863888065676b41ceee69642dbe76770130d7c6266a8"
+    },
+    {
+      "attempt_seeds": [
+        14344590134008994522
+      ],
+      "file": "valid-69.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 9,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14344590134008994522,
+      "semantic_sha256": "039a8fc6cbbe146b01db175a603fdc1f8ca88742b2447b89a1aee58a4232bd0a",
+      "sha256": "b1ced6521583520272d0575d354cb9747179a5401ddb8c0eb7a7e283c11f4a0d"
+    },
+    {
+      "attempt_seeds": [
+        16143224860979272172
+      ],
+      "file": "valid-70.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 8,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16143224860979272172,
+      "semantic_sha256": "c6b536108ac40d47cef44c7a7bb12542c0bec48d78d17fc3528231c77ebb990d",
+      "sha256": "29847b661c833290d97514d97d0c36958b4acc3c5e1dd6c29209993167650ffd"
+    },
+    {
+      "attempt_seeds": [
+        15909741840729404386
+      ],
+      "file": "valid-71.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15909741840729404386,
+      "semantic_sha256": "df4e287c4363075e611232717a2b0dbe71ae37e9082d430930366b31e9c85029",
+      "sha256": "e06b1cefbe31103fae3dc733320034a12bda4a9b27364b6e7b35bd36ec5b6f49"
+    },
+    {
+      "attempt_seeds": [
+        3877397893765938285
+      ],
+      "file": "valid-72.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 8,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3877397893765938285,
+      "semantic_sha256": "0f96a690bdd0b7caff178b232e8af765fb58c4f62b57d6a3c7b5bb7fdf49f7f4",
+      "sha256": "fc02461a0ec9ef99d09d5409a452dfccb21c8b1ecef4b64d0e6ad0f403454e76"
+    },
+    {
+      "attempt_seeds": [
+        8727300854015822604
+      ],
+      "file": "valid-73.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8727300854015822604,
+      "semantic_sha256": "a975fa206b325320944ef952df6c8120723c7261f2cdcee1ca94dadd609553a7",
+      "sha256": "cc19a6496e40e505ab16612010c29198ca00d2c9ac44ea70bac54ca685711dfd"
+    },
+    {
+      "attempt_seeds": [
+        8996363618353154773
+      ],
+      "file": "valid-74.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8996363618353154773,
+      "semantic_sha256": "af82b5da120280bd3c29f21e4bb7348331fdc1066dd574aa95ee8934a8e2f772",
+      "sha256": "557970cf35f9772705e951e02f77316b163129dce5509171b62b077957be082a"
+    },
+    {
+      "attempt_seeds": [
+        14260187948113042581
+      ],
+      "file": "valid-75.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14260187948113042581,
+      "semantic_sha256": "171cf4b8328af964fcf1827e363883e744649ac76602310c34dfea219278613e",
+      "sha256": "8c87b8bb9d73a405ee3baa6af2baa20104469329b547f2afe03a3726ead17ed6"
+    },
+    {
+      "attempt_seeds": [
+        14123021230601758399
+      ],
+      "file": "valid-76.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14123021230601758399,
+      "semantic_sha256": "1c2cf36c7d1f77a0aa74a088689748ecf0c8ef7d7120f96a3de6ad3757b3686e",
+      "sha256": "8241609d11a423715fb3f680137afae2b23cf82abff64eb902ce727b97502906"
+    },
+    {
+      "attempt_seeds": [
+        15564972937697324614
+      ],
+      "file": "valid-77.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15564972937697324614,
+      "semantic_sha256": "6087eed3eb3b122241ae0201d5840e5928a702ec32bce10217a65f768756be96",
+      "sha256": "d3fd6889b4310d55bf824ed0c91b50d3ddec24bf47713a07370a2254d9a912f5"
+    },
+    {
+      "attempt_seeds": [
+        4598201226775197568
+      ],
+      "file": "valid-78.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4598201226775197568,
+      "semantic_sha256": "05ed7e90091a625222c1544ea7d895b47596c0ef6e1312612f61ffc2fd833637",
+      "sha256": "dd82f523e71fbff595df531e64a344625f99b2207b02cf56faf2551200be0e71"
+    },
+    {
+      "attempt_seeds": [
+        14222999129907170446
+      ],
+      "file": "valid-79.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14222999129907170446,
+      "semantic_sha256": "22a75cb779e22ca63561c84b7c2b8ddf3db8467c9625cfa944403f2a63716fb8",
+      "sha256": "ccb0e7936031f47b466cf6182f79b495a9b012656c38f063633fd820cfa8a29d"
+    },
+    {
+      "attempt_seeds": [
+        10931027423813074806
+      ],
+      "file": "valid-80.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10931027423813074806,
+      "semantic_sha256": "29e6e33fe08cce620151d7e786db6fe347e030173c43103f9abd65aa9dd99896",
+      "sha256": "42d47d8dce4ad55b89747830d9630375228fbf8f628ff839b6c9482fec55577f"
+    },
+    {
+      "attempt_seeds": [
+        1689669333757624784
+      ],
+      "file": "valid-81.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 8,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1689669333757624784,
+      "semantic_sha256": "d0e9b672fe891787eb5cb438bf7f6c1993b66cc06555fd79c5b62ac532eecad9",
+      "sha256": "45ca615cf6aa3702959753f34342a3bebdfd7fff0b3206008e04c5ba9725ea1c"
+    },
+    {
+      "attempt_seeds": [
+        4351092062794023491
+      ],
+      "file": "valid-82.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4351092062794023491,
+      "semantic_sha256": "ddd4bda696964f725e86d6e0ead84c3c61275d367dc4352c4e04ffacbe8fc311",
+      "sha256": "1ec8f34d0f06b214386f290606392119a59ebf872e2b1bd248b8838e95dce6fa"
+    },
+    {
+      "attempt_seeds": [
+        16952231334354267929
+      ],
+      "file": "valid-83.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16952231334354267929,
+      "semantic_sha256": "2e8e379c2b6c2bafd39df742c471415456c97ef7e13917493ad95a06f8ceffd0",
+      "sha256": "c74c045b6017eaccf4c5e02f295efe6825e5cde86e5a59124f4852658686495e"
+    },
+    {
+      "attempt_seeds": [
+        1616916542839386590
+      ],
+      "file": "valid-84.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.25,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1616916542839386590,
+      "semantic_sha256": "8f27d0b7781a312d0e290212be2986775e124d25592b5c635dd859ae7b001659",
+      "sha256": "386c120ce7ed1f5b2a43580e49cc3ff789ac7e0492f80b30f8c2371f9a7382d6"
+    },
+    {
+      "attempt_seeds": [
+        1593275467276680663
+      ],
+      "file": "valid-85.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1593275467276680663,
+      "semantic_sha256": "37212025fdf5a57d9abef41cef9e2eb1f2cedd4e23c717f470f15f6fcaccf81c",
+      "sha256": "52d901e7b63b6a9679083ac181bf0235c8a2c0825a787255f49dd30189b81575"
+    },
+    {
+      "attempt_seeds": [
+        17179610928362316839
+      ],
+      "file": "valid-86.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17179610928362316839,
+      "semantic_sha256": "97b0f4f371c380c000571e8f6f527abc3f468d71a0df5dc898d361d40ccd182a",
+      "sha256": "8f49afb78e1ad45407d8ccc69bd74f097b5dc31be295d6b01bce832d3e67515b"
+    },
+    {
+      "attempt_seeds": [
+        5402684186560805287
+      ],
+      "file": "valid-87.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5402684186560805287,
+      "semantic_sha256": "faf0b2ff704d4b26ca57562e8222318a2e3e96cef0031bc0de25d96f07dfb020",
+      "sha256": "a7202e827c73fe66eaf6e21739087511d282613700e198b9dd786680a8d45ac2"
+    },
+    {
+      "attempt_seeds": [
+        4992886344886382295
+      ],
+      "file": "valid-88.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4992886344886382295,
+      "semantic_sha256": "9485ef8c028997b9acf560c1d9ddb8bc1f4d4f448d2db5ba17c21016f33646ee",
+      "sha256": "f2bd4dceb726937fefba30a01f90cf7af08d551cca719dcb197ef59e4e18a6e8"
+    },
+    {
+      "attempt_seeds": [
+        13839962480503771600
+      ],
+      "file": "valid-89.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 9,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13839962480503771600,
+      "semantic_sha256": "b76b0efb9c5934f01dd00f9faa18e2749054f7bdbb190ea617bb966aa9913583",
+      "sha256": "34a05b305a79bc5eb49dc77f3463d953a83e48e2e780e2a7a98ce8a42415513e"
+    },
+    {
+      "attempt_seeds": [
+        16463602842825109379
+      ],
+      "file": "valid-90.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16463602842825109379,
+      "semantic_sha256": "f86fc0f7d77156044d241942d886e8fbe9d4ff3b004ad2aea4dd9e92e90c4d11",
+      "sha256": "f8cc91bd688c50c4c670100045f564bfcd382cd149bf627459f77d37fa8f710d"
+    },
+    {
+      "attempt_seeds": [
+        6840352609809517685
+      ],
+      "file": "valid-91.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6840352609809517685,
+      "semantic_sha256": "e467395ec720871cf7e25de6dbc4a53acda4a3087ccea6145b70a0b920521e85",
+      "sha256": "0e1f5e6c62a80b913a57cb0984e44053c126641e63e9cca3c4da041627d75277"
+    },
+    {
+      "attempt_seeds": [
+        17247196950231591990
+      ],
+      "file": "valid-92.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 9,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17247196950231591990,
+      "semantic_sha256": "07edfc2c00e56ce70825d8525edbc35fa96cea91f59056f38f5003cbef4d780a",
+      "sha256": "ac82f6353e799b8cf2c67497890ae9e734d0ca3a7aa78d327aed329abbd80d48"
+    },
+    {
+      "attempt_seeds": [
+        16184921321881502011
+      ],
+      "file": "valid-93.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16184921321881502011,
+      "semantic_sha256": "2889faba14be431bc6c122ff29ae1bafeebca819e35d283fd78e91dc6cb553b9",
+      "sha256": "f8e09c36391f9abff402f8d98184d7afb2272fb559d31b2bae86f182b234ca80"
+    },
+    {
+      "attempt_seeds": [
+        7316590312699804440
+      ],
+      "file": "valid-94.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.75,
+        "num_children": 7,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7316590312699804440,
+      "semantic_sha256": "d5bcf34eb91017fa922df8bf33a50171a9f94c3da7466595d13854216ae0dc0b",
+      "sha256": "ee11fcaa69d01d42ceb0518e28e6d19895e6b3ed45da7fa35e2252dd91ee8e2c"
+    },
+    {
+      "attempt_seeds": [
+        1736911337390660127
+      ],
+      "file": "valid-95.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 9,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1736911337390660127,
+      "semantic_sha256": "74b02e8f51ea51a0fe75b57b5268ed96102735133322817f7154452953064292",
+      "sha256": "da65f0fa26c984c5c0ab39d734d83425f38a2281f94d026b7c68ca68615837d4"
+    },
+    {
+      "attempt_seeds": [
+        3335511383355666039
+      ],
+      "file": "valid-96.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.25,
+        "num_children": 10,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3335511383355666039,
+      "semantic_sha256": "f7fdb4d683671d976e68f30ab6821389263c79b0f0df3ec8acc4f27e98ae48a2",
+      "sha256": "587e5a9d448bfdd67cc87630cfdd2873a264b17ed4e46cafd7b9dde324b19bfb"
+    },
+    {
+      "attempt_seeds": [
+        4365552699834544216
+      ],
+      "file": "valid-97.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 7,
+        "num_trays": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4365552699834544216,
+      "semantic_sha256": "533de449fde070e27eb39e014c10f65db6155f28e4f52b12436a6f0a77578830",
+      "sha256": "52cd276a3f97f6d9e34b7c38b3a9c945d5683c44f517570753923108e170a306"
+    },
+    {
+      "attempt_seeds": [
+        7907432097434103722
+      ],
+      "file": "valid-98.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.75,
+        "num_children": 8,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7907432097434103722,
+      "semantic_sha256": "555da8ecb0f2fea23c1dc133d1f8215848255c4e6676de884b00b51c2faeb6f4",
+      "sha256": "1dcf1020a3b6a8852dea7c40dbedd25965de6e9ebb3bc263221f33fa6da59ffd"
+    },
+    {
+      "attempt_seeds": [
+        3913422379735491225
+      ],
+      "file": "valid-99.pddl",
+      "parameters": {
+        "const_ratio": 1.2,
+        "gluten_factor": 0.5,
+        "num_children": 10,
+        "num_trays": 3
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3913422379735491225,
+      "semantic_sha256": "81e8a972374ccaee98a12d374978616986b86baf0f031cfab00b430e130bc076",
+      "sha256": "50b5202bb3e3ee45e94014445c45d0bb00efbba151959a257d239216d239c694"
+    },
+    {
+      "attempt_seeds": [
+        17768204476559425366
+      ],
+      "file": "valid-100.pddl",
+      "parameters": {
+        "const_ratio": 1.5,
+        "gluten_factor": 0.5,
+        "num_children": 8,
+        "num_trays": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17768204476559425366,
+      "semantic_sha256": "02146f244a903087150b0c1f5e39fb0904e8a3bd1213d5215d766cbef5a591f7",
+      "sha256": "8d76cfcdf77f96c909e12af0f84861171f982d9f7b130976c78d6e267273cde0"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "valid",
+  "valid_configurations": 72
+}

@@ -1,0 +1,1515 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "b23ea6a9b252edf74edc41a4254b55421064e3d34fd765574731f0a96541f729",
+  "generator": "classical/miconic",
+  "instances": [
+    {
+      "attempt_seeds": [
+        2020912320396030767
+      ],
+      "file": "valid-1.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2020912320396030767,
+      "semantic_sha256": "fe593c49ab109e297ce7c45c7d2b0993945034d6b477edf2ea4de7b6a00508e8",
+      "sha256": "b8e109d5f703dede5e7f7a2ba8cfc37aa31e1078b4a7d2937e9d327d1bc44aaf"
+    },
+    {
+      "attempt_seeds": [
+        15686751731731932303
+      ],
+      "file": "valid-2.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15686751731731932303,
+      "semantic_sha256": "010f658d59337584639607fa8b5f028e22bc5fb8c4370ce3739e4e3461eae261",
+      "sha256": "54d0ce23890be241a88ffce8ffd415c3f62babeed2303b7c0617222aaa567b51"
+    },
+    {
+      "attempt_seeds": [
+        16135746752802207066
+      ],
+      "file": "valid-3.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16135746752802207066,
+      "semantic_sha256": "c02d3dccbe35d52a4c5722fe91cd23be956bcd94cad35159859af6e60dab26be",
+      "sha256": "451100e041cb38204e1c085a3c4cf14c6191e6b64c82e79f3c661eb2108caeb7"
+    },
+    {
+      "attempt_seeds": [
+        11607048189858707841
+      ],
+      "file": "valid-4.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11607048189858707841,
+      "semantic_sha256": "b78d58c90c9c7d1f8aa345ebb5dc2993f6747187ea4acb00391da9619d0966cb",
+      "sha256": "1fc070255f517e56692d9232e0f77361372df6cdd027c7efd582593f9e797e6f"
+    },
+    {
+      "attempt_seeds": [
+        6005266680980811372
+      ],
+      "file": "valid-5.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6005266680980811372,
+      "semantic_sha256": "fc154b018da21bc7440d070dbfe72f11b8f9955074e70d0697262ea5c7aaa25b",
+      "sha256": "76fceba010b11b37d849808f7d746f7dcd523093a824506897a7536de7905f16"
+    },
+    {
+      "attempt_seeds": [
+        3657831372305586752
+      ],
+      "file": "valid-6.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3657831372305586752,
+      "semantic_sha256": "234713b334fc3cc3cc20613be4207bd04d253415c2c20ff62a9a47871220d3ac",
+      "sha256": "3440bd858734403d08da7661353c572b249ae6c21d2ead9786d6c72e3f714d9e"
+    },
+    {
+      "attempt_seeds": [
+        16629105751487816936
+      ],
+      "file": "valid-7.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16629105751487816936,
+      "semantic_sha256": "e2978ff7dc095b83844b8539bbb64008e14e23345788526a5f34154835dd4961",
+      "sha256": "fa8ecc05689e9d3df5869ab0e4a64286b07507a228931cb2b42c9db142fc239a"
+    },
+    {
+      "attempt_seeds": [
+        16996471194597527989
+      ],
+      "file": "valid-8.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16996471194597527989,
+      "semantic_sha256": "3b85b0699da43367151adfda72a027842260191879adb7dee04daf423d3ddb3e",
+      "sha256": "d83d1c92e6b1f8de3e47fbaffc26005be6d9e804c715ba94f3d7d2721b229a7c"
+    },
+    {
+      "attempt_seeds": [
+        14105208809252365193
+      ],
+      "file": "valid-9.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14105208809252365193,
+      "semantic_sha256": "39776c92883cd0cdff919461110bbadbb78f47dd25358778e78468a1b88be96f",
+      "sha256": "a8ca15a93dcd81c70baca9134d9b878c40a69a27d2a0c33d34a8fc5b063e2e3d"
+    },
+    {
+      "attempt_seeds": [
+        6304211484102101975
+      ],
+      "file": "valid-10.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6304211484102101975,
+      "semantic_sha256": "640b5a70877eee3e15a756d42c7712cad26ed087bcd8db5c1ce2fa190486b5da",
+      "sha256": "cbf49193aac7c1dff543c76e9403c68b0a09eeb940c305b12f41a04194bfc160"
+    },
+    {
+      "attempt_seeds": [
+        979785914394243070
+      ],
+      "file": "valid-11.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 979785914394243070,
+      "semantic_sha256": "87debbcf25d9d98dd760d2e6cffe3d7ac8fb1b436dea1147652ed1539d2def34",
+      "sha256": "53239e2675acdc30eb7b0aacfe5befd60af04f8506ab22437e343cb40aa73ed7"
+    },
+    {
+      "attempt_seeds": [
+        13693088790786447518
+      ],
+      "file": "valid-12.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13693088790786447518,
+      "semantic_sha256": "a05ab2c12addf1244cad1b58e953e6458fcff7ceaf696283e90bff7d47a53cdc",
+      "sha256": "667e21e6eec738935d1460cb78a7714a5a9d93b63416617e7f0d00c5ef62eb80"
+    },
+    {
+      "attempt_seeds": [
+        16205755020440572334
+      ],
+      "file": "valid-13.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16205755020440572334,
+      "semantic_sha256": "45090a79847c8dba1c0160c7d4dc25f5d246ac9932dd0d6b786e603d761c4319",
+      "sha256": "a4a5e31aeef7882920e3088c94a475429c20a22ec19a0d71916dd95e23d2b6b9"
+    },
+    {
+      "attempt_seeds": [
+        9189042321144777069
+      ],
+      "file": "valid-14.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9189042321144777069,
+      "semantic_sha256": "a625b1561bf8ae5405170b4f1ef17ebdb38d458c47d8e7e4df1cf59016747c66",
+      "sha256": "a05e1ece544dc509c0e483f3c68cc8355cef1acf6d7e1c03e57041635d31fde1"
+    },
+    {
+      "attempt_seeds": [
+        3981719358209544829
+      ],
+      "file": "valid-15.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3981719358209544829,
+      "semantic_sha256": "18b65d5a9d5c61e0600f76b438435b36e73a8c7eb56311e1f31b509efa68a966",
+      "sha256": "85b4d477d2fe96589cb9a2e4b2fc5d2ce4aeaa90de92cc69fc11f0eeba2dc114"
+    },
+    {
+      "attempt_seeds": [
+        1416145779910108981
+      ],
+      "file": "valid-16.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1416145779910108981,
+      "semantic_sha256": "c9cdaee0bed628f4d36214b31a3716fcbc46235f9bf3eb24daa48e612be9444b",
+      "sha256": "cff94845e62ce7fb24a6f6f741aabc0bba277e077b317638ed9b5e792bf4461b"
+    },
+    {
+      "attempt_seeds": [
+        14419726804693396940
+      ],
+      "file": "valid-17.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14419726804693396940,
+      "semantic_sha256": "f668a9cbbb8de73b6e9ad875a14baf1ff761e359789efdcc39bc5ab3180752ae",
+      "sha256": "b8a90266ab26d3977575317ae2b92cffd073d12d2adbeadd7eccf9fb30871cb5"
+    },
+    {
+      "attempt_seeds": [
+        1884983299426917760
+      ],
+      "file": "valid-18.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1884983299426917760,
+      "semantic_sha256": "fcfe23950217694a9c9ee50ab52d68d497a2a746ccc19b401b7c9a3d9616ed8f",
+      "sha256": "2a7fa35171159fb0164877f25ac7809924ccfa9c26c5d2b302cd034cd40249f2"
+    },
+    {
+      "attempt_seeds": [
+        13906940746517413316
+      ],
+      "file": "valid-19.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13906940746517413316,
+      "semantic_sha256": "a06ca343621aa91d5be050c9f1bd2fd149d4199d9c09b9467d97668daf1918b8",
+      "sha256": "eb425989d008d6ed0e7752e21e93e14454704ecf31912a40e431d28a6afb26d6"
+    },
+    {
+      "attempt_seeds": [
+        4467592222845557917
+      ],
+      "file": "valid-20.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4467592222845557917,
+      "semantic_sha256": "4b5bcd1496daecebd740cc0d666be7cf198b3524849cc8c40323a9067f849997",
+      "sha256": "cc09367b24848a03b6295e2e7824081fd3349df38499170cd30b371fd094716d"
+    },
+    {
+      "attempt_seeds": [
+        5952063602636919546
+      ],
+      "file": "valid-21.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5952063602636919546,
+      "semantic_sha256": "4f244d849c7fb729fe0d944d618d8ca2b63e98609772f8318e61430bb27016bd",
+      "sha256": "7eef2f831d77b674ecd36bdab2208a686ebaad98f0620046a1f1e25c37513c68"
+    },
+    {
+      "attempt_seeds": [
+        9299281767264194517
+      ],
+      "file": "valid-22.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9299281767264194517,
+      "semantic_sha256": "9f24ec4d4585ab7755c2df08163a196b169d683d119977ea9cf4c4d9cfc5904c",
+      "sha256": "d2fbcbfbeb5d02a8c369c8c06b8457d29de37cef7f87a9b0a7b96fb6bcfe1886"
+    },
+    {
+      "attempt_seeds": [
+        14288653445132109481
+      ],
+      "file": "valid-23.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14288653445132109481,
+      "semantic_sha256": "3a019cd68443b2fac8772a07dc4d64883338fd720e3d94be141305c4f6a6b27d",
+      "sha256": "6d1ee9f5e8e20bf8203fac3a147e0e7a3145e44a0ac2ed021ae3d8dceca1448e"
+    },
+    {
+      "attempt_seeds": [
+        14207092873926414097
+      ],
+      "file": "valid-24.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14207092873926414097,
+      "semantic_sha256": "9107a66c3d891551466851c44e19ef89d0e0e715007891982546558cb4c58341",
+      "sha256": "1d5fccb1a8a0bd122dfb5f664b3067b12e850ba6431881da241726405f267bdf"
+    },
+    {
+      "attempt_seeds": [
+        17201751396075763579
+      ],
+      "file": "valid-25.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17201751396075763579,
+      "semantic_sha256": "9d58a866a057fac7acd1997f7b222f88385a4eb2c9970e872881ac79b3ca4265",
+      "sha256": "3288cc72a0d86f5b8a62d0338644fd98f2657bc7d500947e700a72d698658bd3"
+    },
+    {
+      "attempt_seeds": [
+        5587676895593275486
+      ],
+      "file": "valid-26.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5587676895593275486,
+      "semantic_sha256": "d7865407b44996dbe45bfdce0de55881deb3e0184d2f0ce19f5cdcc0739d4dd2",
+      "sha256": "b1b5bf581fbc463e9f6b2851b1cc8fc2a4709d4823d49175feca67747941f1bb"
+    },
+    {
+      "attempt_seeds": [
+        12545404369483495077
+      ],
+      "file": "valid-27.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12545404369483495077,
+      "semantic_sha256": "c808b2874f9286157fe36bf4d32aca8b38c0e07dcac0bba3f43232f6dd78d5dc",
+      "sha256": "cc310b7d314b12d53bbe80c47270cbe48b3b73559cb1a53cd459b794611646a0"
+    },
+    {
+      "attempt_seeds": [
+        12605047911115617146
+      ],
+      "file": "valid-28.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12605047911115617146,
+      "semantic_sha256": "cd512c36c34c7eadd98290ada978f0080d44d4dbe7cc92040f7b100c79489c4a",
+      "sha256": "dc488ce0a99c8631153d4b7f67166687b8a2f8aa62cfac30b1193b71b6845e83"
+    },
+    {
+      "attempt_seeds": [
+        10717229869362632732
+      ],
+      "file": "valid-29.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10717229869362632732,
+      "semantic_sha256": "3fc3ebfbc48b3c33e8461c07d18e55591bfacd1c28553492ed819bfa7aa7f146",
+      "sha256": "e319f672d71b3066810d775e02f5c36e71c21a45aa7d96b8584c361637904639"
+    },
+    {
+      "attempt_seeds": [
+        3261811883899257104
+      ],
+      "file": "valid-30.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3261811883899257104,
+      "semantic_sha256": "de221b8df92d1b7f0ffcfed1140976f5838dbe830cbbc036afe51fef2c9e84ed",
+      "sha256": "d1b45df7e983bfc0c308e942c228d848f3158515fbcecc82101b9c4f627cf1c0"
+    },
+    {
+      "attempt_seeds": [
+        16549936989979134861
+      ],
+      "file": "valid-31.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16549936989979134861,
+      "semantic_sha256": "480aa211e8428e3c2e87004bd67cc1efec7ef1e059b9d4e53344365c052208a4",
+      "sha256": "17e5a460de88383bcd349166822d303b157734f4c9581de0fec7d1887b3d5d0d"
+    },
+    {
+      "attempt_seeds": [
+        12717791022157449991
+      ],
+      "file": "valid-32.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12717791022157449991,
+      "semantic_sha256": "7a3f99b053468df25c15cf99afb5a6babbcfee8b898a66bd2cb473d1c6230798",
+      "sha256": "9a1e4a2f3454ce432a51acffd4dcd59dda2658a3efb3e5587fa108107dad909c"
+    },
+    {
+      "attempt_seeds": [
+        15563024870418844369
+      ],
+      "file": "valid-33.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15563024870418844369,
+      "semantic_sha256": "8eed94724f84e5493fcbf3e9757d698fb3b12d822dfcc1d61fe9a81f3268131c",
+      "sha256": "6d8fc77e716a90e688276e3428db3647d9ce6001160caa1713167f7141c3754b"
+    },
+    {
+      "attempt_seeds": [
+        11317613849291511616
+      ],
+      "file": "valid-34.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11317613849291511616,
+      "semantic_sha256": "9851e0b672b4a15c65e618904e9262f9ffc49059f646e9d198e66cdf806e6708",
+      "sha256": "d57d315fae015e2a289c154c512274b5e1451108b89b16a2cc94a0abac860d27"
+    },
+    {
+      "attempt_seeds": [
+        12607761143999144322
+      ],
+      "file": "valid-35.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12607761143999144322,
+      "semantic_sha256": "db4863f169c3c8cb0a4758a2aae1ce3539fb9808cb82fbf07407732905e1d1b2",
+      "sha256": "cfa0fed1ed2062f7fa7a33629527034bb1d45b20017c70a3068c0bfa2752dd1c"
+    },
+    {
+      "attempt_seeds": [
+        8186857850295560702
+      ],
+      "file": "valid-36.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8186857850295560702,
+      "semantic_sha256": "3544de916aa8d3f407d125bcc4c3027c658e3238648810cebc2b76f9cb651469",
+      "sha256": "122aba66d4eb023d88f10afbc7e02f17005126eeb2733e58c75d359ffacd61c1"
+    },
+    {
+      "attempt_seeds": [
+        14776569039074564953
+      ],
+      "file": "valid-37.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14776569039074564953,
+      "semantic_sha256": "3d171ee5be106310ded327646912459b6cdc1b7790ae6c7c0e5b55d65345410b",
+      "sha256": "6aff46a52b08da669a3adec2c9561d5baa750e51449d950c37c5c211e7d852de"
+    },
+    {
+      "attempt_seeds": [
+        18244648188227001533
+      ],
+      "file": "valid-38.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18244648188227001533,
+      "semantic_sha256": "be8d79397a6ecb9225251f59c710b3aae560e5a251efbbc7b8cc6635c29e18cb",
+      "sha256": "3c42101347d036b4da7d9b3f45dad764f12adc089a8ca18f3904d3660608466b"
+    },
+    {
+      "attempt_seeds": [
+        15119120473422176907
+      ],
+      "file": "valid-39.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15119120473422176907,
+      "semantic_sha256": "92573fdb381315d6298b07777fd3b0ea481586ef7fe2e287fa4d59ef1f66c614",
+      "sha256": "1c3ae2e23c36c36bf40ac108e5b0a07ac6dd71434f0c2d6b12133b76bad128bd"
+    },
+    {
+      "attempt_seeds": [
+        17329835937293109014
+      ],
+      "file": "valid-40.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17329835937293109014,
+      "semantic_sha256": "fc8753549b3ae3aa9490081eef03d0746e0197d639afbaf4241cb79789f527dc",
+      "sha256": "87defd8543abb7d594821748895169225352ea7f88b1b4711437cccbe7be1be3"
+    },
+    {
+      "attempt_seeds": [
+        10384661493427624148
+      ],
+      "file": "valid-41.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10384661493427624148,
+      "semantic_sha256": "de179c09b51c5fb353a5a6c861cca8032695a8f3ab6b4917caceb4ac7e516d52",
+      "sha256": "8b461b3438c841f794483e92955b54bc284de6ed008ce55ffa37aa3aa9cb15b5"
+    },
+    {
+      "attempt_seeds": [
+        6943650105643837759
+      ],
+      "file": "valid-42.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6943650105643837759,
+      "semantic_sha256": "82641fcd2c9c7618e70b2d5d18b5cd3a895562db1d5a657f407c4993b25372f1",
+      "sha256": "71c12ec908df4003734a28a2a74b1c500cec40cfc05e630ce39d3ec073843dd1"
+    },
+    {
+      "attempt_seeds": [
+        8854858296642250105
+      ],
+      "file": "valid-43.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8854858296642250105,
+      "semantic_sha256": "05baa7c7b0097db606c93c74c2903aa6a8dd4e33de663337caa06c9ceed217a3",
+      "sha256": "c097da9a452b55c5b49a224c98ef4ccbdd5dd99f8032998cb3e032c8ccdef3d8"
+    },
+    {
+      "attempt_seeds": [
+        4902555485785414759
+      ],
+      "file": "valid-44.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4902555485785414759,
+      "semantic_sha256": "c1c5b1ad1b484153fdf0feb7600a3b4d48adcd7a27ce5e895571c9259a27fb0f",
+      "sha256": "32206a06ff048a48e61c598b4468b9d8fc196f4fc3190e4203e9523437288081"
+    },
+    {
+      "attempt_seeds": [
+        16707118561597955485
+      ],
+      "file": "valid-45.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16707118561597955485,
+      "semantic_sha256": "da4d38f03fd7a7644fc1276afef3a50988edb26473e0b8e06313c4151db5f0cc",
+      "sha256": "2d0a1a698fb6ecb7dc40241c2f1006cc59fcc9335a583d013884a5718b646dd7"
+    },
+    {
+      "attempt_seeds": [
+        5263628604561100194
+      ],
+      "file": "valid-46.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5263628604561100194,
+      "semantic_sha256": "b3d0645c7604565084bbf7c74d296510d42586841cd8ce5cfe62f31829d7d58f",
+      "sha256": "ed7ad33c9b469eec5fef2cf9d10326b804f57298383de89f0debac313a9101e3"
+    },
+    {
+      "attempt_seeds": [
+        8840387527984650073
+      ],
+      "file": "valid-47.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8840387527984650073,
+      "semantic_sha256": "b7223e3f830d816f44a8b9cfde4f9622808fe6eb4b6f382a2cf11c96ff8ec6a4",
+      "sha256": "7771bda4b80f6fa65b7e41299cdee1f25415f92add8cf852af1dd572fdf8c980"
+    },
+    {
+      "attempt_seeds": [
+        16461064336416736188
+      ],
+      "file": "valid-48.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16461064336416736188,
+      "semantic_sha256": "3cf20f59d6d2fa53cb7d5b6e55cd1c36a0cd578733fa7d12612e30f9cdf7a6e0",
+      "sha256": "0cf4deb82dedaed9183571b3f4b247f641afed0413eaf64210492dfc6e336d2f"
+    },
+    {
+      "attempt_seeds": [
+        17661333604777052488
+      ],
+      "file": "valid-49.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17661333604777052488,
+      "semantic_sha256": "e1e6413eafbe92867e30646362d4dd156e3f2e3d76ea391fcd96fa7bd56ee5e6",
+      "sha256": "2d41188e1621cd55ab213b1b45ab49ba3548fd4229023b9ec81bb53675424e64"
+    },
+    {
+      "attempt_seeds": [
+        15157231740698118906
+      ],
+      "file": "valid-50.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15157231740698118906,
+      "semantic_sha256": "b24fafe9e4fabb98e8a6dbcbaba8b01e13072db5161a34ce627f9dc91282a6e4",
+      "sha256": "912584933661c60d0c1362bfdfec567205e00d2a6c7c4e2a800c47225d764d54"
+    },
+    {
+      "attempt_seeds": [
+        2347515004828042471
+      ],
+      "file": "valid-51.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2347515004828042471,
+      "semantic_sha256": "b1ecc4831d73dbb563678f1a45b3a427e63f4277ff31415a2197e63e23e07cb7",
+      "sha256": "064d4b73cb91eb3e90fb4f476ccc2c61f8f5e8ff0531602370c5ad651b2b1bee"
+    },
+    {
+      "attempt_seeds": [
+        14748883781811044886
+      ],
+      "file": "valid-52.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14748883781811044886,
+      "semantic_sha256": "f00f47e800ae40cc2005414115d4ab68aebf5ad0b893391b0507fcffb590da2d",
+      "sha256": "4fa31f018329a1eeb1bab6601750a06fcfc98706a376b99b3ae96808d04e43a2"
+    },
+    {
+      "attempt_seeds": [
+        6298731402357863690
+      ],
+      "file": "valid-53.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6298731402357863690,
+      "semantic_sha256": "aef71e09cf4a8cfa40c39edc4637c01b040a347c8582e0c10f592260940061ce",
+      "sha256": "26550db1c489f4895eedec9031e426b6bde65b05c48a8f8444cb94b80ed6a82c"
+    },
+    {
+      "attempt_seeds": [
+        1244090304444876341
+      ],
+      "file": "valid-54.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1244090304444876341,
+      "semantic_sha256": "85ad168ed87142437a89d18a80436c38c5dbb5c47df9847292843814446037f2",
+      "sha256": "380bed4701d3481368078de0ca02298de86777cb978c7658a24ad0116511ca9f"
+    },
+    {
+      "attempt_seeds": [
+        6155575391811589487
+      ],
+      "file": "valid-55.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6155575391811589487,
+      "semantic_sha256": "8660a303b0a835028a60740762a6e11fc940b67d4d81dff857157e8bbd0b9b2e",
+      "sha256": "c25adae69fa27cdf582e303e0f051bf64536761b1fe07a58a5592ed1bb6a5925"
+    },
+    {
+      "attempt_seeds": [
+        17138065532364671403
+      ],
+      "file": "valid-56.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17138065532364671403,
+      "semantic_sha256": "e29e6bfb0a0435fc8aaec419c0b20f11a733a87a82504058cfab7751c7ba8adb",
+      "sha256": "ec429c3de2904c20f595cf1342617d5aacdc96654107092acf5f3a66cf8ea3bf"
+    },
+    {
+      "attempt_seeds": [
+        10643134393046534195
+      ],
+      "file": "valid-57.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10643134393046534195,
+      "semantic_sha256": "3fe8362fe16a97990fdaccc487dbd621e66b0eac2481e59cd95b5a714d99f91f",
+      "sha256": "f0e64ce23ad5ae373664704a2e11b3e3698da22cc2b56d2a9a7529391f6e953b"
+    },
+    {
+      "attempt_seeds": [
+        3569225538245534962
+      ],
+      "file": "valid-58.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3569225538245534962,
+      "semantic_sha256": "644d92d76afba44d61a1aa109bf52bc6d87e5d3a34ca354f580902b810203aa5",
+      "sha256": "ef56965671c7182b9a671f041b22fc212761218a6739fa6874b68d85d812efe5"
+    },
+    {
+      "attempt_seeds": [
+        10726181953041236082
+      ],
+      "file": "valid-59.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10726181953041236082,
+      "semantic_sha256": "5383a372ec8a59f16451b4b6620ee550e531682a8db7999795d57f80dcd0da33",
+      "sha256": "4f7753cf8a5ca0b3cf856b9ffcb6a1c593a4e500d0f3db0ab7cfac629c620a74"
+    },
+    {
+      "attempt_seeds": [
+        4535747600192409787
+      ],
+      "file": "valid-60.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4535747600192409787,
+      "semantic_sha256": "b2e9023c3c9a8f1e481515b0f59e0eaa51b90acde7085f8638679abb186c045b",
+      "sha256": "a0fe69042661d1faa5efcbe416bc1f886ef0eccbcafbf34fd7aef88431cd6908"
+    },
+    {
+      "attempt_seeds": [
+        2314381685058252261
+      ],
+      "file": "valid-61.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2314381685058252261,
+      "semantic_sha256": "10f6c7d96a3044238ea564db45b39207015d3a3fa443b006f0e9d39c422622fa",
+      "sha256": "1db1c0163ede9bfd305f5d5d38e8f68f17daaa4ae01251ea475c17a4ec0f59e7"
+    },
+    {
+      "attempt_seeds": [
+        5276346510751416793
+      ],
+      "file": "valid-62.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5276346510751416793,
+      "semantic_sha256": "5b0c432b4e000a1641af23f4e9add26127ced712e20f7117d3c7e8a3bb01530d",
+      "sha256": "db9fd6e1a3a4db3125980eb5427ca43715e7137c83570a22a5f0a78a057ddd82"
+    },
+    {
+      "attempt_seeds": [
+        10969499897551110734
+      ],
+      "file": "valid-63.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10969499897551110734,
+      "semantic_sha256": "e371ce5c7ae37b8cb6da4636bceee952494e0ba0b70fd7a9a2a7e8907ceadbaa",
+      "sha256": "096d2c962fdadc1ddbe1c6f7d24032ae09ece75efe3c61de578805e21a87b119"
+    },
+    {
+      "attempt_seeds": [
+        9904286641026972589
+      ],
+      "file": "valid-64.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9904286641026972589,
+      "semantic_sha256": "baaf73a8aab42e075b7987a9482e3f548d3eadf02ee87811131b33f0fc5ecf04",
+      "sha256": "1ca7b209d62768254cdea3176963a5277837a7a0436f16c34ec831711c51359a"
+    },
+    {
+      "attempt_seeds": [
+        1299368956302400090
+      ],
+      "file": "valid-65.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1299368956302400090,
+      "semantic_sha256": "6102a5019c2bca2321e85611325ddf36ccaf686aa28a9695bbd8a68ee9bbce75",
+      "sha256": "e83c35d8e728f6da665b5a2af54200a280a0353c7a961956e782f637010424a9"
+    },
+    {
+      "attempt_seeds": [
+        14566869101565459210
+      ],
+      "file": "valid-66.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14566869101565459210,
+      "semantic_sha256": "f6ebcb807865f7104d6609843e7774d078341592a15addfacaf7a0003f401f2d",
+      "sha256": "446f32dd830f42b6ab8aa40d65b402a69f699b2fa172c4a217e10a6f141dbea0"
+    },
+    {
+      "attempt_seeds": [
+        381782578996253667
+      ],
+      "file": "valid-67.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 381782578996253667,
+      "semantic_sha256": "0a02e5e1001675fadd8810d2c16dc0fa7bd6b4c5f15a947f15a8ebbbe320ab4b",
+      "sha256": "be1305a3699b8d1dbc6d3d9e8dec2180e7a7d3c0cd1dcce5963b7d0c5d4f94a1"
+    },
+    {
+      "attempt_seeds": [
+        10077253154510924369
+      ],
+      "file": "valid-68.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10077253154510924369,
+      "semantic_sha256": "c69fdfa335f1615e27250668ccdbe62841023e7f3ec4b2d79da4ebb84330d21b",
+      "sha256": "781fb3eb62ef73dce101e52c49950a7d266ae02f1d5f57eee799e38ccb4b7546"
+    },
+    {
+      "attempt_seeds": [
+        3471652700977900147
+      ],
+      "file": "valid-69.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3471652700977900147,
+      "semantic_sha256": "c43791d485b9fa4b163133b1f9187fb0983c5db80b8d6ddb269eeecc8888ac79",
+      "sha256": "4f0d378ac106ff912a12f5d3f27559b8ad4762e5d3a20688664fbec1ae9e6cd0"
+    },
+    {
+      "attempt_seeds": [
+        4801689804475399070
+      ],
+      "file": "valid-70.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4801689804475399070,
+      "semantic_sha256": "36a28fa426e7d0c02a7f198acebeef8b5e86e7fafe50a8208422dceaef7baa6e",
+      "sha256": "804271657c2e620e122b7c9af6113e8720711eb9d1300aac866d9127c2ac3f51"
+    },
+    {
+      "attempt_seeds": [
+        3147506922199032821
+      ],
+      "file": "valid-71.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3147506922199032821,
+      "semantic_sha256": "12446aad7b5d090f9cd4decbfae9d04496a94bb57cc0885c50c468e5570de9d0",
+      "sha256": "afe9f3dc8d417fcaf459c19ba5ad751a20fba334c9e5b3aadd3a168b1f81a0f6"
+    },
+    {
+      "attempt_seeds": [
+        11106648336274126544
+      ],
+      "file": "valid-72.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11106648336274126544,
+      "semantic_sha256": "85c14fd8369449ba8abb5052d7ff0ab3d6a13a5daeac01ab3c6e845e1cf28dc7",
+      "sha256": "f97d1f6cbc6e21da5197128676e1e3a0f64a17c905b275d9d0f00a5d3a531ded"
+    },
+    {
+      "attempt_seeds": [
+        13579129027909160281
+      ],
+      "file": "valid-73.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13579129027909160281,
+      "semantic_sha256": "b3625176802b0331c802614056abf1c508efbee01fd0ac02560473303340778f",
+      "sha256": "7f3f54cda9435c1d1e9b7fcb1b07ccef0084a052165ea25fcbb9c90de46df9df"
+    },
+    {
+      "attempt_seeds": [
+        6716092945882192177
+      ],
+      "file": "valid-74.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6716092945882192177,
+      "semantic_sha256": "8cf96e9e3910f84f8c3ebdde3e8f1567780225aa05dc849720f043bab40cb759",
+      "sha256": "56390c4c59018442427020b538dbbeb8fc1cf4e0e0a489028539dab4dc17810f"
+    },
+    {
+      "attempt_seeds": [
+        12531858424261552169
+      ],
+      "file": "valid-75.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12531858424261552169,
+      "semantic_sha256": "4fad444af0f30d5b96cec3e3d71c6b7a427bf13d900bd1604500403406304589",
+      "sha256": "095f395247073d66d8521b900a4882353440e8b64f497f68c452f3299605e16c"
+    },
+    {
+      "attempt_seeds": [
+        11373839178534187353
+      ],
+      "file": "valid-76.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11373839178534187353,
+      "semantic_sha256": "7a79c7cf756578259c1709b379cda748f8483295957b8bab3128559eaf58d6a1",
+      "sha256": "b993bf80afd114e6028a4cf15c8dff032f453a9f3081bc26a8958ea6f2ecc9d8"
+    },
+    {
+      "attempt_seeds": [
+        8932272269176666370
+      ],
+      "file": "valid-77.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8932272269176666370,
+      "semantic_sha256": "d62e2966a1c33bf9e15ed9bd59ae983c0081c39fd7060def1d8b05937ce3f26a",
+      "sha256": "ba3b5db8d72724c7a5f013b57028d25edfd2d1fc26779af223dfd3ac1f73a013"
+    },
+    {
+      "attempt_seeds": [
+        5815053601286073967
+      ],
+      "file": "valid-78.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5815053601286073967,
+      "semantic_sha256": "aa4e9b3a1f11f1bd8d78fa7cd17cce0eafe96f52494c7019397942d03a638b2e",
+      "sha256": "d9c057ff9a67b837afaa0b15c7d2097733de73f27a37f344b5ef6dd7a322d543"
+    },
+    {
+      "attempt_seeds": [
+        766973350673617654
+      ],
+      "file": "valid-79.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 766973350673617654,
+      "semantic_sha256": "8ff5529acc74e69cc8b97d5ca79a069630b68313ed6b842b4d9750ec26b95d71",
+      "sha256": "91dcc86238e8969ddef3e5ede9ffa97e6eef0ff28a9ddeb2532f7f09fe3722c9"
+    },
+    {
+      "attempt_seeds": [
+        8643078539177779583
+      ],
+      "file": "valid-80.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8643078539177779583,
+      "semantic_sha256": "baa3803b132272d70637038a0d4cfb2a0b20c327a7c7a2acf4647d1c6822daa4",
+      "sha256": "2040cea812d2a4581c79d6f6659f3969f6cb63f00d349d0c6e3ac9f7df58a228"
+    },
+    {
+      "attempt_seeds": [
+        15673570146578538008
+      ],
+      "file": "valid-81.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15673570146578538008,
+      "semantic_sha256": "64116855638e2436f059e4dd5fad71f15c93d2bbbd237f5fd3f4bd7283bd9b76",
+      "sha256": "cec9bcb5a8f17fd6dbe52427703c7e4068bd38f425fe3b862415c57215ab0a4a"
+    },
+    {
+      "attempt_seeds": [
+        18308858868207875650
+      ],
+      "file": "valid-82.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18308858868207875650,
+      "semantic_sha256": "a8cf0e041666e9928ee6e6ffdbe3e16962f63993a13399f1ccb572a3ba6fbdf6",
+      "sha256": "a4e9556620bfb3aca02ceb5837a111c3e34984f8308d738253d1b701ff78e01e"
+    },
+    {
+      "attempt_seeds": [
+        10359997886328300712
+      ],
+      "file": "valid-83.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10359997886328300712,
+      "semantic_sha256": "16a9f75b3725e019d01dd652abfc2f570c669ff9d72a5dcffafa5c4eb7932f1f",
+      "sha256": "3bf1b7dbe8d2c13ca235ce63c377a28cadaf8a7fb2dc1d48bfd83b8b8fd5576c"
+    },
+    {
+      "attempt_seeds": [
+        17534265622946368302
+      ],
+      "file": "valid-84.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17534265622946368302,
+      "semantic_sha256": "c8e3322914d2fe24817c0d569026ba556ad9c1488c44521b87a66e79d660b2fd",
+      "sha256": "30844bfd8cd85d4799f20c90083c3c77ffa802748c4db7cf47cb9aadec9f502f"
+    },
+    {
+      "attempt_seeds": [
+        11102052326223483667
+      ],
+      "file": "valid-85.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11102052326223483667,
+      "semantic_sha256": "451b9af739ea9662a4c47d3723201abc90da1464407081685df1ac3c61f43d4b",
+      "sha256": "32d608aa05f21ac68f208a21528f0393142b5ff2e916d87fe8dc01330f87b01c"
+    },
+    {
+      "attempt_seeds": [
+        5527013380270615931
+      ],
+      "file": "valid-86.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5527013380270615931,
+      "semantic_sha256": "074ecc6fb56b499be27d5d1f3b10a0f4bd3ff861431ea3d84db7506edad54bfd",
+      "sha256": "486ccb7ec0c5ea37b138792eacd537db3e808d3070017513f3f94383c7f093ea"
+    },
+    {
+      "attempt_seeds": [
+        9496585654008128662
+      ],
+      "file": "valid-87.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9496585654008128662,
+      "semantic_sha256": "ce5dd47c11a9fff3c912783e4029901b62e2ecdd8fcb8ac329c9e4991c7944b4",
+      "sha256": "f8711e2555dedee1a7689bb8635bd725f546791d32e313cda3de72c19572d8d6"
+    },
+    {
+      "attempt_seeds": [
+        7130161733368717165
+      ],
+      "file": "valid-88.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7130161733368717165,
+      "semantic_sha256": "c9a04f71a256a24ee4975c3068522d81a2be7b0c9352025bfe70e07a0b4d9b96",
+      "sha256": "b7795080fc8ee5aa6aa52778e13299234a0a5c2cae084c1e65a9da523a52059a"
+    },
+    {
+      "attempt_seeds": [
+        7600766825618250445
+      ],
+      "file": "valid-89.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7600766825618250445,
+      "semantic_sha256": "cf690f27fd04b6e267a7380145c2e133f4ad7f80f297c896a218a66a12748358",
+      "sha256": "9e7fb7bd6c0f1a2f449a0b51bff60ba3f63d027c6061c5366afc7e3b472e4c0b"
+    },
+    {
+      "attempt_seeds": [
+        5861987918742767284
+      ],
+      "file": "valid-90.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5861987918742767284,
+      "semantic_sha256": "9f554ae1626c3e3b5e2aeb5a092e15238e768ca1f061410d602efb6b82e8582e",
+      "sha256": "ac73f0574eecf0b1816f510c3d1efd4d96fb5c30c6cfe3208cbb25e092f8bf53"
+    },
+    {
+      "attempt_seeds": [
+        13189192806269250015
+      ],
+      "file": "valid-91.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13189192806269250015,
+      "semantic_sha256": "e6e1938325565dc41ca29c864ee65c00cb003e5323fcc757192320d65dfa2379",
+      "sha256": "25b3f4f60b6c63195c72f7feb704558504b6390ce9cf4311048daa7f403a4066"
+    },
+    {
+      "attempt_seeds": [
+        6249701012851800389
+      ],
+      "file": "valid-92.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6249701012851800389,
+      "semantic_sha256": "ecc4fc914396021c4c6f6065bab593a749f096cb7db2d801391b80b2b72f2204",
+      "sha256": "2adc623e9de59d545f38b0b88063401a83531ab75e5ca4d08f51bd4f8c32bc33"
+    },
+    {
+      "attempt_seeds": [
+        17247575590587987601
+      ],
+      "file": "valid-93.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17247575590587987601,
+      "semantic_sha256": "e280031c6ed8d87a1e39409cef858cdf1e14c97554c4731f7a540e004f2ce6bd",
+      "sha256": "0fdbfbc10f44d90ae3ad9614afb810e2c33ffcdc1245f219f70a92c497cf2ab5"
+    },
+    {
+      "attempt_seeds": [
+        9093855264812001860
+      ],
+      "file": "valid-94.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9093855264812001860,
+      "semantic_sha256": "799f40daf10113c9be0c8a47bcc2d32b6ff48d3a59bb067d9e577a24571df5eb",
+      "sha256": "b6f01beffd247a0e232dce7ee9e45acc37c7fad7d1b01d20ce7d3c77e4b2a0b8"
+    },
+    {
+      "attempt_seeds": [
+        1809020724163867186
+      ],
+      "file": "valid-95.pddl",
+      "parameters": {
+        "num_floors": 8,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1809020724163867186,
+      "semantic_sha256": "6f0f3610e3c7dea1abcff9cbb9da3d9effc858594ed2a47d0fe19312deb25b29",
+      "sha256": "0e2b9ac8fd97cf6b5811fd2c1d165b8ff63055599877e610b41ae4ca506ffb7d"
+    },
+    {
+      "attempt_seeds": [
+        1960288062689342477
+      ],
+      "file": "valid-96.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1960288062689342477,
+      "semantic_sha256": "6cc2f9c925b9e8d778e71328bf01985c7558f6d09b00b43376a95d3f29822a4f",
+      "sha256": "c8d067dbb6b08475038057573bf8e4e517030f96241060a98313b81259d1241e"
+    },
+    {
+      "attempt_seeds": [
+        11338600344894772780
+      ],
+      "file": "valid-97.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11338600344894772780,
+      "semantic_sha256": "2feda08cd3e77af8eb31c180a64b5404688f31fa720f7a83031f030fcf1b726a",
+      "sha256": "f678e8b7465c7bedbf65afb50fea53c2f5b049fae8f65850ab1faa4675083daf"
+    },
+    {
+      "attempt_seeds": [
+        13009448974655979928
+      ],
+      "file": "valid-98.pddl",
+      "parameters": {
+        "num_floors": 7,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13009448974655979928,
+      "semantic_sha256": "20264ee00acfcb8802f01bce2252d72aa92f511183f257b7d67968675e523cf3",
+      "sha256": "e0b725853d3b4edce4a5698f6731a37254bbcbefe61277c7aef4c6ee94ded884"
+    },
+    {
+      "attempt_seeds": [
+        15018613833768413539
+      ],
+      "file": "valid-99.pddl",
+      "parameters": {
+        "num_floors": 10,
+        "num_passengers": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15018613833768413539,
+      "semantic_sha256": "eb8e6ed3a7d20d2490288c918b84f883d3d7742242d53eb905dfd976eae0d650",
+      "sha256": "423f3a93ed1821436e734e39dab9d574fd890a295841372ae1285dfd8c60e308"
+    },
+    {
+      "attempt_seeds": [
+        1991657956092614869
+      ],
+      "file": "valid-100.pddl",
+      "parameters": {
+        "num_floors": 9,
+        "num_passengers": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1991657956092614869,
+      "semantic_sha256": "0f124bce4570f6c260cb9ac287a89914c7bbaa60999ac8c3eb188c486f4b4837",
+      "sha256": "21457b3d16a7e59e1c02ad8baf8ead86053b05d70091881601b70dbe05be9544"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "valid",
+  "valid_configurations": 16
+}

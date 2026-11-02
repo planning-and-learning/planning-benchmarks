@@ -1,0 +1,126 @@
+{
+  "recorded_at": "2026-09-16T19:56:27.492946+00:00",
+  "purpose": "Validate that the post-measurement quoted-primitive fallback correction leaves every measured bundled model on the same accelerated path. Original benchmark artifacts remain unchanged.",
+  "changed_measured_sources": [
+    {
+      "path": "src/pypddl_datasets/generators/_problog/programs.py",
+      "measured_sha256": "c0bcc1223fedce37f004cf79ea15f586fda325aa750e4e39e94e74b17d6bda60",
+      "current_sha256": "55191738b32cee9e0fe8736bae9524bc384ff74fa82e0c51a062f1b33bce16aa"
+    }
+  ],
+  "cases": [
+    {
+      "case": "ferry-train-max",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "d7480e904b4671f1f29eea63f6a369c8db195f82d6d8eef4f1b19e80bea3f08a",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "ferry-valid-max",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "f2bb3fdf8c8b10277ebb61506d0a4ba6111f4bf0f979a96aa97fa21999d6d53e",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "ferry-test-max",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "d3c0629a2b673d0fec17969b478b5b099e6c6522831cfba7c7158100c8d8078b",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "delivery-train-max",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "e218d6bc1b171ff4870d435272f5a303fc63fc1f686198be45eb3aecabf091c7",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "delivery-valid-max",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "5d20c20b8fdcf23333b1ed3fd97600d50d6b5b7c89f64d784e2494b52a93a16f",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "delivery-test-max",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "fbe8d7ee4014827febf057ccdf953f6dd9484f12d437e64032f4deb2b1a7eb22",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "rovers-test",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "211f73064b34ca67c55bfef97f9436a47dcce932f63beefa678460c83706523d",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "rovers-downward-small",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "f977fe792a011050bc47a5c7de26f9cee73faefe4d683765a0fa2869bfe50f4c",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "rovers-downward-10",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "05eb431783048c6304f4fb4a7c16de8859cf56be94b767c458ba12ae18ee077f",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "rovers-downward-15",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "a7582420a811971ceca6260fceb5371d01b70044f9e716fa2504b72298385446",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "rovers-downward-medium",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "269597b35ad3a9fb491784a5017c12135eaf496c31c9895df3dcfd6bfc614302",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "rovers-downward-large",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "27c38d7c594e40ec8fe738bd77ca4c3057419a57e478f11723c0336238a318da",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "rovers-ipc-medium",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "68ec2b7062e6670fc0cb8c42a93de0d0395c44085c52f3e83c7bf59a4d38367d",
+      "matches_measured_model_hash": true
+    },
+    {
+      "case": "rovers-ipc-large",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "21a34d787a0f630c11d2c04d1af0e4109e3481a3fdc5bedfb930830962a21e7e",
+      "matches_measured_model_hash": null
+    },
+    {
+      "case": "rovers-htg-small",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "12aa2de7802f2ce4c4b542ec89b36af7152a38a4f63e87f8cb8d06efcc2d3152",
+      "matches_measured_model_hash": null
+    },
+    {
+      "case": "rovers-htg-large",
+      "old_guard_extends_primitives": false,
+      "new_guard_extends_primitives": false,
+      "model_source_sha256": "c31f323f7d52d8a409dfcaf814f565d34b82b03efcb640e375bcfad530b011a2",
+      "matches_measured_model_hash": null
+    }
+  ],
+  "result": "All 16 bundled model sources retain the same specialization decision. Every completed case with a recorded assembled-source hash matches it. Timed-out cases have unchanged model/library files and parameters but no post-sample assembled-source hash."
+}

@@ -1,0 +1,1815 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "770bb0c6af0637eb6011319ee587ddfe6ef2bc3662eef67853dda99878d50da4",
+  "generator": "classical/barman",
+  "instances": [
+    {
+      "attempt_seeds": [
+        9422296420648836322
+      ],
+      "file": "valid-1.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9422296420648836322,
+      "semantic_sha256": "0cd4ccac563635b552177eff80ad870174ec2785806e4141fb660726eeb749cc",
+      "sha256": "cead26a7e6f7414f80327f75a6beb8e85b5c06eb95bcecdc4c6aa521d6a7e4ee"
+    },
+    {
+      "attempt_seeds": [
+        4332068921435870460
+      ],
+      "file": "valid-2.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4332068921435870460,
+      "semantic_sha256": "60a6feaf265e02d37ede13ee00d2bdb223b95051725ae844022a514ff26080ab",
+      "sha256": "c51668f94289765ce513852723025cf0709768cbd922a1ecf69855f2d069aaa7"
+    },
+    {
+      "attempt_seeds": [
+        534632785873397627
+      ],
+      "file": "valid-3.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 534632785873397627,
+      "semantic_sha256": "d8ead954ef5a3521a9bab76452f9fabbf5ee71a0ef6a45fb84a1bf9e508d061b",
+      "sha256": "7a0daf2a89f3e8fa74a44e825bde5cf8ae149baacd2db51d31b68a521cb2b2ed"
+    },
+    {
+      "attempt_seeds": [
+        4334458720306510664
+      ],
+      "file": "valid-4.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4334458720306510664,
+      "semantic_sha256": "53813f9b4cf71fdb6fd5953c5726e1822c4b050969fce15dc77b7729b427f5a3",
+      "sha256": "6da138d8f79df0509a562ddceb60f3a121e330783cb4854f2b8b34c29cd9e6ce"
+    },
+    {
+      "attempt_seeds": [
+        12101227032693416205
+      ],
+      "file": "valid-5.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12101227032693416205,
+      "semantic_sha256": "5622d2d74e6efe53e9e9750417535b11fa2fdadce7ad31c10c25939514640fdd",
+      "sha256": "da4b72816982d8bf7bc4c34f3c7b36424e76aa9aa6a2cdab4990525c91f3ac0e"
+    },
+    {
+      "attempt_seeds": [
+        2130786483675919410
+      ],
+      "file": "valid-6.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2130786483675919410,
+      "semantic_sha256": "92585fc4c2f5bcb169a4234cd63dbc2f7b7710aa892b878a2792c585486c40b3",
+      "sha256": "b3497589065c5eb29f23e77a3a35a62598844fcdeb7e0e50e296b24cfc7bc9d9"
+    },
+    {
+      "attempt_seeds": [
+        3742870321917585169
+      ],
+      "file": "valid-7.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3742870321917585169,
+      "semantic_sha256": "90b2e7d7e81bec2b489be21779d2b970bb70ef8c79da1701e267394958d4ed45",
+      "sha256": "9896589c32882b11bb23ed560da03e923ba375875e1cc8e99d104a9fd8ed8ad0"
+    },
+    {
+      "attempt_seeds": [
+        17096093991263384383
+      ],
+      "file": "valid-8.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17096093991263384383,
+      "semantic_sha256": "86cc04e342ff56b779117c5f6ff868ad0f01deff670ad6e90d885dbee02da4c1",
+      "sha256": "3a162b4090117848a1946e545f7ab6e131c594ca0ba5a666cf124fbaa09e856b"
+    },
+    {
+      "attempt_seeds": [
+        13949636483401259210
+      ],
+      "file": "valid-9.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13949636483401259210,
+      "semantic_sha256": "292ff9b256bbcf17b74a36e9fdc35826092cd589d9ae3340cca50feca48b225b",
+      "sha256": "9316c5445599de802303644b63bbe9a4de3144d43bed773c344403873ab0b088"
+    },
+    {
+      "attempt_seeds": [
+        13741449576940562846
+      ],
+      "file": "valid-10.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13741449576940562846,
+      "semantic_sha256": "1b1332e60fd16f4ad188ccf2cdbafdd57a0863d95e3d336419048dd81b5e9168",
+      "sha256": "fd9452c468238ba928539ef12115f914fa255d9ca48d32ecab5245268109e011"
+    },
+    {
+      "attempt_seeds": [
+        12018110525023423787
+      ],
+      "file": "valid-11.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12018110525023423787,
+      "semantic_sha256": "016e50a33e5b5b9a9aa51bb1f1949d450e9d127e16d6e5724ba1a580a2ebf09c",
+      "sha256": "4d9ca5e483cf00d12b868c718ff977a61c689b542ad6f91ee9ef847a7650ea7e"
+    },
+    {
+      "attempt_seeds": [
+        278849386720193406
+      ],
+      "file": "valid-12.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 278849386720193406,
+      "semantic_sha256": "7bbad85a3ca273debf6d945bc53169d8bea900aff49f12de32ccb890a1fbcf37",
+      "sha256": "2410d9475d514cb997958f560f17eb26b7f249442328fbfa6673d588c9b73647"
+    },
+    {
+      "attempt_seeds": [
+        9746499063122743178
+      ],
+      "file": "valid-13.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9746499063122743178,
+      "semantic_sha256": "8f1aacea81af11e2ae81f5cdd44c3c3dcc006121eadce0b5845012d5b13155a9",
+      "sha256": "da5c52e993ce9f2c8099785f06fff464bf8aeb97528c26c083265d425e006822"
+    },
+    {
+      "attempt_seeds": [
+        14335455419974746110
+      ],
+      "file": "valid-14.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14335455419974746110,
+      "semantic_sha256": "6d5de60ae16f656868a32fa6d00272ea91c948e02cdbfa63a32bb6a39e8fdbd5",
+      "sha256": "78cbab3e8127af2957cd10b6d1060e803b03e742e4241ae470baaa419c803706"
+    },
+    {
+      "attempt_seeds": [
+        2920275167178833333
+      ],
+      "file": "valid-15.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2920275167178833333,
+      "semantic_sha256": "d8388cf0540436e9557d14973320188cd3898e63b7c9cb4484583a9a6f9f04bc",
+      "sha256": "340e5be97e19ef3fa794815128a1066a8c18510c80c54b9ea5846e1f27d12e84"
+    },
+    {
+      "attempt_seeds": [
+        4746525729386840916
+      ],
+      "file": "valid-16.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4746525729386840916,
+      "semantic_sha256": "04cac65722d1af8e276d48e398825ab6ef988159de7094772d8fcb6be008bb21",
+      "sha256": "173cacda1d0e6584ff28a731f8fd609bd47f70e9d24b09dc65652330a98f2d16"
+    },
+    {
+      "attempt_seeds": [
+        4258925674444532211
+      ],
+      "file": "valid-17.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4258925674444532211,
+      "semantic_sha256": "8dc108e2ae03266d57be44bd721bb131b572284c104177e5edafeb9e229abe56",
+      "sha256": "2d3e3cc75edd4e3bac28a7647efa3bb3b00ae27c2647fe6b315fd9f6af7c13e0"
+    },
+    {
+      "attempt_seeds": [
+        15988283618091675297
+      ],
+      "file": "valid-18.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15988283618091675297,
+      "semantic_sha256": "b36ca0da9ec0235c6b255771df67940e7a471f605b2caa2e03bd0a835621cb23",
+      "sha256": "bc95652a51dba5cb613111d18d275278074f54a999634152e8ca0b8bda8f57bf"
+    },
+    {
+      "attempt_seeds": [
+        7959940839172313236
+      ],
+      "file": "valid-19.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7959940839172313236,
+      "semantic_sha256": "77662e03b4a0c8dc93ea8ec4372d0a2ce442a2bad48482be1b14bc23e909690f",
+      "sha256": "6d6eeeab581f6bf7db541b70f8bcfcca3ebe6323a06bc4afc121c5340cf3eef5"
+    },
+    {
+      "attempt_seeds": [
+        6454208530066766910
+      ],
+      "file": "valid-20.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6454208530066766910,
+      "semantic_sha256": "7e40dfe1fcd5ab3d82e5636c1fbc6c37fe89ea7e850c5f31b35ed18a8ea928d1",
+      "sha256": "1d1701fa2950ff4ea67875efc0844252e3e9dcfad3e8b2b1f56e0dfcd969c816"
+    },
+    {
+      "attempt_seeds": [
+        4678297321954572247
+      ],
+      "file": "valid-21.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4678297321954572247,
+      "semantic_sha256": "58507fd65c38582c12ead65017ba57f4dd688870f67d092139a647a254db15d3",
+      "sha256": "95a44080bb125f6860d3106d02e7736f163e71c7d09e5c7bc712f48fc70e1fa8"
+    },
+    {
+      "attempt_seeds": [
+        10167867741229076213
+      ],
+      "file": "valid-22.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10167867741229076213,
+      "semantic_sha256": "d53717153d655919b176bdf8031c4c3516ec2d46d16d96d7bd74f5da429e7929",
+      "sha256": "8b853a82e1fb1ed5350c5ed9cda9f19cc2fb474c91d3fa0cb87885d870a424c8"
+    },
+    {
+      "attempt_seeds": [
+        13112686297829293075
+      ],
+      "file": "valid-23.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13112686297829293075,
+      "semantic_sha256": "81c93934c9eb6871a0c44529fea020892dfd9d220ef19a1ced8609ce2075adc7",
+      "sha256": "bf02079d8413be55f126c921b220eea10ba0e3fe089fec5862115fbea102b6c0"
+    },
+    {
+      "attempt_seeds": [
+        7136808753397701413
+      ],
+      "file": "valid-24.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7136808753397701413,
+      "semantic_sha256": "5b2d4ecbe898f83e635ad269aa29df1135ec8b8467a389f2577c843ccf534fd6",
+      "sha256": "d7032010591a573c998c01b19ec48d540dc9ec3f772ae57c3adb6ad1a66155cf"
+    },
+    {
+      "attempt_seeds": [
+        12970654806377842517
+      ],
+      "file": "valid-25.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12970654806377842517,
+      "semantic_sha256": "e8ee8a1b441a2de183d81304ab9c226e2a3e11635ca2692496b2a1726d505b22",
+      "sha256": "85147cca2e98f15a70b4f357db6fdb46a5e35293ea5bb5b3799be7bc3c81db6e"
+    },
+    {
+      "attempt_seeds": [
+        6361207137810953337
+      ],
+      "file": "valid-26.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6361207137810953337,
+      "semantic_sha256": "0499aa09b36f29648b2b419514a4128fd33c3cba7afb612a7fe60a3f22b69223",
+      "sha256": "a534340f7eea2c127315d7b15b4b821789066677b7c74bd3d7bd13a91a279416"
+    },
+    {
+      "attempt_seeds": [
+        14275209625236766609
+      ],
+      "file": "valid-27.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14275209625236766609,
+      "semantic_sha256": "f1327fbfeab114e74d7b6ca56d25d16aa21f101501cb160992119035d613285f",
+      "sha256": "aec0cd5b3d0d6ca2fb06254662920eded96a829ba59a8f9be45a33bfc9d31689"
+    },
+    {
+      "attempt_seeds": [
+        2858273633379095336
+      ],
+      "file": "valid-28.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2858273633379095336,
+      "semantic_sha256": "26f3ffc87e00f1d85eb87bd96cdc28aee57e91cb1ec7524d0a0e614817c7c45b",
+      "sha256": "5e4a6695d5d40fbbc8230707173eaa619fad04a82e1fb8f3057f0f019a80b117"
+    },
+    {
+      "attempt_seeds": [
+        4062387073511095121
+      ],
+      "file": "valid-29.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4062387073511095121,
+      "semantic_sha256": "da0e37976dcefc3db3347f876cd42f58785bee32f2d46d899282d666ba21c779",
+      "sha256": "00a6f8e954f9fe8539c9ba2ad8b6a2d3812779a434b78f0be468eea509bec863"
+    },
+    {
+      "attempt_seeds": [
+        11510769348649303340
+      ],
+      "file": "valid-30.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11510769348649303340,
+      "semantic_sha256": "3a83bb5112b3a3bb51eb8f2b22638dfc49710ffa06a5e2bc310c72457a66159a",
+      "sha256": "c817bedc6061e15f635258f1ed7df5fd7eb06450b639bfa08ccc051e83131a7f"
+    },
+    {
+      "attempt_seeds": [
+        14859097283867691339
+      ],
+      "file": "valid-31.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14859097283867691339,
+      "semantic_sha256": "e97ace36747f837f81e8d7d4116d5f2121a9d9cb030d4c8cfbc0887eac3d3da8",
+      "sha256": "5beafd56f1f713d24e84c997c986433b9e7674110c7f685ecdff9c27719ca23a"
+    },
+    {
+      "attempt_seeds": [
+        2607339010156245212
+      ],
+      "file": "valid-32.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2607339010156245212,
+      "semantic_sha256": "246717f70ab6b21910400e03797edee592aa930d6c3a41d066f67547e3b2b7ad",
+      "sha256": "aa231a77c704133fdac5da3eb8e0411b7b4d9f4e2631bc113400f1a7a62d84a7"
+    },
+    {
+      "attempt_seeds": [
+        7263764921123797283
+      ],
+      "file": "valid-33.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7263764921123797283,
+      "semantic_sha256": "6556d5ecb43426f778935979f92b438c0161364e4af90de31f75f476f2287804",
+      "sha256": "37160bd83f0448790f96d5353908113961fd36a2d78c4deb84a0becc8e3b3406"
+    },
+    {
+      "attempt_seeds": [
+        14566189398984661037
+      ],
+      "file": "valid-34.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14566189398984661037,
+      "semantic_sha256": "e53b3f17328fced0e11b27a1d08979ec9cf009ae097b22edf56d87a9a4eb67f9",
+      "sha256": "b0924c039a20287183cb54113a1a5f46128e21b71ee9fd7a581b704ba48cf2aa"
+    },
+    {
+      "attempt_seeds": [
+        12309107045562245917
+      ],
+      "file": "valid-35.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12309107045562245917,
+      "semantic_sha256": "2d24e7a32fba24c5567972904d3be39ad7686cde280bb73a85f3b7a7be33d8dd",
+      "sha256": "bebca549be5733c8b5dae90dbee8e29643b69a30e2575381a458671228cec8c8"
+    },
+    {
+      "attempt_seeds": [
+        9952889491559558063
+      ],
+      "file": "valid-36.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9952889491559558063,
+      "semantic_sha256": "e78317c9c34304ba5a7d1afa8ea9cd8ef4ffe41b2d2ef10f6effcd6759167d44",
+      "sha256": "ef85a5fe66f779d48ce378c55c79680fe010f2c813e22beb58442b7a42a644c4"
+    },
+    {
+      "attempt_seeds": [
+        8293728468356091321
+      ],
+      "file": "valid-37.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8293728468356091321,
+      "semantic_sha256": "f67be16f3feb9e52683d064fb166333fa227d9722b0b3d9f1abb2d8d8038d4f4",
+      "sha256": "3fbcd7ce3ca201484670e84e6634354036f70bcda29d9d363138c8bd3db246a4"
+    },
+    {
+      "attempt_seeds": [
+        13426827120715408868
+      ],
+      "file": "valid-38.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13426827120715408868,
+      "semantic_sha256": "291aae6a919dcc71f89a07588ac531df4f0dfd1a42204b3adef288e4a3d03336",
+      "sha256": "3b2ff818763e0f3299da600068703a9c09fdc8030eff092b6d5642e9ad2ab7b9"
+    },
+    {
+      "attempt_seeds": [
+        8849332156649495686
+      ],
+      "file": "valid-39.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8849332156649495686,
+      "semantic_sha256": "d09f816e68c2bbabb7b4ba89e3c6f1f5fb9883e3eb6a326cdd841f7422de9a82",
+      "sha256": "6d2b2732126cc971329eaa35bdba513d3e8fcdfa3cfb8cfa496fc4e6ba751fa9"
+    },
+    {
+      "attempt_seeds": [
+        16479487340263247638
+      ],
+      "file": "valid-40.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16479487340263247638,
+      "semantic_sha256": "feb4e7f231784a6c7a90d84b35f046bd9066dd53cd257bf3a99ee50ad99d5472",
+      "sha256": "365aa3a8b7f26da410c3d1a1b19335d2330ad4217f1ff9c3eda2ff767d1b66ea"
+    },
+    {
+      "attempt_seeds": [
+        4137799042571459177
+      ],
+      "file": "valid-41.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4137799042571459177,
+      "semantic_sha256": "5c34782bf3069df3af171ec5c88ba404286719f47633fd8867326f3ba2d1fae8",
+      "sha256": "9e6b53b86e42998828a19e954b3a766109f411ccd70a9aeeaa5338cd0c849871"
+    },
+    {
+      "attempt_seeds": [
+        839932816558281588
+      ],
+      "file": "valid-42.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 839932816558281588,
+      "semantic_sha256": "ace7fe7b2c3aeae1586297882cbbce57d48fe30539ec4d1291042e98395fa8f1",
+      "sha256": "7a661a396e24b8a8031023c8db8a2c0b218f9a22283ad663fe25af792e103d98"
+    },
+    {
+      "attempt_seeds": [
+        12149593631621467602
+      ],
+      "file": "valid-43.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12149593631621467602,
+      "semantic_sha256": "c4aeb03dbce7fc6c705d2fa0f60b3c6503bbbf1f881fbd4286c71170636210fe",
+      "sha256": "314e740614eda17a54085516bfaee371ccfb683d121a569c4a7635272d6bedb9"
+    },
+    {
+      "attempt_seeds": [
+        13360455676304636295
+      ],
+      "file": "valid-44.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13360455676304636295,
+      "semantic_sha256": "0c6cf9ceda2bdaa7d522a756613f70f99c463feb9e5ab2e6264f9f630fffa13a",
+      "sha256": "c4c2d5483a63a364702bb0b9dc81b4b74599c05e37e7107fdda138057d471438"
+    },
+    {
+      "attempt_seeds": [
+        9070716003459510173
+      ],
+      "file": "valid-45.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9070716003459510173,
+      "semantic_sha256": "bd493a3d6944106572b2fa85f2d3a290cfea7f16837c1acc9996224b60681bbe",
+      "sha256": "4a7676bfacf0fe63ee3a301f62c0cd4522448ff6ded881ee39905274338c1de8"
+    },
+    {
+      "attempt_seeds": [
+        4120536578206912903
+      ],
+      "file": "valid-46.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4120536578206912903,
+      "semantic_sha256": "9fce69a6ba16928f70579efe976f90390368d44422cab3eeb06596ed3d111a17",
+      "sha256": "4e42a34911ec7ccaee04c3bed1a5a01ad9c07daca8efdd0b4739f37ed84f8cd7"
+    },
+    {
+      "attempt_seeds": [
+        2341773528403890747
+      ],
+      "file": "valid-47.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2341773528403890747,
+      "semantic_sha256": "fb55d704f8e925a9f947a3bcf8981c0799860e75e6cc0b1674d0343be9fc5318",
+      "sha256": "b48918758398c279fd119a97d02d46660cccf1dd0bf457dc284dff4d53a3253d"
+    },
+    {
+      "attempt_seeds": [
+        6172183428372410091
+      ],
+      "file": "valid-48.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6172183428372410091,
+      "semantic_sha256": "18e1d9c0b0bf18a322f76c7edf28555d681e7589524f0072b778ca040fd7ff09",
+      "sha256": "c248b445f1d8a75a3d83d93eed06fa0b0a33d82128f1d586ad178fb26f847300"
+    },
+    {
+      "attempt_seeds": [
+        4641760545463701166
+      ],
+      "file": "valid-49.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4641760545463701166,
+      "semantic_sha256": "7f6b807f70404e54cc53b501f1c7601c9ebd29b5db349f28e49b28a02489d62b",
+      "sha256": "4c1f7843de817a1ea638d1e20ce770d345971e7531e84e6c64ae01347f792a3e"
+    },
+    {
+      "attempt_seeds": [
+        11628130537769027744
+      ],
+      "file": "valid-50.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11628130537769027744,
+      "semantic_sha256": "21dcf57b00dbf903ead346afa623043e19d87a28ab3287d0f80fae8aae232807",
+      "sha256": "0d4781244c18fb06b4c8b502012991a57ecbe810a1a7934e19099a15d24979ff"
+    },
+    {
+      "attempt_seeds": [
+        12600955286818122745
+      ],
+      "file": "valid-51.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12600955286818122745,
+      "semantic_sha256": "de71522397c545ea28cd8e5482c36566412ebde777019b52ff9e24eee4fe9898",
+      "sha256": "b614ccd38ed0e1aad3c8dad817c1fef08ec3028b3eed4c8604208e73ab45aa5e"
+    },
+    {
+      "attempt_seeds": [
+        17003193683285282556
+      ],
+      "file": "valid-52.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17003193683285282556,
+      "semantic_sha256": "fdb2b8ba3154f204b3a2820556998157196c837a54932c7e5e9e02ec0d9cf5ce",
+      "sha256": "1c37638c01ccebe0c2d5e039914fb1be34ee7a8b103542a608729f48e20c7785"
+    },
+    {
+      "attempt_seeds": [
+        2322432730247000266
+      ],
+      "file": "valid-53.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2322432730247000266,
+      "semantic_sha256": "1874ab3f544b2744f206f266633fc1da800217048bc466e687ed46383d45e10a",
+      "sha256": "c8396a9ee8d57fa0107ead498edce707c998b35e1a8361a3412b7b0506aaf787"
+    },
+    {
+      "attempt_seeds": [
+        5143302233749718441
+      ],
+      "file": "valid-54.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5143302233749718441,
+      "semantic_sha256": "0bd0cf66715280f22a094867620c09dcfba54835241320984b0f00cd95325c27",
+      "sha256": "22e61d714d17b3ae81ca0f2dc1da61288ca6041705f94f71a2d74fe87957082b"
+    },
+    {
+      "attempt_seeds": [
+        6966602928076246066
+      ],
+      "file": "valid-55.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6966602928076246066,
+      "semantic_sha256": "ce711de7f49f07306edc36b379e4b52f3a7503b2961ca8228ffbe978e26ad6c7",
+      "sha256": "2a8ceaf896c2322fc343a3aa8b9c5ac84787568dcdae55231584d9cd32c1289e"
+    },
+    {
+      "attempt_seeds": [
+        17497880372888869137
+      ],
+      "file": "valid-56.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17497880372888869137,
+      "semantic_sha256": "a8241f56c861b3ddfd2fe654fd9429eb77b6a63424675002d6fd118734dc92ee",
+      "sha256": "a95ecbd57f7fca8fd3433a9b065996fb2f78c5c5dae58f4c964ca48a398b1fce"
+    },
+    {
+      "attempt_seeds": [
+        11268404723741091188
+      ],
+      "file": "valid-57.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11268404723741091188,
+      "semantic_sha256": "8dc4cc591b906043f92a69c4c7e04c1ae33564523e7ed3c35ce4a192c42f2e93",
+      "sha256": "a7bd97627d21e2b1609da34072f5037b14416dd70dda8bbd3f6183d0d8601667"
+    },
+    {
+      "attempt_seeds": [
+        8711287106932221276
+      ],
+      "file": "valid-58.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8711287106932221276,
+      "semantic_sha256": "6ad473288ff69cfe536448d8192a97d5d1a2a5a6f87bf3f804e36f4c6e763920",
+      "sha256": "396343e6e83d1f4ad824ae35c6d4bee805f54c9282191ecaab8f69dd9d437a79"
+    },
+    {
+      "attempt_seeds": [
+        17268918564507829976
+      ],
+      "file": "valid-59.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17268918564507829976,
+      "semantic_sha256": "b55d340089ace2d3540dcb424226de545ee7bf5b62156b10e276847268cfe83c",
+      "sha256": "0948ca7666666a090a696f08a7a5ffc6d3c932a97363ac002e3aed068bc96b44"
+    },
+    {
+      "attempt_seeds": [
+        8840200835244667067
+      ],
+      "file": "valid-60.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8840200835244667067,
+      "semantic_sha256": "4356e622c34d5f101eaf46d46a198fc7f0cf9288e36e8c46df93828beba00f9e",
+      "sha256": "3572a8cc37a07204713948028f48c826d53abe40b14ac8db3fea9f0f3b7eb7a6"
+    },
+    {
+      "attempt_seeds": [
+        9405556968156426124
+      ],
+      "file": "valid-61.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9405556968156426124,
+      "semantic_sha256": "fb1ac1c646a5db3ce142f1da88025ab28d15496a0bea6611d4caf4957cdbcb7e",
+      "sha256": "3134093fffcefad62de5bdcffdf444203791369eda1e22c04650b88627f7080d"
+    },
+    {
+      "attempt_seeds": [
+        16222159022730024058
+      ],
+      "file": "valid-62.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16222159022730024058,
+      "semantic_sha256": "d6bb6e49186c5b823434c8849f52bd7d2c8fa599be132f6cac2cc4e419f8bb9f",
+      "sha256": "59e13a6450ae530fa01c9201d8f49e9bb0e4cbb0bb0aacd570971c3823ac3e68"
+    },
+    {
+      "attempt_seeds": [
+        5536111060438900649
+      ],
+      "file": "valid-63.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5536111060438900649,
+      "semantic_sha256": "9c8a31a60c38d923431dd62185df3907b0eba12d8e3f8d97143ed630674cba0f",
+      "sha256": "29e78a36234e3f68e6c5484b44204eafbd937761256275febd01d99842490eef"
+    },
+    {
+      "attempt_seeds": [
+        10985033488483951289
+      ],
+      "file": "valid-64.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10985033488483951289,
+      "semantic_sha256": "45b5c630cf14292e11c79ded3bdffc0e7243bcae409784e7837ad31624b988df",
+      "sha256": "7990f85fb4a01605186f3260f523388c089aebdcbe921201dbbeac474a8cbcb7"
+    },
+    {
+      "attempt_seeds": [
+        15424598524575303051
+      ],
+      "file": "valid-65.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15424598524575303051,
+      "semantic_sha256": "d1b257450ddc177304f2803ae3d16134add9f857cc31d69e2c4d8a70871a91b7",
+      "sha256": "828ff7841732e8269abee1e606342764620815796477927e7ce783e96fd252f0"
+    },
+    {
+      "attempt_seeds": [
+        6502860621529535622
+      ],
+      "file": "valid-66.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6502860621529535622,
+      "semantic_sha256": "46d4b97fa12a4b0cc7bc3aa1909de0ae490a9d5b2bc94e3c9beb0d021b25de85",
+      "sha256": "e685daf605bd80dd329b6afcfc40fcbd61529c7c746374872ec54cff507e39a8"
+    },
+    {
+      "attempt_seeds": [
+        12186200983152990961
+      ],
+      "file": "valid-67.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12186200983152990961,
+      "semantic_sha256": "eebe620a80f0cd99da88f094757b6070152ea6d654f0b783889c57f4474b1275",
+      "sha256": "cd51718474f08f21cb6f893364386e46e295d4f3011d20b22809c8663506e4a0"
+    },
+    {
+      "attempt_seeds": [
+        15498496647684298746
+      ],
+      "file": "valid-68.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15498496647684298746,
+      "semantic_sha256": "1692ce6ebcf95e08fc38f0fa99b17393418efa90a188283a6930024d2bb1588a",
+      "sha256": "af12adcd8561f34b73d56d7c807aebe746a9deb9571396c5a2584e3304f41dde"
+    },
+    {
+      "attempt_seeds": [
+        2012252350018319932
+      ],
+      "file": "valid-69.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2012252350018319932,
+      "semantic_sha256": "7d03733f22e5d22bb13284963ac38ff79969fce96bd7f349257a2df093ec9d2a",
+      "sha256": "24019a989f80494a15d01237b13043f916d3ecd06d313593ead3ddd876716ca3"
+    },
+    {
+      "attempt_seeds": [
+        2543950763687501039
+      ],
+      "file": "valid-70.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2543950763687501039,
+      "semantic_sha256": "27c59c323f02c8992e29420591eb23e03a3bb510f27c8cdddcb16d11b84a106c",
+      "sha256": "0b97307be5cfd40d0d9fa5a58ab01724f40897ec03193d7f01945d6d31421982"
+    },
+    {
+      "attempt_seeds": [
+        3269223314399333644
+      ],
+      "file": "valid-71.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3269223314399333644,
+      "semantic_sha256": "3d87ab782456a5f45c989a95aa532e453a49c488e641a313bef7947534600f02",
+      "sha256": "474ce91f5add59ef77c662b21242f3883004d373ca603ab6ab836a9ccd5e213f"
+    },
+    {
+      "attempt_seeds": [
+        6462757401398563440
+      ],
+      "file": "valid-72.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6462757401398563440,
+      "semantic_sha256": "b19c046408ef342f07a4022a8c0d401f03e650bac944b7f2168b71ae71ad4c3d",
+      "sha256": "1a05b58b0e8ec6c3689febf914691055ce3883125282532ea5846bcb362f1f39"
+    },
+    {
+      "attempt_seeds": [
+        13730332299791081585
+      ],
+      "file": "valid-73.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13730332299791081585,
+      "semantic_sha256": "84e7f39f323106b28a4b2c39dfd57b8b588e48766d46e3a424458a8c12dd461e",
+      "sha256": "914864fc239157a5a456621752793df639f339333a30ae5c18a8813987bc7434"
+    },
+    {
+      "attempt_seeds": [
+        17026198875418677811
+      ],
+      "file": "valid-74.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17026198875418677811,
+      "semantic_sha256": "dcfadfdaa5c43306d75a0ad5c3efa36faafd1bd5dafaa19b861218249b1ebbed",
+      "sha256": "8a30eab9e102f132d300c3594e8933e0306e708e011e6f7df470089473916989"
+    },
+    {
+      "attempt_seeds": [
+        18061166325078192680
+      ],
+      "file": "valid-75.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18061166325078192680,
+      "semantic_sha256": "892c2680b8760f0e7fdf8123cf4061ad82d49e544acfa5d569a33c640ce4e749",
+      "sha256": "f06014876243063d32790e6f5e11421956647798b72df574fe3f29e41bc19858"
+    },
+    {
+      "attempt_seeds": [
+        16910936258536487924
+      ],
+      "file": "valid-76.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16910936258536487924,
+      "semantic_sha256": "8e2e0824aacc7482e70de3da8690b8fa5d3855c003c4e3e87e6d3df859a68021",
+      "sha256": "9f9a2882efb2660e718e7bc55b81eb7752c9214bc8f6f723a4417221feb85318"
+    },
+    {
+      "attempt_seeds": [
+        5720824043346108805
+      ],
+      "file": "valid-77.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5720824043346108805,
+      "semantic_sha256": "3ecdc2b679da3cee6a3bb71f04731b5e4fdc4cfd1f4b0d4445dd00c0d85fe67a",
+      "sha256": "ceea453e91d2a933046897ca1ee78e70c9734f7ce815cdff89a8ba8de98b9288"
+    },
+    {
+      "attempt_seeds": [
+        7261715472407648859
+      ],
+      "file": "valid-78.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7261715472407648859,
+      "semantic_sha256": "e42b6c27dcb45aacb81e81dc52a5fdb432d8095d47608fefc0cf2192f14ca84f",
+      "sha256": "3519d1557cf8f223d2d770dbbcadd61dcc1a55d53b38f3e9cb51f7dc904c9954"
+    },
+    {
+      "attempt_seeds": [
+        16217378559181130372
+      ],
+      "file": "valid-79.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16217378559181130372,
+      "semantic_sha256": "a1f816b85154845ffa832bab4c0a8c5d56b52a09df6e09b0ddbf42053638bb50",
+      "sha256": "8d66960b3cd9702960c15ba0d8ff319d28f693c7ceb55f182714ba2981f1a551"
+    },
+    {
+      "attempt_seeds": [
+        11182949605831259963
+      ],
+      "file": "valid-80.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11182949605831259963,
+      "semantic_sha256": "465e28920c89eb09ba8820b3c56323b1c29bf56bce6cb90f5bbb182ca16c24e9",
+      "sha256": "42660a6e94a785f29d1b79cbddd2a6e07ccfd438bd983c19cc945080f87b4a7d"
+    },
+    {
+      "attempt_seeds": [
+        6729873812749009372
+      ],
+      "file": "valid-81.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6729873812749009372,
+      "semantic_sha256": "27dc914d937eaecf12f1fd3dc9e2cd8b14f2a10290c02bf5a499127b3991e597",
+      "sha256": "ae7f8ff62651f02a3663579f003b720d476a5616a182b04d231866830286da23"
+    },
+    {
+      "attempt_seeds": [
+        1174967767028400285
+      ],
+      "file": "valid-82.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1174967767028400285,
+      "semantic_sha256": "4ef36b1457e05c1c2920ecfa26564507b74587b9ec9eaeea1376c2b0bd594736",
+      "sha256": "ea55738a03593bd669b851317a71f8b602008733e6859397a48555cbbe69779d"
+    },
+    {
+      "attempt_seeds": [
+        18031755023970048057
+      ],
+      "file": "valid-83.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18031755023970048057,
+      "semantic_sha256": "b63d8a637036883ab1319da082bb1006c248f5f3083675d0dc3521d18a509f3d",
+      "sha256": "09d786001ffbe7ab7a05076c79c3342863410863ada9354fb71b7f235b11f21b"
+    },
+    {
+      "attempt_seeds": [
+        5863201051844816900
+      ],
+      "file": "valid-84.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5863201051844816900,
+      "semantic_sha256": "395878d9b44d9d26d606d19ee1b38dca2ed7c622c668823fd1d0df380ba6554f",
+      "sha256": "b117daac9ac72877909bfee7ce85f4c286c46c571b94e99213ed8651c7781687"
+    },
+    {
+      "attempt_seeds": [
+        14046193944608013705
+      ],
+      "file": "valid-85.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14046193944608013705,
+      "semantic_sha256": "5a02221d812127fdebc9a3b3c75a31ed49470834f8cd8ff90cc56991f0dc1cf3",
+      "sha256": "b229e15a6f6b157762ca81cc61e658859f5e8d0e016e0c9a525a593e5673cbea"
+    },
+    {
+      "attempt_seeds": [
+        10342194932416584079
+      ],
+      "file": "valid-86.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10342194932416584079,
+      "semantic_sha256": "a931dc0daacca6175df3767f21256482c3ac6a3de133bf9005792fef5e6a7d55",
+      "sha256": "4d7b9296badfe75c4e421c8559d868344af64e01b05c99ff3507f73f2873e376"
+    },
+    {
+      "attempt_seeds": [
+        8393398295384589669
+      ],
+      "file": "valid-87.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8393398295384589669,
+      "semantic_sha256": "3e99686119211023033bdf7bf02acda062f3c4bf6fec3c3169664f28a42ff97d",
+      "sha256": "f62a12a0784839f9687f1e8117cd4a509127c394a6fde6e96a1c0d026ef237d7"
+    },
+    {
+      "attempt_seeds": [
+        13171027935651094561
+      ],
+      "file": "valid-88.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13171027935651094561,
+      "semantic_sha256": "0b923404c5465a6bc16b0ea08e3300402088f67dacdf7321c536dc60499384f4",
+      "sha256": "960eff0a44f4efe7d71ce0569a50b30e90f77182afb8a2d52455347b75037dab"
+    },
+    {
+      "attempt_seeds": [
+        17449950024844914348
+      ],
+      "file": "valid-89.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17449950024844914348,
+      "semantic_sha256": "cfa8e1e79ed05f7ac720d2a788a9e2c02601fed4340f81afc01ef5a020335dd5",
+      "sha256": "0ade80e65d2a2166ad89f7a1935f99f582c6f18cec813124002311e7f8116be5"
+    },
+    {
+      "attempt_seeds": [
+        2039085280106523283
+      ],
+      "file": "valid-90.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 6,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2039085280106523283,
+      "semantic_sha256": "7e5386546bda862d1c6d68a82ce155173e29e1900eb0eb56215b69fc4786a6a1",
+      "sha256": "4d190baf3e037726b30216c13d6a779fd73069985248fa1e8346a54a95ea24bb"
+    },
+    {
+      "attempt_seeds": [
+        7482324872604936459
+      ],
+      "file": "valid-91.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7482324872604936459,
+      "semantic_sha256": "dd2294d92b2320e4a62a14fada26b327799dfef0396fe4683f70a88cd846fd7b",
+      "sha256": "a167ba93488d93762dcc729569be2fa946a961cedc1ccefdb275942babfa67db"
+    },
+    {
+      "attempt_seeds": [
+        13962223304701942308
+      ],
+      "file": "valid-92.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13962223304701942308,
+      "semantic_sha256": "5525d266ffd386a5373554293b914ce935506ee0a545209dcf3cc4cde2bcecc8",
+      "sha256": "7bc14de44e986c50efd0c6e42678c2d46425b29539cf116229625d694fe15597"
+    },
+    {
+      "attempt_seeds": [
+        15473520926017195325
+      ],
+      "file": "valid-93.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15473520926017195325,
+      "semantic_sha256": "4633378d933f88f1e4e9eea9f1b5674589d9dcabfb696c5f61e7442d3deb6977",
+      "sha256": "a194f23e1798b2b42a09bfffb7cff3a4c0b5d940e4851515ded2c55f9eda1bda"
+    },
+    {
+      "attempt_seeds": [
+        17772084726368625250
+      ],
+      "file": "valid-94.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 1.0,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17772084726368625250,
+      "semantic_sha256": "56d7cb8fb9cdeb424fea964c8eff9e4921f2e938cb54acd8cae4551610415543",
+      "sha256": "0cfd052d37e6262486d3b61e1bbbf0bc9a3c3c75f8906e7c693cb3efd7f98721"
+    },
+    {
+      "attempt_seeds": [
+        16870973541173959268
+      ],
+      "file": "valid-95.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 8
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16870973541173959268,
+      "semantic_sha256": "c8b7ffb64a6f4a78e8a9df829f97788c6a0908ef1faddede0e1464d7ae6a46c3",
+      "sha256": "f3e67958461a469c967c9d65c51274e18796ac353cae1b8355cdd600c543d6ef"
+    },
+    {
+      "attempt_seeds": [
+        451607175526793981
+      ],
+      "file": "valid-96.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 451607175526793981,
+      "semantic_sha256": "ad7da8f346ec74ec2361f623982c89889afd85faf1f8c1972b5a6d9e6539b4c5",
+      "sha256": "faf42f7aac7f06f5620834124e2767d2f8e71ac95310409c1cf3cc04c857ced2"
+    },
+    {
+      "attempt_seeds": [
+        9261809803500515315
+      ],
+      "file": "valid-97.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9261809803500515315,
+      "semantic_sha256": "d59f28166d56d3a41b20aa83eae05e1428288b5e44eb2b9b6fce7ed5ec17fc9a",
+      "sha256": "9b3bcde022087e2b6e169ef7fb6bde54ff843639ebd573e7c51f7a6bb6f8f0a2"
+    },
+    {
+      "attempt_seeds": [
+        17011762594475133141
+      ],
+      "file": "valid-98.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 5,
+        "num_goals": null,
+        "num_ingredients": 8,
+        "num_shots": 10
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17011762594475133141,
+      "semantic_sha256": "fbc7fd350cf6f5058b84fddce10853ffda85bbea7c46e0f77147a271223c61fe",
+      "sha256": "3f05949c90d7f508292e87a57b0d3166de01f0e32be786c212d2bbc25f933c61"
+    },
+    {
+      "attempt_seeds": [
+        3582961883298523940
+      ],
+      "file": "valid-99.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.0,
+        "num_cocktails": 6,
+        "num_goals": null,
+        "num_ingredients": 9,
+        "num_shots": 9
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3582961883298523940,
+      "semantic_sha256": "b7867f4160a31c4e76977abae3f3943adf318316f72ec1d0a7697b1e53db04f7",
+      "sha256": "308f5b433f7c7c9cab1568097d63fdb989b041814bb77b1be0a57b63a7eec290"
+    },
+    {
+      "attempt_seeds": [
+        12554531465997974004
+      ],
+      "file": "valid-100.pddl",
+      "parameters": {
+        "ingredient_goal_probability": 0.5,
+        "num_cocktails": 4,
+        "num_goals": null,
+        "num_ingredients": 7,
+        "num_shots": 7
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12554531465997974004,
+      "semantic_sha256": "3b357e3a19e6fe7fd81ec302083d82e43ce762d995f1c8312accb202ba010215",
+      "sha256": "d38eb11b290bc28a97e0a23a479ff6ce5dcbc9736064fbecd5acdcdec006d932"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "valid",
+  "valid_configurations": 144
+}

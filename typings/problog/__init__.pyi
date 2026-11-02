@@ -1,0 +1,9 @@
+from typing import Any
+from .logic import Term
+from .program import PrologString
+from .formula import LogicFormula
+class Evaluatable:
+    @classmethod
+    def create_from(cls, source: PrologString | LogicFormula, **options: Any) -> Evaluatable: ...
+    def evaluate(self, **options: Any) -> dict[Term, Any]: ...
+def get_evaluatable(*args: Any, **options: Any) -> type[Evaluatable]: ...

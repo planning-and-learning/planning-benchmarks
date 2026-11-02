@@ -1,0 +1,34 @@
+{
+  "proof_artifact": "experiments/problog/verification/rovers-two-waypoints.json",
+  "model_sha256": "c13bcfd967cd01673e7a7cf3e9364cfad9d7c6cf75fd0f2f68a1433e7cae84f0",
+  "problog": "2.3.0",
+  "file_sha256": {
+    "src/pypddl_datasets/generators/_problog/numbers.py": "2f831b953471a8421efb8e121b94b07c6aeb797c58f953cb9aaa83825c7b0db5",
+    "src/pypddl_datasets/generators/_problog/reference.py": "59f3fbc22d6f6703da358e88af9e1ab49c917488525a05401f3c7f9d5134b72a"
+  },
+  "function_sha256": {
+    "src/pypddl_datasets/generators/_problog/engine.py:evaluate_source": "c27f41182d154594979b478ddae22d5fc463fc9731ba897e3ea25857385976bd",
+    "src/pypddl_datasets/generators/probabilistic.py:evaluate_model": "b0ae59d1a728202f1540506e3c7a556299df1480d54a510d903f8b51fe16f871"
+  },
+  "function_hash_encoding": "UTF-8 source from def line through AST end_lineno, with LF and one final newline",
+  "definition_sha256": {
+    "src/pypddl_datasets/generators/_problog/programs.py:ModelEngine": "f2b93ccbf236e7f3724ad3307efc59fb0edcee3d0cd4f393717d2635cc154dc9",
+    "src/pypddl_datasets/generators/_problog/programs.py:new_engine": "cfb5bca266026972c9c96e3c47561578492a4c8773f974283ae4f2155b8ee636",
+    "src/pypddl_datasets/generators/_problog/programs.py:program": "1902d97ebb379bff2f263d03ddeb62e614bce8d13ab901cfcf27f376618c9af6"
+  },
+  "definition_hash_encoding": "UTF-8 source from class/def line through AST end_lineno, with LF and one final newline",
+  "proof_artifact_sha256": "0c268595906b7a1abcb7224b77d3c6bd890b704c25fd5db488cabe218c071ffd",
+  "verified_full_tasks": 12444,
+  "inference_dependencies_unchanged": true,
+  "sampling_changes_since_proof_sha256": {
+    "src/pypddl_datasets/generators/_problog/choices.py": "9cc87fd59b8691a0bf6d5d08f7902cb8f5b728f634e5f5a5b3695c5c32bdfb64",
+    "src/pypddl_datasets/generators/_problog/engine.py": "de7b2eff6e6ed0cbbd9a46f0f3184a2ad18940a7bb84df3dcb18762daf24e4a7",
+    "src/pypddl_datasets/generators/_problog/programs.py": "55191738b32cee9e0fe8736bae9524bc384ff74fa82e0c51a062f1b33bce16aa"
+  },
+  "programs_guard_change": {
+    "proof_file_sha256": "c0bcc1223fedce37f004cf79ea15f586fda325aa750e4e39e94e74b17d6bda60",
+    "current_file_sha256": "55191738b32cee9e0fe8736bae9524bc384ff74fa82e0c51a062f1b33bce16aa",
+    "verified_change": "Only import unquote and normalize the predicate name inside _extends_primitives; exact inference does not call that sampling guard."
+  },
+  "applicability": "The model and exact-inference path are unchanged after the sampling cache and quoted-predicate fallback fix. The immutable proof still applies to exact inference. Separate native-sampling and fallback regressions verify the changed sampling code."
+}

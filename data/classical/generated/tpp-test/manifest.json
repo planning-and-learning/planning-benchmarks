@@ -1,0 +1,1815 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "4013ca7d095008157584306b57143d0e341d040af8d2a5327b341f64be07cb3e",
+  "generator": "classical/tpp",
+  "instances": [
+    {
+      "attempt_seeds": [
+        13958548910620854838
+      ],
+      "file": "test-1.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13958548910620854838,
+      "semantic_sha256": "5a82485d1f59d515521e64823e34846d1216ab892990f5aefdbf65088f4f329e",
+      "sha256": "3c5093a015e773122927ea2620e958160768b17b82e223a1647c57b84a9a5761"
+    },
+    {
+      "attempt_seeds": [
+        9139938616117255011
+      ],
+      "file": "test-2.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9139938616117255011,
+      "semantic_sha256": "787052b3c5b66d457ed3c30ef39c97bd82b0c77a8aec92e22efe9308bca4327c",
+      "sha256": "33f562db60f6f633582a6e618e8e6d95754b696522162f08a6ad6764bd9b3273"
+    },
+    {
+      "attempt_seeds": [
+        13547669646931758233
+      ],
+      "file": "test-3.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13547669646931758233,
+      "semantic_sha256": "dd65fc7b3a6132202e27eb6cf4b1264d2098dc9d5b083698c77ad558b73caf61",
+      "sha256": "eeab7fac8ffa0e375f1d280a73954eccc237bd62f54973f675a299cd8a04f71c"
+    },
+    {
+      "attempt_seeds": [
+        14885657073058776003
+      ],
+      "file": "test-4.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14885657073058776003,
+      "semantic_sha256": "556f67732460d0ea018bdb2ddd94461d2fe5693d5a24023bb77c2328b1126c0a",
+      "sha256": "a614c2715cf8838de37e1785ddd6055cbac376b21608b01162433efd1ed11e56"
+    },
+    {
+      "attempt_seeds": [
+        7350901801200887547
+      ],
+      "file": "test-5.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7350901801200887547,
+      "semantic_sha256": "7fc81e4f2a8985f17ed8c91deb6841fe9275c8ef815c11453bb3b98be88404c6",
+      "sha256": "249a13f0135d88f9d31da2a95171cae0df56b110ab02f03b6388198a85336989"
+    },
+    {
+      "attempt_seeds": [
+        5325628029459435430
+      ],
+      "file": "test-6.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5325628029459435430,
+      "semantic_sha256": "11062ee1108bcb5fa817b0515fbb69e5eca97b1bade5f5745a62199e6d47b67a",
+      "sha256": "1ea6107dda9f970dce485fec9549efb0fc483b1f06284cf5332d7fcc68f36da8"
+    },
+    {
+      "attempt_seeds": [
+        5761805212931085012
+      ],
+      "file": "test-7.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5761805212931085012,
+      "semantic_sha256": "8706551b2ce470fd6126d8b893630e5d980a47fe45e45924df8e01a11161290c",
+      "sha256": "687cbb0d5cac5561c8e089cb3407c2213f3c8c80d51e1ab783fe54a0e53a28af"
+    },
+    {
+      "attempt_seeds": [
+        7412372520450563754
+      ],
+      "file": "test-8.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7412372520450563754,
+      "semantic_sha256": "afa13ad6aeb7a22108f068fbf4b91e157b47d73a312b30b7f75cb5abb9e6b730",
+      "sha256": "db0bb7725553933c3f51234d666ee9aedeff0326f5101687fe0e8d84c7370524"
+    },
+    {
+      "attempt_seeds": [
+        13893035601861448822
+      ],
+      "file": "test-9.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13893035601861448822,
+      "semantic_sha256": "5538dba0dc6382b09b1913f306b29ef2c513a64c74399a278a550851d6daebc8",
+      "sha256": "8bef6393cf88c20bb85cd9392db0c2cb1045e312b8f639fd259991ae6c6fd6c0"
+    },
+    {
+      "attempt_seeds": [
+        15638076007387940513
+      ],
+      "file": "test-10.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15638076007387940513,
+      "semantic_sha256": "63cd9dd8fce5226a80c5a9ed45970bf14a54063aaec46f31544ca2b96f6b01f2",
+      "sha256": "cee9a22a9f49f9c6ffaf7eaf3a2211b52b9fdde24275e2ddc34abaca555547a6"
+    },
+    {
+      "attempt_seeds": [
+        2380204722400530131
+      ],
+      "file": "test-11.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2380204722400530131,
+      "semantic_sha256": "6c594228b41b0392fc566e50d04ca02e0b90c19857834ef5ec8d5c2f8bb0dd0b",
+      "sha256": "5b17fa75a4366770fbb8916324651bac9cd555ad2ae0f09f27082dcb2fa148f0"
+    },
+    {
+      "attempt_seeds": [
+        1520267817988226090
+      ],
+      "file": "test-12.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 10,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1520267817988226090,
+      "semantic_sha256": "bf5f4d921c8b715ee15b82a508744bdfed2e27182974834d54749fa8eec69968",
+      "sha256": "da491d1ffbd1067d456a102380dc47295245ff3a3b5a91d248302436bb0c6620"
+    },
+    {
+      "attempt_seeds": [
+        3312140559090303041
+      ],
+      "file": "test-13.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3312140559090303041,
+      "semantic_sha256": "3ab67af9dea1b5340264b094d043015d64ffc1e3cc94d97f5a384ddf9412b8c5",
+      "sha256": "fae0b32ae07cdced4d1780a962d315f3c858a6c7e079507d52b1fc4b49499a9e"
+    },
+    {
+      "attempt_seeds": [
+        2115759562863742946
+      ],
+      "file": "test-14.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2115759562863742946,
+      "semantic_sha256": "c828b1602f3954199770743d837141e6ed9261e809b5569b5366e4e6e2b9e3b9",
+      "sha256": "1df263847c6215ad3cbcc58403372342de5dadc6fb58d83b3d8d64ba407a54db"
+    },
+    {
+      "attempt_seeds": [
+        5761225977716907871
+      ],
+      "file": "test-15.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5761225977716907871,
+      "semantic_sha256": "2820d1e957e9cbfa677c73eefdef7e03b654eb4737003d8cd5046a6ed9f5eb76",
+      "sha256": "fef5b61d784a94ec0da4fc6c074ca58bbb69c793724e97b5febb94ff9081f731"
+    },
+    {
+      "attempt_seeds": [
+        15361491195486028625
+      ],
+      "file": "test-16.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15361491195486028625,
+      "semantic_sha256": "6ea8442a6fee65c998dcbae4a22295931a2d5b4fdf4822d07485fc2eedcd04bb",
+      "sha256": "9e20056efbdf8a7a0e6273fe26eea4b818f681c9e830474502d8872297ac9976"
+    },
+    {
+      "attempt_seeds": [
+        13616507037415325028
+      ],
+      "file": "test-17.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13616507037415325028,
+      "semantic_sha256": "99e7b7d04cbd94cb5fc88e0dcf11b96ef4b03200f82f999d600f9a20cb29e9ef",
+      "sha256": "a7c0f5b484ad4c8701462dd413a0ee7dbd31e504e78cf9d187ca3042cbf7729c"
+    },
+    {
+      "attempt_seeds": [
+        8559000845128734364
+      ],
+      "file": "test-18.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8559000845128734364,
+      "semantic_sha256": "377bd6cf96ed84ceaaa2002b5c016a27335997175c434fdac37951c71dfa1482",
+      "sha256": "f7c99b8c530a12d40cca0af9c7dd06ab81fb68ea73138a65e152a8936a9bd120"
+    },
+    {
+      "attempt_seeds": [
+        4895263717666698100
+      ],
+      "file": "test-19.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4895263717666698100,
+      "semantic_sha256": "3e80e07d85bc80470ffbc2b8c7727021c9676038bd0faf0d1d439591fddd8955",
+      "sha256": "5395b40fff538a2b43ff2d85ad96b7031ddfcf2f8fb8a3b7a3c147a89648342d"
+    },
+    {
+      "attempt_seeds": [
+        15275675352208039280
+      ],
+      "file": "test-20.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15275675352208039280,
+      "semantic_sha256": "abd218266bb4a58afedb7bce9aaf2b79deacb179b0c75224557591edc4081956",
+      "sha256": "d64078427b5962470c36d06304b3f41ebe961322ca438378e5a4320e498565bc"
+    },
+    {
+      "attempt_seeds": [
+        14185277399081828039
+      ],
+      "file": "test-21.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14185277399081828039,
+      "semantic_sha256": "73f511dfaca96e25ce0ea0fb2877514c386b42d6dae8b49473ed414b13f39dcb",
+      "sha256": "dfabc2dbd28c0523c49b95ef2c2dd73ef282a5a9120efe930b16465a7d1b92b6"
+    },
+    {
+      "attempt_seeds": [
+        5028742965359162924
+      ],
+      "file": "test-22.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5028742965359162924,
+      "semantic_sha256": "3c372f005f52bde3395f2b95a2fbf120e2d4cb35581921819fdcf61293418266",
+      "sha256": "5b8aee3841e47186a117b8f90fe9b3e465de1efa6ed079c07ab5b430091305a9"
+    },
+    {
+      "attempt_seeds": [
+        17347870370452587639
+      ],
+      "file": "test-23.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17347870370452587639,
+      "semantic_sha256": "b2293836e7866b8d9eec5890a9e9b3601dbf17f77f11463e2f784e3993a806f0",
+      "sha256": "d0f1d8d48d2fc44dd86cfbb6dfea07882c3e47b356ed8f7b43b915a0f58ac34b"
+    },
+    {
+      "attempt_seeds": [
+        6037752342615370445
+      ],
+      "file": "test-24.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6037752342615370445,
+      "semantic_sha256": "d96b35c42cc4c7d4fcf0388687e1e18e74ad1c90bcd64ebc1dc29c6f59c95f7f",
+      "sha256": "0c42f46b2ec9c0bc71a57141b046ea6701203ed76e5335c7848b82e237d84f70"
+    },
+    {
+      "attempt_seeds": [
+        9580382726172938712
+      ],
+      "file": "test-25.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9580382726172938712,
+      "semantic_sha256": "6c8a2a0262ae1f91955db97a0168de079fa083794792ec4f3da08424aec5d5dc",
+      "sha256": "b73682d83602ce90e01e77396e3b927bf9428eaf681f892f96e281182ce28f80"
+    },
+    {
+      "attempt_seeds": [
+        15239971461888876045
+      ],
+      "file": "test-26.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15239971461888876045,
+      "semantic_sha256": "48620c01f02e6878bd7dff1a00c525d1ee554b1fd9ed0abafb81e198fbde621a",
+      "sha256": "22e143dd3b5f59112fa8470131480c5f1a203bdbe6999976af33200b18680dbb"
+    },
+    {
+      "attempt_seeds": [
+        12464771135591821547
+      ],
+      "file": "test-27.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 10,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12464771135591821547,
+      "semantic_sha256": "20e30f582158a853ee385b9055f0bc84dba8768b6398d8b06c0c42f45af22f53",
+      "sha256": "198451e0ae1a809b88cf69fbd1c5e09d7ac9f6b3b5cd1e7b7dcf5ecdf7f69173"
+    },
+    {
+      "attempt_seeds": [
+        3100484326124902465
+      ],
+      "file": "test-28.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3100484326124902465,
+      "semantic_sha256": "554f9a274713dd61c0f28cbe5101f8c72993a3f2f2bfd791d2e3abcb0dd90cfc",
+      "sha256": "84600a1b38701479da1841ab291b63da376137b2c837a1dd2dcad85f3cd97593"
+    },
+    {
+      "attempt_seeds": [
+        12765944045615146893
+      ],
+      "file": "test-29.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12765944045615146893,
+      "semantic_sha256": "d9ad385c8e9fce0de25f409ad638a51515ae385e67b66ec671579ae3211ed19c",
+      "sha256": "103fb266061dca2dc3d97d5711bed22057cc2bbf66ca829c3c5b3771b96db0a8"
+    },
+    {
+      "attempt_seeds": [
+        18195820016865470564
+      ],
+      "file": "test-30.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18195820016865470564,
+      "semantic_sha256": "dc0e72bd63f0172e492ac446f2319fb7773ff2ec0f1a0b4b9a173d4b5531bf28",
+      "sha256": "317237ca69fd4c040d1574499d1e3b2e8cbe06bc2707ef1261fede9ac44e47c9"
+    },
+    {
+      "attempt_seeds": [
+        6680487686752204864
+      ],
+      "file": "test-31.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6680487686752204864,
+      "semantic_sha256": "aa03d38324b2170d47ac1f6793a7d3621595ca6c878c6731038719b7f3bdb8e0",
+      "sha256": "eb6fc123b889b755f0ee01280193e75e798b29f4505a0f025d2b373b78339863"
+    },
+    {
+      "attempt_seeds": [
+        4244496580302684742
+      ],
+      "file": "test-32.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4244496580302684742,
+      "semantic_sha256": "03d76ac610fc65df9e543f47a80512acb8eee5fda015c10f8fdf548b5d8dbedc",
+      "sha256": "2182441c2d5be195ebad4be2c25d79c23661a53a3a78dc313fc07abf35dccecc"
+    },
+    {
+      "attempt_seeds": [
+        18143188752810644122
+      ],
+      "file": "test-33.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18143188752810644122,
+      "semantic_sha256": "0d0dc63eadfd403e335b423dd20074dbf28a1ec9358a3498053ac09ab09d67f0",
+      "sha256": "66d9386d62c34dbbbc0a8359ed66af04335e615a446df7f295e20b9f62623878"
+    },
+    {
+      "attempt_seeds": [
+        3941953674222574888
+      ],
+      "file": "test-34.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3941953674222574888,
+      "semantic_sha256": "2dbe5f2b63a7f3681ad310f6c743b700afca30e6a470c93ea78615294cc57b51",
+      "sha256": "0d6ac6178e40f7e6ec150cc27487e79d61343c59538d369014e6a9b27fb073a1"
+    },
+    {
+      "attempt_seeds": [
+        16766295435390819810
+      ],
+      "file": "test-35.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16766295435390819810,
+      "semantic_sha256": "85e95d17e919fdcfc68c023174ad3576f921480de6ae69709d282bdccf892446",
+      "sha256": "d794ee67631b1e525b33981b7423813064b4a7d3fc42694e7841d3269f8f7fc0"
+    },
+    {
+      "attempt_seeds": [
+        14622937202710405282
+      ],
+      "file": "test-36.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14622937202710405282,
+      "semantic_sha256": "ef78836fdef957c4f3c7afed83a501486d7709ebeead5717777143bd16465a84",
+      "sha256": "a3b44d885fd6cfcdde17896561fb0b7c02a8474c4ebae9d4ed7a501e3ac9e587"
+    },
+    {
+      "attempt_seeds": [
+        3249999427714303219
+      ],
+      "file": "test-37.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3249999427714303219,
+      "semantic_sha256": "9341096865668ce758de966114026893dfddb606927d762bf843448d8971b5d6",
+      "sha256": "d7cfb06263c2b5516b13c5796e5f8d987562946ee6ad2a282671daa811674349"
+    },
+    {
+      "attempt_seeds": [
+        3127349198728561312
+      ],
+      "file": "test-38.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3127349198728561312,
+      "semantic_sha256": "f7c1855c1ac0fbbebe5d7d9fe11091cb2ca7571e0495a56f3657d106b22f84d9",
+      "sha256": "13d46b3535bb9cbf7a493dab50f4bca85189d32f93695eb3adbf125b33447762"
+    },
+    {
+      "attempt_seeds": [
+        4660874544344957952
+      ],
+      "file": "test-39.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4660874544344957952,
+      "semantic_sha256": "f22b01a703d895ad26fc0f5b80c526655a6bd0b3bb379b81c584fd856fe27eab",
+      "sha256": "6b6ab4829790e3f68199a62be619c6b9939a016ece666cdaf7805b348977dd4d"
+    },
+    {
+      "attempt_seeds": [
+        3762803170803542658
+      ],
+      "file": "test-40.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3762803170803542658,
+      "semantic_sha256": "9a2224404ff97a33ce83dec72e7798f23a1d45320653181d95601fc07e223eae",
+      "sha256": "620885662e6e3a9b0d2f842da292a128dc8a4f69e250d135738421f380380944"
+    },
+    {
+      "attempt_seeds": [
+        12153537175238862697
+      ],
+      "file": "test-41.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12153537175238862697,
+      "semantic_sha256": "96439081e690b807f5550171ecf0cf7587313112066a2ba25eac817e77c64e24",
+      "sha256": "cf413149adade7ae54fca194d13f8794e5b2832bcbfbc8b6e7a1906134a21714"
+    },
+    {
+      "attempt_seeds": [
+        14317379758121503863
+      ],
+      "file": "test-42.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14317379758121503863,
+      "semantic_sha256": "b55297f626a1e7a0733527fc4ca4e6c92d5fe4aad09c05576ea8e1859f9e7c69",
+      "sha256": "8c945f0c962ef2c5d8bfe2d2ad9159312b4eed57d5dbcdb959b23fd62eda047a"
+    },
+    {
+      "attempt_seeds": [
+        5418963313234401270
+      ],
+      "file": "test-43.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5418963313234401270,
+      "semantic_sha256": "56152a9f8372893620160cddaa75fe53335ef4ab4a20b688ecf0401b7b9764b0",
+      "sha256": "0ada32883672916ee3212b36fb83d8509e0866c77f16c8b57e90e288abc1d38f"
+    },
+    {
+      "attempt_seeds": [
+        6099524941097450248
+      ],
+      "file": "test-44.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6099524941097450248,
+      "semantic_sha256": "41258db496a367efa6bc2a3be55843ffde8333fcfcd72bb867bd9b1897a7c17b",
+      "sha256": "29d7c678e8cc6c8fd34f6e3f4eb0037fef954271b6874fffc37de2d148e62134"
+    },
+    {
+      "attempt_seeds": [
+        14255782701313961377
+      ],
+      "file": "test-45.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14255782701313961377,
+      "semantic_sha256": "a9ac56880eeed31c011be551561ad40fe38f3071d425dd8eba451036cbc165c6",
+      "sha256": "790062fbafd5fb57571a3ae43cd8c7adb8f1035c1b8ceea88230953d36f3ac5a"
+    },
+    {
+      "attempt_seeds": [
+        4960515878623204656
+      ],
+      "file": "test-46.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4960515878623204656,
+      "semantic_sha256": "8ee06df5c2f023f76254d7125e397b4318d1b7a058558b32b2e5c4df7a644c42",
+      "sha256": "93db391c9846fd1acc83475c0b2fb69bd99f2bef05bdfed74b7c4fb78b6d74eb"
+    },
+    {
+      "attempt_seeds": [
+        13493046522393117494
+      ],
+      "file": "test-47.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13493046522393117494,
+      "semantic_sha256": "de52a9a45be194996b46afcdfb2481d7dc5c02f8359586a948e9fb9c21569345",
+      "sha256": "e5ea9616f860ac5efbded0daef236ebc08c0a935f8d283f060a13353092463d3"
+    },
+    {
+      "attempt_seeds": [
+        2495331142572151047
+      ],
+      "file": "test-48.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2495331142572151047,
+      "semantic_sha256": "cd7600a0935e88e63be022359bd9b9623c75f7fd11692178898eb2a23047ceb2",
+      "sha256": "7ea233826d20ac7e3a79c7829be6fa3bde8150c100ed9f957c515b38e514d429"
+    },
+    {
+      "attempt_seeds": [
+        15509522961917129520
+      ],
+      "file": "test-49.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15509522961917129520,
+      "semantic_sha256": "3f105eda2bd558ae24dd0b0a7f750bf8ee90bb9c31b2a9f5712bda8963003016",
+      "sha256": "0e34f636de905cb330f87af8a18b642547dad1763d17ee09e2756f7377d9a977"
+    },
+    {
+      "attempt_seeds": [
+        1681298014771436965
+      ],
+      "file": "test-50.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1681298014771436965,
+      "semantic_sha256": "7c81364f3b01d9dfcee924d522131fa5fdccb75aef6774ef8a048fa7cb289232",
+      "sha256": "a1d3feea7343489c39e7256fb2c36bd4fd465c31ddcfcbbffb47fddc57a902d0"
+    },
+    {
+      "attempt_seeds": [
+        11667017361011615183
+      ],
+      "file": "test-51.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11667017361011615183,
+      "semantic_sha256": "ca1a09c8a3afb82ebc9ec571e339afcf60f0189662acfc0e5dd2d53dfce4764c",
+      "sha256": "bf8e8ad0b2e37c1c827933b88524443edb040b452d2e9631b467ab07e39a4bed"
+    },
+    {
+      "attempt_seeds": [
+        17960779608907078103
+      ],
+      "file": "test-52.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17960779608907078103,
+      "semantic_sha256": "816727b7e1930e70a8cea563a62c495c5f58e1117b99c512fa899ba8d8e8087a",
+      "sha256": "3c2eb9159707e61ef5a4f81475acf4e0447f6f0c8d95a869cfb56c7d878e49ba"
+    },
+    {
+      "attempt_seeds": [
+        6766985033722437435
+      ],
+      "file": "test-53.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6766985033722437435,
+      "semantic_sha256": "ff85a49893f286eb927a6c75ecdef526e00357023acd9e79e4f68f55ebbd2c00",
+      "sha256": "cb71258af3824da59a181a51904feb9d6fcd94a6119e95517f2bc5b5b2f22260"
+    },
+    {
+      "attempt_seeds": [
+        15366456245283083268
+      ],
+      "file": "test-54.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15366456245283083268,
+      "semantic_sha256": "d2e725836d41c769b2153e96ff366b2184b4d470a1bfb83c4246ff2c109a5e14",
+      "sha256": "4a5d943dde73106d55f8d2d94b1c140744210a10675b2a1750b5b84a14e8e79b"
+    },
+    {
+      "attempt_seeds": [
+        1939831531258803311
+      ],
+      "file": "test-55.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1939831531258803311,
+      "semantic_sha256": "342d75c2bc7a6391e61ee85d9a54091199e300640047df8a24c1efaa05187e77",
+      "sha256": "af74552f016e2359cc84d267c344a2781ec01f8c718e2adea6e757545f552693"
+    },
+    {
+      "attempt_seeds": [
+        16774934857415926173
+      ],
+      "file": "test-56.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16774934857415926173,
+      "semantic_sha256": "49432fa375ef7fe63ca3687dec07417c4f0f797e30b97cd44a1cf64a75a9c5b6",
+      "sha256": "995886e0968b15987c2cf28eb08ed693f12aa0b4b597ad2ac8914a5781ef7dd3"
+    },
+    {
+      "attempt_seeds": [
+        12306217323536961043
+      ],
+      "file": "test-57.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12306217323536961043,
+      "semantic_sha256": "426bfe02a865ef709795722edbe862a5c7051d5f44e76f8d488386acd5cabef9",
+      "sha256": "d9735726f88693ae3f0bf57260cec36e817514d56a738cc91d7cab18e033f84a"
+    },
+    {
+      "attempt_seeds": [
+        3245425142127345612
+      ],
+      "file": "test-58.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3245425142127345612,
+      "semantic_sha256": "4783c304e7835ed3ff76d2ef2eeb8a55dd01ce77f0627f35a2d31c5ba626de3f",
+      "sha256": "86c7161cbb79bcaf582e94a9e361e9aeb5a5e19c2992c126e7c13980b6ddfe52"
+    },
+    {
+      "attempt_seeds": [
+        14770849905613621224
+      ],
+      "file": "test-59.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14770849905613621224,
+      "semantic_sha256": "c51ab633eb9f16bc60c6221104f6e2106e48f16f7e5ce4297ddc1f9b320816e8",
+      "sha256": "ae77720e821c3db92cadda4f171fcab6755f463a80ad1e3926186c449497d64b"
+    },
+    {
+      "attempt_seeds": [
+        2807998471341570692
+      ],
+      "file": "test-60.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2807998471341570692,
+      "semantic_sha256": "a1e605ab672629c1ddd4577f0b26c3b95095bf65fada3ddc615baf4c3d3befe2",
+      "sha256": "2d45c3273a56b403929fd041afdf3fe6094e0d54ef258c20751380539ce2bea9"
+    },
+    {
+      "attempt_seeds": [
+        7518757312906793517
+      ],
+      "file": "test-61.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7518757312906793517,
+      "semantic_sha256": "314933767c0e81fb2b6511e02b23eaf110d091c363e78122f4e05b9bcef3943e",
+      "sha256": "3d57b83c491486660770bdefb09bbce32956df80d503af2aed2a1c9c34e4bf1d"
+    },
+    {
+      "attempt_seeds": [
+        5482601865600751498
+      ],
+      "file": "test-62.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 10,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5482601865600751498,
+      "semantic_sha256": "ce4443dfd27eb164ffe19378853eb67f8e07da43ed042812b71afa4cfe4d29c9",
+      "sha256": "ce07ae6a19af3d97d5b8b97c65a4ffa48d037935c38d66baa7f5a3a647788603"
+    },
+    {
+      "attempt_seeds": [
+        7318868257665578276
+      ],
+      "file": "test-63.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7318868257665578276,
+      "semantic_sha256": "4bbef7a7e8029bb10c50e0b600bd4ceb8e10bfd85b7c609095e18fa9c1f09c93",
+      "sha256": "0ea8dfed510c108d79dfe4a11765b8c40b4d8e9d1c388d60b2d3f86d0b41c773"
+    },
+    {
+      "attempt_seeds": [
+        5521714386106306334
+      ],
+      "file": "test-64.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5521714386106306334,
+      "semantic_sha256": "86928a01398655aa930b72ee46cfe73a39a0ceef4f5bd4f31ba5df454a517609",
+      "sha256": "701b57773ca74493b43f99d882c85925e391e6eeac32d79a45d12e2aa4db1fda"
+    },
+    {
+      "attempt_seeds": [
+        16958629581744734450
+      ],
+      "file": "test-65.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16958629581744734450,
+      "semantic_sha256": "0988d77013f5165a4801ef46757f29a7e5abb67534b897039cfacd3cc1c0c9f6",
+      "sha256": "521f57cde47457b6b9657bd876be15e6cea47ae56493e00746a191df725b2fa1"
+    },
+    {
+      "attempt_seeds": [
+        9125251738667932413
+      ],
+      "file": "test-66.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9125251738667932413,
+      "semantic_sha256": "ea52f0c53131a73940cbb0cfcb6a5d241a7189c8747f475345ae3cd2fd9f8987",
+      "sha256": "93d8b8b0647547ebfcea62d3b6d7a8a54abcac8e62c6f211013150967a55c7c8"
+    },
+    {
+      "attempt_seeds": [
+        17188610336022541698
+      ],
+      "file": "test-67.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17188610336022541698,
+      "semantic_sha256": "6a5b9091a5ea9adc4d5024aee9e1c1ffd55bee4c65cf68eb5da9c4927f7f8e2c",
+      "sha256": "7224ee78211308c7bbf7756704c60599cd2e1b9fb851ea1ec495e4017fe850c0"
+    },
+    {
+      "attempt_seeds": [
+        229577788095946978
+      ],
+      "file": "test-68.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 229577788095946978,
+      "semantic_sha256": "d7d19f3d9aa44b9142885340ececcc2bac710b5f47ae409c50f6a4062100e885",
+      "sha256": "7926b83d5f6f75a0e7306faea1b3592ea4b823567294c3073ef8e9db8f916fc8"
+    },
+    {
+      "attempt_seeds": [
+        11792411545121054914
+      ],
+      "file": "test-69.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 9,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11792411545121054914,
+      "semantic_sha256": "deb8cbae80650f35ed9867beaea7f19baaeab114a5949b8041357fb65b3f62c3",
+      "sha256": "2847e40371fb814611df6b6ed552a7e3d786c4f9205d3a7092bd410fa2be01d9"
+    },
+    {
+      "attempt_seeds": [
+        2545784922030644579
+      ],
+      "file": "test-70.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2545784922030644579,
+      "semantic_sha256": "bb86e890d75dc11163060dbb61da865aa26d9f1c76e5725deeb0fcab1c2d6d80",
+      "sha256": "ad90354dfe016545857e0fd2567c01cdc97c75764e21d27e9cb7cb49ac5c338e"
+    },
+    {
+      "attempt_seeds": [
+        12252150573762515774
+      ],
+      "file": "test-71.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 10,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12252150573762515774,
+      "semantic_sha256": "87d493384ac501b5457209560abf1fd973339ef1810156dc83ea370b301f5f06",
+      "sha256": "aac4efd592ad83b28823cff9f0952e432a086f324e4b4495038fed9c4e1f073d"
+    },
+    {
+      "attempt_seeds": [
+        2464765774090476772
+      ],
+      "file": "test-72.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2464765774090476772,
+      "semantic_sha256": "499c3c6cfe42823104676e269ed1fcfeff55b238aa197fa53181401b954e5ee9",
+      "sha256": "766ee2b83493b37737c9a22a2c72f8d707f45777065121d8ba16f34546ca5ad3"
+    },
+    {
+      "attempt_seeds": [
+        2867627528400392489
+      ],
+      "file": "test-73.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2867627528400392489,
+      "semantic_sha256": "bb67735f24caddc615881f0310ae97113eebce183f3c788b87b4296ad5ba0c57",
+      "sha256": "e107d2ca028bbda24641415d3bb624e10b6e9c104624da73eac8d7143a4a5fc3"
+    },
+    {
+      "attempt_seeds": [
+        2138409546466780725
+      ],
+      "file": "test-74.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2138409546466780725,
+      "semantic_sha256": "ab79cbe4e8f19d454c4581cf2a80b9a250c069f20155b4dbb9f94a20665c0e05",
+      "sha256": "2d0f1fec0fb8209c0ea6817d75c6e6cd7b60f6f77c0f3fecdcf06512495c5e08"
+    },
+    {
+      "attempt_seeds": [
+        11410609951796968789
+      ],
+      "file": "test-75.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 10,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11410609951796968789,
+      "semantic_sha256": "07dc9927f9e86b5da0c8d434d9a450cf70a3f765962030b15e9604f3f51e0aad",
+      "sha256": "7999f50f78e306b9f52e67bb21d27dd62f416eb15fdffc0df8615486f5dc8a22"
+    },
+    {
+      "attempt_seeds": [
+        6393907934206637971
+      ],
+      "file": "test-76.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6393907934206637971,
+      "semantic_sha256": "0bd13207a7f76c461bbbdb36910ea4446dd04ccdad151a38718b978f798766cc",
+      "sha256": "665194deaa5b746bde51c3b7bad3540b4d21bdcd7b32bac1abbf027e77768da2"
+    },
+    {
+      "attempt_seeds": [
+        15190680055167511602
+      ],
+      "file": "test-77.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15190680055167511602,
+      "semantic_sha256": "497a603f686b941a45cc924d93a039d1f2146d41bacbb6b12c45470c53277232",
+      "sha256": "4797d3fd78f8bbb9ffae8231b57b95796931f5611aaf65ea32bdb09bd33978b4"
+    },
+    {
+      "attempt_seeds": [
+        1658178190198909221
+      ],
+      "file": "test-78.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1658178190198909221,
+      "semantic_sha256": "92698ad0a21ff414c92726de61fc6f4954c69ca03545dd881d55dc2e26d72b74",
+      "sha256": "989fbfb4617c404d4a038bb7d8e886e24866b31407c0b97ddd049413fe03341c"
+    },
+    {
+      "attempt_seeds": [
+        14956907736405792564
+      ],
+      "file": "test-79.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14956907736405792564,
+      "semantic_sha256": "f8aebf23edb7fe9a534759380f1aca23fa9aa898b11d3570ed5f631240129ac7",
+      "sha256": "616c040b7e6d5064d91b25e38c1b3778bfeaa01be637870b9e1d06a112b6503e"
+    },
+    {
+      "attempt_seeds": [
+        15449288568115066520
+      ],
+      "file": "test-80.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15449288568115066520,
+      "semantic_sha256": "1ab1ce262d8ff088d58a6a8b4db4d68037756c43a5dbd236e0eb4d21985e9ce6",
+      "sha256": "3c6c455bf86669c3cbeeb0848c526f40c92d6b420f3789a8c6f538e9fdfdbff3"
+    },
+    {
+      "attempt_seeds": [
+        5069594145704089359
+      ],
+      "file": "test-81.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5069594145704089359,
+      "semantic_sha256": "932859e45ee4fc76b00b498b46e82aaff5c02c169579ad2e54aef58ad9ae3a2b",
+      "sha256": "0e17e3dd9876b92414e36ce9f9a3f26e2123bc0e615d0989531fb5e490ba8ba8"
+    },
+    {
+      "attempt_seeds": [
+        2220786880712386096
+      ],
+      "file": "test-82.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2220786880712386096,
+      "semantic_sha256": "3e57926b90ca46fa0089cc33b3e83c86cfd14e1a3bb0726eb6ebae230e343121",
+      "sha256": "98c74c76ba3bdad2c78efe12017fdc84fee8c46e5998fa4971335003e09442c8"
+    },
+    {
+      "attempt_seeds": [
+        8842757325294291897
+      ],
+      "file": "test-83.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 1,
+        "num_goods": 10,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8842757325294291897,
+      "semantic_sha256": "e6423f4c1d60108ea69f68575f04f540a179e6a836acc41d304ed5ce42dd0e35",
+      "sha256": "b901b4ef2240dabe8a1e0ca87f16ebb335cddab5163ada317103e7965f0e0905"
+    },
+    {
+      "attempt_seeds": [
+        3480343538178209988
+      ],
+      "file": "test-84.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3480343538178209988,
+      "semantic_sha256": "c2de2a745d0d959dbf9c7e1d794ff38230d2eca5c8909f0797a642ce484e1f15",
+      "sha256": "548a306cb81cc91e606180503e6567027eff190cfa87a74a85d2124fab4b6d20"
+    },
+    {
+      "attempt_seeds": [
+        15346700354160719144
+      ],
+      "file": "test-85.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15346700354160719144,
+      "semantic_sha256": "eb8d33dee0c9899d72c2fbb32a39f002773baace238f3e8cf141b0db45564445",
+      "sha256": "f8d38d6f1018e938f8f47bd586fc94687015a005792c0dbacfc9d179f30e404b"
+    },
+    {
+      "attempt_seeds": [
+        4709737179369542525
+      ],
+      "file": "test-86.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4709737179369542525,
+      "semantic_sha256": "4baa1405b08cfc6d64e18240bd1718d66795a2be8b67fa96abd542bf17d6b740",
+      "sha256": "3423d4a045c79f2c83c33e55e5d232f1d3ab884f91333c5b6f46af6966a4b59d"
+    },
+    {
+      "attempt_seeds": [
+        1601589594857253991
+      ],
+      "file": "test-87.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 1,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1601589594857253991,
+      "semantic_sha256": "2f29d90e9e21eff73017839925d219ae029761be5b7b85ab1133355ed3de83cf",
+      "sha256": "c1e909c3b5c89dfc0d72ad843c840b766523a40073197966b2fdb09f8d2b6add"
+    },
+    {
+      "attempt_seeds": [
+        3151801621620353898
+      ],
+      "file": "test-88.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 10,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3151801621620353898,
+      "semantic_sha256": "59d59630a330784b1a5730fa3dc182c23f214ebf4a82babccf421ff7f0db47de",
+      "sha256": "20a4fe8208e215699fd0a6c90a254f9585118ce824ab3143f7cb64b1ce86dc9a"
+    },
+    {
+      "attempt_seeds": [
+        14629636215884680404
+      ],
+      "file": "test-89.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14629636215884680404,
+      "semantic_sha256": "8817f819231fea675bfa166b8dff845c86aa470f1d3bf8a73c82e6c172c0cc10",
+      "sha256": "d5b6fc04f447536f96d7b61768e06d6e880e887879de6c4b33d2da13cd773f4c"
+    },
+    {
+      "attempt_seeds": [
+        10817127465498549173
+      ],
+      "file": "test-90.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10817127465498549173,
+      "semantic_sha256": "f35721d3eee2f0d230df64caf500162aaa18f18a18eb13d7038a3cdf274bf701",
+      "sha256": "193dc431a03aa9420ef2d5ac03fcf14522c3fa61849f7726a75ee848875c8dc4"
+    },
+    {
+      "attempt_seeds": [
+        10878929095991494277
+      ],
+      "file": "test-91.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10878929095991494277,
+      "semantic_sha256": "8e4141af6d304601837890ea26aa23297feee04716c52d75e8a493bfd6b368d9",
+      "sha256": "bda077e6a9a829d8df1b00a78d8232a26407c9f046673130bfa7ed5f7d8ed11c"
+    },
+    {
+      "attempt_seeds": [
+        7326527619150958559
+      ],
+      "file": "test-92.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 10,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7326527619150958559,
+      "semantic_sha256": "6163a4b29081092b52a0b4a8a49728554b9807984a389789d5e85988c98e63fa",
+      "sha256": "8917b9630d8702ab0769d350e525a7aa656b7380ab1fce2b357a8cbb586c8c8e"
+    },
+    {
+      "attempt_seeds": [
+        16336319699331121329
+      ],
+      "file": "test-93.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 9,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16336319699331121329,
+      "semantic_sha256": "eb6127f3b649872dc5314afdfbc1548b629946e31416b8606d255be0b8c22fbd",
+      "sha256": "5081253c5ba565a21877e5b36b6ad9027249780f1f2cbc3324ef0926da97863b"
+    },
+    {
+      "attempt_seeds": [
+        2181700263557414423
+      ],
+      "file": "test-94.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 8,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2181700263557414423,
+      "semantic_sha256": "4512c7c500966cd176026922b8cb562568082c8ddc3eef517169aa50dfd62168",
+      "sha256": "df9161f4b5711c68b6405fc8ee1135c4c2b66c119f69a1a4f2372118167d7df2"
+    },
+    {
+      "attempt_seeds": [
+        5509901092186281876
+      ],
+      "file": "test-95.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 7,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5509901092186281876,
+      "semantic_sha256": "2f9e314729394e9eed1f399205560b3345f8d2edaa42c09e25d385332d1d9e83",
+      "sha256": "caa9ca2bcf425b4ba39436600c93bfabe5f2152f067997c7e118ab77ec51fd75"
+    },
+    {
+      "attempt_seeds": [
+        4866308389719971236
+      ],
+      "file": "test-96.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 2,
+        "num_goods": 9,
+        "num_markets": 10,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4866308389719971236,
+      "semantic_sha256": "2965535eda976ca89dd4fbcd898a06c06c77c651b9a560f41a77f00ce7d42b4c",
+      "sha256": "5ced65a3478555c0f7c2e153a6a20d48ace11d03a4701d1c824fb79ca03448e8"
+    },
+    {
+      "attempt_seeds": [
+        14929562331926341328
+      ],
+      "file": "test-97.pddl",
+      "parameters": {
+        "max_level": 8,
+        "num_depots": 1,
+        "num_goods": 8,
+        "num_markets": 7,
+        "num_trucks": 2
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14929562331926341328,
+      "semantic_sha256": "e571e7a6d855b77211b8b501939bee82ec14d73c7f728c2136b75bf6ccb21a06",
+      "sha256": "4ecb288ddcb4a0e9b1cff0efe812c83c288dc71c60e2893ef23a6b5e70bb9387"
+    },
+    {
+      "attempt_seeds": [
+        12661041745503694900
+      ],
+      "file": "test-98.pddl",
+      "parameters": {
+        "max_level": 7,
+        "num_depots": 2,
+        "num_goods": 8,
+        "num_markets": 10,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12661041745503694900,
+      "semantic_sha256": "c6fb42b1ebc263041a0098b5eef7a313b3c69586baf874b56131015f7b6d17b2",
+      "sha256": "89c9a2c22ea2515c6a90320d60bee522baeb3b4fd7ed8d884aec7d8b000f161c"
+    },
+    {
+      "attempt_seeds": [
+        8709405677760194165
+      ],
+      "file": "test-99.pddl",
+      "parameters": {
+        "max_level": 9,
+        "num_depots": 1,
+        "num_goods": 7,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8709405677760194165,
+      "semantic_sha256": "3531a34159e06399b6ab7a984ec7faef9bbb5a4394a4c5ce0e3c4b7e669e9683",
+      "sha256": "88bdacc7cb602e0db305ba23438d4b35d51b935d689523a05d2318f0a602632c"
+    },
+    {
+      "attempt_seeds": [
+        2397854923285604949
+      ],
+      "file": "test-100.pddl",
+      "parameters": {
+        "max_level": 10,
+        "num_depots": 2,
+        "num_goods": 7,
+        "num_markets": 8,
+        "num_trucks": 1
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2397854923285604949,
+      "semantic_sha256": "18bd7697e04177538d3d30532663c32bb3d6f66ae94e08bdb6f4cfa5d08fd645",
+      "sha256": "817b93d230eff74da6f606d0fb9138730ef900c90d2c6d84a1b41e07e4046e1e"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "test",
+  "valid_configurations": 256
+}

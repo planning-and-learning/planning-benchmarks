@@ -1,0 +1,96 @@
+{
+  "domain": "rovers",
+  "parameters": {
+    "num_rovers": 1,
+    "num_waypoints": 2,
+    "num_objectives": 1,
+    "num_cameras": 0,
+    "num_goals": 1,
+    "edge_probability": 1
+  },
+  "model_sha256": "3e2db2cc4a7c320de5d975d072811fc171e00e1ba831dfaaaa36e575e60a3513",
+  "oracle": "Frozen revision-2 Python sampler, complete exact rational choice histories",
+  "reference_tasks": 12444,
+  "reference_seconds": 8.91462526900068,
+  "comparison": "All full task probabilities = verified partition mass times exact conditional probability",
+  "partitions": [
+    {
+      "index": 0,
+      "tasks": 240,
+      "mass": "1/7",
+      "seconds": 8.69947024800058
+    },
+    {
+      "index": 1,
+      "tasks": 240,
+      "mass": "1/7",
+      "seconds": 8.668378862999816
+    },
+    {
+      "index": 2,
+      "tasks": 300,
+      "mass": "1/7",
+      "seconds": 15.647759280999708
+    },
+    {
+      "index": 3,
+      "tasks": 192,
+      "mass": "1/49",
+      "seconds": 6.854948276999494
+    },
+    {
+      "index": 4,
+      "tasks": 192,
+      "mass": "1/49",
+      "seconds": 6.402496527000039
+    },
+    {
+      "index": 5,
+      "tasks": 384,
+      "mass": "1/49",
+      "seconds": 24.786958468999728
+    },
+    {
+      "index": 6,
+      "tasks": 192,
+      "mass": "1/49",
+      "seconds": 6.858497016000001
+    },
+    {
+      "index": 7,
+      "tasks": 384,
+      "mass": "1/49",
+      "seconds": 22.83264179700018
+    },
+    {
+      "index": 8,
+      "tasks": 384,
+      "mass": "1/49",
+      "seconds": 23.324340064999888
+    },
+    {
+      "index": 9,
+      "tasks": 576,
+      "mass": "1/49",
+      "seconds": 58.86612925300051
+    },
+    {
+      "index": 10,
+      "tasks": 240,
+      "mass": "1/49",
+      "seconds": 11.75178530500034
+    },
+    {
+      "index": 11,
+      "tasks": 240,
+      "mass": "1/49",
+      "seconds": 10.74191557300037
+    }
+  ],
+  "checked_tasks": 3564,
+  "checked_mass": "30/49",
+  "complete": false,
+  "elapsed_seconds": 214.356695597,
+  "status": "stopped",
+  "stop_reason": "User rejected the production generation runtime; extended experiments were stopped before completing this reference proof."
+}

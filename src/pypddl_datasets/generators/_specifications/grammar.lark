@@ -1,0 +1,76 @@
+start: "language" INT ";" "distribution" NAME ";" "revision" STRING ";" metadata statement*
+metadata: "metadata" "{" metadata_entry* "}"
+metadata_entry: NAME expr ";"
+?statement: parameter | requirement | let | objects | constants | relation | number | metric | auxiliary | group
+parameter: "param" NAME ":" parameter_type ["=" expr] ";"
+parameter_type: NAME NULLABLE?
+NULLABLE: "?"
+requirement: "require" NAME ":" expr ";"
+let: "let" NAME [dimensions] "=" expr ";"
+dimensions: "[" bindings guard? "]"
+objects: "objects" expr ":" (TYPE_NAME | STRING) OPTIONAL? ";"
+OPTIONAL: "optional"
+constants: "constants" expr ":" (TYPE_NAME | STRING) ";"
+relation: "relation" GROUP "." NAME [dimensions] "(" [arguments] ")" alias? ";"
+number: "number" GROUP "." NAME "(" [arguments] ")" ":" integer_type alias? ";"
+alias: "as" STRING
+metric: "metric" DIRECTION GROUP "." NAME "(" [arguments] ")" ";"
+DIRECTION: "minimize" | "maximize"
+auxiliary: "aux" NAME [dimensions] ":" value_type ";"
+?value_type: "bool" -> boolean_type
+           | integer_type
+integer_type: "int" "(" expr "," expr ")"
+group: GROUP "{" rule* "}"
+rule: "rule" NAME ":" expr ";"
+GROUP.2: /(?:initial|goal|joint)(?![A-Za-z0-9_])/
+bindings: binding ("," binding)*
+binding: NAME "in" expr
+arguments: expr ("," expr)*
+?expr: "if" expr "then" expr "else" expr -> conditional
+     | QUANTIFIER bindings guard? ":" expr -> quantifier
+     | equivalence
+?equivalence: implication | equivalence IFF implication -> binary
+?implication: disjunction | disjunction IMPLIES implication -> binary
+?disjunction: conjunction | disjunction OR conjunction -> binary
+?conjunction: negation | conjunction AND negation -> binary
+?negation: NOT negation -> unary | comparison
+?comparison: addition | addition COMPARE addition -> binary
+?addition: multiplication | addition ADD multiplication -> binary
+?multiplication: unary | multiplication MULTIPLY unary -> binary
+?unary: UNARY unary -> unary
+      | power
+?power: atom | atom POWER unary -> binary
+?atom: INT -> integer
+     | FLOAT -> floating
+     | STRING -> string
+     | "true" -> true
+     | "false" -> false
+     | "none" -> none
+     | NAME -> name
+     | NAME "[" arguments "]" -> index
+     | NAME "(" [arguments] ")" -> call
+     | GROUP "." NAME "(" [arguments] ")" -> reference
+     | "[" [arguments] "]" -> list
+     | "(" expr ")"
+     | AGGREGATE "(" bindings guard? ":" expr ")" -> aggregate
+guard: "where" expr
+IFF: "iff"
+IMPLIES: "implies"
+OR: "or"
+AND: "and"
+COMPARE: "==" | "!=" | "<=" | ">=" | "<" | ">"
+ADD: "+" | "-"
+MULTIPLY: "*" | "/" | "//" | "%"
+NOT.2: /not(?![A-Za-z0-9_])/
+UNARY: "+" | "-"
+POWER.3: "**"
+QUANTIFIER.2: /(?:forall|exists)(?![A-Za-z0-9_])/
+AGGREGATE.2: /(?:count|sum)(?![A-Za-z0-9_])/
+FLOAT.2: /(?:[0-9]+\.[0-9]*|\.[0-9]+)(?:[eE][+-]?[0-9]+)?|[0-9]+[eE][+-]?[0-9]+/
+INT: /0|[1-9][0-9]*/
+NAME: /[A-Za-z_][A-Za-z0-9_]*/
+TYPE_NAME: /[A-Za-z_][A-Za-z0-9_-]*/
+%import common.ESCAPED_STRING -> STRING
+%import common.WS
+%ignore WS
+%ignore /#[^\n]*/

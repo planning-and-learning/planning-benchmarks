@@ -1,0 +1,2115 @@
+{
+  "distribution_revision": "2",
+  "domain_sha256": "018e160ce074a1514454c1a0d44bb68fe0fa87d639a265f2560e06d813da7d52",
+  "generator": "classical/driverlog",
+  "instances": [
+    {
+      "attempt_seeds": [
+        3960306343049528994
+      ],
+      "file": "train-1.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3960306343049528994,
+      "semantic_sha256": "36690ef750347c2ad8d5a4ec00e2883ed017e0aa90e9161f456ea31e3214ac9e",
+      "sha256": "fe1c3361e5f3e3d04b814ca3741975a80e1c2850c2f812569a6c8c7ade9f0320"
+    },
+    {
+      "attempt_seeds": [
+        16282744016301153147
+      ],
+      "file": "train-2.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 5,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16282744016301153147,
+      "semantic_sha256": "9de17fd4bc55174b4bc649c8b2c71b3ac4f9c59105abad2fae80ba565048ace0",
+      "sha256": "3be5f86b19caa80e8d2509b1f4c99dcaf88a85d0a21ea5b1225787a53ecee853"
+    },
+    {
+      "attempt_seeds": [
+        2641438000494907268
+      ],
+      "file": "train-3.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2641438000494907268,
+      "semantic_sha256": "5ac744f0887ae8c28c4283039fa4a269e9f1dacd352a48f973014da85baf8f55",
+      "sha256": "1f98bdbaf3ecfd3c71d153834ae5b03d5d2022373f98b723709449ba7a7807f1"
+    },
+    {
+      "attempt_seeds": [
+        6423548649589767918
+      ],
+      "file": "train-4.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6423548649589767918,
+      "semantic_sha256": "9167744da4d54b29e07a3456ab289dce5c902b5d4620ebe7a8e09f8df55e210f",
+      "sha256": "9912435e768d204178b44238414d1f28ab3eae68894e3aca6f87127cea5cb359"
+    },
+    {
+      "attempt_seeds": [
+        10695077125350182923
+      ],
+      "file": "train-5.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10695077125350182923,
+      "semantic_sha256": "d34a7dc48d3bc8e73e7e210800ca4f0db1cd76dd7b0bac276604a58a95ff029e",
+      "sha256": "d281931e5d7befe45ba7c41d958c8c4b2ee8204b68b7b60a8da4b5e486ddccf0"
+    },
+    {
+      "attempt_seeds": [
+        9130750827630951436
+      ],
+      "file": "train-6.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 6,
+        "num_packages": 2,
+        "num_trucks": 3,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9130750827630951436,
+      "semantic_sha256": "220a91fb05c3c340d28b24850afbcf1e03a072bc53a7552672146238dae70257",
+      "sha256": "806f880c0768315fdca79a9fa5284914dbd7b4b162a7f59c7fe86c8337d493a5"
+    },
+    {
+      "attempt_seeds": [
+        7109663562660882726
+      ],
+      "file": "train-7.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 6,
+        "num_packages": 2,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7109663562660882726,
+      "semantic_sha256": "4262d5dba8a9c50d7da092b058c47ba3d514227dc9926af22feb3cf40dd943a9",
+      "sha256": "ca5fc5a1e077cd9ff9faa0ce7fbd97d02af58fdfb4bf059755d52071e870fde5"
+    },
+    {
+      "attempt_seeds": [
+        14120994438191732738
+      ],
+      "file": "train-8.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14120994438191732738,
+      "semantic_sha256": "fcec736d0effaddc3db36c8b5c94b59a2827537f04f176e6594bcb5acd78ed05",
+      "sha256": "5f809ac3cd98d90a0f64efdfab13bfa29642eb42aae8d799a1af85f53e134d79"
+    },
+    {
+      "attempt_seeds": [
+        13780660111723957140
+      ],
+      "file": "train-9.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13780660111723957140,
+      "semantic_sha256": "ebacfa1a7cddfc66aced570268cd62d43abf5fe55091e7644c1e7776fcf9f642",
+      "sha256": "6eab5303fc906e3b774f15506c9073a520684b1f2e0071c513e240f49634384f"
+    },
+    {
+      "attempt_seeds": [
+        8224361264242435666
+      ],
+      "file": "train-10.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 2,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8224361264242435666,
+      "semantic_sha256": "27f3396aa23cef4019b48f68ada0a2078e8c93903d881c8e8183dc0cc610bb3f",
+      "sha256": "483ff7e76f47fcf4ba7268252463716d6ad8a4198c69f30688c9f19bbd994006"
+    },
+    {
+      "attempt_seeds": [
+        6591642218710932095
+      ],
+      "file": "train-11.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 7,
+        "num_packages": 4,
+        "num_trucks": 3,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6591642218710932095,
+      "semantic_sha256": "d9a5a0ea019c0f233db492bbd7b7efeae1a32f855bbb015468534c26db6074ec",
+      "sha256": "2cf040eef33ff2f80c2793810b15805947c7243851fbb3b3130ade56ab27fd2d"
+    },
+    {
+      "attempt_seeds": [
+        13461259447902247718
+      ],
+      "file": "train-12.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13461259447902247718,
+      "semantic_sha256": "8050caa68db8614eba86281ebac91ecf249abdf0816d686fa474e62b01b38e6c",
+      "sha256": "0e46ba07f87cf9b76f84a33b1b233f8c7444b00ee674e8add45653709c30e958"
+    },
+    {
+      "attempt_seeds": [
+        8080970858011776095
+      ],
+      "file": "train-13.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 4,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8080970858011776095,
+      "semantic_sha256": "d6a469aeaa93b4de73166006ad25f5be957f2089ca403613cf6145aad67de15d",
+      "sha256": "ea9c6bb83fc9ec41fdfd2603d088bd6661d7dd0cb9990c6dd905504de07f297f"
+    },
+    {
+      "attempt_seeds": [
+        4053105190854642645
+      ],
+      "file": "train-14.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4053105190854642645,
+      "semantic_sha256": "c49069373598b4d42799165cd40662691f4fbb736d1c84d63766039a38c79116",
+      "sha256": "c7a99780c5171f531eee559b96391dc5b815fe52dfb96d76a4f83ad46b11ebca"
+    },
+    {
+      "attempt_seeds": [
+        193982464124753024
+      ],
+      "file": "train-15.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 4,
+        "num_packages": 4,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 193982464124753024,
+      "semantic_sha256": "194813577a40a63170d32af616e8d9ed5e0e0369d9bfad70b18ee0c7ec2050fa",
+      "sha256": "20b040d25dd26e93ff3f8d96cfe79d525c565c6b2ad5c4a7a428f179c59601dd"
+    },
+    {
+      "attempt_seeds": [
+        11693098831259736997
+      ],
+      "file": "train-16.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11693098831259736997,
+      "semantic_sha256": "a1fa56d96ef9af1e351f65104d9a418f58d77761b2f95ae9da1ce28bb11962ee",
+      "sha256": "214c6ea9fc71098276692bd65bbc3fa6df49904650d80d7e30272ae729b99ae0"
+    },
+    {
+      "attempt_seeds": [
+        6723493985348342913
+      ],
+      "file": "train-17.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6723493985348342913,
+      "semantic_sha256": "bb43cb9c70873abae97ab4c19043b8f5e01598ef7195db6d7b44c513123b4eab",
+      "sha256": "9ddd186eff1a36e4bb29c4a8e75d74c0cff8eb6f5ed800ee61e15258308b2d75"
+    },
+    {
+      "attempt_seeds": [
+        14083805331999320371
+      ],
+      "file": "train-18.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14083805331999320371,
+      "semantic_sha256": "9f397f1affe978b0a4f3ef1e52283888935b9004ea1a778d2648bef5ae2577b4",
+      "sha256": "75618517b81ba4a616be685bd358d816d38a0c05b55a752fb60f55ee1ebdada4"
+    },
+    {
+      "attempt_seeds": [
+        12234492371335733869
+      ],
+      "file": "train-19.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12234492371335733869,
+      "semantic_sha256": "456c7218b38a6c26632ab50cef0f03cf91e2baffcaeaadd3d21029d709a8f8fe",
+      "sha256": "9bb405fb68481b4d3a0935920ab971f6e6df106a5b1f18866f3468a2e735db39"
+    },
+    {
+      "attempt_seeds": [
+        4814330940387021595
+      ],
+      "file": "train-20.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4814330940387021595,
+      "semantic_sha256": "a81dbf59afc8b243617ea885b7a648007e6e7875646492cba34ce3f23a8ca471",
+      "sha256": "03791d85877e6b00944d0280421274b1574a23e01cab659e14c311eda90eb5ee"
+    },
+    {
+      "attempt_seeds": [
+        1867445967431248885
+      ],
+      "file": "train-21.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1867445967431248885,
+      "semantic_sha256": "3faf5301928919ba00bc95a81d6a3c0601d81cf92653952232455b91cfc9cf06",
+      "sha256": "708d0a054197ba8ec35b16e3efb49b71a99ecd24e9746ecff8603455fba74186"
+    },
+    {
+      "attempt_seeds": [
+        5458272453733358156
+      ],
+      "file": "train-22.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 4,
+        "num_packages": 4,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5458272453733358156,
+      "semantic_sha256": "21b1e24c118afa45500d533d4dc0178df2716603df68985dd2d7e9d159d0aaeb",
+      "sha256": "8adf372d6a57fd0f1aef522364dd3598a98f16a29fe5fd3010c781e0c004fd2d"
+    },
+    {
+      "attempt_seeds": [
+        7211868903392834693
+      ],
+      "file": "train-23.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7211868903392834693,
+      "semantic_sha256": "2bc352d629de2d1481f644e2a5ef098424dc1b0e4066930f241e5785bb6e0086",
+      "sha256": "9215e542ea0eb36db84c48ca7fc814a8d45902b3c1d7ce50754da1b6d944f915"
+    },
+    {
+      "attempt_seeds": [
+        12017157472440184121
+      ],
+      "file": "train-24.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12017157472440184121,
+      "semantic_sha256": "41212c31d9ea28476fa915286d9ba5314a34179852a0a920c34a2937491b92dc",
+      "sha256": "06e98ea047196b3a597cac99f7b9a9d0dbbd28c9632aeaa11627969514e1a0f2"
+    },
+    {
+      "attempt_seeds": [
+        8179577944638755196
+      ],
+      "file": "train-25.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8179577944638755196,
+      "semantic_sha256": "3d131b72ef8fd8cc48a806bfcc806e28e25ed2db0fdac1ef2552343bcb9b45db",
+      "sha256": "c4efe3dd3d7daffa6e90d1d32089f0ecdf736c1cc9416e15568ac791e44eeee6"
+    },
+    {
+      "attempt_seeds": [
+        4634899363081974165
+      ],
+      "file": "train-26.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4634899363081974165,
+      "semantic_sha256": "fad9ad6a97909490424b1e169903fc00ebc317f5f7b9e7481440927f67723ab7",
+      "sha256": "79f42a28d11a88647be818f3a3102655e089f077935522978b3d03e25b5c2a64"
+    },
+    {
+      "attempt_seeds": [
+        4810879350114099184
+      ],
+      "file": "train-27.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 4,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4810879350114099184,
+      "semantic_sha256": "bc36000acc5dc4056ce1d9873ba866a1cb417f7acd4d06a4864872741098e7c1",
+      "sha256": "9eee88a0718af79d7fac7b875c973150398e3b4222078d402970bf01fcef829e"
+    },
+    {
+      "attempt_seeds": [
+        8151972419585604928
+      ],
+      "file": "train-28.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8151972419585604928,
+      "semantic_sha256": "dd6a25c187eea37f1e21aba0b1f864d5d64dc1e9ac1c9570ab709fdcf5ebf900",
+      "sha256": "7de355e0942d90b33f83fd8f21295ded422a42ce614378ee00bccab565932ab7"
+    },
+    {
+      "attempt_seeds": [
+        8051752850010322069
+      ],
+      "file": "train-29.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 3,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8051752850010322069,
+      "semantic_sha256": "ee9d4363d4f23b49c54d064bcb84b40017dd5dee6a38bb0d68eae679f320abf7",
+      "sha256": "7de1d9996193672d5d80812e728494b89c14a1c31d6aa6c1e1b9e26cbdb34a58"
+    },
+    {
+      "attempt_seeds": [
+        10933079359204912326
+      ],
+      "file": "train-30.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10933079359204912326,
+      "semantic_sha256": "f26865fd38568dcdf916cdea4fd52f7dfe8fc8e5a51f075becfba15ec5d32964",
+      "sha256": "bbfe94842e27d68f492fadce2a88e9024daa684565f73905b113294845e332e5"
+    },
+    {
+      "attempt_seeds": [
+        6413675776143997441
+      ],
+      "file": "train-31.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6413675776143997441,
+      "semantic_sha256": "cc71fe65a863d4167f45e840da1c7ca815ead94d7bbedd100b585020c9a81f96",
+      "sha256": "6fa1f70a8ed08ad151aea5fc6697068c8a00a76ec56ebd005b5e39c0090ec8be"
+    },
+    {
+      "attempt_seeds": [
+        8249938311319502518
+      ],
+      "file": "train-32.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8249938311319502518,
+      "semantic_sha256": "ebfefdd8aabf30a869116359835ed4a7be288f2632d829f30c9c41a9dba847ae",
+      "sha256": "a14a98f74b3d69ab7429295321df37de5e2683eab231093498bf8a22c335fca3"
+    },
+    {
+      "attempt_seeds": [
+        15826321543543819790
+      ],
+      "file": "train-33.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 6,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15826321543543819790,
+      "semantic_sha256": "d7ae48294585d56128466d0da99e68ece92e1f943ee2087b72c57d636d457ae5",
+      "sha256": "6a4805435b24bc55b7a5415ccb60b47175503d123da4f21c0d96166ff07ddec2"
+    },
+    {
+      "attempt_seeds": [
+        9452495325016939968
+      ],
+      "file": "train-34.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9452495325016939968,
+      "semantic_sha256": "78086d31a613ca226d9d10973bbd8488334da5e693e1ae69e1748e57308932e0",
+      "sha256": "be0ebba954ab5bbe0dd1ea8032692f320cf529bf9a1cb529b64e1fc45aba9e7d"
+    },
+    {
+      "attempt_seeds": [
+        2406906487498110566
+      ],
+      "file": "train-35.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2406906487498110566,
+      "semantic_sha256": "7e62b2871c8cfe898ac76a6fa344e577e3cacfdab7e1d3450d56bf9dd59df7bf",
+      "sha256": "1737374febb5e868e4165b1d0ad188f342fdf8c75d9426f164797b92d23d5886"
+    },
+    {
+      "attempt_seeds": [
+        12085436339268263602
+      ],
+      "file": "train-36.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 5,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12085436339268263602,
+      "semantic_sha256": "fdbfd083a46a98f786ade599e36b4f19851c3c2962da87b03d2f1fe66505ca17",
+      "sha256": "6b919188aa7224d187ca2cfe73f2a8160ca2a82cb33308bff40c93d777785b31"
+    },
+    {
+      "attempt_seeds": [
+        13551013421168018063
+      ],
+      "file": "train-37.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 2,
+        "num_trucks": 3,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13551013421168018063,
+      "semantic_sha256": "173186b1e6e8957e26a4a8180b3f95d6ddc1f685895a3a985685b4b3bee8f13f",
+      "sha256": "028c337051b311d6e6f8d489b47c01f004307c53e18de3e7a9f3303cdeeca69f"
+    },
+    {
+      "attempt_seeds": [
+        16183114666773283928
+      ],
+      "file": "train-38.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 7,
+        "num_packages": 4,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16183114666773283928,
+      "semantic_sha256": "91264e15ad02bffcd34cc4c7a1ab86d138ac839e8605149c2ead1f52b2ab9b11",
+      "sha256": "c659677100441759e30eb7f8f9c009c06b1722883ef8b71e1de31043529fd7d3"
+    },
+    {
+      "attempt_seeds": [
+        11551349598681235982
+      ],
+      "file": "train-39.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11551349598681235982,
+      "semantic_sha256": "cc0deec2651dd46860d970630751e9f609822962fc29d96f9c4c24e58f2c111f",
+      "sha256": "4cbc95867913c3d94bccf645f1595cd86c1af6baa7b39dfd7e7754600c71dd58"
+    },
+    {
+      "attempt_seeds": [
+        12907973366909926222
+      ],
+      "file": "train-40.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12907973366909926222,
+      "semantic_sha256": "09847db794ce4f11ed7e42c8438a513b7a2817511d8ebb74cc3936f8fc21e35a",
+      "sha256": "d945c68db0e25a4043c381fb0a549701f15e748426a46b3494638525e3d28c7d"
+    },
+    {
+      "attempt_seeds": [
+        4538071942872934580
+      ],
+      "file": "train-41.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 5,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4538071942872934580,
+      "semantic_sha256": "171abc9bec1e510f0be2bcd00daecf14418dece40c4e980a790e7fce8f3aed29",
+      "sha256": "ccdae6cdbca95ff61c76375a3f06198b0f9d8bc23c721feafb010021c70859da"
+    },
+    {
+      "attempt_seeds": [
+        9910603642046607148
+      ],
+      "file": "train-42.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9910603642046607148,
+      "semantic_sha256": "47d5f266da494e3846c39725e0890e9b2d6a24da30ea63129ccaec4a00a798ae",
+      "sha256": "7a72472dc073b1573b3e36830e1fd86aa58c7bf699df5401b4b9886d3c58ff8f"
+    },
+    {
+      "attempt_seeds": [
+        3012170831895015571
+      ],
+      "file": "train-43.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3012170831895015571,
+      "semantic_sha256": "8153641f524e4f80791a5779b05998f182f81668c9841f7f3e8bf3abcd232961",
+      "sha256": "f7db2acd8f279ee636610d4a6b74eaf78a272c0dcd10e447ae1c26296243eeb2"
+    },
+    {
+      "attempt_seeds": [
+        6379934263484801033
+      ],
+      "file": "train-44.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 6,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6379934263484801033,
+      "semantic_sha256": "f2dec2904d4016958cf31e349d748f427707dda9990443a7a1906dba40dc2f82",
+      "sha256": "ba06e52685c3ef62aaafbbd93266b30fbfd4e74d7d60e88e7b9fe221d2f6ddf1"
+    },
+    {
+      "attempt_seeds": [
+        13032726828495160011
+      ],
+      "file": "train-45.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13032726828495160011,
+      "semantic_sha256": "de3249bea653e0818c33fb44f94cb0d68f30e0aece0034ee9ff4f91303bff9fc",
+      "sha256": "fcb1871a917671af49aa41148c79f5951e623a1f24fe94a7fc7cd0c65eefb695"
+    },
+    {
+      "attempt_seeds": [
+        17963749330790074473
+      ],
+      "file": "train-46.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17963749330790074473,
+      "semantic_sha256": "55ee7cfb876bfb419e77776f82a7d98c201fbee6ff12adfd6cfce17e4c59c4fa",
+      "sha256": "bff1b173cea0c87ca4a0dbd8cd530a63ae03b63b831a91639c8ec94826b7f9ee"
+    },
+    {
+      "attempt_seeds": [
+        17552526652463016986
+      ],
+      "file": "train-47.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 6,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 17552526652463016986,
+      "semantic_sha256": "163a8b255d3a1053d8749f8cb9c4e226d22511b5e32acbc0e00af650cb55338f",
+      "sha256": "62a4a316f41c9bf6edca480277320ff73085dc7a6f79c975728b7d798fb9364d"
+    },
+    {
+      "attempt_seeds": [
+        10874244007835762053
+      ],
+      "file": "train-48.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10874244007835762053,
+      "semantic_sha256": "1d50a3c5542591710c6b18362edb86d811e50836597eee8e518eb4498510d6e3",
+      "sha256": "029df3c20e54d9033ea55234bada779201583da7ca922c4cec0aab5b70497685"
+    },
+    {
+      "attempt_seeds": [
+        9120989124916068196
+      ],
+      "file": "train-49.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9120989124916068196,
+      "semantic_sha256": "09d6067d9a349a16192790057efde9e308b4d1cb02f64a5435a9ddb6091432c8",
+      "sha256": "2907640e251ac769278fef3b0e44f3444af2b960df8ac37b0a15ab26a91c1a49"
+    },
+    {
+      "attempt_seeds": [
+        13929859128415986897
+      ],
+      "file": "train-50.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 4,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13929859128415986897,
+      "semantic_sha256": "73b34d163ff0331851265213f0ea1f2b2af970fe92804ae91926100242de756c",
+      "sha256": "2ddb9971c948094945509ce64f70d3920b5e90bb840a4e3ddb62c3431f2dcb5c"
+    },
+    {
+      "attempt_seeds": [
+        13436451686516742717
+      ],
+      "file": "train-51.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 6,
+        "num_packages": 4,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13436451686516742717,
+      "semantic_sha256": "adb310743352bd7ba4dfcd5cfb8e0530a25a127d5ef3b2d185878c7c882cf729",
+      "sha256": "215872c5ec77ec2a85a1ad267e740bfff3665bbf1ab2ddadbf58e3d310074b46"
+    },
+    {
+      "attempt_seeds": [
+        12661900492206459508
+      ],
+      "file": "train-52.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 5,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12661900492206459508,
+      "semantic_sha256": "3a4088c06b2e0fd63c4c85a73ad79c1586c45566ae09559299e85fd0f377a409",
+      "sha256": "aec1a4a44b015404ea5a3a58323d61d7f75311c124a3b84f7972f1c13a12edeb"
+    },
+    {
+      "attempt_seeds": [
+        626868799788793850
+      ],
+      "file": "train-53.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 626868799788793850,
+      "semantic_sha256": "60849f27fcd7c35f071ffaf8d81ad8773e2fbde1ba943bd9de18f046eafa2194",
+      "sha256": "696e72cd1892e50af5de33f6a310feeca573bb725d6a96b07cb9976a2f2cff13"
+    },
+    {
+      "attempt_seeds": [
+        1218629673098656250
+      ],
+      "file": "train-54.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1218629673098656250,
+      "semantic_sha256": "d7c198db8f83a3096e752a6356379db5e1f415b13ab65f59f2fd0ac9c64d07e2",
+      "sha256": "878922340565861f08a6928c8164572ab672b7c4a8e4a5a59e37396c7b7dfae6"
+    },
+    {
+      "attempt_seeds": [
+        10345468256659314204
+      ],
+      "file": "train-55.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10345468256659314204,
+      "semantic_sha256": "574c3a196013165e6620eda74b1e44238e2fe7b78c2252dfd29c40e5a7eefaa5",
+      "sha256": "e2eef1daea68e281a9f6bb11a5d2f6a62b5fc2bbab7a9bf74477298f2f6d6c88"
+    },
+    {
+      "attempt_seeds": [
+        6290030856117961292
+      ],
+      "file": "train-56.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6290030856117961292,
+      "semantic_sha256": "c49e938fae801bfa9986ff2f11c6f2b3bd473d0672053d789aa4232f90696038",
+      "sha256": "163e3de9cff733a30f5967f11d2ec6401c0aa754d0792c69aff0b4fb791114b2"
+    },
+    {
+      "attempt_seeds": [
+        1560728631006210526
+      ],
+      "file": "train-57.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1560728631006210526,
+      "semantic_sha256": "d7f58cf2bf99e8d4622a54a217d19d15f217656130e0a59c495ffc4f0a3fdfec",
+      "sha256": "89a04c574662eb6987b9bb65b03a5fb1969382491b0f4e7aa8bd5a7278ca3493"
+    },
+    {
+      "attempt_seeds": [
+        9637781037309397589
+      ],
+      "file": "train-58.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 6,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9637781037309397589,
+      "semantic_sha256": "7766c67ca5f6ca4b27e56e79311d8b7b5fbb5ce65e61defef4656301d9157315",
+      "sha256": "7d0e12f7039aa026b0162f5321aa3cf20c2a9bc1f99cfd7e277666bd58cc00bc"
+    },
+    {
+      "attempt_seeds": [
+        11792874811643660438
+      ],
+      "file": "train-59.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 4,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11792874811643660438,
+      "semantic_sha256": "aa2eaf63c2e1a6aeab06e49521160c13ee72f841bd3c3b7ca0c912ef25f64118",
+      "sha256": "794be7ea46611b7916bac1d31ebfe338e8a35ab8d5c40590fcacf835b3c1f9f7"
+    },
+    {
+      "attempt_seeds": [
+        2651355544110517901
+      ],
+      "file": "train-60.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 4,
+        "num_trucks": 3,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2651355544110517901,
+      "semantic_sha256": "4657080c17ac753b070054c100582ef1f7b462686aa4d67bddb95606b82ea694",
+      "sha256": "2efc699d2e3f9c17d6a2467adffae28c8b3aa5351d1e2b2edc863776b73b8685"
+    },
+    {
+      "attempt_seeds": [
+        6735627311992023056
+      ],
+      "file": "train-61.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6735627311992023056,
+      "semantic_sha256": "d6267bdbfdc4ac2582daba9063d5679fa0559c6fb7842d5a7c88f2870e89e9c3",
+      "sha256": "b7a7dcaeebd5f0f5f5c7240da2e4cf9260bb4a56173a21e8557b7424d9e61097"
+    },
+    {
+      "attempt_seeds": [
+        7082106132941753281
+      ],
+      "file": "train-62.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 4,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7082106132941753281,
+      "semantic_sha256": "6e22014d1df67b1d4bdadb15966028e08e4b6b624bdbe3eac8d2088b79b95c0c",
+      "sha256": "34b1c6dfb47acda7fbf9dc9bb5d87a9c128e7c2db7cf0c0c039f7dc2ce82f536"
+    },
+    {
+      "attempt_seeds": [
+        1742268840334681767
+      ],
+      "file": "train-63.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 4,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1742268840334681767,
+      "semantic_sha256": "9fce0174969f0302e5adcbcf11a09db3034820239cd918ed7920ca46cb9c66a1",
+      "sha256": "11f17716fc4710a10594e6c6d55fc986b0cdb21aaeee4104df973ff77cb2db3f"
+    },
+    {
+      "attempt_seeds": [
+        8592147141074256264
+      ],
+      "file": "train-64.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8592147141074256264,
+      "semantic_sha256": "0af072628cc047e2184149ee08c11f2331acbc8c46c389c193bb425a9450f7a9",
+      "sha256": "a78c226e996807601b7c72ee4141fc756965c63f8ed9aa1ff2cfdd051968f147"
+    },
+    {
+      "attempt_seeds": [
+        13608108710530728429
+      ],
+      "file": "train-65.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 6,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13608108710530728429,
+      "semantic_sha256": "f4b3116aa5dcfeb9fd0a4693ee933d6ea3ee83f6839e9bb198fb2bfd623acd88",
+      "sha256": "a4de12df5543a425513f7093a90fb0ccca19684c313bd09cdfa156424ceaee36"
+    },
+    {
+      "attempt_seeds": [
+        11279948741509259384
+      ],
+      "file": "train-66.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11279948741509259384,
+      "semantic_sha256": "3940c5c92a599b6bf1d04307c2fa36b821884f778decb4a2b6a04e0466281099",
+      "sha256": "cd690846601ffdcd5415b781ab0eeb4b0e46228d74be6da799dd3d953fd3343d"
+    },
+    {
+      "attempt_seeds": [
+        18038053348123825666
+      ],
+      "file": "train-67.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 4,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 18038053348123825666,
+      "semantic_sha256": "fa8c5fca715ca385969a8ab060632b11ac9e796eb0936229a475569f0a445184",
+      "sha256": "2735986505bd19a0abd7b26e93506e8b4aa1d4c3ae705404ca7207c92a6cc6ba"
+    },
+    {
+      "attempt_seeds": [
+        11656392526171485209
+      ],
+      "file": "train-68.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 4,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11656392526171485209,
+      "semantic_sha256": "1de82f9b0f8a1c9921e1d57a55f453c395bdc5dd29db62d3a0f9f7f781f60ca0",
+      "sha256": "3c34b0d83ed44560b28be29d0b9cefe13caf7087839f7b02bdb8afbfeed5f3db"
+    },
+    {
+      "attempt_seeds": [
+        14605237104887427237
+      ],
+      "file": "train-69.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 14605237104887427237,
+      "semantic_sha256": "c189ba0614f1c416b640ecdc518a10c5364514f4803a1f99b90b0c739034eaac",
+      "sha256": "62111e9f0598ce8ffc9be867c6021c7bf7e9a9e636061fc05de24c1b745acc4d"
+    },
+    {
+      "attempt_seeds": [
+        2570440279302484564
+      ],
+      "file": "train-70.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2570440279302484564,
+      "semantic_sha256": "8eb16814cbf3c3d23b4e0f33fa2a78717cd03f971033d116e75e617eecd27eae",
+      "sha256": "0526f70e5d88f00e9a0c15cc3911a17ce5468dabe54987836f3c6b43e61b8c6d"
+    },
+    {
+      "attempt_seeds": [
+        13769669527632432805
+      ],
+      "file": "train-71.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 13769669527632432805,
+      "semantic_sha256": "093dfd36466f85a10c1a2d56115db82c24ecbaeb9bd77ade21a1aa57b0018795",
+      "sha256": "1fe72a33ca897edb82cddd9af89b963b081bd758b6d4736cf4afa2970d10577b"
+    },
+    {
+      "attempt_seeds": [
+        4572367465675322343
+      ],
+      "file": "train-72.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4572367465675322343,
+      "semantic_sha256": "bfa334ef57a7676c42191a4455fcca867a4708490cf979b716543e4268b08cef",
+      "sha256": "a80a948866810cf802e94590a5da6f4a2d6f3b2dc6cd2e8fa6ff6d0bc804e5c6"
+    },
+    {
+      "attempt_seeds": [
+        9470763190060053424
+      ],
+      "file": "train-73.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9470763190060053424,
+      "semantic_sha256": "9e4cff33ebea833e20efc1583d0803f9ec29e7f38c89f28cebce2a2f55c1bc68",
+      "sha256": "9e7b8bcce26c05a9770f9d4df1ba24f598110644a6dfd1368d09aae301ccfc22"
+    },
+    {
+      "attempt_seeds": [
+        11179785347653416053
+      ],
+      "file": "train-74.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 11179785347653416053,
+      "semantic_sha256": "e7fa0f9952a4f1cd5c7a84b6cddc60f1990e4562be59f9bf86dfdcb991e50869",
+      "sha256": "615e573a91a770baaacd63ca717ce296cbdadfcff998bf0e13a53e3058a7a219"
+    },
+    {
+      "attempt_seeds": [
+        3622322599710300378
+      ],
+      "file": "train-75.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3622322599710300378,
+      "semantic_sha256": "f1bc997fb0314006c6ca0066024de5786ffcb9f551b7713630c19b672bd81be1",
+      "sha256": "53240e1fa1b04354176f834c19221eea91c39c4758994d2d6e980d29fe3721ae"
+    },
+    {
+      "attempt_seeds": [
+        10629930160211285863
+      ],
+      "file": "train-76.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 6,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 10629930160211285863,
+      "semantic_sha256": "b44a4fa02ad8da70ac01181fd3ad71ec5ab5bfc0bf2fa2c758398d46e32dbc76",
+      "sha256": "854dec7e098d717f1f600498f40a95d5c89b1bc479a34471f156d81e24f5e71b"
+    },
+    {
+      "attempt_seeds": [
+        12545640217904260638
+      ],
+      "file": "train-77.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12545640217904260638,
+      "semantic_sha256": "774d389f82624969248075a64070c33a2f852d140ec5f6e1b21b9226f172ddb8",
+      "sha256": "b1904cfed4f52e5502ccd860fb6b82132c62bd6c05411aaa8193cae5262bdfe9"
+    },
+    {
+      "attempt_seeds": [
+        1706033119363237364
+      ],
+      "file": "train-78.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1706033119363237364,
+      "semantic_sha256": "b9b8322bf781c8a963175c0fee6c2db9e94cebcba5b52e4475a8516436a8029d",
+      "sha256": "f568b291bc46bf9b5a4a4695f1e9f0cf79f82fe656f74d4c71dd17cd0c0050bf"
+    },
+    {
+      "attempt_seeds": [
+        16778895815948664055
+      ],
+      "file": "train-79.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 7,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16778895815948664055,
+      "semantic_sha256": "96a34728bd592ff942257d21c7cb2b791e3bd9f0b0dfd0643c1aaa47e873357b",
+      "sha256": "851a564e9fd655fd9c758391ece36f2821b26ab9e83ae753b2f730b4e9c3883e"
+    },
+    {
+      "attempt_seeds": [
+        8873716719987013848
+      ],
+      "file": "train-80.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 7,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8873716719987013848,
+      "semantic_sha256": "2d3a52c9a596c6721a81edec7cac2324ef22d1b24514f8d9b3e35f9463cc009f",
+      "sha256": "3e27e7b3771edc56921433eeb680e295e486ff01c3ea44284081ef013dcd0ea4"
+    },
+    {
+      "attempt_seeds": [
+        16659101587925877325
+      ],
+      "file": "train-81.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 6,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16659101587925877325,
+      "semantic_sha256": "6f5de99df1a50d3c04bc35d871c0c65a6cf01c0398fde5a83b2b1b53865e229d",
+      "sha256": "fec02b8012b220e147f16ab35fa2d607792d0c6a27c897bdfbbdf428fec11083"
+    },
+    {
+      "attempt_seeds": [
+        15584297992322092815
+      ],
+      "file": "train-82.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 6,
+        "num_packages": 4,
+        "num_trucks": 3,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 15584297992322092815,
+      "semantic_sha256": "c3f633a8028cecc64dc966d41c1599baef630dbd6a51db7cbb1432b0cd5db136",
+      "sha256": "2fcf410e80a8fe5cc552f3f3960208df09c252ae760cc31d8308b3e6bf20f674"
+    },
+    {
+      "attempt_seeds": [
+        9962049092545177813
+      ],
+      "file": "train-83.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 4,
+        "num_packages": 4,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 9962049092545177813,
+      "semantic_sha256": "c4c99acaac46f8cae02b909ffc93cc12a3a7e0c4c03d046fb2772f62b79b1135",
+      "sha256": "233bc204d00015cccbf69782841cbb41a2e9b22deedacbad401174f776765ce7"
+    },
+    {
+      "attempt_seeds": [
+        7155183848085141705
+      ],
+      "file": "train-84.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7155183848085141705,
+      "semantic_sha256": "2e1f7e62a9267557ff70ddd91af5cebb8a3cc530f11611e8247a8dc0ffed097d",
+      "sha256": "5b3dfaa527bfb64abad3ff2a913e0c883bf4b2f3460e960c0a600c6853f554ea"
+    },
+    {
+      "attempt_seeds": [
+        16000315495441420246
+      ],
+      "file": "train-85.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 16000315495441420246,
+      "semantic_sha256": "6e84aaeb0a0c68305cdf4506a20968c36a3dea986d25dddf6ea1d44c64adf99f",
+      "sha256": "acabb231177d1fe5b3fcd90803d09af7048a44988c882c88b0a0bf63ee77f98b"
+    },
+    {
+      "attempt_seeds": [
+        6800159236151553554
+      ],
+      "file": "train-86.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 7,
+        "num_packages": 4,
+        "num_trucks": 4,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 6800159236151553554,
+      "semantic_sha256": "7ea3522ccc3b32d451e9450b70bb8481ef5e7744eeb5a3d0c459df6a014db7e2",
+      "sha256": "af68dc22b06708c94b0372f236214c28dfa4aaaae210ac5b2e7c2743c744a866"
+    },
+    {
+      "attempt_seeds": [
+        738676723670064024
+      ],
+      "file": "train-87.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 738676723670064024,
+      "semantic_sha256": "186d55e23d412333f793096e649db3708e7d8c362e8d9b470de9a6503edd3ba9",
+      "sha256": "b0568243d2a1e41ee1cc8390b86e5accf7ea5f4096d7d6b9b50847bbfc7778b8"
+    },
+    {
+      "attempt_seeds": [
+        682689916161772705
+      ],
+      "file": "train-88.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 682689916161772705,
+      "semantic_sha256": "795e82e823b9cf6f546258d445e84c372e0d91473600b52bb2ba538042ccfcf1",
+      "sha256": "a4362036d354aa3ce0754f502bd4339ee5b76e7a3c0b8c1d10f58b9044d1fa0d"
+    },
+    {
+      "attempt_seeds": [
+        12070362120435415366
+      ],
+      "file": "train-89.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 6,
+        "num_packages": 4,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12070362120435415366,
+      "semantic_sha256": "6a7923d8c30433660f718673a1ea49a524ac0cc415fb17e6b70e531bd479f836",
+      "sha256": "96ba42ba4aae795dea8068dac2b2074ac58f155b0eac3b27c3191805a54f30d2"
+    },
+    {
+      "attempt_seeds": [
+        3172845868610005589
+      ],
+      "file": "train-90.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 4,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3172845868610005589,
+      "semantic_sha256": "664d6f89237851f3973773b8b85f986bb61cb1bfcd2e86232ff39f3e238cf381",
+      "sha256": "d5dd629e844800e4314c7f028bce05876bb2935a353dfca40bcd88caec5045ad"
+    },
+    {
+      "attempt_seeds": [
+        5244740728761069230
+      ],
+      "file": "train-91.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 6,
+        "num_packages": 3,
+        "num_trucks": 2,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 5244740728761069230,
+      "semantic_sha256": "f902803b6287aac606af701f09832f0aa97bc624088171a044c05c078f3b994a",
+      "sha256": "a2e9e74815062a63224c8e6e2ec8e4997b4452a28c387dd76e94a61b8700baba"
+    },
+    {
+      "attempt_seeds": [
+        8184757907124357744
+      ],
+      "file": "train-92.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 7,
+        "num_packages": 2,
+        "num_trucks": 4,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 8184757907124357744,
+      "semantic_sha256": "ebc0701041d4c9f18b634a4e5689174ee0df5a9eab41e0f9bfe6dc49e05b0ddc",
+      "sha256": "b93acb9f91e35045bcb49c7979740221b7712242d676ca518a7717928667d72a"
+    },
+    {
+      "attempt_seeds": [
+        4364554853727585516
+      ],
+      "file": "train-93.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 7,
+        "num_packages": 2,
+        "num_trucks": 3,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 4364554853727585516,
+      "semantic_sha256": "334c3885c8d38c6dd5c304b7fd13721572d41440b62b526d56cbb919f35081d1",
+      "sha256": "228e8cf75470d2c07cb614eb71af88319104393568abc423a04831a2fd592aad"
+    },
+    {
+      "attempt_seeds": [
+        12534259284567065247
+      ],
+      "file": "train-94.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 2,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12534259284567065247,
+      "semantic_sha256": "ddbe9d69f67d556da09b471665b618b945a49fff4338f135b20a3c16abdfdb32",
+      "sha256": "19708f3aa14a3992ba5baadbaa0baab6e148bf9806bbefd7623077da79a0a954"
+    },
+    {
+      "attempt_seeds": [
+        2256026705792138341
+      ],
+      "file": "train-95.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 4,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 2256026705792138341,
+      "semantic_sha256": "137dfcde9a783dac7ab756f3c4b9ac79cf15b20d6db83067a655a56a4a23d622",
+      "sha256": "4abded14f41d165f4bce68360d595345df4421c68f06783d3d9adafc21088afd"
+    },
+    {
+      "attempt_seeds": [
+        7872215808677995478
+      ],
+      "file": "train-96.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 7,
+        "num_packages": 3,
+        "num_trucks": 3,
+        "package_goal_probability": 0.5,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 7872215808677995478,
+      "semantic_sha256": "d1ab89e1fb1d4822cff3d0167d528df5d8fce8855b199c95ae4adc6be86e2d5a",
+      "sha256": "e65c32680e86559ff056bc57c624c454de4cf6e8d76bb0d63be1665169880ad5"
+    },
+    {
+      "attempt_seeds": [
+        3509665900622292213
+      ],
+      "file": "train-97.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.75,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 5,
+        "num_packages": 2,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 3509665900622292213,
+      "semantic_sha256": "6a92ce9b0ce526a2199fc67fc73954516d2460775bee034c87337b6c443792d7",
+      "sha256": "3eb596c7f2c9e7d281fc887b07f1aa374d68fce2dfde99e3a159b5a4f6c6cfdc"
+    },
+    {
+      "attempt_seeds": [
+        12384458834338677780
+      ],
+      "file": "train-98.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 2,
+        "num_locations": 6,
+        "num_packages": 2,
+        "num_trucks": 2,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 0.5
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12384458834338677780,
+      "semantic_sha256": "fd9f9e931a0b39f3590e20a95bbcc49a641bbdb272b28b506d3ee4852f79a276",
+      "sha256": "09b7d1977a47b67118ee889b5ed7b738dbd8edad1e8b285d0a079e0413b30f9c"
+    },
+    {
+      "attempt_seeds": [
+        12966163413550512692
+      ],
+      "file": "train-99.pddl",
+      "parameters": {
+        "driver_goal_probability": 1.0,
+        "edge_probability": 0.5,
+        "num_drivers": 4,
+        "num_locations": 5,
+        "num_packages": 4,
+        "num_trucks": 3,
+        "package_goal_probability": 0.75,
+        "truck_goal_probability": 0.75
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 12966163413550512692,
+      "semantic_sha256": "f8e7806d015c18f9f985825b65be99fe6b8ba474ab0e25b0b72ac1e12d5efa02",
+      "sha256": "02e1eaa7f3bbbd0b4411258159c889e8c63772aaf57143331c5172c59835cdcd"
+    },
+    {
+      "attempt_seeds": [
+        1759441791512446587
+      ],
+      "file": "train-100.pddl",
+      "parameters": {
+        "driver_goal_probability": 0.5,
+        "edge_probability": 0.5,
+        "num_drivers": 3,
+        "num_locations": 4,
+        "num_packages": 4,
+        "num_trucks": 3,
+        "package_goal_probability": 1.0,
+        "truck_goal_probability": 1.0
+      },
+      "rejected_attempts": 0,
+      "rejection_reasons": {},
+      "seed": 1759441791512446587,
+      "semantic_sha256": "37ffd5492b3676adb7158d85ba378f55de52debad0cd0105406e272b13e8c7ee",
+      "sha256": "d528e2076ddd48a6a2f80951d279ec88f42db11c2e97d7bdc1eade8ae620ca51"
+    }
+  ],
+  "master_seed": 0,
+  "max_attempts": 10000,
+  "package_version": "0.0.12",
+  "parameter_policy": "balanced-shuffled-cycles",
+  "python": "3.13.2",
+  "schema_version": 1,
+  "split": "train",
+  "valid_configurations": 2916
+}
