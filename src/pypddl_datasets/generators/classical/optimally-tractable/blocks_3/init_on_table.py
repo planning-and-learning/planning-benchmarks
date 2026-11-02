@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""3-operator Blocksworld: every block starts on the table, the goal is random towers.
+"""3-operator Blocksworld: every block starts on the table, the goal is a uniformly random state.
 
 Optimal cost: 1 per goal (on x y), one move-t-to-b each, building every goal
 tower bottom-up. No block is ever in the way, so the lower bound is met.
@@ -12,27 +12,27 @@ import random
 import sys
 import time
 
+from pypddl_datasets.generators.classical.ipc.blocks_3 import generator as _ipc
+
 
 def _towers(blocks: list[str], rng: random.Random) -> list[list[str]]:
-    towers: list[list[str]] = []
-    for block in rng.sample(blocks, len(blocks)):
-        if towers and rng.random() < 0.5:
-            towers[-1].append(block)
-        else:
-            towers.append([block])
-    return towers
+    """Uniformly random state over all labelled tower configurations, as bwstates in the IPC generator."""
+    return _ipc.make_stacks(blocks, rng, _ipc.completion_counts(len(blocks)))
 
 
 def make_problem(num_blocks: int, seed: int | None = None) -> str:
-    if num_blocks < 2:
-        raise ValueError("num_blocks must be at least 2")
+    if num_blocks < 1:
+        raise ValueError("num_blocks must be at least 1")
     rng = random.Random(seed if seed is not None else int(time.time()))
     blocks = [f"b{i}" for i in range(1, num_blocks + 1)]
     goal: list[str] = []
-    while not goal:
-        goal = [f"(on {upper} {lower})" for tower in _towers(blocks, rng) for lower, upper in zip(tower, tower[1:])]
+    for tower in _towers(blocks, rng):  # the goal state in full, as the IPC generators emit it
+        goal.append(f"(on-table {tower[0]})")
+        goal.extend(f"(on {upper} {lower})" for lower, upper in zip(tower, tower[1:]))
+        goal.append(f"(clear {tower[-1]})")
+    stacked = sum(fact.startswith("(on ") for fact in goal)
     init = [*(f"(on-table {block})" for block in blocks), *(f"(clear {block})" for block in blocks)]
-    return f"""; optimal plan cost: {len(goal)}
+    return f"""; optimal plan cost: {stacked}
 (define (problem blocks-3-init-on-table-{num_blocks})
   (:domain blocksworld-3ops)
   (:objects {' '.join(blocks)})

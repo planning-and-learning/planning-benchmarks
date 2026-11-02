@@ -13,15 +13,12 @@ import random
 import sys
 import time
 
+from pypddl_datasets.generators.classical.ipc.blocks_3 import generator as _ipc
+
 
 def _towers(blocks: list[str], rng: random.Random) -> list[list[str]]:
-    towers: list[list[str]] = []
-    for block in rng.sample(blocks, len(blocks)):
-        if towers and rng.random() < 0.5:
-            towers[-1].append(block)
-        else:
-            towers.append([block])
-    return towers
+    """Uniformly random state over all labelled tower configurations, as bwstates in the IPC generator."""
+    return _ipc.make_stacks(blocks, rng, _ipc.completion_counts(len(blocks)))
 
 
 def _state(towers: list[list[str]]) -> list[str]:
@@ -47,8 +44,7 @@ def make_problem(num_blocks: int, seed: int | None = None) -> str:
     rng = random.Random(seed if seed is not None else int(time.time()))
     blocks = [f"b{i}" for i in range(1, num_blocks + 1)]
     towers = _towers(blocks, rng)
-    on = {(upper, lower) for tower in towers for lower, upper in zip(tower, tower[1:])}
-    a, b = rng.choice([(a, b) for a in blocks for b in blocks if a != b and (a, b) not in on])
+    a, b = rng.choice([(a, b) for a in blocks for b in blocks if a != b])  # may already hold: cost 0
     return f"""; optimal plan cost: {optimal_moves(towers, a, b)}
 (define (problem blocks-3-on-pair-{num_blocks})
   (:domain blocksworld-3ops)

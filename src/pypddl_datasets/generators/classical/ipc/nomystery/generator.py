@@ -150,18 +150,12 @@ def _minimum_fuel(
     raise RuntimeError("connected nomystery instance has no solution")
 
 
-def make_problem(
-    num_locations: int = 6,
-    num_packages: int = 6,
-    edge_factor: float = 1.5,
-    max_edge_cost: int = 25,
-    constrainedness: float = 1.0,
-    seed: int = 1,
-    full_sum_table: bool = True,
-) -> str:
-    """``full_sum_table`` lists ``sum`` for every level pair, as all IPC 2011 tasks
-    do; ``False`` restricts it to the edge costs, as Autoscale's tasks do."""
-    rng = random.Random(seed)
+def road_graph(
+    rng: random.Random, num_locations: int, edge_factor: float, max_edge_cost: int
+) -> list[list[int | None]]:
+    """The IPC 2011 road network: a random spanning tree, then random further roads
+    up to ``edge_factor * num_locations`` in all, each with a fuel cost in
+    1..``max_edge_cost``; ``graph[u][v]`` is the cost or None, both directions."""
     graph: list[list[int | None]] = [
         [None] * num_locations for _ in range(num_locations)
     ]
@@ -194,6 +188,22 @@ def make_problem(
         edge_cost = rng.randint(1, max_edge_cost)
         graph[source][target] = graph[target][source] = edge_cost
         num_edges += 1
+    return graph
+
+
+def make_problem(
+    num_locations: int = 6,
+    num_packages: int = 6,
+    edge_factor: float = 1.5,
+    max_edge_cost: int = 25,
+    constrainedness: float = 1.0,
+    seed: int = 1,
+    full_sum_table: bool = True,
+) -> str:
+    """``full_sum_table`` lists ``sum`` for every level pair, as all IPC 2011 tasks
+    do; ``False`` restricts it to the edge costs, as Autoscale's tasks do."""
+    rng = random.Random(seed)
+    graph = road_graph(rng, num_locations, edge_factor, max_edge_cost)
 
     truck_start = rng.randrange(num_locations)
     package_starts: list[int] = []

@@ -3,6 +3,8 @@
 
 Optimal cost: 2 per passenger (board + depart), one move to the origin floor unless
 the lift is there, then one move per distinct destination floor.
+The lift starts at f0 as in the IPC tasks (lift_start="random" draws it as the IPC 2023
+learning track does); the formula holds for any lift floor.
 """
 
 from __future__ import annotations
@@ -41,16 +43,19 @@ def _problem(name: str, num_floors: int, lift: int, trips: list[tuple[int, int]]
 """
 
 
-def make_problem(num_floors: int, num_passengers: int, seed: int | None = None) -> str:
+def make_problem(num_floors: int, num_passengers: int, seed: int | None = None, lift_start: str = "bottom") -> str:
     if num_floors < 2:
         raise ValueError("num_floors must be at least 2")
     if num_passengers < 1:
         raise ValueError("num_passengers must be at least 1")
+    if lift_start not in ("bottom", "random"):
+        raise ValueError("lift_start must be 'bottom' or 'random'")
     rng = random.Random(seed if seed is not None else int(time.time()))
     origin = rng.randrange(num_floors)
     destinations = [floor for floor in range(num_floors) if floor != origin]
     trips = [(origin, rng.choice(destinations)) for _ in range(num_passengers)]
-    return _problem("miconic-common-origin", num_floors, rng.randrange(num_floors), trips)
+    lift = rng.randrange(num_floors) if lift_start == "random" else 0
+    return _problem("miconic-common-origin", num_floors, lift, trips)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -58,9 +63,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("-f", "--num-floors", type=int, required=True)
     parser.add_argument("-p", "--num-passengers", type=int, required=True)
     parser.add_argument("-s", "--seed", type=int)
+    parser.add_argument("--lift-start", choices=("bottom", "random"), default="bottom",
+                        help="lift at f0 as in the IPC tasks, or on a random floor as in the IPC 2023 learning track")
     args = parser.parse_args(argv)
     try:
-        print(make_problem(args.num_floors, args.num_passengers, args.seed), end="")
+        print(make_problem(args.num_floors, args.num_passengers, args.seed, args.lift_start), end="")
     except ValueError as error:
         parser.error(str(error))
     return 0

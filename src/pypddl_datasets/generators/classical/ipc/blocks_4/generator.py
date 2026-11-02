@@ -23,7 +23,7 @@ import time
 DOMAIN_NAME = "blocks"
 
 
-def _completion_counts(num_blocks: int) -> list[list[int]]:
+def completion_counts(num_blocks: int) -> list[list[int]]:
     """Return g(n, k): completions of n floating and k rooted towers."""
     counts = [[1] * (num_blocks + 1)]
     for num_floating in range(1, num_blocks + 1):
@@ -38,7 +38,7 @@ def _completion_counts(num_blocks: int) -> list[list[int]]:
     return counts
 
 
-def _make_stacks(
+def make_stacks(
     blocks: list[str], rng: random.Random, counts: list[list[int]]
 ) -> list[list[str]]:
     floating = [[block] for block in blocks]
@@ -94,13 +94,13 @@ def make_problem(num_blocks: int, seed: int | None = None, goal: str = "tower") 
         raise ValueError("goal must be 'tower' or 'full'")
     rng = random.Random(seed if seed is not None else int(time.time()))
     blocks = [f"b{i}" for i in range(1, num_blocks + 1)]
-    counts = _completion_counts(num_blocks)
-    initial_stacks = _make_stacks(blocks, rng, counts)
+    counts = completion_counts(num_blocks)
+    initial_stacks = make_stacks(blocks, rng, counts)
     if goal == "tower":
         tower = rng.sample(blocks, num_blocks)
         goal_facts = [f"      (on {upper} {lower})" for lower, upper in zip(tower, tower[1:])]
     else:
-        goal_facts = _goal_facts(_make_stacks(blocks, rng, counts))
+        goal_facts = _goal_facts(make_stacks(blocks, rng, counts))
 
     return (f"""(define (problem blocks-4-{num_blocks})
   (:domain {DOMAIN_NAME})

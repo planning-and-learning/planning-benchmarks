@@ -12,15 +12,12 @@ import random
 import sys
 import time
 
+from pypddl_datasets.generators.classical.ipc.blocks_3 import generator as _ipc
+
 
 def _towers(blocks: list[str], rng: random.Random) -> list[list[str]]:
-    towers: list[list[str]] = []
-    for block in rng.sample(blocks, len(blocks)):
-        if towers and rng.random() < 0.5:
-            towers[-1].append(block)
-        else:
-            towers.append([block])
-    return towers
+    """Uniformly random state over all labelled tower configurations, as bwstates in the IPC generator."""
+    return _ipc.make_stacks(blocks, rng, _ipc.completion_counts(len(blocks)))
 
 
 def _state(towers: list[list[str]]) -> list[str]:

@@ -25,8 +25,8 @@ import sys
 
 # autoscale/blocksworld reuses the uniform state sampler of ipc/blocks_4 (same distribution)
 from pypddl_datasets.generators.classical.ipc.blocks_4.generator import (  # pylint: disable=protected-access
-    _completion_counts,  # pyright: ignore[reportPrivateUsage]
-    _make_stacks,  # pyright: ignore[reportPrivateUsage]
+    completion_counts,
+    make_stacks,
     _state_facts,  # pyright: ignore[reportPrivateUsage]
 )
 
@@ -40,9 +40,9 @@ def make_problem(num_blocks: int, seed: int | None = None) -> str:
         raise ValueError("num_blocks must be an integer at least 1")
     rng = random.Random(seed)
     blocks = [f"b{i}" for i in range(1, num_blocks + 1)]
-    counts = _completion_counts(num_blocks)
-    initial_stacks = _make_stacks(blocks, rng, counts)
-    goal_stacks = _make_stacks(blocks, rng, counts)
+    counts = completion_counts(num_blocks)
+    initial_stacks = make_stacks(blocks, rng, counts)
+    goal_stacks = make_stacks(blocks, rng, counts)
     goal_facts = [f"      (on {upper} {lower})" for stack in goal_stacks for lower, upper in zip(stack, stack[1:])]
 
     return (f"""(define (problem BW-rand-{num_blocks})

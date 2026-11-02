@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gold Miner as in the IPC 2023 learning track, which is optimally tractable as a whole.
+"""Gold Miner as in the IPC 2008 learning track, which is optimally tractable as a whole.
 
 The robot (row r) and the laser and bomb supply (row s) are in the free first column,
 the gold (row g) is in the last column C - 1, and every other cell is rock. The

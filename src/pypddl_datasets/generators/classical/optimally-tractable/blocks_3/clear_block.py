@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""3-operator Blocksworld: random initial towers, the goal is (clear x) for one covered block x.
+"""3-operator Blocksworld: random initial towers, the goal is (clear x) for a uniformly random covered block x.
 
 Optimal cost: k for the k blocks above x, each moved once.
 """
@@ -11,15 +11,12 @@ import random
 import sys
 import time
 
+from pypddl_datasets.generators.classical.ipc.blocks_3 import generator as _ipc
+
 
 def _towers(blocks: list[str], rng: random.Random) -> list[list[str]]:
-    towers: list[list[str]] = []
-    for block in rng.sample(blocks, len(blocks)):
-        if towers and rng.random() < 0.5:
-            towers[-1].append(block)
-        else:
-            towers.append([block])
-    return towers
+    """Uniformly random state over all labelled tower configurations, as bwstates in the IPC generator."""
+    return _ipc.make_stacks(blocks, rng, _ipc.completion_counts(len(blocks)))
 
 
 def _state(towers: list[list[str]]) -> list[str]:
@@ -39,8 +36,7 @@ def make_problem(num_blocks: int, seed: int | None = None) -> str:
     towers: list[list[str]] = []
     while all(len(tower) == 1 for tower in towers):
         towers = _towers(blocks, rng)
-    tower = rng.choice([tower for tower in towers if len(tower) > 1])
-    height = rng.randrange(len(tower) - 1)
+    tower, height = rng.choice([(tower, height) for tower in towers for height in range(len(tower) - 1)])
     above = len(tower) - 1 - height
     return f"""; optimal plan cost: {above}
 (define (problem blocks-3-clear-block-{num_blocks})

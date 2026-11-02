@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Ferry where all cars start at the same location.
 
-Optimal cost: each of the k cars costs board + sail + debark, plus k - 1 empty sails
-back to the origin, plus one empty sail to the origin if the ferry starts elsewhere.
+Goals are drawn as by the IPC generator, so a car may already be at its goal.
+Optimal cost: each of the k misplaced cars costs board + sail + debark, plus k - 1
+empty sails back to the origin, plus one empty sail to the origin if the ferry starts
+elsewhere (0 if no car is misplaced).
 """
 
 from __future__ import annotations
@@ -22,9 +24,10 @@ def make_problem(num_cars: int, num_locations: int, seed: int | None = None) -> 
     cars = [f"c{i}" for i in range(num_cars)]
     locations = [f"l{i}" for i in range(num_locations)]
     origin = rng.randrange(num_locations)
-    destinations = [rng.choice([i for i in range(num_locations) if i != origin]) for _ in cars]
+    destinations = [rng.randrange(num_locations) for _ in cars]  # may equal the origin, as in the IPC generator
     ferry = rng.randrange(num_locations)
-    cost = 4 * num_cars - 1 + (ferry != origin)
+    misplaced = sum(destination != origin for destination in destinations)
+    cost = 4 * misplaced - 1 + (ferry != origin) if misplaced else 0
     init = [
         *(f"(location {location})" for location in locations),
         *(f"(car {car})" for car in cars),

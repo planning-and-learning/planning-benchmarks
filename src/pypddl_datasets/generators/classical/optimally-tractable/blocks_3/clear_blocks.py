@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""3-operator Blocksworld: random initial towers, the goal clears a random set X of blocks.
+"""3-operator Blocksworld: random initial towers, the goal clears a uniformly random non-empty set X of blocks.
 
 Every block above some block of X must move, once each, and the table always takes
 it. Optimal cost: u, the number of blocks above X.
@@ -12,15 +12,12 @@ import random
 import sys
 import time
 
+from pypddl_datasets.generators.classical.ipc.blocks_3 import generator as _ipc
+
 
 def _towers(blocks: list[str], rng: random.Random) -> list[list[str]]:
-    towers: list[list[str]] = []
-    for block in rng.sample(blocks, len(blocks)):
-        if towers and rng.random() < 0.5:
-            towers[-1].append(block)
-        else:
-            towers.append([block])
-    return towers
+    """Uniformly random state over all labelled tower configurations, as bwstates in the IPC generator."""
+    return _ipc.make_stacks(blocks, rng, _ipc.completion_counts(len(blocks)))
 
 
 def _state(towers: list[list[str]]) -> list[str]:
@@ -33,15 +30,14 @@ def _state(towers: list[list[str]]) -> list[str]:
 
 
 def make_problem(num_blocks: int, seed: int | None = None) -> str:
-    if num_blocks < 2:
-        raise ValueError("num_blocks must be at least 2")
+    if num_blocks < 1:
+        raise ValueError("num_blocks must be at least 1")
     rng = random.Random(seed if seed is not None else int(time.time()))
     blocks = [f"b{i}" for i in range(1, num_blocks + 1)]
-    towers: list[list[str]] = []
-    while all(len(tower) == 1 for tower in towers):
-        towers = _towers(blocks, rng)
-    covered = [block for tower in towers for block in tower[:-1]]
-    targets = rng.sample(covered, rng.randint(1, len(covered)))
+    towers = _towers(blocks, rng)
+    targets: list[str] = []
+    while not targets:  # a uniformly random non-empty set of blocks
+        targets = [block for block in blocks if rng.random() < 0.5]
     moved = {block for tower in towers for i, block in enumerate(tower) for lower in tower[:i] if lower in targets}
     return f"""; optimal plan cost: {len(moved)}
 (define (problem blocks-3-clear-blocks-{num_blocks})

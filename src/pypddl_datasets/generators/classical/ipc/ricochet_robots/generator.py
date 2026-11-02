@@ -34,7 +34,7 @@ ASP_2015_BARRIERS = (
 ASP_2015_ROBOTS = ((1, 1), (1, 16), (16, 1), (16, 16))
 
 
-def _barriers(rng: random.Random, size: int, num_barriers: int) -> list[tuple[int, int, str]]:
+def random_barriers(rng: random.Random, size: int, num_barriers: int) -> list[tuple[int, int, str]]:
     barriers: list[tuple[int, int, str]] = []
     seen: set[tuple[int, int, str]] = set()
     while len(barriers) < num_barriers:
@@ -128,7 +128,7 @@ def make_problem(
             barriers, robots = list(ASP_2015_BARRIERS), list(ASP_2015_ROBOTS)
         else:
             count = num_barriers if num_barriers is not None else min(rng.randint(5, 5 + n * n // 3), max_barriers)
-            barriers, robots = _barriers(rng, n, count), []
+            barriers, robots = random_barriers(rng, n, count), []
         while len(robots) < len(ROBOTS):
             cell = (rng.randint(1, n), rng.randint(1, n))
             if cell not in robots:

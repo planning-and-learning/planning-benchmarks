@@ -78,6 +78,16 @@ def _generate_city(rng: random.Random, num_nodes: int, size: int, connect_distan
             connect_distance *= 1.5
 
 
+def city_roads(
+    rng: random.Random, num_nodes: int, degree: int, size: int, min_distance: int
+) -> dict[tuple[int, int], int]:
+    """Roads of one Euclidean city as in ``make_problem(kind="city")``: (u, v) -> length
+    for both directions, with the IPC's connect distance and ceil(distance / 10) lengths."""
+    connect_distance = math.sqrt((degree * size * size) / (num_nodes * math.pi * 0.694))
+    points, edges = _generate_city(rng, num_nodes, size, connect_distance, min_distance)
+    return {(u, v): math.ceil(_round_distance(points[u], points[v]) / 10.0) for u, v in edges}
+
+
 def _shortest_route(
     city_a: list[Point], city_b: list[Point], size: int, ox: int, oy: int
 ) -> tuple[tuple[int, int], float]:

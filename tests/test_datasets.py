@@ -175,7 +175,7 @@ def test_blocksworld_uniform_state_counts() -> None:
     for domain in ("blocks_3", "blocks_4"):
         module = importlib.import_module(f"pypddl_datasets.generators.classical.ipc.{domain}.generator")
         # the exact state counts are the private core of the uniform sampler
-        assert [row[0] for row in module._completion_counts(8)] == expected  # pylint: disable=protected-access
+        assert [row[0] for row in module.completion_counts(8)] == expected
 
 
 def _package(data_root: Path, archive: Path) -> str:

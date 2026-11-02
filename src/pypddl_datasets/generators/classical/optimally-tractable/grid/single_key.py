@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Grid with one key to deliver and locks that no key opens (walls).
+"""Grid as generated for the IPC with one key whose shape no lock has, so every locked cell is a wall.
+
+The map is drawn as by the IPC generator (ipc/grid): num_locks cells (default a quarter
+of the grid) form one connected locked region grown from a random cell, the robot
+starts on a random open cell, the key lies on a random open cell the robot can reach
+and the goal is a random cell. Here no key opens the locks, so the goal is a random
+cell of the robot's open region (any other cell is out of reach); as in the IPC it may
+be the key's own cell.
 
 Without usable locks the robot only walks, picks up and puts down. Optimal cost:
-dist(robot, key) + 1 + dist(key, goal) + 1, with breadth-first distances around the
-walls.
+dist(robot, key) + 1 + dist(key, goal) + 1 with breadth-first distances around the
+walls (0 if the key already lies on the goal).
 """
 
 from __future__ import annotations
@@ -14,16 +21,20 @@ import sys
 import time
 from collections import deque
 
+from pypddl_datasets.generators.classical.ipc.grid.generator import grow_region
+
 Cell = tuple[int, int]
 
 
-def make_problem(width: int, height: int, wall_ratio: float = 0.2, seed: int | None = None) -> str:
-    if width < 1 or height < 1 or width * height < 2:
-        raise ValueError("width and height must be at least 1 with at least 2 cells")
-    if not 0 <= wall_ratio < 1:
-        raise ValueError("wall_ratio must be in [0, 1)")
+def make_problem(width: int, height: int, num_locks: int | None = None, seed: int | None = None) -> str:
+    if width < 2 or height < 2:
+        raise ValueError("width and height must be at least 2")
+    if num_locks is None:
+        num_locks = width * height // 4
+    if not 1 <= num_locks < width * height:
+        raise ValueError("num_locks must be at least 1 and leave an open cell")
     rng = random.Random(seed if seed is not None else int(time.time()))
-    cells = [(x, y) for y in range(height) for x in range(width)]
+    cells = [(x, y) for x in range(width) for y in range(height)]
 
     def neighbours(cell: Cell) -> list[Cell]:
         x, y = cell
@@ -40,15 +51,13 @@ def make_problem(width: int, height: int, wall_ratio: float = 0.2, seed: int | N
                     frontier.append(n)
         return found
 
-    reachable: dict[Cell, int] = {}
-    walls: set[Cell] = set()
-    while len(reachable) < 2:
-        walls = {cell for cell in cells if rng.random() < wall_ratio}
-        open_cells = [cell for cell in cells if cell not in walls]
-        if len(open_cells) >= 2:
-            reachable = distances(rng.choice(open_cells), walls)
-    robot, key, goal = rng.choice(list(reachable)), *rng.sample(list(reachable), 2)
-    cost = distances(robot, walls)[key] + 1 + distances(key, walls)[goal] + 1
+    walls = set(grow_region(cells, num_locks, rng))
+    robot = rng.choice([cell for cell in cells if cell not in walls])
+    from_robot = distances(robot, walls)
+    reachable = sorted(from_robot)
+    key = rng.choice(reachable)
+    goal = rng.choice(reachable)
+    cost = 0 if goal == key else from_robot[key] + 1 + distances(key, walls)[goal] + 1
 
     def name(cell: Cell) -> str:
         return f"pos-{cell[0]}-{cell[1]}"
@@ -83,14 +92,14 @@ def make_problem(width: int, height: int, wall_ratio: float = 0.2, seed: int | N
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Generate a Grid task with one key and walls.")
+    parser = argparse.ArgumentParser(description="Generate a Grid task with one key and walls only.")
     parser.add_argument("-x", "--width", type=int, required=True)
     parser.add_argument("-y", "--height", type=int, required=True)
-    parser.add_argument("-w", "--wall-ratio", type=float, default=0.2)
+    parser.add_argument("-l", "--num-locks", type=int, help="locked (wall) cells, default: a quarter of the grid")
     parser.add_argument("-s", "--seed", type=int)
     args = parser.parse_args(argv)
     try:
-        print(make_problem(args.width, args.height, args.wall_ratio, args.seed), end="")
+        print(make_problem(args.width, args.height, args.num_locks, args.seed), end="")
     except ValueError as error:
         parser.error(str(error))
     return 0
