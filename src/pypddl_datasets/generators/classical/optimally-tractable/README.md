@@ -44,7 +44,7 @@ fragments that cover everything the IPC generator produces.
 | satellite | `single_instrument` | one satellite, one instrument supporting all modes, image goals only (IPC targets, observations and image draws; goal-less draws repeated) | 2 + images + turns (to a calibration target unless pointing at one, then each image direction) |
 | visitall | `row` | one row of cells (IPC start and goal draws) | (n - 1) + distance to the nearer end |
 | visitall | `full_grid` | full rectangle, Hamiltonian-path start | cells - 1 |
-| visitall | `tree_maze` | passages form a random spanning tree (an addition: the IPC generator never removes passages) | 2(cells - 1) - eccentricity of the start |
+| visitall | `tree_maze` | passages form a uniformly random spanning tree (Wilson's algorithm) (an addition: the IPC generator never removes passages) | 2(cells - 1) - eccentricity of the start |
 | grid | `single_key` | one key that opens nothing: the IPC's locked region as walls | BFS distances robot → key → goal + 2 |
 | grid | `single_key_locks` | one key that opens the IPC's locked region, optional walls | BFS robot → key (locks closed) + Dijkstra key → goal (lock cells cost 2) + 2 |
 | transport | `common_route` | all packages share origin and destination, trucks hold them all (IPC Euclidean city, road-length costs) | nearest truck's distance + route length + 2 per package |
@@ -54,7 +54,7 @@ fragments that cover everything the IPC generator produces.
 | delivery | `common_destination` | IPC delivery: one truck, all packages to one cell (whole distribution) | Σ(2·dist(g, p) + 2) + min_p(dist(t, p) - dist(p, g)) |
 | delivery | `common_route` | several trucks, all packages share origin o and goal g | 2k + 2kD + Σ_{t∈S}(d_t - D): the closest truck plus every truck closer to o than D = dist(o, g), at most k |
 | elevators | `common_origin` | one elevator serving all floors with room for everyone, all passengers on one floor (stop + rate·distance costs) | reach the origin, one stop per destination floor, sweep to the nearer end first |
-| sokoban | `single_stone` | the IPC level generator with one stone (connected room, scrambled by reverse pulls) | 0-1 BFS over (stone, player) states, pushes cost 1 |
+| sokoban | `single_box` | IPC 2023 learning-track levels with one box (planted push route, walls off it) | BFS over (box, robot) states, moves and pushes cost 1 |
 | floortile | `single_column` | IPC floortile with one robot and one column | climb + 2 per paint + 1 per down + 5 per colour change, painting top-down |
 | tpp | `exclusive_markets` | one truck, each good's IPC supply at one market, all places connected | 3 per demanded unit + markets visited + 1 |
 | elevators | `common_destination` | as `common_origin`, all passengers to one floor | one stop per origin floor (the start is free) + the destination, covering the origins' range |
