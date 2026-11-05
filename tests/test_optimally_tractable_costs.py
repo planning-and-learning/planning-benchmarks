@@ -3,7 +3,7 @@
 A blind uniform-cost search (``optimal_solver``) recomputes the optimal cost of small
 tasks of every fragment. The fragments whose sampling moved to the package's standard
 samplers in 0.0.19 also show a mean optimal cost that grows over 10, 100 and 1000
-objects (Sokoban up to 400 floor cells, where level generation stays quick).
+objects (Sokoban on 8, 16 and 32 cell wide grids, where level generation stays quick).
 """
 
 from __future__ import annotations
@@ -49,7 +49,7 @@ SMALL: dict[str, dict[str, Any]] = {
     "nomystery/single_package.py": {"num_locations": 4},
     "ricochet_robots/single_robot.py": {"board_size": 4},
     "satellite/single_instrument.py": {"num_targets": 2, "num_observations": 2, "num_modes": 2},
-    "sokoban/single_stone.py": {"width": 6, "height": 5, "num_floor": 8},
+    "sokoban/single_box.py": {"grid_size": 7},
     "spanner/corridor.py": {"num_spanners": 3, "num_nuts": 2, "num_locations": 3},
     "tpp/exclusive_markets.py": {"num_goods": 2, "num_markets": 2, "max_level": 2},
     "transport/common_destination.py": {"num_nodes": 4, "num_packages": 2},
@@ -66,18 +66,12 @@ def _square(num_cells: int) -> int:
     return math.isqrt(num_cells)
 
 
-def _sokoban(num_floor: int) -> dict[str, Any]:
-    box = math.ceil((num_floor / 0.66) ** 0.5) + 2  # two thirds of the interior are floor
-    # the IPC default of 20 pulls caps the solution length; a curriculum scales the scramble with the room
-    return {"width": box, "height": box, "num_floor": num_floor, "num_pulls": num_floor}
-
-
 SIZES = (10, 100, 1000)
 GROWTH: dict[str, tuple[Callable[[int], dict[str, Any]], tuple[int, ...]]] = {
     **{f"{encoding}/{fragment}.py": (lambda n: {"num_blocks": n}, SIZES) for encoding in ("blocks_3", "blocks_4")
        for fragment in ("clear_block", "clear_blocks", "goal_on_table", "init_on_table", "on_pair", "table_blocks")},
     "nomystery/single_package.py": (lambda n: {"num_locations": n}, SIZES),
-    "sokoban/single_stone.py": (_sokoban, (10, 100, 400)),
+    "sokoban/single_box.py": (lambda n: {"grid_size": n}, (8, 16, 32)),
     "transport/common_destination.py": (lambda n: {"num_nodes": n, "num_packages": 3}, SIZES),
     "transport/common_route.py": (lambda n: {"num_nodes": n, "num_trucks": 2, "num_packages": 3}, SIZES),
     "ricochet_robots/single_robot.py": (lambda n: {"board_size": _square(n)}, SIZES),

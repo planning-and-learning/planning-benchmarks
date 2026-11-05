@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- `sokoban/single_stone` is replaced by `sokoban/single_box`: levels come from the IPC
+  2023 learning-track generator (ipc_learning/sokoban) with one box, whose planted push
+  route grows with the grid, instead of the IPC level generator, whose 20 reverse pulls
+  kept the stone about 4 pushes from its goal. Parameters: `grid_size` and `seed`. The
+  domain is the learning-track encoding (no action costs); the optimal cost counts
+  moves and pushes.
+- `visitall/tree_maze`: the maze is a uniformly random spanning tree (Wilson's
+  algorithm) instead of a randomized-Prim tree, which favoured short, bushy mazes.
+
 ## 0.0.19
 
 Optimally-tractable fragments: 30 generators now draw their tasks as the IPC generators
