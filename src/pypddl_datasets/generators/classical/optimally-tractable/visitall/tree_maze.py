@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Visitall in a maze whose passages form a random spanning tree of the grid.
+"""Visitall in a maze whose passages form a uniformly random spanning tree of the grid.
 
 Visiting every vertex of a tree with an open walk traverses every edge twice except
 those on the path to where the walk ends, so the optimal cost is
@@ -27,12 +27,23 @@ def make_problem(width: int, height: int, seed: int | None = None) -> str:
         candidates = ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1))
         return [(nx, ny) for nx, ny in candidates if 0 <= nx < width and 0 <= ny < height]
 
-    # randomized Prim: grow the tree from a random cell
-    tree: dict[Cell, list[Cell]] = {rng.choice(cells): []}
-    while len(tree) < len(cells):
-        cell, nxt = rng.choice([(cell, n) for cell in tree for n in neighbours(cell) if n not in tree])
-        tree[cell].append(nxt)
-        tree[nxt] = [cell]
+    # Wilson's algorithm: a uniformly random spanning tree (randomized Prim would favour
+    # short, bushy trees). A random walk from each cell until it hits the tree, with the
+    # loops erased (later exits overwrite earlier ones), is added as a branch.
+    tree: dict[Cell, list[Cell]] = {cell: [] for cell in cells}
+    in_tree = {rng.choice(cells)}
+    for cell in cells:
+        exits: dict[Cell, Cell] = {}
+        walk = cell
+        while walk not in in_tree:
+            exits[walk] = rng.choice(neighbours(walk))
+            walk = exits[walk]
+        walk = cell
+        while walk not in in_tree:
+            in_tree.add(walk)
+            tree[walk].append(exits[walk])
+            tree[exits[walk]].append(walk)
+            walk = exits[walk]
     start = rng.choice(cells)
     depth = {start: 0}
     frontier = [start]

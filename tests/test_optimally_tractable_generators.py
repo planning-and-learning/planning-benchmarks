@@ -49,7 +49,7 @@ SAMPLES: dict[str, dict[str, Any]] = {
     "nomystery/single_package.py": {"num_locations": 5, "seed": 1},
     "ricochet_robots/single_robot.py": {"board_size": 5, "num_barriers": 6, "seed": 1},
     "satellite/single_instrument.py": {"num_targets": 2, "num_observations": 3, "num_modes": 2, "seed": 1},
-    "sokoban/single_stone.py": {"width": 6, "height": 5, "num_floor": 8, "seed": 1},
+    "sokoban/single_box.py": {"grid_size": 8, "seed": 1},
     "spanner/corridor.py": {"num_spanners": 4, "num_nuts": 3, "num_locations": 4, "seed": 1},
     "tpp/exclusive_markets.py": {"num_goods": 3, "num_markets": 3, "max_level": 3, "seed": 1},
     "transport/common_destination.py": {"num_nodes": 6, "num_packages": 3, "seed": 1},
