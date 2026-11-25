@@ -381,7 +381,8 @@ def test_competition_families_requirements() -> None:
     assert R.REWARDS in pypddl_datasets.domain_requirements("probabilistic/ippc2004/bx-pc")
     assert R.DURATIVE_ACTIONS in pypddl_datasets.domain_requirements("temporal/ipc2011/parking-temporal-satisficing")
     assert R.CONSTRAINTS in pypddl_datasets.domain_requirements("temporal/ipc2006/storage-time-constraints")
-    assert {"ipc2008-nondeterministic", "tests-nondeterministic"} <= set(pypddl_datasets.find_suites(requires=[R.NON_DETERMINISTIC]))
+    nondeterministic = set(pypddl_datasets.find_suites(requires=[R.NON_DETERMINISTIC]))
+    assert {"ipc2008-nondeterministic", "tests-nondeterministic"} <= nondeterministic
     # one task per domain in each family's tests collection
     for family in ("temporal", "probabilistic", "nondeterministic"):
         assert len(pypddl_datasets.find_tasks(suite=f"tests-{family}")) == len(SUITES[f"tests-{family}"])
