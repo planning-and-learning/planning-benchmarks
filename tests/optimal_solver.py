@@ -28,7 +28,8 @@ class SearchBudgetExceeded(RuntimeError):
 
 
 def _variant(node: Any) -> Any:
-    return node.get_variant()
+    # pypddl >= 1.1 hands out the alternative a variant holds directly; 1.0 wrapped it (get_variant()).
+    return node.get_variant() if hasattr(node, "get_variant") else node
 
 
 def _term(term: Any) -> str:
@@ -74,8 +75,9 @@ def _effects(effect: Any) -> tuple[list[Literal], list[tuple[str, Any]]]:
         predicate, args = _atom(literal.get_atom())
         return [(literal.get_polarity(), predicate, args)], []
     if kind == "EffectNumeric":
-        if "Increase" not in str(node.get_operator()):
-            raise NotImplementedError(str(node.get_operator()))
+        operation = node.get_operation() if hasattr(node, "get_operation") else node.get_operator()
+        if "Increase" not in str(operation):
+            raise NotImplementedError(str(operation))
         return [], [(node.get_function().get_function().get_name(), node.get_expression())]
     raise NotImplementedError(kind)
 

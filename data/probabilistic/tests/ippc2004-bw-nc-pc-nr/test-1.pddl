@@ -1,0 +1,27 @@
+(define (problem bw-nc-pc-nr-8)
+ (:domain bw-nc-pc-nr-8)
+ (:objects block0 block1 block2 block3 block4 block5 block6 block7 - block)
+ (:init
+  (on-top-of block0 block1)
+  (on-top-of block1 table)
+  (on-top-of block2 table)
+  (on-top-of block3 block4)
+  (on-top-of block4 block5)
+  (on-top-of block5 table)
+  (on-top-of block6 table)
+  (on-top-of block7 table)
+ )
+ (:goal
+  (and
+   (on-top-of block0 block6)
+   (on-top-of block6 block4)
+   (on-top-of block4 block2)
+   (on-top-of block2 block1)
+   (on-top-of block1 table)
+   (on-top-of block3 block7)
+   (on-top-of block7 table)
+   (on-top-of block5 table)
+
+  )
+ )
+)

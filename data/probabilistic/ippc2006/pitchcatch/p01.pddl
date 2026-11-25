@@ -1,0 +1,13 @@
+(define (problem a-pitchcatch-problem76) 
+(:domain pitchcatch)  
+(:init (alive) 
+       (not-thrown)
+       (bit-on B0)
+       (bit-on B1)
+       (difficulty-setting B0 Medium)
+       (difficulty-setting B1 Hard)
+       (catchable T0 B1 )
+)
+(:goal (and 
+            (deposited T0)
+)))

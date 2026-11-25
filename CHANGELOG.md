@@ -2,6 +2,41 @@
 
 ## Unreleased
 
+- Three new families with the benchmarks of the International Planning Competitions, each with
+  a `tests` collection of the smallest task of every domain:
+  - `temporal/`: every temporal domain of IPC 2002, 2004, 2006, 2008, 2011 and 2014 (92 domains,
+    PDDL 2.1 durative actions, PDDL 2.2 timed initial literals, PDDL 3 constraints), from
+    [potassco/pddl-instances](https://github.com/potassco/pddl-instances). The IPC 2018 temporal
+    domains are not published anywhere we found.
+  - `probabilistic/`: IPPC 2004 (the competition's PPDDL files), 2006 and 2008 (from
+    [probfd/ppddl-benchmarks](https://github.com/probfd/ppddl-benchmarks); the competitions' own
+    sites are offline). The IPPC 2006 warm-up tasks are not included.
+  - `nondeterministic/`: the IPC 2008 FOND track (blocksworld, faults, first-responders, forest), as
+    [QuMuLab/planner-for-relevant-policies](https://github.com/QuMuLab/planner-for-relevant-policies)
+    distributes it, with its corrected forest tasks.
+- Suites `<collection>-<family>` with `-test` companions (e.g. `ipc2011-temporal`,
+  `ippc2008-probabilistic`, `ipc2008-nondeterministic`) and `tests-temporal`, `tests-probabilistic`,
+  `tests-nondeterministic`.
+- `Requirement` gains `NON_DETERMINISTIC`, `PROBABILISTIC_EFFECTS` and `REWARDS`.
+- The data is validated with pypddl 1.15 (strict mode), which reads these formalisms. To pass
+  it, the imported files were repaired, beyond their requirement lines (`strict_clean`):
+  - files that hold a domain and its problem are split, and per-task domains are named
+    `<task>-domain.pddl`;
+  - a name declared twice in a typed list is declared once with both types, as `(either ...)`
+    (IPC 2006/2011/2014 storage's `area`, IPC 2011/2014 temporal-machine-shop's kilns);
+  - parent types used but not declared are declared as object types (e.g. tpp's `place`,
+    crew-planning's `objects`, temporal-machine-shop's `piece`);
+  - problem objects that their domain declares as constants are not declared again
+    (IPC 2004 compiled time-window variants);
+  - a predicate does not take the name of a type, which is a unary predicate: IPC 2008 FOND
+    faults' `fault` predicate is `has_fault` (its type `fault` stays);
+  - point fixes: IPPC 2004 file-world's missing `(:init)`, IPC 2004 airport-time-windows
+    instance 5's doubled metric, IPC 2004 satellite-time-windows instance 31's
+    `senty_image` (for `sent_image`), and IPPC 2008 tireworlds' bare `dead` (for `(dead)`).
+
+- `downward-benchmarks/schedule/orig-domain.pddl` names its type `temperature-type`, as the
+  collection's `domain.pddl` does: the type `temperature` was also a binary predicate's name,
+  which pypddl 1.15 rejects in strict mode.
 - `sokoban/single_stone` is replaced by `sokoban/single_box`: levels come from the IPC
   2023 learning-track generator (ipc_learning/sokoban) with one box, whose planted push
   route grows with the grid, instead of the IPC level generator, whose 20 reverse pulls

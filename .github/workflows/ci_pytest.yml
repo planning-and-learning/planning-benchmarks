@@ -14,7 +14,7 @@ jobs:
           python-version: "3.13"
       - name: Install
         # pypddl for the generator tests' strict parse checks (not a package dependency: cycle)
-        run: pip install 'pypddl>=1.0.27,<1.1' -e ".[test]"
+        run: pip install 'pypddl>=1.15.0,<1.16' -e ".[test]"
       - name: Materialize large PDDL files
         # the requirements freshness test scans all data, including the .pddl.gz twins
         run: python -m pypddl_datasets.scripts.large_files unpack

@@ -19,6 +19,13 @@ is guessed.
   ([aibasel/downward-benchmarks](https://github.com/aibasel/downward-benchmarks)),
   the IPC 2023 learning-track tasks in `data/classical/ipc2023-learning`, and
   the Autoscale 21.11 tasks in `data/classical/autoscale-benchmarks-main`.
+- **Temporal, probabilistic and nondeterministic competition tasks:** the IPC 2002–2014
+  temporal tracks in `data/temporal` ([potassco/pddl-instances](https://github.com/potassco/pddl-instances),
+  which collects the competitions' files), the IPPC 2004 tasks in `data/probabilistic/ippc2004`
+  (the competition's PPDDL files at ipc04.icaps-conference.org/probabilistic), the IPPC 2006 and
+  2008 tasks in `data/probabilistic` ([probfd/ppddl-benchmarks](https://github.com/probfd/ppddl-benchmarks)),
+  and the IPC 2008 FOND track in `data/nondeterministic`
+  ([QuMuLab/planner-for-relevant-policies](https://github.com/QuMuLab/planner-for-relevant-policies)).
 
 ## Domains and generators
 

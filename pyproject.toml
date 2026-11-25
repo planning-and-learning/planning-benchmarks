@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "pypddl-datasets"
 dynamic = ["version"]
-description = "Download PDDL planning benchmark suites: classical, numeric, profiling, and learning splits."
+description = "Download PDDL planning benchmark suites: classical, numeric, temporal, probabilistic, nondeterministic, profiling, and learning splits."
 readme = "README.md"
 # The FF-collection ports listed in src/pypddl_datasets/generators/CREDITS.md
 # keep their original non-commercial notice (LicenseRef-Freiburg).
@@ -26,7 +26,7 @@ test = ["pytest"]
 # (not a package dependency: it would be a cycle).
 dev = [
     "pytest",
-    "pypddl>=1.0.27,<1.1",
+    "pypddl>=1.15.0,<1.16",
     "pyright==1.1.411",
     "pylint==4.0.9",
 ]

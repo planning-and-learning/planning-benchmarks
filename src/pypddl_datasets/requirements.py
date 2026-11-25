@@ -39,6 +39,9 @@ class Requirement(str, Enum):
     PREFERENCES = ":preferences"
     CONSTRAINTS = ":constraints"
     ACTION_COSTS = ":action-costs"
+    NON_DETERMINISTIC = ":non-deterministic"
+    PROBABILISTIC_EFFECTS = ":probabilistic-effects"
+    REWARDS = ":rewards"
 
 
 class CompositeRequirements(str, Enum):

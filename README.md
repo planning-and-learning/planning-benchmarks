@@ -1,6 +1,6 @@
 # planning-benchmarks
 
-PDDL planning benchmark suites — classical, numeric, and profiling — published as the [`pypddl-datasets`](https://pypi.org/project/pypddl-datasets/)
+PDDL planning benchmark suites — classical, numeric, temporal, probabilistic, nondeterministic, and profiling — published as the [`pypddl-datasets`](https://pypi.org/project/pypddl-datasets/)
 Python package. The package itself is small: benchmark data is downloaded on
 first use from the matching GitHub release and cached locally.
 
@@ -66,7 +66,7 @@ and domains resolve there without downloading.
   instance generators (`make_problem` + CLI per domain; choosing train/valid/test
   splits is left to the user).
 - `data/` — all benchmark data, organized as `<formalism>/<collection>/<domain>`
-  (`classical/`, `numeric/`). Not shipped in the package; released as a single
+  (`classical/`, `numeric/`, `temporal/`, `probabilistic/`, `nondeterministic/`). Not shipped in the package; released as a single
   archive on `data-v*` GitHub releases, downloaded and unpacked once per
   machine on first use.
 - `pypddl_datasets.scripts` — repository tooling, importable in a checkout
@@ -158,7 +158,7 @@ Before opening a pull request, run the same checks the CI and the data
 release gate run:
 
 ```sh
-pip install 'pypddl>=1.0.27,<1.1' -e .
+pip install 'pypddl>=1.15.0,<1.16' -e .
 python -m pypddl_datasets.validation --root data --strict   # layout + PDDL content, same as the CI gate
 pytest tests                                                # suite definitions stay consistent
 ```

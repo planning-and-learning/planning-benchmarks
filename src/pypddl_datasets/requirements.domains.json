@@ -1779,6 +1779,54 @@
   ":strips",
   ":typing"
  ],
+ "nondeterministic/ipc2008/blocksworld": [
+  ":equality",
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "nondeterministic/ipc2008/faults": [
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "nondeterministic/ipc2008/first-responders": [
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "nondeterministic/ipc2008/forest": [
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "nondeterministic/tests/ipc2008-blocksworld": [
+  ":equality",
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "nondeterministic/tests/ipc2008-faults": [
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "nondeterministic/tests/ipc2008-first-responders": [
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "nondeterministic/tests/ipc2008-forest": [
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
  "numeric/ipc2023/block-grouping": [
   ":disjunctive-preconditions",
   ":negative-preconditions",
@@ -2329,6 +2377,1809 @@
  ],
  "numeric/tests/zenotravel": [
   ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2004/blocks-problem": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/blocks-problem-nocolor": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/bomb-toilet": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips"
+ ],
+ "probabilistic/ippc2004/bw-c-pc": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/bw-c-pc-nr": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/bw-nc-pc": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/bw-nc-pc-nr": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/bx-pc": [
+  ":conditional-effects",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/bx-pc-nr": [
+  ":conditional-effects",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/coffee": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips"
+ ],
+ "probabilistic/ippc2004/explodingbw-pre": [
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/ext-slippery-gripper": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips"
+ ],
+ "probabilistic/ippc2004/file-world-pre": [
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips"
+ ],
+ "probabilistic/ippc2004/g-tire-world-pre": [
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2004/get_eaten": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips"
+ ],
+ "probabilistic/ippc2004/r-tire-world-pre": [
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2004/slippery-gripper": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips"
+ ],
+ "probabilistic/ippc2004/tiger": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips"
+ ],
+ "probabilistic/ippc2004/towers-of-hanoise-pre": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2004/zeno-pc": [
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2006/blocksworld": [
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2006/drive": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2006/drive-unrolled": [
+  ":conditional-effects",
+  ":equality",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2006/elevators": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2006/ex-blocksworld": [
+  ":conditional-effects",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2006/pitchcatch": [
+  ":conditional-effects",
+  ":equality",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2006/random": [
+  ":probabilistic-effects",
+  ":strips",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2006/schedule": [
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2006/tireworld": [
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2006/zenotravel": [
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2008/2-tireworlds": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2008/blocksworld": [
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2008/boxworld": [
+  ":conditional-effects",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2008/ex-blocksworld": [
+  ":conditional-effects",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2008/rectangle-tireworld": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2008/schedule": [
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2008/search-and-rescue": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2008/sysadmin-slp": [
+  ":conditional-effects",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/ippc2008/triangle-tireworld": [
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/ippc2008/zenotravel": [
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-blocks-problem": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-blocks-problem-nocolor": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-bomb-toilet": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips"
+ ],
+ "probabilistic/tests/ippc2004-bw-c-pc": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-bw-c-pc-nr": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-bw-nc-pc": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-bw-nc-pc-nr": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-bx-pc": [
+  ":conditional-effects",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-bx-pc-nr": [
+  ":conditional-effects",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-coffee": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips"
+ ],
+ "probabilistic/tests/ippc2004-explodingbw-pre": [
+  ":conditional-effects",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-ext-slippery-gripper": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips"
+ ],
+ "probabilistic/tests/ippc2004-file-world-pre": [
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips"
+ ],
+ "probabilistic/tests/ippc2004-g-tire-world-pre": [
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2004-get_eaten": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips"
+ ],
+ "probabilistic/tests/ippc2004-r-tire-world-pre": [
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2004-slippery-gripper": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips"
+ ],
+ "probabilistic/tests/ippc2004-tiger": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips"
+ ],
+ "probabilistic/tests/ippc2004-towers-of-hanoise-pre": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2004-zeno-pc": [
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2006-blocksworld": [
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2006-drive": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2006-drive-unrolled": [
+  ":conditional-effects",
+  ":equality",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2006-elevators": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2006-ex-blocksworld": [
+  ":conditional-effects",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2006-pitchcatch": [
+  ":conditional-effects",
+  ":equality",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2006-random": [
+  ":probabilistic-effects",
+  ":strips",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2006-schedule": [
+  ":conditional-effects",
+  ":equality",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2006-tireworld": [
+  ":probabilistic-effects",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2006-zenotravel": [
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2008-2-tireworlds": [
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2008-blocksworld": [
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2008-boxworld": [
+  ":conditional-effects",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2008-ex-blocksworld": [
+  ":conditional-effects",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2008-rectangle-tireworld": [
+  ":conditional-effects",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2008-schedule": [
+  ":conditional-effects",
+  ":equality",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2008-search-and-rescue": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2008-sysadmin-slp": [
+  ":conditional-effects",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "probabilistic/tests/ippc2008-triangle-tireworld": [
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing"
+ ],
+ "probabilistic/tests/ippc2008-zenotravel": [
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2002/depots-time-automatic": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/depots-time-hand-coded": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/depots-time-simple-automatic": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/depots-time-simple-hand-coded": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/driverlog-time-automatic": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/driverlog-time-hand-coded": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/driverlog-time-simple-automatic": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/driverlog-time-simple-hand-coded": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/rovers-time-automatic": [
+  ":duration-inequalities",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/rovers-time-hand-coded": [
+  ":duration-inequalities",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/rovers-time-simple-automatic": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/rovers-time-simple-hand-coded": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/satellite-time-automatic": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/satellite-time-hand-coded": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/satellite-time-simple-automatic": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/satellite-time-simple-hand-coded": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/zenotravel-time-automatic": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/zenotravel-time-hand-coded": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/zenotravel-time-simple-automatic": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2002/zenotravel-time-simple-hand-coded": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/airport-temporal-adl": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2004/airport-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/airport-temporal-time-windows-adl": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2004/airport-temporal-time-windows-compiled-adl": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2004/airport-temporal-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/airport-temporal-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/ipc2004/pipesworld-no-tankage-temporal-deadlines-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/pipesworld-no-tankage-temporal-deadlines-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/ipc2004/pipesworld-no-tankage-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/pipesworld-tankage-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/satellite-complex-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/satellite-complex-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/ipc2004/satellite-time-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/satellite-time-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/ipc2004/satellite-time-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/ipc2004/umts-flaw-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/umts-flaw-temporal-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/umts-flaw-temporal-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/ipc2004/umts-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/umts-temporal-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2004/umts-temporal-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/ipc2006/openstacks-metric-time": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2006/openstacks-metric-time-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips"
+ ],
+ "temporal/ipc2006/openstacks-time": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2006/openstacks-time-strips": [
+  ":durative-actions",
+  ":strips"
+ ],
+ "temporal/ipc2006/pathways-metric-time": [
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2006/pipesworld-metric-time": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2006/pipesworld-metric-time-constraints": [
+  ":constraints",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2006/rovers-metric-time": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2006/storage-time": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2006/storage-time-constraints": [
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2006/tpp-metric-time": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2006/tpp-metric-time-constraints": [
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2006/trucks-time": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2006/trucks-time-constraints": [
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2006/trucks-time-constraints-timed-initial-literals": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2006/trucks-time-strips": [
+  ":durative-actions",
+  ":strips"
+ ],
+ "temporal/ipc2008/crew-planning-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/elevator-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/elevator-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/model-train-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/openstacks-temporal-satisficing-adl": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2008/openstacks-temporal-satisficing-adl-numeric-fluents": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/ipc2008/openstacks-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/openstacks-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/parc-printer-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/peg-solitaire-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/sokoban-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/transport-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2008/woodworking-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/crew-planning-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/elevator-temporal-satisficing": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/floor-tile-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/match-cellar-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/openstacks-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/parc-printer-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/parking-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/peg-solitaire-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/sokoban-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/storage-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/temporal-machine-shop-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2011/turn-and-open-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/driver-log-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/floor-tile-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/map-analyzer-temporal-satisficing": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/match-cellar-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/parking-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/road-traffic-accident-management-temporal-satisficing": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/satellite-temporal-satisficing": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/storage-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/temporal-machine-shop-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/ipc2014/turn-and-open-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-depots-time-automatic": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-depots-time-hand-coded": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-depots-time-simple-automatic": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-depots-time-simple-hand-coded": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-driverlog-time-automatic": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-driverlog-time-hand-coded": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-driverlog-time-simple-automatic": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-driverlog-time-simple-hand-coded": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-rovers-time-automatic": [
+  ":duration-inequalities",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-rovers-time-hand-coded": [
+  ":duration-inequalities",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-rovers-time-simple-automatic": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-rovers-time-simple-hand-coded": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-satellite-time-automatic": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-satellite-time-hand-coded": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-satellite-time-simple-automatic": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-satellite-time-simple-hand-coded": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-zenotravel-time-automatic": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-zenotravel-time-hand-coded": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-zenotravel-time-simple-automatic": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2002-zenotravel-time-simple-hand-coded": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-airport-temporal-adl": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2004-airport-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-airport-temporal-time-windows-adl": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2004-airport-temporal-time-windows-compiled-adl": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2004-airport-temporal-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-airport-temporal-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-pipesworld-no-tankage-temporal-deadlines-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-pipesworld-no-tankage-temporal-deadlines-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-pipesworld-no-tankage-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-pipesworld-tankage-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-satellite-complex-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-satellite-complex-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-satellite-time-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-satellite-time-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-satellite-time-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-umts-flaw-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-umts-flaw-temporal-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-umts-flaw-temporal-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-umts-temporal-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-umts-temporal-time-windows-compiled-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2004-umts-temporal-time-windows-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing"
+ ],
+ "temporal/tests/ipc2006-openstacks-metric-time": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2006-openstacks-metric-time-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips"
+ ],
+ "temporal/tests/ipc2006-openstacks-time": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2006-openstacks-time-strips": [
+  ":durative-actions",
+  ":strips"
+ ],
+ "temporal/tests/ipc2006-pathways-metric-time": [
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2006-pipesworld-metric-time": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2006-pipesworld-metric-time-constraints": [
+  ":constraints",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2006-rovers-metric-time": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2006-storage-time": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2006-storage-time-constraints": [
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2006-tpp-metric-time": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2006-tpp-metric-time-constraints": [
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2006-trucks-time": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2006-trucks-time-constraints": [
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2006-trucks-time-constraints-timed-initial-literals": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2006-trucks-time-strips": [
+  ":durative-actions",
+  ":strips"
+ ],
+ "temporal/tests/ipc2008-crew-planning-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-elevator-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-elevator-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-model-train-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-openstacks-temporal-satisficing-adl": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2008-openstacks-temporal-satisficing-adl-numeric-fluents": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "temporal/tests/ipc2008-openstacks-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-openstacks-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-parc-printer-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-peg-solitaire-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-sokoban-temporal-satisficing-strips": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-transport-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2008-woodworking-temporal-satisficing-numeric-fluents": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-crew-planning-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-elevator-temporal-satisficing": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-floor-tile-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-match-cellar-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-openstacks-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-parc-printer-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-parking-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-peg-solitaire-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-sokoban-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-storage-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-temporal-machine-shop-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2011-turn-and-open-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-driver-log-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-floor-tile-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-map-analyzer-temporal-satisficing": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-match-cellar-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-parking-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-road-traffic-accident-management-temporal-satisficing": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-satellite-temporal-satisficing": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-storage-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-temporal-machine-shop-temporal-satisficing": [
+  ":durative-actions",
+  ":strips",
+  ":typing"
+ ],
+ "temporal/tests/ipc2014-turn-and-open-temporal-satisficing": [
+  ":durative-actions",
   ":strips",
   ":typing"
  ]

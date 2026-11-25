@@ -374,6 +374,19 @@ def test_task_requirements() -> None:
         pypddl_datasets.task_requirements("classical/tests/gripper/no-such.pddl")
 
 
+def test_competition_families_requirements() -> None:
+    R = pypddl_datasets.Requirement
+    assert R.NON_DETERMINISTIC in pypddl_datasets.domain_requirements("nondeterministic/ipc2008/faults")
+    assert R.PROBABILISTIC_EFFECTS in pypddl_datasets.domain_requirements("probabilistic/ippc2008/sysadmin-slp")
+    assert R.REWARDS in pypddl_datasets.domain_requirements("probabilistic/ippc2004/bx-pc")
+    assert R.DURATIVE_ACTIONS in pypddl_datasets.domain_requirements("temporal/ipc2011/parking-temporal-satisficing")
+    assert R.CONSTRAINTS in pypddl_datasets.domain_requirements("temporal/ipc2006/storage-time-constraints")
+    assert {"ipc2008-nondeterministic", "tests-nondeterministic"} <= set(pypddl_datasets.find_suites(requires=[R.NON_DETERMINISTIC]))
+    # one task per domain in each family's tests collection
+    for family in ("temporal", "probabilistic", "nondeterministic"):
+        assert len(pypddl_datasets.find_tasks(suite=f"tests-{family}")) == len(SUITES[f"tests-{family}"])
+
+
 def test_composites_resolve_to_explicit_requirements() -> None:
     # CompositeRequirements documents the aggregates; each must map to explicit
     # Requirements, and none may ever appear in the (strict-clean) metadata.

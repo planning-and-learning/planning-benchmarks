@@ -1,0 +1,7 @@
+(define (problem file-prob-pre)
+	(:domain file-world-pre)
+	(:objects p0 p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21 p22 p23 p24 p25 p26 p27 p28 p29 )
+	(:init)
+	(:goal (and (filed p0) (filed p1) (filed p2) (filed p3) (filed p4) (filed p5) (filed p6) (filed p7) (filed p8) (filed p9) (filed p10) (filed p11) (filed p12) (filed p13) (filed p14) (filed p15) (filed p16) (filed p17) (filed p18) (filed p19) (filed p20) (filed p21) (filed p22) (filed p23) (filed p24) (filed p25) (filed p26) (filed p27) (filed p28) (filed p29) ))
+(:goal-reward 600)
+)

@@ -1,0 +1,20 @@
+(define (problem blocks-problem-nocolor)
+ (:domain blocks-domain-nocolor)
+ (:objects block0 block1 block2 block3 block4 - block)
+ (:init
+  (on-top-of block0 block1)
+  (on-top-of block1 block2)
+  (on-top-of block2 block3)
+  (on-top-of block3 table)
+  (on-top-of block4 table)
+ )
+ (:goal
+  (and
+   (on-top-of block0 block3)
+   (on-top-of block3 block1)
+   (on-top-of block1 block2)
+   (on-top-of block2 table)
+   (on-top-of block4 table)
+  )
+ )
+)

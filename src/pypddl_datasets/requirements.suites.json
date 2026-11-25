@@ -183,6 +183,136 @@
   ":strips",
   ":typing"
  ],
+ "ipc2002-temporal": [
+  ":duration-inequalities",
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2002-temporal-test": [
+  ":duration-inequalities",
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2004-temporal": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc2004-temporal-test": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc2006-temporal": [
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc2006-temporal-test": [
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc2008-nondeterministic": [
+  ":equality",
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2008-nondeterministic-test": [
+  ":equality",
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2008-temporal": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc2008-temporal-test": [
+  ":disjunctive-preconditions",
+  ":durative-actions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ipc2011-temporal": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2011-temporal-test": [
+  ":durative-actions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2014-temporal": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
+ "ipc2014-temporal-test": [
+  ":durative-actions",
+  ":equality",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":typing"
+ ],
  "ipc2023-learning": [
   ":negative-preconditions",
   ":strips",
@@ -228,6 +358,74 @@
   ":numeric-fluents",
   ":strips",
   ":typing"
+ ],
+ "ippc2004-probabilistic": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ippc2004-probabilistic-test": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ippc2006-probabilistic": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ippc2006-probabilistic-test": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ippc2008-probabilistic": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "ippc2008-probabilistic-test": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
  ],
  "mine-pddl-classical": [
   ":disjunctive-preconditions",
@@ -305,12 +503,46 @@
   ":typing",
   ":universal-preconditions"
  ],
+ "tests-nondeterministic": [
+  ":equality",
+  ":negative-preconditions",
+  ":non-deterministic",
+  ":strips",
+  ":typing"
+ ],
  "tests-numeric": [
   ":action-costs",
   ":equality",
   ":negative-preconditions",
   ":numeric-fluents",
   ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "tests-probabilistic": [
+  ":conditional-effects",
+  ":disjunctive-preconditions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":probabilistic-effects",
+  ":rewards",
+  ":strips",
+  ":typing",
+  ":universal-preconditions"
+ ],
+ "tests-temporal": [
+  ":conditional-effects",
+  ":constraints",
+  ":disjunctive-preconditions",
+  ":duration-inequalities",
+  ":durative-actions",
+  ":equality",
+  ":existential-preconditions",
+  ":negative-preconditions",
+  ":numeric-fluents",
+  ":strips",
+  ":timed-initial-literals",
   ":typing",
   ":universal-preconditions"
  ]
