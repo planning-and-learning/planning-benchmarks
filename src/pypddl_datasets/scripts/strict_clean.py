@@ -9,7 +9,6 @@ tooling; nothing else in the files is touched."""
 from __future__ import annotations
 
 import argparse
-import functools
 import os
 import re
 from collections import Counter
@@ -122,23 +121,28 @@ def main() -> int:
     stats: Counter[str] = Counter()
     failures: list[str] = []
 
-    @functools.cache
-    def repaired_domain_parser(domain_path: Path) -> Parser | None:
-        repair(domain_path, lambda: Parser(domain_path, options), stats, failures)
-        try:
-            return Parser(domain_path, options)
-        except Exception:  # noqa: BLE001  # pylint: disable=broad-exception-caught  # already recorded by repair()
-            return None
+    # Whether each domain file parses once repaired: repaired once, its parser not kept (a parser keeps every task it
+    # parsed; each task is parsed with a parser of its own, freed when the parse returns).
+    domain_parses: dict[Path, bool] = {}
+
+    def repaired_domain_parses(domain_path: Path) -> bool:
+        if domain_path not in domain_parses:
+            repair(domain_path, lambda: Parser(domain_path, options), stats, failures)
+            try:
+                Parser(domain_path, options)
+                domain_parses[domain_path] = True
+            except Exception:  # noqa: BLE001  # pylint: disable=broad-exception-caught  # already recorded by repair()
+                domain_parses[domain_path] = False
+        return domain_parses[domain_path]
 
     for index, domain_dir in enumerate(discover_domains(data_root), start=1):
         name = domain_dir.relative_to(data_root).as_posix()
         for task in pypddl_datasets.fetch_domain(name).tasks:
-            domain_parser = repaired_domain_parser(task.domain_path)
-            if domain_parser is None:
+            if not repaired_domain_parses(task.domain_path):
                 continue
             repair(
                 task.task_path,
-                lambda parser=domain_parser, path=task.task_path: parser.parse_task(path),
+                lambda domain=task.domain_path, path=task.task_path: Parser(domain, options).parse_task(path),
                 stats,
                 failures,
             )

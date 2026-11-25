@@ -33,11 +33,6 @@ def generate(data_root: Path) -> dict[str, Metadata]:
     options = ParserOptions()
     options.add_action_costs = False
 
-    # A parser per task, not one cached per domain: a parser keeps the tasks it parsed, and caching every domain's kept
-    # every task of every family alive (21 GB, beyond a CI runner's 16).
-    def domain_parser(domain_path: Path) -> Parser:
-        return Parser(domain_path, options)
-
     def tokens(requirements: Iterable[object]) -> frozenset[str]:
         values = frozenset(str(requirement) for requirement in requirements)
         for value in values:
@@ -46,16 +41,23 @@ def generate(data_root: Path) -> dict[str, Metadata]:
             Requirement(value)
         return values
 
+    def declared(task: pypddl_datasets.Task) -> frozenset[str]:
+        """The requirements of `task`: its domain's and its own, read with a parser of its own that is freed on return.
+
+        A parser keeps every task it parsed: kept across tasks (one cached per domain), every task of every family
+        stayed alive (21 GB, beyond a CI runner's 16).
+        """
+        parser = Parser(task.domain_path, options)
+        parsed = parser.parse_task(task.task_path)
+        return tokens(parser.domain().get_requirements()) | tokens(parsed.get_requirements())
+
     tasks: dict[str, dict[str, list[str]]] = {}
     domains: dict[str, list[str]] = {}
     for domain_dir in discover_domains(data_root):
         name = domain_dir.relative_to(data_root).as_posix()
         by_problem: dict[str, list[str]] = {}
         for task in pypddl_datasets.fetch_domain(name).tasks:
-            parser = domain_parser(task.domain_path)
-            parsed = parser.parse_task(task.task_path)
-            declared = tokens(parser.domain().get_requirements()) | tokens(parsed.get_requirements())
-            by_problem[task.problem] = sorted(declared)
+            by_problem[task.problem] = sorted(declared(task))
         tasks[name] = dict(sorted(by_problem.items()))
         domains[name] = sorted(set[str]().union(*by_problem.values())) if by_problem else []
 
