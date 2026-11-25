@@ -11,7 +11,6 @@ parser (repository tooling, not shipped with the package):
 from __future__ import annotations
 
 import argparse
-import functools
 import json
 import os
 from collections.abc import Iterable
@@ -34,7 +33,8 @@ def generate(data_root: Path) -> dict[str, Metadata]:
     options = ParserOptions()
     options.add_action_costs = False
 
-    @functools.cache
+    # A parser per task, not one cached per domain: a parser keeps the tasks it parsed, and caching every domain's kept
+    # every task of every family alive (21 GB, beyond a CI runner's 16).
     def domain_parser(domain_path: Path) -> Parser:
         return Parser(domain_path, options)
 
